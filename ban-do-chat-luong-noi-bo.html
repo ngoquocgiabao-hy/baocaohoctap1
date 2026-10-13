@@ -1,0 +1,1103 @@
+<!doctype html>
+<html lang="vi" data-lang="both">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bản đồ Chất lượng</title>
+<meta name="description" content="Báo cáo học việc ngày đầu tại phòng Chất lượng nhà máy mũ: ba tấm bản đồ song ngữ Việt–Trung về hành trình chiếc mũ, hành trình mẫu và các mô hình kiểm hàng.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&family=Noto+Sans+TC:wght@400;700&display=swap">
+<style>
+/* ---------- 1. Token ---------- */
+:root{
+  --paper:#F3EFE6; --paper-2:#E8E1D3; --card:#FBF9F4;
+  --ink:#1B2233; --ink-2:#4B5367; --ink-3:#757B8E;
+  --navy:#22305A; --navy-soft:rgba(34,48,90,.08);
+  --accent:#C9401F; --accent-soft:rgba(201,64,31,.10);
+  --amber:#B87A10; --amber-soft:rgba(184,122,16,.16); --ok:#2E7A57;
+  --line:#D6CEBE; --shadow:0 1px 0 rgba(27,34,51,.04),0 10px 30px -18px rgba(27,34,51,.35);
+  --r:16px; --gutter:16px;
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.65,0,.35,1); --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --font:'Be Vietnam Pro','Noto Sans TC',system-ui,sans-serif;
+  --font-zh:'Noto Sans TC','Be Vietnam Pro',sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#10141D; --paper-2:#171C28; --card:#1A2030;
+    --ink:#EEE9DE; --ink-2:#BDB8AC; --ink-3:#8E8A80;
+    --navy:#AFC0F2; --navy-soft:rgba(175,192,242,.10);
+    --accent:#F2714F; --accent-soft:rgba(242,113,79,.15);
+    --amber:#E5AE45; --amber-soft:rgba(229,174,69,.18); --ok:#62C394;
+    --line:#2C3346; --shadow:0 10px 30px -18px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10141D; --paper-2:#171C28; --card:#1A2030;
+  --ink:#EEE9DE; --ink-2:#BDB8AC; --ink-3:#8E8A80;
+  --navy:#AFC0F2; --navy-soft:rgba(175,192,242,.10);
+  --accent:#F2714F; --accent-soft:rgba(242,113,79,.15);
+  --amber:#E5AE45; --amber-soft:rgba(229,174,69,.18); --ok:#62C394;
+  --line:#2C3346; --shadow:0 10px 30px -18px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+/* ---------- 2. Reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+b{font-weight:700}
+
+/* Song ngữ / 雙語 */
+.zh{font-family:var(--font-zh);color:var(--ink-2);letter-spacing:.02em}
+span.zh{display:block;font-size:.9em;margin-top:2px}
+span.zh.inl{display:inline;margin:0}
+[data-lang="vi"] .zh{display:none!important}
+[data-lang="zh"] .vi{display:none!important}
+[data-lang="zh"] .zh{color:var(--ink);font-size:1em}
+
+/* ---------- 3. Layout ---------- */
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--gutter)}
+section{padding:72px 0 24px;scroll-margin-top:64px}
+.sec-head{position:relative;margin-bottom:32px}
+.sec-num{font-weight:800;font-size:clamp(4.5rem,13vw,8.5rem);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--line);letter-spacing:-.04em;user-select:none}
+.sec-head h2{margin-top:-28px;font-size:clamp(1.7rem,4.4vw,2.6rem);line-height:1.15;font-weight:800;letter-spacing:-.015em;position:relative}
+.sec-head h2 span.zh{font-weight:700;font-size:.55em;letter-spacing:.08em;margin-top:8px}
+.lead{max-width:62ch;margin-top:14px;font-size:1.06rem;color:var(--ink-2)}
+.lead span.zh{font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.small{font-size:.86rem;color:var(--ink-2)}
+.seam{height:0;border:0;border-top:2px dashed var(--line);margin:56px 0 0}
+
+/* ---------- 4. Thanh trên / 頂欄 ---------- */
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.98rem;text-decoration:none;margin-right:auto;white-space:nowrap}
+.brand small{font-family:var(--font-zh);font-weight:700;color:var(--ink-2);font-size:.82rem}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+.seg button{border:0;background:none;padding:5px 11px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;min-height:32px}
+.seg button[aria-pressed="true"]{background:var(--navy);color:var(--paper)}
+.icon-btn{width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;cursor:pointer;transition:transform .2s var(--ease-out)}
+.icon-btn:hover{transform:translateY(-1px)}
+.icon-btn svg{width:18px;height:18px}
+.moon{display:none}
+:root[data-theme="dark"] .sun{display:none} :root[data-theme="dark"] .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sun{display:none}:root:not([data-theme="light"]) .moon{display:block}}
+#progress{position:absolute;left:0;right:0;bottom:-2px;height:3px;transform-origin:0 50%;transform:scaleX(0);background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 13px)}
+@media (max-width:560px){.brand small{display:none}.brand span.t{display:none}#printBtn{display:none}}
+
+/* ---------- 5. Hero ---------- */
+.hero{padding:48px 0 16px}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1.5px solid currentColor}
+.badge.int{color:var(--accent)} .badge.pub{color:var(--navy)}
+.badge span.zh{display:inline;font-size:1em;margin:0;color:inherit;letter-spacing:.08em}
+.kicker{margin-top:22px;font-size:.92rem;font-weight:600;color:var(--ink-2)}
+.hero h1{margin-top:10px;font-size:clamp(2.6rem,7.4vw,5rem);line-height:1.02;font-weight:800;letter-spacing:-.03em}
+.hero h1 .accent{color:var(--accent)}
+.hero h1 span.zh{font-size:.42em;font-weight:700;letter-spacing:.14em;margin-top:14px;color:var(--ink-2)}
+.hero .lead{font-size:1.12rem;margin-top:20px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin-top:28px}
+.meta div{padding:12px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.meta dt{font-size:.74rem;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em}
+.meta dd{margin:2px 0 0;font-weight:700;font-size:.95rem}
+.meta dd span.zh{font-weight:400;font-size:.85em}
+.notice{margin-top:18px;padding:12px 14px;border-left:3px solid var(--navy);background:var(--navy-soft);border-radius:0 10px 10px 0;font-size:.9rem;color:var(--ink-2)}
+
+/* Đỉnh mũ 6 múi / 六片帽頂 */
+.crown-wrap{max-width:400px;width:100%;margin:0 auto;position:relative}
+.crown{width:100%;height:auto;display:block;overflow:visible}
+.crown .wedge{cursor:pointer;transition:transform .45s var(--ease-out);transform-box:view-box;transform-origin:200px 200px;animation:wedgeIn .9s var(--ease-out) backwards;animation-delay:calc(var(--i) * 90ms + 150ms);outline:none}
+.crown .wedge path{fill:var(--card);stroke:var(--line);stroke-width:1.5;transition:fill .3s}
+.crown .wedge:nth-of-type(even) path{fill:var(--paper-2)}
+.crown .wedge:hover,.crown .wedge:focus-visible{transform:translate(var(--dx),var(--dy))}
+.crown .wedge:hover path,.crown .wedge:focus-visible path{fill:var(--accent-soft);stroke:var(--accent)}
+.crown .w-num{fill:var(--accent);font-size:12px;font-weight:800;letter-spacing:.06em}
+.crown .w-vi{fill:var(--ink);font-size:13.5px;font-weight:800}
+.crown .w-zh{fill:var(--ink-2);font-size:11px;font-family:var(--font-zh)}
+.crown .stitch{fill:none;stroke:var(--navy);stroke-width:1.4;stroke-dasharray:4 5;opacity:.55;animation:fadeIn 1s .9s backwards}
+.crown .eyelet{fill:var(--paper);stroke:var(--navy);stroke-width:1.5;opacity:.7}
+.crown .button{fill:var(--navy);transform-box:view-box;transform-origin:200px 200px;animation:pop .7s var(--ease-spring) 1.1s backwards}
+.crown .button-hi{fill:var(--paper);opacity:.35}
+.crown-cap{margin-top:12px;text-align:center;font-size:.85rem;color:var(--ink-2)}
+@keyframes wedgeIn{from{opacity:0;transform:scale(.55) rotate(-24deg)}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes pop{from{transform:scale(0)}}
+
+/* ---------- 6. Tóm tắt ---------- */
+.facts{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:700px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.facts{grid-template-columns:repeat(5,1fr)}}
+.fact{padding:20px 18px;position:relative;overflow:hidden}
+.fact .fig{font-size:3rem;font-weight:800;line-height:1;letter-spacing:-.04em;color:var(--navy)}
+.fact .fig small{font-size:.9rem;font-weight:700;letter-spacing:0;margin-left:4px;color:var(--ink-2)}
+.fact.own .fig{color:var(--accent)}
+.fact p{margin-top:12px;font-size:.93rem}
+.fact p span.zh{font-size:.88em}
+
+/* ---------- 7. Bản đồ 1: đường ray ---------- */
+.rail-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--navy);background:var(--navy);color:var(--paper);font-weight:700;cursor:pointer;transition:transform .2s var(--ease-spring),background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:16px;height:16px}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
+.btn .lbl-stop{display:none}
+.btn[aria-pressed="true"] .lbl-run{display:none}
+.btn[aria-pressed="true"] .lbl-stop{display:inline}
+.btn span.zh{display:inline;margin:0 0 0 6px;color:inherit;opacity:.85;font-size:.88em}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:2px solid var(--line);background:var(--card)}
+.legend i.own{border-color:var(--accent)}
+.rail-wrap{position:relative;padding-top:40px}
+.rail{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;position:relative}
+.rail::before{content:"";position:absolute;left:5%;right:5%;top:22px;border-top:2px dashed var(--navy);opacity:.4}
+.stop{all:unset;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;text-align:center;padding:0 2px 6px;border-radius:12px;width:100%}
+.stop-dot{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--card);border:2px solid var(--line);transition:all .35s var(--ease-out)}
+.stop.fork .stop-dot{background:linear-gradient(90deg,var(--card) 50%,var(--paper-2) 50%)}
+.stop.fork .stop-dot::after{content:"";position:absolute;top:5px;bottom:5px;left:50%;border-left:1.5px dashed var(--line)}
+.stop.fork.is-active .stop-dot::after{border-color:rgba(255,255,255,.35)}
+.stop.own .stop-dot{border-color:var(--accent);color:var(--accent)}
+.stop.is-passed .stop-dot{border-color:var(--navy);color:var(--navy)}
+.stop.own.is-passed .stop-dot{border-color:var(--accent);color:var(--accent)}
+.stop.is-active .stop-dot{background:var(--navy);border-color:var(--navy);color:var(--paper);transform:scale(1.12)}
+.stop.own.is-active .stop-dot{background:var(--accent);border-color:var(--accent)}
+.stop-name{font-size:.8rem;font-weight:700;line-height:1.3}
+.stop-name span.zh{font-weight:400;font-size:.92em}
+.stop:hover .stop-dot{transform:translateY(-3px)}
+.stop.is-active:hover .stop-dot{transform:scale(1.12)}
+.stop:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cap-token{position:absolute;left:0;top:0;width:34px;height:26px;opacity:0;pointer-events:none;transition:transform .7s var(--ease-io),opacity .3s;color:var(--accent);filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+.cap-token.is-ready{opacity:1}
+@media (max-width:760px){
+  .rail{grid-template-columns:repeat(5,1fr);row-gap:44px}
+  .rail::before{display:none}
+  .stop-name{font-size:.74rem}
+}
+.stop-panel{margin-top:26px;padding:26px 24px}
+.stop-detail+.stop-detail{margin-top:28px;padding-top:28px;border-top:1px dashed var(--line)}
+.js .stop-detail{display:none}
+.js .stop-detail.is-active{display:block;animation:panelIn .5s var(--ease-out)}
+.js .stop-detail+.stop-detail{margin-top:0;padding-top:0;border-top:0}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px)}}
+.sd-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:14px}
+.sd-num{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.sd-head h3{font-size:1.45rem;font-weight:800;line-height:1.2;flex:1 1 220px}
+.sd-head h3 span.zh{font-size:.62em;font-weight:700;letter-spacing:.06em}
+.owner{font-size:.76rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--navy-soft);color:var(--navy)}
+.owner.own{background:var(--accent-soft);color:var(--accent)}
+.owner span.zh{display:inline;margin-left:4px;color:inherit;font-size:1em}
+.easy{padding:12px 16px;border-radius:12px;background:var(--amber-soft);font-size:.96rem;margin-bottom:16px}
+.easy span.zh{font-size:.9em}
+.pairs li{position:relative;padding:10px 0 10px 22px;border-top:1px solid var(--line)}
+.pairs li:first-child{border-top:0}
+.pairs li::before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--navy);opacity:.6}
+.pairs li.q::before{background:var(--accent);opacity:1}
+.pairs li span.zh{font-size:.88em}
+
+/* Công cụ / 小工具 */
+.tools{display:grid;gap:18px;margin-top:28px}
+@media (min-width:900px){.tools{grid-template-columns:1fr 1fr}}
+.tool{padding:24px}
+.tool h3{font-size:1.2rem;font-weight:800}
+.tool h3 span.zh{font-size:.72em;font-weight:700}
+.tool > .small{margin-top:6px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.fields label{font-size:.78rem;font-weight:600;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.fields label span.zh{font-size:1em;margin:0}
+.fields input{width:100%;min-height:44px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);font-weight:700;font-size:1.05rem}
+.fields input:focus{border-color:var(--navy);outline:none}
+.fp-result{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:20px}
+.fp-result output{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.fp-result .unit{font-size:.84rem;color:var(--ink-2)}
+.grade{margin-left:auto;min-width:64px;text-align:center;font-weight:800;font-size:1.4rem;padding:6px 14px;border-radius:12px;background:var(--navy-soft);color:var(--navy)}
+.grade[data-g="A"]{background:rgba(46,122,87,.14);color:var(--ok)}
+.grade[data-g="B"]{background:var(--amber-soft);color:var(--amber)}
+.grade[data-g="C"],.grade[data-g="X"]{background:var(--accent-soft);color:var(--accent)}
+.scale{position:relative;display:flex;height:30px;margin-top:16px;border-radius:8px;overflow:visible;font-size:.75rem;font-weight:800}
+.zone{display:grid;place-items:center;color:var(--ink-2)}
+.za{width:36.25%;background:rgba(46,122,87,.16);border-radius:8px 0 0 8px}
+.zb{width:22.5%;background:var(--amber-soft)}
+.zc{width:18.75%;background:var(--accent-soft)}
+.zx{width:22.5%;background:repeating-linear-gradient(45deg,var(--accent-soft) 0 6px,transparent 6px 12px);border-radius:0 8px 8px 0}
+.marker{position:absolute;top:-6px;bottom:-6px;width:3px;margin-left:-1.5px;background:var(--ink);border-radius:2px;transition:left .5s var(--ease-out);left:15%}
+.ticks{position:relative;height:16px;font-size:.7rem;color:var(--ink-3);margin-top:6px}
+.ticks span{position:absolute;top:0;transform:translateX(-50%)}
+.ticks span:first-child{transform:none}.ticks span:last-child{transform:translateX(-100%)}
+.formula{margin-top:14px;font-size:.82rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips .lab{width:100%;font-size:.76rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em}
+.chip{min-height:38px;padding:6px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);font-weight:700;font-size:.86rem;cursor:pointer;transition:all .2s}
+.chip[aria-checked="true"]{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+.aql-text{margin-top:16px;font-size:.98rem;min-height:3.2em}
+.aql-text .ok{color:var(--ok)} .aql-text .bad{color:var(--accent)}
+.dots{display:grid;grid-template-columns:repeat(auto-fill,minmax(11px,1fr));gap:3px;margin-top:14px}
+.dots i{aspect-ratio:1;border-radius:3px;background:var(--paper-2);transform-origin:center;animation:dotIn .4s var(--ease-out) backwards;animation-delay:calc(var(--k) * 3ms)}
+.dots i.d-ok{background:var(--amber)}
+.dots i.d-re{background:var(--accent)}
+@keyframes dotIn{from{transform:scale(0)}}
+.dot-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--ink-2)}
+.dot-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* ---------- 8. Bản đồ 2: tuyến metro ---------- */
+.metro{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;position:relative;margin-top:56px}
+.metro::before{content:"";position:absolute;left:6%;right:6%;top:28px;height:4px;border-radius:2px;background:var(--navy)}
+.m-stop{position:relative;text-align:center;padding:0 2px}
+.m-code{position:relative;display:grid;place-items:center;width:60px;height:60px;margin:0 auto;border-radius:50%;background:var(--card);border:4px solid var(--navy);font-weight:800;font-size:.82rem;letter-spacing:-.01em}
+.m-stop.hub .m-code{width:76px;height:76px;margin-top:-8px;border-color:var(--accent);color:var(--accent);font-size:1rem;box-shadow:0 0 0 6px var(--accent-soft)}
+.m-name{display:block;margin-top:12px;font-weight:700;font-size:.86rem;line-height:1.3}
+.m-name span.zh{font-weight:400}
+.m-note{display:block;margin-top:6px;font-size:.78rem;color:var(--ink-2);line-height:1.45}
+.m-note span.zh{font-size:.95em}
+.m-stop.hub .m-name{color:var(--accent)}
+.loop{position:absolute;left:50%;top:-44px;width:78px;height:40px;margin-left:-39px;color:var(--navy)}
+.loop-lbl{position:absolute;left:50%;top:-62px;transform:translateX(-50%);white-space:nowrap;font-size:.7rem;font-weight:700;color:var(--ink-2)}
+@media (max-width:860px){
+  .metro{grid-template-columns:1fr;gap:0;margin-top:20px;padding-left:4px}
+  .metro::before{left:33px;right:auto;top:30px;bottom:30px;width:4px;height:auto;background:var(--navy)}
+  .m-stop{display:grid;grid-template-columns:64px 1fr;column-gap:14px;text-align:left;padding:10px 0}
+  .m-code{grid-row:span 2;margin:0}
+  .m-stop.hub .m-code{width:64px;height:64px;margin:0}
+  .m-name{margin-top:6px}
+  .loop,.loop-lbl{display:none}
+  .m-stop.loopy .m-note::after{content:" ↻";color:var(--accent);font-weight:800}
+}
+.two{display:grid;gap:18px;margin-top:36px}
+@media (min-width:900px){.two{grid-template-columns:1.2fr .8fr}}
+.two>*,.tools>*,.models>*,.facts>*,.scope>*{min-width:0}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+th span.zh{text-transform:none;letter-spacing:.04em}
+td b{font-weight:800}
+tr.hl td{background:var(--accent-soft)}
+.callout{padding:22px}
+.callout h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.callout h3 span.zh{font-size:.8em}
+.note-line{margin-top:18px;font-size:.88rem;color:var(--ink-2);padding-left:14px;border-left:3px solid var(--amber)}
+
+/* ---------- 9. Bản đồ 3: phổ niềm tin ---------- */
+.spectrum{margin-top:8px}
+.spec-bar{height:10px;border-radius:999px;background:linear-gradient(90deg,var(--ok),var(--amber),var(--accent))}
+.spec-labels{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:.8rem;font-weight:700;color:var(--ink-2)}
+.spec-labels > span:last-child{text-align:right}
+.models{display:grid;gap:16px;margin-top:26px}
+@media (min-width:860px){.models{grid-template-columns:repeat(3,1fr)}}
+.model{padding:22px;position:relative}
+.model .m-n{font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.model h3{margin-top:6px;font-size:1.2rem;font-weight:800;line-height:1.25}
+.model h3 span.zh{font-size:.74em;font-weight:700}
+.model .who{margin-top:10px;font-size:.9rem;color:var(--ink-2)}
+.model .who span.zh{font-size:.92em}
+.brands{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.brand-chip{font-size:.76rem;font-weight:700;padding:5px 10px;border-radius:8px;background:var(--paper-2);border:1px solid var(--line)}
+.brand-chip.q{border-style:dashed;color:var(--ink-2)}
+.brand-chip .t3{font-size:.68rem;color:var(--accent);margin-left:3px}
+.model .tag{margin-top:14px;font-size:.8rem;font-weight:700;color:var(--navy)}
+.model .tag span.zh{display:inline;margin-left:6px;color:inherit;font-size:1em}
+.model.m1{border-top:4px solid var(--ok)} .model.m2{border-top:4px solid var(--amber)} .model.m3{border-top:4px solid var(--accent)}
+.model.unknown{margin-top:16px;border:1.5px dashed var(--ink-3);box-shadow:none;background:transparent}
+@media (min-width:860px){.model.unknown{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:center}}
+.scope{display:grid;gap:14px;margin-top:20px}
+@media (min-width:760px){.scope{grid-template-columns:repeat(3,1fr)}}
+.depth{padding:20px}
+.depth .lvl{display:flex;gap:5px;margin-bottom:10px}
+.depth .lvl i{width:22px;height:6px;border-radius:3px;background:var(--line)}
+.depth .lvl i.on{background:var(--accent)}
+.depth h3{font-size:1.05rem;font-weight:800}
+.depth h3 span.zh{font-size:.8em}
+.depth ul{margin-top:10px}
+.depth li{font-size:.88rem;padding:6px 0;border-top:1px solid var(--line)}
+.depth li span.zh{font-size:.9em}
+.sub-h{margin-top:48px;font-size:1.3rem;font-weight:800}
+.sub-h span.zh{font-size:.72em;font-weight:700}
+
+/* ---------- 10. Checklist ---------- */
+.check-head{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:22px}
+.ck-score{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.ck-score small{font-size:1rem;color:var(--ink-3)}
+.ck-track{flex:1 1 200px;height:10px;border-radius:999px;background:var(--paper-2);overflow:hidden}
+#ckBar{height:100%;background:var(--ok);transform-origin:0 50%;transform:scaleX(0);transition:transform .5s var(--ease-out)}
+.checks{margin-top:14px}
+.checks li{border-bottom:1px solid var(--line)}
+.checks label{display:flex;gap:14px;align-items:flex-start;padding:14px 4px;cursor:pointer}
+.checks input{position:absolute;opacity:0;width:1px;height:1px}
+.checks .box{flex:0 0 24px;height:24px;margin-top:2px;border-radius:7px;border:2px solid var(--ink-3);display:grid;place-items:center;transition:all .25s var(--ease-spring)}
+.checks .box svg{width:14px;height:14px;opacity:0;transform:scale(.4);transition:all .25s var(--ease-spring);color:var(--paper)}
+.checks input:checked + .box{background:var(--ok);border-color:var(--ok)}
+.checks input:checked + .box svg{opacity:1;transform:none}
+.checks input:focus-visible + .box{outline:2px solid var(--accent);outline-offset:2px}
+.checks input:checked ~ .txt{color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--line)}
+.checks .txt span.zh{font-size:.88em}
+.plan{display:grid;gap:14px;margin-top:20px}
+@media (min-width:760px){.plan{grid-template-columns:repeat(3,1fr)}}
+.plan li{padding:20px}
+.plan .p-n{font-size:2rem;font-weight:800;color:var(--navy);line-height:1}
+.plan p{margin-top:10px;font-size:.92rem}
+.plan p span.zh{font-size:.9em}
+
+/* ---------- 11. Thuật ngữ ---------- */
+.search{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.search input{flex:1 1 260px;min-height:48px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-size:1rem}
+.search input:focus{outline:none;border-color:var(--navy)}
+.search .count{font-size:.86rem;color:var(--ink-2)}
+.terms{display:grid;gap:10px;margin-top:20px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.term{padding:16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.term[hidden]{display:none}
+.t-vi{display:block;font-weight:800;font-size:1rem}
+.t-zh{display:block;font-family:var(--font-zh);font-weight:700;color:var(--accent);margin-top:2px}
+.t-en{display:block;font-size:.78rem;color:var(--ink-3);margin-top:2px;letter-spacing:.02em}
+.t-def{display:block;font-size:.86rem;color:var(--ink-2);margin-top:8px}
+.t-def span.zh{font-size:.95em}
+[data-lang="zh"] .t-vi{display:none}
+
+/* ---------- 12. Footer ---------- */
+footer{margin-top:72px;padding:36px 0 56px;border-top:2px dashed var(--line);font-size:.86rem;color:var(--ink-2)}
+footer .wrap{display:grid;gap:10px}
+
+/* ---------- 13. Hiệu ứng xuất hiện ---------- */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);transition-delay:calc(var(--i,0) * 80ms)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+/* ---------- 14. In ấn / 列印 ---------- */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .topbar,.rail-tools,.cap-token,.tools,.search,.crown-wrap{display:none!important}
+  .js .stop-detail{display:block!important;break-inside:avoid;margin-top:18px!important;padding-top:18px!important;border-top:1px dashed #bbb!important}
+  .zh,.vi{display:revert!important}
+  span.zh{display:block!important}
+  section{padding-top:28px;break-inside:auto}
+  .card{box-shadow:none}
+  .js .reveal{opacity:1;transform:none}
+  .sec-num{-webkit-text-stroke:1px #ccc}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Về đầu trang">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 1.5V24.5M3.04 7.25L22.96 18.75M3.04 18.75L22.96 7.25" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/><circle cx="13" cy="13" r="2.6" fill="currentColor"/></svg>
+      <span class="t">Bản đồ Chất lượng</span><small>品質部地圖</small>
+    </a>
+    <div class="seg" role="group" aria-label="Ngôn ngữ / 語言">
+      <button type="button" data-set-lang="vi" aria-pressed="false">VI</button>
+      <button type="button" data-set-lang="zh" aria-pressed="false">中</button>
+      <button type="button" data-set-lang="both" aria-pressed="true">VI·中</button>
+    </div>
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng/tối">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="printBtn" aria-label="In báo cáo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><path d="M6 14h12v7H6z"/></svg>
+    </button>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge int">Bản nội bộ · không đăng công khai <span class="zh" lang="zh-Hant">內部版</span></span>
+      
+      <p class="kicker"><span class="vi">Báo cáo học việc · Ngày 1 · v0.1</span><span class="zh" lang="zh-Hant">新人學習報告・第一天・v0.1</span></p>
+      <h1><span class="vi">Bản đồ phòng <span class="accent">Chất lượng</span></span><span class="zh" lang="zh-Hant">品質部地圖</span></h1>
+      <p class="lead"><span class="vi">Một chiếc mũ đi từ cuộn vải trong kho đến thùng hàng xuất đi như thế nào, ai kiểm ở đâu, và phòng Chất lượng đứng ở chỗ nào. Ba tấm bản đồ, đọc trong 5 phút.</span><span class="zh" lang="zh-Hant">一頂帽子如何從倉庫的布捲變成出貨的紙箱、每一站由誰把關、品質部站在哪裡。三張地圖，五分鐘讀完。</span></p>
+      <dl class="meta">
+        <div><dt>Người báo cáo · 報告人</dt><dd>Bảo</dd></div>
+        <div><dt>Hướng dẫn · 指導</dt><dd>Chị Thắm<span class="zh" lang="zh-Hant">Thắm 姐</span></dd></div>
+        <div><dt>Ngày · 日期</dt><dd>13/10/2026</dd></div>
+        <div><dt>Bộ phận · 部門</dt><dd>Chất lượng<span class="zh" lang="zh-Hant">品質部</span></dd></div>
+      </dl>
+      
+    </div>
+    <div class="crown-wrap">
+      <svg class="crown" viewBox="0 0 400 400" role="group" aria-label="Mục lục hình đỉnh mũ 6 múi">
+        <a class="wedge" href="#tom-tat" style="--i:0;--dx:4px;--dy:-7px" aria-label="01 Tóm tắt">
+          <path d="M200 200L200 30A170 170 0 0 1 347.22 115Z"/>
+          <text x="256" y="89" text-anchor="middle" class="w-num">01</text>
+          <text x="256" y="107" text-anchor="middle" class="w-vi"><tspan class="vi">Tóm tắt</tspan></text>
+          <text x="256" y="123" text-anchor="middle" class="w-zh"><tspan class="zh">摘要</tspan></text>
+        </a>
+        <a class="wedge" href="#ban-do-1" style="--i:1;--dx:8px;--dy:0px" aria-label="02 Hành trình mũ">
+          <path d="M200 200L347.22 115A170 170 0 0 1 347.22 285Z"/>
+          <text x="300" y="186" text-anchor="middle" class="w-num">02</text>
+          <text x="300" y="204" text-anchor="middle" class="w-vi"><tspan class="vi">Hành trình mũ</tspan></text>
+          <text x="300" y="220" text-anchor="middle" class="w-zh"><tspan class="zh">帽子旅程</tspan></text>
+        </a>
+        <a class="wedge" href="#ban-do-2" style="--i:2;--dx:4px;--dy:7px" aria-label="03 Hành trình mẫu">
+          <path d="M200 200L347.22 285A170 170 0 0 1 200 370Z"/>
+          <text x="256" y="283" text-anchor="middle" class="w-num">03</text>
+          <text x="256" y="301" text-anchor="middle" class="w-vi"><tspan class="vi">Hành trình mẫu</tspan></text>
+          <text x="256" y="317" text-anchor="middle" class="w-zh"><tspan class="zh">樣品旅程</tspan></text>
+        </a>
+        <a class="wedge" href="#ban-do-3" style="--i:3;--dx:-4px;--dy:7px" aria-label="04 Ai kiểm hàng">
+          <path d="M200 200L200 370A170 170 0 0 1 52.78 285Z"/>
+          <text x="144" y="283" text-anchor="middle" class="w-num">04</text>
+          <text x="144" y="301" text-anchor="middle" class="w-vi"><tspan class="vi">Ai kiểm hàng</tspan></text>
+          <text x="144" y="317" text-anchor="middle" class="w-zh"><tspan class="zh">誰驗貨</tspan></text>
+        </a>
+        <a class="wedge" href="#can-xac-nhan" style="--i:4;--dx:-8px;--dy:0px" aria-label="05 Cần xác nhận">
+          <path d="M200 200L52.78 285A170 170 0 0 1 52.78 115Z"/>
+          <text x="100" y="186" text-anchor="middle" class="w-num">05</text>
+          <text x="100" y="204" text-anchor="middle" class="w-vi"><tspan class="vi">Cần xác nhận</tspan></text>
+          <text x="100" y="220" text-anchor="middle" class="w-zh"><tspan class="zh">待確認</tspan></text>
+        </a>
+        <a class="wedge" href="#thuat-ngu" style="--i:5;--dx:-4px;--dy:-7px" aria-label="06 Thuật ngữ">
+          <path d="M200 200L52.78 115A170 170 0 0 1 200 30Z"/>
+          <text x="144" y="89" text-anchor="middle" class="w-num">06</text>
+          <text x="144" y="107" text-anchor="middle" class="w-vi"><tspan class="vi">Thuật ngữ</tspan></text>
+          <text x="144" y="123" text-anchor="middle" class="w-zh"><tspan class="zh">名詞</tspan></text>
+        </a>
+        <g aria-hidden="true">
+          <path class="stitch" d="M200 196V38M203 198L342 118M203 202L342 282M200 204V362M197 202L58 282M197 198L58 118"/>
+          <circle class="stitch" cx="200" cy="200" r="161"/>
+          <circle class="eyelet" cx="221" cy="163.6" r="4.5"/><circle class="eyelet" cx="242" cy="200" r="4.5"/><circle class="eyelet" cx="221" cy="236.4" r="4.5"/>
+          <circle class="eyelet" cx="179" cy="236.4" r="4.5"/><circle class="eyelet" cx="158" cy="200" r="4.5"/><circle class="eyelet" cx="179" cy="163.6" r="4.5"/>
+          <circle class="button" cx="200" cy="200" r="20"/>
+          <circle class="button-hi" cx="194" cy="194" r="6"/>
+        </g>
+      </svg>
+      <p class="crown-cap"><span class="vi">Đỉnh mũ 6 múi là mục lục: chạm vào một múi để đi tới phần đó.</span><span class="zh" lang="zh-Hant">六片帽頂即目錄：點選任一片即可前往。</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 01 TÓM TẮT ================= -->
+<section id="tom-tat">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <h2><span class="vi">Tóm tắt 1 phút</span><span class="zh" lang="zh-Hant">一分鐘摘要</span></h2>
+      <p class="lead"><span class="vi">Một chiếc mũ đi qua 10 trạm, và phòng Chất lượng giữ hai trạm cuối cùng trước khi hàng rời nhà máy.</span><span class="zh" lang="zh-Hant">一頂帽子經過十個站點，品質部守住出廠前的最後兩站。</span></p>
+    </div>
+    <div class="facts">
+      <article class="card fact reveal" style="--i:0"><div class="fig"><span data-count="10">10</span><small>trạm · 站</small></div><p><span class="vi">Từ kho nguyên phụ liệu đến lúc xuất hàng, chiếc mũ đi qua 10 trạm.</span><span class="zh" lang="zh-Hant">從倉庫到出貨，帽子共經過十個站點。</span></p></article>
+      <article class="card fact own reveal" style="--i:1"><div class="fig"><span data-count="2">2</span><small>trạm · 站</small></div><p><span class="vi">Phòng Chất lượng giữ QC cuối chuyền và kiểm final; trước final, mọi thùng chưa niêm phong đều phải qua dò kim.</span><span class="zh" lang="zh-Hant">品質部負責線尾檢驗與尾查；尾查前，所有未封箱貨物都須驗針。</span></p></article>
+      <article class="card fact reveal" style="--i:2"><div class="fig"><span data-count="1">1</span><small>PPS</small></div><p><span class="vi">Mẫu PPS khách đã duyệt là "luật" cho cả lô hàng: màu, form, chất liệu, chất lượng.</span><span class="zh" lang="zh-Hant">客戶批核的 PPS 就是整批大貨的標準：顏色、版型、材質、品質。</span></p></article>
+      <article class="card fact reveal" style="--i:3"><div class="fig"><span data-count="4">4</span><small>nhóm khách · 組</small></div><p><span class="vi">Mỗi khách kiểm hàng theo một cách riêng; hôm nay em chia được 4 nhóm.</span><span class="zh" lang="zh-Hant">每個客戶驗貨方式不同，今天整理出四組。</span></p></article>
+      <article class="card fact reveal" style="--i:4"><div class="fig"><span data-count="11">11</span><small>người · 人</small></div><p><span class="vi">Phòng có 11 người. Việc cốt lõi: giữ cho hàng thật khớp với yêu cầu của khách.</span><span class="zh" lang="zh-Hant">本部門共 11 人，核心任務是確保大貨符合客戶要求。</span></p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 BẢN ĐỒ 1 ================= -->
+<section id="ban-do-1">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <h2><span class="vi">Bản đồ 1 · Hành trình của một chiếc mũ</span><span class="zh" lang="zh-Hant">地圖一・一頂帽子的旅程</span></h2>
+      <p class="lead"><span class="vi">Hình dung chiếc mũ đi tàu qua 10 ga; ở mỗi ga có người kiểm xem nó có được đi tiếp không. Chạm vào từng ga, hoặc bấm "Cho mũ chạy".</span><span class="zh" lang="zh-Hant">想像帽子搭火車經過十個車站，每一站都有人檢查它能否繼續前進。點選車站，或按「讓帽子出發」。</span></p>
+    </div>
+
+    <div class="rail-tools reveal">
+      <button type="button" class="btn" id="runBtn" aria-pressed="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path class="lbl-run" d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+        <span class="lbl-run">Cho mũ chạy<span class="zh inl" lang="zh-Hant">讓帽子出發</span></span>
+        <span class="lbl-stop">Dừng lại<span class="zh inl" lang="zh-Hant">暫停</span></span>
+      </button>
+      <div class="legend">
+        <span><i></i><span class="vi">Bộ phận khác</span><span class="zh inl" lang="zh-Hant"> 其他部門</span></span>
+        <span><i class="own"></i><span class="vi">Phòng Chất lượng</span><span class="zh inl" lang="zh-Hant"> 品質部</span></span>
+      </div>
+    </div>
+
+    <div class="rail-wrap reveal">
+      <ol class="rail" id="rail" role="tablist" aria-label="10 trạm của chiếc mũ">
+        <li role="presentation"><button type="button" class="stop is-active" role="tab" id="tab-1" aria-controls="st-1" aria-selected="true"><span class="stop-dot">1</span><span class="stop-name"><span class="vi">Kho</span><span class="zh" lang="zh-Hant">倉庫</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop" role="tab" id="tab-2" aria-controls="st-2" aria-selected="false" tabindex="-1"><span class="stop-dot">2</span><span class="stop-name"><span class="vi">Kiểm vải</span><span class="zh" lang="zh-Hant">驗布</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop" role="tab" id="tab-3" aria-controls="st-3" aria-selected="false" tabindex="-1"><span class="stop-dot">3</span><span class="stop-name"><span class="vi">Xả vải</span><span class="zh" lang="zh-Hant">鬆布</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop" role="tab" id="tab-4" aria-controls="st-4" aria-selected="false" tabindex="-1"><span class="stop-dot">4</span><span class="stop-name"><span class="vi">Cắt</span><span class="zh" lang="zh-Hant">裁剪</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop fork" role="tab" id="tab-5" aria-controls="st-5" aria-selected="false" tabindex="-1"><span class="stop-dot">5</span><span class="stop-name"><span class="vi">Thêu | In–dập</span><span class="zh" lang="zh-Hant">繡花｜印壓</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop" role="tab" id="tab-6" aria-controls="st-6" aria-selected="false" tabindex="-1"><span class="stop-dot">6</span><span class="stop-name"><span class="vi">Giặt</span><span class="zh" lang="zh-Hant">洗水</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop" role="tab" id="tab-7" aria-controls="st-7" aria-selected="false" tabindex="-1"><span class="stop-dot">7</span><span class="stop-name"><span class="vi">May</span><span class="zh" lang="zh-Hant">車縫</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop own" role="tab" id="tab-8" aria-controls="st-8" aria-selected="false" tabindex="-1"><span class="stop-dot">8</span><span class="stop-name"><span class="vi">QC cuối chuyền</span><span class="zh" lang="zh-Hant">線尾檢驗</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop" role="tab" id="tab-9" aria-controls="st-9" aria-selected="false" tabindex="-1"><span class="stop-dot">9</span><span class="stop-name"><span class="vi">Dò kim</span><span class="zh" lang="zh-Hant">驗針</span></span></button></li>
+        <li role="presentation"><button type="button" class="stop own" role="tab" id="tab-10" aria-controls="st-10" aria-selected="false" tabindex="-1"><span class="stop-dot">10</span><span class="stop-name"><span class="vi">Kiểm final</span><span class="zh" lang="zh-Hant">尾查</span></span></button></li>
+      </ol>
+      <div class="cap-token" id="capToken" aria-hidden="true">
+        <svg viewBox="0 0 34 26"><path d="M3 18C3 9 9 3 17 3s14 6 14 15z" fill="currentColor"/><path d="M17 3v15M10 5.5l3 12.5M24 5.5l-3 12.5" stroke="#fff" stroke-opacity=".45" stroke-width="1" stroke-dasharray="1.5 1.5"/><circle cx="17" cy="3" r="2" fill="currentColor"/><path d="M1 18h32c0 3-3 5-8 5H9c-5 0-8-2-8-5z" fill="currentColor" opacity=".75"/></svg>
+      </div>
+    </div>
+
+    <div class="card stop-panel reveal">
+      <article class="stop-detail is-active" id="st-1" role="tabpanel" aria-labelledby="tab-1">
+        <header class="sd-head"><span class="sd-num">Ga 1</span><h3><span class="vi">Kho nguyên phụ liệu</span><span class="zh" lang="zh-Hant">倉庫</span></h3><span class="owner"><span class="vi">Bộ phận kho</span><span class="zh" lang="zh-Hant">倉庫自管</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> giống siêu thị kiểm hàng từ xe tải trước khi xếp lên kệ.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>就像超市上架前先檢查卡車送來的貨。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Nhận hàng nhà cung cấp, đối chiếu hóa đơn, kiểm đếm.</span><span class="zh" lang="zh-Hant">收料、核對發票、點收。</span></li>
+          <li><span class="vi">Phụ liệu kiểm theo AQL 1.5, xong trong 7 ngày, kết quả nhập ERP.</span><span class="zh" lang="zh-Hant">副料依 AQL 1.5 檢驗，7 天內完成，結果登錄 ERP。</span></li>
+          <li><span class="vi">Đạt thì nhập kho. Không đạt thì xử lý đặc biệt (特採, tạm chấp nhận có điều kiện) hoặc trả nhà cung cấp.</span><span class="zh" lang="zh-Hant">合格入庫；不合格則特採或退回供應商。</span></li>
+          <li><span class="vi">Hàng không đạt để ở khu biển đỏ và phải xử lý trong 6 tháng. Kho còn chấm điểm nhà cung cấp hằng tháng.</span><span class="zh" lang="zh-Hant">不合格物料放置於不合格區域，須於 6 個月內處理；倉庫每月評鑑供應商。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-2" role="tabpanel" aria-labelledby="tab-2">
+        <header class="sd-head"><span class="sd-num">Ga 2</span><h3><span class="vi">Kiểm vải</span><span class="zh" lang="zh-Hant">驗布</span></h3><span class="owner"><span class="vi">Bộ phận kho</span><span class="zh" lang="zh-Hant">倉庫</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> giống chấm bài, vết lỗi càng dài thì càng bị trừ nhiều điểm.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>像改考卷，瑕疵越長扣分越多。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Vải chạy qua máy kiểm vải có đèn soi; người kiểm đánh dấu lỗi.</span><span class="zh" lang="zh-Hant">布料經驗布機燈箱檢查並標記瑕疵。</span></li>
+          <li><span class="vi">Hạng mục: bền màu ma sát khô và ướt, bền màu khi giặt, so màu, cảm giác tay, độ dày, khổ rộng, lỗi bề mặt.</span><span class="zh" lang="zh-Hant">乾濕摩擦牢度、水洗牢度、顏色核對、手感、厚度、幅寬、瑕疵。</span></li>
+          <li><span class="vi">Thang 4 điểm: lỗi dưới 3 inch trừ 1 điểm, 3–6 inch trừ 2, 6–9 inch trừ 3, trên 9 inch trừ 4.</span><span class="zh" lang="zh-Hant">四分制：3 吋以下扣 1 分，3–6 吋扣 2 分，6–9 吋扣 3 分，9 吋以上扣 4 分。</span></li>
+          <li><span class="vi">Xếp hạng: A tối đa 29 điểm/100 yd², B 47, C 62. Thử ngay bằng máy tính bên dưới.</span><span class="zh" lang="zh-Hant">A 級 29、B 級 47、C 級 62（每百平方碼）。可用下方計算器試算。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-3" role="tabpanel" aria-labelledby="tab-3">
+        <header class="sd-head"><span class="sd-num">Ga 3</span><h3><span class="vi">Xả vải</span><span class="zh" lang="zh-Hant">鬆布</span></h3><span class="owner"><span class="vi">Xưởng cắt</span><span class="zh" lang="zh-Hant">裁剪廠</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> giống để bột nghỉ trước khi cán; vải co giãn cần "thở" cho hết căng.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>就像麵團要先醒過，彈性布要先釋放張力。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Chỉ áp dụng cho vải co giãn. Vải không co giãn đi thẳng sang cắt.</span><span class="zh" lang="zh-Hant">僅適用於彈性布；無彈布直接裁剪。</span></li>
+          <li><span class="vi">Mục đích: hết lực căng sinh ra khi cuộn, tránh mảnh cắt bị co lại sau khi cắt.</span><span class="zh" lang="zh-Hant">目的：釋放捲布張力，避免裁片裁後回縮。</span></li>
+          <li class="q"><span class="vi">Cần xác nhận: thời gian xả tiêu chuẩn và biểu ghi nhận.</span><span class="zh" lang="zh-Hant">待確認：標準鬆布時間與記錄表。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-4" role="tabpanel" aria-labelledby="tab-4">
+        <header class="sd-head"><span class="sd-num">Ga 4</span><h3><span class="vi">Cắt</span><span class="zh" lang="zh-Hant">裁剪</span></h3><span class="owner"><span class="vi">Xưởng cắt</span><span class="zh" lang="zh-Hant">裁剪廠</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> dao chặt giống khuôn cắt bánh quy; khuôn méo thì mọi mảnh đều méo.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>刀模就像餅乾模，模具歪了每一片都歪。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Cắt bằng dao chặt theo dưỡng do phòng kỹ thuật làm từ file CAD.</span><span class="zh" lang="zh-Hant">依技術部 CAD 紙版使用刀模裁剪。</span></li>
+          <li><span class="vi">Dao lệch so với dưỡng từ 2 mm trở lên phải mang đi sửa. Kiểm biến dạng trên mặt kính hoặc đá, kiểm độ sắc và góc cạnh.</span><span class="zh" lang="zh-Hant">落差達 2mm 須修刀；於玻璃或大理石台面檢查變形、鋒利度與邊角。</span></li>
+          <li><span class="vi">Kiểm dao 2 giờ một lần và ghi sổ.</span><span class="zh" lang="zh-Hant">每 2 小時檢查一次並記錄。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-5" role="tabpanel" aria-labelledby="tab-5">
+        <header class="sd-head"><span class="sd-num">Ga 5</span><h3><span class="vi">Xưởng thêu và xưởng in–dập</span><span class="zh" lang="zh-Hant">繡花廠與印花熱壓廠</span></h3><span class="owner"><span class="vi">Hai xưởng, mỗi xưởng có QC riêng</span><span class="zh" lang="zh-Hant">兩廠各有 QC</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> ga có hai cửa; logo của brand được thêu ở một xưởng, hoặc in–dập ở xưởng kia.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>這一站有兩個門，品牌標誌在一廠繡花，或在另一廠印花熱壓。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Hai xưởng riêng: xưởng thêu và xưởng in–dập. Mỗi xưởng có QC riêng của mình.</span><span class="zh" lang="zh-Hant">兩個獨立車間：繡花廠與印花熱壓廠，各自設有 QC。</span></li>
+          <li><span class="vi">Thứ tự linh hoạt theo mã hàng: có mã thêu trước rồi may, có mã may xong mới thêu.</span><span class="zh" lang="zh-Hant">依款式不同，有先繡後車，也有先車後繡。</span></li>
+          <li><span class="vi">Xưởng in–dập, cách 1 là in lưới thủ công: dán vải lên bàn có keo, đặt khung hở đúng hình, công nhân quét mực qua khung, cuối chuyền có máy sấy tự động.</span><span class="zh" lang="zh-Hant">網版印刷：布片黏於印台，以網框手工刮印，線尾自動烘乾。</span></li>
+          <li class="q"><span class="vi">Xưởng in–dập, cách 2 là dập bằng máy, dùng cho màu khó pha thủ công. Kỹ thuật cụ thể cần xác nhận.</span><span class="zh" lang="zh-Hant">機器熱壓：用於手工難調的顏色；具體工藝待確認。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-6" role="tabpanel" aria-labelledby="tab-6">
+        <header class="sd-head"><span class="sd-num">Ga 6</span><h3><span class="vi">Giặt (tầng 1)</span><span class="zh" lang="zh-Hant">洗水（一樓）</span></h3><span class="owner"><span class="vi">Kỹ thuật</span><span class="zh" lang="zh-Hant">技術部</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> giống tiệm giặt riêng của nhà máy, do người kỹ thuật vận hành.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>像工廠自己的洗衣房，由技術人員操作。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Giặt vải khổ lớn, hoặc giặt hàng đã cắt xong, rồi mới chuyển lên may.</span><span class="zh" lang="zh-Hant">洗整幅布或已裁好的裁片，洗後再上車縫。</span></li>
+          <li><span class="vi">Khoảng 8 máy: 3 máy giặt sấy loại lớn, 5 loại nhỏ.</span><span class="zh" lang="zh-Hant">約 8 台洗烘機（大 3、小 5）。</span></li>
+          <li><span class="vi">Bộ phận kỹ thuật phụ trách; QC phòng mình ít khi xuống.</span><span class="zh" lang="zh-Hant">由技術部負責，品質部較少介入。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-7" role="tabpanel" aria-labelledby="tab-7">
+        <header class="sd-head"><span class="sd-num">Ga 7</span><h3><span class="vi">May (tầng 2)</span><span class="zh" lang="zh-Hant">車縫（二樓）</span></h3><span class="owner"><span class="vi">Xưởng may, có QC/QE riêng</span><span class="zh" lang="zh-Hant">車縫廠自有 QC/QE</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> dây chuyền lắp ráp; mỗi người một bước, chiếc mũ đi từ tay người này sang người kia.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>流水線作業，每人負責一道工序，帽子一站傳一站。</span></p>
+        <ul class="pairs">
+          <li><span class="vi"><b>Tạo khung:</b> ráp hai mảnh vải, nhét miếng độn mặt trước cho mũ đứng form, khâu các múi thành chóp tròn. Riêng phần độn cần khoảng 3 người, thêm khoảng 4 công đoạn nữa mới xong phần chóp.</span><span class="zh" lang="zh-Hant"><b>成型：</b>拼布、放入前片襯材、車縫帽片成帽頂。</span></li>
+          <li><span class="vi"><b>Hoàn thiện:</b> tra lưỡi trai, may đệm mồ hôi (có mã có, có mã không), may nhãn mác.</span><span class="zh" lang="zh-Hant"><b>完成：</b>上帽簷、車汗帶、車標籤。</span></li>
+          <li><span class="vi"><b>Đóng hàng:</b> đóng nút chóp, sấy hơi cố định form, dán tem, đóng gói hoàn chỉnh.</span><span class="zh" lang="zh-Hant"><b>後段：</b>打帽頂扣、蒸汽定型、貼標、完整包裝。</span></li>
+          <li class="q"><span class="vi">Cần xem lại: dán băng đường may trong, ô-dê lỗ thoáng, chạy chỉ lưỡi trai, khóa sau, cắt chỉ, vệ sinh.</span><span class="zh" lang="zh-Hant">待補觀察：內縫貼條、氣眼、帽簷車線、後扣、剪線頭、清潔。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-8" role="tabpanel" aria-labelledby="tab-8">
+        <header class="sd-head"><span class="sd-num">Ga 8</span><h3><span class="vi">QC cuối chuyền</span><span class="zh" lang="zh-Hant">線尾檢驗</span></h3><span class="owner own"><span class="vi">Phòng Chất lượng</span><span class="zh" lang="zh-Hant">品質部</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> người gác cổng đầu tiên của phòng mình, so từng chiếc với mẫu đã duyệt.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>本部門的第一道關卡，逐件對照批核樣。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">QC đứng ở cuối chuyền, kiểm hàng đã hoàn thiện và đóng gói.</span><span class="zh" lang="zh-Hant">QC 位於線尾，檢驗完成並包裝的成品。</span></li>
+          <li><span class="vi">Đối chiếu mẫu đã duyệt về màu, chất liệu, form và vị trí logo.</span><span class="zh" lang="zh-Hant">對照批核樣：顏色、材質、版型、標誌位置。</span></li>
+          <li class="q"><span class="vi">Điểm kiểm thường gặp ở mũ (em tự tìm hiểu, cần đối chiếu checklist từng khách): vòng đầu, độ cân các múi, lưỡi trai cong đều, thêu không lệch, đường may không bỏ mũi, nhãn đúng size.</span><span class="zh" lang="zh-Hant">帽類常見檢查點（自學整理，待對照各客戶清單）：頭圍、帽片對稱、帽簷弧度、繡花位置、跳針、標籤尺碼。</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-9" role="tabpanel" aria-labelledby="tab-9">
+        <header class="sd-head"><span class="sd-num">Ga 9</span><h3><span class="vi">Dò kim</span><span class="zh" lang="zh-Hant">驗針</span></h3><span class="owner"><span class="vi">Chuyền dò kim</span><span class="zh" lang="zh-Hant">驗針線</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> cổng an ninh sân bay mà chiếc mũ nào cũng phải đi qua.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>每頂帽子都要過的機場安檢門。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Thùng đã dán băng keo là đã qua dò kim; thùng chưa dán phải xuống dò kim. Có 4 chuyền dò kim.</span><span class="zh" lang="zh-Hant">已封膠帶＝已驗針；未封箱須送驗針。共 4 條驗針線。</span></li>
+          <li><span class="vi">Chi tiết kim loại nằm trong thiết kế (như nút chóp) được chấp nhận. Mảnh kim loại lạ, như kim gãy, là lỗi nghiêm trọng vì ảnh hưởng an toàn người dùng.</span><span class="zh" lang="zh-Hant">設計內的金屬配件（如帽頂扣）可接受；斷針等異常金屬為嚴重缺陷。</span></li>
+          <li class="q"><span class="vi">Câu hỏi: máy phân biệt nút chóp kim loại với kim gãy bằng cách nào?</span><span class="zh" lang="zh-Hant">疑問：機器如何區分金屬帽頂扣與斷針？</span></li>
+        </ul>
+      </article>
+      <article class="stop-detail" id="st-10" role="tabpanel" aria-labelledby="tab-10">
+        <header class="sd-head"><span class="sd-num">Ga 10</span><h3><span class="vi">Kiểm final và xuất hàng</span><span class="zh" lang="zh-Hant">尾查與出貨</span></h3><span class="owner own"><span class="vi">Phòng Chất lượng</span><span class="zh" lang="zh-Hant">品質部</span></span></header>
+        <p class="easy"><span class="vi"><b>Dễ hiểu:</b> lần soi cuối cùng trước khi hàng lên container.</span><span class="zh" lang="zh-Hant"><b>簡單說：</b>貨物裝櫃前的最後一次檢查。</span></p>
+        <ul class="pairs">
+          <li><span class="vi">Sau dò kim và đóng thùng, QC kiểm lại theo tiêu chuẩn từng khách: bóc thùng ngẫu nhiên, lấy mẫu theo bảng AQL.</span><span class="zh" lang="zh-Hant">驗針封箱後，依各客戶標準抽箱抽樣。</span></li>
+          <li><span class="vi">Ai kiểm và ai cho xuất: xem Bản đồ 3. Cách lấy mẫu: thử công cụ AQL bên dưới.</span><span class="zh" lang="zh-Hant">由誰驗貨見地圖三；抽樣方式可用下方 AQL 圖示。</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="tools">
+      <div class="card tool reveal" id="tool-4pt">
+        <h3><span class="vi">Máy tính thang 4 điểm</span><span class="zh" lang="zh-Hant">四分制計算器</span></h3>
+        <p class="small"><span class="vi">Nhập số liệu một cuộn vải; kết quả và cấp hạng tính theo bảng dán tại khu kiểm vải.</span><span class="zh" lang="zh-Hant">輸入一捲布的數據，依驗布區公告換算分數與等級。</span></p>
+        <div class="fields">
+          <label><span class="vi">Tổng điểm lỗi</span><span class="zh" lang="zh-Hant">總扣分</span><input id="fpPts" type="number" inputmode="decimal" min="0" step="1" value="20"></label>
+          <label><span class="vi">Số yard đã kiểm</span><span class="zh" lang="zh-Hant">檢驗碼數</span><input id="fpYd" type="number" inputmode="decimal" min="1" step="1" value="100"></label>
+          <label><span class="vi">Khổ vải (inch)</span><span class="zh" lang="zh-Hant">幅寬（吋）</span><input id="fpW" type="number" inputmode="decimal" min="1" step="1" value="60"></label>
+        </div>
+        <div class="fp-result" aria-live="polite">
+          <output id="fpOut">12.0</output>
+          <span class="unit">điểm/100 yd²<span class="zh" lang="zh-Hant">分／百平方碼</span></span>
+          <span class="grade" id="fpGrade" data-g="A">A</span>
+        </div>
+        <div class="scale" aria-hidden="true"><div class="zone za">A</div><div class="zone zb">B</div><div class="zone zc">C</div><div class="zone zx"></div><div class="marker" id="fpMarker"></div></div>
+        <div class="ticks" aria-hidden="true"><span style="left:0">0</span><span style="left:36.25%">29</span><span style="left:58.75%">47</span><span style="left:77.5%">62</span><span style="left:100%">80+</span></div>
+        <p class="formula">3600 × <span class="vi">điểm lỗi ÷ số yard ÷ khổ vải</span><span class="zh inl" lang="zh-Hant"> 扣分 ÷ 碼數 ÷ 幅寬</span></p>
+      </div>
+      <div class="card tool reveal" id="tool-aql" style="--i:1">
+        <h3><span class="vi">AQL nhìn bằng mắt</span><span class="zh" lang="zh-Hant">一眼看懂 AQL</span></h3>
+        <p class="small"><span class="vi">AQL trả lời hai câu: lấy bao nhiêu chiếc ra kiểm, và được sai tối đa bao nhiêu chiếc.</span><span class="zh" lang="zh-Hant">AQL 回答兩個問題：抽多少件、最多允許幾件不良。</span></p>
+        <div class="chips" role="radiogroup" aria-label="Cỡ lô">
+          <span class="lab">Cỡ lô · 批量</span>
+          <button type="button" class="chip" role="radio" data-lot="80" aria-checked="false">501–1.200</button>
+          <button type="button" class="chip" role="radio" data-lot="125" aria-checked="true">1.201–3.200</button>
+          <button type="button" class="chip" role="radio" data-lot="200" aria-checked="false">3.201–10.000</button>
+        </div>
+        <div class="chips" role="radiogroup" aria-label="AQL">
+          <span class="lab">AQL</span>
+          <button type="button" class="chip" role="radio" data-aql="1.5" aria-checked="false">1.5</button>
+          <button type="button" class="chip" role="radio" data-aql="2.5" aria-checked="true">2.5</button>
+          <button type="button" class="chip" role="radio" data-aql="4.0" aria-checked="false">4.0</button>
+        </div>
+        <p class="aql-text" id="aqlText" aria-live="polite"><span class="vi">Lô 1.201–3.200 chiếc: lấy <b>125</b> chiếc. AQL 2.5: tối đa <b>7</b> lỗi thì <b class="ok">ĐẠT</b>; lỗi thứ <b>8</b> là <b class="bad">RỚT</b> cả lô.</span><span class="zh" lang="zh-Hant">批量 1,201–3,200 件：抽 <b>125</b> 件。AQL 2.5：不良 ≤ <b>7</b> 件<b class="ok">允收</b>；第 <b>8</b> 件不良即整批<b class="bad">拒收</b>。</span></p>
+        <div class="dots" id="aqlDots" aria-hidden="true"></div>
+        <div class="dot-legend" aria-hidden="true"><span><i style="background:var(--paper-2)"></i>Mẫu đạt · 良品</span><span><i style="background:var(--amber)"></i>Lỗi được phép · 允許不良</span><span><i style="background:var(--accent)"></i>Lỗi làm rớt lô · 拒收點</span></div>
+        <p class="small" style="margin-top:14px"><span class="vi">Chỉ 3 dòng phổ biến, mức kiểm tra thường (Level II). Bảng dán tại phòng ghi MIL-STD-105E; chuẩn này đã hủy năm 1995, bản thay thế là ANSI/ASQ Z1.4, còn ISO 2859-1 gần giống nhưng khác vài cặp số. Số liệu chính thức luôn theo bảng tại phòng và yêu cầu từng khách.</span><span class="zh" lang="zh-Hant">僅列三個常用批量（一般檢驗水準 II）。現場表格依 MIL-STD-105E（1995 年已廢止，民用版為 ANSI/ASQ Z1.4；ISO 2859-1 相近但部分允收數不同），實際以現場表格與客戶要求為準。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 BẢN ĐỒ 2 ================= -->
+<section id="ban-do-2">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <h2><span class="vi">Bản đồ 2 · Hành trình của mẫu</span><span class="zh" lang="zh-Hant">地圖二・樣品的旅程</span></h2>
+      <p class="lead"><span class="vi">Trước khi làm 10.000 chiếc, nhà máy và khách phải thống nhất chiếc mũ "chuẩn" trông thế nào. Từ PPS trở đi, mọi bước đều bám theo mẫu khách đã duyệt.</span><span class="zh" lang="zh-Hant">量產前，工廠與客戶要先對「標準帽」達成共識。PPS 之後，各步驟皆以批核樣為準。</span></p>
+    </div>
+    <ol class="metro reveal">
+      <li class="m-stop loopy">
+        <span class="loop-lbl"><span class="vi">comment → sửa</span><span class="zh inl" lang="zh-Hant"> 意見→修改</span></span>
+        <svg class="loop" viewBox="0 0 78 40" aria-hidden="true"><path d="M24 38C10 30 12 6 39 6s29 24 15 32" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/><path d="M49 33l6 6 1-8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="m-code">Proto</span>
+        <span class="m-name"><span class="vi">Mẫu phát triển 1→2→3</span><span class="zh" lang="zh-Hant">開發樣</span></span>
+        <span class="m-note"><span class="vi">Sửa theo comment, thường đến bản 3; được dùng vật liệu thay thế</span><span class="zh" lang="zh-Hant">依意見修改，通常到第三版；可用替代料</span></span>
+      </li>
+      <li class="m-stop"><span class="m-code">SMS</span><span class="m-name"><span class="vi">Mẫu chào hàng</span><span class="zh" lang="zh-Hant">銷售樣</span></span><span class="m-note"><span class="vi">Gửi thị trường đo nhu cầu, vài đến vài chục chiếc</span><span class="zh" lang="zh-Hant">寄往市場試探需求，數件至數十件</span></span></li>
+      <li class="m-stop hub"><span class="m-code">PPS</span><span class="m-name"><span class="vi">Mẫu trước sản xuất</span><span class="zh" lang="zh-Hant">產前樣</span></span><span class="m-note"><span class="vi">Đúng nguyên liệu đại hàng; khách duyệt xong là luật của cả lô</span><span class="zh" lang="zh-Hant">必用大貨料；批核後即整批標準</span></span></li>
+      <li class="m-stop"><span class="m-code">PPM</span><span class="m-name"><span class="vi">Họp trước sản xuất</span><span class="zh" lang="zh-Hant">產前會議</span></span><span class="m-note"><span class="vi">Kỹ thuật, QC, sản xuất, thêu, kế hoạch, khách phục</span><span class="zh" lang="zh-Hant">技術、QC、生產、繡花、計劃、客服</span></span></li>
+      <li class="m-stop"><span class="m-code">Recap</span><span class="m-name"><span class="vi">Biên bản họp</span><span class="zh" lang="zh-Hant">會議紀要</span></span><span class="m-note"><span class="vi">Ngày, mã hàng, người dự, vấn đề, cách xử lý, người phụ trách</span><span class="zh" lang="zh-Hant">日期、款號、出席、問題、對策、負責人</span></span></li>
+      <li class="m-stop"><span class="m-code">大貨</span><span class="m-name"><span class="vi">Đại hàng</span><span class="zh" lang="zh-Hant">大貨量產</span></span><span class="m-note"><span class="vi">Kế hoạch báo được làm, sản xuất loạt theo PPS</span><span class="zh" lang="zh-Hant">計劃通知後，依 PPS 量產</span></span></li>
+      <li class="m-stop"><span class="m-code">Inline</span><span class="m-name"><span class="vi">Kiểm giữa chừng</span><span class="zh" lang="zh-Hant">中查</span></span><span class="m-note"><span class="vi">Kiểm khi hàng còn đang làm dở</span><span class="zh" lang="zh-Hant">生產中檢驗</span></span></li>
+      <li class="m-stop"><span class="m-code">Final</span><span class="m-name"><span class="vi">Kiểm cuối</span><span class="zh" lang="zh-Hant">尾查</span></span><span class="m-note"><span class="vi">Kiểm khi hàng đã hoàn thành</span><span class="zh" lang="zh-Hant">完成後檢驗</span></span></li>
+    </ol>
+
+    <div class="two">
+      <div class="card reveal" style="padding:8px 4px">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th><span class="vi">Mẫu </span><span class="zh inl" lang="zh-Hant">樣品</span></th><th><span class="vi">Mục đích </span><span class="zh inl" lang="zh-Hant">目的</span></th><th><span class="vi">Vật liệu </span><span class="zh inl" lang="zh-Hant">材料</span></th><th><span class="vi">Ai duyệt </span><span class="zh inl" lang="zh-Hant">誰批核</span></th></tr></thead>
+            <tbody>
+              <tr><td><b>Proto</b></td><td><span class="vi">Chỉnh thiết kế</span><span class="zh" lang="zh-Hant">開發</span></td><td><span class="vi">Được thay thế</span><span class="zh" lang="zh-Hant">可替代</span></td><td><span class="vi">Brand comment</span><span class="zh" lang="zh-Hant">品牌給意見</span></td></tr>
+              <tr><td><b>SMS</b></td><td><span class="vi">Chào bán, đo nhu cầu</span><span class="zh" lang="zh-Hant">試探市場</span></td><td><span class="vi">Đúng hoặc thay thế</span><span class="zh" lang="zh-Hant">皆可</span></td><td><span class="vi">Thị trường, brand</span><span class="zh" lang="zh-Hant">市場與品牌</span></td></tr>
+              <tr class="hl"><td><b>PPS</b></td><td><span class="vi">Chuẩn cho đại hàng</span><span class="zh" lang="zh-Hant">大貨標準</span></td><td><span class="vi">Bắt buộc đúng đại hàng</span><span class="zh" lang="zh-Hant">必須大貨料</span></td><td><span class="vi">Khách, hoặc CFT nếu rủi ro thấp/trung bình</span><span class="zh" lang="zh-Hant">客戶；低中風險可由 CFT</span></td></tr>
+              <tr><td><b><span class="vi">Đại hàng </span><span class="zh inl" lang="zh-Hant">大貨</span></b></td><td><span class="vi">Sản xuất thật</span><span class="zh" lang="zh-Hant">量產</span></td><td><span class="vi">Đúng PPS</span><span class="zh" lang="zh-Hant">同 PPS</span></td><td><span class="vi">Inline / Final</span><span class="zh" lang="zh-Hant">中查／尾查</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card callout reveal" style="--i:1">
+        <h3><span class="vi">Ai được duyệt mẫu?</span><span class="zh" lang="zh-Hant">誰有權批核樣品？</span></h3>
+        <ul class="pairs">
+          <li><span class="vi">Với khách VF, đội CFT của nhà máy được khách đào tạo và cấp chứng chỉ, được duyệt mẫu rủi ro thấp và trung bình. Mức rủi ro do khách đánh giá.</span><span class="zh" lang="zh-Hant">VF 客戶：工廠 CFT 經客戶認證，可批核低、中風險樣品；風險等級由客戶評定。</span></li>
+          <li><span class="vi">Mã mới (New Style) là rủi ro cao, bắt buộc khách duyệt.</span><span class="zh" lang="zh-Hant">新款為高風險，必須客戶批核。</span></li>
+          <li><span class="vi">Khách không có người tại Việt Nam thì duyệt online: CFT xem trước, ghi comment, chụp ảnh; người phụ trách bên Bangladesh quyết định cuối cùng.</span><span class="zh" lang="zh-Hant">客戶不在越南時線上批核：CFT 先整理意見與照片，由孟加拉負責人最終決定。</span></li>
+          <li><span class="vi">Khách VIP với mã mới: khách tự kiểm cả Inline và Final cho PO đầu; các lô sau có thể giao CFA nhà máy.</span><span class="zh" lang="zh-Hant">VIP 新款：首張 PO 客戶親自中查與尾查，後續可由工廠 CFA 驗貨。</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note-line reveal"><span class="vi">Đã xác nhận: PPS là mẫu trước sản xuất, PPM là họp trước sản xuất. Yêu cầu nào trong PPM làm tăng thời gian hoặc chi phí thì phải thống nhất với khách trước.</span><span class="zh" lang="zh-Hant">已確認：PPS 為產前樣，PPM 為產前會議。產前會中凡會增加工時或成本的要求，須先與客戶確認。</span></p>
+  </div>
+</section>
+
+<!-- ================= 04 BẢN ĐỒ 3 ================= -->
+<section id="ban-do-3">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <h2><span class="vi">Bản đồ 3 · Ai kiểm hàng của khách nào</span><span class="zh" lang="zh-Hant">地圖三・誰驗哪個客戶的貨</span></h2>
+      <p class="lead"><span class="vi">Khách được chia bốn nhóm theo mức họ tự tham gia vào việc kiểm hàng, từ chỗ giao hẳn cho CFA nhà máy đến chỗ tự cử người kiểm.</span><span class="zh" lang="zh-Hant">依客戶參與驗貨的程度分為四組：從完全交給工廠 CFA，到客戶自己派人驗貨。</span></p>
+    </div>
+    <div class="spectrum reveal">
+      <div class="spec-bar"></div>
+      <div class="spec-labels"><span><span class="vi">Khách giao cho nhà máy</span><span class="zh" lang="zh-Hant">交給工廠</span></span><span><span class="vi">Khách tự kiểm</span><span class="zh" lang="zh-Hant">客戶自驗</span></span></div>
+    </div>
+    <div class="models">
+      <article class="card model m1 reveal">
+        <div class="m-n">Nhóm 1 · 第一組</div>
+        <h3><span class="vi">CFA nhà máy tự lo</span><span class="zh" lang="zh-Hant">工廠 CFA 負責</span></h3>
+        <p class="who"><span class="vi">CFA bên mình kiểm và xác nhận. Không nhất thiết cần chứng chỉ của khách; khách chỉ cần biết CFA đã kiểm.</span><span class="zh" lang="zh-Hant">由工廠 CFA 驗貨並確認，不一定需客戶認證，客戶只需知道 CFA 已驗。</span></p>
+        <div class="brands"><span class="brand-chip">Roots</span><span class="brand-chip">LT</span><span class="brand-chip">TEi</span><span class="brand-chip">NB</span><span class="brand-chip">Sims</span></div>
+        <p class="tag"><span class="vi">Khách giao hẳn cho nhà máy</span><span class="zh" lang="zh-Hant">完全交給工廠</span></p>
+      </article>
+      <article class="card model m2 reveal" style="--i:1">
+        <div class="m-n">Nhóm 2 · 第二組</div>
+        <h3><span class="vi">CFA có chứng chỉ của khách</span><span class="zh" lang="zh-Hant">客戶認證的 CFA</span></h3>
+        <p class="who"><span class="vi">Khách cấp chứng chỉ cho CFA của nhà máy, CFA kiểm thay khách.</span><span class="zh" lang="zh-Hant">客戶為工廠 CFA 發認證，由 CFA 代為驗貨。</span></p>
+        <div class="brands"><span class="brand-chip">VF · TNF · IB · SW · Vans · Napa · Altra</span><span class="brand-chip">UA</span><span class="brand-chip">Dome</span><span class="brand-chip">Oakley</span></div>
+        <p class="tag"><span class="vi">Khách cấp chứng chỉ</span><span class="zh" lang="zh-Hant">客戶發認證</span></p>
+      </article>
+      <article class="card model m3 reveal" style="--i:2">
+        <div class="m-n">Nhóm 3 · 第三組</div>
+        <h3><span class="vi">Khách cao cấp tự kiểm</span><span class="zh" lang="zh-Hant">高端客戶自驗</span></h3>
+        <p class="who"><span class="vi">Khách tự cử người đến kiểm; Tory, Sita, ROS thuê thêm bên thứ ba (+T3).</span><span class="zh" lang="zh-Hant">客戶自派人員驗貨；Tory、Sita、ROS另委託第三方（+T3）。</span></p>
+        <div class="brands"><span class="brand-chip">Tory <b class="t3">+T3</b></span><span class="brand-chip">OR</span><span class="brand-chip">Agron</span><span class="brand-chip">Sita <b class="t3">+T3</b></span><span class="brand-chip">TBL</span><span class="brand-chip">UGG</span><span class="brand-chip">ROS <b class="t3">+T3</b></span></div>
+        <p class="tag"><span class="vi">Khách kiểm soát chặt nhất</span><span class="zh" lang="zh-Hant">把關最嚴</span></p>
+      </article>
+    </div>
+    <article class="card model unknown reveal">
+      <div>
+        <div class="m-n">Nhóm 4 · 第四組</div>
+        <h3><span class="vi">Qua VQC / FCA (chưa rõ)</span><span class="zh" lang="zh-Hant">經 VQC／FCA（待請教）</span></h3>
+        <p class="who"><span class="vi">FCA trùng tên chương trình Factory Certified Auditor mà Arc'teryx dùng cho người kiểm của nhà máy được hãng đào tạo; nếu đúng, nhóm này gần giống nhóm 2. VQC chưa tìm được nguồn công khai. Ba brand này cùng thuộc Amer Sports.</span><span class="zh" lang="zh-Hant">FCA 與 Arc'teryx 的 Factory Certified Auditor（品牌培訓的工廠稽核員）同名；若屬實，此組與第二組相近。VQC 尚無公開資料。三個品牌同屬 Amer Sports。</span></p>
+        
+      </div>
+      <div class="brands"><span class="brand-chip q">ARC</span><span class="brand-chip q">Armada</span><span class="brand-chip q">Atomic</span></div>
+    </article>
+    <p class="note-line reveal"><span class="vi">Mũi tên "Book" trên sơ đồ vẽ tay chưa rõ nghĩa; có thể là mô hình "CFA kiểm xong, book khách đến kiểm lại" mà chị nhắc trong buổi hướng dẫn. Toàn bộ bản đồ này em ghi theo trí nhớ, cần xác nhận.</span><span class="zh" lang="zh-Hant">手繪圖上「Book」箭頭含義待確認，可能是「CFA 驗完再預約客戶覆驗」。本圖憑記憶整理，待確認。</span></p>
+    <p class="note-line reveal"><span class="vi">Agron là đơn vị giữ license độc quyền phụ kiện adidas, gồm cả mũ, theo một nguồn cũ (gia hạn đến 2022); tình trạng hiện tại cần xác nhận.</span><span class="zh" lang="zh-Hant">根據較舊資料（續約至 2022 年），Agron 為 adidas 配件（含帽類）獨家授權商，現況待確認。</span></p>
+
+    <h3 class="sub-h reveal"><span class="vi">Phòng mình đứng ở đâu?</span><span class="zh" lang="zh-Hant">品質部的位置</span></h3>
+    <div class="scope">
+      <article class="card depth reveal">
+        <div class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <h3><span class="vi">Làm chính</span><span class="zh" lang="zh-Hant">主要職責</span></h3>
+        <ul>
+          <li><span class="vi">QC cuối chuyền và kiểm final</span><span class="zh" lang="zh-Hant">線尾檢驗、尾查</span></li>
+          <li><span class="vi">CFA, CFT theo chứng chỉ khách cấp</span><span class="zh" lang="zh-Hant">客戶認證的 CFA、CFT</span></li>
+          <li><span class="vi">Họp PPM, tiếp người đến kiểm hàng</span><span class="zh" lang="zh-Hant">產前會、接待驗貨人員</span></li>
+        </ul>
+      </article>
+      <article class="card depth reveal" style="--i:1">
+        <div class="lvl" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
+        <h3><span class="vi">Phối hợp</span><span class="zh" lang="zh-Hant">協調</span></h3>
+        <ul>
+          <li><span class="vi">Xưởng may, có QC/QE riêng</span><span class="zh" lang="zh-Hant">車縫廠（自有 QC/QE）</span></li>
+          <li><span class="vi">Xưởng thêu, có QC riêng</span><span class="zh" lang="zh-Hant">繡花廠（自有 QC）</span></li>
+          <li><span class="vi">Xưởng in–dập, có QC riêng</span><span class="zh" lang="zh-Hant">印花熱壓廠（自有 QC）</span></li>
+          <li><span class="vi">Kỹ thuật, khi có lỗi cần xử lý</span><span class="zh" lang="zh-Hant">技術部（異常處理時）</span></li>
+        </ul>
+      </article>
+      <article class="card depth reveal" style="--i:2">
+        <div class="lvl" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+        <h3><span class="vi">Biết là đủ</span><span class="zh" lang="zh-Hant">了解即可</span></h3>
+        <ul>
+          <li><span class="vi">Kho, kiểm vải</span><span class="zh" lang="zh-Hant">倉庫、驗布</span></li>
+          <li><span class="vi">Xả vải, cắt</span><span class="zh" lang="zh-Hant">鬆布、裁剪</span></li>
+          <li><span class="vi">Giặt</span><span class="zh" lang="zh-Hant">洗水</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 CẦN XÁC NHẬN ================= -->
+<section id="can-xac-nhan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <h2><span class="vi">Điểm em cần xác nhận</span><span class="zh" lang="zh-Hant">待確認事項</span></h2>
+      <p class="lead"><span class="vi">Những chỗ em còn hiểu chưa chắc. Tích vào ô khi đã được giải đáp; trang tự nhớ trên máy của anh/chị.</span><span class="zh" lang="zh-Hant">尚未確定的部分。確認後打勾，頁面會記在本機。</span></p>
+    </div>
+    <div class="card check-head reveal">
+      <div class="ck-score"><span id="ckCount">0</span><small>/<span id="ckTotal">11</span></small></div>
+      <div class="ck-track" aria-hidden="true"><div id="ckBar"></div></div>
+      <span class="small"><span class="vi">đã xác nhận</span><span class="zh inl" lang="zh-Hant"> 已確認</span></span>
+    </div>
+    <ul class="checks reveal">
+      <li><label><input type="checkbox" data-key="cfa"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">CFA và CFT viết đầy đủ là gì? Trong phòng ai đang có chứng chỉ, của khách nào, điều kiện để được đào tạo?</span><span class="zh" lang="zh-Hant">CFA、CFT 全稱？部門內誰持有哪家客戶的認證？取得條件？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="vqc"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">VQC là gì? FCA ở nhà máy có phải là Factory Certified Auditor như của Arc'teryx không?</span><span class="zh" lang="zh-Hant">VQC 是什麼？廠內的 FCA 是否即 Arc'teryx 的 Factory Certified Auditor？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="book"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Mũi tên "Book" trên sơ đồ nghĩa là gì? Có phải mô hình CFA kiểm xong rồi book khách đến kiểm lại không?</span><span class="zh" lang="zh-Hant">圖上「Book」箭頭代表什麼？是否為 CFA 驗完再預約客戶覆驗？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="matrix"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Bốn nhóm khách đã đúng chưa, còn thiếu khách nào? Tên Tory, Sita, ROS viết đầy đủ là gì?</span><span class="zh" lang="zh-Hant">四組客戶是否正確？有無遺漏？Tory、Sita、ROS 全名？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="agron"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Mũ adidas của nhà máy có đi qua Agron không?</span><span class="zh" lang="zh-Hant">adidas 帽子是否經由 Agron？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="press"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Kỹ thuật dập bằng máy ở xưởng in–dập cụ thể là gì?</span><span class="zh" lang="zh-Hant">印花熱壓廠的機器熱壓具體是什麼工藝？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="wash"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Giặt hàng đã cắt làm trước hay sau thêu và in–dập?</span><span class="zh" lang="zh-Hant">裁片水洗在繡花、印壓之前還是之後？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="needle"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Máy dò kim phân biệt nút chóp kim loại theo thiết kế với kim gãy bằng cách nào?</span><span class="zh" lang="zh-Hant">驗針機如何區分設計內金屬配件與斷針？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="relax"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Thời gian xả vải tiêu chuẩn cho từng loại vải co giãn là bao lâu, ghi vào biểu nào?</span><span class="zh" lang="zh-Hant">各彈性布的標準鬆布時間與記錄表？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="team"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Phòng 11 người chia việc theo khách hay theo khâu? Em sẽ theo nhóm nào?</span><span class="zh" lang="zh-Hant">11 人依客戶或依工序分工？我將跟哪一組？</span></span></label></li>
+      <li><label><input type="checkbox" data-key="recap"><span class="box"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2.5 7.5l3 3 6-7"/></svg></span><span class="txt"><span class="vi">Em xin xem các recap PPM và báo cáo final gần đây để học được không?</span><span class="zh" lang="zh-Hant">可否參閱近期產前會紀要與尾查報告？</span></span></label></li>
+    </ul>
+
+    <h3 class="sub-h reveal"><span class="vi">Kế hoạch ngày mai</span><span class="zh" lang="zh-Hant">明日計畫</span></h3>
+    <ol class="plan">
+      <li class="card reveal"><div class="p-n">1</div><p><span class="vi">Quay lại xưởng may, ghi đúng tên và thứ tự từng công đoạn.</span><span class="zh" lang="zh-Hant">重回車縫廠，記錄各工序的正確名稱與順序。</span></p></li>
+      <li class="card reveal" style="--i:1"><div class="p-n">2</div><p><span class="vi">Theo QC một buổi kiểm final thực tế, xem cách lấy mẫu và ghi báo cáo.</span><span class="zh" lang="zh-Hant">跟隨 QC 觀摩一次實際尾查，學習抽樣與填寫報告。</span></p></li>
+      <li class="card reveal" style="--i:2"><div class="p-n">3</div><p><span class="vi">Cập nhật bản đồ lên v0.2 sau khi các điểm trên được xác nhận.</span><span class="zh" lang="zh-Hant">待上述事項確認後，更新為 v0.2。</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= 06 THUẬT NGỮ ================= -->
+<section id="thuat-ngu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <h2><span class="vi">Thuật ngữ Việt · Trung · Anh</span><span class="zh" lang="zh-Hant">越・中・英名詞對照</span></h2>
+      <p class="lead"><span class="vi">26 thuật ngữ gặp trong ngày đầu, xếp theo thứ tự xuất hiện trên dây chuyền. Gõ bằng tiếng nào cũng tìm được, không dấu cũng được.</span><span class="zh" lang="zh-Hant">首日接觸的 26 個術語，依流程順序排列；任一語言皆可搜尋。</span></p>
+    </div>
+    <div class="search reveal">
+      <input type="search" id="termSearch" placeholder="Tìm: xa vai, 驗針, bulk…" aria-label="Tìm thuật ngữ">
+      <span class="count"><span id="termCount">26</span> / 26</span>
+    </div>
+    <div class="terms" id="terms">
+      <div class="term"><b class="t-vi">Kho nguyên phụ liệu</b><span class="t-zh">倉庫</span><span class="t-en">Warehouse</span><span class="t-def"><span class="vi">Nơi nhận và cất vải, phụ liệu</span><span class="zh" lang="zh-Hant">收存布料與副料之處</span></span></div>
+      <div class="term"><b class="t-vi">Xử lý đặc biệt</b><span class="t-zh">特採</span><span class="t-en">Concession</span><span class="t-def"><span class="vi">Tạm chấp nhận có điều kiện hàng chưa đạt</span><span class="zh" lang="zh-Hant">有條件暫收未達標物料</span></span></div>
+      <div class="term"><b class="t-vi">Khu hàng không đạt</b><span class="t-zh">不合格區域</span><span class="t-en">Rejected area</span><span class="t-def"><span class="vi">Khu biển đỏ, xử lý trong 6 tháng</span><span class="zh" lang="zh-Hant">紅牌區，6 個月內處理</span></span></div>
+      <div class="term"><b class="t-vi">Kiểm vải</b><span class="t-zh">驗布</span><span class="t-en">Fabric inspection</span><span class="t-def"><span class="vi">Soi lỗi vải trên máy có đèn</span><span class="zh" lang="zh-Hant">驗布機檢查布面瑕疵</span></span></div>
+      <div class="term"><b class="t-vi">Thang 4 điểm</b><span class="t-zh">四分制</span><span class="t-en">4-point system</span><span class="t-def"><span class="vi">Chấm lỗi vải theo độ dài vết lỗi</span><span class="zh" lang="zh-Hant">依瑕疵長度扣分</span></span></div>
+      <div class="term"><b class="t-vi">Xả vải</b><span class="t-zh">鬆布</span><span class="t-en">Fabric relaxing</span><span class="t-def"><span class="vi">Cho vải co giãn hết căng trước khi cắt</span><span class="zh" lang="zh-Hant">彈性布裁前釋放張力</span></span></div>
+      <div class="term"><b class="t-vi">Dao chặt</b><span class="t-zh">刀模</span><span class="t-en">Cutting die</span><span class="t-def"><span class="vi">Khuôn cắt theo dưỡng</span><span class="zh" lang="zh-Hant">依紙版裁切的模具</span></span></div>
+      <div class="term"><b class="t-vi">Thêu</b><span class="t-zh">繡花</span><span class="t-en">Embroidery</span><span class="t-def"><span class="vi">Thêu logo lên mảnh vải</span><span class="zh" lang="zh-Hant">將標誌繡於布片</span></span></div>
+      <div class="term"><b class="t-vi">In lưới</b><span class="t-zh">網版印刷</span><span class="t-en">Screen printing</span><span class="t-def"><span class="vi">Quét mực qua khung hở hình</span><span class="zh" lang="zh-Hant">透過網框刮印油墨</span></span></div>
+      <div class="term"><b class="t-vi">Dập (ép nhiệt)</b><span class="t-zh">熱壓</span><span class="t-en">Heat press</span><span class="t-def"><span class="vi">Ép hình lên vải bằng máy ở xưởng in–dập (kỹ thuật cần xác nhận)</span><span class="zh" lang="zh-Hant">印花熱壓廠以機器壓上圖案（工藝待確認）</span></span></div>
+      <div class="term"><b class="t-vi">May</b><span class="t-zh">車縫</span><span class="t-en">Sewing</span><span class="t-def"><span class="vi">Ghép các mảnh thành mũ</span><span class="zh" lang="zh-Hant">將裁片縫合成帽</span></span></div>
+      <div class="term"><b class="t-vi">Lưỡi trai</b><span class="t-zh">帽簷</span><span class="t-en">Visor / Brim</span><span class="t-def"><span class="vi">Phần mái che phía trước</span><span class="zh" lang="zh-Hant">帽子前方遮陽部分</span></span></div>
+      <div class="term"><b class="t-vi">Đệm mồ hôi</b><span class="t-zh">汗帶</span><span class="t-en">Sweatband</span><span class="t-def"><span class="vi">Dải lót thấm mồ hôi bên trong</span><span class="zh" lang="zh-Hant">帽內吸汗內襯</span></span></div>
+      <div class="term"><b class="t-vi">Nút chóp</b><span class="t-zh">帽頂扣</span><span class="t-en">Top button</span><span class="t-def"><span class="vi">Nút trên đỉnh mũ</span><span class="zh" lang="zh-Hant">帽頂中央的扣子</span></span></div>
+      <div class="term"><b class="t-vi">Định hình</b><span class="t-zh">定型</span><span class="t-en">Shaping</span><span class="t-def"><span class="vi">Hấp, sấy cho mũ vào form</span><span class="zh" lang="zh-Hant">蒸燙烘乾使帽型穩定</span></span></div>
+      <div class="term"><b class="t-vi">Giặt</b><span class="t-zh">洗水</span><span class="t-en">Washing</span><span class="t-def"><span class="vi">Giặt sấy theo yêu cầu mã hàng</span><span class="zh" lang="zh-Hant">依款式要求洗烘</span></span></div>
+      <div class="term"><b class="t-vi">Dò kim</b><span class="t-zh">驗針</span><span class="t-en">Needle detection</span><span class="t-def"><span class="vi">Tìm kim gãy, kim loại lạ</span><span class="zh" lang="zh-Hant">檢出斷針與異常金屬</span></span></div>
+      <div class="term"><b class="t-vi">AQL</b><span class="t-zh">允收品質水準</span><span class="t-en">Acceptable Quality Limit</span><span class="t-def"><span class="vi">Lấy bao nhiêu mẫu, sai tối đa bao nhiêu</span><span class="zh" lang="zh-Hant">抽幾件、最多允許幾件不良</span></span></div>
+      <div class="term"><b class="t-vi">Proto</b><span class="t-zh">開發樣</span><span class="t-en">Prototype</span><span class="t-def"><span class="vi">Mẫu phát triển, sửa nhiều vòng</span><span class="zh" lang="zh-Hant">反覆修改的開發樣品</span></span></div>
+      <div class="term"><b class="t-vi">SMS</b><span class="t-zh">銷售樣</span><span class="t-en">Salesman Sample</span><span class="t-def"><span class="vi">Mẫu chào hàng thị trường</span><span class="zh" lang="zh-Hant">向市場推介的樣品</span></span></div>
+      <div class="term"><b class="t-vi">PPS</b><span class="t-zh">產前樣</span><span class="t-en">Pre-Production Sample</span><span class="t-def"><span class="vi">Mẫu chuẩn cho đại hàng</span><span class="zh" lang="zh-Hant">大貨的標準樣</span></span></div>
+      <div class="term"><b class="t-vi">PPM</b><span class="t-zh">產前會議</span><span class="t-en">Pre-Production Meeting</span><span class="t-def"><span class="vi">Họp trước sản xuất</span><span class="zh" lang="zh-Hant">量產前的跨部門會議</span></span></div>
+      <div class="term"><b class="t-vi">Biên bản họp</b><span class="t-zh">會議紀要</span><span class="t-en">Recap</span><span class="t-def"><span class="vi">Tóm tắt quyết định sau họp</span><span class="zh" lang="zh-Hant">會後決議摘要</span></span></div>
+      <div class="term"><b class="t-vi">Đại hàng</b><span class="t-zh">大貨</span><span class="t-en">Bulk</span><span class="t-def"><span class="vi">Hàng sản xuất loạt</span><span class="zh" lang="zh-Hant">量產貨品</span></span></div>
+      <div class="term"><b class="t-vi">Kiểm giữa / cuối</b><span class="t-zh">中查／尾查</span><span class="t-en">Inline / Final</span><span class="t-def"><span class="vi">Kiểm khi đang làm / khi đã xong</span><span class="zh" lang="zh-Hant">生產中／完成後檢驗</span></span></div>
+      <div class="term"><b class="t-vi">Kiểm định bên thứ ba</b><span class="t-zh">第三方驗貨</span><span class="t-en">Third-party inspection</span><span class="t-def"><span class="vi">Đơn vị độc lập kiểm thay khách</span><span class="zh" lang="zh-Hant">獨立機構代客戶驗貨</span></span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="vi">Bản v0.1 · 13/10/2026 · tổng hợp từ buổi hướng dẫn của chị Thắm; chỗ nào sai là do em hiểu chưa đúng.</span><span class="zh" lang="zh-Hant">v0.1・2026 年 10 月 13 日・整理自Thắm 姐的指導，如有錯誤是本人理解不足。</span></p>
+    <p><span class="vi">Chữ Hán dùng dạng phồn thể cho khớp với tài liệu trong nhà máy.</span><span class="zh" lang="zh-Hant">中文採繁體，與廠內文件一致。</span></p>
+    
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const doc = document.documentElement;
+  doc.classList.add('js');
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* bỏ qua khi trình duyệt chặn lưu trữ */ } }
+  };
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Đường ray 10 ga ---------- */
+  const rail = $('#rail'), token = $('#capToken'), runBtn = $('#runBtn');
+  const stops = $$('.stop'), panels = $$('.stop-detail');
+  const STEP_MS = 1150; // tốc độ "Cho mũ chạy" (ms mỗi ga)
+  let active = 1, timer = null;
+
+  function placeToken() {
+    const dot = stops[active - 1] && stops[active - 1].querySelector('.stop-dot');
+    if (!dot || !token) return;
+    const a = token.parentElement.getBoundingClientRect(), b = dot.getBoundingClientRect();
+    if (!b.width) return;
+    const x = b.left - a.left + b.width / 2 - 17;
+    const y = b.top - a.top - 32;
+    token.style.transform = `translate(${x}px, ${y}px)`;
+    token.classList.add('is-ready');
+  }
+  function activate(n, focus) {
+    active = n;
+    stops.forEach((s, i) => {
+      const on = i === n - 1;
+      s.classList.toggle('is-active', on);
+      s.classList.toggle('is-passed', i < n - 1);
+      s.setAttribute('aria-selected', String(on));
+      s.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach((p, i) => p.classList.toggle('is-active', i === n - 1));
+    placeToken();
+    if (focus) stops[n - 1].focus();
+  }
+  function stopRun() {
+    if (timer) { clearInterval(timer); timer = null; }
+    runBtn.setAttribute('aria-pressed', 'false');
+  }
+  function startRun() {
+    stopRun();
+    runBtn.setAttribute('aria-pressed', 'true');
+    activate(1);
+    timer = setInterval(() => {
+      if (active >= stops.length) { stopRun(); return; }
+      activate(active + 1);
+    }, reduced ? 600 : STEP_MS);
+  }
+  stops.forEach((s, i) => {
+    s.addEventListener('click', () => { stopRun(); activate(i + 1); });
+    s.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); stopRun(); activate(Math.min(stops.length, active + 1), true); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); stopRun(); activate(Math.max(1, active - 1), true); }
+      if (e.key === 'Home') { e.preventDefault(); stopRun(); activate(1, true); }
+      if (e.key === 'End') { e.preventDefault(); stopRun(); activate(stops.length, true); }
+    });
+  });
+  runBtn.addEventListener('click', () => (timer ? stopRun() : startRun()));
+  addEventListener('resize', () => requestAnimationFrame(placeToken), { passive: true });
+
+  /* ---------- Ngôn ngữ và giao diện ---------- */
+  const langBtns = $$('[data-set-lang]');
+  function setLang(l) {
+    doc.dataset.lang = l;
+    langBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === l)));
+    store.set('pc-lang', l);
+    requestAnimationFrame(placeToken);
+  }
+  langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
+  $('#themeBtn').addEventListener('click', () => {
+    const cur = doc.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    doc.dataset.theme = next;
+    store.set('pc-theme', next);
+  });
+  $('#printBtn').addEventListener('click', () => window.print());
+
+  /* ---------- Thanh tiến độ đường may ---------- */
+  const bar = $('#progress');
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const h = doc.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`;
+      ticking = false;
+    });
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Máy tính thang 4 điểm ---------- */
+  function calcFP() {
+    const p = parseFloat($('#fpPts').value), y = parseFloat($('#fpYd').value), w = parseFloat($('#fpW').value);
+    const out = $('#fpOut'), grade = $('#fpGrade'), marker = $('#fpMarker');
+    if (!(p >= 0 && y > 0 && w > 0)) { out.textContent = '—'; grade.textContent = '?'; grade.dataset.g = ''; return; }
+    const s = 3600 * p / y / w;
+    out.textContent = s.toFixed(1);
+    const g = s <= 29 ? 'A' : s <= 47 ? 'B' : s <= 62 ? 'C' : 'X';
+    grade.textContent = g === 'X' ? '> C' : g;
+    grade.dataset.g = g;
+    marker.style.left = (Math.min(s, 80) / 80 * 100) + '%';
+  }
+  $$('#tool-4pt input').forEach(i => i.addEventListener('input', calcFP));
+
+  /* ---------- AQL trực quan (Level II, lấy mẫu một lần, kiểm thường) ---------- */
+  const AQL = {
+    80:  { '1.5': [3, 4],  '2.5': [5, 6],   '4.0': [7, 8] },
+    125: { '1.5': [5, 6],  '2.5': [7, 8],   '4.0': [10, 11] },
+    200: { '1.5': [7, 8],  '2.5': [10, 11], '4.0': [14, 15] }
+  };
+  const LOT_VI = { 80: '501–1.200', 125: '1.201–3.200', 200: '3.201–10.000' };
+  const LOT_ZH = { 80: '501–1,200', 125: '1,201–3,200', 200: '3,201–10,000' };
+  let aqlN = 125, aqlL = '2.5';
+  function renderAQL() {
+    const [ac, re] = AQL[aqlN][aqlL];
+    let html = '';
+    for (let i = 0; i < aqlN; i++) html += `<i style="--k:${i}" class="${i < ac ? 'd-ok' : i === ac ? 'd-re' : ''}"></i>`;
+    $('#aqlDots').innerHTML = html;
+    $('#aqlText').innerHTML =
+      `<span class="vi">Lô ${LOT_VI[aqlN]} chiếc: lấy <b>${aqlN}</b> chiếc. AQL ${aqlL}: tối đa <b>${ac}</b> lỗi thì <b class="ok">ĐẠT</b>; lỗi thứ <b>${re}</b> là <b class="bad">RỚT</b> cả lô.</span>` +
+      `<span class="zh" lang="zh-Hant">批量 ${LOT_ZH[aqlN]} 件：抽 <b>${aqlN}</b> 件。AQL ${aqlL}：不良 ≤ <b>${ac}</b> 件<b class="ok">允收</b>；第 <b>${re}</b> 件不良即整批<b class="bad">拒收</b>。</span>`;
+    $$('[data-lot]').forEach(b => b.setAttribute('aria-checked', String(+b.dataset.lot === aqlN)));
+    $$('[data-aql]').forEach(b => b.setAttribute('aria-checked', String(b.dataset.aql === aqlL)));
+  }
+  $$('[data-lot]').forEach(b => b.addEventListener('click', () => { aqlN = +b.dataset.lot; renderAQL(); }));
+  $$('[data-aql]').forEach(b => b.addEventListener('click', () => { aqlL = b.dataset.aql; renderAQL(); }));
+
+  /* ---------- Checklist ---------- */
+  const checks = $$('.checks input[type=checkbox]');
+  let saved = {};
+  try { saved = JSON.parse(store.get('pc-checks') || '{}') || {}; } catch (e) { saved = {}; }
+  function updChecks() {
+    const done = checks.filter(c => c.checked).length;
+    $('#ckCount').textContent = done;
+    $('#ckTotal').textContent = checks.length;
+    $('#ckBar').style.transform = `scaleX(${checks.length ? done / checks.length : 0})`;
+  }
+  checks.forEach(c => {
+    c.checked = !!saved[c.dataset.key];
+    c.addEventListener('change', () => { saved[c.dataset.key] = c.checked; store.set('pc-checks', JSON.stringify(saved)); updChecks(); });
+  });
+
+  /* ---------- Tìm thuật ngữ (không dấu cũng được) ---------- */
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
+  const terms = $$('.term');
+  terms.forEach(t => { t.dataset.q = norm(t.textContent); });
+  $('#termSearch').addEventListener('input', (e) => {
+    const q = norm(e.target.value.trim());
+    let shown = 0;
+    terms.forEach(t => { const hit = !q || t.dataset.q.includes(q); t.hidden = !hit; if (hit) shown++; });
+    $('#termCount').textContent = shown;
+  });
+
+  /* ---------- Xuất hiện khi cuộn + đếm số ---------- */
+  function countUp(el) {
+    const end = parseInt(el.dataset.count, 10);
+    if (reduced || isNaN(end)) { el.textContent = end; return; }
+    const t0 = performance.now(), dur = 900;
+    const step = (now) => {
+      const k = Math.min(1, (now - t0) / dur);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const revealEls = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        $$('[data-count]', e.target).forEach(countUp);
+        if (e.target.contains(rail)) setTimeout(placeToken, 850);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-in'));
+  }
+
+  /* ---------- Khởi động ---------- */
+  const savedTheme = store.get('pc-theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') doc.dataset.theme = savedTheme;
+  setLang(store.get('pc-lang') || 'both');
+  activate(1);
+  calcFP();
+  renderAQL();
+  updChecks();
+  onScroll();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeToken);
+  addEventListener('load', placeToken);
+})();
+</script>
+</body>
+</html>
