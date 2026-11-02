@@ -184,11 +184,11 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
 <header class="top"><div class="in">
   <h1>Weili · Học quy trình và từ xưởng <small>品保部 · __N__ từ</small></h1>
   <nav class="nav" id="nav">
-    <a href="#so-do" data-v="so-do">Sơ đồ</a>
-    <a href="#tu-vung" data-v="tu-vung">Từ vựng</a>
-    <a href="#hoc-the" data-v="hoc-the">Thẻ học</a>
-    <a href="#trac-nghiem" data-v="trac-nghiem">Trắc nghiệm</a>
-    <a href="#cach-hoc" data-v="cach-hoc">Cách học</a>
+    <a href="#so-do" data-v="so-do" data-view="so-do">Sơ đồ</a>
+    <a href="#tu-vung" data-v="tu-vung" data-view="tu-vung">Từ vựng</a>
+    <a href="#hoc-the" data-v="hoc-the" data-view="hoc-the">Thẻ học</a>
+    <a href="#trac-nghiem" data-v="trac-nghiem" data-view="trac-nghiem">Trắc nghiệm</a>
+    <a href="#cach-hoc" data-v="cach-hoc" data-view="cach-hoc">Cách học</a>
   </nav>
 </div></header>
 
@@ -256,7 +256,8 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0"><span style="flex:1">Thẻ nghe (nghe phát âm, đoán từ)</span><button class="tg" id="sListen"></button></div>
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0"><span style="flex:1">Thẻ nói (nhìn tiếng Việt, nói tiếng Trung)</span><button class="tg" id="sSpeak"></button></div>
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0"><span style="flex:1">Tự đọc phát âm khi lật thẻ</span><button class="tg" id="sTts"></button></div>
-      <p class="hint">Thẻ nghe và thẻ nói chỉ mở sau khi thẻ đọc của từ đó đã qua giai đoạn học mới.</p>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0"><span style="flex:1">Gợi ý pinyin ở mặt trước (mặc định tắt: lật thẻ mới thấy)</span><button class="tg" id="sFrontPy"></button></div>
+      <p class="hint">Thẻ đọc chỉ hiện chữ Hán, lật mới thấy pinyin. Thẻ nghe và thẻ nói chỉ mở sau khi thẻ đọc của từ đó đã qua giai đoạn học mới.</p>
     </div>
     <div class="card">
       <b>Sao lưu tiến độ</b>
@@ -309,18 +310,18 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
 <section class="view howto" id="v-cach-hoc">
   <h2>Vòng học mỗi ngày</h2>
   <div class="card"><ol>
-    <li><b>Sáng, 10 phút trước giờ làm:</b> vào <a href="#hoc-the">Học thẻ</a>, chọn khâu sắp xuống xưởng. Làm hết thẻ đến hạn trước, rồi mới học thẻ mới.</li>
-    <li><b>Trước khi xuống xưởng, 5 phút:</b> mở <a href="#so-do">Sơ đồ</a> khâu đó, tắt nút Tiếng Việt, đọc to các câu tiếng Trung và phần “Cách kiểm tra”. Bấm vào từ để nghe phát âm.</li>
+    <li><b>Sáng, 10 phút trước giờ làm:</b> vào <a href="#hoc-the" data-view="hoc-the">Thẻ học</a>, chọn khâu sắp xuống xưởng. Làm hết thẻ đến hạn trước, rồi mới học thẻ mới.</li>
+    <li><b>Trước khi xuống xưởng, 5 phút:</b> mở <a href="#so-do" data-view="so-do">Sơ đồ</a> khâu đó, tắt nút Tiếng Việt, đọc to các câu tiếng Trung và phần “Cách kiểm tra”. Bấm vào từ để nghe phát âm.</li>
     <li><b>Ở xưởng:</b> chụp biển, biểu mẫu, tem. Từ nào trên biểu mẫu khác với từ trong file, ghi lại và hỏi tổ trưởng (câu mẫu bên dưới). Chữ trên biểu mẫu của xưởng luôn đúng hơn từ điển.</li>
     <li><b>Chiều, khi viết báo cáo:</b> cố dùng ít nhất 5 từ đã học. Trước khi gửi, dò lại theo mục “Quy tắc khi viết cho sếp”.</li>
-    <li><b>Cuối tuần, 15 phút:</b> làm <a href="#trac-nghiem">Trắc nghiệm</a> 40 câu toàn bộ. Câu sai tự vào thẻ học để ôn tuần sau.</li>
+    <li><b>Cuối tuần, 15 phút:</b> làm <a href="#trac-nghiem" data-view="trac-nghiem">Trắc nghiệm</a> 40 câu toàn bộ. Câu sai tự vào thẻ học để ôn tuần sau.</li>
   </ol></div>
 
   <h2>Thang “thuộc” bốn nấc</h2>
   <div class="card">
-    <p style="margin:0">Mỗi từ đi lần lượt bốn nấc. Ứng dụng tự chuyển: pinyin ẩn khi thẻ đọc đã cách nhau từ 7 ngày; thẻ nghe và thẻ nói mở sau khi học xong thẻ đọc.</p>
+    <p style="margin:0">Mặt trước thẻ đọc chỉ có chữ Hán; lật thẻ mới thấy pinyin và nghĩa, để mắt quen mặt chữ ngay từ đầu. Thẻ nghe và thẻ nói mở sau khi học xong thẻ đọc. Một từ tính là “đã thuộc” khi thẻ đọc cách nhau từ 7 ngày.</p>
     <div class="ladder">
-      <div><b>1</b>Đọc chữ có pinyin</div><div><b>2</b>Đọc chữ không pinyin</div><div><b>3</b>Nghe ra từ</div><div><b>4</b>Nói, viết ra từ</div>
+      <div><b>1</b>Nhìn chữ, nhớ âm và nghĩa</div><div><b>2</b>Nghe ra từ</div><div><b>3</b>Nói ra từ</div><div><b>4</b>Dùng đúng trong báo cáo</div>
     </div>
   </div>
 
@@ -373,7 +374,7 @@ const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.ra
 
 // ---------- lưu ----------
 const LS = 'weili_hoc_v2';
-function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, py:true, vn:true, zh:true}, daily:{d:'', n:0}, quiz:[]}; }
+function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true}, daily:{d:'', n:0}, quiz:[]}; }
 function normalize(o){ const b = blank(); if(!o || o.v !== 2) return b; return {v:2, updated:o.updated||0, cards:o.cards||{}, marks:o.marks||{}, settings:Object.assign(b.settings,o.settings||{}), daily:o.daily||b.daily, quiz:o.quiz||[]}; }
 let S = blank();
 try { const t = localStorage.getItem(LS); if(t) S = normalize(JSON.parse(t)); } catch(e) {}
@@ -548,15 +549,16 @@ function exBlock(w){ return w.ex ? `<div class="ex"><div class="z" lang="zh">${e
 function renderCard(){
   const box = $('cardbox'), dock = $('dock');
   if(!cur){
-    box.innerHTML = `<div style="padding:40px 10px"><h2 style="text-transform:none;font-size:22px;color:var(--ink);letter-spacing:0">Xong phần hôm nay</h2><p class="hint">${newLeft()<=0 ? 'Đã đủ số thẻ mới hôm nay. Muốn học thêm thì tăng số thẻ mới.' : 'Không còn thẻ đến hạn trong khâu này.'}</p><p class="hint">Muốn luyện thêm thì làm <a href="#trac-nghiem">Trắc nghiệm</a>.</p></div>`;
+    box.innerHTML = `<div style="padding:40px 10px"><h2 style="text-transform:none;font-size:22px;color:var(--ink);letter-spacing:0">Xong phần hôm nay</h2><p class="hint">${newLeft()<=0 ? 'Đã đủ số thẻ mới hôm nay. Muốn học thêm thì tăng số thẻ mới.' : 'Không còn thẻ đến hạn trong khâu này.'}</p><p class="hint">Muốn luyện thêm thì làm <a href="#trac-nghiem" data-view="trac-nghiem">Trắc nghiệm</a>.</p></div>`;
     dock.innerHTML = `<button class="show" id="fHomeBtn">Về danh sách</button>`; $('fHomeBtn').onclick = () => $('fBack').click(); box.onclick = null; return;
   }
   const w = cur.w, s = STI[w.st], kn = known(w.zh), long = w.zh.length>4 ? ' long' : '';
   const chipS = `<span class="sch">${s.n}. ${esc(s.vn)} · ${esc(s.zh)}</span>`;
   let front, back;
   if(cur.m==='r'){
-    front = `${chipS}<div class="kind">Đọc mặt chữ${kn?' · đã thuộc, không pinyin':''}</div><div class="fhz${long}" lang="zh">${esc(w.zh)}</div>${kn?'':`<div class="fpy">${esc(w.py)}</div>`}`;
-    back = `${kn?`<div class="fpy">${esc(w.py)}</div>`:''}<div class="avn">${esc(w.vn)}</div>`;
+    const hintPy = S.settings.frontPy && !kn;
+    front = `${chipS}<div class="kind">Đọc mặt chữ</div><div class="fhz${long}" lang="zh">${esc(w.zh)}</div>${hintPy?`<div class="fpy">${esc(w.py)}</div>`:''}`;
+    back = `${hintPy?'':`<div class="fpy">${esc(w.py)}</div>`}<div class="avn">${esc(w.vn)}</div>`;
   } else if(cur.m==='l'){
     front = `${chipS}<div class="kind">Nghe và đoán từ</div><button class="tts" id="playL" style="font-size:20px;padding:14px 26px">🔊 Nghe</button><div class="hint" style="margin-top:8px">Nói to từ đó và nghĩa của nó</div>`;
     back = `<div class="fhz${long}" lang="zh">${esc(w.zh)}</div><div class="fpy">${esc(w.py)}</div><div class="avn">${esc(w.vn)}</div>`;
@@ -574,7 +576,7 @@ function renderCard(){
   box.onclick = null;
   box.innerHTML = front + `<div class="ans">${back}${exBlock(w)}${w.note?`<div class="nt">${esc(w.note)}</div>`:''}
     <button class="tts" id="say">🔊 Nghe</button>${w.ex?' <button class="tts" id="sayEx">🔊 Câu</button>':''}<br>
-    <button class="mark${kn?' on':''}" id="mk">${kn?'✓ Đã thuộc (bấm để hiện lại pinyin)':'Đánh dấu đã thuộc · ẩn pinyin'}</button></div>`;
+    <button class="mark${kn?' on':''}" id="mk">${kn?'✓ Đã thuộc (bấm để bỏ)':'Đánh dấu đã thuộc'}</button></div>`;
   $('say').onclick = e => { e.stopPropagation(); speak(w.zh); };
   if(w.ex) $('sayEx').onclick = e => { e.stopPropagation(); speak(w.ex.zh); };
   if(cur.m==='l') $('playL').onclick = e => { e.stopPropagation(); speak(w.zh); };
@@ -599,9 +601,9 @@ document.addEventListener('keydown', e => {
   else if(flipped && /^[1-4]$/.test(e.key)) grade(+e.key);
 });
 function renderSet(){ $('sNew').value = String(S.settings.newPerDay);
-  for(const [id,k] of [['sListen','listen'],['sSpeak','speak'],['sTts','tts']]){ const b=$(id); b.textContent = S.settings[k]?'Bật':'Tắt'; b.setAttribute('aria-pressed', S.settings[k]); } }
+  for(const [id,k] of [['sListen','listen'],['sSpeak','speak'],['sTts','tts'],['sFrontPy','frontPy']]){ const b=$(id); b.textContent = S.settings[k]?'Bật':'Tắt'; b.setAttribute('aria-pressed', S.settings[k]); } }
 $('sNew').onchange = () => { S.settings.newPerDay = +$('sNew').value; save(); renderDecks(); };
-for(const [id,k] of [['sListen','listen'],['sSpeak','speak'],['sTts','tts']]) $(id).onclick = () => { S.settings[k] = !S.settings[k]; save(); renderSet(); renderDecks(); };
+for(const [id,k] of [['sListen','listen'],['sSpeak','speak'],['sTts','tts'],['sFrontPy','frontPy']]) $(id).onclick = () => { S.settings[k] = !S.settings[k]; save(); renderSet(); renderDecks(); };
 $('bCopy').onclick = async () => { const t = JSON.stringify(S); $('bText').value = t; try { await navigator.clipboard.writeText(t); $('bMsg').textContent='Đã chép mã sao lưu.'; } catch(e){ $('bText').select(); $('bMsg').textContent='Mã đang hiện trong ô, hãy tự chọn và chép.'; } };
 $('bLoad').onclick = () => { try { const o = normalize(JSON.parse($('bText').value)); if(!Object.keys(o.cards).length && !o.updated) throw 0; S=o; save(); applyToggles(); renderSet(); renderDecks(); $('bMsg').textContent='Đã khôi phục tiến độ.'; } catch(e){ $('bMsg').textContent='Mã không đúng, chưa khôi phục.'; } };
 let resetArm = 0;
@@ -635,11 +637,11 @@ function renderQ(){
   $('qPos').textContent = 'Câu ' + (qi+1) + '/' + Q.length; $('qScore').textContent = qRight + ' đúng'; $('qBar').style.width = (100*qi/Q.length) + '%';
   const q = Q[qi], w = q.w, s = STI[w.st];
   let prompt = '';
-  if(q.type==='h2v') prompt = `<div class="kind">Từ này nghĩa là gì?</div><div class="fhz${w.zh.length>4?' long':''}" lang="zh">${esc(w.zh)}</div>${known(w.zh)?'':`<div class="fpy">${esc(w.py)}</div>`}`;
+  if(q.type==='h2v') prompt = `<div class="kind">Từ này nghĩa là gì?</div><div class="fhz${w.zh.length>4?' long':''}" lang="zh">${esc(w.zh)}</div>`;
   else if(q.type==='v2h') prompt = `<div class="kind">Tiếng Trung là gì?</div><div class="fvn">${esc(w.vn)}</div>`;
   else if(q.type==='py') prompt = `<div class="kind">Đọc thế nào?</div><div class="fhz${w.zh.length>4?' long':''}" lang="zh">${esc(w.zh)}</div>`;
   else prompt = `<div class="kind">Nghe và chọn từ đúng</div><button class="tts" id="qPlay" style="font-size:20px;padding:14px 26px">🔊 Nghe</button>`;
-  $('qBox').innerHTML = `<span class="sch">${s.n}. ${esc(s.vn)}</span>${prompt}<div class="opts">${q.opts.map((o,i) => `<button class="opt" data-i="${i}">${q.field==='zh' ? `<span lang="zh">${esc(o.zh)}</span>${q.type==='lis'?'':`<span class="op">${esc(o.py)}</span>`}` : esc(o[q.field])}</button>`).join('')}</div><div id="qFb"></div>`;
+  $('qBox').innerHTML = `<span class="sch">${s.n}. ${esc(s.vn)}</span>${prompt}<div class="opts">${q.opts.map((o,i) => `<button class="opt" data-i="${i}">${q.field==='zh' ? `<span lang="zh">${esc(o.zh)}</span>` : esc(o[q.field])}</button>`).join('')}</div><div id="qFb"></div>`;
   if(q.type==='lis'){ $('qPlay').onclick = () => speak(w.zh); speak(w.zh); }
   $('qBox').querySelectorAll('.opt').forEach(b => b.onclick = () => answer(+b.dataset.i));
 }
@@ -662,7 +664,7 @@ function finishQ(){
     ${qWrong.length?`<p class="hint">Từ trả lời sai đã được đưa vào thẻ học để ôn ngay:</p><div class="chips" style="justify-content:center">${qWrong.map(chip).join('')}</div>`:'<p class="hint">Không sai câu nào.</p>'}
     <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap"><button class="ib pri" id="qAgain">Làm bài mới</button>${qWrong.length?'<button class="ib" id="qGoCards">Ôn từ sai trong Thẻ học</button>':''}</div></div>`;
   $('qAgain').onclick = () => $('qQuit').click();
-  if(qWrong.length) $('qGoCards').onclick = () => { location.hash = 'hoc-the'; };
+  if(qWrong.length) $('qGoCards').onclick = () => showView('hoc-the');
 }
 
 // ========== CÁCH HỌC: câu hỏi mẫu ==========
@@ -677,17 +679,28 @@ $('askList').addEventListener('click', e => { const b = e.target.closest('[data-
 
 // ========== điều hướng ==========
 const VIEWS = ['so-do','tu-vung','hoc-the','trac-nghiem','cach-hoc'];
-function route(){
-  const h = location.hash.replace('#',''), v = VIEWS.includes(h) ? h : 'so-do';
+function showView(v){
+  if(!VIEWS.includes(v)) v = 'so-do';
   document.querySelectorAll('.view').forEach(x => x.classList.toggle('on', x.id==='v-'+v));
   document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.dataset.v===v));
   if(v==='tu-vung') renderVocab();
   if(v==='hoc-the'){ $('fStudy').hidden = true; $('fHome').hidden = false; renderSet(); renderDecks(); }
   if(v==='trac-nghiem'){ $('qRun').hidden = true; $('qSetup').hidden = false; renderHist(); }
   closeSheet();
+  try { window.scrollTo(0,0); } catch(e) {}
+  // chỉ ghi #tên vào địa chỉ khi trang mở bằng link thật; trong khung xem trước của ứng dụng thì bỏ qua
+  try { if(/^(https?|file):$/.test(location.protocol)) history.replaceState(null, '', '#'+v); } catch(e) {}
 }
-window.addEventListener('hashchange', () => { route(); window.scrollTo(0,0); });
-applyToggles(); route();
+// mọi nút chuyển tab đều chạy bằng script, không để trình duyệt tự nhảy theo #
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-view]');
+  if(!a) return;
+  e.preventDefault();
+  showView(a.dataset.view);
+});
+let startView = 'so-do';
+try { const h = (location.hash||'').replace('#',''); if(VIEWS.includes(h)) startView = h; } catch(e) {}
+applyToggles(); showView(startView);
 </script>
 </body>
 </html>

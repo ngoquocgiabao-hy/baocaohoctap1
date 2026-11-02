@@ -11,7 +11,7 @@
 
 Mở file bằng trình duyệt (điện thoại hay máy tính đều được). Tiến độ thẻ học lưu trong trình duyệt đang dùng; đổi máy thì vào **Thẻ học → Sao lưu tiến độ** để chép mã sang.
 
-Các tab: **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; pinyin tự ẩn khi đã thuộc) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cách học**.
+Các tab: **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cách học**.
 
 ## Quy tắc từ ngữ (theo W7 trên Drive)
 
