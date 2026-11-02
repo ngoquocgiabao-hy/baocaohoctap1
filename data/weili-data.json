@@ -1,0 +1,3561 @@
+{
+ "meta": {
+  "title": "Weili · Học quy trình và từ xưởng",
+  "updated": "2026-11-03",
+  "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, W7 (quy định từ ngữ)",
+  "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp."
+ },
+ "stages": [
+  {
+   "id": "kho",
+   "n": 1,
+   "vn": "Kho",
+   "zh": "仓库",
+   "short": "Kho",
+   "color": "#2f6fb0",
+   "qb": false,
+   "what": "Nhận vải, phụ liệu → kiểm → nhập kho → phát cho xưởng cắt.",
+   "whatz": "面辅料到料 → 检验 → 入库 → 发料给裁剪。",
+   "who": "Tổ kiểm nghiệm của kho tự kiểm",
+   "whoz": "仓库检验组",
+   "steps": [
+    {
+     "t": "Nhận hàng",
+     "tz": "收料、点收",
+     "d": "Tổ tư vấn kiểm đếm, in bảng kê, trừ sổ trên hệ thống; tổ chính liệu nhận vào kho.",
+     "dz": "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。",
+     "w": [
+      "收料",
+      "点收"
+     ],
+     "tpy": "Shōu liào, diǎn shōu",
+     "dpy": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "Kiểm vải và phụ liệu",
+     "tz": "检验",
+     "d": "Vải: kiểm tính chất và ngoại quan. Phụ liệu: kiểm AQL 1.5, xong trong 7 ngày.",
+     "dz": "面料做物性检验和外观检验；辅料按AQL 1.5检验，7天内完成。",
+     "chk": [
+      [
+       "Cắt một mẫu ở đầu, giữa, cuối cây gửi phòng kiểm nghiệm: xem màu cả cây có đều và có trong mức chấp nhận không.",
+       "布头、布中、布尾各剪一块送检验室，看整匹布颜色是否一致，在不在接收标准内。",
+       "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, kàn zhěng pǐ bù yán sè shì fǒu yí zhì, zài bu zài jiē shōu biāo zhǔn nèi."
+      ],
+      [
+       "Phòng kiểm nghiệm test ma sát khô/ướt, bền màu khi giặt, màu, cảm giác tay, độ dày, rồi ra báo cáo.",
+       "检验室测干湿摩擦、水洗牢度、颜色、手感、厚度，出品质检测报告。",
+       "Jiǎn yàn shì cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào."
+      ],
+      [
+       "Phụ liệu: đối chiếu mẫu chuẩn và đơn trên hệ thống, kiểm size, mã vạch, số lượng trên nhãn.",
+       "辅料对照标准样和系统订单，核对标签的尺码、条码和数量。",
+       "Fǔ liào duì zhào biāo zhǔn yàng hé xì tǒng dìng dān, hé duì biāo qiān de chǐ mǎ, tiáo mǎ hé shù liàng."
+      ]
+     ],
+     "w": [
+      "物性检验",
+      "外观检验"
+     ],
+     "tpy": "Jiǎn yàn",
+     "dpy": "Miàn liào zuò wù xìng jiǎn yàn hé wài guān jiǎn yàn; fǔ liào àn AQL 1.5 jiǎn yàn, 7 tiān nèi wán chéng.",
+     "ask": null
+    },
+    {
+     "t": "Đạt hay không",
+     "tz": "合格与不合格",
+     "d": "Đạt: nhập ERP, in bảng nghiệm thu, nhập kho. Không đạt: lập phiếu phản hồi nghiệm thu, xét xử lý đặc biệt; không được thì trả hàng. Phải xử lý trong 6 tháng.",
+     "dz": "合格的录入ERP，出验收明细表，收料入库。不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。",
+     "chk": [
+      [
+       "Kho chấm điểm nhà cung cấp hằng tháng.",
+       "仓库每月给供应商评分。",
+       "Cāng kù měi yuè gěi gōng yìng shāng píng fēn."
+      ]
+     ],
+     "w": [
+      "入库",
+      "验收反应单",
+      "特采",
+      "退货"
+     ],
+     "tpy": "Hé gé yǔ bù hé gé",
+     "dpy": "Hé gé de lù rù ERP, chū yàn shōu míng xì biǎo, shōu liào rù kù. Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
+     "ask": null
+    },
+    {
+     "t": "Phát cho xưởng cắt",
+     "tz": "发料",
+     "d": "Xưởng cắt mang phiếu lĩnh liệu đến; phiếu ghi bao nhiêu phát bấy nhiêu (tồn 1.000 yard, phiếu ghi 100 thì phát 100, còn 900). Thiếu thì làm phiếu bổ sung; kiểm kê lệch thì xin điều chỉnh.",
+     "dz": "裁剪拿领料单来领料，单上写多少就发多少：库存1000码，单上100码就发100码，剩900码。要补料走补料单，盘点有差异走盘调申请。",
+     "chk": [
+      [
+       "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ.",
+       "领料单交咨询组减账。",
+       "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng."
+      ]
+     ],
+     "w": [
+      "发料",
+      "领料单",
+      "补料单"
+     ],
+     "tpy": "Fā liào",
+     "dpy": "Cái jiǎn ná lǐng liào dān lái lǐng liào, dān shàng xiě duō shao jiù fā duō shao: kù cún 1000 mǎ, dān shàng 100 mǎ jiù fā 100 mǎ, shèng 900 mǎ. Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
+     "ask": null
+    },
+    {
+     "t": "Tem và vị trí",
+     "tz": "标识和储位",
+     "d": "Tem trạng thái: chính liệu đạt, phụ liệu đạt, chờ kiểm, xử lý đặc biệt, không đạt. Tem cây vải ghi cấp chênh lệch màu A–D. Vị trí kệ dạng C24-3-2 (kệ – tầng – ô).",
+     "dz": "物料状态标识有主料合格、辅料合格、待检、特采、不合格。布卷标签上有色差级数A–D。储位编号像C24-3-2：货架号-层-位置。",
+     "w": [
+      "物料状态标识",
+      "储位"
+     ],
+     "tpy": "Biāo shí hé chǔ wèi",
+     "dpy": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé. Bù juǎn biāo qiān shàng yǒu sè chà jí shù A–D. Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì.",
+     "chk": [],
+     "ask": null
+    }
+   ],
+   "py": "cāngkù",
+   "whatpy": "Miàn fǔ liào dào liào → jiǎn yàn → rù kù → fā liào gěi cái jiǎn.",
+   "whopy": "Cāng kù jiǎn yàn zǔ"
+  },
+  {
+   "id": "kiemvai",
+   "n": 2,
+   "vn": "Kiểm vải & phòng kiểm nghiệm",
+   "zh": "验布",
+   "short": "Kiểm vải",
+   "color": "#1f8a8a",
+   "qb": false,
+   "what": "Lỗi nhìn thấy được thì kiểm trên máy; lỗi không nhìn thấy (bền màu, co rút, pH, formaldehyde) thì gửi phòng kiểm nghiệm.",
+   "whatz": "看得见的问题在验布机上查；看不见的，比如色牢度、缩率、pH、甲醛，要靠检验室。",
+   "who": "Tổ kiểm nghiệm của kho; phòng kiểm nghiệm",
+   "whoz": "仓库检验组；检验室",
+   "steps": [
+    {
+     "t": "Máy kiểm vải",
+     "tz": "验布机",
+     "d": "Máy có hộp đèn, bộ đếm yard, cân điện tử. Cạnh máy dán tiêu chuẩn kiểm vải, cách tính 4 điểm, tiêu chuẩn chính liệu, mẫu trừ điểm.",
+     "dz": "验布机带灯箱、码数计数器和电子秤。旁边贴着验布作业标准、四分制分类和计算、主料检验标准、扣分参考样。",
+     "chk": [
+      [
+       "Kiểm số yard, khổ, chênh lệch màu và lỗi vải; điền biểu kiểm vải.",
+       "查码数、幅宽、色差和瑕疵，填验布检查表。",
+       "Chá mǎ shù, fú kuān, sè chā hé xiá cī, tián yàn bù jiǎn chá biǎo."
+      ]
+     ],
+     "w": [
+      "验布机",
+      "码数",
+      "幅宽",
+      "色差",
+      "瑕疵"
+     ],
+     "tpy": "Yàn bù jī",
+     "dpy": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng. Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng.",
+     "ask": null
+    },
+    {
+     "t": "Chấm điểm 4 điểm",
+     "tz": "四分制",
+     "d": "Lỗi đến 3 inch trừ 1; 3–6 inch trừ 2; 6–9 inch trừ 3; trên 9 inch trừ 4. Quy về 100 yd²: A tối đa 29, B 47, C 62 điểm.",
+     "dz": "3英寸以下扣1分，3到6英寸扣2分，6到9英寸扣3分，9英寸以上扣4分。换算成每百平方码：A级29分，B级47分，C级62分。",
+     "chk": [
+      [
+       "Điểm/100 yd² = 3.600 × tổng điểm ÷ (số yard × khổ inch). VD 100 yard, khổ 60 inch, 20 điểm → 12 điểm, cấp A.",
+       "每百平方码分数 = 3600 × 总扣分 ÷（码数 × 幅宽英寸）。例如100码、幅宽60英寸、扣20分，算出来12分，是A级。",
+       "Měi bǎi píng fāng mǎ fēn shù = 3600 × zǒng kòu fēn ÷ (mǎ shù × fú kuān yīng cùn). Lì rú 100 mǎ, fú kuān 60 yīng cùn, kòu 20 fēn, suàn chū lái 12 fēn, shì A jí."
+      ]
+     ],
+     "w": [
+      "四分制"
+     ],
+     "tpy": "Sì fēn zhì",
+     "dpy": "3 yīng cùn yǐ xià kòu 1 fēn, 3 dào 6 yīng cùn kòu 2 fēn, 6 dào 9 yīng cùn kòu 3 fēn, 9 yīng cùn yǐ shàng kòu 4 fēn. Huàn suàn chéng měi bǎi píng fāng mǎ: A jí 29 fēn, B jí 47 fēn, C jí 62 fēn.",
+     "ask": null
+    },
+    {
+     "t": "Người xem màu",
+     "tz": "辨色测试",
+     "d": "Người xem màu phải qua test FM100 trước, cùng loại test với điều kiện thi CFT.",
+     "dz": "看色的检验员要先做辨色测试（X-Rite FM 100），跟CFT的条件一样。",
+     "w": [
+      "辨色测试"
+     ],
+     "tpy": "Biàn sè cè shì",
+     "dpy": "Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100), gēn CFT de tiáo jiàn yí yàng.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "Phòng kiểm nghiệm",
+     "tz": "检验室",
+     "d": "4 nhóm test: tính chất vật lý, độ bền màu, giặt thành phẩm, formaldehyde. Phòng có chứng nhận phòng thí nghiệm của Under Armour.",
+     "dz": "检验室的测试分四类：物性、色牢度、成品洗、甲醛。墙上挂着Under Armour的实验室认可证书。",
+     "chk": [
+      [
+       "Tính chất vật lý: co rút khi giặt, định lượng, chống thấm, lão hóa, hút ẩm, khổ, pH, khô nhanh, mật độ, bền thăng hoa.",
+       "物性：水洗缩率、布重、防泼水、老化、吸湿、幅宽、pH值、快干、密度、升华牢度。",
+       "Wù xìng: shuǐ xǐ suō lǜ, bù zhòng, fáng pō shuǐ, lǎo huà, xī shī, fú kuān, pH zhí, kuài gàn, mì dù, shēng huá láo dù."
+      ],
+      [
+       "Độ bền màu: giặt, mồ hôi, ma sát, ánh sáng, chống ố vàng, di màu, nước, mồ hôi kèm ánh sáng.",
+       "色牢度：水洗、汗渍、摩擦、日光、抗黄变、色移、耐水、汗光。",
+       "Sè láo dù: shuǐ xǐ, hàn zì, mó cā, rì guāng, kàng huáng biàn, sè yí, nài shuǐ, hàn guāng."
+      ]
+     ],
+     "w": [
+      "检验室",
+      "色牢度",
+      "克重",
+      "甲醛"
+     ],
+     "tpy": "Jiǎn yàn shì",
+     "dpy": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán. Qiáng shàng guà zhe Under Armour de shí yàn shì rèn kě zhèng shū.",
+     "ask": null
+    }
+   ],
+   "py": "yànbù",
+   "whatpy": "Kàn de jiàn de wèn tí zài yàn bù jī shàng chá; kàn bú jiàn de, bǐ rú sè láo dù, suō lǜ, pH, jiǎ quán, yào kào jiǎn yàn shì.",
+   "whopy": "Cāng kù jiǎn yàn zǔ; jiǎn yàn shì"
+  },
+  {
+   "id": "cat",
+   "n": 3,
+   "vn": "Xưởng cắt",
+   "zh": "裁剪",
+   "short": "Cắt",
+   "color": "#c27a12",
+   "qb": true,
+   "what": "Cây vải → dán lót → kéo lớp → chặt → chọn, buộc 144 bộ/bó → sang thêu, in, may.",
+   "whatz": "布卷 → 贴合 → 拉布 → 刀模裁剪 → 挑片、绑片，每包144套 → 送绣花、印花、车缝。",
+   "who": "Tổ trưởng xưởng cắt; QC của 品保部 kiểm thêm",
+   "whoz": "裁剪组长；品保部QC",
+   "steps": [
+    {
+     "t": "① Nhận cây, đọc tem",
+     "tz": "看布卷标签",
+     "d": "Tem trắng có QR: mã vật tư (chữ cái cuối là màu: B đen, W trắng, E xám, R đỏ…), cấp chênh lệch màu, số lô nhuộm, cấp điểm trừ, người kiểm.",
+     "dz": "布卷标签是白色的，有二维码，写着品号、品名、色差级数、缸号、扣点等级、检验员。品号最后一个字母是颜色：B黑、W白、E灰、R红。",
+     "chk": [
+      [
+       "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào.",
+       "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
+       "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān."
+      ]
+     ],
+     "w": [
+      "品号",
+      "色差级数",
+      "缸号",
+      "扣点等级"
+     ],
+     "tpy": "Kàn bù juǎn biāo qiān",
+     "dpy": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán. Pǐn hào zuì hòu yí gè zì mǔ shì yán sè: B hēi, W bái, E huī, R hóng.",
+     "ask": null
+    },
+    {
+     "t": "② Xả vải",
+     "tz": "松布",
+     "d": "Chỉ làm với vải co giãn: để vải co trước, mảnh cắt không co lại sau.",
+     "dz": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。",
+     "ask": [
+      "松布要放多长时间？谁确认可以裁？",
+      "Sōngbù yào fàng duō cháng shíjiān? Shéi quèrèn kěyǐ cái?",
+      "Xả vải bao lâu? Ai xác nhận là cắt được?"
+     ],
+     "w": [
+      "松布"
+     ],
+     "tpy": "Sōng bù",
+     "dpy": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
+     "chk": []
+    },
+    {
+     "t": "③ Dán lót keo — sếp nói “hé tiē”",
+     "tz": "贴合",
+     "hot": true,
+     "d": "Trước khi chặt, dán vải chính với lót có keo trên máy dán (SOP M-10-71). Trên thẻ quy trình, mảnh trước ghi (貼) là đã qua bước này. Mã gia công dạng TG0M01-150.",
+     "dz": "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。卡上前片写“贴”，就是已经贴合。贴合代码像TG0M01-150。",
+     "chk": [
+      [
+       "Cài nhiệt độ và áp suất theo yêu cầu (80–180 °C); đạt nhiệt mới cho vải vào máy.",
+       "按要求设定温度（80到180度）和气压，到了温度才放布。",
+       "Àn yāo qiú shè dìng wēn dù (80 dào 180 dù) hé qì yā, dào le wēn dù cái fàng bù."
+      ],
+      [
+       "Tấm đầu tiên kiểm độ dính: tay người bình thường xé không ra mới chạy tiếp.",
+       "第一片要检查贴得牢不牢：正常人用手撕不开，才可以继续做。",
+       "Dì yī piàn yào jiǎn chá tiē de láo bu láo: zhèng cháng rén yòng shǒu sī bù kāi, cái kě yǐ jì xù zuò."
+      ],
+      [
+       "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo.",
+       "贴好的布要牢，不起皱、不打卷、不渗胶。",
+       "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo."
+      ],
+      [
+       "Mỗi ngày ghi nhiệt độ 3 điểm trái, giữa, phải (trước và trong khi dán) và lực kéo trái, phải.",
+       "每天记录左、中、右三点温度（贴合前和贴合中），还有左右拉力。",
+       "Měi tiān jì lù zuǒ, zhōng, yòu sān diǎn wēn dù (tiē hé qián hé tiē hé zhōng), hái yǒu zuǒ yòu lā lì."
+      ]
+     ],
+     "w": [
+      "贴合",
+      "面布",
+      "衬布",
+      "点胶衬",
+      "直线贴合机",
+      "涂布贴合机",
+      "胶水",
+      "固化剂",
+      "贴合辅助单据",
+      "渗胶",
+      "打卷"
+     ],
+     "tpy": "Tiē hé",
+     "dpy": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71). Kǎ shàng qián piàn xiě “tiē”, jiù shì yǐ jīng tiē hé. Tiē hé dài mǎ xiàng TG0M01-150.",
+     "ask": null
+    },
+    {
+     "t": "④ Kéo vải — sếp nói “la bù”",
+     "tz": "拉布",
+     "hot": true,
+     "d": "Kéo cây vải dọc bàn, xếp chồng nhiều lớp theo phiếu sơ đồ cắt (biểu M-10-44-A-3), VD kéo hai mặt 18 lớp. Vải khác cấp màu không kéo chung một chồng.",
+     "dz": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。不同色差级数的布不混在一起拉。",
+     "chk": [
+      [
+       "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”.",
+       "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
+       "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán."
+      ]
+     ],
+     "w": [
+      "拉布",
+      "双面拉布",
+      "排版",
+      "裁次",
+      "防霉"
+     ],
+     "tpy": "Lā bù",
+     "dpy": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng. Bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā.",
+     "ask": null
+    },
+    {
+     "t": "⑤ Chặt",
+     "tz": "刀模裁剪",
+     "d": "Máy chặt (VD Chenfeng số 28) ép dao chặt xuống cả chồng vải, lót giấy nâu bên dưới. Một bộ dao gồm 6 mảnh thân, mặt trên và mặt dưới lưỡi trai, vải bọc nút đỉnh.",
+     "dz": "用28号机把刀模压下去，一次裁一整叠布，下面垫牛皮纸。一套刀模有六片帽身、眉面、眉里、顶扣包布。",
+     "chk": [
+      [
+       "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa.",
+       "刀模跟纸样比，差2毫米以上就要修。",
+       "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū."
+      ],
+      [
+       "Kiểm dao 2 giờ một lần, có sổ ghi.",
+       "每两小时查一次刀模，要有记录。",
+       "Měi liǎng xiǎo shí chá yí cì dāo mó, yào yǒu jì lù."
+      ],
+      [
+       "Lấy mảnh ở lớp trên, giữa, dưới để kiểm; người kiểm dao và tổ trưởng ký trên phiếu, QC đóng dấu.",
+       "抽上、中、下三层的裁片检查；查刀模的人和组长在单上签字，QC盖章。",
+       "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá; chá dāo mó de rén hé zǔ zhǎng zài dān shàng qiān zì, QC gài zhāng."
+      ]
+     ],
+     "w": [
+      "刀模",
+      "纸样",
+      "牛皮纸",
+      "前片",
+      "后片",
+      "眉面",
+      "眉里",
+      "顶扣包布"
+     ],
+     "tpy": "Dāo mó cái jiǎn",
+     "dpy": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ. Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
+     "ask": null
+    },
+    {
+     "t": "⑥ Máy làm nút đỉnh",
+     "tz": "顶扣",
+     "hot": true,
+     "d": "Xưởng cắt cắt mảnh vải bọc nút đỉnh bằng bộ dao riêng. Máy bạn thấy nhiều khả năng bọc mảnh này lên nút để nút cùng màu mũ; nút sang xưởng may ở công đoạn đóng nút đỉnh. Mũ dùng nút kim loại (VD UA 1381645) thì không bọc. Tên máy: chưa biết.",
+     "dz": "裁剪用专门的刀模裁顶扣包布。这台机器可能是把包布包在顶扣上，让顶扣跟帽子同色（待确认）。顶扣再送到车缝打顶扣。金属顶扣不用包布。",
+     "ask": [
+      "这台机器叫什么？是包顶扣的吗？",
+      "Zhè tái jīqì jiào shénme? Shì bāo dǐngkòu de ma?",
+      "Máy này gọi là gì? Có phải máy bọc nút đỉnh không?"
+     ],
+     "w": [
+      "顶扣包布",
+      "顶扣",
+      "打顶扣"
+     ],
+     "tpy": "Dǐng kòu",
+     "dpy": "Cái jiǎn yòng zhuān mén de dāo mó cái dǐng kòu bāo bù. Zhè tái jī qì kě néng shì bǎ bāo bù bāo zài dǐng kòu shàng, ràng dǐng kòu gēn mào zi tóng sè (dài què rèn). Dǐng kòu zài sòng dào chē féng dǎ dǐng kòu. Jīn shǔ dǐng kòu bú yòng bāo bù.",
+     "chk": []
+    },
+    {
+     "t": "⑦ Mã lỗi mảnh cắt",
+     "tz": "裁剪不良代号",
+     "d": "1041 vải lỗi · 1042 mảnh bẩn · 1043 mối nối, chỗ nối cây · 1044 thiếu do cắt so màu, thủng · 1140 cắt không đạt · 1141 dán không đạt.",
+     "dz": "1041布质不良 · 1042裁剪脏污 · 1043布料接头/接匹 · 1044对色缺口/破洞 · 1140裁剪不良 · 1141贴合不良。",
+     "chk": [
+      [
+       "Nhặt hết mảnh lỗi bỏ thùng riêng, ghi mã vào phiếu.",
+       "不良裁片全部挑出来，放不良箱，代号写在单上。",
+       "Bù liáng cái piàn quán bù tiāo chū lái, fàng bù liáng xiāng, dài hào xiě zài dān shàng."
+      ]
+     ],
+     "w": [
+      "布质不良",
+      "裁剪脏污",
+      "接匹",
+      "破洞",
+      "裁剪不良",
+      "贴合不良"
+     ],
+     "tpy": "Cái jiǎn bù liáng dài hào",
+     "dpy": "1041 bù zhì bù liáng · 1042 cái jiǎn zāng wū · 1043 bù liào jiē tóu/jiē pǐ · 1044 duì sè quē kǒu/pò dòng · 1140 cái jiǎn bù liáng · 1141 tiē hé bù liáng.",
+     "ask": null
+    },
+    {
+     "t": "⑧ Chọn và buộc mảnh",
+     "tz": "挑片、绑片",
+     "d": "SOP M-10-72: kiểm từng mảnh, loại mảnh lỗi; buộc đủ 144 bộ/bó (đủ cho 144 chiếc mũ) theo bảng tính; xếp ở khu chờ giao rồi sang thêu, in, may.",
+     "dz": "作业标准M-10-72：逐片检查，挑出不良；按裁片捆绑计算表绑够144套，够做144顶帽子；放待装片区，再送绣花、印花、车缝。",
+     "chk": [
+      [
+       "Buộc đúng số, không thừa không thiếu: số bộ/lớp × số lớp ± thêm bớt = 144.",
+       "绑片不多不少：每层套数 × 层数 ± 加减 = 144。",
+       "Bǎng piàn bù duō bù shǎo: měi céng tào shù × céng shù ± jiā jiǎn = 144."
+      ],
+      [
+       "Bó lẻ cuối đơn dán tem ghi đơn, lần cắt, màu, số lượng.",
+       "尾数包贴标签，写订单、裁次、颜色、数量。",
+       "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng."
+      ],
+      [
+       "Thẻ quy trình A đi theo bó; công nhân làm công đoạn nào ghi số của mình vào ô đó, nên truy được ai làm bó nào.",
+       "每包跟一张A卡，工人做哪道工序就在那一栏写自己的工号，可以查到谁做了哪一包。",
+       "Měi bāo gēn yì zhāng A kǎ, gōng rén zuò nǎ dào gōng xù jiù zài nà yì lán xiě zì jǐ de gōng hào, kě yǐ chá dào shuí zuò le nǎ yì bāo."
+      ]
+     ],
+     "w": [
+      "挑片",
+      "绑片",
+      "裁片",
+      "裁片捆绑计算表",
+      "尾数包",
+      "待装片区"
+     ],
+     "tpy": "Tiāo piàn, bǎng piàn",
+     "dpy": "Zuò yè biāo zhǔn M-10-72: zhú piàn jiǎn chá, tiāo chū bù liáng; àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi; fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng.",
+     "ask": null
+    },
+    {
+     "t": "⑨ 品保部 kiểm ở xưởng cắt",
+     "tz": "品保部在裁剪的检查",
+     "d": "Phòng mình kiểm ở xưởng cắt: dấu QC trên phiếu sơ đồ cắt, kiểm dao, kiểm mảnh. Tỷ lệ lấy mẫu và biểu ghi chưa hỏi được.",
+     "dz": "品保部在裁剪查：单上的QC章、刀模、裁片。抽多少、记在哪张表上，还要问。",
+     "ask": [
+      "我们品保部在裁剪抽多少？记录在哪张表上？",
+      "Wǒmen pǐnbǎo bù zài cáijiǎn chōu duōshao? Jìlù zài nǎ zhāng biǎo shang?",
+      "品保部 ở xưởng cắt lấy mẫu bao nhiêu? Ghi vào biểu nào?"
+     ],
+     "w": [
+      "品保部"
+     ],
+     "tpy": "Pǐn bǎo bù zài cái jiǎn de jiǎn chá",
+     "dpy": "Pǐn bǎo bù zài cái jiǎn chá: dān shàng de QC zhāng, dāo mó, cái piàn. Chōu duō shao, jì zài nǎ zhāng biǎo shàng, hái yào wèn.",
+     "chk": []
+    }
+   ],
+   "py": "cáijiǎn",
+   "whatpy": "Bù juǎn → tiē hé → lā bù → dāo mó cái jiǎn → tiāo piàn, bǎng piàn, měi bāo 144 tào → sòng xiù huā, yìn huā, chē féng.",
+   "whopy": "Cái jiǎn zǔ zhǎng; pǐn bǎo bù QC"
+  },
+  {
+   "id": "theu",
+   "n": 4,
+   "vn": "Thêu",
+   "zh": "绣花",
+   "short": "Thêu",
+   "color": "#7a4fb3",
+   "qb": false,
+   "what": "Có mã thêu trên mảnh phẳng rồi mới may, có mã may xong mới thêu lên mũ.",
+   "whatz": "有的款先在裁片上绣花再车缝，有的款车好帽子再绣。",
+   "who": "Xưởng thêu có QC riêng",
+   "whoz": "绣花车间有自己的QC",
+   "steps": [
+    {
+     "t": "Thêu logo",
+     "tz": "绣logo",
+     "d": "Thêu trên mảnh cắt (thường là mảnh trước) hoặc trên mũ đã may.",
+     "dz": "在裁片上绣（一般是前片），或者在车好的帽子上绣。",
+     "w": [
+      "绣花",
+      "裁片"
+     ],
+     "tpy": "Xiù logo",
+     "dpy": "Zài cái piàn shàng xiù (yì bān shì qián piàn), huò zhě zài chē hǎo de mào zi shàng xiù.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "Lỗ thoáng",
+     "tz": "绣洞",
+     "d": "Thêu lỗ thoáng nằm ở chuyền may: 1.700 vòng/phút, vải mỏng 1.200 và lót giấy. Thẻ quy trình: công đoạn 1600 thêu 2 lỗ mảnh trước, làm trước khi may 2 kim.",
+     "dz": "绣洞在车缝线上做：转速1700，薄料1200，要垫纸。卡上的1600是“前片绣洞×2”，在前片双针之前做。",
+     "chk": [
+      [
+       "Đối chiếu tốc độ máy với thẻ SOP dán trên máy.",
+       "核对机器速度跟SOP卡上写的是否一样。",
+       "Hé duì jī qì sù dù gēn SOP kǎ shàng xiě de shì fǒu yí yàng."
+      ]
+     ],
+     "w": [
+      "绣洞"
+     ],
+     "tpy": "Xiù dòng",
+     "dpy": "Xiù dòng zài chē féng xiàn shàng zuò: zhuàn sù 1700, báo liào 1200, yào diàn zhǐ. Kǎ shàng de 1600 shì “qián piàn xiù dòng × 2”, zài qián piàn shuāng zhēn zhī qián zuò.",
+     "ask": null
+    },
+    {
+     "t": "Chiếc đầu và lỗi hay gặp",
+     "tz": "首件和常见不良",
+     "d": "So chiếc đầu với mẫu duyệt. Lỗi hay gặp: nhăn quanh hình, xù lông, lệch nét, thưa thấy nền.",
+     "dz": "首件跟确认样对比。常见不良：绣花起皱、绣花起毛。",
+     "chk": [
+      [
+       "So chiếc đầu với mẫu duyệt: vị trí, kích thước, mật độ, màu chỉ.",
+       "首件跟确认样对比：位置、尺寸、密度、线的颜色。",
+       "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè."
+      ],
+      [
+       "Đo vị trí logo theo tech pack (VD mã UA 1381645: logo cách đường may lưỡi 1,5 cm).",
+       "按技术包测量logo位置，例如UA 1381645，logo离帽檐车线1.5厘米。",
+       "Àn jì shù bāo cè liáng logo wèi zhì, lì rú UA 1381645, logo lí mào yán chē xiàn 1.5 lí mǐ."
+      ]
+     ],
+     "w": [
+      "首件检验",
+      "确认样",
+      "绣花起皱",
+      "绣花起毛"
+     ],
+     "tpy": "Shǒu jiàn hé cháng jiàn bù liáng",
+     "dpy": "Shǒu jiàn gēn què rèn yàng duì bǐ. Cháng jiàn bù liáng: xiù huā qǐ zhòu, xiù huā qǐ máo.",
+     "ask": null
+    },
+    {
+     "t": "VF cần gì",
+     "tz": "VF的要求",
+     "d": "Mỗi màu thêu một mock-up; so artwork từng chi tiết (ca VF: logo thiếu chấm đen trong chữ “A”).",
+     "dz": "VF：每个绣线颜色做一个mock-up；跟artwork一个细节一个细节对比。",
+     "ask": [
+      "绣花的程序是谁做的？厂内做还是外发？",
+      "Xiùhuā de chéngxù shì shéi zuò de? Chǎng nèi zuò háishi wàifā?",
+      "File thêu do ai làm? Trong xưởng hay thuê ngoài?"
+     ],
+     "w": [],
+     "tpy": "VF de yāo qiú",
+     "dpy": "VF: měi gè xiù xiàn yán sè zuò yí gè mock-up; gēn artwork yí gè xì jié yí gè xì jié duì bǐ.",
+     "chk": []
+    }
+   ],
+   "py": "xiùhuā",
+   "whatpy": "Yǒu de kuǎn xiān zài cái piàn shàng xiù huā zài chē féng, yǒu de kuǎn chē hǎo mào zi zài xiù.",
+   "whopy": "Xiù huā chē jiān yǒu zì jǐ de QC"
+  },
+  {
+   "id": "in",
+   "n": 5,
+   "vn": "In & ép logo",
+   "zh": "印花",
+   "short": "In",
+   "color": "#b8456b",
+   "qb": true,
+   "what": "In lưới tay, “dập máy” cho màu khó pha, hoặc ép logo bằng nhiệt.",
+   "whatz": "印花有手工印和机器印（难调的颜色用机器），还有转印。",
+   "who": "Xưởng in có QC riêng; 品保部 kiểm thêm phần in",
+   "whoz": "印花车间有自己的QC；印花这块品保部还要再查",
+   "steps": [
+    {
+     "t": "Ba cách làm",
+     "tz": "三种做法",
+     "d": "In lưới tay; “dập máy” (tên tiếng Trung chưa biết, cần hỏi); ép logo.",
+     "dz": "手工印、机器印、转印。",
+     "w": [
+      "印花",
+      "丝印",
+      "转印"
+     ],
+     "tpy": "Sān zhǒng zuò fǎ",
+     "dpy": "Shǒu gōng yìn, jī qì yìn, zhuǎn yìn.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "Kiểm",
+     "tz": "怎么检查",
+     "d": "Ép thử chiếc đầu, so mẫu duyệt; kiểm 100% ngoại quan mảnh in; test độ bám (bóc băng keo, giặt) do ai làm, bao lâu một lần: còn phải hỏi.",
+     "dz": "首件试压，跟确认样对比；印花裁片100%查外观；附着力测试（胶带撕拉、水洗）谁做、多久做一次，还要问。",
+     "chk": [
+      [
+       "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ.",
+       "Logo偏位：VF规定超过3毫米是严重缺陷，3毫米以内是轻微缺陷。",
+       "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn."
+      ],
+      [
+       "Vải polyester nóng quá dễ di màu sang mực: dùng mực chống di màu, mực nhiệt thấp hoặc in lót trắng.",
+       "涤纶布温度太高容易色移到油墨上：用防色移油墨、低温油墨，或者打白底。",
+       "Dí lún bù wēn dù tài gāo róng yì sè yí dào yóu mò shàng: yòng fáng sè yí yóu mò, dī wēn yóu mò, huò zhě dǎ bái dǐ."
+      ],
+      [
+       "Bong, nứt, trôi khi giặt thường do chưa đủ nhiệt đóng rắn hoặc dùng sai loại mực.",
+       "脱落、裂开、洗掉，大多是固化温度不够，或者油墨用错。",
+       "Tuō luò, liè kāi, xǐ diào, dà duō shì gù huà wēn dù bú gòu, huò zhě yóu mò yòng cuò."
+      ]
+     ],
+     "w": [
+      "首件检验",
+      "轻微缺陷",
+      "严重缺陷"
+     ],
+     "tpy": "Zěn me jiǎn chá",
+     "dpy": "Shǒu jiàn shì yā, gēn què rèn yàng duì bǐ; yìn huā cái piàn 100% chá wài guān; fù zhuó lì cè shì (jiāo dài sī lā, shuǐ xǐ) shuí zuò, duō jiǔ zuò yí cì, hái yào wèn.",
+     "ask": null
+    },
+    {
+     "t": "Lỗi",
+     "tz": "不良",
+     "d": "In mờ, hình ép biến dạng, bong, nứt.",
+     "dz": "印花模糊、转印变形、脱落、裂开。",
+     "w": [
+      "印花模糊",
+      "转印变形"
+     ],
+     "tpy": "Bù liáng",
+     "dpy": "Yìn huā mó hu, zhuǎn yìn biàn xíng, tuō luò, liè kāi.",
+     "chk": [],
+     "ask": null
+    }
+   ],
+   "py": "yìnhuā",
+   "whatpy": "Yìn huā yǒu shǒu gōng yìn hé jī qì yìn (nán tiáo de yán sè yòng jī qì), hái yǒu zhuǎn yìn.",
+   "whopy": "Yìn huā chē jiān yǒu zì jǐ de QC; yìn huā zhè kuài pǐn bǎo bù hái yào zài chá"
+  },
+  {
+   "id": "giat",
+   "n": 6,
+   "vn": "Giặt (mũ wash)",
+   "zh": "水洗帽",
+   "short": "Giặt",
+   "color": "#4b6a88",
+   "qb": false,
+   "what": "Chỉ mã mũ wash. Tầng 1, khoảng 8 máy (3 lớn, 5 nhỏ), bộ phận kỹ thuật phụ trách.",
+   "whatz": "只有水洗帽要洗。一楼，大概8台机器（3大5小），技术部负责。",
+   "who": "Bộ phận kỹ thuật",
+   "whoz": "技术部",
+   "steps": [
+    {
+     "t": "Giặt",
+     "tz": "水洗",
+     "d": "Cách kiểm sau giặt chưa học: hỏi giặt cả cây vải hay giặt mảnh cắt, công thức ai quyết.",
+     "dz": "水洗后怎么检查还没学。",
+     "ask": [
+      "是整卷布洗还是裁片洗？配方谁定？",
+      "Shì zhěng juǎn bù xǐ háishi cáipiàn xǐ? Pèifāng shéi dìng?",
+      "Giặt cả cây vải hay giặt mảnh cắt? Công thức ai quyết?"
+     ],
+     "w": [
+      "水洗帽",
+      "洗水"
+     ],
+     "tpy": "Shuǐ xǐ",
+     "dpy": "Shuǐ xǐ hòu zěn me jiǎn chá hái méi xué.",
+     "chk": []
+    }
+   ],
+   "py": "shuǐxǐ mào",
+   "whatpy": "Zhǐ yǒu shuǐ xǐ mào yào xǐ. Yī lóu, dà gài 8 tái jī qì (3 dà 5 xiǎo), jì shù bù fù zé.",
+   "whopy": "Jì shù bù"
+  },
+  {
+   "id": "may",
+   "n": 7,
+   "vn": "Xưởng may",
+   "zh": "车缝",
+   "short": "May",
+   "color": "#2e8a4f",
+   "qb": false,
+   "what": "Tầng 2, 30 công đoạn, 3 phần: tạo khung → hoàn thiện → đóng hàng.",
+   "whatz": "二楼，30道工序，分三大段。",
+   "who": "Xưởng may có QC, QE riêng; CFA của khách UA kiểm chiếc đầu, tuần tra",
+   "whoz": "车缝有自己的QC和QE；UA客户的CFA做首件检验和巡检",
+   "steps": [
+    {
+     "t": "Ráp thân",
+     "tz": "合片",
+     "d": "Ráp các mảnh; may 2 kim đè đường ráp; vắt sổ; viền bên trong. Ráp thân trước: chừa 6 mm, 12 mũi/inch (thẻ tiếng Việt ghi 11), lại mũi 10 mm.",
+     "dz": "合片；帽双；拷克；里面包边。前合片：缝份6毫米，每英寸12针（越南文的卡写11针），回针10毫米。",
+     "chk": [
+      [
+       "Đối chiếu thẻ SOP của từng máy với số trên máy (mũi/inch, đường may chừa). Hôm 13–14/10 đã thấy 3 chỗ lệch.",
+       "核对每台机器的SOP卡和机器上的数据（针距、缝份）。10月13到14日发现3处不一致。",
+       "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì."
+      ]
+     ],
+     "w": [
+      "车缝",
+      "合片",
+      "前合片",
+      "帽双",
+      "后双",
+      "拷克",
+      "包边",
+      "针距",
+      "缝份",
+      "回针"
+     ],
+     "tpy": "Hé piàn",
+     "dpy": "Hé piàn; mào shuāng; kǎo kè; lǐ miàn bāo biān. Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ.",
+     "ask": null
+    },
+    {
+     "t": "Lưỡi trai",
+     "tz": "帽檐",
+     "d": "May vành (7 mũi/inch, không may lên tấm lưỡi); gọn vành (UA chừa 5–7 mm); chạy chỉ vành (10 mũi/inch, từ 4 đường dùng máy tự động).",
+     "dz": "束眉：每英寸7针，不能车到眉板上。修眉：UA留5到7毫米。绕线：每英寸10针，4条以上用自动机。",
+     "chk": [
+      [
+       "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau.",
+       "绕线均匀，没有断线、接线；左右眉角对称。",
+       "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn."
+      ]
+     ],
+     "w": [
+      "束眉",
+      "修眉",
+      "绕线",
+      "眉板",
+      "帽檐",
+      "帽眉",
+      "断线",
+      "接线"
+     ],
+     "tpy": "Mào yán",
+     "dpy": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng. Xiū méi: UA liú 5 dào 7 háo mǐ. Rào xiàn: měi yīng cùn 10 zhēn, 4 tiáo yǐ shàng yòng zì dòng jī.",
+     "ask": null
+    },
+    {
+     "t": "Bên trong và phía sau",
+     "tz": "里面和后面",
+     "d": "Dây size, nhãn (cách mép dưới 4 mm); may thun chống mồ hôi và vành mũ là công đoạn quan trọng (9 mũi/inch, UA và TNF 10 mũi); khóa sau, dây quai.",
+     "dz": "尺寸带、商标离下边4毫米；汗带、帽眉这一道是关键工序，每英寸9针，UA、TNF是10针；后扣和调节带。",
+     "chk": [
+      [
+       "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5.",
+       "关键工序每天巡检2次，AQL 1.5。",
+       "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5."
+      ],
+      [
+       "Khóa sau: may thử bằng băng phế trước khi may hàng thật.",
+       "后扣：先用废带试车，再车大货。",
+       "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò."
+      ]
+     ],
+     "w": [
+      "尺寸带",
+      "汗带",
+      "关键工序",
+      "排扣",
+      "后扣",
+      "后喇叭"
+     ],
+     "tpy": "Lǐ miàn hé hòu miàn",
+     "dpy": "Chǐ cùn dài, shāng biāo lí xià biān 4 háo mǐ; hàn dài, mào méi zhè yí dào shì guān jiàn gōng xù, měi yīng cùn 9 zhēn, UA, TNF shì 10 zhēn; hòu kòu hé tiáo jié dài.",
+     "ask": null
+    },
+    {
+     "t": "Đỉnh mũ và cắt chỉ",
+     "tz": "打顶扣、修线",
+     "d": "Đóng nút đỉnh (áp suất 6–9); cắt chỉ trong trước, ngoài sau, sạch gốc lưỡi. Mảnh trước có dựng cứng.",
+     "dz": "打顶扣：压力6到9。修线：先里面后外面，帽檐根部要干净。前片有牛筋衬。",
+     "chk": [
+      [
+       "Nút đỉnh không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh.",
+       "顶扣不松、不偏；合片线在顶上交在一个点。",
+       "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn."
+      ]
+     ],
+     "w": [
+      "打顶扣",
+      "修线",
+      "牛筋衬"
+     ],
+     "tpy": "Dǎ dǐng kòu, xiū xiàn",
+     "dpy": "Dǎ dǐng kòu: yā lì 6 dào 9. Xiū xiàn: xiān lǐ miàn hòu wài miàn, mào yán gēn bù yào gān jìng. Qián piàn yǒu niú jīn chèn.",
+     "ask": null
+    },
+    {
+     "t": "Khách UA yêu cầu",
+     "tz": "UA客户的要求",
+     "d": "Kiểm chiếc đầu mỗi chuyền mỗi ca và khi đổi màu, đổi mã (CFA, tổ trưởng, QC manager cùng ký; sai thì dừng chuyền). Tuần tra ít nhất 2 chiếc/chuyền, 2 lần/ngày; có lỗi thì làm CAP.",
+     "dz": "首件检验：每条线每个班、换颜色或换款的时候做，CFA、组长、QC主管一起签字，不对就停线。巡检：每条线至少2顶，每天2次，有问题做CAP。",
+     "w": [
+      "首件检验",
+      "巡检"
+     ],
+     "tpy": "UA kè hù de yāo qiú",
+     "dpy": "Shǒu jiàn jiǎn yàn: měi tiáo xiàn měi gè bān, huàn yán sè huò huàn kuǎn de shí hòu zuò, CFA, zǔ zhǎng, QC zhǔ guǎn yì qǐ qiān zì, bú duì jiù tíng xiàn. Xún jiǎn: měi tiáo xiàn zhì shǎo 2 dǐng, měi tiān 2 cì, yǒu wèn tí zuò CAP.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "Lỗi may hay gặp",
+     "tz": "常见车缝不良",
+     "d": "Nhảy mũi, nổi chỉ, may nhăn, đường 2 kim không đều.",
+     "dz": "跳针、浮线、车缝起皱、双针大小边。",
+     "w": [
+      "跳针",
+      "浮线",
+      "车缝起皱",
+      "双针大小边"
+     ],
+     "tpy": "Cháng jiàn chē féng bù liáng",
+     "dpy": "Tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān.",
+     "chk": [],
+     "ask": null
+    }
+   ],
+   "py": "chēféng",
+   "whatpy": "Èr lóu, 30 dào gōng xù, fēn sān dà duàn.",
+   "whopy": "Chē féng yǒu zì jǐ de QC hé QE; UA kè hù de CFA zuò shǒu jiàn jiǎn yàn hé xún jiǎn"
+  },
+  {
+   "id": "dinhform",
+   "n": 8,
+   "vn": "Ép cong vành & định form",
+   "zh": "弯眉整烫",
+   "short": "Ép vành",
+   "color": "#c0582c",
+   "qb": false,
+   "what": "Ép cong lưỡi trai, rồi ủi hơi định dáng mũ trên đầu mẫu.",
+   "whatz": "先弯眉整烫，再在头模上用蒸汽定型。",
+   "who": "Chuyền may",
+   "whoz": "车缝线",
+   "steps": [
+    {
+     "t": "Ép cong vành",
+     "tz": "弯眉整烫",
+     "d": "Máy TYL-1908-R, 3 vùng nhiệt, kiểm máy đầu ca. Hôm 14/10 thấy cài 120 °C mà máy hiện 107,9 °C.",
+     "dz": "弯眉整烫机TYL-1908-R，三个温区，开班前要点检。10月14日看到设定120度，机器显示107.9度。",
+     "chk": [
+      [
+       "So nhiệt độ cài với nhiệt độ máy hiện; lệch bao nhiêu thì dừng máy: còn phải hỏi.",
+       "核对设定温度和实际温度；差多少要停机，还要问。",
+       "Hé duì shè dìng wēn dù hé shí jì wēn dù; chà duō shao yào tíng jī, hái yào wèn."
+      ]
+     ],
+     "w": [
+      "弯眉整烫"
+     ],
+     "tpy": "Wān méi zhěng tàng",
+     "dpy": "Wān méi zhěng tàng jī TYL-1908-R, sān gè wēn qū, kāi bān qián yào diǎn jiǎn. 10 yuè 14 rì kàn dào shè dìng 120 dù, jī qì xiǎn shì 107.9 dù.",
+     "ask": null
+    },
+    {
+     "t": "Định form",
+     "tz": "定型",
+     "d": "Ủi hơi trên đầu mẫu: ép vành cotton 165–180 °C trong 6 giây, ủi 90–130 °C. Ủi định hình mảnh trước là công đoạn 1808 trên thẻ quy trình.",
+     "dz": "在头模上蒸汽定型：棉布帽檐165到180度、6秒，熨烫90到130度。前整烫是卡上的1808工序。",
+     "chk": [
+      [
+       "Thẻ định form ghi 165–180 °C nhưng máy cài 110–135 °C: chỗ lệch đã thấy.",
+       "定型卡写165到180度，机器设110到135度，这是已经发现的不一致。",
+       "Dìng xíng kǎ xiě 165 dào 180 dù, jī qì shè 110 dào 135 dù, zhè shì yǐ jīng fā xiàn de bù yí zhì."
+      ],
+      [
+       "Đo độ cong lưỡi (AA227): gập phần sau, đặt mũ lên bàn, đo từ mặt bàn tới mép dưới lưỡi ở điểm cao nhất.",
+       "量帽檐弯度（AA227）：把后面折起来，帽子放在桌上，从桌面量到帽檐下边最高的地方。",
+       "Liáng mào yán wān dù (AA227): bǎ hòu miàn zhé qǐ lái, mào zi fàng zài zhuō shàng, cóng zhuō miàn liáng dào mào yán xià biān zuì gāo de dì fang."
+      ]
+     ],
+     "w": [
+      "头模",
+      "前整烫",
+      "帽型不佳"
+     ],
+     "tpy": "Dìng xíng",
+     "dpy": "Zài tóu mó shàng zhēng qì dìng xíng: mián bù mào yán 165 dào 180 dù, 6 miǎo, yùn tàng 90 dào 130 dù. Qián zhěng tàng shì kǎ shàng de 1808 gōng xù.",
+     "ask": null
+    }
+   ],
+   "py": "wānméi zhěngtàng",
+   "whatpy": "Xiān wān méi zhěng tàng, zài zài tóu mó shàng yòng zhēng qì dìng xíng.",
+   "whopy": "Chē féng xiàn"
+  },
+  {
+   "id": "qc",
+   "n": 9,
+   "vn": "QC cuối chuyền 100%",
+   "zh": "尾查",
+   "short": "QC cuối",
+   "color": "#b23a3a",
+   "qb": true,
+   "what": "Sau định hình, mỗi chuyền 2 người của 品保部 kiểm 100% thành phẩm, 15 điểm trong và ngoài.",
+   "whatz": "定型以后，每条线品保部2个人100%检查成品，里外15个点。",
+   "who": "品保部, mỗi chuyền 2 người",
+   "whoz": "品保部，每条线2个人",
+   "steps": [
+    {
+     "t": "8 bước kiểm",
+     "tz": "检查8个步骤",
+     "d": "Quét mã trên iPad → kiểm sau khi định hình → kiểm ngoài từ đỉnh theo thứ tự kiểm mũ 6 miếng → lưỡi và chỉ vành → bên trong, cắt chỉ thừa tại bàn → chỉnh dây sau về 9.5 rồi đo vòng đầu → đối chiếu thông tin trên iPad → kiểm form.",
+     "dz": "iPad扫码 → 定型后检查 → 按六片帽检验顺序从顶上开始查外面 → 查帽檐和绕线 → 查里面，线头在桌上剪 → 后面调到9.5再量帽围 → 核对iPad上的信息 → 看帽型。",
+     "w": [
+      "尾查",
+      "六片帽检验顺序",
+      "帽围",
+      "线头"
+     ],
+     "tpy": "Jiǎn chá 8 gè bù zhòu",
+     "dpy": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "15 điểm kiểm",
+     "tz": "15个检查点",
+     "d": "1 kích thước · 2 mặt trên vành · 3 mảnh trước · 4, 7 mảnh giữa phải, trái · 5 mảnh sau · 6 gáy mũ · 8 nút đỉnh · 9–11 thun chống mồ hôi · 12 tem · 13 bên trong · 14 khóa · 15 mặt dưới vành.",
+     "dz": "1尺寸 · 2眉面 · 3前片 · 4、7右中片、左中片 · 5后片 · 6后喇叭 · 8顶扣 · 9到11汗带 · 12商标 · 13帽身里面 · 14扣具 · 15眉里。",
+     "chk": [
+      [
+       "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ.",
+       "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+       "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu."
+      ],
+      [
+       "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau.",
+       "中片：双针大小边、跳针、浮线；左右高度要一样。",
+       "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng."
+      ],
+      [
+       "Thun chống mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt.",
+       "汗带：不能汗带外露；车线不偏、不断线。",
+       "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn."
+      ]
+     ],
+     "w": [
+      "尺寸",
+      "扣具",
+      "汗带外露"
+     ],
+     "tpy": "15 gè jiǎn chá diǎn",
+     "dpy": "1 chǐ cùn · 2 méi miàn · 3 qián piàn · 4, 7 yòu zhōng piàn, zuǒ zhōng piàn · 5 hòu piàn · 6 hòu lǎ ba · 8 dǐng kòu · 9 dào 11 hàn dài · 12 shāng biāo · 13 mào shēn lǐ miàn · 14 kòu jù · 15 méi lǐ.",
+     "ask": null
+    },
+    {
+     "t": "Lỗi thì xử lý sao",
+     "tz": "不良怎么处理",
+     "d": "Lỗi nhẹ và vừa: báo tổ trưởng rồi trả sản xuất sửa. Lỗi nặng (ảnh hưởng kết cấu, màu, chất lượng): làm lại.",
+     "dz": "轻微缺陷告诉组长，退回生产返工；严重缺陷影响结构、颜色、质量的，要重做。",
+     "w": [
+      "轻微缺陷",
+      "严重缺陷",
+      "返工",
+      "重做"
+     ],
+     "tpy": "Bù liáng zěn me chǔ lǐ",
+     "dpy": "Qīng wēi quē xiàn gào sù zǔ zhǎng, tuì huí shēng chǎn fǎn gōng; yán zhòng quē xiàn yǐng xiǎng jié gòu, yán sè, zhì liàng de, yào chóng zuò.",
+     "chk": [],
+     "ask": null
+    },
+    {
+     "t": "Trên chuyền",
+     "tz": "线上检查",
+     "d": "Còn có kiểm tuần tra và kiểm giữa kỳ.",
+     "dz": "线上还有巡检和中查。",
+     "w": [
+      "巡检",
+      "中查"
+     ],
+     "tpy": "Xiàn shàng jiǎn chá",
+     "dpy": "Xiàn shàng hái yǒu xún jiǎn hé zhōng chá.",
+     "chk": [],
+     "ask": null
+    }
+   ],
+   "py": "wěichá",
+   "whatpy": "Dìng xíng yǐ hòu, měi tiáo xiàn pǐn bǎo bù 2 gè rén 100% jiǎn chá chéng pǐn, lǐ wài 15 gè diǎn.",
+   "whopy": "Pǐn bǎo bù, měi tiáo xiàn 2 gè rén"
+  },
+  {
+   "id": "xuat",
+   "n": 10,
+   "vn": "Đóng gói – QA – dò kim – xuất",
+   "zh": "出货",
+   "short": "Xuất",
+   "color": "#44505e",
+   "qb": true,
+   "what": "Đóng thùng → QA lấy mẫu AQL 1.5 → dò kim → CFA của khách → xuất.",
+   "whatz": "装箱 → QA按AQL 1.5抽检 → 验针 → 客户CFA → 出货。",
+   "who": "品保部 (QA, dò kim); CFA của khách",
+   "whoz": "品保部（QA、验针）；客户CFA",
+   "steps": [
+    {
+     "t": "Đóng gói",
+     "tz": "包装",
+     "d": "Bấm thẻ treo, vào túi, đóng thùng; đo độ ẩm.",
+     "dz": "打吊牌、入袋、装箱；测含水率。",
+     "chk": [
+      [
+       "Độ ẩm (UA, máy LANDTEK DM200T): cotton 5%, polyester 4%, nylon 4%, wool 8%; vải pha tính theo tỷ lệ (60% cotton + 40% nylon = 4,6%).",
+       "含水率（UA，LANDTEK DM200T）：棉5%、涤纶4%、尼龙4%、羊毛8%；混纺按比例算，60%棉加40%尼龙是4.6%。",
+       "Hán shuǐ lǜ (UA, LANDTEK DM200T): mián 5%, dí lún 4%, ní lóng 4%, yáng máo 8%; hùn fǎng àn bǐ lì suàn, 60% mián jiā 40% ní lóng shì 4.6%."
+      ],
+      [
+       "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm.",
+       "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
+       "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì."
+      ]
+     ],
+     "w": [
+      "包装",
+      "吊牌",
+      "含水率",
+      "水分测定仪",
+      "外箱标签",
+      "洗水唛"
+     ],
+     "tpy": "Bāo zhuāng",
+     "dpy": "Dǎ diào pái, rù dài, zhuāng xiāng; cè hán shuǐ lǜ.",
+     "ask": null
+    },
+    {
+     "t": "QA lấy mẫu",
+     "tz": "QA抽检",
+     "d": "Đóng thùng xong, trước khi dán băng keo, QA lấy mẫu AQL 1.5.",
+     "dz": "装箱以后、封箱以前，QA按AQL 1.5抽检。",
+     "chk": [
+      [
+       "Lô 3.000 chiếc (mức II) lấy 125 chiếc; AQL 1.5 tối đa 5 lỗi.",
+       "3000顶（II级）抽125顶，AQL 1.5最多5个缺陷。",
+       "3000 dǐng (II jí) chōu 125 dǐng, AQL 1.5 zuì duō 5 gè quē xiàn."
+      ],
+      [
+       "UA: AQL 1.5 mức I; PO dưới 281 chiếc không được có lỗi nào.",
+       "UA：AQL 1.5 I级；PO少于281顶，一个缺陷都不能有。",
+       "UA: AQL 1.5 I jí; PO shǎo yú 281 dǐng, yí gè quē xiàn dōu bù néng yǒu."
+      ]
+     ],
+     "w": [
+      "抽样",
+      "允收",
+      "拒收"
+     ],
+     "tpy": "QA chōu jiǎn",
+     "dpy": "Zhuāng xiāng yǐ hòu, fēng xiāng yǐ qián, QA àn AQL 1.5 chōu jiǎn.",
+     "ask": null
+    },
+    {
+     "t": "Dò kim",
+     "tz": "验针",
+     "d": "4 chuyền dò kim. Mã cần dò kim: dò xong QA kiểm lần cuối rồi mới dán thùng. Kim gãy là lỗi nghiêm trọng nhất.",
+     "dz": "有4条验针线。要验针的款，验完针QA最后再查一次才封箱。断针是最严重的问题。",
+     "ask": [
+      "金属顶扣和断针，验针机怎么分？哪些款可以不验针，谁决定？",
+      "Jīnshǔ dǐngkòu hé duàn zhēn, yànzhēn jī zěnme fēn? Nǎxiē kuǎn kěyǐ bú yànzhēn, shéi juédìng?",
+      "Máy dò kim phân biệt nút đỉnh kim loại với kim gãy thế nào? Mã nào được miễn dò, ai quyết?"
+     ],
+     "w": [
+      "验针"
+     ],
+     "tpy": "Yàn zhēn",
+     "dpy": "Yǒu 4 tiáo yàn zhēn xiàn. Yào yàn zhēn de kuǎn, yàn wán zhēn QA zuì hòu zài chá yí cì cái fēng xiāng. Duàn zhēn shì zuì yán zhòng de wèn tí.",
+     "chk": []
+    },
+    {
+     "t": "CFA của khách và xuất hàng",
+     "tz": "客户CFA、出货",
+     "d": "UA: PO xong từ 80%, đã đóng gói, dán tem thùng, có packing list mới được kiểm cuối; AQL 1.5 mức I trên Pivot88; trượt thì kiểm 100% PO rồi kiểm lại. Kiểm sớm hơn 7 ngày trước ngày xuất thì đo lại độ ẩm 20% số thùng.",
+     "dz": "UA：PO完成80%以上、已经包装、贴好箱唛、有装箱单，才可以做终检；在Pivot88上按AQL 1.5 I级；不合格就整张PO 100%检查，再重验。比出货日早7天以上检完的，要再测20%箱子的含水率。",
+     "w": [
+      "箱唛",
+      "装箱单",
+      "尾箱",
+      "重验",
+      "大货",
+      "出货"
+     ],
+     "tpy": "Kè hù CFA, chū huò",
+     "dpy": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn; zài Pivot88 shàng àn AQL 1.5 I jí; bù hé gé jiù zhěng zhāng PO 100% jiǎn chá, zài chóng yàn. Bǐ chū huò rì zǎo 7 tiān yǐ shàng jiǎn wán de, yào zài cè 20% xiāng zi de hán shuǐ lǜ.",
+     "chk": [],
+     "ask": null
+    }
+   ],
+   "py": "chūhuò",
+   "whatpy": "Zhuāng xiāng → QA àn AQL 1.5 chōu jiǎn → yàn zhēn → kè hù CFA → chū huò.",
+   "whopy": "Pǐn bǎo bù (QA, yàn zhēn); kè hù CFA"
+  }
+ ],
+ "terms": [
+  {
+   "zh": "仓库",
+   "py": "cāngkù",
+   "vn": "kho",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "kho",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "仓库每月给供应商评分。",
+    "py": "Cāng kù měi yuè gěi gōng yìng shāng píng fēn.",
+    "vn": "Kho chấm điểm nhà cung cấp hằng tháng."
+   }
+  },
+  {
+   "zh": "收料",
+   "py": "shōuliào",
+   "vn": "nhận nguyên liệu",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。",
+    "py": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "点收",
+   "py": "diǎnshōu",
+   "vn": "kiểm đếm khi nhận hàng",
+   "note": "Tổ tư vấn 咨询组 làm: đếm, in bảng kê, trừ sổ.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。",
+    "py": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "物性检验",
+   "py": "wùxìng jiǎnyàn",
+   "vn": "kiểm tính chất vật lý của vải",
+   "note": "Cắt mẫu đầu–giữa–cuối cây gửi phòng kiểm nghiệm.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "面料做物性检验和外观检验；",
+    "py": "Miàn liào zuò wù xìng jiǎn yàn hé wài guān jiǎn yàn;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "外观检验",
+   "py": "wàiguān jiǎnyàn",
+   "vn": "kiểm ngoại quan",
+   "note": "Chạy trên máy kiểm vải.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "面料做物性检验和外观检验；",
+    "py": "Miàn liào zuò wù xìng jiǎn yàn hé wài guān jiǎn yàn;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "入库",
+   "py": "rùkù",
+   "vn": "nhập kho",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。",
+    "py": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "验收反应单",
+   "py": "yànshōu fǎnyìng dān",
+   "vn": "phiếu phản hồi nghiệm thu (hàng không đạt)",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。",
+    "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "特采",
+   "py": "tècǎi",
+   "vn": "xử lý đặc biệt (tạm nhận có điều kiện)",
+   "note": "Với VF, UA: nên có đồng ý bằng văn bản của khách trước khi cho dùng.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。",
+    "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "退货",
+   "py": "tuìhuò",
+   "vn": "trả hàng",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。",
+    "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "发料",
+   "py": "fāliào",
+   "vn": "phát liệu",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "领料单",
+   "py": "lǐngliàodān",
+   "vn": "phiếu lĩnh liệu",
+   "note": "Xưởng cắt mang phiếu này đến kho; phiếu ghi bao nhiêu phát bấy nhiêu.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "领料单交咨询组减账。",
+    "py": "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng.",
+    "vn": "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ."
+   }
+  },
+  {
+   "zh": "补料单",
+   "py": "bǔliàodān",
+   "vn": "phiếu bổ sung liệu",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "要补料走补料单，盘点有差异走盘调申请。",
+    "py": "Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "物料状态标识",
+   "py": "wùliào zhuàngtài biāoshí",
+   "vn": "tem trạng thái vật liệu",
+   "note": "Chính liệu đạt, phụ liệu đạt, chờ kiểm, xử lý đặc biệt, không đạt.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "物料状态标识有主料合格、辅料合格、待检、特采、不合格。",
+    "py": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "储位",
+   "py": "chǔwèi",
+   "vn": "vị trí trên kệ",
+   "note": "Dạng C24-3-2: kệ – tầng – ô.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kho",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "储位编号像C24-3-2：货架号-层-位置。",
+    "py": "Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "验布",
+   "py": "yànbù",
+   "vn": "kiểm vải",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "查码数、幅宽、色差和瑕疵，填验布检查表。",
+    "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī, tián yàn bù jiǎn chá biǎo.",
+    "vn": "Kiểm số yard, khổ, chênh lệch màu và lỗi vải; điền biểu kiểm vải."
+   }
+  },
+  {
+   "zh": "验布机",
+   "py": "yànbùjī",
+   "vn": "máy kiểm vải",
+   "note": "Có hộp đèn, bộ đếm yard, cân điện tử.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "验布机带灯箱、码数计数器和电子秤。",
+    "py": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "码数",
+   "py": "mǎshù",
+   "vn": "số yard",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "查码数、幅宽、色差和瑕疵，填验布检查表。",
+    "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī, tián yàn bù jiǎn chá biǎo.",
+    "vn": "Kiểm số yard, khổ, chênh lệch màu và lỗi vải; điền biểu kiểm vải."
+   }
+  },
+  {
+   "zh": "幅宽",
+   "py": "fúkuān",
+   "vn": "khổ vải",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "查码数、幅宽、色差和瑕疵，填验布检查表。",
+    "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī, tián yàn bù jiǎn chá biǎo.",
+    "vn": "Kiểm số yard, khổ, chênh lệch màu và lỗi vải; điền biểu kiểm vải."
+   }
+  },
+  {
+   "zh": "色差",
+   "py": "sèchā",
+   "vn": "chênh lệch màu",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "查码数、幅宽、色差和瑕疵，填验布检查表。",
+    "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī, tián yàn bù jiǎn chá biǎo.",
+    "vn": "Kiểm số yard, khổ, chênh lệch màu và lỗi vải; điền biểu kiểm vải."
+   }
+  },
+  {
+   "zh": "瑕疵",
+   "py": "xiácī",
+   "vn": "lỗi trên vải",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "查码数、幅宽、色差和瑕疵，填验布检查表。",
+    "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī, tián yàn bù jiǎn chá biǎo.",
+    "vn": "Kiểm số yard, khổ, chênh lệch màu và lỗi vải; điền biểu kiểm vải."
+   }
+  },
+  {
+   "zh": "四分制",
+   "py": "sìfēnzhì",
+   "vn": "thang 4 điểm (kiểm vải)",
+   "note": "≤3 inch trừ 1 · 3–6 trừ 2 · 6–9 trừ 3 · >9 trừ 4. Quy về 100 yd²: A ≤29, B ≤47, C ≤62.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "旁边贴着验布作业标准、四分制分类和计算、主料检验标准、扣分参考样。",
+    "py": "Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "辨色测试",
+   "py": "biànsè cèshì",
+   "vn": "test phân biệt màu (X-Rite FM100)",
+   "note": "Người xem màu ở kho phải qua test này, giống điều kiện CFT.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "看色的检验员要先做辨色测试（X-Rite FM 100），跟CFT的条件一样。",
+    "py": "Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100), gēn CFT de tiáo jiàn yí yàng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "检验室",
+   "py": "jiǎnyànshì",
+   "vn": "phòng kiểm nghiệm của xưởng",
+   "note": "4 nhóm test: tính chất vật lý, độ bền màu, giặt thành phẩm, formaldehyde.",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "noi",
+   "hot": true,
+   "ex": {
+    "zh": "布头、布中、布尾各剪一块送检验室，看整匹布颜色是否一致，在不在接收标准内。",
+    "py": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, kàn zhěng pǐ bù yán sè shì fǒu yí zhì, zài bu zài jiē shōu biāo zhǔn nèi.",
+    "vn": "Cắt một mẫu ở đầu, giữa, cuối cây gửi phòng kiểm nghiệm: xem màu cả cây có đều và có trong mức chấp nhận không."
+   }
+  },
+  {
+   "zh": "色牢度",
+   "py": "sèláodù",
+   "vn": "độ bền màu",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "色牢度：水洗、汗渍、摩擦、日光、抗黄变、色移、耐水、汗光。",
+    "py": "Sè láo dù: shuǐ xǐ, hàn zì, mó cā, rì guāng, kàng huáng biàn, sè yí, nài shuǐ, hàn guāng.",
+    "vn": "Độ bền màu: giặt, mồ hôi, ma sát, ánh sáng, chống ố vàng, di màu, nước, mồ hôi kèm ánh sáng."
+   }
+  },
+  {
+   "zh": "克重",
+   "py": "kèzhòng",
+   "vn": "định lượng vải (gsm)",
+   "note": "Phiếu sơ đồ cắt ghi cả g/yard và g/m²: 248 g/yard ≈ 175 g/m².",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "甲醛",
+   "py": "jiǎquán",
+   "vn": "formaldehyde",
+   "note": "",
+   "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "检验室的测试分四类：物性、色牢度、成品洗、甲醛。",
+    "py": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "裁剪",
+   "py": "cáijiǎn",
+   "vn": "cắt (xưởng cắt)",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "cat",
+   "cat": "noi",
+   "hot": true,
+   "ex": {
+    "zh": "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
+    "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
+    "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
+   }
+  },
+  {
+   "zh": "品号",
+   "py": "pǐnhào",
+   "vn": "mã vật tư",
+   "note": "Chữ cái cuối là màu: B đen, W trắng, E xám, R đỏ, S xanh trời, J cam, Y vàng, K kaki, G xanh lá, Q nâu.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "布卷标签是白色的，有二维码，写着品号、品名、色差级数、缸号、扣点等级、检验员。",
+    "py": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "色差级数",
+   "py": "sèchā jíshù",
+   "vn": "cấp chênh lệch màu",
+   "note": "In trên tem cây vải. Kho phân A–D; vải khác cấp không kéo lẫn một chồng.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "kiemtra",
+   "hot": true,
+   "ex": {
+    "zh": "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
+    "py": "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
+    "vn": "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào."
+   }
+  },
+  {
+   "zh": "缸号",
+   "py": "gānghào",
+   "vn": "số lô nhuộm",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
+    "py": "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
+    "vn": "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào."
+   }
+  },
+  {
+   "zh": "扣点等级",
+   "py": "kòudiǎn děngjí",
+   "vn": "cấp theo điểm trừ",
+   "note": "Lấy từ thang 4 điểm ở kho.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "布卷标签是白色的，有二维码，写着品号、品名、色差级数、缸号、扣点等级、检验员。",
+    "py": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "松布",
+   "py": "sōngbù",
+   "vn": "xả vải",
+   "note": "Chỉ với vải co giãn: để vải co trước, mảnh cắt không co lại sau.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。",
+    "py": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "贴合",
+   "py": "tiēhé",
+   "vn": "dán vải chính với lót có keo",
+   "note": "Làm trước khi chặt. SOP M-10-71. Có thể bạn nghe sếp đọc thành 'hé tiē'.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": true,
+   "ex": {
+    "zh": "每天记录左、中、右三点温度（贴合前和贴合中），还有左右拉力。",
+    "py": "Měi tiān jì lù zuǒ, zhōng, yòu sān diǎn wēn dù (tiē hé qián hé tiē hé zhōng), hái yǒu zuǒ yòu lā lì.",
+    "vn": "Mỗi ngày ghi nhiệt độ 3 điểm trái, giữa, phải (trước và trong khi dán) và lực kéo trái, phải."
+   }
+  },
+  {
+   "zh": "面布",
+   "py": "miànbù",
+   "vn": "vải chính",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": {
+    "zh": "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。",
+    "py": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71).",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "衬布",
+   "py": "chènbù",
+   "vn": "vải lót",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": {
+    "zh": "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。",
+    "py": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71).",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "点胶衬",
+   "py": "diǎnjiāo chèn",
+   "vn": "lót chấm keo",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "直线贴合机",
+   "py": "zhíxiàn tiēhé jī",
+   "vn": "máy dán đường thẳng",
+   "note": "Mã máy Z trong mã gia công. Biển ghi 'máy dán tự động'.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "涂布贴合机",
+   "py": "túbù tiēhé jī",
+   "vn": "máy tráng keo – dán",
+   "note": "Mã máy T trong mã gia công (VD TG0M01-150).",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "胶水",
+   "py": "jiāoshuǐ",
+   "vn": "keo",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "固化剂",
+   "py": "gùhuàjì",
+   "vn": "chất đóng rắn",
+   "note": "G1 thêm 3%, G2 thêm 6% để bền khi giặt.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "贴合辅助单据",
+   "py": "tiēhé fǔzhù dānjù",
+   "vn": "phiếu phụ trợ dán (dán trên cuộn đã dán)",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "渗胶",
+   "py": "shènjiāo",
+   "vn": "thấm keo",
+   "note": "Lỗi phải tránh khi dán, cùng 起皱 nhăn và 打卷 quăn mép.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "贴好的布要牢，不起皱、不打卷、不渗胶。",
+    "py": "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
+    "vn": "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo."
+   }
+  },
+  {
+   "zh": "打卷",
+   "py": "dǎjuǎn",
+   "vn": "quăn mép",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "贴好的布要牢，不起皱、不打卷、不渗胶。",
+    "py": "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
+    "vn": "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo."
+   }
+  },
+  {
+   "zh": "拉布",
+   "py": "lābù",
+   "vn": "kéo vải (xếp vải thành nhiều lớp trên bàn cắt)",
+   "note": "Sếp nói 'la bù'. Phiếu sơ đồ cắt ghi 双面拉布.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": true,
+   "ex": {
+    "zh": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。",
+    "py": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "双面拉布",
+   "py": "shuāngmiàn lābù",
+   "vn": "kéo vải hai mặt",
+   "note": "VD vải mắt chim UA: kéo hai mặt, 18 lớp.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。",
+    "py": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "排版",
+   "py": "páibǎn",
+   "vn": "xếp sơ đồ cắt",
+   "note": "Phiếu sơ đồ cắt: biểu M-10-44-A-3.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "裁次",
+   "py": "cáicì",
+   "vn": "lần cắt",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "尾数包贴标签，写订单、裁次、颜色、数量。",
+    "py": "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng.",
+    "vn": "Bó lẻ cuối đơn dán tem ghi đơn, lần cắt, màu, số lượng."
+   }
+  },
+  {
+   "zh": "防霉",
+   "py": "fángméi",
+   "vn": "chống mốc",
+   "note": "Phiếu sơ đồ cắt có ô 'có chống mốc không'.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
+    "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
+    "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
+   }
+  },
+  {
+   "zh": "刀模",
+   "py": "dāomó",
+   "vn": "dao chặt",
+   "note": "Lệch dưỡng từ 2 mm phải sửa; kiểm dao 2 giờ/lần.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": true,
+   "ex": {
+    "zh": "刀模跟纸样比，差2毫米以上就要修。",
+    "py": "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū.",
+    "vn": "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa."
+   }
+  },
+  {
+   "zh": "纸样",
+   "py": "zhǐyàng",
+   "vn": "rập",
+   "note": "Dao chặt so với rập (dưỡng) để biết có lệch không.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "刀模跟纸样比，差2毫米以上就要修。",
+    "py": "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū.",
+    "vn": "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa."
+   }
+  },
+  {
+   "zh": "牛皮纸",
+   "py": "niúpízhǐ",
+   "vn": "giấy nâu (kraft) lót khi chặt",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "用28号机把刀模压下去，一次裁一整叠布，下面垫牛皮纸。",
+    "py": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "前片",
+   "py": "qiánpiàn",
+   "vn": "mảnh trước",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+    "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+    "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
+   }
+  },
+  {
+   "zh": "后片",
+   "py": "hòupiàn",
+   "vn": "mảnh sau",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "眉面",
+   "py": "méimiàn",
+   "vn": "mặt trên lưỡi trai",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "一套刀模有六片帽身、眉面、眉里、顶扣包布。",
+    "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "眉里",
+   "py": "méilǐ",
+   "vn": "mặt dưới lưỡi trai",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "一套刀模有六片帽身、眉面、眉里、顶扣包布。",
+    "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "顶扣包布",
+   "py": "dǐngkòu bāobù",
+   "vn": "vải bọc nút đỉnh",
+   "note": "Cắt bằng bộ dao riêng ở xưởng cắt.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "一套刀模有六片帽身、眉面、眉里、顶扣包布。",
+    "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "顶扣",
+   "py": "dǐngkòu",
+   "vn": "nút đỉnh",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "顶扣不松、不偏；合片线在顶上交在一个点。",
+    "py": "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn.",
+    "vn": "Nút đỉnh không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh."
+   }
+  },
+  {
+   "zh": "打顶扣",
+   "py": "dǎ dǐngkòu",
+   "vn": "đóng nút đỉnh",
+   "note": "Áp suất 6–9; nút không lỏng, không lệch.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "顶扣再送到车缝打顶扣。",
+    "py": "Dǐng kòu zài sòng dào chē féng dǎ dǐng kòu.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "布质不良",
+   "py": "bùzhì bùliáng",
+   "vn": "vải lỗi (mã 1041)",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "裁剪脏污",
+   "py": "cáijiǎn zāngwū",
+   "vn": "mảnh cắt bẩn (mã 1042)",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "接匹",
+   "py": "jiēpǐ",
+   "vn": "chỗ nối cây vải (mã 1043)",
+   "note": "Mã 1043 ghi 布料接头/接匹.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "破洞",
+   "py": "pòdòng",
+   "vn": "lỗ thủng (mã 1044)",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "裁剪不良",
+   "py": "cáijiǎn bùliáng",
+   "vn": "cắt không đạt (mã 1140)",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "贴合不良",
+   "py": "tiēhé bùliáng",
+   "vn": "dán không đạt (mã 1141)",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "挑片",
+   "py": "tiāopiàn",
+   "vn": "chọn mảnh (loại mảnh lỗi)",
+   "note": "SOP M-10-72.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": true,
+   "ex": null
+  },
+  {
+   "zh": "绑片",
+   "py": "bǎngpiàn",
+   "vn": "buộc mảnh thành bó",
+   "note": "144 bộ/bó = đủ mảnh cho 144 chiếc mũ.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": true,
+   "ex": {
+    "zh": "绑片不多不少：每层套数 × 层数 ± 加减 = 144。",
+    "py": "Bǎng piàn bù duō bù shǎo: měi céng tào shù × céng shù ± jiā jiǎn = 144.",
+    "vn": "Buộc đúng số, không thừa không thiếu: số bộ/lớp × số lớp ± thêm bớt = 144."
+   }
+  },
+  {
+   "zh": "裁片",
+   "py": "cáipiàn",
+   "vn": "mảnh cắt",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "抽上、中、下三层的裁片检查；查刀模的人和组长在单上签字，QC盖章。",
+    "py": "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá; chá dāo mó de rén hé zǔ zhǎng zài dān shàng qiān zì, QC gài zhāng.",
+    "vn": "Lấy mảnh ở lớp trên, giữa, dưới để kiểm; người kiểm dao và tổ trưởng ký trên phiếu, QC đóng dấu."
+   }
+  },
+  {
+   "zh": "裁片捆绑计算表",
+   "py": "cáipiàn kǔnbǎng jìsuànbiǎo",
+   "vn": "bảng tính bó mảnh cắt",
+   "note": "Số bộ/lớp × số lớp ± thêm bớt = 144.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "按裁片捆绑计算表绑够144套，够做144顶帽子；",
+    "py": "Àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "尾数包",
+   "py": "wěishù bāo",
+   "vn": "bó lẻ cuối đơn",
+   "note": "Dán tem ghi đơn, lần cắt, màu, số lượng.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "尾数包贴标签，写订单、裁次、颜色、数量。",
+    "py": "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng.",
+    "vn": "Bó lẻ cuối đơn dán tem ghi đơn, lần cắt, màu, số lượng."
+   }
+  },
+  {
+   "zh": "待装片区",
+   "py": "dài zhuāngpiàn qū",
+   "vn": "khu chờ giao mảnh",
+   "note": "",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "放待装片区，再送绣花、印花、车缝。",
+    "py": "Fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "品保部",
+   "py": "pǐnbǎo bù",
+   "vn": "phòng đảm bảo chất lượng (phòng của Bảo)",
+   "note": "Phòng mình gọi là 品保部, không gọi 品质部.",
+   "src": "Bảo xác nhận ở xưởng 02/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "noi",
+   "hot": true,
+   "ex": {
+    "zh": "品保部在裁剪查：单上的QC章、刀模、裁片。",
+    "py": "Pǐn bǎo bù zài cái jiǎn chá: dān shàng de QC zhāng, dāo mó, cái piàn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "绣花",
+   "py": "xiùhuā",
+   "vn": "thêu",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "theu",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+    "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+    "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
+   }
+  },
+  {
+   "zh": "绣洞",
+   "py": "xiùdòng",
+   "vn": "lỗ thoáng thêu",
+   "note": "Ở chuyền may: 1.700 vòng/phút, vải mỏng 1.200 và lót giấy.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "theu",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "绣洞在车缝线上做：转速1700，薄料1200，要垫纸。",
+    "py": "Xiù dòng zài chē féng xiàn shàng zuò: zhuàn sù 1700, báo liào 1200, yào diàn zhǐ.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "首件检验",
+   "py": "shǒujiàn jiǎnyàn",
+   "vn": "kiểm chiếc đầu tiên",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "theu",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "首件检验：每条线每个班、换颜色或换款的时候做，CFA、组长、QC主管一起签字，不对就停线。",
+    "py": "Shǒu jiàn jiǎn yàn: měi tiáo xiàn měi gè bān, huàn yán sè huò huàn kuǎn de shí hòu zuò, CFA, zǔ zhǎng, QC zhǔ guǎn yì qǐ qiān zì, bú duì jiù tíng xiàn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "确认样",
+   "py": "quèrènyàng",
+   "vn": "mẫu xác nhận (mẫu duyệt)",
+   "note": "Chiếc đầu (thêu, in, may) so với mẫu này.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "theu",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": {
+    "zh": "首件跟确认样对比：位置、尺寸、密度、线的颜色。",
+    "py": "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè.",
+    "vn": "So chiếc đầu với mẫu duyệt: vị trí, kích thước, mật độ, màu chỉ."
+   }
+  },
+  {
+   "zh": "绣花起皱",
+   "py": "xiùhuā qǐzhòu",
+   "vn": "hình thêu bị nhăn",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "theu",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+    "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+    "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
+   }
+  },
+  {
+   "zh": "绣花起毛",
+   "py": "xiùhuā qǐmáo",
+   "vn": "thêu xù lông",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "theu",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+    "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+    "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
+   }
+  },
+  {
+   "zh": "印花",
+   "py": "yìnhuā",
+   "vn": "in",
+   "note": "W6 có 印花模糊 = hình in mờ.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "in",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+    "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+    "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
+   }
+  },
+  {
+   "zh": "丝印",
+   "py": "sīyìn",
+   "vn": "in lưới",
+   "note": "SOP của VF viết 丝网印刷. Hỏi xưởng gọi thế nào.",
+   "src": "Chưa đối chiếu, cần hỏi lại",
+   "ok": false,
+   "st": "in",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "转印",
+   "py": "zhuǎnyìn",
+   "vn": "ép logo (chuyển in)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "in",
+   "cat": "congdoan",
+   "hot": true,
+   "ex": {
+    "zh": "手工印、机器印、转印。",
+    "py": "Shǒu gōng yìn, jī qì yìn, zhuǎn yìn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "轻微缺陷",
+   "py": "qīngwēi quēxiàn",
+   "vn": "lỗi nhẹ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "in",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "Logo偏位：VF规定超过3毫米是严重缺陷，3毫米以内是轻微缺陷。",
+    "py": "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn.",
+    "vn": "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ."
+   }
+  },
+  {
+   "zh": "严重缺陷",
+   "py": "yánzhòng quēxiàn",
+   "vn": "lỗi nặng",
+   "note": "VF: logo lệch quá 3 mm là lỗi nặng.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "in",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "Logo偏位：VF规定超过3毫米是严重缺陷，3毫米以内是轻微缺陷。",
+    "py": "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn.",
+    "vn": "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ."
+   }
+  },
+  {
+   "zh": "印花模糊",
+   "py": "yìnhuā móhu",
+   "vn": "hình in mờ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "in",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+    "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+    "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
+   }
+  },
+  {
+   "zh": "转印变形",
+   "py": "zhuǎnyìn biànxíng",
+   "vn": "hình ép bị biến dạng",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "in",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "印花模糊、转印变形、脱落、裂开。",
+    "py": "Yìn huā mó hu, zhuǎn yìn biàn xíng, tuō luò, liè kāi.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "水洗帽",
+   "py": "shuǐxǐ mào",
+   "vn": "mũ wash",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "giat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "洗水",
+   "py": "xǐshuǐ",
+   "vn": "giặt",
+   "note": "Chưa thấy trên biểu mẫu xưởng; hỏi lại tên bộ phận giặt.",
+   "src": "Chưa đối chiếu, cần hỏi lại",
+   "ok": false,
+   "st": "giat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
+    "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
+    "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
+   }
+  },
+  {
+   "zh": "车缝",
+   "py": "chēféng",
+   "vn": "may",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "跳针、浮线、车缝起皱、双针大小边。",
+    "py": "Tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "合片",
+   "py": "hépiàn",
+   "vn": "ráp thân",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "顶扣不松、不偏；合片线在顶上交在一个点。",
+    "py": "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn.",
+    "vn": "Nút đỉnh không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh."
+   }
+  },
+  {
+   "zh": "前合片",
+   "py": "qián hépiàn",
+   "vn": "ráp mảnh trước",
+   "note": "Công đoạn 1000 trên thẻ quy trình.",
+   "src": "Thẻ quy trình A (ảnh 02/11)",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "前合片：缝份6毫米，每英寸12针（越南文的卡写11针），回针10毫米。",
+    "py": "Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "帽双",
+   "py": "màoshuāng",
+   "vn": "may đường 2 kim cho mũ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "后双",
+   "py": "hòushuāng",
+   "vn": "may 2 kim thân sau",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "拷克",
+   "py": "kǎokè",
+   "vn": "vắt sổ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "包边",
+   "py": "bāobiān",
+   "vn": "viền",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "针距",
+   "py": "zhēnjù",
+   "vn": "khoảng cách kim (mật độ mũi)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "核对每台机器的SOP卡和机器上的数据（针距、缝份）。10月13到14日发现3处不一致。",
+    "py": "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì.",
+    "vn": "Đối chiếu thẻ SOP của từng máy với số trên máy (mũi/inch, đường may chừa). Hôm 13–14/10 đã thấy 3 chỗ lệch."
+   }
+  },
+  {
+   "zh": "缝份",
+   "py": "féngfèn",
+   "vn": "đường may (phần chừa)",
+   "note": "Ráp thân trước: chừa 6 mm.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "核对每台机器的SOP卡和机器上的数据（针距、缝份）。10月13到14日发现3处不一致。",
+    "py": "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì.",
+    "vn": "Đối chiếu thẻ SOP của từng máy với số trên máy (mũi/inch, đường may chừa). Hôm 13–14/10 đã thấy 3 chỗ lệch."
+   }
+  },
+  {
+   "zh": "回针",
+   "py": "huízhēn",
+   "vn": "lại mũi",
+   "note": "Ráp thân trước: lại mũi 10 mm.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "前合片：缝份6毫米，每英寸12针（越南文的卡写11针），回针10毫米。",
+    "py": "Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "束眉",
+   "py": "shùméi",
+   "vn": "may vành mũ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "束眉：每英寸7针，不能车到眉板上。",
+    "py": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "修眉",
+   "py": "xiūméi",
+   "vn": "gọn vành mũ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "修眉：UA留5到7毫米。",
+    "py": "Xiū méi: UA liú 5 dào 7 háo mǐ.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "绕线",
+   "py": "ràoxiàn",
+   "vn": "chạy chỉ vành",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "绕线均匀，没有断线、接线；左右眉角对称。",
+    "py": "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
+    "vn": "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau."
+   }
+  },
+  {
+   "zh": "眉板",
+   "py": "méibǎn",
+   "vn": "tấm lưỡi trai",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "束眉：每英寸7针，不能车到眉板上。",
+    "py": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "帽檐",
+   "py": "màoyán",
+   "vn": "lưỡi trai",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "按技术包测量logo位置，例如UA 1381645，logo离帽檐车线1.5厘米。",
+    "py": "Àn jì shù bāo cè liáng logo wèi zhì, lì rú UA 1381645, logo lí mào yán chē xiàn 1.5 lí mǐ.",
+    "vn": "Đo vị trí logo theo tech pack (VD mã UA 1381645: logo cách đường may lưỡi 1,5 cm)."
+   }
+  },
+  {
+   "zh": "帽眉",
+   "py": "màoméi",
+   "vn": "vành mũ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": true,
+   "ex": {
+    "zh": "汗带、帽眉这一道是关键工序，每英寸9针，UA、TNF是10针；",
+    "py": "Hàn dài, mào méi zhè yí dào shì guān jiàn gōng xù, měi yīng cùn 9 zhēn, UA, TNF shì 10 zhēn;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "断线",
+   "py": "duànxiàn",
+   "vn": "đứt chỉ",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "may",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "绕线均匀，没有断线、接线；左右眉角对称。",
+    "py": "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
+    "vn": "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau."
+   }
+  },
+  {
+   "zh": "接线",
+   "py": "jiēxiàn",
+   "vn": "nối chỉ",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "may",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "绕线均匀，没有断线、接线；左右眉角对称。",
+    "py": "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
+    "vn": "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau."
+   }
+  },
+  {
+   "zh": "尺寸带",
+   "py": "chǐcùndài",
+   "vn": "dây size",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "尺寸带、商标离下边4毫米；",
+    "py": "Chǐ cùn dài, shāng biāo lí xià biān 4 háo mǐ;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "汗带",
+   "py": "hàndài",
+   "vn": "thun chống mồ hôi",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": true,
+   "ex": {
+    "zh": "汗带：不能汗带外露；车线不偏、不断线。",
+    "py": "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn.",
+    "vn": "Thun chống mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt."
+   }
+  },
+  {
+   "zh": "关键工序",
+   "py": "guānjiàn gōngxù",
+   "vn": "công đoạn quan trọng",
+   "note": "May thun chống mồ hôi, tra lưỡi: tuần tra 2 lần/ngày, AQL 1.5.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "关键工序每天巡检2次，AQL 1.5。",
+    "py": "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5.",
+    "vn": "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5."
+   }
+  },
+  {
+   "zh": "排扣",
+   "py": "páikòu",
+   "vn": "thun điều chỉnh (khóa)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "后扣",
+   "py": "hòukòu",
+   "vn": "khóa sau",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "后扣：先用废带试车，再车大货。",
+    "py": "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò.",
+    "vn": "Khóa sau: may thử bằng băng phế trước khi may hàng thật."
+   }
+  },
+  {
+   "zh": "后喇叭",
+   "py": "hòu lǎba",
+   "vn": "gáy mũ (miệng sau)",
+   "note": "喇叭 còn là 'cữ' gắn trên máy may.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "修线",
+   "py": "xiūxiàn",
+   "vn": "cắt chỉ",
+   "note": "Trong trước, ngoài sau.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "修线：先里面后外面，帽檐根部要干净。",
+    "py": "Xiū xiàn: xiān lǐ miàn hòu wài miàn, mào yán gēn bù yào gān jìng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "牛筋衬",
+   "py": "niújīnchèn",
+   "vn": "dựng cứng mảnh trước",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "前片有牛筋衬。",
+    "py": "Qián piàn yǒu niú jīn chèn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "巡检",
+   "py": "xúnjiǎn",
+   "vn": "kiểm trên chuyền (tuần tra)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "关键工序每天巡检2次，AQL 1.5。",
+    "py": "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5.",
+    "vn": "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5."
+   }
+  },
+  {
+   "zh": "跳针",
+   "py": "tiàozhēn",
+   "vn": "nhảy mũi",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "中片：双针大小边、跳针、浮线；左右高度要一样。",
+    "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
+    "vn": "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau."
+   }
+  },
+  {
+   "zh": "浮线",
+   "py": "fúxiàn",
+   "vn": "nổi chỉ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "中片：双针大小边、跳针、浮线；左右高度要一样。",
+    "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
+    "vn": "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau."
+   }
+  },
+  {
+   "zh": "车缝起皱",
+   "py": "chēféng qǐzhòu",
+   "vn": "may bị nhăn",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "跳针、浮线、车缝起皱、双针大小边。",
+    "py": "Tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "双针大小边",
+   "py": "shuāngzhēn dàxiǎo biān",
+   "vn": "đường 2 kim không đều",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "may",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "中片：双针大小边、跳针、浮线；左右高度要一样。",
+    "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
+    "vn": "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau."
+   }
+  },
+  {
+   "zh": "弯眉整烫",
+   "py": "wānméi zhěngtàng",
+   "vn": "ép cong vành",
+   "note": "Máy TYL-1908-R, 3 vùng nhiệt, kiểm máy đầu ca.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "dinhform",
+   "cat": "congdoan",
+   "hot": true,
+   "ex": {
+    "zh": "弯眉整烫机TYL-1908-R，三个温区，开班前要点检。",
+    "py": "Wān méi zhěng tàng jī TYL-1908-R, sān gè wēn qū, kāi bān qián yào diǎn jiǎn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "头模",
+   "py": "tóumó",
+   "vn": "đầu mẫu (khuôn đầu)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "dinhform",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "在头模上蒸汽定型：棉布帽檐165到180度、6秒，熨烫90到130度。",
+    "py": "Zài tóu mó shàng zhēng qì dìng xíng: mián bù mào yán 165 dào 180 dù, 6 miǎo, yùn tàng 90 dào 130 dù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "前整烫",
+   "py": "qián zhěngtàng",
+   "vn": "ủi định hình mảnh trước",
+   "note": "Công đoạn 1808 trên thẻ quy trình.",
+   "src": "Thẻ quy trình A (ảnh 02/11)",
+   "ok": true,
+   "st": "dinhform",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "前整烫是卡上的1808工序。",
+    "py": "Qián zhěng tàng shì kǎ shàng de 1808 gōng xù.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "帽型不佳",
+   "py": "màoxíng bù jiā",
+   "vn": "dáng mũ không đẹp",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "dinhform",
+   "cat": "loi",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "尾查",
+   "py": "wěichá",
+   "vn": "kiểm cuối",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "qc",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "六片帽检验顺序",
+   "py": "liùpiàn mào jiǎnyàn shùnxù",
+   "vn": "thứ tự kiểm mũ 6 miếng",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "qc",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "iPad扫码 → 定型后检查 → 按六片帽检验顺序从顶上开始查外面 → 查帽檐和绕线 → 查里面，线头在桌上剪 → 后面调到9.5再量帽围 → 核对iPad上的信息 → 看帽型。",
+    "py": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "帽围",
+   "py": "màowéi",
+   "vn": "vòng đầu",
+   "note": "Chỉnh dây sau về 9.5 rồi mới đo.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "qc",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "iPad扫码 → 定型后检查 → 按六片帽检验顺序从顶上开始查外面 → 查帽檐和绕线 → 查里面，线头在桌上剪 → 后面调到9.5再量帽围 → 核对iPad上的信息 → 看帽型。",
+    "py": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "线头",
+   "py": "xiàntóu",
+   "vn": "chỉ thừa",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "qc",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "iPad扫码 → 定型后检查 → 按六片帽检验顺序从顶上开始查外面 → 查帽檐和绕线 → 查里面，线头在桌上剪 → 后面调到9.5再量帽围 → 核对iPad上的信息 → 看帽型。",
+    "py": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "尺寸",
+   "py": "chǐcùn",
+   "vn": "kích thước (điểm kiểm số 1)",
+   "note": "Sai size, vượt dung sai, tem size không khớp.",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "qc",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "首件跟确认样对比：位置、尺寸、密度、线的颜色。",
+    "py": "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè.",
+    "vn": "So chiếc đầu với mẫu duyệt: vị trí, kích thước, mật độ, màu chỉ."
+   }
+  },
+  {
+   "zh": "扣具",
+   "py": "kòujù",
+   "vn": "khóa (điểm kiểm số 14)",
+   "note": "Lỏng, sai loại, cạnh sắc, gỉ, dây may lệch.",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "qc",
+   "cat": "bophan",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "汗带外露",
+   "py": "hàndài wàilù",
+   "vn": "lộ thun chống mồ hôi ra ngoài",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "qc",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "汗带：不能汗带外露；车线不偏、不断线。",
+    "py": "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn.",
+    "vn": "Thun chống mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt."
+   }
+  },
+  {
+   "zh": "返工",
+   "py": "fǎngōng",
+   "vn": "làm lại, sửa hàng",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "qc",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "轻微缺陷告诉组长，退回生产返工；",
+    "py": "Qīng wēi quē xiàn gào sù zǔ zhǎng, tuì huí shēng chǎn fǎn gōng;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "重做",
+   "py": "chóngzuò",
+   "vn": "làm lại từ đầu (lỗi nặng)",
+   "note": "",
+   "src": "Báo cáo học 13–29/10 (W2)",
+   "ok": true,
+   "st": "qc",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "严重缺陷影响结构、颜色、质量的，要重做。",
+    "py": "Yán zhòng quē xiàn yǐng xiǎng jié gòu, yán sè, zhì liàng de, yào chóng zuò.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "中查",
+   "py": "zhōngchá",
+   "vn": "kiểm giữa kỳ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "qc",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "线上还有巡检和中查。",
+    "py": "Xiàn shàng hái yǒu xún jiǎn hé zhōng chá.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "出货",
+   "py": "chūhuò",
+   "vn": "xuất hàng",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "比出货日早7天以上检完的，要再测20%箱子的含水率。",
+    "py": "Bǐ chū huò rì zǎo 7 tiān yǐ shàng jiǎn wán de, yào zài cè 20% xiāng zi de hán shuǐ lǜ.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "包装",
+   "py": "bāozhuāng",
+   "vn": "đóng gói",
+   "note": "W6 có 包装不良 = lỗi đóng gói.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "UA：PO完成80%以上、已经包装、贴好箱唛、有装箱单，才可以做终检；",
+    "py": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "吊牌",
+   "py": "diàopái",
+   "vn": "thẻ treo",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
+    "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
+    "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
+   }
+  },
+  {
+   "zh": "含水率",
+   "py": "hánshuǐlǜ",
+   "vn": "độ ẩm",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "kiemtra",
+   "hot": true,
+   "ex": {
+    "zh": "含水率（UA，LANDTEK DM200T）：棉5%、涤纶4%、尼龙4%、羊毛8%；混纺按比例算，60%棉加40%尼龙是4.6%。",
+    "py": "Hán shuǐ lǜ (UA, LANDTEK DM200T): mián 5%, dí lún 4%, ní lóng 4%, yáng máo 8%; hùn fǎng àn bǐ lì suàn, 60% mián jiā 40% ní lóng shì 4.6%.",
+    "vn": "Độ ẩm (UA, máy LANDTEK DM200T): cotton 5%, polyester 4%, nylon 4%, wool 8%; vải pha tính theo tỷ lệ (60% cotton + 40% nylon = 4,6%)."
+   }
+  },
+  {
+   "zh": "水分测定仪",
+   "py": "shuǐfèn cèdìngyí",
+   "vn": "máy đo độ ẩm",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "may",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "外箱标签",
+   "py": "wàixiāng biāoqiān",
+   "vn": "tem thùng",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
+    "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
+    "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
+   }
+  },
+  {
+   "zh": "洗水唛",
+   "py": "xǐshuǐmài",
+   "vn": "nhãn giặt",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
+    "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
+    "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
+   }
+  },
+  {
+   "zh": "抽样",
+   "py": "chōuyàng",
+   "vn": "lấy mẫu",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "kiemtra",
+   "hot": true,
+   "ex": null
+  },
+  {
+   "zh": "允收",
+   "py": "yǔnshōu",
+   "vn": "chấp nhận (lô đạt)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "拒收",
+   "py": "jùshōu",
+   "vn": "loại (lô không đạt)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "验针",
+   "py": "yànzhēn",
+   "vn": "dò kim",
+   "note": "4 chuyền dò kim; kim gãy là lỗi nghiêm trọng.",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "有4条验针线。",
+    "py": "Yǒu 4 tiáo yàn zhēn xiàn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "箱唛",
+   "py": "xiāngmài",
+   "vn": "tem vận chuyển (mác thùng)",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "UA：PO完成80%以上、已经包装、贴好箱唛、有装箱单，才可以做终检；",
+    "py": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "装箱单",
+   "py": "zhuāngxiāngdān",
+   "vn": "packing list",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "UA：PO完成80%以上、已经包装、贴好箱唛、有装箱单，才可以做终检；",
+    "py": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn;",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "尾箱",
+   "py": "wěixiāng",
+   "vn": "thùng lẻ",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": null
+  },
+  {
+   "zh": "重验",
+   "py": "chóngyàn",
+   "vn": "kiểm lại",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "不合格就整张PO 100%检查，再重验。",
+    "py": "Bù hé gé jiù zhěng zhāng PO 100% jiǎn chá, zài chóng yàn.",
+    "vn": ""
+   }
+  },
+  {
+   "zh": "大货",
+   "py": "dàhuò",
+   "vn": "hàng đại trà",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "xuat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": {
+    "zh": "后扣：先用废带试车，再车大货。",
+    "py": "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò.",
+    "vn": "Khóa sau: may thử bằng băng phế trước khi may hàng thật."
+   }
+  }
+ ],
+ "cats": [
+  {
+   "id": "noi",
+   "vn": "Nơi, bộ phận",
+   "zh": "部门、地方"
+  },
+  {
+   "id": "congdoan",
+   "vn": "Công đoạn, thao tác",
+   "zh": "工序、动作"
+  },
+  {
+   "id": "kiemtra",
+   "vn": "Kiểm tra, chất lượng",
+   "zh": "检验、品质"
+  },
+  {
+   "id": "loi",
+   "vn": "Lỗi",
+   "zh": "不良"
+  },
+  {
+   "id": "giayto",
+   "vn": "Giấy tờ, tem, mã",
+   "zh": "单据、标签"
+  },
+  {
+   "id": "may",
+   "vn": "Máy, dụng cụ",
+   "zh": "机器、工具"
+  },
+  {
+   "id": "bophan",
+   "vn": "Bộ phận mũ, thông số",
+   "zh": "帽子部位、参数"
+  },
+  {
+   "id": "vatlieu",
+   "vn": "Vật liệu, mẫu",
+   "zh": "物料、样品"
+  }
+ ],
+ "wrong": [
+  {
+   "bad": "铺布 / trải vải",
+   "good": "拉布",
+   "py": "lābù",
+   "vn": "kéo vải (xếp vải thành lớp)",
+   "src": "Sếp nói; phiếu ghi 双面拉布"
+  },
+  {
+   "bad": "dao khuôn",
+   "good": "刀模",
+   "py": "dāomó",
+   "vn": "dao chặt",
+   "src": "W6"
+  },
+  {
+   "bad": "ép dán",
+   "good": "贴合",
+   "py": "tiēhé",
+   "vn": "dán (vải chính với lót có keo)",
+   "src": "SOP M-10-71"
+  },
+  {
+   "bad": "色差标签 / tem ánh màu",
+   "good": "色差级数",
+   "py": "sèchā jíshù",
+   "vn": "cấp chênh lệch màu (A–D)",
+   "src": "Tem cây vải"
+  },
+  {
+   "bad": "湿度",
+   "good": "含水率",
+   "py": "hánshuǐlǜ",
+   "vn": "độ ẩm",
+   "src": "W6"
+  },
+  {
+   "bad": "裁床",
+   "good": "裁剪",
+   "py": "cáijiǎn",
+   "vn": "xưởng cắt / cắt",
+   "src": "W2"
+  },
+  {
+   "bad": "扎包、二维码卡",
+   "good": "挑片、绑片；A卡",
+   "py": "tiāopiàn, bǎngpiàn",
+   "vn": "chọn, buộc mảnh; thẻ quy trình A",
+   "src": "SOP M-10-72"
+  },
+  {
+   "bad": "热转印 / 机印 / ép nhiệt",
+   "good": "转印",
+   "py": "zhuǎnyìn",
+   "vn": "ép logo (chuyển in)",
+   "src": "W6"
+  },
+  {
+   "bad": "定型（烫、弯眉）/ uốn vành",
+   "good": "弯眉整烫",
+   "py": "wānméi zhěngtàng",
+   "vn": "ép cong vành",
+   "src": "W6"
+  },
+  {
+   "bad": "上汗带、上眉 / đai mồ hôi",
+   "good": "汗带、帽眉",
+   "py": "hàndài, màoméi",
+   "vn": "thun chống mồ hôi, vành mũ",
+   "src": "W6"
+  },
+  {
+   "bad": "样品间、版房",
+   "good": "样品室",
+   "py": "yàngpǐnshì",
+   "vn": "phòng mẫu",
+   "src": "W6"
+  },
+  {
+   "bad": "QA验箱",
+   "good": "QA抽检",
+   "py": "QA chōujiǎn",
+   "vn": "QA lấy mẫu kiểm",
+   "src": "W6 (抽样)"
+  },
+  {
+   "bad": "产前会",
+   "good": "产前会议",
+   "py": "chǎnqián huìyì",
+   "vn": "họp trước sản xuất (PPM)",
+   "src": "W6"
+  },
+  {
+   "bad": "品质部",
+   "good": "品保部",
+   "py": "pǐnbǎo bù",
+   "vn": "phòng đảm bảo chất lượng",
+   "src": "Bảo xác nhận"
+  },
+  {
+   "bad": "五金",
+   "good": "打顶扣和后扣等配件",
+   "py": "dǎ dǐngkòu hé hòukòu děng pèijiàn",
+   "vn": "đóng nút đỉnh, khóa sau",
+   "src": "Chị Hương không hiểu 五金"
+  },
+  {
+   "bad": "实验室",
+   "good": "检验室",
+   "py": "jiǎnyànshì",
+   "vn": "phòng kiểm nghiệm",
+   "src": "Báo cáo kho 31/10"
+  },
+  {
+   "bad": "十个站点 / 10 ga",
+   "good": "十个环节",
+   "py": "shí gè huánjié",
+   "vn": "10 khâu",
+   "src": "Quy định W7"
+  }
+ ],
+ "pending": [
+  {
+   "term": "丝印",
+   "vn": "in lưới",
+   "note": "SOP của VF viết 丝网印刷; hỏi xưởng gọi thế nào."
+  },
+  {
+   "term": "“dập máy”",
+   "vn": "in máy",
+   "note": "Tên tiếng Trung chưa biết."
+  },
+  {
+   "term": "洗水",
+   "vn": "giặt",
+   "note": "Chưa thấy trên biểu mẫu; tạm dùng 水洗 / 水洗帽."
+  },
+  {
+   "term": "流程卡",
+   "vn": "thẻ quy trình A",
+   "note": "Chưa xem tên in trên thẻ; tạm viết “A卡”."
+  },
+  {
+   "term": "máy làm nút đỉnh",
+   "vn": "có thể bọc 顶扣包布 lên nút",
+   "note": "Tên máy chưa biết."
+  },
+  {
+   "term": "“hé tiē”",
+   "vn": "sếp nói",
+   "note": "Có thể là 贴合 đọc ngược; hỏi lại."
+  },
+  {
+   "term": "755L 烤边(2)",
+   "vn": "công đoạn trên thẻ A",
+   "note": "Chưa rõ là gì."
+  },
+  {
+   "term": "máy chặt Chenfeng số 28",
+   "vn": "máy chặt",
+   "note": "Tên tiếng Trung chưa biết; tạm viết “28号机”."
+  }
+ ],
+ "qa": [
+  {
+   "q": "“La bù” là gì?",
+   "zh": "拉布",
+   "py": "lābù",
+   "a": "Kéo vải: kéo cây vải dọc bàn cắt, xếp chồng nhiều lớp đúng số lớp trên phiếu sơ đồ cắt, mép bằng, đúng chiều, rồi chặt cả chồng một lần. Phiếu xưởng ghi 双面拉布 (kéo hai mặt).",
+   "go": "cat"
+  },
+  {
+   "q": "“Hé tiē” là gì?",
+   "zh": "贴合",
+   "py": "tiēhé",
+   "a": "Trên SOP M-10-71 và phiếu xưởng chữ là 贴合 (tiē hé, đọc ngược với bạn ghi). Là dán vải chính với lót có keo bằng máy dán, làm trước khi chặt. Nếu sếp nói đúng “hé tiē” thì hỏi lại cho chắc.",
+   "go": "cat"
+  },
+  {
+   "q": "Máy làm “dǐngkòu”?",
+   "zh": "顶扣",
+   "py": "dǐngkòu",
+   "a": "顶扣 là nút đỉnh mũ. Xưởng cắt cắt mảnh 顶扣包布 (vải bọc nút đỉnh); máy đó nhiều khả năng bọc vải lên nút. Sang xưởng may, công đoạn 打顶扣 đóng nút lên đỉnh. Tên máy: hỏi tổ trưởng.",
+   "go": "cat"
+  }
+ ]
+}
