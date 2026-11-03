@@ -176,6 +176,43 @@ table.plan{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
 table.plan th,table.plan td{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}
 textarea{width:100%;min-height:80px;border:1px solid var(--line);border-radius:10px;padding:8px;font:12px/1.4 ui-monospace,Menlo,monospace}
 a{color:#2f6fb0}
+.pics{margin:6px 0 8px;border:1px solid #e6dcc8;background:#fdfaf3;border-radius:10px;padding:8px 10px}
+.pics>b,.qs>b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.pics>b{color:#8a5a00}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.pslot{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.pimg{aspect-ratio:4/3;background:#f1ede4;display:flex;align-items:center;justify-content:center;position:relative}
+.pimg img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}
+.pimg:empty::before{content:"Chưa có ảnh";font-size:12px;color:#9a917f}
+.pimg .del{position:absolute;top:4px;right:4px;border:0;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:2px 8px;cursor:pointer}
+.pcap{font-size:12.5px;padding:6px 8px 2px;line-height:1.35;flex:1}
+.pfile{font:11px ui-monospace,Menlo,monospace;color:#9a917f;padding:0 8px 4px;word-break:break-all}
+.padd{display:block;text-align:center;font-size:12.5px;font-weight:600;color:#8a5a00;border-top:1px solid var(--line);padding:6px;cursor:pointer}
+.pmsg{font-size:11.5px;color:var(--q);padding:0 8px 6px}
+.qs{margin:6px 0 8px;border:1px solid #cfdcea;background:#f4f8fc;border-radius:10px;padding:8px 10px}
+.qs>b{color:#2f6fb0}
+.qs ol{margin:0;padding-left:20px}
+.qs li{margin:0 0 9px}
+.qs li:last-child{margin-bottom:0}
+.qs .v{font-size:14px}
+.qs .z{font-size:15.5px;margin-top:2px}
+.qs .p{font-size:12.5px;color:var(--ink2)}
+.qs .say{border:1px solid var(--line);background:#fff;border-radius:999px;padding:0 7px;font-size:12px;cursor:pointer;margin-left:4px;vertical-align:1px}
+.qrow{display:flex;gap:10px;align-items:center;margin-top:4px;font-size:13px;flex-wrap:wrap}
+.qrow label{display:flex;gap:5px;align-items:center;cursor:pointer}
+.qans{display:none;width:100%;min-height:54px;margin-top:4px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:14px/1.4 var(--font);background:#fff}
+li.q-open .qans{display:block}
+li.q-done .v,li.q-done .z{color:#5b7d63}
+.qlink{border:0;background:transparent;color:#2f6fb0;text-decoration:underline;cursor:pointer;padding:0;font-size:13px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:60;display:none;align-items:center;justify-content:center;padding:16px}
+#lightbox.on{display:flex}
+#lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.qsum{display:flex;gap:10px;margin:12px 0}
+.qsum div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.qsum b{display:block;font-size:22px}
+.qstage{margin:16px 0 6px;font-weight:700;display:flex;align-items:center;gap:8px}
+.qstage .dot{width:22px;height:22px;border-radius:50%;color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800}
+.qstep{font-size:12.5px;color:var(--ink2);margin:6px 0 2px}
 footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
 @media (min-width:700px){.qa{grid-template-columns:repeat(3,1fr)} .fhz{font-size:72px} .fhz.long{font-size:50px}}
 </style>
@@ -188,6 +225,7 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
     <a href="#tu-vung" data-v="tu-vung" data-view="tu-vung">Từ vựng</a>
     <a href="#hoc-the" data-v="hoc-the" data-view="hoc-the">Thẻ học</a>
     <a href="#trac-nghiem" data-v="trac-nghiem" data-view="trac-nghiem">Trắc nghiệm</a>
+    <a href="#can-hoi" data-v="can-hoi" data-view="can-hoi">Cần hỏi</a>
     <a href="#cach-hoc" data-v="cach-hoc" data-view="cach-hoc">Cách học</a>
   </nav>
 </div></header>
@@ -204,14 +242,15 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
   </div>
   __SVG__
   <p class="hint center">Bấm vào một khâu để xem chi tiết · bấm vào từ để xem nghĩa, câu ví dụ</p>
+  <p class="hint">Mỗi bước có ô <b style="color:#8a5a00">Ảnh thực tế</b> (ảnh cần chụp; bấm “Thêm ảnh” để gắn ảnh của bạn) và ô <b style="color:#2f6fb0">Cần hỏi</b> (câu hỏi Việt, 中文, pinyin; đánh dấu đã hỏi, ghi câu trả lời). Xem gom lại ở tab <a href="#can-hoi" data-view="can-hoi">Cần hỏi</a>.</p>
   <div class="dept">
     <span class="big" lang="zh">品保部</span><span class="py">pǐnbǎo bù</span> · Phòng mình
-    <p>Gọi là <b>品保部</b>, không gọi 品质部. Khâu có dấu <b style="color:var(--q)">保</b> là chỗ phòng mình kiểm: <b>3 Xưởng cắt</b>, <b>5 In</b> (kiểm thêm), <b>9 QC cuối chuyền</b>, <b>10 QA, dò kim</b>. Phòng còn làm CFA, CFT, họp PPM, tiếp khách đến kiểm.</p>
+    <p>Gọi là <b>品保部</b>, không gọi 品质部. Khâu có dấu <b style="color:var(--q)">保</b> là chỗ phòng mình có việc: <b>0 Mẫu, họp PPM</b> (CFT duyệt mẫu), <b>3 Xưởng cắt</b>, <b>5 In</b> (kiểm thêm), <b>9 QC cuối chuyền</b>, <b>10 QA, dò kim</b>. Phòng còn làm CFA và tiếp khách đến kiểm.</p>
   </div>
   <p class="hint">Thuật ngữ lấy từ bảng W6, biểu mẫu xưởng và báo cáo đã nộp (quy định W7). Câu tiếng Trung nối thuật ngữ là bản dịch để tự học; câu nào gửi sếp thì đọc lại trước. Từ viền đứt có dấu <b style="color:var(--q)">?</b> là từ chưa đối chiếu.</p>
   <h2>Ba câu hỏi ở xưởng cắt</h2>
   <div class="qa" id="qa"></div>
-  <h2>10 khâu chi tiết</h2>
+  <h2>Các khâu chi tiết</h2>
   <div id="stages"></div>
 </section>
 
@@ -306,6 +345,25 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
   </div>
 </section>
 
+<!-- ========== CẦN HỎI ========== -->
+<section class="view" id="v-can-hoi">
+  <div class="bar" role="toolbar" aria-label="Hiển thị">
+    <button class="tg" data-t="py" aria-pressed="true">Pinyin</button>
+    <button class="tg" data-t="vn" aria-pressed="true">Tiếng Việt</button>
+  </div>
+  <div class="qsum"><div><b id="qsTotal">0</b><span class="hint">câu cần hỏi</span></div><div><b id="qsDone" style="color:var(--due)">0</b><span class="hint">đã hỏi</span></div><div><b id="qsPics">0</b><span class="hint">ảnh cần chụp</span></div></div>
+  <div class="seg" id="qsFilter"><button data-f="todo" class="on">Chưa hỏi</button><button data-f="done">Đã hỏi</button><button data-f="all">Tất cả</button><button data-f="pics">Ảnh cần chụp</button></div>
+  <div id="qsList"></div>
+  <h2>Gửi câu trả lời để cập nhật file</h2>
+  <div class="card">
+    <p class="hint" style="margin-top:0">Câu trả lời lưu trên trình duyệt này. Bấm chép rồi dán cho trợ lý AI để đưa vào quy trình và bảng từ.</p>
+    <button class="ib pri" id="qsCopy">Chép tất cả câu trả lời</button>
+    <textarea id="qsOut" style="margin-top:8px" readonly placeholder="Câu trả lời sẽ hiện ở đây"></textarea>
+    <div class="hint" id="qsMsg"></div>
+  </div>
+  <div class="card hint">Ảnh bạn thêm chỉ lưu trên trình duyệt này. Muốn ảnh hiện cho mọi người thì đặt file vào thư mục <code>img/</code> của repo, đúng tên gợi ý dưới mỗi ô ảnh. Repo đang công khai: không đưa ảnh SOP ghi 机密 hoặc ảnh có mặt công nhân lên.</div>
+</section>
+
 <!-- ========== CÁCH HỌC ========== -->
 <section class="view howto" id="v-cach-hoc">
   <h2>Vòng học mỗi ngày</h2>
@@ -351,13 +409,14 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
     <tr><td>3–7/11</td><td>1 Kho · 2 Kiểm vải · 3 Xưởng cắt</td><td>Thuộc nấc 2 khâu cắt; dùng đúng từ trong báo cáo hằng ngày</td></tr>
     <tr><td>9–14/11</td><td>4 Thêu · 5 In · 6 Giặt · 7 May</td><td>Hỏi xong các từ chờ xác nhận của in, thêu, giặt</td></tr>
     <tr><td>16–21/11</td><td>8 Ép vành · 9 QC cuối · 10 Xuất</td><td>Kể lại được 15 điểm kiểm QC cuối bằng tiếng Trung</td></tr>
-    <tr><td>23–28/11</td><td>Ôn toàn bộ</td><td>Trắc nghiệm 40 câu đạt từ 90%</td></tr>
+    <tr><td>23–28/11</td><td>0 Mẫu &amp; họp PPM · ôn toàn bộ</td><td>Trắc nghiệm 40 câu đạt từ 90%</td></tr>
   </table></div>
 
-  <footer>Nguồn: bảng thuật ngữ W6, quy định W7, báo cáo học 13–29/10 (W2), báo cáo kho 31/10, ảnh biểu mẫu, SOP M-10-71, M-10-72, M-10-44-A-3 và thẻ quy trình ở xưởng cắt ngày 02/11. Ảnh SOP là tài liệu mật của xưởng, không đưa vào file này. Dữ liệu dùng lại cho game: <code>data/weili-data.json</code>.</footer>
+  <footer>Nguồn: bảng thuật ngữ W6, quy định W7, báo cáo học 13–29/10 (W2), báo cáo kho 31/10, ảnh biểu mẫu, SOP M-10-71, M-10-72, M-10-44-A-3 và thẻ quy trình ở xưởng cắt ngày 02/11. Ảnh thực tế đặt trong thư mục img/; ảnh SOP ghi 机密 không đưa lên. Dữ liệu dùng lại cho game: <code>data/weili-data.json</code>.</footer>
 </section>
 </main>
 
+<div id="lightbox" role="dialog" aria-label="Xem ảnh"><img alt=""></div>
 <div id="back"></div>
 <div id="sheet" role="dialog" aria-modal="true" aria-label="Chi tiết từ"><div class="grab"></div><button class="close" id="sClose" aria-label="Đóng">×</button><div id="sBody"></div></div>
 
@@ -374,8 +433,8 @@ const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.ra
 
 // ---------- lưu ----------
 const LS = 'weili_hoc_v2';
-function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true}, daily:{d:'', n:0}, quiz:[]}; }
-function normalize(o){ const b = blank(); if(!o || o.v !== 2) return b; return {v:2, updated:o.updated||0, cards:o.cards||{}, marks:o.marks||{}, settings:Object.assign(b.settings,o.settings||{}), daily:o.daily||b.daily, quiz:o.quiz||[]}; }
+function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true}, daily:{d:'', n:0}, quiz:[], answers:{}}; }
+function normalize(o){ const b = blank(); if(!o || o.v !== 2) return b; return {v:2, updated:o.updated||0, cards:o.cards||{}, marks:o.marks||{}, settings:Object.assign(b.settings,o.settings||{}), daily:o.daily||b.daily, quiz:o.quiz||[], answers:o.answers||{}}; }
 let S = blank();
 try { const t = localStorage.getItem(LS); if(t) S = normalize(JSON.parse(t)); } catch(e) {}
 function save(){ S.updated = Date.now(); try { localStorage.setItem(LS, JSON.stringify(S)); } catch(e) {} }
@@ -453,6 +512,101 @@ document.addEventListener('click', e => { const c = e.target.closest('[data-zh]'
 
 // ========== SƠ ĐỒ ==========
 function chip(zh){ const t = TI[zh]; return `<button class="chip${t.ok?'':' q'}" data-zh="${esc(zh)}"><span class="hz" lang="zh">${esc(zh)}</span><span class="py">${esc(t.py)}</span><span class="vn">${esc(t.vn)}</span></button>`; }
+// ---------- ảnh thực tế ----------
+const slotId = (s, si, k) => `${s.id}-${si+1}-${k+1}`;
+function picsBlock(s, x, si){
+  if(!x.pics || !x.pics.length) return '';
+  return `<div class="pics"><b>Ảnh thực tế · 现场照片</b><div class="pgrid">${x.pics.map((cap, k) => { const id = slotId(s, si, k);
+    return `<div class="pslot" data-slot="${id}"><div class="pimg"><img src="img/${id}.jpg" alt="${esc(cap)}" loading="lazy" onerror="this.remove()"></div>
+      <div class="pcap">${esc(cap)}</div><div class="pfile">img/${id}.jpg</div>
+      <label class="padd">＋ Thêm ảnh<input type="file" accept="image/*" hidden data-addpic="${id}"></label><div class="pmsg"></div></div>`; }).join('')}</div></div>`;
+}
+let idb = null;
+const idbReady = new Promise(res => { try { const r = indexedDB.open('weili_photos', 1); r.onupgradeneeded = () => r.result.createObjectStore('p'); r.onsuccess = () => { idb = r.result; res(idb); }; r.onerror = () => res(null); } catch(e){ res(null); } });
+function idbGet(k){ return new Promise(res => { if(!idb) return res(null); try { const t = idb.transaction('p').objectStore('p').get(k); t.onsuccess = () => res(t.result || null); t.onerror = () => res(null); } catch(e){ res(null); } }); }
+function idbPut(k, v){ return new Promise(res => { if(!idb) return res(false); try { const tx = idb.transaction('p', 'readwrite'); if(v === null) tx.objectStore('p').delete(k); else tx.objectStore('p').put(v, k); tx.oncomplete = () => res(true); tx.onerror = () => res(false); } catch(e){ res(false); } }); }
+function showLocal(slot, data){
+  document.querySelectorAll(`.pslot[data-slot="${slot}"] .pimg`).forEach(el => {
+    el.querySelectorAll('.local,.del').forEach(n => n.remove());
+    if(!data) return;
+    const repo = el.querySelector('img:not(.local)'); if(repo) repo.remove();
+    const img = document.createElement('img'); img.className = 'local'; img.src = data; img.alt = 'Ảnh của bạn';
+    const del = document.createElement('button'); del.className = 'del'; del.textContent = 'Xóa'; del.dataset.delpic = slot;
+    el.appendChild(img); el.appendChild(del);
+  });
+}
+async function loadLocalPics(){ await idbReady; if(!idb) return; for(const el of document.querySelectorAll('.pslot')){ const d = await idbGet(el.dataset.slot); if(d) showLocal(el.dataset.slot, d); } }
+function resizeImage(file){ return new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => { const im = new Image(); im.onload = () => { const m = 1280, sc = Math.min(1, m / Math.max(im.width, im.height)); const c = document.createElement('canvas'); c.width = Math.round(im.width * sc); c.height = Math.round(im.height * sc); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); res(c.toDataURL('image/jpeg', .8)); }; im.onerror = rej; im.src = fr.result; }; fr.onerror = rej; fr.readAsDataURL(file); }); }
+document.addEventListener('change', async e => {
+  const inp = e.target.closest('[data-addpic]'); if(!inp || !inp.files || !inp.files[0]) return;
+  const slot = inp.dataset.addpic, msg = inp.closest('.pslot').querySelector('.pmsg');
+  msg.textContent = '';
+  try { const data = await resizeImage(inp.files[0]); await idbReady; const ok = await idbPut(slot, data); showLocal(slot, data); if(!ok) msg.textContent = 'Chỉ xem tạm: khung xem trước không lưu được ảnh. Mở file bằng trình duyệt để lưu.'; }
+  catch(err){ msg.textContent = 'Không đọc được ảnh này.'; }
+  inp.value = '';
+});
+document.addEventListener('click', async e => {
+  const d = e.target.closest('[data-delpic]'); if(d){ e.stopPropagation(); await idbPut(d.dataset.delpic, null); showLocal(d.dataset.delpic, null); return; }
+  const im = e.target.closest('.pimg img'); if(im){ const lb = $('lightbox'); lb.querySelector('img').src = im.src; lb.classList.add('on'); }
+});
+$('lightbox').onclick = () => $('lightbox').classList.remove('on');
+
+// ---------- câu hỏi cần hỏi ----------
+const qId = (s, si, k) => `${s.id}-${si+1}-q${k+1}`;
+const ALLQ = [];
+ST.forEach(s => s.steps.forEach((x, si) => (x.qs||[]).forEach((q, k) => ALLQ.push({id:qId(s, si, k), s, x, si, q}))));
+const ans = id => S.answers[id] || {done:false, text:''};
+function qItem(id, q){
+  const a = ans(id), open = a.done || a.text;
+  return `<li data-qid="${id}" class="${a.done?'q-done':''} ${open?'q-open':''}"><div class="v vnt">${esc(q[0])}</div>
+    <div class="z" lang="zh">${esc(q[1])}<button class="say" data-say="${esc(q[1])}" aria-label="Nghe">🔊</button></div><div class="p">${esc(q[2])}</div>
+    <div class="qrow"><label><input type="checkbox" data-qdone="${id}" ${a.done?'checked':''}> Đã hỏi</label><button class="qlink" data-qopen="${id}">Ghi câu trả lời</button></div>
+    <textarea class="qans" data-qans="${id}" placeholder="Câu trả lời (ghi cả chữ Trung nếu có)…">${esc(a.text)}</textarea></li>`;
+}
+function qsBlock(s, x, si){
+  if(!x.qs || !x.qs.length) return '';
+  return `<div class="qs"><b>Cần hỏi · 要问的问题</b><ol>${x.qs.map((q, k) => qItem(qId(s, si, k), q)).join('')}</ol></div>`;
+}
+function syncQ(id){
+  const a = ans(id);
+  document.querySelectorAll(`li[data-qid="${id}"]`).forEach(li => { li.classList.toggle('q-done', !!a.done); if(a.done || a.text) li.classList.add('q-open'); });
+  document.querySelectorAll(`[data-qdone="${id}"]`).forEach(c => c.checked = !!a.done);
+  document.querySelectorAll(`[data-qans="${id}"]`).forEach(t => { if(document.activeElement !== t) t.value = a.text; });
+  updQsum();
+}
+document.addEventListener('change', e => { const c = e.target.closest('[data-qdone]'); if(!c) return; const id = c.dataset.qdone; S.answers[id] = Object.assign({}, ans(id), {done:c.checked}); save(); syncQ(id); });
+let qTimer = null;
+document.addEventListener('input', e => { const t = e.target.closest('[data-qans]'); if(!t) return; const id = t.dataset.qans; S.answers[id] = Object.assign({}, ans(id), {text:t.value}); clearTimeout(qTimer); qTimer = setTimeout(() => { save(); syncQ(id); }, 400); });
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-qopen]'); if(o){ const li = o.closest('li'); li.classList.add('q-open'); const t = li.querySelector('.qans'); if(t) t.focus(); return; }
+  const sb = e.target.closest('[data-say]'); if(sb){ e.stopPropagation(); speak(sb.dataset.say); }
+});
+let qsF = 'todo';
+function updQsum(){ $('qsTotal').textContent = ALLQ.length; $('qsDone').textContent = ALLQ.filter(o => ans(o.id).done).length; $('qsPics').textContent = ST.reduce((n, s) => n + s.steps.reduce((m, x) => m + (x.pics||[]).length, 0), 0); }
+function renderQs(){
+  updQsum();
+  let html = '';
+  for(const s of ST){
+    let inner = '';
+    s.steps.forEach((x, si) => {
+      if(qsF === 'pics'){ if((x.pics||[]).length) inner += `<div class="qstep">${esc(x.t)}</div><ul style="margin:0 0 4px;padding-left:20px">${x.pics.map((c, k) => `<li style="font-size:14px">${esc(c)} <span class="pfile" style="padding:0">img/${slotId(s, si, k)}.jpg</span></li>`).join('')}</ul>`; return; }
+      const items = (x.qs||[]).map((q, k) => ({id:qId(s, si, k), q})).filter(o => qsF === 'all' || (qsF === 'done') === !!ans(o.id).done);
+      if(items.length) inner += `<div class="qstep">${esc(x.t)}</div><div class="qs" style="margin-top:2px"><ol>${items.map(o => qItem(o.id, o.q)).join('')}</ol></div>`;
+    });
+    if(inner) html += `<div class="qstage"><span class="dot" style="background:${s.color}">${s.n}</span>${esc(s.vn)} <span class="hint" lang="zh">${esc(s.zh)}</span></div>${inner}`;
+  }
+  $('qsList').innerHTML = html || '<p class="hint">Không có mục nào.</p>';
+}
+document.querySelectorAll('#qsFilter button').forEach(b => b.onclick = () => { qsF = b.dataset.f; document.querySelectorAll('#qsFilter button').forEach(x => x.classList.toggle('on', x === b)); renderQs(); });
+function exportAnswers(){
+  const lines = ['Câu trả lời ở xưởng Weili · ' + new Date().toLocaleDateString('vi-VN'), ''];
+  for(const o of ALLQ){ const a = ans(o.id); if(!a.done && !a.text) continue;
+    lines.push(`[${o.s.n}. ${o.s.vn} · ${o.x.t}] ${o.q[0]}`, `  ${o.q[1]}`, `  → ${a.text || '(đã hỏi, chưa ghi câu trả lời)'}`, ''); }
+  return lines.length > 2 ? lines.join('\n') : '';
+}
+$('qsCopy').onclick = async () => { const t = exportAnswers(); $('qsOut').value = t || ''; if(!t){ $('qsMsg').textContent = 'Chưa có câu nào đã hỏi hoặc có câu trả lời.'; return; }
+  try { await navigator.clipboard.writeText(t); $('qsMsg').textContent = 'Đã chép. Dán vào chat để cập nhật file.'; } catch(e){ $('qsOut').select(); $('qsMsg').textContent = 'Không chép tự động được: chọn chữ trong ô rồi chép.'; } };
+
 const askBox = a => `<div class="ask"><b>Câu hỏi mẫu</b><div class="zh" lang="zh">${esc(a[0])}</div><div class="py">${esc(a[1])}</div><div class="vnt">${esc(a[2])}</div></div>`;
 const zhb = (z, p) => z ? `<div class="zhb zht"><div class="z" lang="zh">${esc(z)}</div>${p?`<div class="p">${esc(p)}</div>`:''}</div>` : '';
 $('qa').innerHTML = DATA.qa.map(x => `<div class="c"><p class="q">${esc(x.q)}</p><div><span class="big" lang="zh">${esc(x.zh)}</span><span class="py">${esc(x.py)}</span></div><p class="a">${esc(x.a)}</p><a href="#so-do" data-open="${x.go}">Xem trong sơ đồ →</a></div>`).join('');
@@ -465,21 +619,22 @@ $('stages').innerHTML = ST.map(s => `
         <div class="st-whatz zht"><span lang="zh">${esc(s.whatz)}</span><div class="p">${esc(s.whatpy)}</div></div>
         <div class="who"><b>Ai kiểm · 谁检查:</b> <span class="vnt">${esc(s.who)} · </span><span class="zht" lang="zh">${esc(s.whoz)}</span> <span class="p">${esc(s.whopy)}</span></div></span>
       <span class="chev" aria-hidden="true">▶</span></summary>
-    <div class="tree">${s.steps.map(x => `
+    <div class="tree">${s.steps.map((x, si) => `
       <div class="step${x.hot?' hot':''}">
         <div class="step-t"><span class="vnt">${esc(x.t)}</span><span class="step-tz zht"><span lang="zh">${esc(x.tz)}</span><span class="p">${esc(x.tpy)}</span></span></div>
         ${x.d?`<div class="step-d vnt">${esc(x.d)}</div>`:''}
         ${zhb(x.dz, x.dpy)}
         ${x.chk.length?`<div class="chk"><b>Cách kiểm tra · 怎么检查</b><ol>${x.chk.map(c => `<li><div class="v vnt">${esc(c[0])}</div><div class="zht"><div class="z" lang="zh">${esc(c[1])}</div><div class="p">${esc(c[2])}</div></div></li>`).join('')}</ol></div>`:''}
         ${x.w.length?`<div class="chips">${x.w.map(chip).join('')}</div>`:''}
-        ${x.ask?askBox(x.ask):''}
+        ${picsBlock(s, x, si)}
+        ${qsBlock(s, x, si)}
       </div>`).join('')}</div>
   </details>`).join('');
 function openStage(id){ const el = $('st-'+id); if(!el) return; el.open = true; el.scrollIntoView({behavior:'smooth', block:'start'}); }
 document.querySelectorAll('.radial .node').forEach(g => { g.addEventListener('click', () => openStage(g.dataset.go)); g.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openStage(g.dataset.go); } }); });
 document.querySelectorAll('[data-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openStage(a.dataset.open); }));
 $('tAll').onclick = () => { const b = $('tAll'), on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); b.textContent = on ? 'Thu gọn' : 'Mở hết'; document.querySelectorAll('.stage').forEach(d => d.open = on); };
-$('st-cat').open = true;
+$('st-cat').open = true; $('st-kiemvai').open = true;
 
 // ========== TỪ VỰNG ==========
 const flags = new Set();
@@ -675,10 +830,10 @@ const ASKS = [
   ['这一步怎么检查？多久查一次？记录在哪里？', 'Zhè yí bù zěnme jiǎnchá? Duōjiǔ chá yí cì? Jìlù zài nǎlǐ?', 'Bước này kiểm thế nào? Bao lâu kiểm một lần? Ghi vào đâu?'],
 ];
 $('askList').innerHTML = ASKS.map(a => `<div style="padding:6px 0;border-bottom:1px solid var(--line)"><div lang="zh" style="font-size:16px">${esc(a[0])} <button class="ib" data-say="${esc(a[0])}" style="padding:2px 8px">🔊</button></div><div class="py keep" style="font-size:13px">${esc(a[1])}</div><div style="font-size:13.5px">${esc(a[2])}</div></div>`).join('');
-$('askList').addEventListener('click', e => { const b = e.target.closest('[data-say]'); if(b) speak(b.dataset.say); });
+
 
 // ========== điều hướng ==========
-const VIEWS = ['so-do','tu-vung','hoc-the','trac-nghiem','cach-hoc'];
+const VIEWS = ['so-do','tu-vung','hoc-the','trac-nghiem','can-hoi','cach-hoc'];
 function showView(v){
   if(!VIEWS.includes(v)) v = 'so-do';
   document.querySelectorAll('.view').forEach(x => x.classList.toggle('on', x.id==='v-'+v));
@@ -686,6 +841,7 @@ function showView(v){
   if(v==='tu-vung') renderVocab();
   if(v==='hoc-the'){ $('fStudy').hidden = true; $('fHome').hidden = false; renderSet(); renderDecks(); }
   if(v==='trac-nghiem'){ $('qRun').hidden = true; $('qSetup').hidden = false; renderHist(); }
+  if(v==='can-hoi') renderQs();
   closeSheet();
   try { window.scrollTo(0,0); } catch(e) {}
   // chỉ ghi #tên vào địa chỉ khi trang mở bằng link thật; trong khung xem trước của ứng dụng thì bỏ qua
@@ -700,7 +856,7 @@ document.addEventListener('click', e => {
 });
 let startView = 'so-do';
 try { const h = (location.hash||'').replace('#',''); if(VIEWS.includes(h)) startView = h; } catch(e) {}
-applyToggles(); showView(startView);
+applyToggles(); showView(startView); loadLocalPics();
 </script>
 </body>
 </html>

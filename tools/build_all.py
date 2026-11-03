@@ -6,6 +6,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from data import T, STAGES, QA, SRC
+import overlay  # bổ sung 03/11: khâu mẫu, kiểm vải đầy đủ, ảnh và câu hỏi
 from vocab_extra import CATS, CAT, WRONG, HOT, PENDING
 from pyhelper import to_py
 
@@ -22,7 +23,8 @@ for s in STAGES:
         y = dict(x)
         y["tpy"] = to_py(x["tz"]); y["dpy"] = to_py(x["dz"]) if x.get("dz") else ""
         y["chk"] = [[c[0], c[1], to_py(c[1])] for c in x.get("chk", [])]
-        y.setdefault("ask", None)
+        y["qs"] = [[q[0], q[1], q[2] if len(q) > 2 else to_py(q[1])] for q in x.get("qs", [])]
+        y["pics"] = list(x.get("pics", []))
         steps.append(y)
     st["steps"] = steps
     stages.append(st)
@@ -58,7 +60,7 @@ assert not missing_cat, missing_cat
 DATA = {
     "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-03",
              "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, W7 (quy định từ ngữ)",
-             "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp."},
+             "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. pics: ảnh đặt ở img/<id khâu>-<số bước>-<số ảnh>.jpg. qs: [Việt, 中文, pinyin]."},
     "stages": stages,
     "terms": terms,
     "cats": [{"id": c, "vn": v, "zh": z} for c, v, z in CATS],
@@ -92,7 +94,7 @@ for (x, y, a), s in zip(pos, stages):
         g += (f'<circle cx="{x+PW/2-3:.1f}" cy="{y-PH/2+3:.1f}" r="9" fill="#fff" stroke="{s["color"]}" stroke-width="2"/>'
               f'<text x="{x+PW/2-3:.1f}" y="{y-PH/2+7:.1f}" text-anchor="middle" class="qb">保</text>')
     parts.append(g + '</g>')
-SVG = f'<svg viewBox="0 0 {W} {W}" class="radial" role="img" aria-label="Sơ đồ 10 khâu từ kho đến xuất hàng">{"".join(parts)}</svg>'
+SVG = f'<svg viewBox="0 0 {W} {W}" class="radial" role="img" aria-label="Sơ đồ các khâu từ mẫu, kho đến xuất hàng">{"".join(parts)}</svg>'
 
 TEMPLATE = open(os.path.join(HERE, "template_all.html"), encoding="utf-8").read()
 html = TEMPLATE.replace("__SVG__", SVG).replace("__DATA__", json.dumps(DATA, ensure_ascii=False)).replace("__N__", str(len(terms)))

@@ -62,7 +62,8 @@ load_phrases_dict({k: [[s] for s in v.split()] for k, v in FIX.items() if len(v.
 
 
 EXTRA = {"难调": "nán tiáo", "电子": "diàn zǐ", "量帽檐": "liáng mào yán", "一楼": "yī lóu", "第一": "dì yī",
-         "贴得": "tiē de", "牢不牢": "láo bu láo", "在不在": "zài bu zài", "转速": "zhuàn sù"}
+         "贴得": "tiē de", "牢不牢": "láo bu láo", "在不在": "zài bu zài", "转速": "zhuàn sù", "量幅宽": "liáng fú kuān", "量长宽高": "liáng cháng kuān gāo",
+         "色差级数": "sè chā jí shù", "中风险": "zhōng fēng xiǎn", "有色差": "yǒu sè chā", "看色差": "kàn sè chā"}
 load_phrases_dict({k: [[x] for x in v.split()] for k, v in EXTRA.items()})
 PUNCT = {"，": ", ", "。": ". ", "；": "; ", "：": ": ", "、": ", ", "（": " (", "）": ") ", "“": " “", "”": "” ",
          "！": "! ", "？": "? ", "→": " → ", "·": " · ", "×": " × ", "±": " ± ", "＝": " = ", "～": "~"}
