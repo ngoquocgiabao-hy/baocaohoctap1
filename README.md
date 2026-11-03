@@ -3,16 +3,18 @@
 | File | Nội dung |
 |---|---|
 | `ban-do-chat-luong-noi-bo.html` | Báo cáo ngày đầu ở phòng Chất lượng: hành trình chiếc mũ, hành trình mẫu, các mô hình kiểm hàng |
-| `weili-hoc-tap.html` | Học quy trình và từ xưởng: sơ đồ 11 khâu từ mẫu đến xuất hàng (Việt, 中文, pinyin, cách kiểm tra, ảnh cần chụp, câu cần hỏi), từ vựng, thẻ học lặp lại ngắt quãng, trắc nghiệm, cách học |
+| `weili-hoc-tap.html` | Học quy trình và từ xưởng: sơ đồ 11 khâu từ mẫu đến xuất hàng, 267 từ (Việt, 中文, pinyin, cách kiểm tra, ảnh cần chụp, câu cần hỏi), từ vựng, thẻ học lặp lại ngắt quãng, trắc nghiệm, cách học |
 | `data/weili-data.json` | Toàn bộ dữ liệu của trang trên, dùng lại cho game nhà máy |
 | `img/` | Ảnh thực tế cho từng bước (tạo khi có ảnh đầu tiên) |
 | `tools/` | Mã dựng lại trang và file dữ liệu |
 
 ## Dùng `weili-hoc-tap.html`
 
-Mở file bằng trình duyệt (điện thoại hay máy tính đều được). Tiến độ thẻ học lưu trong trình duyệt đang dùng; đổi máy thì vào **Thẻ học → Sao lưu tiến độ** để chép mã sang.
+**Học hằng ngày nên mở bản trên Claude:** https://claude.ai/artifact/2GAWz8bbKBbSm7Nzmw78kE . Bản này lưu tiến độ (từ đã học, câu trả lời, lịch ôn) vào tài khoản Claude, đổi điện thoại vẫn còn; nó dùng chung chỗ lưu với bản “Thẻ từ xưởng” cũ nên từ đã học trước đó vẫn giữ.
 
-Các tab: **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cần hỏi** (gom mọi câu hỏi và ảnh cần chụp, đánh dấu đã hỏi, chép câu trả lời) · **Cách học**.
+Mở file trực tiếp bằng trình duyệt thì tiến độ chỉ lưu trên trình duyệt đó (đổi máy thì vào **Thẻ học → Sao lưu tiến độ** để chép mã sang). Mở trong khung xem trước của ứng dụng thì không lưu được; nút trạng thái ở đầu trang báo rõ: “☁ Đã lưu”, “Lưu trên máy này” hoặc “⚠ Không lưu”.
+
+Các tab: **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin; **Sổ ghi nhớ từ** chia Chưa học / Đang học / Đã học / Đã thuộc, có lọc “Mới thêm”, chép sổ từ để gửi trợ lý AI) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cần hỏi** (gom mọi câu hỏi và ảnh cần chụp, đánh dấu đã hỏi, chép câu trả lời) · **Cách học**.
 
 Mỗi bước trong sơ đồ có hai ô:
 
@@ -41,7 +43,7 @@ stages[]  11 khâu theo thứ tự đi của chiếc mũ, n = 0..10
                    pics[]         ảnh cần chụp (chú thích); file ảnh là img/<id>-<bước>-<ảnh>.jpg
                    qs[]           câu cần hỏi: [Việt, 中文, pinyin]
                    hot            bước sếp vừa nhắc
-terms[]   zh, py, vn, note, src, ok, st (id khâu), cat (loại từ), hot (từ hay nhầm),
+terms[]   zh, py, vn, note, src, ok, st (id khâu), cat (loại từ), hot (từ hay nhầm), add (ngày bổ sung, rỗng nếu có từ đầu),
           ex { zh, py, vn }  câu ví dụ lấy từ quy trình (có thể null)
 cats[]    8 loại từ: id, vn, zh
 wrong[]   từ đã dùng sai → đúng: bad, good, py, vn, src
@@ -56,7 +58,7 @@ pip install pypinyin
 python3 tools/build_all.py      # ghi ra weili-hoc-tap.html và data/weili-data.json
 ```
 
-Sửa từ trong `tools/data_terms.py` (thuật ngữ), `tools/data.py` (quy trình, cách kiểm tra), `tools/overlay.py` (khâu 0 Mẫu & PPM, kiểm vải 4 điểm và xếp cấp A/B/C, ảnh cần chụp, câu cần hỏi; chạy sau data.py), `tools/vocab_extra.py` (loại từ, từ sai → đúng, từ chờ xác nhận); giao diện trong `tools/template_all.html`.
+Sửa từ trong `tools/data_terms.py` (thuật ngữ), `tools/data.py` (quy trình, cách kiểm tra), `tools/overlay.py` (khâu 0 Mẫu & PPM, kiểm vải 4 điểm và xếp cấp A/B/C, ảnh cần chụp, câu cần hỏi; chạy sau data.py), `tools/vocab_more.py` (111 từ bổ sung 03/11 từ W6, W2, báo cáo kho; mỗi dòng ghi khâu, bước, loại từ, câu ví dụ), `tools/vocab_extra.py` (loại từ, từ sai → đúng, từ chờ xác nhận); giao diện trong `tools/template_all.html`.
 
 Ảnh SOP của xưởng là tài liệu mật nên không đưa vào repo này.
 

@@ -7,6 +7,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from data import T, STAGES, QA, SRC
 import overlay  # bổ sung 03/11: khâu mẫu, kiểm vải đầy đủ, ảnh và câu hỏi
+import vocab_more  # bổ sung 03/11 chiều: từ quy trình và chất lượng
+from vocab_more import EX, ADDED, ADDED_ON
 from vocab_extra import CATS, CAT, WRONG, HOT, PENDING
 from pyhelper import to_py
 
@@ -15,7 +17,7 @@ OUT_DIR = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..")
 # ---------- giai đoạn + pinyin ----------
 stages = []
 for s in STAGES:
-    st = dict(s)
+    st = dict(s); st.pop("extra_w", None)
     st["py"] = T.get(s["zh"], ("",))[0]
     st["whatpy"] = to_py(s["whatz"]); st["whopy"] = to_py(s["whoz"])
     steps = []
@@ -46,19 +48,21 @@ def find_example(w, stage_id):
     return None
 
 seen, terms = set(), []
+SX = {s["id"]: s.get("extra_w", []) for s in STAGES}
 for s in stages:
-    for w in [s["zh"]] + [w for x in s["steps"] for w in x["w"]]:
+    for w in [s["zh"]] + [w for x in s["steps"] for w in x["w"]] + SX.get(s["id"], []):
         if w in T and w not in seen:
             seen.add(w)
             py, vn, src, ok, note = T[w]
             terms.append({"zh": w, "py": py, "vn": vn, "note": note, "src": SRC[src], "ok": ok,
                           "st": s["id"], "cat": CAT.get(w, "congdoan"), "hot": w in HOT,
-                          "ex": find_example(w, s["id"])})
+                          "ex": ({"zh": EX[w][0], "py": to_py(EX[w][0]), "vn": EX[w][1]} if w in EX else find_example(w, s["id"])),
+                          "add": ADDED_ON if w in ADDED else ""})
 missing_cat = [t["zh"] for t in terms if t["zh"] not in CAT]
 assert not missing_cat, missing_cat
 
 DATA = {
-    "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-03",
+    "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-03", "added": ADDED_ON,
              "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, W7 (quy định từ ngữ)",
              "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. pics: ảnh đặt ở img/<id khâu>-<số bước>-<số ảnh>.jpg. qs: [Việt, 中文, pinyin]."},
     "stages": stages,
