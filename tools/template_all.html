@@ -229,12 +229,14 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
 .b-a{background:#efe7fb;color:#6a3fb5}
 .daybar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13.5px;margin:4px 0 10px}
 @media (min-width:700px){.qa{grid-template-columns:repeat(3,1fr)} .fhz{font-size:72px} .fhz.long{font-size:50px}}
+__WORLDCSS__
 </style>
 </head>
 <body>
 <header class="top"><div class="in">
   <h1>Weili · Học quy trình và từ xưởng <small>品保部 · __N__ từ</small><button class="savest" id="saveSt" data-view="hoc-the">…</button></h1>
   <nav class="nav" id="nav">
+    <a href="#xuong" data-v="xuong" data-view="xuong">Xưởng 3D</a>
     <a href="#so-do" data-v="so-do" data-view="so-do">Sơ đồ</a>
     <a href="#tu-vung" data-v="tu-vung" data-view="tu-vung">Từ vựng</a>
     <a href="#hoc-the" data-v="hoc-the" data-view="hoc-the">Thẻ học</a>
@@ -245,6 +247,28 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
 </div></header>
 
 <main class="wrap">
+
+<!-- ========== XƯỞNG 3D ========== -->
+<section class="view" id="v-xuong">
+  <div class="w3wide">
+    <div class="w3bar" role="toolbar" aria-label="Xưởng 3D">
+      <button class="ib pri" id="w3tour">▶ Tham quan</button>
+      <button class="ib" id="w3near" aria-pressed="false">🔍 Cận cảnh</button>
+      <button class="ib" id="w3over">⤢ Toàn cảnh</button>
+      <span class="sp"></span>
+      <button class="tg" data-t="py" aria-pressed="true">Pinyin</button>
+      <button class="tg" data-t="vn" aria-pressed="true">Việt</button>
+      <button class="tg" data-t="zh" aria-pressed="true">中文</button>
+      <button class="tg" data-t="en" aria-pressed="true">English</button>
+    </div>
+    <div id="w3view"><canvas id="w3canvas" aria-label="Mô phỏng 3D xưởng Weili"></canvas><div id="w3hs"></div><div id="w3msg" hidden></div><div id="w3peek" hidden></div></div>
+    <div class="w3chips" id="w3chips"></div>
+  </div>
+  <p class="hint">Mô phỏng xếp các khâu theo thứ tự đường đi của chiếc mũ, chưa phải mặt bằng thật (đã biết: giặt ở tầng 1, may ở tầng 2). Đường vàng là dòng chảy: cây vải → bó mảnh cắt → chiếc mũ. Bảng ảnh ở góc mỗi khâu hiện ảnh thực tế bạn thêm.</p>
+  <div id="w3info"></div>
+  <h2>Hướng dẫn nhà máy · 工厂指南 · <span class="ent">Factory guide</span></h2>
+  <div class="guide">__GUIDE__</div>
+</section>
 
 <!-- ========== SƠ ĐỒ ========== -->
 <section class="view" id="v-so-do">
@@ -442,11 +466,13 @@ footer{color:var(--ink2);font-size:12.5px;margin-top:26px;border-top:1px solid v
 </main>
 
 <div id="lightbox" role="dialog" aria-label="Xem ảnh"><img alt=""></div>
+<div id="capOv" hidden role="dialog" aria-label="Mũ 6 mảnh 3D"><div class="bar"><b>Mũ 6 mảnh 3D · 六片帽 · <span class="ent">6-panel cap</span></b><a class="ib" href="https://claude.ai/artifact/STb16pAape6oLf2doYfpig" target="_blank" rel="noopener">Mở trang riêng</a><button class="ib" id="capClose">✕ Đóng</button></div><iframe id="capFrame" title="Mũ 6 mảnh 3D"></iframe></div>
 <div id="back"></div>
 <div id="sheet" role="dialog" aria-modal="true" aria-label="Chi tiết từ"><div class="grab"></div><button class="close" id="sClose" aria-label="Đóng">×</button><div id="sBody"></div></div>
 
 <script>
 const DATA = __DATA__;
+const CAP_HTML = __CAPHTML__;
 const ST = DATA.stages, TERMS = DATA.terms;
 const STI = Object.fromEntries(ST.map(s => [s.id, s]));
 const TI = Object.fromEntries(TERMS.map(t => [t.zh, t]));
@@ -460,7 +486,7 @@ const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.ra
 // Khi mở trên Claude (artifact), tiến độ lưu ở data/users/<id>/srs — cùng chỗ với bản "Thẻ từ xưởng" cũ, nên từ đã học trước vẫn còn.
 const LS = 'weili_hoc_v2', LS_OLD = 'weili_flash_v1';
 const APP_URL = 'https://claude.ai/artifact/2GAWz8bbKBbSm7Nzmw78kE';
-function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true}, daily:{d:'', n:0, extra:0}, quiz:[], answers:{}}; }
+function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true, en:true}, daily:{d:'', n:0, extra:0}, quiz:[], answers:{}}; }
 function normalize(o){
   const b = blank(); if(!o || typeof o !== 'object') return b;
   if(o.v === 1){ const st = o.settings || {};   // bản "Thẻ từ xưởng" cũ
@@ -555,7 +581,7 @@ function speak(t){ try { speechSynthesis.cancel(); const u = new SpeechSynthesis
 
 // ---------- hiển thị pinyin / Việt / Trung ----------
 function applyToggles(){
-  for(const k of ['py','vn','zh']){
+  for(const k of ['py','vn','zh','en']){
     document.body.classList.toggle('no-'+k, !S.settings[k]);
     document.querySelectorAll('.tg[data-t="'+k+'"]').forEach(b => b.setAttribute('aria-pressed', S.settings[k]));
   }
@@ -609,7 +635,7 @@ function wordDetail(zh){
   const t = TI[zh]; if(!t) return;
   const s = STI[t.st], [cls, txt] = status(zh), kn = known(zh);
   $('sBody').innerHTML = `<div class="wd">
-    <div class="big" lang="zh">${esc(t.zh)}</div><div class="bpy">${esc(t.py)}</div><div class="bvn">${esc(t.vn)}</div>
+    <div class="big" lang="zh">${esc(t.zh)}</div><div class="bpy">${esc(t.py)}</div><div class="bvn">${esc(t.vn)}</div><div class="ent" style="color:#5d646d;font-style:italic">${esc(t.en)}</div>
     <div style="margin-top:6px"><span class="badge" style="background:${s.color};color:#fff">${s.n}. ${esc(s.vn)}</span> <span class="badge b-n">${esc(CATI[t.cat].vn)}</span> ${t.hot?'<span class="badge b-hot">★ hay nhầm</span>':''} ${t.ok?`<span class="badge ${cls}">${txt}</span>`:''}</div>
     ${t.note?`<div class="note">${esc(t.note)}</div>`:''}
     ${t.ex?`<div class="ex"><b>Câu ví dụ</b><div class="z" lang="zh">${esc(t.ex.zh)}</div><div class="p">${esc(t.ex.py)}</div>${t.ex.vn?`<div class="v">${esc(t.ex.vn)}</div>`:''}</div>`:''}
@@ -626,7 +652,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeSheet(); }
 document.addEventListener('click', e => { const c = e.target.closest('[data-zh]'); if(c) wordDetail(c.dataset.zh); });
 
 // ========== SƠ ĐỒ ==========
-function chip(zh){ const t = TI[zh]; return `<button class="chip${t.ok?'':' q'}" data-zh="${esc(zh)}"><span class="hz" lang="zh">${esc(zh)}</span><span class="py">${esc(t.py)}</span><span class="vn">${esc(t.vn)}</span></button>`; }
+function chip(zh, withEn){ const t = TI[zh]; return `<button class="chip${t.ok?'':' q'}" data-zh="${esc(zh)}"><span class="hz" lang="zh">${esc(zh)}</span><span class="py">${esc(t.py)}</span><span class="vn">${esc(t.vn)}</span>${withEn ? `<span class="en ent">${esc(t.en)}</span>` : ''}</button>`; }
 // ---------- ảnh thực tế ----------
 const slotId = (s, si, k) => `${s.id}-${si+1}-${k+1}`;
 function picsBlock(s, x, si){
@@ -640,28 +666,60 @@ let idb = null;
 const idbReady = new Promise(res => { try { const r = indexedDB.open('weili_photos', 1); r.onupgradeneeded = () => r.result.createObjectStore('p'); r.onsuccess = () => { idb = r.result; res(idb); }; r.onerror = () => res(null); } catch(e){ res(null); } });
 function idbGet(k){ return new Promise(res => { if(!idb) return res(null); try { const t = idb.transaction('p').objectStore('p').get(k); t.onsuccess = () => res(t.result || null); t.onerror = () => res(null); } catch(e){ res(null); } }); }
 function idbPut(k, v){ return new Promise(res => { if(!idb) return res(false); try { const tx = idb.transaction('p', 'readwrite'); if(v === null) tx.objectStore('p').delete(k); else tx.objectStore('p').put(v, k); tx.oncomplete = () => res(true); tx.onerror = () => res(false); } catch(e){ res(false); } }); }
-function showLocal(slot, data){
+// ảnh: lưu vào tài khoản (assets + db "photos") khi mở trên Claude > trên máy (IndexedDB) > file img/ trong repo
+const PH = {acct: {}, local: {}};
+const ALLSLOTS = []; ST.forEach(s => s.steps.forEach((x, si) => (x.pics||[]).forEach((c, k) => ALLSLOTS.push({id: slotId(s, si, k), sid: s.id}))));
+const photoOf = slot => (PH.acct[slot] && PH.acct[slot].url) || PH.local[slot] || null;
+function showLocal(slot){
+  const data = photoOf(slot), acct = !!(PH.acct[slot] && PH.acct[slot].url);
   document.querySelectorAll(`.pslot[data-slot="${slot}"] .pimg`).forEach(el => {
-    el.querySelectorAll('.local,.del').forEach(n => n.remove());
+    el.querySelectorAll('.local,.del,.cloud').forEach(n => n.remove());
     if(!data) return;
     const repo = el.querySelector('img:not(.local)'); if(repo) repo.remove();
     const img = document.createElement('img'); img.className = 'local'; img.src = data; img.alt = 'Ảnh của bạn';
     const del = document.createElement('button'); del.className = 'del'; del.textContent = 'Xóa'; del.dataset.delpic = slot;
     el.appendChild(img); el.appendChild(del);
+    if(acct){ const c = document.createElement('span'); c.className = 'cloud'; c.textContent = '☁'; c.title = 'Đã lưu vào tài khoản'; el.appendChild(c); }
   });
 }
-async function loadLocalPics(){ await idbReady; if(!idb) return; for(const el of document.querySelectorAll('.pslot')){ const d = await idbGet(el.dataset.slot); if(d) showLocal(el.dataset.slot, d); } }
+function loadLocalPicsIn(root){ (root || document).querySelectorAll('.pslot').forEach(el => showLocal(el.dataset.slot)); }
+function refreshBoards(){ try { W3; } catch(e){ return; } ST.forEach(s => { const o = ALLSLOTS.find(o => o.sid === s.id && photoOf(o.id)); W3.setBoard(s.id, o ? photoOf(o.id) : null); }); }
+async function loadLocalPics(){ await idbReady; if(idb){ for(const o of ALLSLOTS){ const d = await idbGet(o.id); if(d) PH.local[o.id] = d; } } loadLocalPicsIn(document); refreshBoards(); }
+let PHDB = null, ASSETS = null;
+(async () => {
+  if(!window.claude || typeof window.claude.use !== 'function') return;
+  try {
+    const [db, assets] = await Promise.all([window.claude.use('db'), window.claude.use('assets')]);
+    ASSETS = assets || null; if(!db) return;
+    PHDB = db.collection('photos');
+    PHDB.onSnapshot(snap => { const m = {}; snap.docs.forEach(d => { const v = d.data(); if(v && v.url) m[d.id] = v; }); PH.acct = m; loadLocalPicsIn(document); refreshBoards(); }, () => {});
+  } catch(e) {}
+})();
+function dataUrlToBlob(u){ const [h, b] = u.split(','), mime = (h.match(/data:([^;]+)/) || [])[1] || 'image/jpeg', bin = atob(b), a = new Uint8Array(bin.length); for(let i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return new Blob([a], {type: mime}); }
 function resizeImage(file){ return new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => { const im = new Image(); im.onload = () => { const m = 1280, sc = Math.min(1, m / Math.max(im.width, im.height)); const c = document.createElement('canvas'); c.width = Math.round(im.width * sc); c.height = Math.round(im.height * sc); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); res(c.toDataURL('image/jpeg', .8)); }; im.onerror = rej; im.src = fr.result; }; fr.onerror = rej; fr.readAsDataURL(file); }); }
 document.addEventListener('change', async e => {
   const inp = e.target.closest('[data-addpic]'); if(!inp || !inp.files || !inp.files[0]) return;
-  const slot = inp.dataset.addpic, msg = inp.closest('.pslot').querySelector('.pmsg');
-  msg.textContent = '';
-  try { const data = await resizeImage(inp.files[0]); await idbReady; const ok = await idbPut(slot, data); showLocal(slot, data); if(!ok) msg.textContent = 'Chỉ xem tạm: khung xem trước không lưu được ảnh. Mở bản trên Claude hoặc mở file bằng trình duyệt để lưu.'; }
-  catch(err){ msg.textContent = 'Không đọc được ảnh này.'; }
+  const slot = inp.dataset.addpic, msgs = document.querySelectorAll(`.pslot[data-slot="${slot}"] .pmsg`), say = t => msgs.forEach(m => m.textContent = t);
+  say('');
+  try {
+    const data = await resizeImage(inp.files[0]); PH.local[slot] = data;
+    await idbReady; const okL = await idbPut(slot, data); showLocal(slot); refreshBoards();
+    if(ASSETS && PHDB){
+      say('Đang lưu ảnh vào tài khoản…');
+      try { const r = await ASSETS.upload(dataUrlToBlob(data)); await PHDB.doc(slot).set({id: r.id, url: r.url || ('/_blob/' + r.id), t: Date.now()}); say('Đã lưu vào tài khoản ☁'); }
+      catch(err){ say(okL ? 'Chưa lưu lên tài khoản được, ảnh vẫn giữ trên máy này.' : 'Chưa lưu được ảnh.'); }
+    } else if(!okL) say('Chỉ xem tạm: khung xem trước không lưu được ảnh. Mở bản trên Claude để lưu.');
+  } catch(err){ say('Không đọc được ảnh này.'); }
   inp.value = '';
 });
+let delArm = {slot: null, t: 0};
 document.addEventListener('click', async e => {
-  const d = e.target.closest('[data-delpic]'); if(d){ e.stopPropagation(); await idbPut(d.dataset.delpic, null); showLocal(d.dataset.delpic, null); return; }
+  const d = e.target.closest('[data-delpic]');
+  if(d){ e.stopPropagation(); const slot = d.dataset.delpic;
+    if(delArm.slot !== slot || Date.now() - delArm.t > 4000){ delArm = {slot, t: Date.now()}; d.textContent = 'Bấm lần nữa để xóa'; return; }
+    delArm = {slot: null, t: 0}; delete PH.local[slot]; await idbPut(slot, null);
+    const a = PH.acct[slot]; if(a && PHDB){ try { await PHDB.doc(slot).delete(); if(ASSETS && a.id) await ASSETS.delete(a.id); } catch(err) {} delete PH.acct[slot]; }
+    showLocal(slot); refreshBoards(); return; }
   const im = e.target.closest('.pimg img'); if(im){ const lb = $('lightbox'); lb.querySelector('img').src = im.src; lb.classList.add('on'); }
 });
 $('lightbox').onclick = () => $('lightbox').classList.remove('on');
@@ -704,7 +762,7 @@ function renderQs(){
   for(const s of ST){
     let inner = '';
     s.steps.forEach((x, si) => {
-      if(qsF === 'pics'){ if((x.pics||[]).length) inner += `<div class="qstep">${esc(x.t)}</div><ul style="margin:0 0 4px;padding-left:20px">${x.pics.map((c, k) => `<li style="font-size:14px">${esc(c)} <span class="pfile" style="padding:0">img/${slotId(s, si, k)}.jpg</span></li>`).join('')}</ul>`; return; }
+      if(qsF === 'pics'){ if((x.pics||[]).length) inner += `<div class="qstep">${esc(x.t)}</div><ul style="margin:0 0 4px;padding-left:20px">${x.pics.map((c, k) => `<li style="font-size:14px">${photoOf(slotId(s, si, k)) ? '✅ ' : ''}${esc(c)} <span class="pfile" style="padding:0">img/${slotId(s, si, k)}.jpg</span></li>`).join('')}</ul>`; return; }
       const items = (x.qs||[]).map((q, k) => ({id:qId(s, si, k), q})).filter(o => qsF === 'all' || (qsF === 'done') === !!ans(o.id).done);
       if(items.length) inner += `<div class="qstep">${esc(x.t)}</div><div class="qs" style="margin-top:2px"><ol>${items.map(o => qItem(o.id, o.q)).join('')}</ol></div>`;
     });
@@ -765,7 +823,7 @@ function renderVocab(){
   $('vCount').textContent = ws.length + ' từ · thuộc ' + ws.filter(t => known(t.zh)).length;
   $('vList').innerHTML = ws.map(t => { const s = STI[t.st], [cls, txt] = status(t.zh);
     return `<button class="vrow" style="--c:${s.color}" data-zh="${esc(t.zh)}"><span class="z" lang="zh">${esc(t.zh)}${t.ok?'':'<span style="color:var(--q)"> ?</span>'}</span>
-      <span class="m"><span class="p" style="display:block">${esc(t.py)}</span><span class="v vnt" style="display:block">${esc(t.vn)}</span></span>
+      <span class="m"><span class="p" style="display:block">${esc(t.py)}</span><span class="v vnt" style="display:block">${esc(t.vn)}</span><span class="ent" style="display:block;font-size:12px;color:#6b6f75;font-style:italic">${esc(t.en)}</span></span>
       <span style="text-align:right">${t.hot?'<span class="badge b-hot">★</span> ':''}${t.add?'<span class="badge b-a">mới thêm</span>':''}${t.hot||t.add?'<br>':''}${t.ok?`<span class="badge ${cls}">${txt}</span>`:'<span class="badge" style="background:#fbeceb;color:var(--q)">chờ xác nhận</span>'}${t.ok&&memOf(t.zh)!=='new'?`<span class="when">${esc(whenTxt(t.zh))}</span>`:''}</span></button>`; }).join('') || '<p class="hint">Không có từ nào khớp.</p>';
 }
 $('wrongList').innerHTML = DATA.wrong.map(w => `<div class="wrong"><span class="bad">${esc(w.bad)}</span><span>→</span><span class="good" lang="zh">${esc(w.good)}<small>${esc(w.py)} · ${esc(w.vn)}</small></span><span class="meta">Nguồn: ${esc(w.src)}</span></div>`).join('');
@@ -987,9 +1045,10 @@ $('askList').innerHTML = ASKS.map(a => `<div style="padding:6px 0;border-bottom:
 
 
 // ========== điều hướng ==========
-const VIEWS = ['so-do','tu-vung','hoc-the','trac-nghiem','can-hoi','cach-hoc'];
+const VIEWS = ['xuong','so-do','tu-vung','hoc-the','trac-nghiem','can-hoi','cach-hoc'];
 function showView(v){
-  if(!VIEWS.includes(v)) v = 'so-do';
+  if(!VIEWS.includes(v)) v = 'xuong';
+  if(v === 'xuong') W3.open(); else W3.pause();
   document.querySelectorAll('.view').forEach(x => x.classList.toggle('on', x.id==='v-'+v));
   document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.dataset.v===v));
   if(v==='tu-vung') renderVocab();
@@ -1008,7 +1067,8 @@ document.addEventListener('click', e => {
   e.preventDefault();
   showView(a.dataset.view);
 });
-let startView = 'so-do';
+__WORLDJS__
+let startView = 'xuong';
 try { const h = (location.hash||'').replace('#',''); if(VIEWS.includes(h)) startView = h; } catch(e) {}
 applyToggles(); renderSaveNote(); setSave(saveState); showView(startView); loadLocalPics();
 </script>

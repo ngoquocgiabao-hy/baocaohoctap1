@@ -42,7 +42,9 @@
      ],
      "tpy": "Kāi fā yàng",
      "dpy": "Kāi fā yàng yòng lái gǎi shè jì, yì bān zuò dào dì sān bǎn kè hù cái mǎn yì, wù liào kě yǐ yòng tì dài de.",
-     "chk": []
+     "chk": [],
+     "ten": "Proto sample",
+     "den": "Used to refine the design; often the customer is satisfied only by the 3rd version. Substitute materials are allowed."
     },
     {
      "t": "Mẫu chào hàng (SMS)",
@@ -56,7 +58,9 @@
      "qs": [],
      "tpy": "Xiāo shòu yàng",
      "dpy": "Xiāo shòu yàng gěi kè hù ná qù mài huò, kàn gè gè shì chǎng de xū qiú, wù liào kě yǐ shì zhèng què de, yě kě yǐ shì tì dài de.",
-     "chk": []
+     "chk": [],
+     "ten": "Salesman sample (SMS)",
+     "den": "For the customer to sell in and gauge demand in each market; correct or substitute materials."
     },
     {
      "t": "Mẫu trước sản xuất (PPS)",
@@ -67,12 +71,14 @@
       [
        "VF: mẫu PPS cả bao bì cũng phải qua dò kim.",
        "VF：产前样连包装也要验针。",
-       "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn."
+       "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn.",
+       "VF: the PPS, packaging included, must pass needle detection."
       ],
       [
        "Mẫu xác nhận đóng dấu ở mảnh trước, dấu vắt qua hai mảnh.",
        "确认样的章盖在前片上，跨两片。",
-       "Què rèn yàng de zhāng gài zài qián piàn shàng, kuà liǎng piàn."
+       "Què rèn yàng de zhāng gài zài qián piàn shàng, kuà liǎng piàn.",
+       "The approval sample is stamped on the front panel, with the stamp across both panels."
       ]
      ],
      "w": [
@@ -101,7 +107,9 @@
       ]
      ],
      "tpy": "Chǎn qián yàng",
-     "dpy": "Chǎn qián yàng shì dà huò de biāo zhǔn: yán sè, mào xíng, wù liào, zhì liàng, wù liào yí dìng yào gēn dà huò yí yàng. Kè hù shěn yàng; VF de dī, zhōng fēng xiǎn kuǎn CFT kě yǐ shěn, xīn kuǎn yí dìng yào kè hù shěn."
+     "dpy": "Chǎn qián yàng shì dà huò de biāo zhǔn: yán sè, mào xíng, wù liào, zhì liàng, wù liào yí dìng yào gēn dà huò yí yàng. Kè hù shěn yàng; VF de dī, zhōng fēng xiǎn kuǎn CFT kě yǐ shěn, xīn kuǎn yí dìng yào kè hù shěn.",
+     "ten": "Pre-production sample (PPS)",
+     "den": "The standard for bulk in colour, shape, material and quality; materials must be exactly as bulk. The customer approves; for VF the CFT may approve low- and medium-risk samples, new styles must be approved by the customer."
     },
     {
      "t": "Họp trước sản xuất (PPM)",
@@ -130,12 +138,17 @@
      ],
      "tpy": "Chǎn qián huì yì",
      "dpy": "Cān jiā de yǒu jì shù, QC, shēng chǎn, xiù huā, jì huà, kè fú. Huì zēng jiā gōng shí huò chéng běn de yāo qiú, yào xiān gēn kè hù què rèn. Kāi wán huì yào yǒu huì yì jì lù: rì qī, kuǎn hào, cān jiā rén, wèn tí, chǔ lǐ fāng fǎ, fù zé rén.",
-     "chk": []
+     "chk": [],
+     "ten": "Pre-production meeting (PPM)",
+     "den": "Technical, QC, production, embroidery, planning and customer service attend. Any request that adds labour time or cost must be agreed with the customer first. Minutes are kept: date, style, attendees, issues, actions, owner."
     }
    ],
    "py": "yàngpǐnshì",
    "whatpy": "Dà huò zhī qián: kāi fā yàng → xiāo shòu yàng → chǎn qián yàng → chǎn qián huì yì. Zhè shì CFT de zhǔ yào gōng zuò.",
-   "whopy": "Yàng pǐn shì, jì shù bù; kè hù shěn yàng; VF de dī, zhōng fēng xiǎn kuǎn kě yǐ yóu CFT shěn yàng"
+   "whopy": "Yàng pǐn shì, jì shù bù; kè hù shěn yàng; VF de dī, zhōng fēng xiǎn kuǎn kě yǐ yóu CFT shěn yàng",
+   "en": "Samples & pre-production meeting",
+   "whaten": "Before bulk: proto → salesman sample → pre-production sample → pre-production meeting. This is the core of the CFT job.",
+   "whoen": "Sample room and technical team; the customer approves samples; VF lets the CFT approve low- and medium-risk styles"
   },
   {
    "id": "kho",
@@ -171,11 +184,25 @@
        "Hàng về thì phải kiểm xong trong bao lâu?",
        "到料以后多久要检验完？",
        "Dào liào yǐ hòu duō jiǔ yào jiǎn yàn wán?"
+      ],
+      [
+       "Kiểm xong trong 7 ngày là cho vải, cho phụ liệu hay cả hai?",
+       "7天内检验完，是指面料、辅料，还是两个都是？",
+       "7 tiān nèi jiǎn yàn wán, shì zhǐ miàn liào, fǔ liào, hái shì liǎng gè dōu shì?"
+      ]
+     ],
+     "chk": [
+      [
+       "Thời hạn kiểm 7 ngày: báo cáo 03/11 ghi cho vải (kiểm tính chất và ngoại quan), W2 ghi cho phụ liệu. Còn phải hỏi lại.",
+       "7天内检验完：11月3日的报告写的是面料，W2写的是辅料，还要再确认。",
+       "7 tiān nèi jiǎn yàn wán: 11 yuè 3 rì de bào gào xiě de shì miàn liào, W2 xiě de shì fǔ liào, hái yào zài què rèn.",
+       "Inspection deadline of 7 days: the 3 Nov report gives it for fabric (physical and visual checks), W2 gives it for trims. To be confirmed."
       ]
      ],
      "tpy": "Shōu liào, diǎn shōu",
      "dpy": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
-     "chk": []
+     "ten": "Receiving",
+     "den": "The counting team counts, prints the receiving list and deducts the system record; the main-material team puts goods into stock."
     },
     {
      "t": "Kiểm tính chất vải",
@@ -186,7 +213,8 @@
       [
        "Xem màu cả cây có đều không, có nằm trong tiêu chuẩn chấp nhận không.",
        "看整匹布颜色是否一致，在不在接收标准内。",
-       "Kàn zhěng pǐ bù yán sè shì fǒu yí zhì, zài bu zài jiē shōu biāo zhǔn nèi."
+       "Kàn zhěng pǐ bù yán sè shì fǒu yí zhì, zài bu zài jiē shōu biāo zhǔn nèi.",
+       "Check that colour is even across the roll and within the acceptance standard."
       ]
      ],
      "w": [
@@ -208,7 +236,9 @@
       ]
      ],
      "tpy": "Wù xìng jiǎn yàn",
-     "dpy": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào."
+     "dpy": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào.",
+     "ten": "Fabric physical testing",
+     "den": "Cut one swatch from the head, middle and tail of the roll and send it to the lab: dry/wet rubbing, wash fastness, colour, hand feel, thickness; the lab issues a report."
     },
     {
      "t": "Kiểm ngoại quan trên máy kiểm vải",
@@ -220,27 +250,32 @@
       [
        "Chấm điểm theo chiều dài lỗi: đến 3 inch trừ 1; 3–6 inch trừ 2; 6–9 inch trừ 3; trên 9 inch trừ 4.",
        "按瑕疵长度扣分：3英寸以下扣1分，3到6英寸扣2分，6到9英寸扣3分，9英寸以上扣4分。",
-       "Àn xiá cī cháng dù kòu fēn: 3 yīng cùn yǐ xià kòu 1 fēn, 3 dào 6 yīng cùn kòu 2 fēn, 6 dào 9 yīng cùn kòu 3 fēn, 9 yīng cùn yǐ shàng kòu 4 fēn."
+       "Àn xiá cī cháng dù kòu fēn: 3 yīng cùn yǐ xià kòu 1 fēn, 3 dào 6 yīng cùn kòu 2 fēn, 6 dào 9 yīng cùn kòu 3 fēn, 9 yīng cùn yǐ shàng kòu 4 fēn.",
+       "Points by defect length: up to 3 in = 1; 3–6 in = 2; 6–9 in = 3; over 9 in = 4."
       ],
       [
        "Quy đổi: điểm/100 yd² = 3.600 × tổng điểm ÷ (số yard × khổ inch).",
        "换算：每百平方码分数 = 3600 × 总扣分 ÷（码数 × 幅宽英寸）。",
-       "Huàn suàn: měi bǎi píng fāng mǎ fēn shù = 3600 × zǒng kòu fēn ÷ (mǎ shù × fú kuān yīng cùn)."
+       "Huàn suàn: měi bǎi píng fāng mǎ fēn shù = 3600 × zǒng kòu fēn ÷ (mǎ shù × fú kuān yīng cùn).",
+       "Conversion: points/100 yd² = 3,600 × total points ÷ (yards × width in inches)."
       ],
       [
        "Xếp cấp: A tối đa 29 điểm, B tối đa 47, C tối đa 62.",
        "分级：A级最多29分，B级最多47分，C级最多62分。",
-       "Fēn jí: A jí zuì duō 29 fēn, B jí zuì duō 47 fēn, C jí zuì duō 62 fēn."
+       "Fēn jí: A jí zuì duō 29 fēn, B jí zuì duō 47 fēn, C jí zuì duō 62 fēn.",
+       "Grades: A up to 29 points, B up to 47, C up to 62."
       ],
       [
        "VD: 100 yard, khổ 60 inch, trừ 20 điểm → 3.600 × 20 ÷ 6.000 = 12 điểm → cấp A.",
        "例如：100码、幅宽60英寸、扣20分，3600 × 20 ÷ 6000 = 12分，是A级。",
-       "Lì rú: 100 mǎ, fú kuān 60 yīng cùn, kòu 20 fēn, 3600 × 20 ÷ 6000 = 12 fēn, shì A jí."
+       "Lì rú: 100 mǎ, fú kuān 60 yīng cùn, kòu 20 fēn, 3600 × 20 ÷ 6000 = 12 fēn, shì A jí.",
+       "E.g. 100 yd, 60 in wide, 20 points → 3,600 × 20 ÷ 6,000 = 12 points → grade A."
       ],
       [
        "Điền biểu kiểm vải; cấp điểm trừ ghi lên tem cây vải để xưởng cắt đọc được.",
        "填验布检查表；扣点等级写在布卷标签上，裁剪看得到。",
-       "Tián yàn bù jiǎn chá biǎo; kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào."
+       "Tián yàn bù jiǎn chá biǎo; kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào.",
+       "Fill in the inspection sheet; write the point grade on the roll tag for the cutting room."
       ]
      ],
      "w": [
@@ -273,7 +308,9 @@
       ]
      ],
      "tpy": "Wài guān jiǎn yàn, yàn bù jī",
-     "dpy": "Bù juǎn fàng dào yàn bù jī shàng guò yí biàn (yǒu dēng xiāng, mǎ shù jì shù qì, diàn zǐ chèng). Jiǎn yàn yuán chá mǎ shù, liáng fú kuān, kàn sè chā hé xiá cī, měi gè xiá cī àn sì fēn zhì kòu fēn, jiā qǐ lái huàn suàn chéng měi bǎi píng fāng mǎ de fēn shù, zài fēn A, B, C jí. Jié guǒ tián zài yàn bù jiǎn chá biǎo shàng, yě xiě zài bù juǎn biāo qiān shàng."
+     "dpy": "Bù juǎn fàng dào yàn bù jī shàng guò yí biàn (yǒu dēng xiāng, mǎ shù jì shù qì, diàn zǐ chèng). Jiǎn yàn yuán chá mǎ shù, liáng fú kuān, kàn sè chā hé xiá cī, měi gè xiá cī àn sì fēn zhì kòu fēn, jiā qǐ lái huàn suàn chéng měi bǎi píng fāng mǎ de fēn shù, zài fēn A, B, C jí. Jié guǒ tián zài yàn bù jiǎn chá biǎo shàng, yě xiě zài bù juǎn biāo qiān shàng.",
+     "ten": "Visual inspection on the fabric inspection machine",
+     "den": "The roll runs through the inspection machine (light box, yard counter, scale). The inspector counts yards, measures width, checks shading and defects, scores each defect on the 4-point system, totals, converts to points per 100 yd² and grades A, B or C. Results go on the inspection sheet and the roll tag."
     },
     {
      "t": "Kiểm phụ liệu",
@@ -284,7 +321,8 @@
       [
        "Nhãn: kiểm size, mã vạch, số lượng so với mẫu chuẩn và đơn.",
        "标签：对照标准样和系统订单，核对尺码、条码和数量。",
-       "Biāo qiān: duì zhào biāo zhǔn yàng hé xì tǒng dìng dān, hé duì chǐ mǎ, tiáo mǎ hé shù liàng."
+       "Biāo qiān: duì zhào biāo zhǔn yàng hé xì tǒng dìng dān, hé duì chǐ mǎ, tiáo mǎ hé shù liàng.",
+       "Labels: check size, barcode and quantity against the standard sample and the order."
       ]
      ],
      "w": [
@@ -305,7 +343,9 @@
       ]
      ],
      "tpy": "Fǔ liào jiǎn yàn",
-     "dpy": "Fǔ liào àn AQL 1.5 jiǎn yàn, 7 tiān nèi wán chéng: diǎn shōu, kàn wài guān, liáng cháng kuān gāo, duì zhào biāo zhǔn yàng hé xì tǒng dìng dān."
+     "dpy": "Fǔ liào àn AQL 1.5 jiǎn yàn, 7 tiān nèi wán chéng: diǎn shōu, kàn wài guān, liáng cháng kuān gāo, duì zhào biāo zhǔn yàng hé xì tǒng dìng dān.",
+     "ten": "Trims inspection",
+     "den": "Trims are inspected to AQL 1.5 within 7 days: count, visual check, measure length/width/height, compare with the standard sample and the order in the system."
     },
     {
      "t": "Đạt hay không",
@@ -316,7 +356,8 @@
       [
        "Kho chấm điểm nhà cung cấp hằng tháng.",
        "仓库每月给供应商评分。",
-       "Cāng kù měi yuè gěi gōng yìng shāng píng fēn."
+       "Cāng kù měi yuè gěi gōng yìng shāng píng fēn.",
+       "The warehouse scores suppliers every month."
       ]
      ],
      "w": [
@@ -343,10 +384,22 @@
        "Với VF, UA, xử lý đặc biệt có cần khách đồng ý bằng văn bản không?",
        "VF和UA的物料走特采，要先拿到客户书面同意吗？",
        "VF hé UA de wù liào zǒu tè cǎi, yào xiān ná dào kè hù shū miàn tóng yì ma?"
+      ],
+      [
+       "“Xử lý trong 6 tháng” là trả hàng phải xong trong 6 tháng, hay hàng không đạt chỉ được để trong kho tối đa 6 tháng?",
+       "“6个月内处理”是退货要在6个月内完成，还是不合格的物料最多只能在仓库放6个月？",
+       "“6 gè yuè nèi chǔ lǐ” shì tuì huò yào zài 6 gè yuè nèi wán chéng, hái shì bù hé gé de wù liào zuì duō zhǐ néng zài cāng kù fàng 6 gè yuè?"
+      ],
+      [
+       "Kho chấm điểm nhà cung cấp hằng tháng dựa trên những mục nào?",
+       "仓库每个月给供应商评分，看哪些项目？",
+       "Cāng kù měi gè yuè gěi gōng yìng shāng píng fēn, kàn nǎ xiē xiàng mù?"
       ]
      ],
      "tpy": "Hé gé yǔ bù hé gé",
-     "dpy": "Hé gé de lù rù ERP, chū yàn shōu míng xì biǎo, shōu liào rù kù. Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán."
+     "dpy": "Hé gé de lù rù ERP, chū yàn shōu míng xì biǎo, shōu liào rù kù. Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
+     "ten": "Pass or fail",
+     "den": "Pass: enter in ERP, print the acceptance list, put into stock. Fail: raise a receiving feedback form and review for concession; if not possible, return to supplier. Must be resolved within 6 months."
     },
     {
      "t": "Phát cho xưởng cắt",
@@ -357,7 +410,8 @@
       [
        "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ.",
        "领料单交咨询组减账。",
-       "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng."
+       "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng.",
+       "The requisition goes back to the counting team to deduct the record."
       ]
      ],
      "w": [
@@ -380,7 +434,9 @@
       ]
      ],
      "tpy": "Fā liào",
-     "dpy": "Cái jiǎn ná lǐng liào dān lái lǐng liào, dān shàng xiě duō shao jiù fā duō shao: kù cún 1000 mǎ, dān shàng 100 mǎ jiù fā 100 mǎ, shèng 900 mǎ. Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng."
+     "dpy": "Cái jiǎn ná lǐng liào dān lái lǐng liào, dān shàng xiě duō shao jiù fā duō shao: kù cún 1000 mǎ, dān shàng 100 mǎ jiù fā 100 mǎ, shèng 900 mǎ. Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
+     "ten": "Issue to the cutting room",
+     "den": "The cutting room brings a material requisition; the warehouse issues exactly what is written (1,000 yd in stock, 100 yd requested → issue 100, 900 left). Shortages need a supplementary requisition; stock-take differences need an adjustment request."
     },
     {
      "t": "Tem và vị trí",
@@ -400,12 +456,17 @@
      "qs": [],
      "tpy": "Biāo shí hé chǔ wèi",
      "dpy": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé. Bù juǎn biāo qiān shàng yǒu sè chā jí shù A–D. Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì.",
-     "chk": []
+     "chk": [],
+     "ten": "Tags and locations",
+     "den": "Status tags: main material OK, trims OK, awaiting inspection, concession, rejected. The roll tag shows the shade grade A–D. Rack locations look like C24-3-2 (rack – level – slot)."
     }
    ],
    "py": "cāngkù",
    "whatpy": "Miàn fǔ liào dào liào → jiǎn yàn → rù kù → fā liào gěi cái jiǎn.",
-   "whopy": "Cāng kù jiǎn yàn zǔ"
+   "whopy": "Cāng kù jiǎn yàn zǔ",
+   "en": "Warehouse",
+   "whaten": "Receive fabric and trims → inspect → put into stock → issue to the cutting room.",
+   "whoen": "The warehouse inspection team checks its own goods"
   },
   {
    "id": "kiemvai",
@@ -430,12 +491,14 @@
       [
        "Kiểm số yard, khổ vải, chênh lệch màu và lỗi vải.",
        "查码数、幅宽、色差和瑕疵。",
-       "Chá mǎ shù, fú kuān, sè chā hé xiá cī."
+       "Chá mǎ shù, fú kuān, sè chā hé xiá cī.",
+       "Check yardage, width, shading and fabric defects."
       ],
       [
        "Đánh dấu chỗ lỗi trên vải và ghi vào biểu kiểm vải.",
        "在布上标出瑕疵位置，填验布检查表。",
-       "Zài bù shàng biāo chū xiá cī wèi zhì, tián yàn bù jiǎn chá biǎo."
+       "Zài bù shàng biāo chū xiá cī wèi zhì, tián yàn bù jiǎn chá biǎo.",
+       "Mark defects on the fabric and record them on the inspection sheet."
       ]
      ],
      "w": [
@@ -469,7 +532,9 @@
       ]
      ],
      "tpy": "Shàng yàn bù jī",
-     "dpy": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng. Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng hé wù liào zhuàng tài biāo shí."
+     "dpy": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng. Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng hé wù liào zhuàng tài biāo shí.",
+     "ten": "① Load the inspection machine",
+     "den": "The machine has a light box, yard counter and electronic scale. Posted next to it: fabric inspection SOP, 4-point method, main-material standard, defect reference samples, status tags."
     },
     {
      "t": "② Chấm điểm từng lỗi (4 điểm)",
@@ -498,7 +563,9 @@
      ],
      "tpy": "Sì fēn zhì kòu fēn",
      "dpy": "Měi gè xiá cī àn cháng dù kòu fēn: 3 yīng cùn yǐ xià kòu 1 fēn, 3 dào 6 yīng cùn kòu 2 fēn, 6 dào 9 yīng cùn kòu 3 fēn, 9 yīng cùn yǐ shàng kòu 4 fēn. Jī qì páng biān yǒu kòu fēn cān kǎo yàng kě yǐ duì zhào.",
-     "chk": []
+     "chk": [],
+     "ten": "② Score each defect (4-point)",
+     "den": "Each defect is scored by length: up to 3 in = 1; 3–6 in = 2; 6–9 in = 3; over 9 in = 4. Reference samples beside the machine help to compare."
     },
     {
      "t": "③ Quy đổi và xếp cấp A, B, C",
@@ -510,17 +577,20 @@
       [
        "VD: 100 yard, khổ 60 inch, trừ 20 điểm → 3.600 × 20 ÷ 6.000 = 12 điểm → cấp A.",
        "例如：100码、幅宽60英寸、扣20分，3600 × 20 ÷ 6000 = 12分，是A级。",
-       "Lì rú: 100 mǎ, fú kuān 60 yīng cùn, kòu 20 fēn, 3600 × 20 ÷ 6000 = 12 fēn, shì A jí."
+       "Lì rú: 100 mǎ, fú kuān 60 yīng cùn, kòu 20 fēn, 3600 × 20 ÷ 6000 = 12 fēn, shì A jí.",
+       "E.g. 100 yd, 60 in wide, 20 points → 3,600 × 20 ÷ 6,000 = 12 → grade A."
       ],
       [
        "VD: 80 yard, khổ 58 inch, trừ 45 điểm → 3.600 × 45 ÷ 4.640 ≈ 34,9 điểm → cấp B.",
        "例如：80码、幅宽58英寸、扣45分，3600 × 45 ÷ 4640 ≈ 34.9分，是B级。",
-       "Lì rú: 80 mǎ, fú kuān 58 yīng cùn, kòu 45 fēn, 3600 × 45 ÷ 4640 ≈ 34.9 fēn, shì B jí."
+       "Lì rú: 80 mǎ, fú kuān 58 yīng cùn, kòu 45 fēn, 3600 × 45 ÷ 4640 ≈ 34.9 fēn, shì B jí.",
+       "E.g. 80 yd, 58 in wide, 45 points → 3,600 × 45 ÷ 4,640 ≈ 34.9 → grade B."
       ],
       [
        "Ghi cấp điểm trừ lên tem cây vải (扣点等级) để xưởng cắt đọc được.",
        "扣点等级写在布卷标签上，裁剪看得到。",
-       "Kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào."
+       "Kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào.",
+       "Write the point grade (扣点等级) on the roll tag for the cutting room."
       ]
      ],
      "w": [
@@ -548,7 +618,9 @@
       ]
      ],
      "tpy": "Huàn suàn hé fēn A, B, C jí",
-     "dpy": "Bǎ zhěng juǎn de kòu fēn jiā qǐ lái, huàn suàn chéng měi bǎi píng fāng mǎ: fēn shù = 3600 × zǒng kòu fēn ÷ (mǎ shù × fú kuān yīng cùn). A jí zuì duō 29 fēn, B jí zuì duō 47 fēn, C jí zuì duō 62 fēn."
+     "dpy": "Bǎ zhěng juǎn de kòu fēn jiā qǐ lái, huàn suàn chéng měi bǎi píng fāng mǎ: fēn shù = 3600 × zǒng kòu fēn ÷ (mǎ shù × fú kuān yīng cùn). A jí zuì duō 29 fēn, B jí zuì duō 47 fēn, C jí zuì duō 62 fēn.",
+     "ten": "③ Convert and grade A, B, C",
+     "den": "Total the points for the roll and convert to 100 yd²: points = 3,600 × total ÷ (yards × width in inches). A up to 29, B up to 47, C up to 62."
     },
     {
      "t": "④ Xếp cấp chênh lệch màu A–D",
@@ -572,7 +644,9 @@
      ],
      "tpy": "Sè chā jí shù",
      "dpy": "Cāng kù bǎ bù juǎn àn sè chā fēn A dào D jí, xiě zài bù juǎn biāo qiān shàng. Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100).",
-     "chk": []
+     "chk": [],
+     "ten": "④ Shade grading A–D",
+     "den": "The warehouse sorts rolls by shade grade A–D and writes it on the roll tag. Colour inspectors must pass the FM100 colour test first."
     },
     {
      "t": "⑤ Phòng kiểm nghiệm",
@@ -583,12 +657,14 @@
       [
        "Tính chất vật lý: co rút khi giặt, định lượng, chống thấm, lão hóa, hút ẩm, khổ, pH, khô nhanh, mật độ, bền thăng hoa.",
        "物性：水洗缩率、布重、防泼水、老化、吸湿、幅宽、pH值、快干、密度、升华牢度。",
-       "Wù xìng: shuǐ xǐ suō lǜ, bù zhòng, fáng pō shuǐ, lǎo huà, xī shī, fú kuān, pH zhí, kuài gàn, mì dù, shēng huá láo dù."
+       "Wù xìng: shuǐ xǐ suō lǜ, bù zhòng, fáng pō shuǐ, lǎo huà, xī shī, fú kuān, pH zhí, kuài gàn, mì dù, shēng huá láo dù.",
+       "Physical: wash shrinkage, fabric weight, water repellency, ageing, moisture absorption, width, pH, quick-dry, density, sublimation fastness."
       ],
       [
        "Độ bền màu: giặt, mồ hôi, ma sát, ánh sáng, chống ố vàng, di màu, nước, mồ hôi kèm ánh sáng.",
        "色牢度：水洗、汗渍、摩擦、日光、抗黄变、色移、耐水、汗光。",
-       "Sè láo dù: shuǐ xǐ, hàn zì, mó cā, rì guāng, kàng huáng biàn, sè yí, nài shuǐ, hàn guāng."
+       "Sè láo dù: shuǐ xǐ, hàn zì, mó cā, rì guāng, kàng huáng biàn, sè yí, nài shuǐ, hàn guāng.",
+       "Colour fastness: washing, perspiration, rubbing, light, anti-yellowing, colour migration, water, perspiration-light."
       ]
      ],
      "w": [
@@ -631,12 +707,17 @@
       ]
      ],
      "tpy": "Jiǎn yàn shì",
-     "dpy": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán. Qiáng shàng guà zhe Under Armour de shí yàn shì rèn kě zhèng shū."
+     "dpy": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán. Qiáng shàng guà zhe Under Armour de shí yàn shì rèn kě zhèng shū.",
+     "ten": "⑤ Factory lab",
+     "den": "Four test groups: physical properties, colour fastness, finished-product wash, formaldehyde. The lab holds an Under Armour lab approval certificate."
     }
    ],
    "py": "yànbù",
    "whatpy": "Bù juǎn guò yàn bù jī → àn sì fēn zhì gěi měi gè xiá cī kòu fēn → huàn suàn chéng měi bǎi píng fāng mǎ → fēn A, B, C jí → tián biǎo, xiě biāo qiān. Kàn bú jiàn de wèn tí (sè láo dù, suō lǜ, pH, jiǎ quán) sòng jiǎn yàn shì.",
-   "whopy": "Cāng kù jiǎn yàn zǔ; jiǎn yàn shì"
+   "whopy": "Cāng kù jiǎn yàn zǔ; jiǎn yàn shì",
+   "en": "Fabric inspection & lab",
+   "whaten": "Rolls run through the inspection machine → each defect is scored on the 4-point system → converted to 100 yd² → graded A, B, C → recorded on the sheet and tag. Invisible properties (colour fastness, shrinkage, pH, formaldehyde) go to the lab.",
+   "whoen": "Warehouse inspection team; factory lab"
   },
   {
    "id": "cat",
@@ -660,7 +741,8 @@
       [
        "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào.",
        "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
-       "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān."
+       "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
+       "Read the tag for traceability: which roll, dye lot, shade grade and order."
       ]
      ],
      "w": [
@@ -680,7 +762,9 @@
       ]
      ],
      "tpy": "Kàn bù juǎn biāo qiān",
-     "dpy": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán. Pǐn hào zuì hòu yí gè zì mǔ shì yán sè: B hēi, W bái, E huī, R hóng."
+     "dpy": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán. Pǐn hào zuì hòu yí gè zì mǔ shì yán sè: B hēi, W bái, E huī, R hóng.",
+     "ten": "① Receive the roll, read the tag",
+     "den": "White tag with QR: material code (last letter is colour: B black, W white, E grey, R red…), shade grade, dye lot, point grade, inspector."
     },
     {
      "t": "② Xả vải",
@@ -707,7 +791,9 @@
      ],
      "tpy": "Sōng bù",
      "dpy": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
-     "chk": []
+     "chk": [],
+     "ten": "② Fabric relaxing",
+     "den": "Only for stretch fabric: let it shrink first so cut pieces don't shrink later."
     },
     {
      "t": "③ Dán lót keo — sếp nói “hé tiē”",
@@ -719,22 +805,26 @@
       [
        "Cài nhiệt độ và áp suất theo yêu cầu (80–180 °C); đạt nhiệt mới cho vải vào máy.",
        "按要求设定温度（80到180度）和气压，到了温度才放布。",
-       "Àn yāo qiú shè dìng wēn dù (80 dào 180 dù) hé qì yā, dào le wēn dù cái fàng bù."
+       "Àn yāo qiú shè dìng wēn dù (80 dào 180 dù) hé qì yā, dào le wēn dù cái fàng bù.",
+       "Set temperature and pressure as required (80–180 °C); feed fabric only once it is at temperature."
       ],
       [
        "Tấm đầu tiên kiểm độ dính: tay người bình thường xé không ra mới chạy tiếp.",
        "第一片要检查贴得牢不牢：正常人用手撕不开，才可以继续做。",
-       "Dì yī piàn yào jiǎn chá tiē de láo bu láo: zhèng cháng rén yòng shǒu sī bù kāi, cái kě yǐ jì xù zuò."
+       "Dì yī piàn yào jiǎn chá tiē de láo bu láo: zhèng cháng rén yòng shǒu sī bù kāi, cái kě yǐ jì xù zuò.",
+       "Check bond on the first piece: a normal hand pull must not separate it."
       ],
       [
        "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo.",
        "贴好的布要牢，不起皱、不打卷、不渗胶。",
-       "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo."
+       "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
+       "Fused fabric must be firm, with no wrinkles, no curled edges, no glue strike-through."
       ],
       [
        "Mỗi ngày ghi nhiệt độ 3 điểm trái, giữa, phải (trước và trong khi dán) và lực kéo trái, phải.",
        "每天记录左、中、右三点温度（贴合前和贴合中），还有左右拉力。",
-       "Měi tiān jì lù zuǒ, zhōng, yòu sān diǎn wēn dù (tiē hé qián hé tiē hé zhōng), hái yǒu zuǒ yòu lā lì."
+       "Měi tiān jì lù zuǒ, zhōng, yòu sān diǎn wēn dù (tiē hé qián hé tiē hé zhōng), hái yǒu zuǒ yòu lā lì.",
+       "Record temperature daily at left, centre, right (before and during fusing) and peel strength left and right."
       ]
      ],
      "w": [
@@ -779,7 +869,9 @@
       ]
      ],
      "tpy": "Tiē hé",
-     "dpy": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71). Kǎ shàng qián piàn xiě “tiē”, jiù shì yǐ jīng tiē hé. Tiē hé dài mǎ xiàng TG0M01-150."
+     "dpy": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71). Kǎ shàng qián piàn xiě “tiē”, jiù shì yǐ jīng tiē hé. Tiē hé dài mǎ xiàng TG0M01-150.",
+     "ten": "③ Fusing (boss says “hé tiē”)",
+     "den": "Before cutting, the shell fabric is fused to adhesive interlining on the fusing machine (SOP M-10-71). On the process card, a front panel marked (貼) has passed this step. Process codes look like TG0M01-150."
     },
     {
      "t": "④ Kéo vải — sếp nói “la bù”",
@@ -791,7 +883,8 @@
       [
        "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”.",
        "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
-       "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán."
+       "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
+       "The pre-printed sheet has checks: aligned edges, stretch, lay height, cutting direction; plus a box for anti-mould."
       ]
      ],
      "w": [
@@ -818,7 +911,9 @@
       ]
      ],
      "tpy": "Lā bù",
-     "dpy": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng. Bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā."
+     "dpy": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng. Bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā.",
+     "ten": "④ Spreading (boss says “la bù”)",
+     "den": "Spread the fabric along the table in many plies following the marker sheet (form M-10-44-A-3), e.g. 18 plies face-to-face. Different shade grades are never spread in the same lay."
     },
     {
      "t": "⑤ Chặt",
@@ -829,17 +924,20 @@
       [
        "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa.",
        "刀模跟纸样比，差2毫米以上就要修。",
-       "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū."
+       "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū.",
+       "A die off the pattern by 2 mm or more must be fixed."
       ],
       [
        "Kiểm dao 2 giờ một lần, có sổ ghi.",
        "每两小时查一次刀模，要有记录。",
-       "Měi liǎng xiǎo shí chá yí cì dāo mó, yào yǒu jì lù."
+       "Měi liǎng xiǎo shí chá yí cì dāo mó, yào yǒu jì lù.",
+       "Dies are checked every 2 hours, with a log."
       ],
       [
        "Lấy mảnh ở lớp trên, giữa, dưới để kiểm; người kiểm dao và tổ trưởng ký trên phiếu, QC đóng dấu.",
        "抽上、中、下三层的裁片检查；查刀模的人和组长在单上签字，QC盖章。",
-       "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá; chá dāo mó de rén hé zǔ zhǎng zài dān shàng qiān zì, QC gài zhāng."
+       "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá; chá dāo mó de rén hé zǔ zhǎng zài dān shàng qiān zì, QC gài zhāng.",
+       "Check pieces from the top, middle and bottom plies; the die checker and supervisor sign the sheet, QC stamps it."
       ]
      ],
      "w": [
@@ -869,7 +967,9 @@
       ]
      ],
      "tpy": "Dāo mó cái jiǎn",
-     "dpy": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ. Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù."
+     "dpy": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ. Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
+     "ten": "⑤ Die cutting",
+     "den": "The clicker press (e.g. Chenfeng no. 28) presses the cutting die through the whole lay over kraft paper. One die set: 6 crown panels, visor top and under, top-button cover."
     },
     {
      "t": "⑥ Máy làm nút đỉnh",
@@ -895,7 +995,9 @@
      ],
      "tpy": "Dǐng kòu",
      "dpy": "Cái jiǎn yòng zhuān mén de dāo mó cái dǐng kòu bāo bù. Zhè tái jī qì kě néng shì bǎ bāo bù bāo zài dǐng kòu shàng, ràng dǐng kòu gēn mào zi tóng sè (dài què rèn). Dǐng kòu zài sòng dào chē féng dǎ dǐng kòu. Jīn shǔ dǐng kòu bú yòng bāo bù.",
-     "chk": []
+     "chk": [],
+     "ten": "⑥ Top-button machine",
+     "den": "The cutting room cuts the button cover pieces with a separate die. The machine you saw most likely covers buttons with this fabric so they match the cap; buttons go to sewing for button setting. Caps with metal buttons (e.g. UA 1381645) are not covered. Machine name: unknown."
     },
     {
      "t": "⑦ Mã lỗi mảnh cắt",
@@ -906,7 +1008,8 @@
       [
        "Nhặt hết mảnh lỗi bỏ thùng riêng, ghi mã vào phiếu.",
        "不良裁片全部挑出来，放不良箱，代号写在单上。",
-       "Bù liáng cái piàn quán bù tiāo chū lái, fàng bù liáng xiāng, dài hào xiě zài dān shàng."
+       "Bù liáng cái piàn quán bù tiāo chū lái, fàng bù liáng xiāng, dài hào xiě zài dān shàng.",
+       "Pick out all defective pieces into a separate bin and write the code on the sheet."
       ]
      ],
      "w": [
@@ -929,7 +1032,9 @@
       ]
      ],
      "tpy": "Cái jiǎn bù liáng dài hào",
-     "dpy": "1041 bù zhì bù liáng · 1042 cái jiǎn zāng wū · 1043 bù liào jiē tóu/jiē pǐ · 1044 duì sè quē kǒu/pò dòng · 1140 cái jiǎn bù liáng · 1141 tiē hé bù liáng."
+     "dpy": "1041 bù zhì bù liáng · 1042 cái jiǎn zāng wū · 1043 bù liào jiē tóu/jiē pǐ · 1044 duì sè quē kǒu/pò dòng · 1140 cái jiǎn bù liáng · 1141 tiē hé bù liáng.",
+     "ten": "⑦ Cut-piece defect codes",
+     "den": "1041 fabric defect · 1042 soiled piece · 1043 joint/roll splice · 1044 short from shade cutting, hole · 1140 cutting defect · 1141 fusing defect."
     },
     {
      "t": "⑧ Chọn và buộc mảnh",
@@ -940,17 +1045,20 @@
       [
        "Buộc đúng số, không thừa không thiếu: số bộ/lớp × số lớp ± thêm bớt = 144.",
        "绑片不多不少：每层套数 × 层数 ± 加减 = 144。",
-       "Bǎng piàn bù duō bù shǎo: měi céng tào shù × céng shù ± jiā jiǎn = 144."
+       "Bǎng piàn bù duō bù shǎo: měi céng tào shù × céng shù ± jiā jiǎn = 144.",
+       "Exact count, no more no less: sets per ply × plies ± adjustment = 144."
       ],
       [
        "Bó lẻ cuối đơn dán tem ghi đơn, lần cắt, màu, số lượng.",
        "尾数包贴标签，写订单、裁次、颜色、数量。",
-       "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng."
+       "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng.",
+       "The last odd bundle of an order gets a tag with order, cut number, colour, quantity."
       ],
       [
        "Thẻ quy trình A đi theo bó; công nhân làm công đoạn nào ghi số của mình vào ô đó, nên truy được ai làm bó nào.",
        "每包跟一张A卡，工人做哪道工序就在那一栏写自己的工号，可以查到谁做了哪一包。",
-       "Měi bāo gēn yì zhāng A kǎ, gōng rén zuò nǎ dào gōng xù jiù zài nà yì lán xiě zì jǐ de gōng hào, kě yǐ chá dào shuí zuò le nǎ yì bāo."
+       "Měi bāo gēn yì zhāng A kǎ, gōng rén zuò nǎ dào gōng xù jiù zài nà yì lán xiě zì jǐ de gōng hào, kě yǐ chá dào shuí zuò le nǎ yì bāo.",
+       "Process card A travels with the bundle; each worker writes their number in their operation box, so every bundle is traceable."
       ]
      ],
      "w": [
@@ -984,7 +1092,9 @@
       ]
      ],
      "tpy": "Tiāo piàn, bǎng piàn",
-     "dpy": "Zuò yè biāo zhǔn M-10-72: zhú piàn jiǎn chá, tiāo chū bù liáng; àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi; fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng."
+     "dpy": "Zuò yè biāo zhǔn M-10-72: zhú piàn jiǎn chá, tiāo chū bù liáng; àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi; fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng.",
+     "ten": "⑧ Sorting and bundling",
+     "den": "SOP M-10-72: check every piece, remove defects; bundle exactly 144 sets (enough for 144 caps) using the calculation table; stage them in the waiting area for embroidery, printing, sewing."
     },
     {
      "t": "⑨ 品保部 kiểm ở xưởng cắt",
@@ -1004,12 +1114,17 @@
      ],
      "tpy": "Pǐn bǎo bù zài cái jiǎn de jiǎn chá",
      "dpy": "Pǐn bǎo bù zài cái jiǎn chá: dān shàng de QC zhāng, dāo mó, cái piàn. Chōu duō shao, jì zài nǎ zhāng biǎo shàng, hái yào wèn.",
-     "chk": []
+     "chk": [],
+     "ten": "⑨ 品保部 checks in the cutting room",
+     "den": "Our department checks in the cutting room: QC stamp on the marker sheet, die checks, piece checks. Sampling rate and record form: still to ask."
     }
    ],
    "py": "cáijiǎn",
    "whatpy": "Bù juǎn → tiē hé → lā bù → dāo mó cái jiǎn → tiāo piàn, bǎng piàn, měi bāo 144 tào → sòng xiù huā, yìn huā, chē féng.",
-   "whopy": "Cái jiǎn zǔ zhǎng; pǐn bǎo bù QC"
+   "whopy": "Cái jiǎn zǔ zhǎng; pǐn bǎo bù QC",
+   "en": "Cutting room",
+   "whaten": "Roll → fusing → spreading → die cutting → sorting and bundling 144 sets per bundle → to embroidery, printing, sewing.",
+   "whoen": "Cutting supervisor; 品保部 (QA dept) QC checks in addition"
   },
   {
    "id": "theu",
@@ -1046,7 +1161,9 @@
      ],
      "tpy": "Xiù logo",
      "dpy": "Zài cái piàn shàng xiù (yì bān shì qián piàn), huò zhě zài chē hǎo de mào zi shàng xiù.",
-     "chk": []
+     "chk": [],
+     "ten": "Logo embroidery",
+     "den": "Embroidered on cut panels (usually the front) or on the sewn cap."
     },
     {
      "t": "Lỗ thoáng",
@@ -1057,7 +1174,8 @@
       [
        "Đối chiếu tốc độ máy với thẻ SOP dán trên máy.",
        "核对机器速度跟SOP卡上写的是否一样。",
-       "Hé duì jī qì sù dù gēn SOP kǎ shàng xiě de shì fǒu yí yàng."
+       "Hé duì jī qì sù dù gēn SOP kǎ shàng xiě de shì fǒu yí yàng.",
+       "Compare machine speed with the SOP card on the machine."
       ]
      ],
      "w": [
@@ -1069,7 +1187,9 @@
      ],
      "qs": [],
      "tpy": "Xiù dòng",
-     "dpy": "Xiù dòng zài chē féng xiàn shàng zuò: zhuàn sù 1700, báo liào 1200, yào diàn zhǐ. Kǎ shàng de 1600 shì “qián piàn xiù dòng × 2”, zài qián piàn shuāng zhēn zhī qián zuò."
+     "dpy": "Xiù dòng zài chē féng xiàn shàng zuò: zhuàn sù 1700, báo liào 1200, yào diàn zhǐ. Kǎ shàng de 1600 shì “qián piàn xiù dòng × 2”, zài qián piàn shuāng zhēn zhī qián zuò.",
+     "ten": "Eyelets",
+     "den": "Eyelet embroidery sits on the sewing line: 1,700 rpm, thin fabric 1,200 with backing paper. Process card: operation 1600 embroiders 2 eyelets on the front panel, before double-needle sewing."
     },
     {
      "t": "Chiếc đầu và lỗi hay gặp",
@@ -1080,12 +1200,14 @@
       [
        "So chiếc đầu với mẫu duyệt: vị trí, kích thước, mật độ, màu chỉ.",
        "首件跟确认样对比：位置、尺寸、密度、线的颜色。",
-       "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè."
+       "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè.",
+       "Compare the first piece with the approved sample: position, size, density, thread colour."
       ],
       [
        "Đo vị trí logo theo tech pack (VD mã UA 1381645: logo cách đường may lưỡi 1,5 cm).",
        "按技术包测量logo位置，例如UA 1381645，logo离帽檐车线1.5厘米。",
-       "Àn jì shù bāo cè liáng logo wèi zhì, lì rú UA 1381645, logo lí mào yán chē xiàn 1.5 lí mǐ."
+       "Àn jì shù bāo cè liáng logo wèi zhì, lì rú UA 1381645, logo lí mào yán chē xiàn 1.5 lí mǐ.",
+       "Measure logo position per the tech pack (e.g. UA 1381645: logo 1.5 cm from the visor seam)."
       ]
      ],
      "w": [
@@ -1117,7 +1239,9 @@
       ]
      ],
      "tpy": "Shǒu jiàn hé cháng jiàn bù liáng",
-     "dpy": "Shǒu jiàn gēn què rèn yàng duì bǐ. Cháng jiàn bù liáng: xiù huā qǐ zhòu, xiù huā qǐ máo."
+     "dpy": "Shǒu jiàn gēn què rèn yàng duì bǐ. Cháng jiàn bù liáng: xiù huā qǐ zhòu, xiù huā qǐ máo.",
+     "ten": "First piece and common defects",
+     "den": "Compare the first piece with the approved sample. Common defects: puckering around the design, fuzzing, misregistration, thin coverage showing the ground."
     },
     {
      "t": "VF cần gì",
@@ -1135,12 +1259,17 @@
      ],
      "tpy": "VF de yāo qiú",
      "dpy": "VF: měi gè xiù xiàn yán sè zuò yí gè mock-up; gēn artwork yí gè xì jié yí gè xì jié duì bǐ.",
-     "chk": []
+     "chk": [],
+     "ten": "What VF requires",
+     "den": "One mock-up per embroidery colourway; check artwork detail by detail (a VF case: the logo was missing the black dot inside the “A”)."
     }
    ],
    "py": "xiùhuā",
    "whatpy": "Yǒu de kuǎn xiān zài cái piàn shàng xiù huā zài chē féng, yǒu de kuǎn chē hǎo mào zi zài xiù.",
-   "whopy": "Xiù huā chē jiān yǒu zì jǐ de QC"
+   "whopy": "Xiù huā chē jiān yǒu zì jǐ de QC",
+   "en": "Embroidery",
+   "whaten": "Some styles are embroidered on flat panels before sewing, others on the finished cap.",
+   "whoen": "The embroidery room has its own QC"
   },
   {
    "id": "in",
@@ -1189,7 +1318,9 @@
      ],
      "tpy": "Sān zhǒng zuò fǎ",
      "dpy": "Shǒu gōng yìn, jī qì yìn, zhuǎn yìn.",
-     "chk": []
+     "chk": [],
+     "ten": "Three methods",
+     "den": "Hand screen printing; machine printing (Chinese name unknown, to ask); heat transfer."
     },
     {
      "t": "Kiểm",
@@ -1200,17 +1331,20 @@
       [
        "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ.",
        "Logo偏位：VF规定超过3毫米是严重缺陷，3毫米以内是轻微缺陷。",
-       "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn."
+       "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn.",
+       "Logo offset: VF counts over 3 mm as major, 3 mm or less as minor."
       ],
       [
        "Vải polyester nóng quá dễ di màu sang mực: dùng mực chống di màu, mực nhiệt thấp hoặc in lót trắng.",
        "涤纶布温度太高容易色移到油墨上：用防色移油墨、低温油墨，或者打白底。",
-       "Dí lún bù wēn dù tài gāo róng yì sè yí dào yóu mò shàng: yòng fáng sè yí yóu mò, dī wēn yóu mò, huò zhě dǎ bái dǐ."
+       "Dí lún bù wēn dù tài gāo róng yì sè yí dào yóu mò shàng: yòng fáng sè yí yóu mò, dī wēn yóu mò, huò zhě dǎ bái dǐ.",
+       "Polyester overheated easily migrates dye into the ink: use anti-migration ink, low-cure ink or a white underbase."
       ],
       [
        "Bong, nứt, trôi khi giặt thường do chưa đủ nhiệt đóng rắn hoặc dùng sai loại mực.",
        "脱落、裂开、洗掉，大多是固化温度不够，或者油墨用错。",
-       "Tuō luò, liè kāi, xǐ diào, dà duō shì gù huà wēn dù bú gòu, huò zhě yóu mò yòng cuò."
+       "Tuō luò, liè kāi, xǐ diào, dà duō shì gù huà wēn dù bú gòu, huò zhě yóu mò yòng cuò.",
+       "Peeling, cracking or wash-off usually comes from under-curing or the wrong ink."
       ]
      ],
      "w": [
@@ -1240,7 +1374,9 @@
       ]
      ],
      "tpy": "Zěn me jiǎn chá",
-     "dpy": "Shǒu jiàn shì yā, gēn què rèn yàng duì bǐ; yìn huā cái piàn 100% chá wài guān; fù zhuó lì cè shì (jiāo dài sī lā, shuǐ xǐ) shuí zuò, duō jiǔ zuò yí cì, hái yào wèn."
+     "dpy": "Shǒu jiàn shì yā, gēn què rèn yàng duì bǐ; yìn huā cái piàn 100% chá wài guān; fù zhuó lì cè shì (jiāo dài sī lā, shuǐ xǐ) shuí zuò, duō jiǔ zuò yí cì, hái yào wèn.",
+     "ten": "Inspection",
+     "den": "Press a first piece and compare with the approved sample; 100% visual check of printed panels; who does adhesion tests (tape peel, wash) and how often: still to ask."
     },
     {
      "t": "Lỗi",
@@ -1257,12 +1393,17 @@
      "qs": [],
      "tpy": "Bù liáng",
      "dpy": "Yìn huā mó hu, zhuǎn yìn biàn xíng, tuō luò, liè kāi.",
-     "chk": []
+     "chk": [],
+     "ten": "Defects",
+     "den": "Blurred print, distorted transfer, peeling, cracking."
     }
    ],
    "py": "yìnhuā",
    "whatpy": "Yìn huā yǒu shǒu gōng yìn hé jī qì yìn (nán tiáo de yán sè yòng jī qì), hái yǒu zhuǎn yìn.",
-   "whopy": "Yìn huā chē jiān yǒu zì jǐ de QC; yìn huā zhè kuài pǐn bǎo bù hái yào zài chá"
+   "whopy": "Yìn huā chē jiān yǒu zì jǐ de QC; yìn huā zhè kuài pǐn bǎo bù hái yào zài chá",
+   "en": "Printing & heat transfer",
+   "whaten": "Hand screen printing, machine printing (“dập máy”) for hard-to-mix colours, or heat-transfer logos.",
+   "whoen": "The print room has its own QC; 品保部 checks printing in addition"
   },
   {
    "id": "giat",
@@ -1303,12 +1444,17 @@
      ],
      "tpy": "Shuǐ xǐ",
      "dpy": "Shuǐ xǐ hòu zěn me jiǎn chá hái méi xué.",
-     "chk": []
+     "chk": [],
+     "ten": "Washing",
+     "den": "Post-wash checks not learned yet: ask whether whole rolls or cut pieces are washed, and who sets the recipe."
     }
    ],
    "py": "shuǐxǐ mào",
    "whatpy": "Zhǐ yǒu shuǐ xǐ mào yào xǐ. Yī lóu, dà gài 8 tái jī qì (3 dà 5 xiǎo), jì shù bù fù zé.",
-   "whopy": "Jì shù bù"
+   "whopy": "Jì shù bù",
+   "en": "Washing (washed caps)",
+   "whaten": "Washed-cap styles only. Ground floor, about 8 machines (3 large, 5 small), run by the technical department.",
+   "whoen": "Technical department"
   },
   {
    "id": "may",
@@ -1332,7 +1478,8 @@
       [
        "Đối chiếu thẻ SOP của từng máy với số trên máy (mũi/inch, đường may chừa). Hôm 13–14/10 đã thấy 3 chỗ lệch.",
        "核对每台机器的SOP卡和机器上的数据（针距、缝份）。10月13到14日发现3处不一致。",
-       "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì."
+       "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì.",
+       "Compare each machine's SOP card with the machine settings (SPI, seam allowance). On 13–14 Oct three mismatches were found."
       ]
      ],
      "w": [
@@ -1362,10 +1509,17 @@
        "Ráp thân trước 12 hay 11 mũi/inch? Bản nào đúng?",
        "前合片每英寸12针还是11针？哪个对？",
        "Qián hé piàn měi yīng cùn 12 zhēn hái shì 11 zhēn? Nǎ ge duì?"
+      ],
+      [
+       "Vắt sổ: chỉ thừa giữa các chiếc tối đa 3 mm hay 5 mm? Mũ giặt có phải để 15 mm không?",
+       "拷克：每顶之间的线头最多留3毫米还是5毫米？水洗帽是不是留15毫米？",
+       "Kǎo kè: měi dǐng zhī jiān de xiàn tóu zuì duō liú 3 háo mǐ hái shì 5 háo mǐ? Shuǐ xǐ mào shì bu shì liú 15 háo mǐ?"
       ]
      ],
      "tpy": "Hé piàn",
-     "dpy": "Hé piàn; mào shuāng; kǎo kè; lǐ miàn bāo biān. Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ."
+     "dpy": "Hé piàn; mào shuāng; kǎo kè; lǐ miàn bāo biān. Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ.",
+     "ten": "Crown assembly",
+     "den": "Join panels; double-needle topstitch over the seams; overlock; tape inside. Front panel joining: 6 mm seam, 12 stitches/inch (the Vietnamese card says 11), 10 mm backtack."
     },
     {
      "t": "Lưỡi trai",
@@ -1376,7 +1530,8 @@
       [
        "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau.",
        "绕线均匀，没有断线、接线；左右眉角对称。",
-       "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn."
+       "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
+       "Even rows, no broken or joined thread; both visor corners symmetrical."
       ]
      ],
      "w": [
@@ -1401,7 +1556,9 @@
       ]
      ],
      "tpy": "Mào yán",
-     "dpy": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng. Xiū méi: UA liú 5 dào 7 háo mǐ. Rào xiàn: měi yīng cùn 10 zhēn, 4 tiáo yǐ shàng yòng zì dòng jī."
+     "dpy": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng. Xiū méi: UA liú 5 dào 7 háo mǐ. Rào xiàn: měi yīng cùn 10 zhēn, 4 tiáo yǐ shàng yòng zì dòng jī.",
+     "ten": "Visor",
+     "den": "Visor wrapping (7 SPI, not stitching into the board); visor trimming (UA leaves 5–7 mm); visor stitching rows (10 SPI, automatic machine from 4 rows)."
     },
     {
      "t": "Bên trong và phía sau",
@@ -1412,12 +1569,14 @@
       [
        "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5.",
        "关键工序每天巡检2次，AQL 1.5。",
-       "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5."
+       "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5.",
+       "Key operation: patrolled twice a day, AQL 1.5."
       ],
       [
        "Khóa sau: may thử bằng băng phế trước khi may hàng thật.",
        "后扣：先用废带试车，再车大货。",
-       "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò."
+       "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò.",
+       "Back closure: test-sew on scrap tape before production."
       ]
      ],
      "w": [
@@ -1444,7 +1603,9 @@
       ]
      ],
      "tpy": "Lǐ miàn hé hòu miàn",
-     "dpy": "Chǐ cùn dài, shāng biāo lí xià biān 4 háo mǐ; hàn dài, mào méi zhè yí dào shì guān jiàn gōng xù, měi yīng cùn 9 zhēn, UA, TNF shì 10 zhēn; hòu kòu hé tiáo jié dài."
+     "dpy": "Chǐ cùn dài, shāng biāo lí xià biān 4 háo mǐ; hàn dài, mào méi zhè yí dào shì guān jiàn gōng xù, měi yīng cùn 9 zhēn, UA, TNF shì 10 zhēn; hòu kòu hé tiáo jié dài.",
+     "ten": "Inside and back",
+     "den": "Size tape and label (4 mm from the bottom edge); sweatband and visor attaching is a key operation (9 SPI, UA and TNF 10); back closure and strap."
     },
     {
      "t": "Đỉnh mũ và cắt chỉ",
@@ -1455,7 +1616,8 @@
       [
        "Nút đỉnh không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh.",
        "顶扣不松、不偏；合片线在顶上交在一个点。",
-       "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn."
+       "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn.",
+       "Button not loose, not off-centre; all seams meet at one point on the crown."
       ]
      ],
      "w": [
@@ -1475,7 +1637,9 @@
       ]
      ],
      "tpy": "Dǎ dǐng kòu, xiū xiàn",
-     "dpy": "Dǎ dǐng kòu: yā lì 6 dào 9. Xiū xiàn: xiān lǐ miàn hòu wài miàn, mào yán gēn bù yào gān jìng. Qián piàn yǒu niú jīn chèn."
+     "dpy": "Dǎ dǐng kòu: yā lì 6 dào 9. Xiū xiàn: xiān lǐ miàn hòu wài miàn, mào yán gēn bù yào gān jìng. Qián piàn yǒu niú jīn chèn.",
+     "ten": "Top button and trimming",
+     "den": "Top button setting (pressure 6–9); thread trimming inside first, then outside, clean at the visor base. Front panel has buckram."
     },
     {
      "t": "Khách UA yêu cầu",
@@ -1492,7 +1656,9 @@
      "qs": [],
      "tpy": "UA kè hù de yāo qiú",
      "dpy": "Shǒu jiàn jiǎn yàn: měi tiáo xiàn měi gè bān, huàn yán sè huò huàn kuǎn de shí hòu zuò, CFA, zǔ zhǎng, QC zhǔ guǎn yì qǐ qiān zì, bú duì jiù tíng xiàn. Xún jiǎn: měi tiáo xiàn zhì shǎo 2 dǐng, měi tiān 2 cì, yǒu wèn tí zuò CAP.",
-     "chk": []
+     "chk": [],
+     "ten": "UA requirements",
+     "den": "First-piece check per line per shift and at every colour or style change (CFA, line leader and QC manager sign; stop the line if wrong). Patrol at least 2 caps per line twice a day; any defect needs a CAP."
     },
     {
      "t": "Lỗi may hay gặp",
@@ -1512,12 +1678,17 @@
      "qs": [],
      "tpy": "Cháng jiàn chē féng bù liáng",
      "dpy": "Tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān.",
-     "chk": []
+     "chk": [],
+     "ten": "Common sewing defects",
+     "den": "Skipped stitches, floating stitches, puckering, uneven double-needle."
     }
    ],
    "py": "chēféng",
    "whatpy": "Èr lóu, 30 dào gōng xù, fēn sān dà duàn.",
-   "whopy": "Chē féng yǒu zì jǐ de QC hé QE; UA kè hù de CFA zuò shǒu jiàn jiǎn yàn hé xún jiǎn"
+   "whopy": "Chē féng yǒu zì jǐ de QC hé QE; UA kè hù de CFA zuò shǒu jiàn jiǎn yàn hé xún jiǎn",
+   "en": "Sewing room",
+   "whaten": "Second floor, 30 operations in 3 parts: building the frame → finishing → packing.",
+   "whoen": "The sewing room has its own QC and QE; UA's CFA checks first pieces and patrols"
   },
   {
    "id": "dinhform",
@@ -1541,7 +1712,8 @@
       [
        "So nhiệt độ cài với nhiệt độ máy hiện; lệch bao nhiêu thì dừng máy: còn phải hỏi.",
        "核对设定温度和实际温度；差多少要停机，还要问。",
-       "Hé duì shè dìng wēn dù hé shí jì wēn dù; chà duō shao yào tíng jī, hái yào wèn."
+       "Hé duì shè dìng wēn dù hé shí jì wēn dù; chà duō shao yào tíng jī, hái yào wèn.",
+       "Compare the set and displayed temperatures; how much deviation stops the machine is still to ask."
       ]
      ],
      "w": [
@@ -1558,7 +1730,9 @@
       ]
      ],
      "tpy": "Wān méi zhěng tàng",
-     "dpy": "Wān méi zhěng tàng jī TYL-1908-R, sān gè wēn qū, kāi bān qián yào diǎn jiǎn. 10 yuè 14 rì kàn dào shè dìng 120 dù, jī qì xiǎn shì 107.9 dù."
+     "dpy": "Wān méi zhěng tàng jī TYL-1908-R, sān gè wēn qū, kāi bān qián yào diǎn jiǎn. 10 yuè 14 rì kàn dào shè dìng 120 dù, jī qì xiǎn shì 107.9 dù.",
+     "ten": "Visor curving",
+     "den": "Machine TYL-1908-R, 3 heat zones, checked at the start of each shift. On 14 Oct it was set to 120 °C but displayed 107.9 °C."
     },
     {
      "t": "Định form",
@@ -1569,12 +1743,14 @@
       [
        "Thẻ định form ghi 165–180 °C nhưng máy cài 110–135 °C: chỗ lệch đã thấy.",
        "定型卡写165到180度，机器设110到135度，这是已经发现的不一致。",
-       "Dìng xíng kǎ xiě 165 dào 180 dù, jī qì shè 110 dào 135 dù, zhè shì yǐ jīng fā xiàn de bù yí zhì."
+       "Dìng xíng kǎ xiě 165 dào 180 dù, jī qì shè 110 dào 135 dù, zhè shì yǐ jīng fā xiàn de bù yí zhì.",
+       "The shaping card says 165–180 °C but the machine is set to 110–135 °C: a mismatch already seen."
       ],
       [
        "Đo độ cong lưỡi (AA227): gập phần sau, đặt mũ lên bàn, đo từ mặt bàn tới mép dưới lưỡi ở điểm cao nhất.",
        "量帽檐弯度（AA227）：把后面折起来，帽子放在桌上，从桌面量到帽檐下边最高的地方。",
-       "Liáng mào yán wān dù (AA227): bǎ hòu miàn zhé qǐ lái, mào zi fàng zài zhuō shàng, cóng zhuō miàn liáng dào mào yán xià biān zuì gāo de dì fang."
+       "Liáng mào yán wān dù (AA227): bǎ hòu miàn zhé qǐ lái, mào zi fàng zài zhuō shàng, cóng zhuō miàn liáng dào mào yán xià biān zuì gāo de dì fang.",
+       "Visor curve (AA227): fold the back, put the cap on the table, measure from the table to the visor's lower edge at the highest point."
       ]
      ],
      "w": [
@@ -1594,12 +1770,17 @@
       ]
      ],
      "tpy": "Dìng xíng",
-     "dpy": "Zài tóu mó shàng zhēng qì dìng xíng: mián bù mào yán 165 dào 180 dù, 6 miǎo, yùn tàng 90 dào 130 dù. Qián zhěng tàng shì kǎ shàng de 1808 gōng xù."
+     "dpy": "Zài tóu mó shàng zhēng qì dìng xíng: mián bù mào yán 165 dào 180 dù, 6 miǎo, yùn tàng 90 dào 130 dù. Qián zhěng tàng shì kǎ shàng de 1808 gōng xù.",
+     "ten": "Shaping",
+     "den": "Steam on an aluminium head form: cotton visor press 165–180 °C for 6 s, steaming 90–130 °C. Front-panel pressing is operation 1808 on the process card."
     }
    ],
    "py": "wānméi zhěngtàng",
    "whatpy": "Xiān wān méi zhěng tàng, zài zài tóu mó shàng yòng zhēng qì dìng xíng.",
-   "whopy": "Chē féng xiàn"
+   "whopy": "Chē féng xiàn",
+   "en": "Visor curving & shaping",
+   "whaten": "Curve the visor, then steam-shape the cap on a head form.",
+   "whoen": "Sewing line"
   },
   {
    "id": "qc",
@@ -1654,7 +1835,9 @@
      ],
      "tpy": "Jiǎn chá 8 gè bù zhòu",
      "dpy": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
-     "chk": []
+     "chk": [],
+     "ten": "8 inspection steps",
+     "den": "Scan the code on the iPad → check after shaping → outside from the crown following the 6-panel check order → visor and stitching rows → inside, trim threads at the table → set the back strap to 9.5 and measure head circumference → match the iPad information → check the shape."
     },
     {
      "t": "15 điểm kiểm",
@@ -1665,17 +1848,20 @@
       [
        "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ.",
        "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
-       "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu."
+       "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
+       "Front panel: logo offset, puckered or fuzzy embroidery, blurred print."
       ],
       [
        "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau.",
        "中片：双针大小边、跳针、浮线；左右高度要一样。",
-       "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng."
+       "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
+       "Side panels: uneven double-needle, skipped or floating stitches; both sides the same height."
       ],
       [
        "Thun chống mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt.",
        "汗带：不能汗带外露；车线不偏、不断线。",
-       "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn."
+       "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn.",
+       "Sweatband: not exposed outside; seam not off-line or broken."
       ]
      ],
      "w": [
@@ -1694,7 +1880,9 @@
      ],
      "qs": [],
      "tpy": "15 gè jiǎn chá diǎn",
-     "dpy": "1 chǐ cùn · 2 méi miàn · 3 qián piàn · 4, 7 yòu zhōng piàn, zuǒ zhōng piàn · 5 hòu piàn · 6 hòu lǎ ba · 8 dǐng kòu · 9 dào 11 hàn dài · 12 shāng biāo · 13 mào shēn lǐ miàn · 14 kòu jù · 15 méi lǐ."
+     "dpy": "1 chǐ cùn · 2 méi miàn · 3 qián piàn · 4, 7 yòu zhōng piàn, zuǒ zhōng piàn · 5 hòu piàn · 6 hòu lǎ ba · 8 dǐng kòu · 9 dào 11 hàn dài · 12 shāng biāo · 13 mào shēn lǐ miàn · 14 kòu jù · 15 méi lǐ.",
+     "ten": "15 check points",
+     "den": "1 size · 2 visor top · 3 front panel · 4, 7 right and left side panels · 5 back panel · 6 back arch · 8 top button · 9–11 sweatband · 12 label · 13 inside · 14 closure · 15 undervisor."
     },
     {
      "t": "Lỗi thì xử lý sao",
@@ -1718,7 +1906,9 @@
      ],
      "tpy": "Bù liáng zěn me chǔ lǐ",
      "dpy": "Qīng wēi quē xiàn gào sù zǔ zhǎng, tuì huí shēng chǎn fǎn gōng; yán zhòng quē xiàn yǐng xiǎng jié gòu, yán sè, zhì liàng de, yào chóng zuò.",
-     "chk": []
+     "chk": [],
+     "ten": "Handling defects",
+     "den": "Minor and medium: tell the line leader and return to production for repair. Major (structure, colour, quality): remake."
     },
     {
      "t": "Trên chuyền",
@@ -1734,12 +1924,17 @@
      "qs": [],
      "tpy": "Xiàn shàng jiǎn chá",
      "dpy": "Xiàn shàng hái yǒu xún jiǎn hé zhōng chá.",
-     "chk": []
+     "chk": [],
+     "ten": "On the line",
+     "den": "There are also patrol inspections and mid-line inspections."
     }
    ],
    "py": "wěichá",
    "whatpy": "Dìng xíng yǐ hòu, měi tiáo xiàn pǐn bǎo bù 2 gè rén 100% jiǎn chá chéng pǐn, lǐ wài 15 gè diǎn.",
-   "whopy": "Pǐn bǎo bù, měi tiáo xiàn 2 gè rén"
+   "whopy": "Pǐn bǎo bù, měi tiáo xiàn 2 gè rén",
+   "en": "End-of-line QC 100%",
+   "whaten": "After shaping, two 品保部 inspectors per line check 100% of finished caps, 15 points inside and out.",
+   "whoen": "品保部, 2 people per line"
   },
   {
    "id": "xuat",
@@ -1763,17 +1958,20 @@
       [
        "Độ ẩm (UA, máy LANDTEK DM200T): cotton 5%, polyester 4%, nylon 4%, wool 8%; vải pha tính theo tỷ lệ (60% cotton + 40% nylon = 4,6%).",
        "含水率（UA，LANDTEK DM200T）：棉5%、涤纶4%、尼龙4%、羊毛8%；混纺按比例算，60%棉加40%尼龙是4.6%。",
-       "Hán shuǐ lǜ (UA, LANDTEK DM200T): mián 5%, dí lún 4%, ní lóng 4%, yáng máo 8%; hùn fǎng àn bǐ lì suàn, 60% mián jiā 40% ní lóng shì 4.6%."
+       "Hán shuǐ lǜ (UA, LANDTEK DM200T): mián 5%, dí lún 4%, ní lóng 4%, yáng máo 8%; hùn fǎng àn bǐ lì suàn, 60% mián jiā 40% ní lóng shì 4.6%.",
+       "Moisture (UA, LANDTEK DM200T meter): cotton 5%, polyester 4%, nylon 4%, wool 8%; blends pro rata (60% cotton + 40% nylon = 4.6%)."
       ],
       [
        "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm.",
        "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
-       "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì."
+       "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
+       "Three things must match: style, colour, size and UPC on the carton label, bag and hangtag; origin on the carton matches the care label; carton quantity matches the count."
       ],
       [
        "Số Kit trên PO quyết định bộ nhãn (nhãn giặt, VID, UPC, nhãn túi, thẻ treo); đối chiếu bảng nhãn của UA theo cột Kit.",
        "PO上的Kit号决定用哪一套标签：洗水唛、VID、UPC、袋标、吊牌，按UA标签表的Kit栏核对。",
-       "PO shàng de Kit hào jué dìng yòng nǎ yí tào biāo qiān: xǐ shuǐ mài, VID, UPC, dài biāo, diào pái, àn UA biāo qiān biǎo de Kit lán hé duì."
+       "PO shàng de Kit hào jué dìng yòng nǎ yí tào biāo qiān: xǐ shuǐ mài, VID, UPC, dài biāo, diào pái, àn UA biāo qiān biǎo de Kit lán hé duì.",
+       "The Kit number on the PO decides the label set (care label, VID, UPC, bag label, hangtag); check UA's labelling table by Kit column."
       ]
      ],
      "w": [
@@ -1803,7 +2001,9 @@
       ]
      ],
      "tpy": "Bāo zhuāng",
-     "dpy": "Dǎ diào pái, rù dài, zhuāng xiāng; cè hán shuǐ lǜ."
+     "dpy": "Dǎ diào pái, rù dài, zhuāng xiāng; cè hán shuǐ lǜ.",
+     "ten": "Packing",
+     "den": "Attach hangtags, bag, pack cartons; measure moisture."
     },
     {
      "t": "QA lấy mẫu",
@@ -1814,12 +2014,14 @@
       [
        "Lô 3.000 chiếc (mức II) lấy 125 chiếc; AQL 1.5 tối đa 5 lỗi.",
        "3000顶（II级）抽125顶，AQL 1.5最多5个缺陷。",
-       "3000 dǐng (II jí) chōu 125 dǐng, AQL 1.5 zuì duō 5 gè quē xiàn."
+       "3000 dǐng (II jí) chōu 125 dǐng, AQL 1.5 zuì duō 5 gè quē xiàn.",
+       "A 3,000-piece lot (level II) → sample 125; AQL 1.5 allows at most 5 defects."
       ],
       [
        "UA: AQL 1.5 mức I; PO dưới 281 chiếc không được có lỗi nào.",
        "UA：AQL 1.5 I级；PO少于281顶，一个缺陷都不能有。",
-       "UA: AQL 1.5 I jí; PO shǎo yú 281 dǐng, yí gè quē xiàn dōu bù néng yǒu."
+       "UA: AQL 1.5 I jí; PO shǎo yú 281 dǐng, yí gè quē xiàn dōu bù néng yǒu.",
+       "UA: AQL 1.5 level I; POs under 281 pieces allow zero defects."
       ]
      ],
      "w": [
@@ -1838,7 +2040,9 @@
       ]
      ],
      "tpy": "QA chōu jiǎn",
-     "dpy": "Zhuāng xiāng yǐ hòu, fēng xiāng yǐ qián, QA àn AQL 1.5 chōu jiǎn."
+     "dpy": "Zhuāng xiāng yǐ hòu, fēng xiāng yǐ qián, QA àn AQL 1.5 chōu jiǎn.",
+     "ten": "QA sampling",
+     "den": "After packing and before taping, QA samples to AQL 1.5."
     },
     {
      "t": "Dò kim",
@@ -1862,7 +2066,9 @@
      ],
      "tpy": "Yàn zhēn",
      "dpy": "Yǒu 4 tiáo yàn zhēn xiàn. Yào yàn zhēn de kuǎn, yàn wán zhēn QA zuì hòu zài chá yí cì cái fēng xiāng. Duàn zhēn shì zuì yán zhòng de wèn tí.",
-     "chk": []
+     "chk": [],
+     "ten": "Needle detection",
+     "den": "4 needle-detection lines. For styles that need it: detect, then QA does a last check before taping the carton. A broken needle is the most critical defect."
     },
     {
      "t": "CFA của khách và xuất hàng",
@@ -1898,12 +2104,17 @@
      ],
      "tpy": "Kè hù CFA, chū huò",
      "dpy": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn; zài Pivot88 shàng àn AQL 1.5 I jí; bù hé gé jiù zhěng zhāng PO 100% jiǎn chá, zài chóng yàn. Bǐ chū huò rì zǎo 7 tiān yǐ shàng jiǎn wán de, yào zài cè 20% xiāng zi de hán shuǐ lǜ.",
-     "chk": []
+     "chk": [],
+     "ten": "Customer CFA and shipping",
+     "den": "UA: final inspection only when the PO is at least 80% done, packed, carton-labelled and has a packing list; AQL 1.5 level I on Pivot88; if it fails, 100% re-inspection of the PO and re-audit. If inspected more than 7 days before shipping, re-measure moisture on 20% of cartons."
     }
    ],
    "py": "chūhuò",
    "whatpy": "Zhuāng xiāng → QA àn AQL 1.5 chōu jiǎn → yàn zhēn → kè hù CFA → chū huò.",
-   "whopy": "Pǐn bǎo bù (QA, yàn zhēn); kè hù CFA"
+   "whopy": "Pǐn bǎo bù (QA, yàn zhēn); kè hù CFA",
+   "en": "Packing – QA – needle detection – shipping",
+   "whaten": "Pack cartons → QA samples to AQL 1.5 → needle detection → customer CFA → ship.",
+   "whoen": "品保部 (QA, needle detection); customer CFA"
   }
  ],
  "terms": [
@@ -1918,7 +2129,8 @@
    "cat": "noi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "sample room"
   },
   {
    "zh": "开发样",
@@ -1935,7 +2147,8 @@
     "py": "Kāi fā yàng yòng lái gǎi shè jì, yì bān zuò dào dì sān bǎn kè hù cái mǎn yì, wù liào kě yǐ yòng tì dài de.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "proto sample"
   },
   {
    "zh": "纸样",
@@ -1952,7 +2165,8 @@
     "py": "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū.",
     "vn": "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa."
    },
-   "add": ""
+   "add": "",
+   "en": "pattern"
   },
   {
    "zh": "销售样",
@@ -1969,7 +2183,8 @@
     "py": "Xiāo shòu yàng gěi kè hù ná qù mài huò, kàn gè gè shì chǎng de xū qiú, wù liào kě yǐ shì zhèng què de, yě kě yǐ shì tì dài de.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "salesman sample (SMS)"
   },
   {
    "zh": "产前样",
@@ -1986,7 +2201,8 @@
     "py": "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn.",
     "vn": "VF: mẫu PPS cả bao bì cũng phải qua dò kim."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "pre-production sample (PPS)"
   },
   {
    "zh": "确认样",
@@ -2003,7 +2219,8 @@
     "py": "Què rèn yàng de zhāng gài zài qián piàn shàng, kuà liǎng piàn.",
     "vn": "Mẫu xác nhận đóng dấu ở mảnh trước, dấu vắt qua hai mảnh."
    },
-   "add": ""
+   "add": "",
+   "en": "approval sample"
   },
   {
    "zh": "审样",
@@ -2016,7 +2233,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "sample approval"
   },
   {
    "zh": "根本原因",
@@ -2033,7 +2251,8 @@
     "py": "Yàng pǐn píng shěn bù tōng guò, yào zhǎo gēn běn yuán yīn.",
     "vn": "Mẫu duyệt không đạt thì phải tìm nguyên nhân gốc."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "root cause"
   },
   {
    "zh": "认证",
@@ -2050,7 +2269,8 @@
     "py": "CFT zhǐ néng zài rèn zhèng fàn wéi nèi pī yàng.",
     "vn": "CFT chỉ được duyệt mẫu trong phạm vi chứng chỉ."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "certification"
   },
   {
    "zh": "色卡",
@@ -2063,7 +2283,8 @@
    "cat": "vatlieu",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "colour standard card"
   },
   {
    "zh": "封样",
@@ -2076,7 +2297,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "sealed sample"
   },
   {
    "zh": "产前会议",
@@ -2089,7 +2311,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "pre-production meeting (PPM)"
   },
   {
    "zh": "大货",
@@ -2106,7 +2329,8 @@
     "py": "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò.",
     "vn": "Khóa sau: may thử bằng băng phế trước khi may hàng thật."
    },
-   "add": ""
+   "add": "",
+   "en": "bulk production"
   },
   {
    "zh": "保密资料",
@@ -2123,7 +2347,8 @@
     "py": "Kè hù de zī liào shì bǎo mì zī liào, bù néng wài chuán.",
     "vn": "Tài liệu của khách là tài liệu bảo mật, không được đưa ra ngoài."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "confidential document"
   },
   {
    "zh": "仓库",
@@ -2140,7 +2365,8 @@
     "py": "Cāng kù měi yuè gěi gōng yìng shāng píng fēn.",
     "vn": "Kho chấm điểm nhà cung cấp hằng tháng."
    },
-   "add": ""
+   "add": "",
+   "en": "warehouse"
   },
   {
    "zh": "收料",
@@ -2157,7 +2383,8 @@
     "py": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "material receiving"
   },
   {
    "zh": "点收",
@@ -2174,7 +2401,8 @@
     "py": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "receiving count"
   },
   {
    "zh": "咨询组",
@@ -2191,7 +2419,8 @@
     "py": "Zī xún zǔ fù zé diǎn shōu hé xì tǒng jiǎn zhàng.",
     "vn": "Tổ tư vấn lo kiểm đếm và trừ sổ trên hệ thống."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "counting/records team (warehouse)"
   },
   {
    "zh": "检验组",
@@ -2208,7 +2437,8 @@
     "py": "Jiǎn yàn zǔ fù zé yàn bù hé fǔ liào jiǎn yàn.",
     "vn": "Tổ kiểm nghiệm lo kiểm vải và kiểm phụ liệu."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "inspection team (warehouse)"
   },
   {
    "zh": "主料组",
@@ -2225,7 +2455,8 @@
     "py": "Zhǔ liào zǔ fù zé shōu liào rù kù.",
     "vn": "Tổ chính liệu lo nhận liệu và nhập kho."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "main-material team"
   },
   {
    "zh": "点收明细",
@@ -2242,7 +2473,8 @@
     "py": "Diǎn shōu yǐ hòu yào dǎ yìn diǎn shōu míng xì.",
     "vn": "Kiểm đếm xong phải in bảng kê kiểm đếm."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "receiving count list"
   },
   {
    "zh": "物性检验",
@@ -2255,7 +2487,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "physical testing (fabric)"
   },
   {
    "zh": "接收标准",
@@ -2272,7 +2505,8 @@
     "py": "Kàn zhěng pǐ bù yán sè shì fǒu yí zhì, zài bu zài jiē shōu biāo zhǔn nèi.",
     "vn": "Xem màu cả cây có đều không, có nằm trong tiêu chuẩn chấp nhận không."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "acceptance standard"
   },
   {
    "zh": "布头",
@@ -2289,7 +2523,8 @@
     "py": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài.",
     "vn": "Đầu cây, giữa cây, cuối cây mỗi chỗ cắt một miếng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "head of the roll"
   },
   {
    "zh": "布中",
@@ -2306,7 +2541,8 @@
     "py": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài.",
     "vn": "Đầu cây, giữa cây, cuối cây mỗi chỗ cắt một miếng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "middle of the roll"
   },
   {
    "zh": "布尾",
@@ -2323,7 +2559,8 @@
     "py": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài.",
     "vn": "Đầu cây, giữa cây, cuối cây mỗi chỗ cắt một miếng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "tail of the roll"
   },
   {
    "zh": "品质检测报告",
@@ -2340,7 +2577,8 @@
     "py": "Jiǎn yàn shì cè wán chū pǐn zhì jiǎn cè bào gào.",
     "vn": "Phòng kiểm nghiệm test xong ra báo cáo kiểm nghiệm chất lượng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "quality test report"
   },
   {
    "zh": "外观检验",
@@ -2353,7 +2591,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "visual inspection"
   },
   {
    "zh": "验布机",
@@ -2370,7 +2609,8 @@
     "py": "Bù juǎn fàng dào yàn bù jī shàng guò yí biàn (yǒu dēng xiāng, mǎ shù jì shù qì, diàn zǐ chèng).",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "fabric inspection machine"
   },
   {
    "zh": "四分制",
@@ -2387,7 +2627,8 @@
     "py": "Jiǎn yàn yuán chá mǎ shù, liáng fú kuān, kàn sè chā hé xiá cī, měi gè xiá cī àn sì fēn zhì kòu fēn, jiā qǐ lái huàn suàn chéng měi bǎi píng fāng mǎ de fēn shù, zài fēn A, B, C jí.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "4-point system"
   },
   {
    "zh": "扣点等级",
@@ -2404,7 +2645,8 @@
     "py": "Tián yàn bù jiǎn chá biǎo; kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào.",
     "vn": "Điền biểu kiểm vải; cấp điểm trừ ghi lên tem cây vải để xưởng cắt đọc được."
    },
-   "add": ""
+   "add": "",
+   "en": "point grade (A/B/C)"
   },
   {
    "zh": "验布检查表",
@@ -2421,7 +2663,8 @@
     "py": "Tián yàn bù jiǎn chá biǎo; kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào.",
     "vn": "Điền biểu kiểm vải; cấp điểm trừ ghi lên tem cây vải để xưởng cắt đọc được."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "fabric inspection sheet"
   },
   {
    "zh": "辅料",
@@ -2434,11 +2677,12 @@
    "cat": "vatlieu",
    "hot": false,
    "ex": {
-    "zh": "辅料按AQL 1.5检验，7天内完成：点收、看外观、量长宽高，对照标准样和系统订单。",
-    "py": "Fǔ liào àn AQL 1.5 jiǎn yàn, 7 tiān nèi wán chéng: diǎn shōu, kàn wài guān, liáng cháng kuān gāo, duì zhào biāo zhǔn yàng hé xì tǒng dìng dān.",
-    "vn": ""
+    "zh": "7天内检验完：11月3日的报告写的是面料，W2写的是辅料，还要再确认。",
+    "py": "7 tiān nèi jiǎn yàn wán: 11 yuè 3 rì de bào gào xiě de shì miàn liào, W2 xiě de shì fǔ liào, hái yào zài què rèn.",
+    "vn": "Thời hạn kiểm 7 ngày: báo cáo 03/11 ghi cho vải (kiểm tính chất và ngoại quan), W2 ghi cho phụ liệu. Còn phải hỏi lại."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "trims"
   },
   {
    "zh": "标准样",
@@ -2455,7 +2699,8 @@
     "py": "Fǔ liào yào duì zhe biāo zhǔn yàng jiǎn chá.",
     "vn": "Phụ liệu phải so với mẫu chuẩn để kiểm."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "standard sample"
   },
   {
    "zh": "条码",
@@ -2472,7 +2717,8 @@
     "py": "Hé duì biāo qiān de chǐ mǎ, tiáo mǎ hé shù liàng.",
     "vn": "Đối chiếu size, mã vạch và số lượng trên tem."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "barcode"
   },
   {
    "zh": "尺码",
@@ -2489,7 +2735,8 @@
     "py": "Hé duì biāo qiān de chǐ mǎ, tiáo mǎ hé shù liàng.",
     "vn": "Đối chiếu size, mã vạch và số lượng trên tem."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "size (on label)"
   },
   {
    "zh": "入库",
@@ -2506,7 +2753,8 @@
     "py": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "put into stock"
   },
   {
    "zh": "验收反应单",
@@ -2523,7 +2771,8 @@
     "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "receiving feedback form (rejects)"
   },
   {
    "zh": "特采",
@@ -2540,7 +2789,8 @@
     "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "concession"
   },
   {
    "zh": "退货",
@@ -2557,7 +2807,8 @@
     "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "return to supplier"
   },
   {
    "zh": "合格",
@@ -2574,7 +2825,8 @@
     "py": "Hé gé de lù rù ERP, shōu liào rù kù.",
     "vn": "Hàng đạt thì nhập ERP, nhận vào kho."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "pass"
   },
   {
    "zh": "不合格",
@@ -2591,7 +2843,8 @@
     "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān.",
     "vn": "Hàng không đạt thì mở phiếu phản hồi nghiệm thu."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "fail"
   },
   {
    "zh": "待检",
@@ -2608,7 +2861,8 @@
     "py": "Méi jiǎn yàn de wù liào tiē dài jiǎn biāo shí.",
     "vn": "Vật liệu chưa kiểm thì dán tem chờ kiểm."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "awaiting inspection"
   },
   {
    "zh": "验收明细表",
@@ -2625,7 +2879,8 @@
     "py": "Hé gé de wù liào chū yàn shōu míng xì biǎo.",
     "vn": "Vật liệu đạt thì ra bảng kê nghiệm thu."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "acceptance list"
   },
   {
    "zh": "发料",
@@ -2638,7 +2893,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "material issue"
   },
   {
    "zh": "领料单",
@@ -2655,7 +2911,8 @@
     "py": "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng.",
     "vn": "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ."
    },
-   "add": ""
+   "add": "",
+   "en": "material requisition"
   },
   {
    "zh": "补料单",
@@ -2672,7 +2929,8 @@
     "py": "Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "supplementary requisition"
   },
   {
    "zh": "减账",
@@ -2689,7 +2947,8 @@
     "py": "Lǐng liào dān jiāo gěi zī xún zǔ jiǎn zhàng.",
     "vn": "Phiếu lĩnh liệu nộp cho tổ tư vấn để trừ sổ."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "deduct the stock record"
   },
   {
    "zh": "物管",
@@ -2706,7 +2965,8 @@
     "py": "Wù guǎn fēn pèi yǐ hòu cái fā liào.",
     "vn": "Quản lý vật tư phân bổ xong mới phát liệu."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "material controller"
   },
   {
    "zh": "盘点",
@@ -2723,7 +2983,8 @@
     "py": "Pán diǎn yǒu chā yì yào zǒu pán tiáo shēn qǐng.",
     "vn": "Kiểm kê có chênh lệch thì làm đề nghị điều chỉnh."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "stock-take"
   },
   {
    "zh": "盘调申请",
@@ -2740,7 +3001,8 @@
     "py": "Pán diǎn yǒu chā yì yào zǒu pán tiáo shēn qǐng.",
     "vn": "Kiểm kê có chênh lệch thì làm đề nghị điều chỉnh."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "stock adjustment request"
   },
   {
    "zh": "物料状态标识",
@@ -2757,7 +3019,8 @@
     "py": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "material status tag"
   },
   {
    "zh": "储位",
@@ -2774,7 +3037,8 @@
     "py": "Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "rack location"
   },
   {
    "zh": "主料",
@@ -2791,7 +3055,8 @@
     "py": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé hé fǔ liào hé gé.",
     "vn": "Tem trạng thái có loại chính liệu đạt và phụ liệu đạt."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "main material (shell fabric)"
   },
   {
    "zh": "色差标签",
@@ -2808,7 +3073,8 @@
     "py": "Sè chā biāo qiān fēn A, B, C, D sì jí.",
     "vn": "Tem cấp màu chia bốn cấp A, B, C, D."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "shade grade tag"
   },
   {
    "zh": "验布",
@@ -2825,7 +3091,8 @@
     "py": "Zài bù shàng biāo chū xiá cī wèi zhì, tián yàn bù jiǎn chá biǎo.",
     "vn": "Đánh dấu chỗ lỗi trên vải và ghi vào biểu kiểm vải."
    },
-   "add": ""
+   "add": "",
+   "en": "fabric inspection"
   },
   {
    "zh": "码数",
@@ -2842,7 +3109,8 @@
     "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī.",
     "vn": "Kiểm số yard, khổ vải, chênh lệch màu và lỗi vải."
    },
-   "add": ""
+   "add": "",
+   "en": "yardage"
   },
   {
    "zh": "幅宽",
@@ -2859,7 +3127,8 @@
     "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī.",
     "vn": "Kiểm số yard, khổ vải, chênh lệch màu và lỗi vải."
    },
-   "add": ""
+   "add": "",
+   "en": "fabric width"
   },
   {
    "zh": "色差",
@@ -2876,7 +3145,8 @@
     "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī.",
     "vn": "Kiểm số yard, khổ vải, chênh lệch màu và lỗi vải."
    },
-   "add": ""
+   "add": "",
+   "en": "shade variation"
   },
   {
    "zh": "瑕疵",
@@ -2893,7 +3163,8 @@
     "py": "Chá mǎ shù, fú kuān, sè chā hé xiá cī.",
     "vn": "Kiểm số yard, khổ vải, chênh lệch màu và lỗi vải."
    },
-   "add": ""
+   "add": "",
+   "en": "fabric defect"
   },
   {
    "zh": "灯箱",
@@ -2910,7 +3181,8 @@
     "py": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "light box"
   },
   {
    "zh": "码数计数器",
@@ -2927,7 +3199,8 @@
     "py": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "yard counter"
   },
   {
    "zh": "电子秤",
@@ -2944,7 +3217,8 @@
     "py": "Yàn bù jī dài dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "electronic scale"
   },
   {
    "zh": "验布作业标准",
@@ -2961,7 +3235,8 @@
     "py": "Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng hé wù liào zhuàng tài biāo shí.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "fabric inspection SOP"
   },
   {
    "zh": "主料检验标准",
@@ -2978,7 +3253,8 @@
     "py": "Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng hé wù liào zhuàng tài biāo shí.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "main-material inspection standard"
   },
   {
    "zh": "扣分参考样",
@@ -2995,7 +3271,8 @@
     "py": "Páng biān tiē zhe yàn bù zuò yè biāo zhǔn, sì fēn zhì fēn lèi hé jì suàn, zhǔ liào jiǎn yàn biāo zhǔn, kòu fēn cān kǎo yàng hé wù liào zhuàng tài biāo shí.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "defect reference sample"
   },
   {
    "zh": "色差级数",
@@ -3012,7 +3289,8 @@
     "py": "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
     "vn": "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào."
    },
-   "add": ""
+   "add": "",
+   "en": "shade grade (A–D)"
   },
   {
    "zh": "辨色测试",
@@ -3029,7 +3307,8 @@
     "py": "Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100).",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "colour vision test (FM100)"
   },
   {
    "zh": "检验员",
@@ -3046,7 +3325,8 @@
     "py": "Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100).",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "inspector"
   },
   {
    "zh": "检验室",
@@ -3063,7 +3343,8 @@
     "py": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "factory lab"
   },
   {
    "zh": "色牢度",
@@ -3080,7 +3361,8 @@
     "py": "Sè láo dù: shuǐ xǐ, hàn zì, mó cā, rì guāng, kàng huáng biàn, sè yí, nài shuǐ, hàn guāng.",
     "vn": "Độ bền màu: giặt, mồ hôi, ma sát, ánh sáng, chống ố vàng, di màu, nước, mồ hôi kèm ánh sáng."
    },
-   "add": ""
+   "add": "",
+   "en": "colour fastness"
   },
   {
    "zh": "克重",
@@ -3093,7 +3375,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "fabric weight (gsm)"
   },
   {
    "zh": "甲醛",
@@ -3110,7 +3393,8 @@
     "py": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "formaldehyde"
   },
   {
    "zh": "水洗缩率",
@@ -3127,7 +3411,8 @@
     "py": "Bù yào cè shuǐ xǐ suō lǜ, kàn xǐ hòu huì bu huì suō.",
     "vn": "Vải phải test co rút khi giặt, xem giặt xong có co không."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "wash shrinkage"
   },
   {
    "zh": "布重",
@@ -3144,7 +3429,8 @@
     "py": "Bù zhòng yào gēn biāo zhǔn yí yàng, bǐ rú 175 kè.",
     "vn": "Trọng lượng vải phải đúng chuẩn, ví dụ 175 g/m²."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "fabric weight"
   },
   {
    "zh": "防泼水",
@@ -3161,7 +3447,8 @@
     "py": "Fáng pō shuǐ cè shì kàn shuǐ huì bu huì shèn jìn qù.",
     "vn": "Test chống thấm xem nước có thấm vào không."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "water repellency"
   },
   {
    "zh": "老化",
@@ -3178,7 +3465,8 @@
     "py": "Wù xìng: shuǐ xǐ suō lǜ, bù zhòng, fáng pō shuǐ, lǎo huà, xī shī, fú kuān, pH zhí, kuài gàn, mì dù, shēng huá láo dù.",
     "vn": "Tính chất vật lý: co rút khi giặt, định lượng, chống thấm, lão hóa, hút ẩm, khổ, pH, khô nhanh, mật độ, bền thăng hoa."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "ageing"
   },
   {
    "zh": "吸湿",
@@ -3195,7 +3483,8 @@
     "py": "Wù xìng: shuǐ xǐ suō lǜ, bù zhòng, fáng pō shuǐ, lǎo huà, xī shī, fú kuān, pH zhí, kuài gàn, mì dù, shēng huá láo dù.",
     "vn": "Tính chất vật lý: co rút khi giặt, định lượng, chống thấm, lão hóa, hút ẩm, khổ, pH, khô nhanh, mật độ, bền thăng hoa."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "moisture absorption"
   },
   {
    "zh": "快干",
@@ -3212,7 +3501,8 @@
     "py": "Wù xìng: shuǐ xǐ suō lǜ, bù zhòng, fáng pō shuǐ, lǎo huà, xī shī, fú kuān, pH zhí, kuài gàn, mì dù, shēng huá láo dù.",
     "vn": "Tính chất vật lý: co rút khi giặt, định lượng, chống thấm, lão hóa, hút ẩm, khổ, pH, khô nhanh, mật độ, bền thăng hoa."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "quick-dry"
   },
   {
    "zh": "升华牢度",
@@ -3229,7 +3519,8 @@
     "py": "Shēng huá láo dù kàn gāo wēn de shí hòu yán sè huì bu huì pǎo.",
     "vn": "Độ bền thăng hoa xem ở nhiệt cao màu có bay sang chỗ khác không."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "sublimation fastness"
   },
   {
    "zh": "汗渍",
@@ -3246,7 +3537,8 @@
     "py": "Zuò hàn zì láo dù yào yòng hōng xiāng.",
     "vn": "Test độ bền màu với mồ hôi phải dùng tủ sấy."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "perspiration (fastness)"
   },
   {
    "zh": "摩擦",
@@ -3263,7 +3555,8 @@
     "py": "Bù yào cè gàn shī mó cā.",
     "vn": "Vải phải test ma sát khô và ướt."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "rubbing (fastness)"
   },
   {
    "zh": "日光",
@@ -3280,7 +3573,8 @@
     "py": "Rì guāng láo dù kàn yán sè shài le huì bu huì tuì.",
     "vn": "Độ bền ánh sáng xem phơi nắng màu có phai không."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "light (fastness)"
   },
   {
    "zh": "抗黄变",
@@ -3297,7 +3591,8 @@
     "py": "Bái sè de mào zi yào zuò kàng huáng biàn cè shì.",
     "vn": "Mũ màu trắng phải test chống ố vàng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "anti-yellowing"
   },
   {
    "zh": "色移",
@@ -3314,7 +3609,8 @@
     "py": "Sè yí jiù shì yán sè pǎo dào bié de dì fang.",
     "vn": "Di màu là màu lem sang chỗ khác."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "colour migration"
   },
   {
    "zh": "成品洗",
@@ -3331,7 +3627,8 @@
     "py": "Chéng pǐn xǐ fēn jī xǐ hé shǒu xǐ.",
     "vn": "Giặt thành phẩm có giặt máy và giặt tay."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "finished-product wash"
   },
   {
    "zh": "机洗",
@@ -3348,7 +3645,8 @@
     "py": "Chéng pǐn xǐ fēn jī xǐ hé shǒu xǐ.",
     "vn": "Giặt thành phẩm có giặt máy và giặt tay."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "machine wash"
   },
   {
    "zh": "手洗",
@@ -3365,7 +3663,8 @@
     "py": "Chéng pǐn xǐ fēn jī xǐ hé shǒu xǐ.",
     "vn": "Giặt thành phẩm có giặt máy và giặt tay."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "hand wash"
   },
   {
    "zh": "黄变测试仪",
@@ -3382,7 +3681,8 @@
     "py": "Jiǎn yàn shì yǒu huáng biàn cè shì yí.",
     "vn": "Phòng kiểm nghiệm có máy test ố vàng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "yellowing tester"
   },
   {
    "zh": "烘箱",
@@ -3399,7 +3699,8 @@
     "py": "Zuò hàn zì láo dù yào yòng hōng xiāng.",
     "vn": "Test độ bền màu với mồ hôi phải dùng tủ sấy."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "oven"
   },
   {
    "zh": "裁剪",
@@ -3416,7 +3717,8 @@
     "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
     "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
    },
-   "add": ""
+   "add": "",
+   "en": "cutting"
   },
   {
    "zh": "品号",
@@ -3433,7 +3735,8 @@
     "py": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "material code"
   },
   {
    "zh": "缸号",
@@ -3450,7 +3753,8 @@
     "py": "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
     "vn": "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào."
    },
-   "add": ""
+   "add": "",
+   "en": "dye lot"
   },
   {
    "zh": "松布",
@@ -3467,7 +3771,8 @@
     "py": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "fabric relaxing"
   },
   {
    "zh": "贴合",
@@ -3484,7 +3789,8 @@
     "py": "Měi tiān jì lù zuǒ, zhōng, yòu sān diǎn wēn dù (tiē hé qián hé tiē hé zhōng), hái yǒu zuǒ yòu lā lì.",
     "vn": "Mỗi ngày ghi nhiệt độ 3 điểm trái, giữa, phải (trước và trong khi dán) và lực kéo trái, phải."
    },
-   "add": ""
+   "add": "",
+   "en": "fusing / bonding"
   },
   {
    "zh": "面布",
@@ -3501,7 +3807,8 @@
     "py": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71).",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "shell fabric"
   },
   {
    "zh": "衬布",
@@ -3518,7 +3825,8 @@
     "py": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71).",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "interlining"
   },
   {
    "zh": "点胶衬",
@@ -3531,7 +3839,8 @@
    "cat": "vatlieu",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "dot-coated fusible interlining"
   },
   {
    "zh": "直线贴合机",
@@ -3544,7 +3853,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "inline fusing machine"
   },
   {
    "zh": "涂布贴合机",
@@ -3557,7 +3867,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "coating-laminating machine"
   },
   {
    "zh": "胶水",
@@ -3570,7 +3881,8 @@
    "cat": "vatlieu",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "adhesive"
   },
   {
    "zh": "固化剂",
@@ -3583,7 +3895,8 @@
    "cat": "vatlieu",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "hardener"
   },
   {
    "zh": "贴合辅助单据",
@@ -3596,7 +3909,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "fusing record slip"
   },
   {
    "zh": "渗胶",
@@ -3613,7 +3927,8 @@
     "py": "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
     "vn": "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo."
    },
-   "add": ""
+   "add": "",
+   "en": "glue strike-through"
   },
   {
    "zh": "打卷",
@@ -3630,7 +3945,8 @@
     "py": "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
     "vn": "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo."
    },
-   "add": ""
+   "add": "",
+   "en": "edge curling"
   },
   {
    "zh": "贴衬",
@@ -3643,7 +3959,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "fused interlining"
   },
   {
    "zh": "拉布",
@@ -3660,7 +3977,8 @@
     "py": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "spreading"
   },
   {
    "zh": "双面拉布",
@@ -3677,7 +3995,8 @@
     "py": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "face-to-face spreading"
   },
   {
    "zh": "排版",
@@ -3690,7 +4009,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "marker making"
   },
   {
    "zh": "裁次",
@@ -3707,7 +4027,8 @@
     "py": "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng.",
     "vn": "Bó lẻ cuối đơn dán tem ghi đơn, lần cắt, màu, số lượng."
    },
-   "add": ""
+   "add": "",
+   "en": "cut number"
   },
   {
    "zh": "防霉",
@@ -3724,7 +4045,8 @@
     "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
     "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
    },
-   "add": ""
+   "add": "",
+   "en": "anti-mould"
   },
   {
    "zh": "刀模",
@@ -3741,7 +4063,8 @@
     "py": "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū.",
     "vn": "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa."
    },
-   "add": ""
+   "add": "",
+   "en": "cutting die"
   },
   {
    "zh": "牛皮纸",
@@ -3758,7 +4081,8 @@
     "py": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "kraft paper"
   },
   {
    "zh": "前片",
@@ -3775,7 +4099,8 @@
     "py": "Què rèn yàng de zhāng gài zài qián piàn shàng, kuà liǎng piàn.",
     "vn": "Mẫu xác nhận đóng dấu ở mảnh trước, dấu vắt qua hai mảnh."
    },
-   "add": ""
+   "add": "",
+   "en": "front panel"
   },
   {
    "zh": "后片",
@@ -3788,7 +4113,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "back panel"
   },
   {
    "zh": "眉面",
@@ -3805,7 +4131,8 @@
     "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "visor top"
   },
   {
    "zh": "眉里",
@@ -3822,7 +4149,8 @@
     "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "undervisor"
   },
   {
    "zh": "顶扣包布",
@@ -3839,7 +4167,8 @@
     "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "button cover fabric"
   },
   {
    "zh": "顶扣",
@@ -3856,7 +4185,8 @@
     "py": "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn.",
     "vn": "Nút đỉnh không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh."
    },
-   "add": ""
+   "add": "",
+   "en": "top button"
   },
   {
    "zh": "打顶扣",
@@ -3873,7 +4203,8 @@
     "py": "Dǐng kòu zài sòng dào chē féng dǎ dǐng kòu.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "top button attach"
   },
   {
    "zh": "布质不良",
@@ -3886,7 +4217,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "fabric defect (code 1041)"
   },
   {
    "zh": "裁剪脏污",
@@ -3899,7 +4231,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "soiled cut piece (code 1042)"
   },
   {
    "zh": "接匹",
@@ -3912,7 +4245,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "roll splice (code 1043)"
   },
   {
    "zh": "破洞",
@@ -3925,7 +4259,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "hole (code 1044)"
   },
   {
    "zh": "裁剪不良",
@@ -3938,7 +4273,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "cutting defect (code 1140)"
   },
   {
    "zh": "贴合不良",
@@ -3951,7 +4287,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "fusing defect (code 1141)"
   },
   {
    "zh": "挑片",
@@ -3964,7 +4301,8 @@
    "cat": "congdoan",
    "hot": true,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "piece sorting"
   },
   {
    "zh": "绑片",
@@ -3981,7 +4319,8 @@
     "py": "Bǎng piàn bù duō bù shǎo: měi céng tào shù × céng shù ± jiā jiǎn = 144.",
     "vn": "Buộc đúng số, không thừa không thiếu: số bộ/lớp × số lớp ± thêm bớt = 144."
    },
-   "add": ""
+   "add": "",
+   "en": "bundling"
   },
   {
    "zh": "裁片",
@@ -3998,7 +4337,8 @@
     "py": "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá; chá dāo mó de rén hé zǔ zhǎng zài dān shàng qiān zì, QC gài zhāng.",
     "vn": "Lấy mảnh ở lớp trên, giữa, dưới để kiểm; người kiểm dao và tổ trưởng ký trên phiếu, QC đóng dấu."
    },
-   "add": ""
+   "add": "",
+   "en": "cut piece"
   },
   {
    "zh": "裁片捆绑计算表",
@@ -4015,7 +4355,8 @@
     "py": "Àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi;",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "bundling calculation table"
   },
   {
    "zh": "尾数包",
@@ -4032,7 +4373,8 @@
     "py": "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng.",
     "vn": "Bó lẻ cuối đơn dán tem ghi đơn, lần cắt, màu, số lượng."
    },
-   "add": ""
+   "add": "",
+   "en": "odd last bundle"
   },
   {
    "zh": "待装片区",
@@ -4049,7 +4391,8 @@
     "py": "Fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "bundle waiting area"
   },
   {
    "zh": "品保部",
@@ -4066,7 +4409,8 @@
     "py": "Pǐn bǎo bù zài cái jiǎn chá: dān shàng de QC zhāng, dāo mó, cái piàn.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "Quality Assurance dept."
   },
   {
    "zh": "绣花",
@@ -4083,7 +4427,8 @@
     "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
     "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
    },
-   "add": ""
+   "add": "",
+   "en": "embroidery"
   },
   {
    "zh": "绣洞",
@@ -4100,7 +4445,8 @@
     "py": "Xiù dòng zài chē féng xiàn shàng zuò: zhuàn sù 1700, báo liào 1200, yào diàn zhǐ.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "embroidered eyelet"
   },
   {
    "zh": "薄料",
@@ -4117,7 +4463,8 @@
     "py": "Báo liào xiù dòng yào diàn zhǐ, zhuàn sù 1200.",
     "vn": "Vải mỏng thêu lỗ thoáng phải lót giấy, tốc độ 1.200 vòng."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "lightweight fabric"
   },
   {
    "zh": "首件检验",
@@ -4134,7 +4481,8 @@
     "py": "Shǒu jiàn jiǎn yàn: měi tiáo xiàn měi gè bān, huàn yán sè huò huàn kuǎn de shí hòu zuò, CFA, zǔ zhǎng, QC zhǔ guǎn yì qǐ qiān zì, bú duì jiù tíng xiàn.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "first piece inspection"
   },
   {
    "zh": "绣花起皱",
@@ -4151,7 +4499,8 @@
     "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
     "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
    },
-   "add": ""
+   "add": "",
+   "en": "puckered embroidery"
   },
   {
    "zh": "绣花起毛",
@@ -4168,7 +4517,8 @@
     "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
     "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
    },
-   "add": ""
+   "add": "",
+   "en": "fuzzy embroidery"
   },
   {
    "zh": "印花",
@@ -4185,7 +4535,8 @@
     "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
     "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
    },
-   "add": ""
+   "add": "",
+   "en": "printing"
   },
   {
    "zh": "丝印",
@@ -4198,7 +4549,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "screen printing"
   },
   {
    "zh": "转印",
@@ -4215,7 +4567,8 @@
     "py": "Shǒu gōng yìn, jī qì yìn, zhuǎn yìn.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "heat transfer"
   },
   {
    "zh": "轻微缺陷",
@@ -4232,7 +4585,8 @@
     "py": "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn.",
     "vn": "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ."
    },
-   "add": ""
+   "add": "",
+   "en": "minor defect"
   },
   {
    "zh": "严重缺陷",
@@ -4249,7 +4603,8 @@
     "py": "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn.",
     "vn": "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ."
    },
-   "add": ""
+   "add": "",
+   "en": "major defect"
   },
   {
    "zh": "印花模糊",
@@ -4266,7 +4621,8 @@
     "py": "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu.",
     "vn": "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ."
    },
-   "add": ""
+   "add": "",
+   "en": "blurred print"
   },
   {
    "zh": "转印变形",
@@ -4283,7 +4639,8 @@
     "py": "Yìn huā mó hu, zhuǎn yìn biàn xíng, tuō luò, liè kāi.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "distorted transfer"
   },
   {
    "zh": "水洗帽",
@@ -4296,7 +4653,8 @@
    "cat": "vatlieu",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "washed cap"
   },
   {
    "zh": "洗水",
@@ -4313,7 +4671,8 @@
     "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
     "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
    },
-   "add": ""
+   "add": "",
+   "en": "washing"
   },
   {
    "zh": "车缝",
@@ -4330,7 +4689,8 @@
     "py": "Tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "sewing"
   },
   {
    "zh": "合片",
@@ -4347,7 +4707,8 @@
     "py": "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn.",
     "vn": "Nút đỉnh không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh."
    },
-   "add": ""
+   "add": "",
+   "en": "panel joining"
   },
   {
    "zh": "前合片",
@@ -4364,7 +4725,8 @@
     "py": "Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "front panel joining"
   },
   {
    "zh": "帽双",
@@ -4377,7 +4739,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "crown double-needle"
   },
   {
    "zh": "后双",
@@ -4390,7 +4753,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "back double-needle"
   },
   {
    "zh": "拷克",
@@ -4403,7 +4767,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "overlock"
   },
   {
    "zh": "包边",
@@ -4416,7 +4781,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "binding"
   },
   {
    "zh": "针距",
@@ -4433,7 +4799,8 @@
     "py": "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì.",
     "vn": "Đối chiếu thẻ SOP của từng máy với số trên máy (mũi/inch, đường may chừa). Hôm 13–14/10 đã thấy 3 chỗ lệch."
    },
-   "add": ""
+   "add": "",
+   "en": "stitch density (SPI)"
   },
   {
    "zh": "缝份",
@@ -4450,7 +4817,8 @@
     "py": "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn). 10 yuè 13 dào 14 rì fā xiàn 3 chù bù yí zhì.",
     "vn": "Đối chiếu thẻ SOP của từng máy với số trên máy (mũi/inch, đường may chừa). Hôm 13–14/10 đã thấy 3 chỗ lệch."
    },
-   "add": ""
+   "add": "",
+   "en": "seam allowance"
   },
   {
    "zh": "回针",
@@ -4467,7 +4835,8 @@
     "py": "Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "backtack"
   },
   {
    "zh": "操作说明",
@@ -4484,7 +4853,8 @@
     "py": "Měi tái jī qì de SOP kǎ shàng dōu yǒu cāo zuò shuō míng hé zhù yì shì xiàng.",
     "vn": "Thẻ SOP ở mỗi máy đều có hướng dẫn thao tác và điểm cần chú ý."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "operation instruction"
   },
   {
    "zh": "注意事项",
@@ -4501,7 +4871,8 @@
     "py": "Měi tái jī qì de SOP kǎ shàng dōu yǒu cāo zuò shuō míng hé zhù yì shì xiàng.",
     "vn": "Thẻ SOP ở mỗi máy đều có hướng dẫn thao tác và điểm cần chú ý."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "notes"
   },
   {
    "zh": "工作指示单",
@@ -4514,7 +4885,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "work instruction"
   },
   {
    "zh": "加工提示单",
@@ -4527,7 +4899,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "process note sheet"
   },
   {
    "zh": "帽身",
@@ -4544,7 +4917,8 @@
     "py": "Liù piàn hé qǐ lái jiù shì mào shēn.",
     "vn": "Sáu mảnh ráp lại là thân mũ."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "crown"
   },
   {
    "zh": "车线",
@@ -4561,7 +4935,8 @@
     "py": "Chē xiàn yào zhí, bù néng wāi.",
     "vn": "Đường may phải thẳng, không được lệch."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "stitching line"
   },
   {
    "zh": "针",
@@ -4578,7 +4953,8 @@
     "py": "Qián hé piàn měi yīng cùn 12 zhēn.",
     "vn": "Ráp thân trước 12 mũi một inch."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "needle / stitch"
   },
   {
    "zh": "束眉",
@@ -4595,7 +4971,8 @@
     "py": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "brim sewing"
   },
   {
    "zh": "修眉",
@@ -4612,7 +4989,8 @@
     "py": "Xiū méi: UA liú 5 dào 7 háo mǐ.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "brim trimming"
   },
   {
    "zh": "绕线",
@@ -4629,7 +5007,8 @@
     "py": "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
     "vn": "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau."
    },
-   "add": ""
+   "add": "",
+   "en": "brim stitch rows"
   },
   {
    "zh": "眉板",
@@ -4646,7 +5025,8 @@
     "py": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "visor board"
   },
   {
    "zh": "帽檐",
@@ -4663,7 +5043,8 @@
     "py": "Àn jì shù bāo cè liáng logo wèi zhì, lì rú UA 1381645, logo lí mào yán chē xiàn 1.5 lí mǐ.",
     "vn": "Đo vị trí logo theo tech pack (VD mã UA 1381645: logo cách đường may lưỡi 1,5 cm)."
    },
-   "add": ""
+   "add": "",
+   "en": "visor / peak"
   },
   {
    "zh": "帽眉",
@@ -4680,7 +5061,8 @@
     "py": "Hàn dài, mào méi zhè yí dào shì guān jiàn gōng xù, měi yīng cùn 9 zhēn, UA, TNF shì 10 zhēn;",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "brim / visor"
   },
   {
    "zh": "断线",
@@ -4697,7 +5079,8 @@
     "py": "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
     "vn": "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau."
    },
-   "add": ""
+   "add": "",
+   "en": "broken thread"
   },
   {
    "zh": "接线",
@@ -4714,7 +5097,8 @@
     "py": "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
     "vn": "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau."
    },
-   "add": ""
+   "add": "",
+   "en": "thread join"
   },
   {
    "zh": "尺寸带",
@@ -4731,7 +5115,8 @@
     "py": "Chǐ cùn dài, shāng biāo lí xià biān 4 háo mǐ;",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "size band"
   },
   {
    "zh": "汗带",
@@ -4748,7 +5133,8 @@
     "py": "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn.",
     "vn": "Thun chống mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt."
    },
-   "add": ""
+   "add": "",
+   "en": "sweatband"
   },
   {
    "zh": "关键工序",
@@ -4765,7 +5151,8 @@
     "py": "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5.",
     "vn": "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5."
    },
-   "add": ""
+   "add": "",
+   "en": "key process"
   },
   {
    "zh": "排扣",
@@ -4778,7 +5165,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "adjustable closure"
   },
   {
    "zh": "后扣",
@@ -4795,7 +5183,8 @@
     "py": "Hòu kòu: xiān yòng fèi dài shì chē, zài chē dà huò.",
     "vn": "Khóa sau: may thử bằng băng phế trước khi may hàng thật."
    },
-   "add": ""
+   "add": "",
+   "en": "back closure"
   },
   {
    "zh": "后喇叭",
@@ -4808,7 +5197,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "back opening / folder"
   },
   {
    "zh": "压条",
@@ -4825,7 +5215,8 @@
     "py": "Liù piàn mào lǐ miàn dōu yǒu yā tiáo.",
     "vn": "Mũ 6 mảnh bên trong đều có dây viền."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "seam tape"
   },
   {
    "zh": "电脑车",
@@ -4842,7 +5233,8 @@
     "py": "Hòu kòu hé tiáo jié dài yòng diàn nǎo chē zuò.",
     "vn": "Khóa sau và dây điều chỉnh may bằng máy lập trình."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "programmable sewing machine"
   },
   {
    "zh": "喇叭",
@@ -4855,7 +5247,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "folder (sewing attachment)"
   },
   {
    "zh": "接头",
@@ -4872,7 +5265,8 @@
     "py": "Bāo biān tiáo bù néng yǒu jiē tóu.",
     "vn": "Dải viền không được có mối nối."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "joint"
   },
   {
    "zh": "修线",
@@ -4889,7 +5283,8 @@
     "py": "Xiū xiàn: xiān lǐ miàn hòu wài miàn, mào yán gēn bù yào gān jìng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "thread trimming"
   },
   {
    "zh": "牛筋衬",
@@ -4906,7 +5301,8 @@
     "py": "Qián piàn yǒu niú jīn chèn.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "buckram"
   },
   {
    "zh": "线",
@@ -4923,7 +5319,8 @@
     "py": "Xiàn tóu yào jiǎn gān jìng.",
     "vn": "Đầu chỉ phải cắt sạch."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "thread"
   },
   {
    "zh": "巡检",
@@ -4940,7 +5337,8 @@
     "py": "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5.",
     "vn": "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5."
    },
-   "add": ""
+   "add": "",
+   "en": "inline patrol inspection"
   },
   {
    "zh": "在制品检验",
@@ -4957,7 +5355,8 @@
     "py": "Zài zhì pǐn jiǎn yàn bù hé gé yào zuò 8D.",
     "vn": "Kiểm hàng đang sản xuất không đạt thì phải làm 8D."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "WIP inspection"
   },
   {
    "zh": "纠正措施",
@@ -4970,7 +5369,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "corrective action (CAP)"
   },
   {
    "zh": "跳针",
@@ -4987,7 +5387,8 @@
     "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
     "vn": "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau."
    },
-   "add": ""
+   "add": "",
+   "en": "skipped stitch"
   },
   {
    "zh": "浮线",
@@ -5004,7 +5405,8 @@
     "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
     "vn": "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau."
    },
-   "add": ""
+   "add": "",
+   "en": "loose/floating stitch"
   },
   {
    "zh": "车缝起皱",
@@ -5021,7 +5423,8 @@
     "py": "Tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "seam puckering"
   },
   {
    "zh": "双针大小边",
@@ -5038,7 +5441,8 @@
     "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng.",
     "vn": "Mảnh giữa: đường 2 kim không đều, nhảy mũi, nổi chỉ; hai bên cao bằng nhau."
    },
-   "add": ""
+   "add": "",
+   "en": "uneven double-needle"
   },
   {
    "zh": "露线",
@@ -5055,7 +5459,8 @@
     "py": "Zhèng miàn bù néng lòu xiàn.",
     "vn": "Mặt phải không được lộ chỉ."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "exposed thread"
   },
   {
    "zh": "弯眉整烫",
@@ -5072,7 +5477,8 @@
     "py": "Wān méi zhěng tàng jī TYL-1908-R, sān gè wēn qū, kāi bān qián yào diǎn jiǎn.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "brim curving"
   },
   {
    "zh": "头模",
@@ -5089,7 +5495,8 @@
     "py": "Zài tóu mó shàng zhēng qì dìng xíng: mián bù mào yán 165 dào 180 dù, 6 miǎo, yùn tàng 90 dào 130 dù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "head form"
   },
   {
    "zh": "前整烫",
@@ -5106,7 +5513,8 @@
     "py": "Qián zhěng tàng shì kǎ shàng de 1808 gōng xù.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "front panel pressing"
   },
   {
    "zh": "帽型不佳",
@@ -5119,7 +5527,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "poor cap shape"
   },
   {
    "zh": "尾查",
@@ -5132,7 +5541,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "final inspection"
   },
   {
    "zh": "六片帽检验顺序",
@@ -5149,7 +5559,8 @@
     "py": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "6-panel cap check order"
   },
   {
    "zh": "帽围",
@@ -5166,7 +5577,8 @@
     "py": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "head circumference"
   },
   {
    "zh": "线头",
@@ -5183,7 +5595,8 @@
     "py": "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "loose thread end"
   },
   {
    "zh": "线尾检验",
@@ -5200,7 +5613,8 @@
     "py": "Dìng xíng yǐ hòu zuò xiàn wěi jiǎn yàn, měi dǐng dōu yào chá.",
     "vn": "Sau định form thì kiểm cuối chuyền, chiếc nào cũng kiểm."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "end-of-line inspection"
   },
   {
    "zh": "前高",
@@ -5217,7 +5631,8 @@
     "py": "Qián gāo cóng dǐng kòu zhōng xīn liáng dào mào yán chē xiàn.",
     "vn": "Cao trước đo từ tâm nút đỉnh xuống đường may lưỡi trai."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "front height"
   },
   {
    "zh": "前宽",
@@ -5230,7 +5645,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "front width"
   },
   {
    "zh": "侧高",
@@ -5243,7 +5659,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "side height"
   },
   {
    "zh": "后高",
@@ -5256,7 +5673,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "back height"
   },
   {
    "zh": "后开口宽",
@@ -5269,7 +5687,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "back opening width"
   },
   {
    "zh": "后开口高",
@@ -5282,7 +5701,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "back opening height"
   },
   {
    "zh": "调节带",
@@ -5299,7 +5719,8 @@
     "py": "Liáng mào wéi yǐ qián xiān bǎ tiáo jié dài tiáo dào 9.5.",
     "vn": "Trước khi đo vòng đầu phải chỉnh dây sau về 9.5."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "back strap"
   },
   {
    "zh": "绣洞位置",
@@ -5312,7 +5733,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "eyelet position"
   },
   {
    "zh": "绣洞间距",
@@ -5325,7 +5747,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "eyelet spacing"
   },
   {
    "zh": "帽檐长",
@@ -5338,7 +5761,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "visor length"
   },
   {
    "zh": "帽檐宽",
@@ -5351,7 +5775,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "visor width"
   },
   {
    "zh": "帽檐弯度",
@@ -5368,7 +5793,8 @@
     "py": "Liáng mào yán wān dù yào bǎ mào zi fàng zài zhuō shàng.",
     "vn": "Đo độ cong lưỡi trai phải đặt mũ lên bàn."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "visor curve"
   },
   {
    "zh": "公差",
@@ -5381,7 +5807,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "tolerance"
   },
   {
    "zh": "尺寸表",
@@ -5394,7 +5821,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "measurement chart"
   },
   {
    "zh": "软尺",
@@ -5407,7 +5835,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "tape measure"
   },
   {
    "zh": "尺寸",
@@ -5424,7 +5853,8 @@
     "py": "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè.",
     "vn": "So chiếc đầu với mẫu duyệt: vị trí, kích thước, mật độ, màu chỉ."
    },
-   "add": ""
+   "add": "",
+   "en": "size / measurement"
   },
   {
    "zh": "扣具",
@@ -5437,7 +5867,8 @@
    "cat": "bophan",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "closure hardware"
   },
   {
    "zh": "汗带外露",
@@ -5454,7 +5885,8 @@
     "py": "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn.",
     "vn": "Thun chống mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt."
    },
-   "add": ""
+   "add": "",
+   "en": "exposed sweatband"
   },
   {
    "zh": "右中片",
@@ -5471,7 +5903,8 @@
     "py": "Zuǒ zhōng piàn hé yòu zhōng piàn yào yí yàng gāo.",
     "vn": "Miếng giữa trái và phải phải cao bằng nhau."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "right side panel"
   },
   {
    "zh": "左中片",
@@ -5488,7 +5921,8 @@
     "py": "Zuǒ zhōng piàn hé yòu zhōng piàn yào yí yàng gāo.",
     "vn": "Miếng giữa trái và phải phải cao bằng nhau."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "left side panel"
   },
   {
    "zh": "商标",
@@ -5505,7 +5939,8 @@
     "py": "Shāng biāo bù néng lòu, cuò, fǎn, wāi.",
     "vn": "Nhãn không được thiếu, sai, ngược, lệch."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "label"
   },
   {
    "zh": "起毛",
@@ -5522,7 +5957,8 @@
     "py": "Mào zi biǎo miàn bù néng qǐ máo.",
     "vn": "Bề mặt mũ không được xù lông."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "fuzzing / pilling"
   },
   {
    "zh": "缝份不均",
@@ -5535,7 +5971,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "uneven seam"
   },
   {
    "zh": "左右眉角不对称",
@@ -5548,7 +5985,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "uneven visor corners"
   },
   {
    "zh": "返工",
@@ -5565,7 +6003,8 @@
     "py": "Qīng wēi quē xiàn gào sù zǔ zhǎng, tuì huí shēng chǎn fǎn gōng;",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "rework"
   },
   {
    "zh": "重做",
@@ -5582,7 +6021,8 @@
     "py": "Yán zhòng quē xiàn yǐng xiǎng jié gòu, yán sè, zhì liàng de, yào chóng zuò.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "remake"
   },
   {
    "zh": "毛边",
@@ -5599,7 +6039,8 @@
     "py": "Hàn dài máo biān suàn qīng wēi quē xiàn hái shì yán zhòng quē xiàn?",
     "vn": "Xù mép đai mồ hôi tính lỗi nhẹ hay lỗi nặng?"
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "raw edge"
   },
   {
    "zh": "中查",
@@ -5616,7 +6057,8 @@
     "py": "Xiàn shàng hái yǒu xún jiǎn hé zhōng chá.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "inline inspection"
   },
   {
    "zh": "不良率",
@@ -5629,7 +6071,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "defect rate"
   },
   {
    "zh": "出货",
@@ -5646,7 +6089,8 @@
     "py": "Bǐ chū huò rì zǎo 7 tiān yǐ shàng jiǎn wán de, yào zài cè 20% xiāng zi de hán shuǐ lǜ.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "shipment"
   },
   {
    "zh": "包装",
@@ -5663,7 +6107,8 @@
     "py": "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn.",
     "vn": "VF: mẫu PPS cả bao bì cũng phải qua dò kim."
    },
-   "add": ""
+   "add": "",
+   "en": "packing"
   },
   {
    "zh": "吊牌",
@@ -5680,7 +6125,8 @@
     "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
     "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
    },
-   "add": ""
+   "add": "",
+   "en": "hangtag"
   },
   {
    "zh": "含水率",
@@ -5697,7 +6143,8 @@
     "py": "Hán shuǐ lǜ (UA, LANDTEK DM200T): mián 5%, dí lún 4%, ní lóng 4%, yáng máo 8%; hùn fǎng àn bǐ lì suàn, 60% mián jiā 40% ní lóng shì 4.6%.",
     "vn": "Độ ẩm (UA, máy LANDTEK DM200T): cotton 5%, polyester 4%, nylon 4%, wool 8%; vải pha tính theo tỷ lệ (60% cotton + 40% nylon = 4,6%)."
    },
-   "add": ""
+   "add": "",
+   "en": "moisture content"
   },
   {
    "zh": "水分测定仪",
@@ -5710,7 +6157,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "moisture meter"
   },
   {
    "zh": "外箱标签",
@@ -5727,7 +6175,8 @@
     "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
     "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
    },
-   "add": ""
+   "add": "",
+   "en": "outer carton label"
   },
   {
    "zh": "洗水唛",
@@ -5744,7 +6193,8 @@
     "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì.",
     "vn": "Ba thứ phải khớp: mã, màu, size, UPC trên tem thùng, túi và thẻ treo; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm."
    },
-   "add": ""
+   "add": "",
+   "en": "care label"
   },
   {
    "zh": "毛重",
@@ -5757,7 +6207,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "gross weight"
   },
   {
    "zh": "包装不良",
@@ -5770,7 +6221,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "packing defect"
   },
   {
    "zh": "漏贴外箱标",
@@ -5783,7 +6235,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "missing carton label"
   },
   {
    "zh": "唛头内容错误",
@@ -5796,7 +6249,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "wrong shipping mark"
   },
   {
    "zh": "漏贴UPC标",
@@ -5809,7 +6263,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "missing UPC"
   },
   {
    "zh": "帽眉朝向错误",
@@ -5822,7 +6277,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "wrong cap direction"
   },
   {
    "zh": "箱内多余副料",
@@ -5835,7 +6291,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "extra trims in carton"
   },
   {
    "zh": "抽样",
@@ -5848,7 +6305,8 @@
    "cat": "kiemtra",
    "hot": true,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "sampling"
   },
   {
    "zh": "允收",
@@ -5861,7 +6319,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "accept"
   },
   {
    "zh": "拒收",
@@ -5874,7 +6333,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "reject"
   },
   {
    "zh": "最终检验",
@@ -5887,7 +6347,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "final inspection"
   },
   {
    "zh": "致命缺陷",
@@ -5900,7 +6361,8 @@
    "cat": "loi",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "critical defect"
   },
   {
    "zh": "验针",
@@ -5917,7 +6379,8 @@
     "py": "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn.",
     "vn": "VF: mẫu PPS cả bao bì cũng phải qua dò kim."
    },
-   "add": ""
+   "add": "",
+   "en": "needle detection"
   },
   {
    "zh": "断针",
@@ -5934,7 +6397,8 @@
     "py": "Duàn zhēn shì zuì yán zhòng de wèn tí.",
     "vn": ""
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "broken needle"
   },
   {
    "zh": "管针",
@@ -5947,7 +6411,8 @@
    "cat": "congdoan",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "needle control"
   },
   {
    "zh": "箱唛",
@@ -5964,7 +6429,8 @@
     "py": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn;",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "shipping mark"
   },
   {
    "zh": "装箱单",
@@ -5981,7 +6447,8 @@
     "py": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn;",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "packing list"
   },
   {
    "zh": "尾箱",
@@ -5994,7 +6461,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": ""
+   "add": "",
+   "en": "odd carton"
   },
   {
    "zh": "重验",
@@ -6011,7 +6479,8 @@
     "py": "Bù hé gé jiù zhěng zhāng PO 100% jiǎn chá, zài chóng yàn.",
     "vn": ""
    },
-   "add": ""
+   "add": "",
+   "en": "reinspection"
   },
   {
    "zh": "终检",
@@ -6028,7 +6497,8 @@
     "py": "Zhōng jiǎn zài Pivot88 shàng zuò, AQL 1.5.",
     "vn": "Kiểm cuối làm trên Pivot88, AQL 1.5."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "final inspection (CFA)"
   },
   {
    "zh": "终检品检表",
@@ -6041,7 +6511,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "final inspection sheet"
   },
   {
    "zh": "验货计划",
@@ -6058,7 +6529,8 @@
     "py": "Yàn huò jì huà xīng qī sì zǎo shàng fā gěi kè hù.",
     "vn": "Kế hoạch kiểm hàng gửi khách sáng thứ Năm."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "inspection plan"
   },
   {
    "zh": "验厂",
@@ -6075,7 +6547,8 @@
     "py": "Wǒ xiǎng yǐ hòu zuò yàn chǎng hé kè hù jiē dài.",
     "vn": "Sau này em muốn làm đánh giá nhà máy và tiếp khách."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "factory audit"
   },
   {
    "zh": "客户接待",
@@ -6092,7 +6565,8 @@
     "py": "Wǒ xiǎng yǐ hòu zuò yàn chǎng hé kè hù jiē dài.",
     "vn": "Sau này em muốn làm đánh giá nhà máy và tiếp khách."
    },
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "customer reception"
   },
   {
    "zh": "合格率",
@@ -6105,7 +6579,8 @@
    "cat": "kiemtra",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "pass rate"
   },
   {
    "zh": "卡尺",
@@ -6118,7 +6593,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "calliper"
   },
   {
    "zh": "对色灯箱",
@@ -6131,7 +6607,8 @@
    "cat": "may",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "colour matching light box (D65)"
   },
   {
    "zh": "测试报告",
@@ -6144,7 +6621,8 @@
    "cat": "giayto",
    "hot": false,
    "ex": null,
-   "add": "2026-11-03"
+   "add": "2026-11-03",
+   "en": "test report"
   }
  ],
  "cats": [

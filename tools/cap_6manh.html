@@ -1,0 +1,1005 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Giải phẫu mũ 6 mảnh</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* Layout: sân khấu 3D bên trái như bàn kiểm hàng, bảng tra cứu bên phải; điện thoại xếp dọc */
+:root {
+  --bg: #e7eaee;
+  --stage: #f3f5f7;
+  --grid: rgba(31, 42, 68, 0.07);
+  --surface: #fbfcfd;
+  --ink: #18202e;
+  --muted: #586273;
+  --line: #cdd3db;
+  --accent: #c9781c;
+  --accent-ink: #8c4d06;
+  --accent-soft: rgba(201, 120, 28, 0.13);
+  --src-xuong: #2f6b4f;
+  --src-sop: #2c5a8c;
+  --src-nganh: #7a5b8f;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151b; --stage: #171c24; --grid: rgba(200, 212, 235, 0.06); --surface: #1b212a;
+    --ink: #e5e9ef; --muted: #9ba5b4; --line: #2d3540; --accent: #e7a24a; --accent-ink: #f3c584;
+    --accent-soft: rgba(231, 162, 74, 0.16); --src-xuong: #7cc4a0; --src-sop: #8ab6e8; --src-nganh: #c3a4d8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11151b; --stage: #171c24; --grid: rgba(200, 212, 235, 0.06); --surface: #1b212a;
+  --ink: #e5e9ef; --muted: #9ba5b4; --line: #2d3540; --accent: #e7a24a; --accent-ink: #f3c584;
+  --accent-soft: rgba(231, 162, 74, 0.16); --src-xuong: #7cc4a0; --src-sop: #8ab6e8; --src-nganh: #c3a4d8;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+.zh { font-family: var(--font-zh); }
+.py { font-style: italic; color: var(--muted); }
+.en { color: var(--muted); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.top { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 18px 12px; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 8px 24px; }
+.top h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 40px); line-height: 1; letter-spacing: 0.005em; text-wrap: balance; }
+.top .sub { margin: 4px 0 0; color: var(--muted); }
+.top .sub .zh { color: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); max-width: 520px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+.app { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 420px); gap: 16px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 24px; }
+.stage { position: relative; height: min(80vh, 880px); min-height: 440px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background-color: var(--stage); background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 28px 28px; touch-action: none; }
+.stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.stage canvas.is-hover { cursor: pointer; }
+.toolbar { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none; }
+.toolbar button { pointer-events: auto; border: 1px solid var(--line); background: var(--surface); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.toolbar button:hover { border-color: var(--accent); }
+.toolbar button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.toolbar .zh { font-size: 12px; opacity: 0.8; }
+.hint { position: absolute; left: 12px; bottom: 10px; max-width: calc(100% - 24px); margin: 0; font-size: 12px; color: var(--muted); pointer-events: none; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; opacity: 0.92; }
+.callout { position: absolute; left: 0; top: 0; pointer-events: none; transform: translate(-50%, -50%); }
+.callout .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.callout .card { position: absolute; left: 18px; bottom: 12px; min-width: 150px; max-width: 240px; background: var(--surface); border: 1px solid var(--accent); border-radius: 10px; padding: 8px 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.callout.flip .card { left: auto; right: 18px; }
+.callout .card b { display: block; font-family: var(--font-display); font-size: 19px; line-height: 1.1; }
+.callout .card .zh { font-size: 16px; font-weight: 500; }
+.callout .card .py, .callout .card .en { font-size: 12px; display: block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 12px; padding: 4px 8px; border-radius: 6px; white-space: nowrap; transform: translate(12px, 12px); }
+.loadfail { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--muted); }
+
+.panel { height: min(80vh, 880px); min-height: 440px; overflow: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); display: flex; flex-direction: column; }
+.tabs { position: sticky; top: 0; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border-bottom: 1px solid var(--line); }
+.tabs button { border: 0; background: none; padding: 12px 6px 10px; cursor: pointer; font-weight: 600; font-size: 13px; color: var(--muted); border-bottom: 2px solid transparent; display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.tabs button .zh { font-weight: 400; font-size: 11px; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabpane { padding: 16px; display: flex; flex-direction: column; gap: 18px; }
+
+.names .eyebrow { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; }
+.names h2 { margin: 2px 0 0; font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1.05; text-wrap: balance; }
+.names .zhline { margin-top: 6px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.names .zhline .zh { font-size: 24px; font-weight: 500; }
+.names .zhline .py { font-size: 15px; }
+.names .en { margin-top: 2px; font-size: 14px; }
+.alt { margin-top: 8px; font-size: 13px; color: var(--muted); }
+.alt .zh { color: var(--ink); }
+.desc { margin: 0; max-width: 62ch; }
+h3.sec { margin: 0 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.steplist, .deflist, .plist, .pointlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.steplist li, .deflist li { padding: 10px 0; border-top: 1px solid var(--line); }
+.steplist li:first-child, .deflist li:first-child { border-top: 0; padding-top: 0; }
+.st { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; }
+.no { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 12px; font-weight: 500; width: 28px; height: 22px; border-radius: 6px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-ink); }
+.st .t1 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.st .t1 .zh { font-size: 16px; font-weight: 500; }
+.st .t1 .py { font-size: 13px; }
+.st .t2 { font-weight: 600; }
+.st .t2 .en { font-weight: 400; font-size: 12px; }
+.spec { margin-top: 4px; font-size: 12.5px; color: var(--muted); }
+.spec .num { font-family: var(--font-mono); color: var(--ink); }
+.def { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; align-items: start; }
+.def .v { font-weight: 600; }
+.def .z { grid-column: 1; }
+.def .z .zh { font-size: 15px; }
+.def .z .py { font-size: 12.5px; margin-left: 6px; }
+.def .e { grid-column: 1; font-size: 12.5px; color: var(--muted); }
+.src { grid-column: 2; grid-row: 1; font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; border: 1px solid currentColor; white-space: nowrap; }
+.src.xuong { color: var(--src-xuong); } .src.sop { color: var(--src-sop); } .src.nganh { color: var(--src-nganh); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 3px 10px; font-size: 12.5px; cursor: pointer; }
+.chip:hover { border-color: var(--accent); }
+.chip .zh { color: var(--muted); margin-left: 4px; }
+.backlink { align-self: flex-start; border: 0; background: none; padding: 0; color: var(--accent-ink); cursor: pointer; font-weight: 600; font-size: 13px; }
+
+.grp h3.sec { margin-top: 2px; }
+.grp h3.sec .zh { text-transform: none; letter-spacing: 0; margin-left: 4px; }
+.plist button { width: 100%; text-align: left; border: 0; border-top: 1px solid var(--line); background: none; padding: 9px 4px; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; align-items: baseline; }
+.plist li:first-child button { border-top: 0; }
+.plist button:hover { background: var(--accent-soft); }
+.plist .v { font-weight: 600; }
+.plist .z { text-align: right; }
+.plist .z .zh { font-size: 15px; }
+.plist .z .py { display: block; font-size: 11.5px; }
+.plist .e { font-size: 12px; color: var(--muted); }
+
+.phase h3.sec .zh { text-transform: none; letter-spacing: 0; margin-left: 4px; }
+.slist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.stepbtn { width: 100%; text-align: left; border: 1px solid transparent; background: none; padding: 10px 8px; border-radius: 10px; cursor: pointer; }
+.stepbtn:hover { border-color: var(--line); }
+.stepbtn[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.stepbtn .chips { margin-top: 6px; }
+.stepbtn .chip { cursor: inherit; }
+
+.pointnav { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pointnav .count { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--muted); }
+.pointnav button { border: 1px solid var(--line); background: var(--bg); border-radius: 8px; padding: 6px 12px; cursor: pointer; font-weight: 600; }
+.pointnav button:hover { border-color: var(--accent); }
+.pointcard { border: 1px solid var(--accent); border-radius: 12px; padding: 14px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 8px; }
+.pointcard .big { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.pointcard .big .n { font-family: var(--font-display); font-size: 34px; line-height: 1; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.pointcard .big .zh { font-size: 24px; font-weight: 500; }
+.pointcard .big .py { font-size: 14px; }
+.pointcard .v { font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+.pointcard p { margin: 0; }
+.pointlist button { width: 100%; text-align: left; border: 0; border-top: 1px solid var(--line); background: none; padding: 8px 4px; cursor: pointer; display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+.pointlist li:first-child button { border-top: 0; }
+.pointlist button[aria-current="true"] { background: var(--accent-soft); }
+.pointlist .zh { font-size: 14px; }
+.note { font-size: 12.5px; color: var(--muted); margin: 0; }
+
+@media (max-width: 920px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .stage { height: 60vh; min-height: 360px; }
+  .panel { height: auto; min-height: 0; overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<header class="top">
+  <div>
+    <h1>Giải phẫu mũ 6 mảnh</h1>
+    <p class="sub"><span class="zh">六片帽结构</span> <span class="py">liù piàn mào jiégòu</span> · 6-panel cap anatomy</p>
+  </div>
+  <div class="legend" aria-label="Nguồn tên gọi">
+    <span><b class="src xuong">Xưởng</b> tên trên bảng lỗi treo ở xưởng</span>
+    <span><b class="src sop">SOP</b> tên trên thẻ thao tác tại máy</span>
+    <span><b class="src nganh">Ngành</b> tài liệu kiểm hàng, cần hỏi lại</span>
+  </div>
+</header>
+
+<main class="app">
+  <section class="stage" id="stage" aria-label="Mô hình 3D mũ 6 mảnh">
+    <div class="toolbar">
+      <button type="button" id="btnExplode" aria-pressed="false">Tách rời <span class="zh">拆开</span></button>
+      <button type="button" id="btnReset">Ghép lại <span class="zh">组合</span></button>
+      <button type="button" id="btnSpin" aria-pressed="true">Tự xoay</button>
+      <button type="button" id="btnInside">Nhìn bên trong</button>
+      <button type="button" id="btnFront">Mặt trước</button>
+    </div>
+    <div class="callout" id="callout" hidden><div class="dot"></div><div class="card" id="calloutCard"></div></div>
+    <div class="tip" id="tip" hidden></div>
+    <p class="hint" id="hint">Kéo để xoay 360°, cuộn hoặc chụm hai ngón để phóng to. Bấm vào một bộ phận để tách nó ra.</p>
+  </section>
+
+  <aside class="panel" id="panel">
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tab-parts" aria-selected="true" aria-controls="pane-parts">Bộ phận<span class="zh">部件</span></button>
+      <button type="button" role="tab" id="tab-steps" aria-selected="false" aria-controls="pane-steps">Quy trình may<span class="zh">车缝工序</span></button>
+      <button type="button" role="tab" id="tab-points" aria-selected="false" aria-controls="pane-points">Kiểm 15 điểm<span class="zh">检验顺序</span></button>
+    </div>
+    <div class="tabpane" id="pane-parts" role="tabpanel" aria-labelledby="tab-parts"></div>
+    <div class="tabpane" id="pane-steps" role="tabpanel" aria-labelledby="tab-steps" hidden></div>
+    <div class="tabpane" id="pane-points" role="tabpanel" aria-labelledby="tab-points" hidden></div>
+  </aside>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+/* =================== DỮ LIỆU =================== */
+// Lỗi: [Việt, 中文, pinyin, English, nguồn]
+const DEF = {
+  tiaozhen: ['Nhảy mũi', '跳针', 'tiàozhēn', 'Skipped stitch', 'xuong'],
+  fuxian: ['Nổi chỉ', '浮线', 'fúxiàn', 'Loose (floating) stitch', 'xuong'],
+  louxian: ['Lộ chỉ', '露线', 'lòuxiàn', 'Exposed stitch', 'xuong'],
+  duanxian: ['Đứt chỉ', '断线', 'duànxiàn', 'Broken stitch', 'nganh'],
+  jiexian: ['Nối chỉ', '接线', 'jiēxiàn', 'Thread join', 'sop'],
+  qizhou: ['May bị nhăn', '车缝起皱', 'chēféng qǐzhòu', 'Seam puckering', 'xuong'],
+  dxb: ['Đường 2 kim to nhỏ', '双针大小边', 'shuāngzhēn dàxiǎo biān', 'Uneven double-needle width', 'xuong'],
+  szqz: ['Đường 2 kim nhăn', '双针起皱', 'shuāngzhēn qǐzhòu', 'Puckered double-needle seam', 'xuong'],
+  baokou: ['Bung đường may', '爆口', 'bàokǒu', 'Open seam', 'sop'],
+  huizhen: ['Lại mũi không trùng đường', '回针不在同一条线上', 'huízhēn bú zài tóng yì tiáo xiàn shang', 'Backtack off the seam line', 'sop'],
+  zhenju: ['Mật độ mũi sai', '针距不符', 'zhēnjù bù fú', 'Wrong stitch density (SPI)', 'sop'],
+  xiantou: ['Đầu chỉ', '线头', 'xiàntóu', 'Untrimmed thread end', 'xuong'],
+  qptx: ['Mảnh trước bị sập', '前片塌陷', 'qiánpiàn tāxiàn', 'Collapsed front panel', 'xuong'],
+  aoyao: ['Mảnh trước bị lõm ở giữa', '凹腰', 'āoyāo', 'Dented front panel', 'nganh'],
+  pianyi: ['Logo lệch vị trí', '位置偏移', 'wèizhì piānyí', 'Misplaced logo', 'nganh'],
+  yinhua: ['Hình in bị mờ', '印花模糊', 'yìnhuā móhu', 'Blurred print', 'xuong'],
+  xhqz: ['Hình thêu bị nhăn', '绣花起皱', 'xiùhuā qǐzhòu', 'Embroidery puckering', 'xuong'],
+  secha: ['Khác màu', '色差', 'sèchā', 'Shade variation', 'nganh'],
+  wuzi: ['Bẩn', '污渍', 'wūzì', 'Stain', 'nganh'],
+  podong: ['Lỗ thủng', '破洞', 'pòdòng', 'Hole', 'nganh'],
+  hpqg: ['Mảnh sau bị phồng', '后片起鼓', 'hòupiàn qǐgǔ', 'Bulging back panel', 'xuong'],
+  dingjian: ['Đỉnh nhọn hoặc bị sập', '帽顶偏尖、塌陷', 'màodǐng piān jiān, tāxiàn', 'Pointed or collapsed crown', 'xuong'],
+  juhua: ['Các đường ráp không gặp nhau ở đỉnh', '菊花顶', 'júhuā dǐng', 'Seams not meeting at the crown', 'nganh'],
+  dingkou: ['Nút đỉnh lỏng, rơi, lệch', '顶扣松动、脱落、歪斜', 'dǐngkòu sōngdòng, tuōluò, wāixié', 'Loose, missing or off-centre button', 'sop'],
+  qyDx: ['Lỗ thoáng to nhỏ không đều', '气眼大小不一', 'qìyǎn dàxiǎo bù yī', 'Uneven eyelets', 'sop'],
+  qyWdc: ['Lỗ thoáng chưa thủng', '未打穿', 'wèi dǎchuān', 'Unopened eyelet', 'sop'],
+  jiaxian: ['Kẹp chỉ', '夹线', 'jiāxiàn', 'Caught thread', 'sop'],
+  jiacz: ['Kẹp giấy lót', '夹衬纸', 'jiā chènzhǐ', 'Backing paper caught in stitch', 'sop'],
+  meijiao: ['Góc vành trái phải không cân', '左右眉角不对称', 'zuǒyòu méijiǎo bú duìchèn', 'Uneven visor corners', 'xuong'],
+  jiguang: ['Bóng vải do ủi', '极光', 'jíguāng', 'Shine mark', 'nganh'],
+  tanghuang: ['Cháy vàng do ủi', '烫黄', 'tànghuáng', 'Scorch mark', 'nganh'],
+  loukeng: ['Lộ rãnh khi bọc lưỡi trai', '露坑', 'lòu kēng', 'Exposed board groove', 'sop'],
+  hudu: ['Lưỡi trai cong quá hoặc bị kéo phẳng', '帽檐弧度不符', 'màoyán húdù bù fú', 'Wrong visor curve', 'sop'],
+  xianju: ['Khoảng cách đường diễu không đều', '线距不均', 'xiànjù bù jūn', 'Uneven row spacing', 'sop'],
+  hdwl: ['Lộ đai mồ hôi', '汗带外露', 'hàndài wàilòu', 'Exposed sweatband', 'xuong'],
+  maoyuan: ['Cạnh mũ bị kênh lên', '帽缘上翘', 'màoyuán shàngqiào', 'Lifted bottom edge', 'xuong'],
+  chicun: ['Sai size, vượt dung sai', '尺寸不符', 'chǐcùn bù fú', 'Out-of-tolerance size', 'nganh'],
+  shangbiao: ['Thiếu nhãn, sai nhãn, nhãn ngược, may lệch', '漏车、错车、车反、车歪', 'lòu chē, cuò chē, chē fǎn, chē wāi', 'Missing, wrong, upside-down or skewed label', 'nganh'],
+  yatiao: ['Dây viền bung, nhăn', '压条爆口、起皱', 'yātiáo bàokǒu, qǐzhòu', 'Burst or puckered tape', 'sop'],
+  laba: ['Vòng gáy mũ lệch, không đối xứng', '后喇叭左右不对称', 'hòu lǎba zuǒyòu bú duìchèn', 'Asymmetric back arch', 'sop'],
+  kouju: ['Khóa lỏng, cạnh sắc, gỉ', '扣具松动、毛刺、生锈', 'kòujù sōngdòng, máocì, shēngxiù', 'Loose, sharp or rusty closure', 'nganh'],
+  zhibiao: ['Nhãn dệt nhỏ ngược chiều, lệch', '小织标方向错误', 'xiǎo zhībiāo fāngxiàng cuòwù', 'Woven tab label upside down or off-centre', 'sop'],
+  duanzhen: ['Kim gãy, dị vật kim loại', '断针、金属异物', 'duànzhēn, jīnshǔ yìwù', 'Broken needle, metal contamination', 'nganh'],
+  qigu: ['Dựng phồng, bong keo', '起鼓、脱胶', 'qǐgǔ, tuōjiāo', 'Bubbling, delamination', 'nganh']
+};
+
+const GROUPS = [
+  { id: 'crown', vi: 'Thân mũ', zh: '帽身', py: 'màoshēn', parts: ['front', 'side', 'back', 'buckram', 'eyelets', 'button'] },
+  { id: 'seams', vi: 'Đường may trên thân', zh: '帽身车线', py: 'màoshēn chēxiàn', parts: ['crown_seam', 'topstitch', 'topstitch_back', 'seam_tape'] },
+  { id: 'visor', vi: 'Lưỡi trai', zh: '帽檐', py: 'màoyán', parts: ['visor_top', 'visor_stitch', 'visor_board', 'visor_under'] },
+  { id: 'inside', vi: 'Bên trong', zh: '帽内', py: 'mào nèi', parts: ['sweatband', 'size_tape', 'label'] },
+  { id: 'rear', vi: 'Phía sau', zh: '帽后', py: 'mào hòu', parts: ['back_binding', 'strap', 'buckle'] }
+];
+
+const INFO = {
+  front: { vi: 'Miếng trước', zh: '前片', py: 'qiánpiàn', en: 'Front panels', src: 'xuong',
+    alt: [['đường giữa trước', '前中缝', 'qián zhōngfèng']],
+    desc: 'Hai mảnh phía trước, nối nhau ở đường giữa trước. Logo thường được thêu, in hoặc ép nhiệt lên đây khi mảnh còn rời. Mũ có form đứng thì phía sau có lớp dựng cứng.',
+    defects: ['qptx', 'aoyao', 'pianyi', 'xhqz', 'yinhua', 'secha', 'wuzi'] },
+  side: { vi: 'Miếng giữa', zh: '中片', py: 'zhōngpiàn', en: 'Side panels', src: 'xuong',
+    alt: [['bên trái', '左中片', 'zuǒ zhōngpiàn'], ['bên phải', '右中片', 'yòu zhōngpiàn']],
+    desc: 'Hai mảnh hai bên đầu. Bảng kiểm gọi theo bên: miếng giữa phải kiểm ở điểm 4, miếng giữa trái ở điểm 7. Kiểm xong hai bên thì so xem có cao bằng nhau không.',
+    defects: ['dxb', 'qizhou', 'tiaozhen', 'fuxian', 'secha', 'wuzi', 'podong'] },
+  back: { vi: 'Miếng sau', zh: '后片', py: 'hòupiàn', en: 'Rear panels', src: 'xuong',
+    alt: [['đường giữa sau', '后中缝', 'hòu zhōngfèng']],
+    desc: 'Hai mảnh phía sau. Phần dưới hai mảnh khoét vòng cung thành gáy mũ. Đường giữa sau được may 2 kim trước khi ráp vào thân.',
+    defects: ['hpqg', 'dxb', 'qizhou', 'secha', 'wuzi'] },
+  buckram: { vi: 'Dựng cứng thân trước', zh: '牛筋衬', py: 'niújīnchèn', en: 'Buckram (front interlining)', src: 'sop',
+    alt: [['dựng dán', '硬衬', 'yìngchèn'], ['dựng treo', '吊衬', 'diàochèn']],
+    desc: 'Lớp vải cứng lót sau hai miếng trước để mặt trước đứng form. Có loại dán ép vào mảnh và loại treo. Mũ mềm không có lớp này. Thân trước có dựng thì đường giữa trước không rẽ.',
+    defects: ['qptx', 'qigu'] },
+  eyelets: { vi: 'Lỗ thoáng', zh: '气眼', py: 'qìyǎn', en: 'Eyelets', src: 'sop',
+    alt: [['công đoạn thêu lỗ', '绣洞', 'xiùdòng']],
+    desc: 'Mỗi mảnh có một lỗ thoáng thêu bằng chỉ, cả mũ 6 lỗ. Lỗ được thêu trên mảnh rời, trước khi ráp thân.',
+    defects: ['qyDx', 'qyWdc', 'jiaxian', 'jiacz', 'pianyi'] },
+  button: { vi: 'Nút đỉnh', zh: '顶扣', py: 'dǐngkòu', en: 'Top button', src: 'sop',
+    alt: [['công đoạn đóng nút', '打顶扣', 'dǎ dǐngkòu']],
+    desc: 'Nút bọc vải ở đỉnh, che chỗ 6 đường ráp gặp nhau. Nút lấy từ kho phụ liệu riêng, đóng ở gần cuối chuyền.',
+    defects: ['dingkou', 'dingjian', 'juhua'] },
+  crown_seam: { vi: 'Đường ráp thân', zh: '合片', py: 'hépiàn', en: 'Crown seams (panel joins)', src: 'sop',
+    alt: [['đường giữa trước', '前中缝', 'qián zhōngfèng'], ['đường giữa sau', '后中缝', 'hòu zhōngfèng'], ['đường chừa', '缝份', 'fèngfèn']],
+    desc: 'Sáu đường nối sáu mảnh, chạy từ đỉnh xuống mép dưới. Mặt phải úp mặt phải, may chừa 6 mm, sau đó vắt sổ mép vải thừa ở mặt trong.',
+    defects: ['baokou', 'tiaozhen', 'huizhen', 'zhenju', 'juhua', 'xiantou'] },
+  topstitch: { vi: 'Đường 2 kim đè đường ráp', zh: '帽双针', py: 'mào shuāngzhēn', en: 'Crown double-needle topstitch', src: 'sop',
+    alt: [['gọi tắt', '双针', 'shuāngzhēn']],
+    desc: 'Hai đường chỉ song song chạy hai bên mỗi đường ráp, nhìn thấy từ bên ngoài. May đè để đường ráp nằm phẳng, cùng lúc may dây viền che mép vải ở mặt trong.',
+    defects: ['dxb', 'szqz', 'tiaozhen', 'fuxian', 'duanxian', 'jiexian'] },
+  topstitch_back: { vi: 'Đường 2 kim thân sau', zh: '后双针', py: 'hòu shuāngzhēn', en: 'Rear double-needle seam', src: 'sop',
+    alt: [['đường giữa sau', '后中缝', 'hòu zhōngfèng']],
+    desc: 'Đường 2 kim ở giữa hai mảnh sau, may trước khi ráp vào thân. Đường ráp được rẽ đều 5:5 sang hai bên rồi may đè.',
+    defects: ['dxb', 'fuxian', 'tiaozhen', 'duanxian'] },
+  seam_tape: { vi: 'Dây viền che đường ráp', zh: '压条', py: 'yātiáo', en: 'Seam tape', src: 'sop',
+    alt: [['công đoạn vắt sổ', '拷克', 'kǎokè'], ['viền mép', '包边', 'bāobiān']],
+    desc: 'Dải vải hẹp che mép vải thừa ở mặt trong thân mũ, may cùng lúc với đường 2 kim. Nhờ nó mặt trong gọn, không sổ sợi.',
+    defects: ['yatiao', 'xiantou', 'duanzhen'] },
+  visor_top: { vi: 'Mặt trên lưỡi trai', zh: '眉面', py: 'méimiàn', en: 'Visor top', src: 'xuong',
+    alt: [['cả lưỡi trai', '帽檐', 'màoyán'], ['xưởng gọi tắt', '眉', 'méi']],
+    desc: 'Lớp vải bọc mặt trên của tấm lưỡi trai. Đây là chỗ nhìn thấy đầu tiên khi kiểm (điểm 2).',
+    defects: ['meijiao', 'secha', 'jiguang', 'tanghuang', 'wuzi'] },
+  visor_stitch: { vi: 'Đường diễu lưỡi trai', zh: '绕线', py: 'ràoxiàn', en: 'Visor stitching rows', src: 'sop',
+    alt: [],
+    desc: 'Các đường chỉ chạy song song mép lưỡi trai. Số đường, khoảng cách tới mép và khoảng cách giữa các đường lấy theo phiếu chỉ thị công việc.',
+    defects: ['xianju', 'tiaozhen', 'duanxian', 'jiexian', 'xiantou'] },
+  visor_board: { vi: 'Tấm lưỡi trai', zh: '眉板', py: 'méibǎn', en: 'Visor board (brim insert)', src: 'sop',
+    alt: [['', '帽檐板', 'màoyánbǎn']],
+    desc: 'Tấm nhựa hoặc bìa bên trong lưỡi trai, quyết định độ cứng và độ cong. Được bọc vải ở công đoạn bọc lưỡi trai, rồi ép cong ở máy uốn vành.',
+    defects: ['loukeng', 'hudu', 'meijiao'] },
+  visor_under: { vi: 'Mặt dưới lưỡi trai', zh: '眉里', py: 'méilǐ', en: 'Undervisor', src: 'xuong',
+    alt: [],
+    desc: 'Lớp vải mặt dưới lưỡi trai, nhiều mã dùng màu khác mặt trên. Đây là điểm kiểm cuối cùng, số 15.',
+    defects: ['secha', 'wuzi', 'xianju', 'xiantou'] },
+  sweatband: { vi: 'Đai mồ hôi', zh: '汗带', py: 'hàndài', en: 'Sweatband', src: 'xuong',
+    alt: [['công đoạn may đai', '上汗带', 'shàng hàndài']],
+    desc: 'Dải vải vòng bên trong mép dưới, chạm trán người đội. May cùng công đoạn với tra lưỡi trai. Đây là công đoạn then chốt, được tuần tra ít nhất 2 lần mỗi ngày.',
+    defects: ['hdwl', 'maoyuan', 'qizhou', 'duanxian'] },
+  size_tape: { vi: 'Dây size', zh: '尺寸带', py: 'chǐcùndài', en: 'Size tape', src: 'sop',
+    alt: [],
+    desc: 'Dải băng may một vòng sát mép dưới thân mũ để giữ vòng đầu đúng cỡ. Đai mồ hôi và nhãn được may lên dải này.',
+    defects: ['chicun', 'zhenju', 'xiantou'] },
+  label: { vi: 'Nhãn', zh: '商标', py: 'shāngbiāo', en: 'Label', src: 'xuong',
+    alt: [['tem thương hiệu', '', '']],
+    desc: 'Nhãn may vào vòng dây size, ở mặt trong gần gáy mũ. Ghi size, thành phần, thương hiệu tùy khách.',
+    defects: ['shangbiao', 'chicun'] },
+  back_binding: { vi: 'Viền gáy mũ', zh: '后喇叭', py: 'hòu lǎba', en: 'Back arch binding', src: 'xuong',
+    alt: [['dây viền gáy', '后喇叭压条', 'hòu lǎba yātiáo']],
+    desc: 'Vòng cung khoét ở phía sau. Mép được bọc dây viền bằng cữ loa tự gấp mép. Vòng cung phải giữ dáng, hai bên đối xứng.',
+    defects: ['laba', 'yatiao', 'dxb'] },
+  strap: { vi: 'Dây điều chỉnh phía sau', zh: '后调节带', py: 'hòu tiáojiédài', en: 'Back strap', src: 'sop',
+    alt: [['', '调节带', 'tiáojiédài']],
+    desc: 'Hai dây ở gáy mũ để chỉnh vòng đầu. Khi đo vòng đầu, chỉnh dây về mức cố định 9.5 trước, vì dây chật hay rộng thì số đo sẽ sai.',
+    defects: ['zhibiao', 'zhenju', 'kouju'] },
+  buckle: { vi: 'Khóa sau', zh: '后扣', py: 'hòukòu', en: 'Back closure', src: 'sop',
+    alt: [['', '扣具', 'kòujù']],
+    desc: 'Khóa kim loại hoặc nhựa trên dây sau. Lấy từ kho phụ liệu riêng, lắp ở bàn cạnh máy đóng nút đỉnh.',
+    defects: ['kouju'] }
+};
+
+const PHASES = [
+  { id: 'than', vi: 'May thân mũ', zh: '帽身', py: 'màoshēn' },
+  { id: 'visor', vi: 'Làm lưỡi trai', zh: '帽檐', py: 'màoyán' },
+  { id: 'ghep', vi: 'Ráp và hoàn thiện', zh: '组合', py: 'zǔhé' },
+  { id: 'form', vi: 'Định hình', zh: '整烫', py: 'zhěngtàng' },
+  { id: 'qc', vi: 'Kiểm', zh: '检验', py: 'jiǎnyàn' }
+];
+
+const STEPS = [
+  { ph: 'than', zh: '绣花・印花・热转印', py: 'xiùhuā · yìnhuā · rè zhuǎnyìn', vi: 'Thêu, in, ép nhiệt logo', en: 'Embroidery, printing, heat transfer',
+    spec: 'Làm trên mảnh rời trước khi ráp. Ép nhiệt: lót tấm silicon, cài nhiệt độ và thời gian, ép thử OK mới chạy hàng.', parts: ['front'] },
+  { ph: 'than', zh: '绣洞', py: 'xiùdòng', vi: 'Thêu lỗ thoáng', en: 'Eyelet embroidery',
+    spec: 'Vải thường [1700 vòng/phút], vải mỏng [1200 vòng/phút]. Vải mỏng, đàn hồi, lưới phải lót giấy; vải nhạt lót trắng, vải tối lót đen.', parts: ['eyelets', 'front', 'side', 'back'] },
+  { ph: 'than', zh: '合片', py: 'hépiàn', vi: 'Ráp mảnh', en: 'Panel joining',
+    spec: 'Mặt phải úp mặt phải, đường may [6 mm], lại mũi đầu và cuối [10 mm] trên cùng một đường.', parts: ['crown_seam', 'side', 'back'] },
+  { ph: 'than', zh: '前合片', py: 'qián hépiàn', vi: 'Ráp thân trước', en: 'Front panel joining',
+    spec: 'Hai miếng trước ráp với nhau, [12 mũi/25,4 mm] theo thẻ tiếng Trung. Có dựng cứng thì đường giữa trước không rẽ.', parts: ['front', 'buckram', 'crown_seam'] },
+  { ph: 'than', zh: '后双针', py: 'hòu shuāngzhēn', vi: 'May 2 kim thân sau', en: 'Rear double-needle stitching',
+    spec: '[10 mũi/25,4 mm]. Đường ráp rẽ đều [5:5] hai bên, nằm giữa cữ loa.', parts: ['topstitch_back', 'back'] },
+  { ph: 'than', zh: '后喇叭', py: 'hòu lǎba', vi: 'Bọc viền gáy mũ', en: 'Back arch binding',
+    spec: 'Dây viền cắt rộng [20 mm], cữ loa gấp mép [6 mm]. Vòng cung không biến dạng, hai bên đối xứng.', parts: ['back_binding', 'back'] },
+  { ph: 'than', zh: '拷克', py: 'kǎokè', vi: 'Vắt sổ', en: 'Overlocking',
+    spec: 'Vắt sổ mép vải thừa ở mặt trong. Mũ 6 mảnh [8 mũi/25,4 mm]; chỉ thừa giữa các chiếc tối đa [5 mm].', parts: ['crown_seam', 'seam_tape'] },
+  { ph: 'than', zh: '帽双针', py: 'mào shuāngzhēn', vi: 'May 2 kim đè đường ráp', en: 'Crown double-needle topstitch',
+    spec: '[10 mũi/25,4 mm], may kèm dây viền che mép ở mặt trong. Dây viền may xong cắt bằng mép.', parts: ['topstitch', 'seam_tape'] },
+  { ph: 'than', zh: '包边', py: 'bāobiān', vi: 'Viền mép (mã có viền)', en: 'Binding',
+    spec: '[9 mũi/25,4 mm]. Mọi dải viền trên mũ không được có mối nối.', parts: ['seam_tape'] },
+  { ph: 'visor', zh: '束眉', py: 'shùméi', vi: 'Bọc lưỡi trai', en: 'Visor wrapping',
+    spec: 'Đặt tấm lên mặt trái vải, gấp vải bọc tấm, may theo mép trong của tấm. [7 mũi/25,4 mm]; không may lên tấm, không lộ rãnh.', parts: ['visor_top', 'visor_board', 'visor_under'] },
+  { ph: 'visor', zh: '修眉', py: 'xiūméi', vi: 'Xén vải thừa lưỡi trai', en: 'Visor trimming',
+    spec: 'Bọc xong thường thừa vải ở mép trong. Máy xén cắt bỏ phần thừa, chừa đường may [5–10 mm] tùy khách, hai góc dài bằng nhau.', parts: ['visor_top', 'visor_under'] },
+  { ph: 'visor', zh: '绕线', py: 'ràoxiàn', vi: 'Diễu lưỡi trai', en: 'Visor stitching',
+    spec: '[10 mũi/25,4 mm]. Từ [4 đường] trở lên dùng máy tự động, dưới 4 đường may tay. May xong đường 1 mới chỉnh cữ đường 2.', parts: ['visor_stitch'] },
+  { ph: 'ghep', zh: '尺寸带・车标', py: 'chǐcùndài · chē biāo', vi: 'May dây size và nhãn', en: 'Size tape and label',
+    spec: 'Dây size cách mép dưới [4 mm], [6 mũi/25,4 mm]. Mũ 6 mảnh may từ bên trái gáy mũ; nhãn may vào vòng dây size.', parts: ['size_tape', 'label'] },
+  { ph: 'ghep', zh: '上汗带・上帽檐', py: 'shàng hàndài · shàng màoyán', vi: 'May đai mồ hôi, tra lưỡi trai', en: 'Sweatband and visor attaching',
+    spec: 'Công đoạn then chốt (关键工序 guānjiàn gōngxù). [9 mũi/25,4 mm]; tâm lưỡi trai thẳng đường giữa trước; đầu đai chừa [20 mm] gấp tam giác.', parts: ['sweatband', 'visor_top', 'visor_under', 'visor_board'] },
+  { ph: 'ghep', zh: '排扣', py: 'páikòu', vi: 'May dây điều chỉnh', en: 'Back strap sewing',
+    spec: 'Dây may vào [15 mm], [8 mũi/25,4 mm], lại mũi [3,5 lần]. Nhãn dệt nhỏ đúng chiều, nằm giữa dây.', parts: ['strap'] },
+  { ph: 'ghep', zh: '打顶扣・装后扣', py: 'dǎ dǐngkòu · zhuāng hòukòu', vi: 'Đóng nút đỉnh, lắp khóa sau', en: 'Top button and closure',
+    spec: 'Nút và khóa lấy từ kho phụ liệu riêng. Áp suất [6–9]; căn tâm đỉnh theo tia hồng ngoại; không kéo thân quá chặt kẻo đỉnh nhọn.', parts: ['button', 'buckle'] },
+  { ph: 'ghep', zh: '修线', py: 'xiūxiàn', vi: 'Cắt chỉ thừa', en: 'Thread trimming',
+    spec: 'Mặt trái lên, lưỡi trai hướng vào người, cắt từ bên trái gáy mũ sang phải, cả chỗ nhãn. Lật mặt phải cắt tiếp, cắt sạch hai góc gốc lưỡi trai.', parts: ['crown_seam', 'topstitch', 'visor_stitch', 'label'] },
+  { ph: 'form', zh: '弯眉整烫', py: 'wānméi zhěngtàng', vi: 'Ép uốn vành', en: 'Visor curving and pressing',
+    spec: 'Máy có [3 vùng nhiệt]: ép nóng, cong trái, cong phải. Đặt lưỡi trai vào khuôn cho hai bên cao đều.', parts: ['visor_board', 'visor_top', 'visor_under'] },
+  { ph: 'form', zh: '蒸汽定型', py: 'zhēngqì dìngxíng', vi: 'Ủi hơi định form trên đầu nhôm', en: 'Steam shaping',
+    spec: 'Ủi [90–130 °C] rồi thổi gió lạnh. Vạch hồng ngoại dọc căn đường giữa trước và giữa sau.', parts: ['front', 'side', 'back', 'buckram'] },
+  { ph: 'qc', zh: '成品全检', py: 'chéngpǐn quánjiǎn', vi: 'QC kiểm cuối 100%', en: 'Final 100% inspection',
+    spec: '[2 người] mỗi chuyền, kiểm sau khi định hình, đi theo 15 điểm ở thẻ Kiểm 15 điểm.', parts: [] }
+];
+
+// Góc nhìn: az (độ, 0 = mặt trước, 90 = bên trái người đội), el (độ, âm = nhìn từ dưới lên)
+const POINTS = [
+  { zh: '尺寸', py: 'chǐcùn', vi: 'Kích thước', parts: ['size_tape', 'strap'], az: 30, el: -50,
+    find: 'Chỉnh dây sau về mức 9.5, đo viền trong (vòng đầu) trước rồi viền ngoài; chiều cao mũ; chiều dài lưỡi trai. Lỗi: sai size, vượt dung sai, tem size không khớp size thật.' },
+  { zh: '眉面', py: 'méimiàn', vi: 'Vành mũ', parts: ['visor_top', 'visor_stitch'], az: 12, el: 34,
+    find: 'Lưỡi trai cong không đều; hai góc vành lệch; đường diễu không đều, lệch khoảng cách; lộ rãnh; bẩn; bóng vải do ủi.' },
+  { zh: '前片', py: 'qiánpiàn', vi: 'Miếng trước', parts: ['front'], az: 0, el: 12,
+    find: 'Logo lệch tâm, lệch cao thấp; thêu nhăn, xù lông, lộ nền; in mờ, tràn keo, răng cưa; mảnh trước sập, lõm; dựng phồng, bong keo.' },
+  { zh: '右中片', py: 'yòu zhōngpiàn', vi: 'Miếng giữa phải', parts: ['side_r'], az: -90, el: 10,
+    find: 'Đường 2 kim to nhỏ, nhăn; nhảy mũi; nổi chỉ; lỗ thoáng lệch, không thủng; khác màu với mảnh bên cạnh; bẩn, lỗ vải.' },
+  { zh: '后片', py: 'hòupiàn', vi: 'Miếng sau', parts: ['back'], az: 180, el: 14,
+    find: 'Như điểm 4, thêm: mảnh sau bị phồng, không tròn đều.' },
+  { zh: '后喇叭', py: 'hòu lǎba', vi: 'Gáy mũ', parts: ['back_binding'], az: 180, el: 4,
+    find: 'Vòng khoét sau lệch, không đối xứng; dây viền bung, nhăn, hở.' },
+  { zh: '左中片', py: 'zuǒ zhōngpiàn', vi: 'Miếng giữa trái', parts: ['side_l'], az: 90, el: 10,
+    find: 'Như điểm 4. So hai bên trái phải có cao bằng nhau không.' },
+  { zh: '顶扣', py: 'dǐngkòu', vi: 'Đỉnh mũ', parts: ['button'], az: 20, el: 66,
+    find: 'Nút lỏng, lệch, rơi; đỉnh nhọn hoặc sập; các đường ráp không gặp nhau ở một điểm.' },
+  { zh: '外汗带', py: 'wài hàndài', vi: 'Đai mồ hôi bên ngoài', parts: ['sweatband'], az: 25, el: -10,
+    find: 'Đai mồ hôi lộ ra ngoài; mép mũ kênh lên, không phẳng.' },
+  { zh: '拉汗带', py: 'lā hàndài', vi: 'Kéo đai mồ hôi', parts: ['sweatband'], az: 25, el: -55,
+    find: 'Đường may đai lệch, không đều, đứt chỉ; đai nhăn; đầu đai gấp, cắt sai.' },
+  { zh: '翻汗带', py: 'fān hàndài', vi: 'Lật đai mồ hôi', parts: ['size_tape'], az: 40, el: -60,
+    find: 'Đường may dây size, chỉ thừa bên trong, mũi may thưa hoặc dày sai chuẩn.' },
+  { zh: '商标', py: 'shāngbiāo', vi: 'Tem thương hiệu', parts: ['label'], az: 20, el: -58,
+    find: 'Thiếu tem, sai tem, sai size, tem ngược, may lệch, tem nhăn do ủi.' },
+  { zh: '帽身里', py: 'màoshēn lǐ', vi: 'Bên trong thân', parts: ['seam_tape', 'buckram'], az: 180, el: -58,
+    find: 'Dây viền che đường ráp bung, nhăn; vắt sổ hở; đầu chỉ; bẩn; dị vật; kim gãy.' },
+  { zh: '扣具', py: 'kòujù', vi: 'Khóa', parts: ['buckle', 'strap'], az: 200, el: 2,
+    find: 'Khóa, then cài lỏng, sai loại; cạnh sắc, gỉ; dây điều chỉnh may lệch, nhãn nhỏ ngược chiều.' },
+  { zh: '眉里', py: 'méilǐ', vi: 'Mặt dưới vành', parts: ['visor_under'], az: 10, el: -34,
+    find: 'Sai màu mặt dưới; bẩn; đường diễu không đều.' }
+];
+
+// Tên từng mảnh trái/phải (theo người đội)
+const SIDE = {
+  front_l: ['Miếng trước trái', '左前片', 'zuǒ qiánpiàn', 'Left front panel'],
+  front_r: ['Miếng trước phải', '右前片', 'yòu qiánpiàn', 'Right front panel'],
+  side_l: ['Miếng giữa trái', '左中片', 'zuǒ zhōngpiàn', 'Left side panel'],
+  side_r: ['Miếng giữa phải', '右中片', 'yòu zhōngpiàn', 'Right side panel'],
+  back_l: ['Miếng sau trái', '左后片', 'zuǒ hòupiàn', 'Left rear panel'],
+  back_r: ['Miếng sau phải', '右后片', 'yòu hòupiàn', 'Right rear panel']
+};
+const KEY_REGS = {
+  front: ['front_l', 'front_r'], side: ['side_l', 'side_r'], back: ['back_l', 'back_r'],
+  eyelets: ['eyelet_0', 'eyelet_1', 'eyelet_2', 'eyelet_3', 'eyelet_4', 'eyelet_5']
+};
+function regsOf(key) { return KEY_REGS[key] || [key]; }
+function infoKeyOf(reg) { if (SIDE[reg]) return reg.split('_')[0]; if (reg.startsWith('eyelet_')) return 'eyelets'; return reg; }
+
+/* =================== GIAO DIỆN BẢNG =================== */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const specHtml = s => esc(s).replace(/\[([^\]]+)\]/g, '<span class="num">$1</span>');
+const SRC_NAME = { xuong: 'Xưởng', sop: 'SOP', nganh: 'Ngành' };
+const zhpy = (zh, py, cls) => zh ? `<span class="zh"${cls ? ` style="${cls}"` : ''}>${esc(zh)}</span> <span class="py">${esc(py)}</span>` : '';
+
+const stepsOfPart = key => STEPS.map((s, i) => ({ s, i })).filter(o => o.s.parts.includes(key));
+const pointsOfPart = key => POINTS.map((p, i) => ({ p, i })).filter(o => o.p.parts.some(r => infoKeyOf(r) === key));
+
+const paneParts = document.getElementById('pane-parts');
+const paneSteps = document.getElementById('pane-steps');
+const panePoints = document.getElementById('pane-points');
+
+function renderPartList() {
+  paneParts.innerHTML = `<p class="desc">Bấm vào một bộ phận trên mô hình hoặc trong danh sách. Bộ phận đó tách ra khỏi mũ, kèm tên tiếng Việt, tiếng Trung có pinyin, tiếng Anh, các công đoạn may và lỗi hay gặp.</p>` +
+    GROUPS.map(g => `<div class="grp"><h3 class="sec">${esc(g.vi)}<span class="zh">${esc(g.zh)}</span> <span class="py">${esc(g.py)}</span></h3><ul class="plist">` +
+      g.parts.map(k => { const d = INFO[k]; return `<li><button type="button" data-part="${k}"><span><span class="v">${esc(d.vi)}</span><br><span class="e">${esc(d.en)}</span></span><span class="z"><span class="zh">${esc(d.zh)}</span><span class="py">${esc(d.py)}</span></span></button></li>`; }).join('') +
+      `</ul></div>`).join('');
+}
+
+function defHtml(k) {
+  const d = DEF[k];
+  return `<li class="def"><span class="v">${esc(d[0])}</span><span class="src ${d[4]}" title="Nguồn tên gọi">${SRC_NAME[d[4]]}</span><span class="z">${zhpy(d[1], d[2])}</span><span class="e">${esc(d[3])}</span></li>`;
+}
+
+function renderPartDetail(key, reg) {
+  const d = INFO[key];
+  const sideName = reg && SIDE[reg];
+  const steps = stepsOfPart(key);
+  const pts = pointsOfPart(key);
+  const alt = d.alt.filter(a => a[1] || a[0]).map(a => `${a[0] ? esc(a[0]) + (a[1] ? ': ' : '') : ''}${zhpy(a[1], a[2])}`).join(' · ');
+  const others = sideName ? KEY_REGS[key].filter(r => r !== reg) : [];
+  paneParts.innerHTML = `
+    <button type="button" class="backlink" data-back="1">← Tất cả bộ phận</button>
+    <div class="names">
+      <div class="eyebrow">${esc(GROUPS.find(g => g.parts.includes(key)).vi)} · nguồn tên: ${SRC_NAME[d.src]}</div>
+      <h2>${esc(sideName ? sideName[0] : d.vi)}</h2>
+      <div class="zhline"><span class="zh">${esc(sideName ? sideName[1] : d.zh)}</span><span class="py">${esc(sideName ? sideName[2] : d.py)}</span></div>
+      <div class="en">${esc(sideName ? sideName[3] : d.en)}</div>
+      ${sideName ? `<div class="alt">Thuộc nhóm ${esc(d.vi)} ${zhpy(d.zh, d.py)}</div>` : ''}
+      ${alt ? `<div class="alt">Còn gọi: ${alt}</div>` : ''}
+    </div>
+    <p class="desc">${esc(d.desc)}</p>
+    ${others.length ? `<div class="chips">${others.map(r => `<button type="button" class="chip" data-reg="${r}">${esc(SIDE[r][0])}<span class="zh">${esc(SIDE[r][1])}</span></button>`).join('')}<button type="button" class="chip" data-part="${key}">Cả hai bên</button></div>` : ''}
+    ${steps.length ? `<div><h3 class="sec">Công đoạn tạo ra bộ phận này</h3><ol class="steplist">${steps.map(o => stepRow(o.s, o.i)).join('')}</ol></div>` : ''}
+    ${pts.length ? `<div><h3 class="sec">QC kiểm ở điểm</h3><div class="chips">${pts.map(o => `<button type="button" class="chip" data-point="${o.i}">${o.i + 1} · ${esc(o.p.vi)}<span class="zh">${esc(o.p.zh)}</span></button>`).join('')}</div></div>` : ''}
+    <div><h3 class="sec">Lỗi hay gặp</h3><ul class="deflist">${d.defects.map(defHtml).join('')}</ul></div>`;
+  paneParts.scrollTop = 0;
+}
+
+function stepRow(s, i) {
+  return `<li class="st"><span class="no">${i + 1}</span><div><div class="t1"><span class="zh">${esc(s.zh)}</span><span class="py">${esc(s.py)}</span></div><div class="t2">${esc(s.vi)} <span class="en">· ${esc(s.en)}</span></div><div class="spec">${specHtml(s.spec)}</div></div></li>`;
+}
+
+function renderSteps(active) {
+  paneSteps.innerHTML = `<p class="desc">Thứ tự may theo thẻ SOP tại máy. Bấm một công đoạn để xem những bộ phận nó tạo ra trên mô hình.</p>` +
+    PHASES.map(ph => `<div class="phase"><h3 class="sec">${esc(ph.vi)}<span class="zh">${esc(ph.zh)}</span> <span class="py">${esc(ph.py)}</span></h3><ol class="slist">` +
+      STEPS.map((s, i) => s.ph !== ph.id ? '' : `<li><button type="button" class="stepbtn" data-step="${i}" aria-pressed="${active === i}"><div class="st"><span class="no">${i + 1}</span><div><div class="t1"><span class="zh">${esc(s.zh)}</span><span class="py">${esc(s.py)}</span></div><div class="t2">${esc(s.vi)} <span class="en">· ${esc(s.en)}</span></div>${active === i ? `<div class="spec">${specHtml(s.spec)}</div>` : ''}${s.parts.length ? `<div class="chips">${s.parts.map(k => `<span class="chip">${esc(INFO[k].vi)}</span>`).join('')}</div>` : ''}</div></div></button></li>`).join('') +
+      `</ol></div>`).join('');
+}
+
+let pointIdx = 0;
+function renderPoints() {
+  const p = POINTS[pointIdx];
+  const partChips = p.parts.map(r => { const k = infoKeyOf(r); const nm = SIDE[r] ? SIDE[r][0] : INFO[k].vi; return `<button type="button" class="chip" data-reg="${r}">${esc(nm)}</button>`; }).join('');
+  panePoints.innerHTML = `
+    <p class="desc">Thứ tự theo bảng “Quy trình kiểm tra mũ 6 miếng” treo tại bàn QC. Bên ngoài trước (1–8), bên trong sau (9–15). Bấm Tiếp để mô hình xoay tới đúng chỗ cần nhìn.</p>
+    <div class="pointnav"><button type="button" id="ptPrev">← Trước</button><span class="count">${String(pointIdx + 1).padStart(2, '0')} / 15</span><button type="button" id="ptNext">Tiếp →</button></div>
+    <div class="pointcard">
+      <div class="big"><span class="n">${pointIdx + 1}</span><span class="zh">${esc(p.zh)}</span><span class="py">${esc(p.py)}</span></div>
+      <div class="v">${esc(p.vi)}</div>
+      <p>${esc(p.find)}</p>
+      <div class="chips">${partChips}</div>
+    </div>
+    <ol class="pointlist">${POINTS.map((q, i) => `<li><button type="button" data-point="${i}" aria-current="${i === pointIdx}"><span class="no">${i + 1}</span><span>${esc(q.vi)}</span><span><span class="zh">${esc(q.zh)}</span> <span class="py">${esc(q.py)}</span></span></button></li>`).join('')}</ol>
+    <p class="note">Kiểm xong 15 điểm thì đối chiếu với thông tin hiện trên iPad và kiểm form tổng thể so với mẫu.</p>`;
+}
+
+const tabs = { parts: [document.getElementById('tab-parts'), paneParts], steps: [document.getElementById('tab-steps'), paneSteps], points: [document.getElementById('tab-points'), panePoints] };
+function showTab(name) {
+  Object.entries(tabs).forEach(([n, [b, p]]) => { b.setAttribute('aria-selected', n === name); p.hidden = n !== name; });
+  try { localStorage.setItem('mu6-tab', name); } catch (e) {}
+}
+Object.entries(tabs).forEach(([n, [b]]) => b.addEventListener('click', () => {
+  showTab(n);
+  if (n === 'points') { renderPoints(); goPoint(pointIdx); }
+}));
+
+/* =================== MÔ HÌNH 3D =================== */
+const stage = document.getElementById('stage');
+let scene3d = null;
+if (!window.THREE || !THREE.OrbitControls) {
+  const f = document.createElement('div'); f.className = 'loadfail';
+  f.textContent = 'Không tải được thư viện 3D. Kiểm tra kết nối mạng rồi tải lại trang.';
+  stage.appendChild(f);
+} else {
+  scene3d = build3D();
+}
+
+function build3D() {
+  const V3 = THREE.Vector3, PI = Math.PI, TAU = PI * 2;
+  const RX = 9.3, RZ = 10.4, H = 11.0;            // nửa rộng, nửa dài, chiều cao thân (cm)
+  const ARCH_HALF = 0.42, ARCH_H = 5.4;            // khoét gáy: nửa góc, chiều cao (cm)
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  stage.insertBefore(renderer.domElement, stage.firstChild);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 500);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.target.set(0, 3.0, 1.8);
+  controls.enableDamping = true; controls.dampingFactor = 0.08;
+  controls.minDistance = 20; controls.maxDistance = 200; controls.enablePan = false;
+  controls.autoRotate = !reduced; controls.autoRotateSpeed = 1.4;
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x7d8594, 0.75));
+  const key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(14, 24, 18); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xdfe8ff, 0.45); rim.position.set(-18, 8, -16); scene.add(rim);
+  const under = new THREE.DirectionalLight(0xffffff, 0.35); under.position.set(0, -20, 6); scene.add(under);
+
+  // Vân vải chéo (twill) vẽ bằng canvas
+  const twill = (() => {
+    const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d');
+    g.fillStyle = '#808080'; g.fillRect(0, 0, 64, 64);
+    for (let i = -64; i < 128; i += 4) { g.strokeStyle = (i / 4) % 2 ? '#9a9a9a' : '#6a6a6a'; g.lineWidth = 2; g.beginPath(); g.moveTo(i, 0); g.lineTo(i + 64, 64); g.stroke(); }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+  })();
+
+  const COL = { cap: 0x1f2b47, under: 0x3c5244, board: 0xd8dad5, thread: 0xeee2c8, sweat: 0x4b515b, tape: 0xebe7de, seamtape: 0x8a99b0, buck: 0xf1efe8, metal: 0xb08d57, eyelet: 0x2c3a5e, hole: 0x0b0e14, label: 0xffffff };
+
+  const lin = hex => new THREE.Color(hex).convertSRGBToLinear();
+  // ---------- Đăng ký bộ phận ----------
+  const REG = {};
+  const pickables = [];
+  function reg(id, parent, exAll, exSel, anchor, view) {
+    const mover = new THREE.Group(); (parent || scene).add(mover);
+    REG[id] = { id, mover, mats: [], exAll: exAll || new V3(), exSel: exSel || new V3(), anchor: anchor || new V3(), view };
+    return REG[id];
+  }
+  function fabric(r, color, extra) {
+    const m = new THREE.MeshStandardMaterial(Object.assign({ color: lin(color), roughness: 0.93, metalness: 0, side: THREE.DoubleSide, bumpMap: twill, bumpScale: 0.035 }, extra || {}));
+    r.mats.push(m); return m;
+  }
+  function plain(r, opts) { if (typeof opts.color === 'number') opts = Object.assign({}, opts, { color: lin(opts.color) }); const m = new THREE.MeshStandardMaterial(Object.assign({ roughness: 0.6, side: THREE.DoubleSide }, opts)); r.mats.push(m); return m; }
+  function addMesh(r, geo, mat, pick) {
+    const m = new THREE.Mesh(geo, mat); m.userData.part = r.id; r.mover.add(m);
+    if (pick !== false) pickables.push(m); return m;
+  }
+  const pickMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false });
+  function addPick(r, geo) { const m = new THREE.Mesh(geo, pickMat); m.userData.part = r.id; r.mover.add(m); pickables.push(m); return m; }
+
+  // ---------- Hình học ----------
+  const angDiff = (a, b) => { let d = (a - b) % TAU; if (d > PI) d -= TAU; if (d < -PI) d += TAU; return d; };
+  function archY(th) {
+    const d = angDiff(th, PI); if (Math.abs(d) >= ARCH_HALF) return 0;
+    const t = Math.abs(d) / ARCH_HALF; return ARCH_H * Math.sqrt(Math.max(0, 1 - Math.pow(t, 2.6)));
+  }
+  function vMax(th) { const a = archY(th); return a > 0 ? Math.acos(Math.min(1, a / H)) / (PI / 2) : 1; }
+  function crown(th, v, k) {
+    k = k || 1; const s = v * PI / 2; const r = Math.pow(Math.sin(s), 0.78);
+    return new V3(RX * r * Math.sin(th) * k, H * Math.cos(s) * k, RZ * r * Math.cos(th) * k);
+  }
+  function crownNormal(th, v) {
+    v = Math.max(v, 0.03); const e = 1e-3;
+    const dth = crown(th + e, v).sub(crown(th - e, v)); const dv = crown(th, v + e).sub(crown(th, v - e));
+    return new V3().crossVectors(dv, dth).normalize();
+  }
+  function crownTangent(th, v) { const e = 1e-3; return crown(th + e, Math.max(v, 0.03)).sub(crown(th - e, Math.max(v, 0.03))).normalize(); }
+  function surface(fn, nu, nv, uvfn) {
+    const pos = [], uv = [], idx = [];
+    for (let j = 0; j <= nv; j++) for (let i = 0; i <= nu; i++) {
+      const u = i / nu, v = j / nv, p = fn(u, v); pos.push(p.x, p.y, p.z);
+      const t = uvfn ? uvfn(u, v) : [u, v]; uv.push(t[0], t[1]);
+    }
+    for (let j = 0; j < nv; j++) for (let i = 0; i < nu; i++) {
+      const a = j * (nu + 1) + i, b = a + 1, c = a + nu + 1, d = c + 1; idx.push(a, c, b, b, c, d);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+    g.setIndex(idx); g.computeVertexNormals(); return g;
+  }
+  function ribbon(left, right) {
+    const pos = [], idx = [], uv = [];
+    left.forEach((p, i) => { pos.push(p.x, p.y, p.z, right[i].x, right[i].y, right[i].z); uv.push(i / 6, 0, i / 6, 1); });
+    for (let i = 0; i < left.length - 1; i++) { const a = i * 2; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals(); return g;
+  }
+  const tube = (pts, r, seg) => new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), seg || pts.length * 2, r, 7, false);
+  function stitchMesh(paths, mat, pitch) {
+    pitch = pitch || 0.3; const items = [];
+    paths.forEach(pts => {
+      const segL = []; let total = 0;
+      for (let i = 0; i < pts.length - 1; i++) { const l = pts[i].distanceTo(pts[i + 1]); segL.push(l); total += l; }
+      let si = 0, acc = 0;
+      for (let s = pitch / 2; s < total; s += pitch) {
+        while (si < segL.length - 1 && acc + segL[si] < s) { acc += segL[si]; si++; }
+        const t = (s - acc) / segL[si]; const p = pts[si].clone().lerp(pts[si + 1], t);
+        items.push({ p, dir: pts[si + 1].clone().sub(pts[si]).normalize() });
+      }
+    });
+    const m = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.036, 0.036, pitch * 0.74, 5), mat, items.length);
+    const d = new THREE.Object3D(), Y = new V3(0, 1, 0);
+    items.forEach((it, i) => { d.position.copy(it.p); d.quaternion.setFromUnitVectors(Y, it.dir); d.updateMatrix(); m.setMatrixAt(i, d.matrix); });
+    m.instanceMatrix.needsUpdate = true; m.frustumCulled = false; return m;
+  }
+
+  // ---------- 6 mảnh thân ----------
+  const PANELS = [
+    ['front_r', -PI / 3, 0, -22], ['front_l', 0, PI / 3, 22],
+    ['side_l', PI / 3, 2 * PI / 3, 90], ['back_l', 2 * PI / 3, PI, 150],
+    ['back_r', PI, 4 * PI / 3, -150], ['side_r', 4 * PI / 3, 5 * PI / 3, -90]
+  ];
+  PANELS.forEach(([id, a, b, az], idx) => {
+    const mid = (a + b) / 2, n = crownNormal(mid, 0.55);
+    const r = reg(id, null, n.clone().multiplyScalar(3.0).add(new V3(0, 0.4, 0)), n.clone().multiplyScalar(3.2).add(new V3(0, 0.6, 0)), crown(mid, 0.5).add(n.clone().multiplyScalar(0.2)), { az, el: 34 });
+    const g = surface((u, v) => { const th = a + (b - a) * u; return crown(th, v * vMax(th)); }, 36, 40,
+      (u, v) => { const th = a + (b - a) * u; return [u * (b - a) * 10 / 1.4, v * vMax(th) * 15 / 1.4]; });
+    addMesh(r, g, fabric(r, COL.cap));
+    // Lỗ thoáng gắn theo mảnh
+    const ev = 0.42, ep = crown(mid, ev), en = crownNormal(mid, ev);
+    const er = reg('eyelet_' + idx, r.mover, new V3(), en.clone().multiplyScalar(1.8), ep.clone().add(en.clone().multiplyScalar(0.2)), { az, el: 24 });
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.085, 8, 28), plain(er, { color: COL.eyelet, roughness: 0.85 }));
+    ring.position.copy(ep).addScaledVector(en, 0.035); ring.quaternion.setFromUnitVectors(new V3(0, 0, 1), en);
+    ring.userData.part = er.id; er.mover.add(ring); pickables.push(ring);
+    const hole = new THREE.Mesh(new THREE.CircleGeometry(0.24, 24), plain(er, { color: COL.hole, roughness: 1 }));
+    hole.position.copy(ep).addScaledVector(en, 0.015); hole.quaternion.copy(ring.quaternion); er.mover.add(hole);
+    const pk = addPick(er, new THREE.SphereGeometry(0.5, 10, 8)); pk.position.copy(ep);
+  });
+
+  // ---------- Đường ráp, đường 2 kim, dây viền trong ----------
+  const SEAMS = [0, PI / 3, 2 * PI / 3, PI, 4 * PI / 3, 5 * PI / 3];
+  const rSeam = reg('crown_seam', null, new V3(), new V3(), crown(PI / 3, 0.45).multiplyScalar(1.01), { az: 60, el: 30 });
+  const rTop = reg('topstitch', null, new V3(), new V3(), crown(-PI / 3, 0.62).multiplyScalar(1.01), { az: -55, el: 22 });
+  const rTopB = reg('topstitch_back', null, new V3(), new V3(), crown(PI, 0.3).multiplyScalar(1.01), { az: 180, el: 34 });
+  const rTape = reg('seam_tape', null, new V3(), new V3(), crown(PI / 3, 0.6, 0.97), { az: 200, el: -58 });
+  const seamMat = fabric(rSeam, 0x18223a);
+  const threadMat = plain(rTop, { color: COL.thread, roughness: 0.7 });
+  const threadMatB = plain(rTopB, { color: COL.thread, roughness: 0.7 });
+  const tapeMat = fabric(rTape, COL.seamtape, { bumpScale: 0.02 });
+  const topPaths = [], topBPaths = [];
+  SEAMS.forEach(th => {
+    const vEnd = vMax(th);
+    const ridge = [], pick = [];
+    for (let i = 0; i <= 60; i++) { const v = 0.02 + (vEnd - 0.02) * i / 60; ridge.push(crown(th, v, 1.003)); pick.push(crown(th, v, 1.006)); }
+    addMesh(rSeam, tube(ridge, 0.075, 120), seamMat, false);
+    addPick(rSeam, tube(pick, 0.16, 60));
+    [-1, 1].forEach(side => {
+      const pts = [];
+      for (let i = 0; i <= 80; i++) {
+        const v = 0.08 + (vEnd - 0.1) * i / 80; const p = crown(th, v);
+        pts.push(p.addScaledVector(crownTangent(th, v), side * 0.36).addScaledVector(crownNormal(th, v), 0.035));
+      }
+      (Math.abs(angDiff(th, PI)) < 0.01 ? topBPaths : topPaths).push(pts);
+    });
+    // pick dải 2 kim
+    const target = Math.abs(angDiff(th, PI)) < 0.01 ? rTopB : rTop;
+    [-1, 1].forEach(side => {
+      const pts = []; for (let i = 0; i <= 30; i++) { const v = 0.08 + (vEnd - 0.1) * i / 30; pts.push(crown(th, v).addScaledVector(crownTangent(th, v), side * 0.38).addScaledVector(crownNormal(th, v), 0.06)); }
+      addPick(target, tube(pts, 0.24, 40));
+    });
+    // dây viền mặt trong
+    const L = [], R = [];
+    for (let i = 0; i <= 50; i++) {
+      const v = 0.05 + (vEnd - 0.06) * i / 50; const c = crown(th, v, 0.972); const t = crownTangent(th, v);
+      const w = 0.75 * Math.min(1, v / 0.15);
+      L.push(c.clone().addScaledVector(t, -w)); R.push(c.clone().addScaledVector(t, w));
+    }
+    addMesh(rTape, ribbon(L, R), tapeMat);
+  });
+  rTop.mover.add(stitchMesh(topPaths, threadMat)); rTopB.mover.add(stitchMesh(topBPaths, threadMatB));
+
+  // ---------- Dựng cứng thân trước ----------
+  const rBuck = reg('buckram', null, new V3(0, 0.3, 1.8), new V3(0, 0.6, 3.4), crown(0.25, 0.6, 0.98), { az: 180, el: -50 });
+  addMesh(rBuck, surface((u, v) => { const th = -PI / 3 + (2 * PI / 3) * u; return crown(th, 0.16 + 0.84 * v, 0.982); }, 40, 24, (u, v) => [u * 14, v * 8]),
+    plain(rBuck, { color: COL.buck, roughness: 0.95 }));
+
+  // ---------- Nút đỉnh ----------
+  const rBtn = reg('button', null, new V3(0, 3.0, 0), new V3(0, 3.4, 0), new V3(0, H + 0.6, 0), { az: 20, el: 62 });
+  const btnMat = fabric(rBtn, COL.cap);
+  const b1 = addMesh(rBtn, new THREE.CylinderGeometry(0.95, 1.05, 0.4, 40), btnMat); b1.position.y = H + 0.08;
+  const b2 = addMesh(rBtn, new THREE.SphereGeometry(0.95, 32, 12, 0, TAU, 0, PI / 2), btnMat); b2.scale.y = 0.38; b2.position.y = H + 0.28;
+
+  // ---------- Lưỡi trai ----------
+  const VTH = 1.36;
+  const rVisor = reg('visor', null, new V3(0, -0.5, 5.8), new V3(), new V3());
+  function visorBase(a, b) {
+    const th = a * VTH;
+    const pin = new V3(RX * Math.sin(th), 0.25, RZ * Math.cos(th));
+    const n = new V3(Math.sin(th) / RX, 0, Math.cos(th) / RZ).normalize();
+    const dir = n.lerp(new V3(0, 0, 1), 0.45).normalize();
+    const L = 7.4 * Math.pow(Math.max(0, 1 - Math.pow(Math.abs(a), 2.4)), 0.55);
+    const p = pin.addScaledVector(dir, L * b);
+    p.y -= (b * L / 7.4) * (0.85 + 0.017 * p.x * p.x);
+    return p;
+  }
+  const vLen = a => 7.4 * Math.pow(Math.max(0, 1 - Math.pow(Math.abs(a), 2.4)), 0.55);
+  const visorUV = (u, v) => { const p = visorBase(u * 2 - 1, v); return [p.x / 1.4, p.z / 1.4]; };
+  const rVTop = reg('visor_top', rVisor.mover, new V3(0, 1.8, 0), new V3(0, 2.4, 0.6), visorBase(0.15, 0.55).add(new V3(0, 0.25, 0)), { az: 12, el: 34 });
+  const rVStitch = reg('visor_stitch', rVisor.mover, new V3(0, 2.9, 0), new V3(0, 3.2, 0.6), visorBase(-0.35, 0.85).add(new V3(0, 0.25, 0)), { az: -15, el: 40 });
+  const rVBoard = reg('visor_board', rVisor.mover, new V3(), new V3(0, 0, 1.6), visorBase(0.4, 0.5), { az: 25, el: 24 });
+  const rVUnder = reg('visor_under', rVisor.mover, new V3(0, -1.8, 0), new V3(0, -2.4, 0.6), visorBase(0.1, 0.55).add(new V3(0, -0.25, 0)), { az: 10, el: -34 });
+  const TOPY = 0.16;
+  const vTopMat = fabric(rVTop, COL.cap);
+  addMesh(rVTop, surface((u, v) => visorBase(u * 2 - 1, v).add(new V3(0, TOPY, 0)), 72, 16, visorUV), vTopMat);
+  { // mép lưỡi trai: dải nối mặt trên và mặt dưới
+    const A = [], B = [];
+    for (let i = 0; i <= 120; i++) { const a = -1 + 2 * i / 120; const p = visorBase(a, 1); A.push(p.clone().add(new V3(0, TOPY, 0))); B.push(p.clone().add(new V3(0, -TOPY, 0))); }
+    addMesh(rVTop, ribbon(A, B), vTopMat);
+  }
+  addMesh(rVUnder, surface((u, v) => visorBase(u * 2 - 1, v).add(new V3(0, -TOPY, 0)), 72, 16, visorUV), fabric(rVUnder, COL.under));
+  addMesh(rVBoard, surface((u, v) => visorBase((u * 2 - 1) * 0.985, v * 0.975), 72, 12), plain(rVBoard, { color: COL.board, roughness: 0.55 }));
+  {
+    const rows = [], picks = [];
+    [0.5, 1.0, 1.5, 2.0, 2.5, 3.0].forEach(d => {
+      const pts = [];
+      for (let i = 0; i <= 260; i++) {
+        const a = -1 + 2 * i / 260, L = vLen(a); if (L < d + 0.7) continue;
+        pts.push(visorBase(a, 1 - d / L).add(new V3(0, TOPY + 0.03, 0)));
+      }
+      if (pts.length > 2) { rows.push(pts); picks.push(pts.filter((_, i) => i % 6 === 0)); }
+    });
+    rVStitch.mover.add(stitchMesh(rows, plain(rVStitch, { color: COL.thread, roughness: 0.7 }), 0.28));
+    picks.forEach(p => addPick(rVStitch, tube(p, 0.17, 60)));
+  }
+
+  // ---------- Dây size, đai mồ hôi, nhãn ----------
+  const TH0 = PI + ARCH_HALF + 0.02, TH1 = 3 * PI - ARCH_HALF - 0.02;
+  const ell = (th, k, y) => new V3(RX * Math.sin(th) * k, y, RZ * Math.cos(th) * k);
+  function band(y0, y1, k0, k1, n) {
+    return surface((u, v) => ell(TH0 + (TH1 - TH0) * u, k0 + (k1 - k0) * v, y0 + (y1 - y0) * v), n || 120, 4, (u, v) => [u * 40, v * 2]);
+  }
+  const rSize = reg('size_tape', null, new V3(0, -3.4, 0), new V3(0, -3.8, 0), ell(0.6, 0.97, 0.5), { az: 40, el: -58 });
+  addMesh(rSize, band(0.0, 1.0, 0.986, 0.982), fabric(rSize, COL.tape, { bumpScale: 0.015 }));
+  const rSweat = reg('sweatband', null, new V3(0, -6.2, 0), new V3(0, -5.0, 0), ell(-0.4, 0.93, 1.8), { az: 25, el: -55 });
+  addMesh(rSweat, band(0.15, 3.1, 0.962, 0.93), fabric(rSweat, COL.sweat, { bumpScale: 0.05 }));
+  const rLabel = reg('label', null, new V3(0, -4.6, 0), new V3(0, -4.2, 0), new V3(), { az: 20, el: -58 });
+  {
+    const c = document.createElement('canvas'); c.width = 256; c.height = 150; const g = c.getContext('2d');
+    g.fillStyle = '#fbfaf6'; g.fillRect(0, 0, 256, 150); g.fillStyle = '#1f2b47';
+    g.font = '700 46px "Barlow Condensed", Arial Narrow, sans-serif'; g.textAlign = 'center'; g.fillText('M / L', 128, 62);
+    g.font = '500 24px "IBM Plex Mono", monospace'; g.fillText('58 cm', 128, 98); g.font = '500 17px "IBM Plex Mono", monospace'; g.fillText('100% COTTON', 128, 130);
+    const tex = new THREE.CanvasTexture(c); tex.encoding = THREE.sRGBEncoding;
+    const th = TH0 + 0.32, pos = ell(th, 0.948, 1.6);
+    const m = addMesh(rLabel, new THREE.PlaneGeometry(2.3, 1.35), plain(rLabel, { map: tex, roughness: 0.8 }));
+    m.position.copy(pos); m.lookAt(new V3(0, 1.6, 0)); rLabel.anchor.copy(pos);
+  }
+
+  // ---------- Gáy mũ, dây điều chỉnh, khóa ----------
+  const rBind = reg('back_binding', null, new V3(0, 0.6, -3.8), new V3(0, 0.5, -3.4), crown(PI, vMax(PI)).multiplyScalar(1.02), { az: 180, el: 6 });
+  {
+    const pts = [];
+    for (let i = 0; i <= 90; i++) { const t = -PI / 2 + PI * i / 90; const th = PI + ARCH_HALF * Math.sin(t) * 1.002; pts.push(crown(th, vMax(th) * 0.997, 1.006)); }
+    addMesh(rBind, tube(pts, 0.22, 180), fabric(rBind, COL.cap));
+  }
+  const rStrap = reg('strap', null, new V3(0, -0.8, -6.2), new V3(0, -0.6, -4.6), ell(PI + 0.1, 1.05, 1.2), { az: 180, el: 4 });
+  const strapMat = fabric(rStrap, COL.cap);
+  function strap(thA, thB, k, y0, y1) {
+    const L = [], R = []; for (let i = 0; i <= 30; i++) { const th = thA + (thB - thA) * i / 30; L.push(ell(th, k, y0)); R.push(ell(th, k, y1)); }
+    return ribbon(L, R);
+  }
+  addMesh(rStrap, strap(PI + ARCH_HALF + 0.12, PI - 0.14, 1.035, 0.35, 2.15), strapMat);
+  addMesh(rStrap, strap(PI - ARCH_HALF - 0.12, PI + 0.2, 1.07, 0.5, 2.0), strapMat);
+  const rBuckle = reg('buckle', null, new V3(0, -0.8, -7.7), new V3(0, -0.6, -6.2), ell(PI + 0.22, 1.1, 1.25), { az: 200, el: 4 });
+  {
+    const metal = plain(rBuckle, { color: COL.metal, metalness: 0.75, roughness: 0.32 });
+    const grp = new THREE.Group(); const pos = ell(PI + 0.22, 1.095, 1.25);
+    [[0.12, 2.3, 0, 0], [0.62, 0.12, 0.25, 1.09], [0.62, 0.12, 0.25, -1.09], [0.12, 2.3, 0.5, 0]].forEach(([w, h, x, y]) => {
+      const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.16), metal); m.position.set(x - 0.25, y, 0); m.userData.part = 'buckle'; grp.add(m); pickables.push(m);
+    });
+    grp.position.copy(pos); grp.lookAt(new V3(0, pos.y, 0)); rBuckle.mover.add(grp);
+    const pk = addPick(rBuckle, new THREE.BoxGeometry(1.0, 2.6, 0.6)); pk.position.copy(pos); pk.lookAt(new V3(0, pos.y, 0));
+  }
+
+  // Vòng bàn xoay dưới mũ
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x8892a3, transparent: true, opacity: 0.35 });
+  const turn = new THREE.Mesh(new THREE.RingGeometry(13.2, 13.35, 96), ringMat); turn.rotation.x = -PI / 2; turn.position.y = -2.6; scene.add(turn);
+
+  // ---------- Trạng thái ----------
+  const state = { explode: false, sel: new Set(), hover: null, fly: null };
+  let accent = new THREE.Color('#c9781c');
+  function readAccent() { const v = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(); if (v) accent = new THREE.Color(v).convertSRGBToLinear(); }
+  readAccent(); matchMedia('(prefers-color-scheme: dark)').addEventListener('change', readAccent);
+  new MutationObserver(readAccent).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  function applyLook() {
+    const anySel = state.sel.size > 0;
+    Object.values(REG).forEach(r => {
+      const on = state.sel.has(r.id), hov = state.hover === r.id;
+      r.mats.forEach(m => {
+        m.emissive.copy(accent); m.emissiveIntensity = on ? 0.3 : hov ? 0.16 : 0;
+        const dim = anySel && !on;
+        const op = dim ? (state.explode ? 0.32 : 0.12) : 1;
+        m.transparent = op < 1; m.opacity = op; m.depthWrite = op === 1; m.needsUpdate = true;
+      });
+    });
+  }
+
+  // ---------- Camera ----------
+  function setSize() {
+    const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  function camFrom(az, el, dist) {
+    const a = az * PI / 180, e = el * PI / 180;
+    dist *= Math.min(1.7, Math.max(1, 1.2 / camera.aspect));
+    return controls.target.clone().add(new V3(Math.sin(a) * Math.cos(e), Math.sin(e), Math.cos(a) * Math.cos(e)).multiplyScalar(dist));
+  }
+  function flyTo(az, el, dist) {
+    const to = camFrom(az, el, dist || 56);
+    if (reduced) { camera.position.copy(to); controls.update(); return; }
+    state.fly = { from: camera.position.clone().sub(controls.target), to: to.clone().sub(controls.target), t: 0 };
+  }
+  setSize(); camera.position.copy(camFrom(28, 18, 62)); new ResizeObserver(setSize).observe(stage);
+
+  // ---------- Chọn ----------
+  const callout = document.getElementById('callout'), calloutCard = document.getElementById('calloutCard');
+  function setSelection(regs, opts) {
+    state.sel = new Set(regs); opts = opts || {};
+    if (regs.length) {
+      const first = regs[0]; const k = infoKeyOf(first); const d = INFO[k];
+      const nm = (SIDE[first] && regs.length === 1) ? SIDE[first] : [d.vi, d.zh, d.py, d.en];
+      calloutCard.innerHTML = `<b>${esc(nm[0])}</b><span class="zh">${esc(nm[1])}</span> <span class="py">${esc(nm[2])}</span><span class="en">${esc(nm[3])}</span>`;
+      callout.hidden = false; state.calloutReg = first;
+      if (opts.fly && REG[first] && REG[first].view) { const v = opts.view || REG[first].view; flyTo(v.az, v.el); }
+      controls.autoRotate = false; spinBtn.setAttribute('aria-pressed', 'false');
+    } else { callout.hidden = true; state.calloutReg = null; }
+    applyLook();
+  }
+  const spinBtn = document.getElementById('btnSpin');
+
+  // ---------- Bấm, rê chuột ----------
+  const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+  const tip = document.getElementById('tip');
+  function hit(ev) {
+    const rect = renderer.domElement.getBoundingClientRect();
+    ndc.set(((ev.clientX - rect.left) / rect.width) * 2 - 1, -((ev.clientY - rect.top) / rect.height) * 2 + 1);
+    ray.setFromCamera(ndc, camera); const h = ray.intersectObjects(pickables, false);
+    return h.length ? h[0].object.userData.part : null;
+  }
+  let down = null;
+  renderer.domElement.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY }; });
+  renderer.domElement.addEventListener('pointerup', e => {
+    if (!down) return; const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y); down = null;
+    if (moved > 6) return;
+    const id = hit(e);
+    if (!id) { api.clear(); return; }
+    api.pickReg(id, false);
+  });
+  renderer.domElement.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse' || e.buttons) { tip.hidden = true; return; }
+    const id = hit(e);
+    if (id !== state.hover) { state.hover = id; applyLook(); }
+    renderer.domElement.classList.toggle('is-hover', !!id);
+    if (id) {
+      const k = infoKeyOf(id); const nm = SIDE[id] ? SIDE[id] : [INFO[k].vi, INFO[k].zh];
+      tip.textContent = `${nm[0]} · ${nm[1]}`; tip.hidden = false;
+      const rect = stage.getBoundingClientRect(); tip.style.left = (e.clientX - rect.left) + 'px'; tip.style.top = (e.clientY - rect.top) + 'px';
+    } else tip.hidden = true;
+  });
+  renderer.domElement.addEventListener('pointerleave', () => { tip.hidden = true; if (state.hover) { state.hover = null; applyLook(); } });
+  controls.addEventListener('start', () => { if (controls.autoRotate) { controls.autoRotate = false; spinBtn.setAttribute('aria-pressed', 'false'); } state.fly = null; });
+
+  // ---------- Vòng lặp ----------
+  const clock = new THREE.Clock(); const tmp = new V3();
+  function loop() {
+    const raw = clock.getDelta(), dt = Math.min(raw, 0.05);
+    const k = reduced ? 1 : 1 - Math.pow(0.0015, dt);
+    Object.values(REG).forEach(r => {
+      const target = state.explode ? r.exAll : (state.sel.has(r.id) ? r.exSel : tmp.set(0, 0, 0));
+      r.mover.position.lerp(target, k);
+    });
+    if (state.fly) {
+      state.fly.t = Math.min(1, state.fly.t + raw / 0.9); const t = state.fly.t, e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      const a = new THREE.Spherical().setFromVector3(state.fly.from), b = new THREE.Spherical().setFromVector3(state.fly.to);
+      let dth = b.theta - a.theta; if (dth > PI) dth -= TAU; if (dth < -PI) dth += TAU;
+      const s = new THREE.Spherical(a.radius + (b.radius - a.radius) * e, a.phi + (b.phi - a.phi) * e, a.theta + dth * e);
+      camera.position.copy(controls.target).add(new V3().setFromSpherical(s));
+      if (t >= 1) state.fly = null;
+    }
+    controls.update();
+    renderer.render(scene, camera);
+    if (state.calloutReg && REG[state.calloutReg]) {
+      const r = REG[state.calloutReg]; r.mover.updateMatrixWorld();
+      const p = r.anchor.clone(); r.mover.localToWorld(p); p.project(camera);
+      const w = stage.clientWidth, h = stage.clientHeight;
+      const x = (p.x * 0.5 + 0.5) * w, y = (-p.y * 0.5 + 0.5) * h;
+      callout.style.transform = `translate(${x - 6}px, ${y - 6}px)`;
+      callout.classList.toggle('flip', x > w - 260);
+      callout.style.visibility = p.z < 1 ? 'visible' : 'hidden';
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  const api = {
+    REG,
+    pickReg(id, fly) {
+      showTab('parts'); setSelection(id.startsWith('eyelet_') ? regsOf('eyelets') : [id], { fly });
+      renderPartDetail(infoKeyOf(id), id.startsWith('eyelet_') ? null : id);
+    },
+    pickKey(key, fly) { showTab('parts'); setSelection(regsOf(key), { fly }); renderPartDetail(key, null); },
+    select(regs, view) { setSelection(regs, { fly: !!view, view }); },
+    clear() { setSelection([]); renderPartList(); },
+    explode(on) { state.explode = on; applyLook(); },
+    flyTo,
+    spin(on) { controls.autoRotate = on && !reduced; }
+  };
+  return api;
+}
+
+/* =================== NỐI GIAO DIỆN =================== */
+renderPartList(); renderSteps(-1); renderPoints();
+let stepActive = -1;
+function goPoint(i) {
+  pointIdx = (i + POINTS.length) % POINTS.length; renderPoints();
+  const p = POINTS[pointIdx];
+  if (scene3d) scene3d.select(p.parts.flatMap(regsOf), { az: p.az, el: p.el });
+}
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-part],[data-reg],[data-step],[data-point],[data-back],#ptPrev,#ptNext');
+  if (!t) return;
+  if (t.id === 'ptPrev') return goPoint(pointIdx - 1);
+  if (t.id === 'ptNext') return goPoint(pointIdx + 1);
+  if (t.dataset.back) { scene3d ? scene3d.clear() : renderPartList(); return; }
+  if (t.dataset.part) { scene3d ? scene3d.pickKey(t.dataset.part, true) : renderPartDetail(t.dataset.part); return; }
+  if (t.dataset.reg) { scene3d ? scene3d.pickReg(t.dataset.reg, true) : renderPartDetail(infoKeyOf(t.dataset.reg), t.dataset.reg); return; }
+  if (t.dataset.point) { showTab('points'); goPoint(+t.dataset.point); return; }
+  if (t.dataset.step) {
+    const i = +t.dataset.step; stepActive = stepActive === i ? -1 : i; renderSteps(stepActive);
+    const s = STEPS[i];
+    if (!scene3d) return;
+    if (stepActive === -1) { scene3d.select([]); return; }
+    if (!s.parts.length) { showTab('points'); goPoint(0); return; }
+    const regs = s.parts.flatMap(regsOf); const v = scene3d.REG[regs[0]] && scene3d.REG[regs[0]].view;
+    scene3d.select(regs, v);
+  }
+});
+const btnExplode = document.getElementById('btnExplode');
+btnExplode.addEventListener('click', () => {
+  const on = btnExplode.getAttribute('aria-pressed') !== 'true'; btnExplode.setAttribute('aria-pressed', on);
+  if (scene3d) { scene3d.explode(on); if (on) scene3d.flyTo(35, 16, 74); }
+});
+document.getElementById('btnReset').addEventListener('click', () => {
+  btnExplode.setAttribute('aria-pressed', 'false'); stepActive = -1; renderSteps(-1);
+  if (scene3d) { scene3d.explode(false); scene3d.clear(); scene3d.flyTo(28, 18, 62); }
+});
+document.getElementById('btnSpin').addEventListener('click', e => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true'; e.currentTarget.setAttribute('aria-pressed', on);
+  if (scene3d) scene3d.spin(on);
+});
+document.getElementById('btnInside').addEventListener('click', () => scene3d && scene3d.flyTo(15, -58, 54));
+document.getElementById('btnFront').addEventListener('click', () => scene3d && scene3d.flyTo(0, 12, 58));
+try { const t = localStorage.getItem('mu6-tab'); if (t && tabs[t] && t !== 'points') showTab(t); } catch (e) {}
+</script>
+
+</body></html>

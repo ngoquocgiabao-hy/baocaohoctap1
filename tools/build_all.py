@@ -9,6 +9,8 @@ from data import T, STAGES, QA, SRC
 import overlay  # bổ sung 03/11: khâu mẫu, kiểm vải đầy đủ, ảnh và câu hỏi
 import vocab_more  # bổ sung 03/11 chiều: từ quy trình và chất lượng
 from vocab_more import EX, ADDED, ADDED_ON
+import review_0411  # soát lại 04/11 với Drive
+from en import STAGE_EN, TERM_EN
 from vocab_extra import CATS, CAT, WRONG, HOT, PENDING
 from pyhelper import to_py
 
@@ -29,6 +31,13 @@ for s in STAGES:
         y["pics"] = list(x.get("pics", []))
         steps.append(y)
     st["steps"] = steps
+    en = STAGE_EN[s["id"]]
+    assert len(en[3]) == len(steps), (s["id"], len(en[3]), len(steps))
+    st["en"], st["whaten"], st["whoen"] = en[0], en[1], en[2]
+    for y, (te, de, ce) in zip(steps, en[3]):
+        assert len(ce) == len(y["chk"]), (s["id"], y["t"], len(ce), len(y["chk"]))
+        y["ten"], y["den"] = te, de
+        for c, e in zip(y["chk"], ce): c.append(e)
     stages.append(st)
 
 # ---------- từ vựng ----------
@@ -57,7 +66,7 @@ for s in stages:
             terms.append({"zh": w, "py": py, "vn": vn, "note": note, "src": SRC[src], "ok": ok,
                           "st": s["id"], "cat": CAT.get(w, "congdoan"), "hot": w in HOT,
                           "ex": ({"zh": EX[w][0], "py": to_py(EX[w][0]), "vn": EX[w][1]} if w in EX else find_example(w, s["id"])),
-                          "add": ADDED_ON if w in ADDED else ""})
+                          "add": ADDED_ON if w in ADDED else "", "en": TERM_EN[w]})
 missing_cat = [t["zh"] for t in terms if t["zh"] not in CAT]
 assert not missing_cat, missing_cat
 
@@ -100,8 +109,46 @@ for (x, y, a), s in zip(pos, stages):
     parts.append(g + '</g>')
 SVG = f'<svg viewBox="0 0 {W} {W}" class="radial" role="img" aria-label="Sơ đồ các khâu từ mẫu, kho đến xuất hàng">{"".join(parts)}</svg>'
 
+# ---------- hướng dẫn nhà máy (tab Xưởng 3D) ----------
+from guide import GUIDE, ROUTE
+from html import escape as E
+TI = {t["zh"]: t for t in terms}
+def chip_html(w):
+    t = TI[w]
+    return (f'<button class="chip{"" if t["ok"] else " q"}" data-zh="{E(w)}"><span class="hz" lang="zh">{E(w)}</span>'
+            f'<span class="py">{E(t["py"])}</span><span class="vn">{E(t["vn"])}</span><span class="en ent">{E(t["en"])}</span></button>')
+def guide_html():
+    out = []
+    for gid, vn, zh, en, paras, kz, ke, words in GUIDE:
+        for w in words: assert w in TI, ("guide", w)
+        out.append(f'<details{" open" if gid == "cach-dung" else ""}><summary>{E(vn)}<span class="zh2" lang="zh">{E(zh)}</span> <span class="ent">· {E(en)}</span></summary>')
+        out.append('<ul class="vnt">' + "".join(f"<li>{E(p)}</li>" for p in paras) + "</ul>")
+        for z, e in zip(kz, ke):
+            out.append(f'<div class="key"><div class="zht"><div lang="zh">{E(z)}</div><div class="p">{E(to_py(z))}</div></div><div class="ent">{E(e)}</div></div>')
+        if words: out.append('<div class="chips">' + "".join(chip_html(w) for w in words) + "</div>")
+        out.append("</details>")
+        if gid == "pbb":
+            rows = "".join(f'<tr><td><b>{s["n"]}. {E(s["vn"])}</b><br><span lang="zh">{E(s["zh"])}</span> <span class="py">{E(s["py"])}</span><br><i class="ent">{E(s["en"])}</i></td>'
+                           f'<td><span class="vnt">{E(s["who"])}</span><div class="zht"><span lang="zh">{E(s["whoz"])}</span><div class="p">{E(s["whopy"])}</div></div><div class="ent">{E(s["whoen"])}</div></td></tr>' for s in stages)
+            out.append(f'<details><summary>Ai kiểm ở khâu nào<span class="zh2" lang="zh">谁在哪个环节检查</span> <span class="ent">· Who checks where</span></summary><table><tr><th>Khâu</th><th>Ai kiểm</th></tr>{rows}</table></details>')
+        if gid == "chup-anh":
+            SI = {s["id"]: s for s in stages}
+            cnt = lambda s: sum(len(x["pics"]) for x in s["steps"])
+            route = "".join(f'<span>{SI[i]["n"]}. {E(SI[i]["vn"])} · {cnt(SI[i])} ảnh</span>' for i in ROUTE)
+            total = sum(cnt(s) for s in stages)
+            out.append(f'<details><summary>Đi chụp ảnh: thứ tự gợi ý<span class="zh2" lang="zh">拍照路线</span> <span class="ent">· Photo route</span></summary>'
+                       f'<p class="vnt">Tổng {total} ảnh cần chụp. Đi theo đường trong xưởng: kho → kiểm vải → cắt → thêu → in → giặt (tầng 1) → may (tầng 2) → ép vành → QC → đóng gói, dò kim; phòng mẫu chụp khi được phép.</p>'
+                       f'<div class="route">{route}</div><p class="vnt">Ở mỗi khâu: bấm vào khâu trong xưởng 3D, kéo xuống ô “Ảnh thực tế”, bấm “Thêm ảnh”. Ảnh đã có được đánh dấu ✅ ở tab Cần hỏi → Ảnh cần chụp.</p></details>')
+    return "".join(out)
+GUIDE_HTML = guide_html()
+
+safe = lambda o: json.dumps(o, ensure_ascii=False).replace("</", "<\\/")
+CAP = open(os.path.join(HERE, "cap_6manh.html"), encoding="utf-8").read()
 TEMPLATE = open(os.path.join(HERE, "template_all.html"), encoding="utf-8").read()
-html = TEMPLATE.replace("__SVG__", SVG).replace("__DATA__", json.dumps(DATA, ensure_ascii=False)).replace("__N__", str(len(terms)))
+html = (TEMPLATE.replace("__WORLDCSS__", open(os.path.join(HERE, "world3d.css"), encoding="utf-8").read())
+        .replace("__WORLDJS__", open(os.path.join(HERE, "world3d.js"), encoding="utf-8").read())
+        .replace("__GUIDE__", GUIDE_HTML).replace("__SVG__", SVG)
+        .replace("__CAPHTML__", safe(CAP)).replace("__DATA__", safe(DATA)).replace("__N__", str(len(terms))))
 
 import os
 os.makedirs(os.path.join(OUT_DIR, "data"), exist_ok=True)

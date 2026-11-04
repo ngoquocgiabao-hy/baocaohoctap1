@@ -3,7 +3,7 @@
 | File | Nội dung |
 |---|---|
 | `ban-do-chat-luong-noi-bo.html` | Báo cáo ngày đầu ở phòng Chất lượng: hành trình chiếc mũ, hành trình mẫu, các mô hình kiểm hàng |
-| `weili-hoc-tap.html` | Học quy trình và từ xưởng: sơ đồ 11 khâu từ mẫu đến xuất hàng, 267 từ (Việt, 中文, pinyin, cách kiểm tra, ảnh cần chụp, câu cần hỏi), từ vựng, thẻ học lặp lại ngắt quãng, trắc nghiệm, cách học |
+| `weili-hoc-tap.html` | Học quy trình và từ xưởng: **xưởng 3D mô phỏng** (bấm khâu nào ra chi tiết Việt / 中文 pinyin / English, cận cảnh có tên từng máy, tham quan có lời giới thiệu, mũ 6 mảnh 3D, hướng dẫn nhà máy), sơ đồ 11 khâu từ mẫu đến xuất hàng, 267 từ (Việt, 中文, pinyin, cách kiểm tra, ảnh cần chụp, câu cần hỏi), từ vựng, thẻ học lặp lại ngắt quãng, trắc nghiệm, cách học |
 | `data/weili-data.json` | Toàn bộ dữ liệu của trang trên, dùng lại cho game nhà máy |
 | `img/` | Ảnh thực tế cho từng bước (tạo khi có ảnh đầu tiên) |
 | `tools/` | Mã dựng lại trang và file dữ liệu |
@@ -14,11 +14,11 @@
 
 Mở file trực tiếp bằng trình duyệt thì tiến độ chỉ lưu trên trình duyệt đó (đổi máy thì vào **Thẻ học → Sao lưu tiến độ** để chép mã sang). Mở trong khung xem trước của ứng dụng thì không lưu được; nút trạng thái ở đầu trang báo rõ: “☁ Đã lưu”, “Lưu trên máy này” hoặc “⚠ Không lưu”.
 
-Các tab: **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin; **Sổ ghi nhớ từ** chia Chưa học / Đang học / Đã học / Đã thuộc, có lọc “Mới thêm”, chép sổ từ để gửi trợ lý AI) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cần hỏi** (gom mọi câu hỏi và ảnh cần chụp, đánh dấu đã hỏi, chép câu trả lời) · **Cách học**.
+Các tab: **Xưởng 3D** (cần mạng để tải three.js r128 từ cdnjs/jsdelivr; bố trí theo thứ tự quy trình, chưa phải mặt bằng thật) · **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin; **Sổ ghi nhớ từ** chia Chưa học / Đang học / Đã học / Đã thuộc, có lọc “Mới thêm”, chép sổ từ để gửi trợ lý AI) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cần hỏi** (gom mọi câu hỏi và ảnh cần chụp, đánh dấu đã hỏi, chép câu trả lời) · **Cách học**.
 
 Mỗi bước trong sơ đồ có hai ô:
 
-- **Ảnh thực tế**: bấm “Thêm ảnh” để gắn ảnh chụp ở xưởng. Ảnh này chỉ lưu trong trình duyệt đang dùng. Muốn ảnh hiện cho mọi người thì đặt file vào `img/` theo tên ghi dưới ô ảnh: `img/<id khâu>-<số bước>-<số ảnh>.jpg`, ví dụ `img/kiemvai-1-1.jpg`.
+- **Ảnh thực tế**: bấm “Thêm ảnh” để gắn ảnh chụp ở xưởng. Mở bản trên Claude thì ảnh lưu vào tài khoản (assets + db `photos/<id ô ảnh>`) và hiện trên bảng ảnh của khâu trong xưởng 3D; mở bằng file thì ảnh chỉ lưu trong trình duyệt đang dùng. Muốn ảnh hiện cho mọi người thì đặt file vào `img/` theo tên ghi dưới ô ảnh: `img/<id khâu>-<số bước>-<số ảnh>.jpg`, ví dụ `img/kiemvai-1-1.jpg`.
 - **Cần hỏi**: câu hỏi Việt, 中文, pinyin (bấm 🔊 để nghe). Hỏi xong tích “Đã hỏi”, ghi câu trả lời; vào tab Cần hỏi bấm “Chép tất cả câu trả lời” rồi dán cho trợ lý AI để cập nhật quy trình.
 
 Repo này công khai: không đưa ảnh SOP có dấu 机密, ảnh có mặt công nhân, hay số liệu khách chưa cho phép vào `img/`.
@@ -31,19 +31,20 @@ Chỉ dùng từ đã đối chiếu, theo thứ tự: từ nghe ở xưởng �
 
 ```text
 meta      { title, updated, sources, note }
-stages[]  11 khâu theo thứ tự đi của chiếc mũ, n = 0..10
+stages[]  11 khâu theo thứ tự đi của chiếc mũ, n = 0..10; en / whaten / whoen là tiếng Anh
           (mau, kho, kiemvai, cat, theu, in, giat, may, dinhform, qc, xuat)
           id, n, vn, zh, py, short, color, qb (品保部 có kiểm ở khâu này)
           what / whatz / whatpy   một dòng tóm tắt (Việt / 中文 / pinyin)
           who / whoz / whopy      ai kiểm
           steps[]  t / tz / tpy   tên bước
                    d / dz / dpy   mô tả
-                   chk[]          cách kiểm tra: [Việt, 中文, pinyin]
+                   ten / den      tên bước, mô tả tiếng Anh
+                   chk[]          cách kiểm tra: [Việt, 中文, pinyin, English]
                    w[]            các từ (khóa trong terms)
                    pics[]         ảnh cần chụp (chú thích); file ảnh là img/<id>-<bước>-<ảnh>.jpg
                    qs[]           câu cần hỏi: [Việt, 中文, pinyin]
                    hot            bước sếp vừa nhắc
-terms[]   zh, py, vn, note, src, ok, st (id khâu), cat (loại từ), hot (từ hay nhầm), add (ngày bổ sung, rỗng nếu có từ đầu),
+terms[]   zh, py, vn, note, src, ok, st (id khâu), cat (loại từ), hot (từ hay nhầm), add (ngày bổ sung, rỗng nếu có từ đầu), en (tiếng Anh; từ có trong W6 lấy đúng cột English của W6),
           ex { zh, py, vn }  câu ví dụ lấy từ quy trình (có thể null)
 cats[]    8 loại từ: id, vn, zh
 wrong[]   từ đã dùng sai → đúng: bad, good, py, vn, src
@@ -58,7 +59,7 @@ pip install pypinyin
 python3 tools/build_all.py      # ghi ra weili-hoc-tap.html và data/weili-data.json
 ```
 
-Sửa từ trong `tools/data_terms.py` (thuật ngữ), `tools/data.py` (quy trình, cách kiểm tra), `tools/overlay.py` (khâu 0 Mẫu & PPM, kiểm vải 4 điểm và xếp cấp A/B/C, ảnh cần chụp, câu cần hỏi; chạy sau data.py), `tools/vocab_more.py` (111 từ bổ sung 03/11 từ W6, W2, báo cáo kho; mỗi dòng ghi khâu, bước, loại từ, câu ví dụ), `tools/vocab_extra.py` (loại từ, từ sai → đúng, từ chờ xác nhận); giao diện trong `tools/template_all.html`.
+Sửa từ trong `tools/data_terms.py` (thuật ngữ), `tools/data.py` (quy trình, cách kiểm tra), `tools/overlay.py` (khâu 0 Mẫu & PPM, kiểm vải 4 điểm và xếp cấp A/B/C, ảnh cần chụp, câu cần hỏi; chạy sau data.py), `tools/vocab_more.py` (111 từ bổ sung 03/11 từ W6, W2, báo cáo kho; mỗi dòng ghi khâu, bước, loại từ, câu ví dụ), `tools/vocab_extra.py` (loại từ, từ sai → đúng, từ chờ xác nhận), `tools/review_0411.py` (soát lại 04/11 với Drive: chỗ hai nguồn lệch nhau ghi cả hai và thêm câu hỏi), `tools/en.py` (tiếng Anh cho khâu, bước, cách kiểm, 267 từ), `tools/guide.py` (hướng dẫn nhà máy); giao diện trong `tools/template_all.html`, xưởng 3D trong `tools/world3d.js` và `tools/world3d.css`; mô hình mũ 6 mảnh là `tools/cap_6manh.html` (nhúng vào trang).
 
 Ảnh SOP của xưởng là tài liệu mật nên không đưa vào repo này.
 
