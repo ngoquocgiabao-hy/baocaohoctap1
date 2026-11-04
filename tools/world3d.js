@@ -18,6 +18,7 @@ const W3 = (() => {
   async function open(){
     renderChips();
     if(!cur) renderInfo(null);
+    if(sim) sim.last = performance.now();
     if(started){ if(ok) T.play(); return; }
     started = true; status('Đang tải mô hình 3D…');
     try { if(!window.THREE) await load(LIBS[0]); if(!THREE.OrbitControls) await load(LIBS[1]); }
@@ -25,7 +26,7 @@ const W3 = (() => {
     try { T = build(); ok = true; status(''); T.play(); }
     catch(e){ console.error(e); status('Máy này không hiển thị được 3D. Chi tiết từng khâu vẫn xem ở bên dưới.', true); }
   }
-  function pause(){ if(ok) T.stop(); }
+  function pause(){ if(ok) T.stop(); if(sim && sim.play){ simStep(); sim.play = false; renderSimPeek(); } }
 
   // ---------------- dựng cảnh ----------------
   function build(){
@@ -78,12 +79,15 @@ const W3 = (() => {
 
     // ---- các khâu ----
     const stations = {}, pick = [], hsAll = {};
+    // các bộ phận máy chạy được (mô phỏng sản xuất dùng)
+    const AN = {needles: [], emb: [], drums: [], heat: [], plies: [], formCaps: [], qcMinis: [], mayMinis: [], truck: [], det: [], marks: [], press: null, hpress: null, btn: null, fabTex: null};
+    const mov = (m) => ({m, x0: m.position.x, y0: m.position.y, z0: m.position.z});
     function hs(sid, zh, x, y, z, label){ (hsAll[sid] = hsAll[sid] || []).push({zh, p: new THREE.Vector3(x, y, z), label}); }
-    const mini = (g, hex, x, y, z, s) => { s = s || 1; const crown = add(g, new THREE.SphereGeometry(0.42 * s, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), hex, x, y, z); const brim = add(g, new THREE.CylinderGeometry(0.36 * s, 0.36 * s, 0.05 * s, 14, 1, false, -Math.PI / 2, Math.PI), hex, x, y + 0.02, z + 0.3 * s); brim.scale.set(1, 1, 1.1); add(g, new THREE.SphereGeometry(0.06 * s, 8, 6), '#222', x, y + 0.42 * s, z); return crown; };
+    const mini = (g, hex, x, y, z, s) => { s = s || 1; const q = new THREE.Group(); q.position.set(x, y, z); g.add(q); add(q, new THREE.SphereGeometry(0.42 * s, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), hex, 0, 0, 0); const brim = add(q, new THREE.CylinderGeometry(0.36 * s, 0.36 * s, 0.05 * s, 14, 1, false, -Math.PI / 2, Math.PI), hex, 0, 0.02, 0.3 * s); brim.scale.set(1, 1, 1.1); add(q, new THREE.SphereGeometry(0.06 * s, 8, 6), '#222', 0, 0.42 * s, 0); return q; };
     const head = (g, x, y, z, hex) => { cy(g, 0.08, 0.9, '#888', x, y, z, 8); add(g, new THREE.SphereGeometry(0.45, 16, 12), hex || '#c9ccd1', x, y + 1.25, z); };
     const table = (g, w, d, x, z, hex) => { bx(g, w, 0.12, d, hex || '#b89b74', x, 0.86, z); [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([a, b]) => bx(g, 0.12, 0.86, 0.12, '#6b6f75', x + a * (w / 2 - 0.15), 0, z + b * (d / 2 - 0.15))); };
     const carton = (g, x, y, z, hex) => bx(g, 0.9, 0.7, 0.7, hex || '#c49a63', x, y, z);
-    const sewMachine = (g, x, z) => { table(g, 1.8, 0.9, x, z, '#d8d2c4'); bx(g, 0.9, 0.18, 0.3, '#f1f1ee', x, 0.98, z); bx(g, 0.18, 0.5, 0.3, '#f1f1ee', x + 0.36, 0.98, z); bx(g, 0.75, 0.18, 0.3, '#f1f1ee', x + 0.05, 1.42, z); cy(g, 0.03, 0.25, '#555', x - 0.25, 1.18, z, 6); };
+    const sewMachine = (g, x, z) => { table(g, 1.8, 0.9, x, z, '#d8d2c4'); bx(g, 0.9, 0.18, 0.3, '#f1f1ee', x, 0.98, z); bx(g, 0.18, 0.5, 0.3, '#f1f1ee', x + 0.36, 0.98, z); bx(g, 0.75, 0.18, 0.3, '#f1f1ee', x + 0.05, 1.42, z); AN.needles.push(mov(cy(g, 0.03, 0.25, '#555', x - 0.25, 1.18, z, 6))); };
 
     const BUILD = {
       mau(g){ table(g, 4.2, 1.8, -1.5, -1.5); [-2.9, -1.5, -0.1].forEach((x, i) => { head(g, x, 0.98, -1.5, '#d8dbe0'); mini(g, ['#1d3557', '#e9c46a', '#2a9d8f'][i], x, 2.25, -1.5); });
@@ -100,7 +104,8 @@ const W3 = (() => {
       kiemvai(g){ // máy kiểm vải
         [-1.9, 1.9].forEach(a => bx(g, 0.25, 2.8, 0.25, '#4d5b6a', -1.5 + a, 0, -1.6)); bx(g, 4.2, 0.25, 0.3, '#4d5b6a', -1.5, 2.8, -1.6);
         roll(g, 0.35, 3.6, '#1d3557', -1.5, 0.6, -0.9); roll(g, 0.3, 3.6, '#1d3557', -1.5, 3.05, -1.9);
-        const fab = add(g, new THREE.PlaneGeometry(3.5, 2.6), '#1d3557', -1.5, 1.85, -1.38, {side: THREE.DoubleSide}); fab.rotation.x = -0.35;
+        const fab = new THREE.Mesh(new THREE.PlaneGeometry(3.5, 2.6), new THREE.MeshLambertMaterial({map: weaveTex(), side: THREE.DoubleSide})); fab.position.set(-1.5, 1.85, -1.38); g.add(fab); fab.rotation.x = -0.35; AN.fabTex = fab.material.map;
+        for(let i = 0; i < 8; i++){ const mk = new THREE.Mesh(new THREE.PlaneGeometry(1, 0.07), new THREE.MeshBasicMaterial({color: 0xe03131})); mk.position.set(-1.2 + (i % 4) * 0.75, 0, 0.012); mk.visible = false; fab.add(mk); AN.marks.push(mk); }
         const lb = add(g, new THREE.BoxGeometry(3.7, 2.2, 0.2), '#fffbe6', -1.5, 1.85, -1.62, {emissive: new THREE.Color(0xfff2b3), emissiveIntensity: 0.6}); lb.rotation.x = -0.35;
         // 4 lỗi trên vải: 1, 2, 3, 4 điểm theo chiều dài
         [[0.35, -2.7, 2.6], [0.75, -1.9, 2.15], [1.1, -1.1, 1.7], [1.5, -0.2, 1.3]].forEach(([len, x, y], i) => { const d = add(g, new THREE.PlaneGeometry(len, 0.08), '#e63946', x + len / 2 - 0.2, y, -1.2 + (2.6 - y) * 0.36); d.rotation.x = -0.35; hs('kiemvai', '四分制', x - 0.2, y + 0.15, -1.1 + (2.6 - y) * 0.36, ['≤3 in → 1 điểm', '3–6 in → 2 điểm', '6–9 in → 3 điểm', '>9 in → 4 điểm'][i]); });
@@ -110,48 +115,48 @@ const W3 = (() => {
         bx(g, 3.2, 2.4, 1.0, '#e8f1f2', 3.4, 0, -2.6, {transparent: true, opacity: 0.75}); bx(g, 1.0, 1.0, 0.8, '#6c7a89', 2.5, 0, 1.9); bx(g, 1.1, 1.4, 0.9, '#b0b8c1', 4.0, 0, 1.9);
         signBoard(g, [{t: '检验室', f: '700 74px sans-serif'}, {t: 'Phòng kiểm nghiệm · Lab', f: '500 34px sans-serif', c: '#555'}], 3.4, 3.0, -2.05, 3.0, 1.05);
         hs('kiemvai', '验布机', -3.6, 3.2, -1.6); hs('kiemvai', '灯箱', -1.5, 1.2, -1.2); hs('kiemvai', '码数计数器', 0.75, 3.1, -1.5); hs('kiemvai', '电子秤', 1.6, 0.5, 0.6); hs('kiemvai', '扣分参考样', -4.2, 2.6, -2.5); hs('kiemvai', '验布检查表', -1.0, 1.9, 0.95); hs('kiemvai', '检验室', 3.4, 2.6, -2.5); hs('kiemvai', '黄变测试仪', 2.5, 1.2, 1.9); hs('kiemvai', '烘箱', 4.0, 1.6, 1.9); hs('kiemvai', '色牢度', 3.4, 1.4, -2.0); },
-      cat(g){ table(g, 7.5, 1.7, -0.6, -2.4, '#c9c1ad'); ['#264653', '#2a9d8f', '#264653', '#2a9d8f', '#264653', '#2a9d8f', '#264653'].forEach((c, i) => bx(g, 7.1, 0.05, 1.5, c, -0.6, 0.98 + i * 0.05, -2.4)); roll(g, 0.32, 1.6, '#264653', 3.6, 1.6, -2.4, Math.PI / 2);
+      cat(g){ table(g, 7.5, 1.7, -0.6, -2.4, '#c9c1ad'); ['#264653', '#2a9d8f', '#264653', '#2a9d8f', '#264653', '#2a9d8f', '#264653'].forEach((c, i) => AN.plies.push(bx(g, 7.1, 0.05, 1.5, c, -0.6, 0.98 + i * 0.05, -2.4))); roll(g, 0.32, 1.6, '#264653', 3.6, 1.6, -2.4, Math.PI / 2);
         bx(g, 7.1, 0.02, 1.5, '#b07a43', -0.6, 0.97, -2.4);
         // máy chặt
-        bx(g, 1.8, 0.9, 1.6, '#51606f', -3.6, 0, 1.3); bx(g, 0.3, 1.8, 0.3, '#51606f', -3.6, 0.9, 0.7); bx(g, 1.6, 0.25, 1.4, '#8a99a8', -3.6, 2.0, 1.3); const die = bx(g, 1.0, 0.12, 0.8, '#c0c4c8', -3.6, 0.95, 1.3); die.material = M('#c0c4c8', {emissive: new THREE.Color(0x222222)});
+        bx(g, 1.8, 0.9, 1.6, '#51606f', -3.6, 0, 1.3); bx(g, 0.3, 1.8, 0.3, '#51606f', -3.6, 0.9, 0.7); AN.press = mov(bx(g, 1.6, 0.25, 1.4, '#8a99a8', -3.6, 2.0, 1.3)); const die = bx(g, 1.0, 0.12, 0.8, '#c0c4c8', -3.6, 0.95, 1.3); die.material = M('#c0c4c8', {emissive: new THREE.Color(0x222222)});
         // máy dán
         bx(g, 3.0, 1.1, 1.0, '#3d5a80', 0.4, 0, 1.6); roll(g, 0.25, 1.1, '#e0fbfc', -1.3, 0.9, 1.6, Math.PI / 2); roll(g, 0.25, 1.1, '#264653', 2.1, 0.9, 1.6, Math.PI / 2);
         // bó mảnh cắt
         [[3.3, 0.4], [3.9, 0.4], [3.3, 1.1], [3.9, 1.1]].forEach(([x, z]) => { bx(g, 0.5, 0.35, 0.5, '#2a9d8f', x, 0, z + 1.0); bx(g, 0.52, 0.04, 0.12, '#f1faee', x, 0.2, z + 1.0); }); bx(g, 0.5, 0.6, 0.5, '#6d6875', 4.6, 0, -0.6); cy(g, 0.12, 0.25, '#e9c46a', 4.6, 0.6, -0.6, 10);
         hs('cat', '拉布', -0.6, 1.5, -2.4); hs('cat', '牛皮纸', -3.6, 1.0, -1.7); hs('cat', '刀模', -3.6, 1.3, 1.3); hs('cat', '直线贴合机', 0.4, 1.4, 1.6); hs('cat', '裁片', 3.3, 0.7, 1.4); hs('cat', '绑片', 3.9, 0.7, 2.1); hs('cat', '待装片区', 3.6, 1.2, 1.8); hs('cat', '顶扣包布', 4.6, 1.1, -0.6); },
-      theu(g){ bx(g, 6.4, 1.0, 1.4, '#e5e5e5', 0, 0, -1.8); bx(g, 6.4, 0.4, 0.6, '#4a7c59', 0, 1.6, -2.2); for(let i = 0; i < 6; i++){ const x = -2.6 + i * 1.04; bx(g, 0.5, 0.8, 0.5, '#f0f0f0', x, 1.0, -1.7); for(let k = 0; k < 4; k++) cy(g, 0.07, 0.25, ['#e63946', '#1d3557', '#f4a261', '#2a9d8f'][k], x - 0.2 + k * 0.13, 2.0, -2.25, 8); bx(g, 0.7, 0.02, 0.5, '#264653', x, 1.0, -1.25); }
+      theu(g){ bx(g, 6.4, 1.0, 1.4, '#e5e5e5', 0, 0, -1.8); bx(g, 6.4, 0.4, 0.6, '#4a7c59', 0, 1.6, -2.2); for(let i = 0; i < 6; i++){ const x = -2.6 + i * 1.04; AN.emb.push(mov(bx(g, 0.5, 0.8, 0.5, '#f0f0f0', x, 1.0, -1.7))); for(let k = 0; k < 4; k++) cy(g, 0.07, 0.25, ['#e63946', '#1d3557', '#f4a261', '#2a9d8f'][k], x - 0.2 + k * 0.13, 2.0, -2.25, 8); bx(g, 0.7, 0.02, 0.5, '#264653', x, 1.0, -1.25); }
         sewMachine(g, -2, 1.8); bx(g, 0.5, 0.5, 0.05, '#f1faee', 2.0, 1.4, 1.2); mini(g, '#264653', 2.0, 0.98, 1.8);
         hs('theu', '绣花', -0.5, 2.6, -1.8); hs('theu', '前片', -1.5, 1.2, -1.2); hs('theu', '绣洞', -2, 1.8, 1.8); hs('theu', '首件检验', 2.0, 1.9, 1.3); },
       'in'(g){ table(g, 3.6, 1.6, -1.8, -1.8, '#ced4da'); bx(g, 1.4, 0.06, 1.0, '#495057', -2.2, 1.0, -1.8); bx(g, 1.5, 0.08, 1.1, '#adb5bd', -2.2, 1.35, -1.8, {transparent: true, opacity: 0.6}); bx(g, 0.6, 0.02, 0.5, '#e63946', -0.8, 1.0, -1.8);
-        bx(g, 1.2, 0.9, 1.0, '#343a40', 2.0, 0, -1.4); bx(g, 0.25, 1.2, 0.25, '#343a40', 2.0, 0.9, -1.85); bx(g, 1.0, 0.18, 0.8, '#adb5bd', 2.0, 1.9, -1.35); bx(g, 0.9, 0.05, 0.7, '#f8f9fa', 2.0, 0.92, -1.35);
+        bx(g, 1.2, 0.9, 1.0, '#343a40', 2.0, 0, -1.4); bx(g, 0.25, 1.2, 0.25, '#343a40', 2.0, 0.9, -1.85); AN.hpress = mov(bx(g, 1.0, 0.18, 0.8, '#adb5bd', 2.0, 1.9, -1.35)); bx(g, 0.9, 0.05, 0.7, '#f8f9fa', 2.0, 0.92, -1.35);
         for(let i = 0; i < 4; i++) bx(g, 1.6, 0.04, 0.9, '#dee2e6', 1.6, 0.4 + i * 0.35, 1.8); [0.4, 0.75, 1.1].forEach((y, i) => bx(g, 0.6, 0.02, 0.5, ['#e63946', '#1d3557', '#f4a261'][i], 1.6, y + 0.03, 1.8));
         hs('in', '丝印', -2.2, 1.7, -1.8); hs('in', '转印', 2.0, 2.3, -1.35); hs('in', '印花', 1.6, 1.5, 1.8); },
-      giat(g){ const washer = (x, z, s) => { bx(g, 1.6 * s, 1.7 * s, 1.5 * s, '#d9dde1', x, 0, z); const d = add(g, new THREE.CylinderGeometry(0.5 * s, 0.5 * s, 0.1, 20), '#7a8a99', x, 0.9 * s, z + 0.76 * s); d.rotation.x = Math.PI / 2; };
+      giat(g){ const washer = (x, z, s) => { bx(g, 1.6 * s, 1.7 * s, 1.5 * s, '#d9dde1', x, 0, z); const d = add(g, new THREE.CylinderGeometry(0.5 * s, 0.5 * s, 0.1, 20), '#7a8a99', x, 0.9 * s, z + 0.76 * s); d.rotation.x = Math.PI / 2; const pd = new THREE.Mesh(new THREE.BoxGeometry(0.78 * s, 0.04, 0.12 * s), M('#dee2e6')); pd.position.y = 0.06; d.add(pd); AN.drums.push(d); };
         [-3.2, -1.1, 1.0].forEach(x => washer(x, -2.2, 1.25)); [-3.6, -2.2, -0.8, 0.6, 2.0].forEach(x => washer(x, 1.6, 0.75)); mini(g, '#7f5539', 3.6, 0.0, 1.6, 1.2); mini(g, '#606c38', 3.6, 0.0, 0.6, 1.2);
         signBoard(g, [{t: 'Tầng 1 · 一楼', f: '700 64px sans-serif'}, {t: 'khoảng 8 máy: 3 lớn, 5 nhỏ', f: '500 34px sans-serif', c: '#555'}], 3.6, 2.6, -2.9, 2.8, 1.0);
         hs('giat', '洗水', -1.1, 2.6, -2.2); hs('giat', '水洗帽', 3.6, 0.9, 1.1); },
       may(g){ // sàn tầng 2 nên y đã cao
         for(let r = 0; r < 2; r++) for(let i = 0; i < 5; i++) sewMachine(g, -5.2 + i * 2.2, -2.8 + r * 2.3);
         bx(g, 1.6, 1.3, 1.2, '#3d5a80', 4.6, 0, -2.8); cy(g, 0.12, 0.4, '#e0e1dd', 4.6, 1.3, -2.8, 10);
-        bx(g, 1.4, 1.1, 1.2, '#5e6472', 4.6, 0, -0.5); bx(g, 0.2, 1.0, 0.2, '#5e6472', 4.6, 1.1, -0.9); bx(g, 0.5, 0.3, 0.4, '#adb5bd', 4.6, 1.9, -0.6);
+        bx(g, 1.4, 1.1, 1.2, '#5e6472', 4.6, 0, -0.5); bx(g, 0.2, 1.0, 0.2, '#5e6472', 4.6, 1.1, -0.9); AN.btn = mov(bx(g, 0.5, 0.3, 0.4, '#adb5bd', 4.6, 1.9, -0.6));
         sewMachine(g, 2.6, 2.6); bx(g, 1.4, 0.1, 0.6, '#2b2d42', 2.6, 1.42, 2.6);
-        [[-4, 2.4], [-3.2, 2.4], [-2.4, 2.4]].forEach(([x, z], i) => mini(g, ['#1d3557', '#457b9d', '#e63946'][i], x, 0.98, z));
+        [[-4, 2.4], [-3.2, 2.4], [-2.4, 2.4]].forEach(([x, z], i) => AN.mayMinis.push(mini(g, ['#1d3557', '#457b9d', '#e63946'][i], x, 0.98, z)));
         table(g, 3.2, 1.0, -3.2, 2.4, '#d8d2c4');
         signBoard(g, [{t: 'Tầng 2 · 二楼', f: '700 64px sans-serif'}, {t: '30 công đoạn · 30道工序', f: '500 34px sans-serif', c: '#555'}], 0, 3.0, -4.9, 3.2, 1.1);
         hs('may', '车缝', -5.2, 2.0, -2.8); hs('may', '合片', -3.0, 2.0, -0.5); hs('may', '束眉', 4.6, 2.0, -2.8); hs('may', '绕线', 4.6, 1.6, -2.4); hs('may', '打顶扣', 4.6, 2.4, -0.5); hs('may', '电脑车', 2.6, 2.0, 2.6); hs('may', '汗带', -3.2, 1.6, 2.4); hs('may', '巡检', -0.8, 2.2, 0.2); },
-      dinhform(g){ bx(g, 2.6, 1.2, 1.4, '#6c757d', -1.8, 0, -1.6); ['#e76f51', '#f4a261', '#e9c46a'].forEach((c, i) => bx(g, 0.7, 0.3, 1.0, c, -2.6 + i * 0.8, 1.2, -1.6, {emissive: new THREE.Color(c), emissiveIntensity: 0.25}));
+      dinhform(g){ bx(g, 2.6, 1.2, 1.4, '#6c757d', -1.8, 0, -1.6); ['#e76f51', '#f4a261', '#e9c46a'].forEach((c, i) => { const z = bx(g, 0.7, 0.3, 1.0, c, -2.6 + i * 0.8, 1.2, -1.6); z.material = new THREE.MeshLambertMaterial({color: new THREE.Color(c).convertSRGBToLinear(), emissive: new THREE.Color(c), emissiveIntensity: 0.25}); AN.heat.push(z); });
         signBoard(g, [{t: 'TYL-1908-R', f: '700 70px monospace'}, {t: '3 vùng nhiệt · 3个加热区', f: '500 34px sans-serif', c: '#555'}], -1.8, 2.6, -2.35, 2.4, 0.84);
-        [-0.2, 1.4, 3.0].forEach((x, i) => { cy(g, 0.12, 1.0, '#868e96', x, 0, 1.4, 8); add(g, new THREE.SphereGeometry(0.5, 16, 12), '#ced4da', x, 1.4, 1.4); mini(g, ['#264653', '#e63946', '#1d3557'][i], x, 1.42, 1.4, 1.2); });
+        [-0.2, 1.4, 3.0].forEach((x, i) => { cy(g, 0.12, 1.0, '#868e96', x, 0, 1.4, 8); add(g, new THREE.SphereGeometry(0.5, 16, 12), '#ced4da', x, 1.4, 1.4); AN.formCaps.push(mini(g, ['#264653', '#e63946', '#1d3557'][i], x, 1.42, 1.4, 1.2)); });
         hs('dinhform', '弯眉整烫', -1.8, 1.9, -1.6); hs('dinhform', '头模', -0.2, 2.3, 1.4); hs('dinhform', '前整烫', 1.4, 2.3, 1.4); },
-      qc(g){ [[-2, -1.4], [2, -1.4]].forEach(([x, z]) => { table(g, 3.0, 1.3, x, z, '#e9ecef'); head(g, x - 0.8, 0.98, z); mini(g, '#1d3557', x - 0.8, 2.24, z); bx(g, 0.5, 0.04, 0.35, '#212529', x + 0.6, 0.98, z); [0, 1].forEach(k => mini(g, '#457b9d', x + 0.2 + k * 0.5, 0.98, z + 0.4, 0.8)); });
+      qc(g){ [[-2, -1.4], [2, -1.4]].forEach(([x, z]) => { table(g, 3.0, 1.3, x, z, '#e9ecef'); head(g, x - 0.8, 0.98, z); AN.qcMinis.push(mini(g, '#1d3557', x - 0.8, 2.24, z)); bx(g, 0.5, 0.04, 0.35, '#212529', x + 0.6, 0.98, z); [0, 1].forEach(k => AN.qcMinis.push(mini(g, '#457b9d', x + 0.2 + k * 0.5, 0.98, z + 0.4, 0.8))); });
         bx(g, 2.4, 1.6, 0.06, '#fff', 0, 1.2, -3.0); signBoard(g, [{t: '六片帽检验顺序', f: '700 58px sans-serif'}, {t: '15 điểm · 15 points', f: '500 36px sans-serif', c: '#555'}], 0, 2.0, -2.95, 2.3, 0.8);
         bx(g, 0.9, 0.6, 0.6, '#c0392b', 3.8, 0, 1.6);
         hs('qc', '尾查', -2, 1.4, -1.0); hs('qc', '六片帽检验顺序', 0, 2.5, -2.9); hs('qc', '帽围', -2.8, 2.6, -1.4); hs('qc', '线尾检验', 2, 1.4, -1.0); hs('qc', '返工', 3.8, 0.9, 1.6); },
       xuat(g){ table(g, 3.2, 1.4, -3.0, -2.2, '#d8d2c4'); [0, 1].forEach(k => mini(g, '#1d3557', -3.6 + k * 0.8, 0.98, -2.2)); bx(g, 0.3, 0.4, 0.02, '#f1faee', -2.0, 1.0, -2.2);
         for(let r = 0; r < 3; r++) for(let c = 0; c < 3; c++) carton(g, -4.0 + c * 0.95, r * 0.72, 1.6); bx(g, 0.45, 0.25, 0.02, '#fff', -3.05, 1.6, 1.99);
-        for(let i = 0; i < 4; i++){ const z = -2.6 + i * 1.3; bx(g, 3.0, 0.7, 0.6, '#495057', 1.2, 0, z); bx(g, 0.9, 1.1, 0.8, '#1971c2', 1.2, 0.7, z); }
+        for(let i = 0; i < 4; i++){ const z = -2.6 + i * 1.3; bx(g, 3.0, 0.7, 0.6, '#495057', 1.2, 0, z); const d = bx(g, 0.9, 1.1, 0.8, '#1971c2', 1.2, 0.7, z); d.material = new THREE.MeshLambertMaterial({color: new THREE.Color('#1971c2').convertSRGBToLinear(), transparent: true, opacity: 0.85}); AN.det.push(d); }
         bx(g, 0.35, 0.2, 0.25, '#f59f00', -1.4, 0.98, -2.0);
-        bx(g, 3.2, 2.2, 1.8, '#adb5bd', 4.3, 0.5, 2.6); bx(g, 1.2, 1.6, 1.8, '#1d3557', 2.4, 0.5, 2.6); [[2.4, 1.9], [2.4, 3.3], [4.8, 1.9], [4.8, 3.3]].forEach(([x, z]) => { const w = add(g, new THREE.CylinderGeometry(0.4, 0.4, 0.3, 14), '#212529', x, 0.4, z); w.rotation.x = Math.PI / 2; });
+        AN.truck.push(mov(bx(g, 3.2, 2.2, 1.8, '#adb5bd', 4.3, 0.5, 2.6)), mov(bx(g, 1.2, 1.6, 1.8, '#1d3557', 2.4, 0.5, 2.6))); [[2.4, 1.9], [2.4, 3.3], [4.8, 1.9], [4.8, 3.3]].forEach(([x, z]) => { const w = add(g, new THREE.CylinderGeometry(0.4, 0.4, 0.3, 14), '#212529', x, 0.4, z); w.rotation.x = Math.PI / 2; AN.truck.push(mov(w)); });
         hs('xuat', '包装', -3.0, 1.6, -2.2); hs('xuat', '吊牌', -2.0, 1.6, -2.2); hs('xuat', '水分测定仪', -1.4, 1.5, -2.0); hs('xuat', '外箱标签', -3.05, 2.0, 2.0); hs('xuat', '箱唛', -4.0, 2.4, 1.6); hs('xuat', '验针', 1.2, 2.2, -1.3); hs('xuat', '抽样', -3.6, 1.6, -1.6); hs('xuat', '出货', 3.6, 3.0, 2.6); hs('xuat', '装箱单', -2.4, 1.3, -2.6); },
     };
 
@@ -183,6 +188,9 @@ const W3 = (() => {
       stations[s.id] = {g, inner, plat, edge, w, d, y, lab, badge};
       g.traverse(o => { if(o.isMesh) pick.push(o); });
     });
+    function weaveTex(){ const c = document.createElement('canvas'); c.width = 256; c.height = 256; const x = c.getContext('2d'); x.fillStyle = '#1d3557'; x.fillRect(0, 0, 256, 256);
+      for(let i = 0; i < 256; i += 4){ x.fillStyle = i % 8 ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.12)'; x.fillRect(0, i, 256, 2); x.fillStyle = i % 8 ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.04)'; x.fillRect(i, 0, 2, 256); }
+      const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3, 2.2); return t; }
     function placeholderTex(){ const c = textCanvas([{t: '📷 Ảnh thực tế', f: '700 52px sans-serif'}, {t: 'Bấm để thêm ảnh', f: '500 38px sans-serif', c: '#555'}], {w: 512, h: 356, bg: '#f8f9fa', edge: '#adb5bd'}); const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t; }
 
     // ---- đường đi của chiếc mũ ----
@@ -200,12 +208,15 @@ const W3 = (() => {
     }
     const tCut = segOf('cat'), tMay = segOf('may');
 
+    // ---- mô phỏng sản xuất ----
+    const SIM = W3SIM({scene, stations, M, add, bx, cy, mini, AN});
+
     // ---- chọn khâu ----
     const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
     let down = null;
     cv.addEventListener('pointerdown', e => { down = {x: e.clientX, y: e.clientY, t: performance.now()}; stopTourAuto(); });
     cv.addEventListener('pointerup', e => {
-      if(!down) return; const dx = e.clientX - down.x, dy = e.clientY - down.y, dt = performance.now() - down.t; down = null;
+      if(!down) return; if(sim){ down = null; return; } const dx = e.clientX - down.x, dy = e.clientY - down.y, dt = performance.now() - down.t; down = null;
       if(dx * dx + dy * dy > 64 || dt > 600) return;
       const r = cv.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
       ray.setFromCamera(ndc, camera); const hit = ray.intersectObjects(pick, false)[0]; if(!hit) return;
@@ -272,6 +283,8 @@ const W3 = (() => {
       const dt = Math.min(0.05, (now - last) / 1000); last = now;
       if(fly){ const k = Math.min(1, (now - fly.t0) / fly.ms), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
         camera.position.lerpVectors(fly.from.p, fly.to.p, e); controls.target.lerpVectors(fly.from.t, fly.to.t, e); if(k >= 1) fly = null; }
+      if(sim){ SIM.run(simK(), dt); const fo = SIM.follow(); if(fo && !fly){ const off = camera.position.clone().sub(controls.target); controls.target.lerp(fo.position, 0.12); camera.position.copy(controls.target).add(off); } }
+      SIM.tick(dt, now);
       controls.update();
       movers.forEach(o => { o.t = (o.t + dt * 0.012) % 1; const p = curve.getPointAt(o.t), q = curve.getTangentAt(o.t); o.m.position.copy(p); o.m.rotation.y = Math.atan2(q.x, q.z);
         o.r.visible = o.t < tCut; o.b.visible = o.t >= tCut && o.t < tMay; o.cg.visible = o.t >= tMay; });
@@ -283,6 +296,10 @@ const W3 = (() => {
       play(){ if(running) return; running = true; resize(); last = performance.now(); renderer.setAnimationLoop(frame); },
       stop(){ running = false; renderer.setAnimationLoop(null); },
       focus, overview, showHotspots, setBoard, unhideLabels(){ Object.values(stations).forEach(o => { o.lab.visible = true; if(o.badge) o.badge.visible = true; }); },
+      simGo(b){ Object.values(stations).forEach(o => { o.lab.visible = false; if(o.badge) o.badge.visible = false; }); showHotspots(null);
+        const info = SIM.enter(b, camera.aspect < 0.8 ? 1.45 : camera.aspect < 1.2 ? 1.2 : 1); if(info){ const kk = camera.aspect < 0.8 ? 1.28 : camera.aspect < 1.2 ? 1.12 : 1; flyTo(info.at, info.cam[0] * kk, info.cam[1], info.cam[2], 1100); } },
+      simEnd(){ SIM.end(); Object.values(stations).forEach(o => { o.lab.visible = true; if(o.badge) o.badge.visible = true; }); },
+      simLive: () => SIM.live(),
       highlight(sid){ Object.entries(stations).forEach(([id, st]) => { st.plat.material = M(ST.find(s => s.id === id).color, {transparent: true, opacity: 0.32}); });
         if(sid){ const s = STI[sid]; stations[sid].plat.material = new THREE.MeshLambertMaterial({color: new THREE.Color(s.color).convertSRGBToLinear(), transparent: true, opacity: 0.5}); } },
     };
@@ -290,6 +307,7 @@ const W3 = (() => {
 
   // ---------------- chọn khâu, bảng chi tiết ----------------
   function select(sid, fromCanvas){
+    if(sim) simEnd(true);
     cur = sid; near = false; $c('w3near').setAttribute('aria-pressed', 'false');
     if(ok){ T.highlight(sid); T.focus(sid, false); T.showHotspots(null); }
     renderPeek(); renderInfo(sid); renderChips();
@@ -346,17 +364,91 @@ const W3 = (() => {
   }
   function closeCap(){ $c('capOv').hidden = true; document.body.classList.remove('cap-open'); if(ok && $c('v-xuong').classList.contains('on')) T.play(); }
 
+  // ---------------- mô phỏng sản xuất (giao diện) ----------------
+  const SB = DATA.sim.beats;
+  let sim = null, simTimer = null;
+  function simK(){ if(!sim) return 0; const b = SB[sim.i]; let el = sim.el; if(sim.play) el += (performance.now() - sim.last) * sim.speed; return Math.min(1, el / (b.dur * 1000)); }
+  function simStart(i){
+    if(tour) stopTour(); near = false; $c('w3near').setAttribute('aria-pressed', 'false');
+    sim = {i: 0, play: true, speed: 1, el: 0, last: performance.now()};
+    $c('w3sim').setAttribute('aria-pressed', 'true'); document.body.classList.add('simon');
+    clearInterval(simTimer); simTimer = setInterval(simStep, 150); simGo(i || 0);
+    $c('w3view').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+  }
+  function simGo(i){
+    sim.i = (i + SB.length) % SB.length; sim.el = 0; sim.last = performance.now();
+    const b = SB[sim.i]; cur = b.sid;
+    if(ok){ T.highlight(cur); T.simGo(b); }
+    renderSimPeek(); renderSimInfo(); renderChips(); updHud();
+  }
+  function simStep(){
+    if(!sim) return; const now = performance.now(); if(sim.play) sim.el += (now - sim.last) * sim.speed; sim.last = now;
+    const b = SB[sim.i];
+    if(sim.el >= b.dur * 1000){ sim.el = b.dur * 1000; if(sim.play){ if(sim.i < SB.length - 1){ simGo(sim.i + 1); return; } sim.play = false; renderSimPeek(); } }
+    updHud(); const pr = $c('w3prog'); if(pr) pr.style.width = (simK() * 100).toFixed(1) + '%';
+  }
+  function simEnd(quiet){
+    clearInterval(simTimer); sim = null; $c('w3sim').setAttribute('aria-pressed', 'false'); document.body.classList.remove('simon'); $c('w3hud').hidden = true; $c('w3simp').hidden = true;
+    if(ok){ T.simEnd(); T.highlight(null); }
+    if(!quiet){ cur = null; renderPeek(); renderInfo(null); renderChips(); if(ok) T.overview(); }
+  }
+  const tri3 = (a, py, tag) => `<${tag || 'div'} class="vnt">${esc(a[0])}</${tag || 'div'}><div class="zht"><span lang="zh">${esc(a[1])}</span>${py ? `<div class="p">${esc(py)}</div>` : ''}</div><div class="ent">${esc(a[2])}</div>`;
+  function renderSimPeek(){
+    if(!sim) return; const el = $c('w3simp'), b = SB[sim.i], s = STI[b.sid]; el.hidden = false; $c('w3peek').hidden = true;
+    el.innerHTML = `<div class="prog"><i id="w3prog" style="width:${(simK() * 100).toFixed(1)}%"></i></div>
+      <div class="ph"><span class="dot" style="background:${s.color}">${s.n}</span><div class="nm"><small class="sn">🏭 ${sim.i + 1}/${SB.length} · <span class="vnt">${esc(s.short || s.vn)}</span> <span class="zht" lang="zh">${esc(s.zh)}</span></small><br><b class="vnt">${esc(b.t[0])}</b> <span class="zht"><span lang="zh">${esc(b.t[1])}</span> <span class="py">${esc(b.tpy)}</span></span> <i class="ent">${esc(b.t[2])}</i></div>${s.qb ? '<span class="qbb" title="品保部 có kiểm ở khâu này">保</span>' : ''}</div>
+      <div class="nar">${tri3(b.d, b.dpy)}</div>
+      <div class="pb"><button class="ib" data-sim="first" aria-label="Về bước đầu">⏮</button><button class="ib" data-sim="prev" aria-label="Bước trước">◀</button><button class="ib pri" data-sim="play" aria-label="${sim.play ? 'Dừng' : 'Chạy'}">${sim.play ? '⏸' : '⏵'}</button><button class="ib" data-sim="next" aria-label="Bước sau">▶</button><button class="ib" data-sim="speed">${sim.speed}×</button><button class="ib" data-sim="say">🔊 中文</button><button class="ib" data-sim="chk">Kiểm gì ↓</button><button class="ib" data-sim="end" aria-label="Thoát mô phỏng">✕</button></div>`;
+  }
+  function renderSimInfo(){
+    const el = $c('w3info'); if(!el || !sim) return; const b = SB[sim.i], s = STI[b.sid];
+    el.innerHTML = `<div class="w3head" style="--c:${s.color}"><span class="dot" style="background:${s.color}">${s.n}</span><div><div class="sn">🏭 Mô phỏng sản xuất · 生产模拟 · <span class="ent">Production simulation</span> — ${sim.i + 1}/${SB.length}</div><h2 class="vnt">${esc(b.t[0])}</h2><div class="zht"><span class="big" lang="zh">${esc(b.t[1])}</span> <span class="py">${esc(b.tpy)}</span></div><div class="ent en1">${esc(b.t[2])}</div></div></div>
+      <div class="card"><div class="lbl">Làm gì · 做什么 · <span class="ent">What happens</span></div>${tri3(b.d, b.dpy)}
+      ${b.chk.length ? `<div class="lbl" style="margin-top:10px">Kiểm gì · 检查什么 · <span class="ent">What is checked</span></div><ol class="simchk">${b.chk.map(c => `<li>${tri3(c, c[3])}</li>`).join('')}</ol>` : ''}
+      ${b.q ? `<div class="simq"><b>❓ Còn phải hỏi · 还要问 · <span class="ent">Still to ask</span></b><div class="vnt">${esc(b.q[0])}</div><div class="zht"><span lang="zh">${esc(b.q[1])}</span><div class="p">${esc(b.q[2])}</div></div></div>` : ''}
+      ${b.note ? `<p class="hint">${esc(b.note)}</p>` : ''}
+      ${b.w.length ? `<div class="chips">${b.w.filter(w => TI[w]).map(w => chip(w, true)).join('')}</div>` : ''}
+      ${b.lab ? `<button class="ib pri" data-lab="${b.lab}" style="margin-top:10px">🧪 Phòng kiểm nghiệm ảo · ${esc(DATA.sim.lab[b.lab][0])} · <span lang="zh">${esc(DATA.sim.lab[b.lab][1])}</span></button>` : ''}</div>
+      <h3 class="simh">Kịch bản đầy đủ · 全部步骤 · <span class="ent">Full script</span></h3>
+      <ol class="simlist">${SB.map((x, i) => { const st = STI[x.sid]; return `<li class="${i === sim.i ? 'on' : ''}"><button data-simgo="${i}"><span class="dot" style="background:${st.color}">${st.n}</span><span><b class="vnt">${esc(x.t[0])}</b> <span class="zht" lang="zh">${esc(x.t[1])}</span> <span class="ent">${esc(x.t[2])}</span></span></button></li>`; }).join('')}</ol>`;
+    const on = el.querySelector('.simlist li.on'); if(on && on.parentNode.scrollTo) on.parentNode.scrollTop = on.offsetTop - on.parentNode.offsetTop - 60;
+  }
+  function updHud(){
+    const h = $c('w3hud'); if(!h || !sim) return; const b = SB[sim.i]; if(!b.hud.length){ h.hidden = true; return; } h.hidden = false;
+    const L = ok ? T.simLive() : {};
+    const val = v => esc(v).replace(/@(\w+)/g, (m, k) => { const x = L[k]; if(x == null) return '…'; if(Array.isArray(x)) return `<span class="vnt">${esc(x[0])}</span><span class="zht" lang="zh">${esc(x[1])}</span><span class="ent">${esc(x[2])}</span>`; return esc(String(x)); });
+    h.innerHTML = `<div class="hh">📊 <span class="vnt">Số đo</span><span class="zht" lang="zh">数据</span><span class="ent">Live</span></div>` +
+      b.hud.map(r => `<div class="hr"><span class="hl"><span class="vnt">${esc(r[0])}</span><span class="zht" lang="zh">${esc(r[1])}</span><span class="ent">${esc(r[2])}</span></span><b>${val(r[3])}</b></div>`).join('');
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-sim]');
+    if(a && sim){ const k = a.dataset.sim;
+      if(k === 'play'){ simStep(); if(!sim.play && sim.el >= SB[sim.i].dur * 1000 && sim.i === SB.length - 1){ simGo(0); } sim.play = !sim.play; sim.last = performance.now(); renderSimPeek(); }
+      else if(k === 'next') simGo(sim.i + 1); else if(k === 'prev') simGo(sim.i - 1); else if(k === 'first') simGo(0);
+      else if(k === 'speed'){ simStep(); sim.speed = sim.speed === 1 ? 2 : sim.speed === 2 ? 0.5 : 1; renderSimPeek(); }
+      else if(k === 'say') speak(SB[sim.i].d[1]);
+      else if(k === 'chk') $c('w3info').scrollIntoView({behavior: 'smooth', block: 'start'});
+      else if(k === 'end') simEnd();
+      return; }
+    const g = e.target.closest('[data-simgo]'); if(g){ const i = +g.dataset.simgo; if(sim) simGo(i); else simStart(i); $c('w3view').scrollIntoView({behavior: 'smooth', block: 'start'}); return; }
+    const l = e.target.closest('[data-lab]'); if(l){ LAB.open(l.dataset.lab); return; }
+    const ls = e.target.closest('[data-labsim]'); if(ls){ const i = SB.findIndex(b => b.lab === ls.dataset.labsim); if(i >= 0){ if(sim) simGo(i); else simStart(i); $c('w3view').scrollIntoView({behavior: 'smooth', block: 'start'}); } return; }
+  });
+
   // ---------------- nút ----------------
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-w3]'); if(b){ select(b.dataset.w3); return; }
     const g = e.target.closest('[data-w3go]'); if(g){ go(+g.dataset.w3go); return; }
     if(e.target.closest('[data-w3cap]')){ openCap(); return; }
   });
-  $c('w3over').onclick = () => { stopTour(); cur = null; if(ok) T.focus && T.unhideLabels && T.unhideLabels(); renderPeek(); renderChips(); if(ok){ T.highlight(null); T.overview(); T.showHotspots(null); } near = false; $c('w3near').setAttribute('aria-pressed', 'false'); };
-  $c('w3near').onclick = () => { if(!cur){ select(ORDER[1]); } near = !near; $c('w3near').setAttribute('aria-pressed', String(near)); if(ok){ T.focus(cur, near); T.showHotspots(near ? cur : null); } };
-  $c('w3tour').onclick = startTour;
+  $c('w3over').onclick = () => { if(sim) simEnd(true); stopTour(); cur = null; if(ok) T.focus && T.unhideLabels && T.unhideLabels(); renderPeek(); renderChips(); if(ok){ T.highlight(null); T.overview(); T.showHotspots(null); } near = false; $c('w3near').setAttribute('aria-pressed', 'false'); };
+  $c('w3near').onclick = () => { if(sim) simEnd(true); if(!cur){ select(ORDER[1]); } near = !near; $c('w3near').setAttribute('aria-pressed', String(near)); if(ok){ T.focus(cur, near); T.showHotspots(near ? cur : null); } };
+  $c('w3tour').onclick = () => { if(sim) simEnd(true); startTour(); };
+  $c('w3sim').onclick = () => { if(sim) simEnd(); else simStart(0); };
   $c('capClose').onclick = closeCap;
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && !$c('capOv').hidden) closeCap(); });
 
-  return { frames: () => W3frames, open, pause, select, setBoard: (sid, url) => { if(ok) T.setBoard(sid, url); }, current: () => cur };
+  return { frames: () => W3frames, open, pause, select, setBoard: (sid, url) => { if(ok) T.setBoard(sid, url); }, current: () => cur,
+    sim: i => simStart(i || 0), simState: () => sim && {i: sim.i, play: sim.play, k: simK(), live: ok ? T.simLive() : {}}, simGo: i => sim && simGo(i), simEnd: () => sim && simEnd(),
+    simSeek(i, k){ if(!sim) simStart(i); else simGo(i); sim.play = false; sim.el = k * SB[sim.i].dur * 1000; renderSimPeek(); updHud(); } };
 })();

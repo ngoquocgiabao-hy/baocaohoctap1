@@ -6852,5 +6852,2884 @@
    "a": "顶扣 là nút đỉnh mũ. Xưởng cắt cắt mảnh 顶扣包布 (vải bọc nút đỉnh); máy đó nhiều khả năng bọc vải lên nút. Sang xưởng may, công đoạn 打顶扣 đóng nút lên đỉnh. Tên máy: hỏi tổ trưởng.",
    "go": "cat"
   }
- ]
+ ],
+ "sim": {
+  "beats": [
+   {
+    "id": "ppm",
+    "sid": "mau",
+    "fx": "ppm",
+    "dur": 10,
+    "t": [
+     "Họp trước sản xuất (PPM)",
+     "产前会议",
+     "Pre-production meeting (PPM)"
+    ],
+    "d": [
+     "Kỹ thuật, QC, sản xuất, thêu, kế hoạch, khách phục cùng xem mẫu PPS. Mẫu đi theo đường: Proto → SMS → PPS → hàng loạt.",
+     "技术、QC、生产、绣花、计划、客服一起看产前样。样品的路线：开发样 → 销售样 → 产前样 → 大货。",
+     "Engineering, QC, production, embroidery, planning and customer service review the PPS. Sample path: Proto → SMS → PPS → bulk."
+    ],
+    "chk": [
+     [
+      "Mẫu PPS dùng đúng vật liệu hàng loạt; khách duyệt. VF: CFT duyệt được mẫu rủi ro thấp và trung bình, mã mới bắt buộc khách duyệt.",
+      "产前样的物料一定要跟大货一样；客户审样。VF的低、中风险款CFT可以审，新款一定要客户审。",
+      "The PPS uses bulk materials; the customer approves. VF: the CFT may approve low and medium risk, new styles need the customer.",
+      "Chǎn qián yàng de wù liào yí dìng yào gēn dà huò yí yàng; kè hù shěn yàng. VF de dī, zhōng fēng xiǎn kuǎn CFT kě yǐ shěn, xīn kuǎn yí dìng yào kè hù shěn."
+     ],
+     [
+      "Yêu cầu nào làm tăng giờ công hay chi phí: thống nhất với khách trước.",
+      "会增加工时或成本的要求，要先跟客户确认。",
+      "Anything that adds labour time or cost is agreed with the customer first.",
+      "Huì zēng jiā gōng shí huò chéng běn de yāo qiú, yào xiān gēn kè hù què rèn."
+     ],
+     [
+      "Họp xong có biên bản: ngày, mã, người dự, vấn đề, cách xử lý, người phụ trách.",
+      "开完会要有会议记录：日期、款号、参加人、问题、处理方法、负责人。",
+      "Minutes afterwards: date, style, attendees, issues, actions, owner.",
+      "Kāi wán huì yào yǒu huì yì jì lù: rì qī, kuǎn hào, cān jiā rén, wèn tí, chǔ lǐ fāng fǎ, fù zé rén."
+     ]
+    ],
+    "hud": [
+     [
+      "Mẫu đang xem",
+      "样品",
+      "Sample on the table",
+      "产前样 PPS"
+     ]
+    ],
+    "w": [
+     "产前会议",
+     "产前样",
+     "审样",
+     "确认样",
+     "开发样",
+     "销售样"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Chǎn qián huì yì",
+    "dpy": "Jì shù, QC, shēng chǎn, xiù huā, jì huà, kè fú yì qǐ kàn chǎn qián yàng. Yàng pǐn de lù xiàn: kāi fā yàng → xiāo shòu yàng → chǎn qián yàng → dà huò."
+   },
+   {
+    "id": "nhan",
+    "sid": "kho",
+    "fx": "truck",
+    "dur": 9,
+    "t": [
+     "Hàng về: nhận vải và phụ liệu",
+     "到料、点收",
+     "Receiving fabric and trims"
+    ],
+    "d": [
+     "Tổ tư vấn kiểm đếm, in bảng kê, trừ sổ trên hệ thống; tổ chính liệu nhận vào kho.",
+     "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。",
+     "The advisory team counts, prints the receiving list and books it in the system; the main-material team takes it into stock."
+    ],
+    "chk": [
+     [
+      "Đếm đủ số cây, số thùng so với bảng kê.",
+      "点清卷数、箱数，跟点收明细对。",
+      "Count rolls and cartons against the receiving list.",
+      "Diǎn qīng juǎn shù, xiāng shù, gēn diǎn shōu míng xì duì."
+     ],
+     [
+      "Thời hạn kiểm 7 ngày: báo cáo kho ghi cho vải, W2 ghi cho phụ liệu.",
+      "7天内检验完：仓库报告写面料，W2写辅料。",
+      "7-day deadline: the warehouse report says fabric, W2 says trims.",
+      "7 tiān nèi jiǎn yàn wán: cāng kù bào gào xiě miàn liào, W2 xiě fǔ liào."
+     ]
+    ],
+    "hud": [
+     [
+      "Xe đến",
+      "到料",
+      "Truck in",
+      "@truck"
+     ],
+     [
+      "Cây vải",
+      "布卷",
+      "Rolls",
+      "@rolls"
+     ]
+    ],
+    "w": [
+     "收料",
+     "点收",
+     "咨询组",
+     "点收明细",
+     "减账",
+     "主料组"
+    ],
+    "lab": "",
+    "q": [
+     "Kiểm xong trong 7 ngày là cho vải, phụ liệu hay cả hai?",
+     "7天内检验完，是指面料、辅料，还是两个都是？",
+     "7 tiān nèi jiǎn yàn wán, shì zhǐ miàn liào, fǔ liào, hái shì liǎng gè dōu shì?"
+    ],
+    "note": "",
+    "tpy": "Dào liào, diǎn shōu",
+    "dpy": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù."
+   },
+   {
+    "id": "lab",
+    "sid": "kiemvai",
+    "fx": "swatch",
+    "dur": 9,
+    "t": [
+     "Cắt mẫu đầu, giữa, cuối cây gửi phòng kiểm nghiệm",
+     "布头、布中、布尾送检验室",
+     "Head, middle and tail swatches to the lab"
+    ],
+    "d": [
+     "Test ma sát khô/ướt, bền màu khi giặt, màu, cảm giác tay, độ dày, rồi ra báo cáo. Phòng có chứng nhận phòng thí nghiệm của Under Armour.",
+     "测干湿摩擦、水洗牢度、颜色、手感、厚度，出品质检测报告。检验室有Under Armour的实验室认可。",
+     "Dry/wet rub, wash fastness, colour, hand feel and thickness are tested and reported. The lab holds Under Armour lab recognition."
+    ],
+    "chk": [
+     [
+      "Màu cả cây có đều không, có nằm trong tiêu chuẩn chấp nhận không.",
+      "看整匹布颜色是否一致，在不在接收标准内。",
+      "Is the colour even along the roll and within the acceptance standard?",
+      "Kàn zhěng pǐ bù yán sè shì fǒu yí zhì, zài bu zài jiē shōu biāo zhǔn nèi."
+     ],
+     [
+      "4 nhóm test: tính chất vật lý, độ bền màu, giặt thành phẩm, formaldehyde.",
+      "四类测试：物性、色牢度、成品洗、甲醛。",
+      "Four test groups: physical, colour fastness, finished-product wash, formaldehyde.",
+      "Sì lèi cè shì: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán."
+     ]
+    ],
+    "hud": [
+     [
+      "Mẫu",
+      "样",
+      "Swatches",
+      "布头 · 布中 · 布尾"
+     ],
+     [
+      "Đang test",
+      "测试",
+      "Testing",
+      "@test"
+     ]
+    ],
+    "w": [
+     "布头",
+     "布中",
+     "布尾",
+     "检验室",
+     "色牢度",
+     "摩擦",
+     "品质检测报告",
+     "甲醛",
+     "物性检验"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Bù tóu, bù zhōng, bù wěi sòng jiǎn yàn shì",
+    "dpy": "Cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào. Jiǎn yàn shì yǒu Under Armour de shí yàn shì rèn kě."
+   },
+   {
+    "id": "kiem4",
+    "sid": "kiemvai",
+    "fx": "inspect",
+    "dur": 15,
+    "t": [
+     "Kiểm vải trên máy: thang 4 điểm",
+     "验布机验布：四分制",
+     "Fabric inspection: 4-point system"
+    ],
+    "d": [
+     "Cây vải chạy qua hộp đèn. Người kiểm đếm yard, đo khổ, xem chênh lệch màu và lỗi, chấm điểm từng lỗi theo chiều dài.",
+     "布卷过验布机的灯箱。检验员查码数、量幅宽、看色差和瑕疵，按瑕疵长度扣分。",
+     "The roll runs over the light box. The inspector counts yards, measures width, checks shade and defects, and scores each defect by length."
+    ],
+    "chk": [
+     [
+      "Đến 3 inch trừ 1; 3–6 inch trừ 2; 6–9 inch trừ 3; trên 9 inch trừ 4.",
+      "3英寸以下扣1分，3到6英寸扣2分，6到9英寸扣3分，9英寸以上扣4分。",
+      "Up to 3 in = 1 point; 3–6 in = 2; 6–9 in = 3; over 9 in = 4.",
+      "3 yīng cùn yǐ xià kòu 1 fēn, 3 dào 6 yīng cùn kòu 2 fēn, 6 dào 9 yīng cùn kòu 3 fēn, 9 yīng cùn yǐ shàng kòu 4 fēn."
+     ],
+     [
+      "Điểm/100 yd² = 3.600 × tổng điểm ÷ (yard × khổ inch). A ≤ 29, B ≤ 47, C ≤ 62.",
+      "每百平方码分数 = 3600 × 总扣分 ÷（码数 × 幅宽英寸）。A级最多29分，B级47分，C级62分。",
+      "Points per 100 yd² = 3,600 × points ÷ (yards × width in). A ≤ 29, B ≤ 47, C ≤ 62.",
+      "Měi bǎi píng fāng mǎ fēn shù = 3600 × zǒng kòu fēn ÷ (mǎ shù × fú kuān yīng cùn). A jí zuì duō 29 fēn, B jí 47 fēn, C jí 62 fēn."
+     ],
+     [
+      "Đánh dấu chỗ lỗi trên vải, điền biểu kiểm vải.",
+      "在布上标出瑕疵位置，填验布检查表。",
+      "Mark each defect on the fabric and fill in the inspection sheet.",
+      "Zài bù shàng biāo chū xiá cī wèi zhì, tián yàn bù jiǎn chá biǎo."
+     ]
+    ],
+    "hud": [
+     [
+      "Đã chạy",
+      "码数",
+      "Yards run",
+      "@yd / 100 yd"
+     ],
+     [
+      "Khổ",
+      "幅宽",
+      "Width",
+      "60 in"
+     ],
+     [
+      "Lỗi vừa thấy",
+      "瑕疵",
+      "Defect found",
+      "@def"
+     ],
+     [
+      "Tổng điểm",
+      "总扣分",
+      "Total points",
+      "@pts"
+     ],
+     [
+      "Điểm/100 yd²",
+      "每百平方码",
+      "Per 100 yd²",
+      "@p100"
+     ],
+     [
+      "Cấp",
+      "分级",
+      "Grade",
+      "@grade"
+     ]
+    ],
+    "w": [
+     "验布机",
+     "灯箱",
+     "码数计数器",
+     "四分制",
+     "码数",
+     "幅宽",
+     "瑕疵",
+     "色差",
+     "扣分参考样",
+     "验布检查表"
+    ],
+    "lab": "four",
+    "q": null,
+    "note": "Ví dụ trong W2: 100 yard, khổ 60 inch, 20 điểm → 12 điểm, cấp A. Vị trí từng lỗi là giả lập.",
+    "tpy": "Yàn bù jī yàn bù: sì fēn zhì",
+    "dpy": "Bù juǎn guò yàn bù jī de dēng xiāng. Jiǎn yàn yuán chá mǎ shù, liáng fú kuān, kàn sè chā hé xiá cī, àn xiá cī cháng dù kòu fēn."
+   },
+   {
+    "id": "tem",
+    "sid": "kiemvai",
+    "fx": "grade",
+    "dur": 9,
+    "t": [
+     "Ghi cấp điểm và cấp màu lên tem cây",
+     "扣点等级、色差级数写在布卷标签上",
+     "Grade and shade written on the roll tag"
+    ],
+    "d": [
+     "Cấp điểm trừ A, B, C và cấp chênh lệch màu A–D ghi lên tem cây vải để xưởng cắt đọc được. Người xem màu phải qua test FM100 trước.",
+     "扣点等级A、B、C和色差级数A到D写在布卷标签上，裁剪看得到。看色的检验员要先做辨色测试（FM 100）。",
+     "Point grade A/B/C and shade grade A–D go on the roll tag for the cutting room. Shade graders pass the FM100 test first."
+    ],
+    "chk": [
+     [
+      "Tem cây có QR: mã vật tư, cấp màu, số lô nhuộm, cấp điểm trừ, người kiểm.",
+      "布卷标签有二维码：品号、色差级数、缸号、扣点等级、检验员。",
+      "The roll tag has a QR code: material code, shade grade, dye lot, point grade, inspector.",
+      "Bù juǎn biāo qiān yǒu èr wéi mǎ: pǐn hào, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán."
+     ]
+    ],
+    "hud": [
+     [
+      "Cấp điểm",
+      "扣点等级",
+      "Point grade",
+      "A (12)"
+     ],
+     [
+      "Cấp màu",
+      "色差级数",
+      "Shade grade",
+      "B (VD)"
+     ]
+    ],
+    "w": [
+     "扣点等级",
+     "色差级数",
+     "辨色测试",
+     "缸号",
+     "品号"
+    ],
+    "lab": "",
+    "q": [
+     "Trên 62 điểm thì xử lý thế nào: xử lý đặc biệt hay trả hàng?",
+     "超过62分怎么处理？走特采还是退货？",
+     "Chāo guò 62 fēn zěn me chǔ lǐ? Zǒu tè cǎi hái shì tuì huò?"
+    ],
+    "note": "",
+    "tpy": "Kòu diǎn děng jí, sè chā jí shù xiě zài bù juǎn biāo qiān shàng",
+    "dpy": "Kòu diǎn děng jí A, B, C hé sè chā jí shù A dào D xiě zài bù juǎn biāo qiān shàng, cái jiǎn kàn de dào. Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (FM 100)."
+   },
+   {
+    "id": "phulieu",
+    "sid": "kho",
+    "fx": "trims",
+    "dur": 9,
+    "t": [
+     "Kiểm phụ liệu AQL 1.5",
+     "辅料按AQL 1.5检验",
+     "Trims inspection at AQL 1.5"
+    ],
+    "d": [
+     "Kiểm đếm, xem ngoại quan, đo dài rộng cao, đối chiếu mẫu chuẩn và đơn trên hệ thống.",
+     "点收、看外观、量长宽高，对照标准样和系统订单。",
+     "Count, check appearance, measure length/width/height, compare with the standard sample and the order in the system."
+    ],
+    "chk": [
+     [
+      "Nhãn: kiểm size, mã vạch, số lượng so với mẫu chuẩn và đơn.",
+      "标签：对照标准样和系统订单，核对尺码、条码和数量。",
+      "Labels: size, barcode and quantity against the standard sample and order.",
+      "Biāo qiān: duì zhào biāo zhǔn yàng hé xì tǒng dìng dān, hé duì chǐ mǎ, tiáo mǎ hé shù liàng."
+     ]
+    ],
+    "hud": [
+     [
+      "Phụ liệu",
+      "辅料",
+      "Trims",
+      "nút · khóa · nhãn"
+     ],
+     [
+      "Đang kiểm",
+      "检查",
+      "Checking",
+      "@n"
+     ]
+    ],
+    "w": [
+     "辅料",
+     "外观检验",
+     "标准样",
+     "条码",
+     "尺码",
+     "抽样"
+    ],
+    "lab": "aql",
+    "q": [
+     "Phụ liệu AQL 1.5 lấy mẫu theo bảng nào? Mẫu chuẩn để ở đâu?",
+     "辅料AQL 1.5按哪张表抽样？标准样放在哪里？",
+     "Fǔ liào AQL 1.5 àn nǎ zhāng biǎo chōu yàng? Biāo zhǔn yàng fàng zài nǎ lǐ?"
+    ],
+    "note": "",
+    "tpy": "Fǔ liào àn AQL 1.5 jiǎn yàn",
+    "dpy": "Diǎn shōu, kàn wài guān, liáng cháng kuān gāo, duì zhào biāo zhǔn yàng hé xì tǒng dìng dān."
+   },
+   {
+    "id": "nhapkho",
+    "sid": "kho",
+    "fx": "stock",
+    "dur": 9,
+    "t": [
+     "Đạt nhập kho · không đạt để khu biển đỏ",
+     "合格入库，不合格开验收反应单",
+     "Pass into stock · fail to the red-sign area"
+    ],
+    "d": [
+     "Đạt: nhập ERP, in bảng nghiệm thu, lên kệ (VD C24-3-2: kệ – tầng – ô). Không đạt: lập phiếu phản hồi nghiệm thu, xét xử lý đặc biệt, không được thì trả hàng; xử lý trong 6 tháng.",
+     "合格的录入ERP，出验收明细表，按储位上架（例如C24-3-2：货架号-层-位置）。不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。",
+     "Pass: into ERP, print the acceptance list, shelve by location (e.g. C24-3-2: rack–level–bin). Fail: acceptance feedback form, concession review or return, settled within 6 months."
+    ],
+    "chk": [
+     [
+      "Tem trạng thái: chính liệu đạt, phụ liệu đạt, chờ kiểm, xử lý đặc biệt, không đạt.",
+      "物料状态标识：主料合格、辅料合格、待检、特采、不合格。",
+      "Status tags: fabric pass, trims pass, waiting, concession, fail.",
+      "Wù liào zhuàng tài biāo shí: zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé."
+     ],
+     [
+      "Kho chấm điểm nhà cung cấp hằng tháng.",
+      "仓库每月给供应商评分。",
+      "The warehouse scores suppliers monthly.",
+      "Cāng kù měi yuè gěi gōng yìng shāng píng fēn."
+     ]
+    ],
+    "hud": [
+     [
+      "Vị trí",
+      "储位",
+      "Location",
+      "C24-3-2"
+     ],
+     [
+      "Tem",
+      "物料状态标识",
+      "Status tag",
+      "@tag"
+     ]
+    ],
+    "w": [
+     "入库",
+     "储位",
+     "物料状态标识",
+     "验收明细表",
+     "验收反应单",
+     "特采",
+     "退货",
+     "合格",
+     "不合格",
+     "待检"
+    ],
+    "lab": "",
+    "q": [
+     "“Xử lý trong 6 tháng” là trả hàng phải xong trong 6 tháng, hay hàng không đạt chỉ được để kho tối đa 6 tháng?",
+     "“6个月内处理”是退货要在6个月内完成，还是不合格的物料最多只能在仓库放6个月？",
+     "“6 gè yuè nèi chǔ lǐ” shì tuì huò yào zài 6 gè yuè nèi wán chéng, hái shì bù hé gé de wù liào zuì duō zhǐ néng zài cāng kù fàng 6 gè yuè?"
+    ],
+    "note": "",
+    "tpy": "Hé gé rù kù, bù hé gé kāi yàn shōu fǎn yìng dān",
+    "dpy": "Hé gé de lù rù ERP, chū yàn shōu míng xì biǎo, àn chǔ wèi shàng jià (lì rú C24-3-2: huò jià hào-céng-wèi zhì). Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán."
+   },
+   {
+    "id": "phat",
+    "sid": "kho",
+    "fx": "issue",
+    "dur": 9,
+    "t": [
+     "Phát vải cho xưởng cắt theo phiếu lĩnh liệu",
+     "凭领料单发料给裁剪",
+     "Issuing fabric to cutting by requisition"
+    ],
+    "d": [
+     "Phiếu ghi bao nhiêu phát bấy nhiêu: tồn 1.000 yard, phiếu ghi 100 thì phát 100, còn 900. Thiếu thì làm phiếu bổ sung.",
+     "单上写多少就发多少：库存1000码，单上100码就发100码，剩900码。要补料走补料单。",
+     "Issue exactly what the requisition says: 1,000 yd in stock, 100 yd requested, 100 issued, 900 left. Shortages need a supplementary form."
+    ],
+    "chk": [
+     [
+      "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ.",
+      "领料单交咨询组减账。",
+      "The requisition goes back to the advisory team for booking.",
+      "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng."
+     ],
+     [
+      "Kiểm kê lệch thì làm đơn xin điều chỉnh.",
+      "盘点有差异走盘调申请。",
+      "Stock-count differences need an adjustment request.",
+      "Pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng."
+     ]
+    ],
+    "hud": [
+     [
+      "Tồn kho",
+      "库存",
+      "In stock",
+      "@s yd"
+     ],
+     [
+      "Phiếu lĩnh",
+      "领料单",
+      "Requisition",
+      "100 yd"
+     ]
+    ],
+    "w": [
+     "发料",
+     "领料单",
+     "补料单",
+     "盘点",
+     "盘调申请"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Píng lǐng liào dān fā liào gěi cái jiǎn",
+    "dpy": "Dān shàng xiě duō shao jiù fā duō shao: kù cún 1000 mǎ, dān shàng 100 mǎ jiù fā 100 mǎ, shèng 900 mǎ. Yào bǔ liào zǒu bǔ liào dān."
+   },
+   {
+    "id": "doctem",
+    "sid": "cat",
+    "fx": "tagread",
+    "dur": 9,
+    "t": [
+     "Xưởng cắt đọc tem cây, xả vải co giãn",
+     "看布卷标签，弹性布要松布",
+     "Cutting reads the roll tag; stretch fabric is relaxed"
+    ],
+    "d": [
+     "Chữ cái cuối mã vật tư là màu (B đen, W trắng, E xám, R đỏ…). Chỉ vải co giãn mới xả, để mảnh cắt không co lại sau.",
+     "品号最后一个字母是颜色：B黑、W白、E灰、R红。只有弹性布才要松布，让裁片以后不再缩。",
+     "The last letter of the material code is the colour (B black, W white, E grey, R red…). Only stretch fabric is relaxed so pieces do not shrink later."
+    ],
+    "chk": [
+     [
+      "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào.",
+      "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
+      "Trace from the tag: which roll, dye lot, shade grade and order.",
+      "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān."
+     ]
+    ],
+    "hud": [
+     [
+      "Mã vật tư",
+      "品号",
+      "Material code",
+      "…B → đen"
+     ],
+     [
+      "Xả vải",
+      "松布",
+      "Relaxing",
+      "chỉ vải co giãn"
+     ]
+    ],
+    "w": [
+     "品号",
+     "缸号",
+     "色差级数",
+     "扣点等级",
+     "松布"
+    ],
+    "lab": "",
+    "q": [
+     "Xả vải bao lâu? Ai xác nhận là cắt được?",
+     "松布要放多长时间？谁确认可以裁？",
+     "Sōng bù yào fàng duō cháng shí jiān? Shuí què rèn kě yǐ cái?"
+    ],
+    "note": "",
+    "tpy": "Kàn bù juǎn biāo qiān, tán xìng bù yào sōng bù",
+    "dpy": "Pǐn hào zuì hòu yí gè zì mǔ shì yán sè: B hēi, W bái, E huī, R hóng. Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng cái piàn yǐ hòu bú zài suō."
+   },
+   {
+    "id": "dan",
+    "sid": "cat",
+    "fx": "fuse",
+    "dur": 9,
+    "t": [
+     "Dán lót keo (贴合)",
+     "贴合",
+     "Fusing the interlining"
+    ],
+    "d": [
+     "Trước khi chặt, dán vải chính với lót có keo trên máy dán (SOP M-10-71). Trên thẻ, mảnh trước ghi “贴” là đã dán.",
+     "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。卡上前片写“贴”，就是已经贴合。",
+     "Before die-cutting, the shell fabric is fused to adhesive interlining (SOP M-10-71). “贴” on the card means the front panel is fused."
+    ],
+    "chk": [
+     [
+      "Cài nhiệt độ, áp suất theo yêu cầu (80–180 °C); đạt nhiệt mới cho vải vào.",
+      "按要求设定温度（80到180度）和气压，到了温度才放布。",
+      "Set temperature (80–180 °C) and pressure; feed fabric only when hot.",
+      "Àn yāo qiú shè dìng wēn dù (80 dào 180 dù) hé qì yā, dào le wēn dù cái fàng bù."
+     ],
+     [
+      "Tấm đầu: tay người bình thường xé không ra mới chạy tiếp.",
+      "第一片要检查贴得牢不牢：正常人用手撕不开，才可以继续做。",
+      "First sheet: it must not tear apart by hand before running on.",
+      "Dì yī piàn yào jiǎn chá tiē de láo bu láo: zhèng cháng rén yòng shǒu sī bù kāi, cái kě yǐ jì xù zuò."
+     ],
+     [
+      "Mỗi ngày ghi nhiệt 3 điểm trái, giữa, phải và lực kéo trái, phải.",
+      "每天记录左、中、右三点温度，还有左右拉力。",
+      "Log left/centre/right temperature and left/right pull force daily.",
+      "Měi tiān jì lù zuǒ, zhōng, yòu sān diǎn wēn dù, hái yǒu zuǒ yòu lā lì."
+     ]
+    ],
+    "hud": [
+     [
+      "Nhiệt cài",
+      "设定温度",
+      "Set temperature",
+      "80–180 °C theo yêu cầu"
+     ],
+     [
+      "Trái · giữa · phải",
+      "左 · 中 · 右",
+      "Left · centre · right",
+      "@t"
+     ]
+    ],
+    "w": [
+     "贴合",
+     "面布",
+     "衬布",
+     "直线贴合机",
+     "渗胶",
+     "打卷"
+    ],
+    "lab": "",
+    "q": [
+     "Nhiệt khi dán thấp hơn mức cài 5–6 °C: lệch bao nhiêu thì phải chỉnh?",
+     "贴合中实际温度比设定低5到6度，差多少要调整？",
+     "Tiē hé zhōng shí jì wēn dù bǐ shè dìng dī 5 dào 6 dù, chà duō shao yào tiáo zhěng?"
+    ],
+    "note": "",
+    "tpy": "Tiē hé",
+    "dpy": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71). Kǎ shàng qián piàn xiě “tiē”, jiù shì yǐ jīng tiē hé."
+   },
+   {
+    "id": "keo",
+    "sid": "cat",
+    "fx": "spread",
+    "dur": 11,
+    "t": [
+     "Kéo vải thành lớp (拉布)",
+     "拉布",
+     "Spreading the plies"
+    ],
+    "d": [
+     "Kéo cây vải dọc bàn, xếp nhiều lớp theo phiếu sơ đồ cắt (biểu M-10-44-A-3), VD kéo hai mặt 18 lớp.",
+     "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。",
+     "Fabric is spread ply by ply following form M-10-44-A-3, e.g. 18 plies two-way."
+    ],
+    "chk": [
+     [
+      "Vải khác cấp màu không kéo chung một chồng.",
+      "不同色差级数的布不混在一起拉。",
+      "Different shade grades are never mixed in one lay.",
+      "Bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā."
+     ],
+     [
+      "Mục kiểm in sẵn: mép bằng, độ căng, độ cao lớp, hướng cắt, có chống mốc không.",
+      "表上的检查项：布边对齐、松紧、层高、裁剪方向，有没有防霉。",
+      "Printed checks: edges aligned, tension, lay height, cutting direction, anti-mould.",
+      "Biǎo shàng de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng, yǒu méi yǒu fáng méi."
+     ]
+    ],
+    "hud": [
+     [
+      "Số lớp",
+      "层数",
+      "Plies",
+      "@n / 18"
+     ],
+     [
+      "Cấp màu",
+      "色差级数",
+      "Shade grade",
+      "chỉ 1 cấp"
+     ]
+    ],
+    "w": [
+     "拉布",
+     "双面拉布",
+     "排版",
+     "裁次",
+     "防霉"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Lā bù",
+    "dpy": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng."
+   },
+   {
+    "id": "chat",
+    "sid": "cat",
+    "fx": "die",
+    "dur": 9,
+    "t": [
+     "Chặt bằng dao (刀模)",
+     "刀模裁剪",
+     "Die-cutting"
+    ],
+    "d": [
+     "Máy chặt ép dao xuống cả chồng vải, lót giấy nâu bên dưới. Một bộ dao: 6 mảnh thân, mặt trên và mặt dưới lưỡi trai, vải bọc nút đỉnh.",
+     "用裁剪机把刀模压下去，一次裁一整叠布，下面垫牛皮纸。一套刀模有六片帽身、眉面、眉里、顶扣包布。",
+     "The press drives the die through the whole lay over kraft paper. One die set: 6 crown panels, visor top and under, top-button cover."
+    ],
+    "chk": [
+     [
+      "Dao lệch so với rập từ 2 mm trở lên thì phải sửa.",
+      "刀模跟纸样比，差2毫米以上就要修。",
+      "Die off the pattern by 2 mm or more: repair it.",
+      "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū."
+     ],
+     [
+      "Kiểm dao 2 giờ một lần, có sổ ghi.",
+      "每两小时查一次刀模，要有记录。",
+      "Check dies every 2 hours and log it.",
+      "Měi liǎng xiǎo shí chá yí cì dāo mó, yào yǒu jì lù."
+     ],
+     [
+      "Lấy mảnh lớp trên, giữa, dưới để kiểm; người kiểm dao và tổ trưởng ký, QC đóng dấu.",
+      "抽上、中、下三层的裁片检查；查刀模的人和组长签字，QC盖章。",
+      "Check pieces from top, middle and bottom plies; die checker and leader sign, QC stamps.",
+      "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá; chá dāo mó de rén hé zǔ zhǎng qiān zì, QC gài zhāng."
+     ]
+    ],
+    "hud": [
+     [
+      "Lần chặt",
+      "裁",
+      "Strokes",
+      "@n"
+     ],
+     [
+      "Lệch dao",
+      "刀模偏差",
+      "Die offset",
+      "≥ 2 mm → sửa"
+     ],
+     [
+      "Kiểm dao",
+      "查刀模",
+      "Die check",
+      "2 giờ/lần"
+     ]
+    ],
+    "w": [
+     "刀模",
+     "牛皮纸",
+     "纸样",
+     "裁片",
+     "眉面",
+     "眉里",
+     "顶扣包布",
+     "前片"
+    ],
+    "lab": "die",
+    "q": null,
+    "note": "",
+    "tpy": "Dāo mó cái jiǎn",
+    "dpy": "Yòng cái jiǎn jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ. Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù."
+   },
+   {
+    "id": "buoc",
+    "sid": "cat",
+    "fx": "bundle",
+    "dur": 9,
+    "t": [
+     "Chọn mảnh, buộc bó 144 bộ",
+     "挑片、绑片，每包144套",
+     "Sorting and bundling 144 sets"
+    ],
+    "d": [
+     "Kiểm từng mảnh, loại mảnh lỗi (SOP M-10-72); buộc đủ 144 bộ/bó, đủ cho 144 chiếc mũ. Thẻ quy trình A đi theo bó.",
+     "逐片检查，挑出不良（作业标准M-10-72）；绑够144套，够做144顶帽子。每包跟一张A卡。",
+     "Every piece is checked and defects removed (SOP M-10-72); 144 sets per bundle, enough for 144 caps. Process card A travels with the bundle."
+    ],
+    "chk": [
+     [
+      "Đúng số: số bộ/lớp × số lớp ± thêm bớt = 144.",
+      "绑片不多不少：每层套数 × 层数 ± 加减 = 144。",
+      "Exact count: sets per ply × plies ± adjustment = 144.",
+      "Bǎng piàn bù duō bù shǎo: měi céng tào shù × céng shù ± jiā jiǎn = 144."
+     ],
+     [
+      "Mã lỗi: 1041 vải lỗi · 1042 bẩn · 1043 nối cây · 1044 thủng · 1140 cắt không đạt · 1141 dán không đạt.",
+      "1041布质不良 · 1042裁剪脏污 · 1043接匹 · 1044破洞 · 1140裁剪不良 · 1141贴合不良。",
+      "Codes: 1041 fabric · 1042 soiled · 1043 roll joint · 1044 hole · 1140 bad cut · 1141 bad fusing.",
+      "1041 bù zhì bù liáng · 1042 cái jiǎn zāng wū · 1043 jiē pǐ · 1044 pò dòng · 1140 cái jiǎn bù liáng · 1141 tiē hé bù liáng."
+     ],
+     [
+      "Công nhân làm công đoạn nào ghi số của mình vào ô đó trên thẻ A.",
+      "工人做哪道工序就在A卡那一栏写自己的工号。",
+      "Each worker writes their number in the box of the operation they did.",
+      "Gōng rén zuò nǎ dào gōng xù jiù zài A kǎ nà yì lán xiě zì jǐ de gōng hào."
+     ]
+    ],
+    "hud": [
+     [
+      "Bộ trong bó",
+      "套数",
+      "Sets",
+      "@n / 144"
+     ],
+     [
+      "Thẻ",
+      "A卡",
+      "Card",
+      "A"
+     ]
+    ],
+    "w": [
+     "挑片",
+     "绑片",
+     "裁片捆绑计算表",
+     "尾数包",
+     "待装片区",
+     "裁剪不良",
+     "贴合不良"
+    ],
+    "lab": "bundle",
+    "q": null,
+    "note": "",
+    "tpy": "Tiāo piàn, bǎng piàn, měi bāo 144 tào",
+    "dpy": "Zhú piàn jiǎn chá, tiāo chū bù liáng (zuò yè biāo zhǔn M-10-72); bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi. Měi bāo gēn yì zhāng A kǎ."
+   },
+   {
+    "id": "theu",
+    "sid": "theu",
+    "fx": "embroider",
+    "dur": 9,
+    "t": [
+     "Thêu logo trên mảnh trước",
+     "前片绣花",
+     "Embroidering the front panel"
+    ],
+    "d": [
+     "Thêu trên mảnh cắt (thường là mảnh trước) hoặc trên mũ đã may, tùy mã. So chiếc đầu với mẫu duyệt.",
+     "在裁片上绣（一般是前片），或者在车好的帽子上绣。首件跟确认样对比。",
+     "Embroidery on the cut piece (usually the front) or on the sewn cap, by style. The first piece is compared with the approved sample."
+    ],
+    "chk": [
+     [
+      "Chiếc đầu: vị trí, kích thước, mật độ, màu chỉ.",
+      "首件跟确认样对比：位置、尺寸、密度、线的颜色。",
+      "First piece: position, size, density, thread colour.",
+      "Shǒu jiàn gēn què rèn yàng duì bǐ: wèi zhì, chǐ cùn, mì dù, xiàn de yán sè."
+     ],
+     [
+      "Đo vị trí logo theo tech pack (VD 1381645: cách đường may lưỡi 1,5 cm).",
+      "按技术包测量logo位置，例如UA 1381645，logo离帽檐车线1.5厘米。",
+      "Measure logo position per tech pack (e.g. 1381645: 1.5 cm from the visor seam).",
+      "Àn jì shù bāo cè liáng logo wèi zhì, lì rú UA 1381645, logo lí mào yán chē xiàn 1.5 lí mǐ."
+     ],
+     [
+      "Lỗi hay gặp: nhăn quanh hình, xù lông.",
+      "常见不良：绣花起皱、绣花起毛。",
+      "Common defects: puckering, fuzz.",
+      "Cháng jiàn bù liáng: xiù huā qǐ zhòu, xiù huā qǐ máo."
+     ]
+    ],
+    "hud": [
+     [
+      "Đang thêu",
+      "绣花",
+      "Stitching",
+      "@pct"
+     ],
+     [
+      "Logo",
+      "logo",
+      "Logo",
+      "logo mô phỏng, không phải logo khách"
+     ]
+    ],
+    "w": [
+     "绣花",
+     "前片",
+     "首件检验",
+     "确认样",
+     "绣花起皱",
+     "绣花起毛"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Qián piàn xiù huā",
+    "dpy": "Zài cái piàn shàng xiù (yì bān shì qián piàn), huò zhě zài chē hǎo de mào zi shàng xiù. Shǒu jiàn gēn què rèn yàng duì bǐ."
+   },
+   {
+    "id": "in",
+    "sid": "in",
+    "fx": "print",
+    "dur": 9,
+    "t": [
+     "In hoặc ép logo",
+     "印花、转印",
+     "Printing or heat-transfer"
+    ],
+    "d": [
+     "In lưới tay, in máy (màu khó pha) hoặc ép logo. Ép thử chiếc đầu so mẫu duyệt; kiểm 100% ngoại quan mảnh in.",
+     "手工印、机器印（难调的颜色）、转印。首件试压跟确认样对比；印花裁片100%查外观。",
+     "Hand screen, machine print (hard colours) or heat transfer. Trial-press the first piece; check 100% of printed pieces."
+    ],
+    "chk": [
+     [
+      "Logo lệch: VF tính trên 3 mm là lỗi nặng, từ 3 mm trở xuống là lỗi nhẹ.",
+      "Logo偏位：VF规定超过3毫米是严重缺陷，3毫米以内是轻微缺陷。",
+      "Logo offset (VF): over 3 mm is major, 3 mm or less is minor.",
+      "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn."
+     ],
+     [
+      "Bong, nứt, trôi khi giặt thường do chưa đủ nhiệt đóng rắn hoặc sai mực.",
+      "脱落、裂开、洗掉，大多是固化温度不够，或者油墨用错。",
+      "Peeling, cracking or wash-off usually means low curing heat or wrong ink.",
+      "Tuō luò, liè kāi, xǐ diào, dà duō shì gù huà wēn dù bú gòu, huò zhě yóu mò yòng cuò."
+     ]
+    ],
+    "hud": [
+     [
+      "Ép",
+      "压",
+      "Press",
+      "@press"
+     ],
+     [
+      "Logo lệch",
+      "Logo偏位",
+      "Logo offset",
+      "> 3 mm nặng · ≤ 3 mm nhẹ"
+     ]
+    ],
+    "w": [
+     "印花",
+     "转印",
+     "印花模糊",
+     "转印变形",
+     "严重缺陷",
+     "轻微缺陷"
+    ],
+    "lab": "logo",
+    "q": [
+     "Test bám dính ai làm, bao lâu một lần, ghi ở đâu?",
+     "附着力测试谁做？多久做一次？记录在哪里？",
+     "Fù zhuó lì cè shì shuí zuò? Duō jiǔ zuò yí cì? Jì lù zài nǎ lǐ?"
+    ],
+    "note": "",
+    "tpy": "Yìn huā, zhuǎn yìn",
+    "dpy": "Shǒu gōng yìn, jī qì yìn (nán tiáo de yán sè), zhuǎn yìn. Shǒu jiàn shì yā gēn què rèn yàng duì bǐ; yìn huā cái piàn 100% chá wài guān."
+   },
+   {
+    "id": "giat",
+    "sid": "giat",
+    "fx": "wash",
+    "dur": 7,
+    "t": [
+     "Giặt (chỉ mũ wash) · tầng 1",
+     "水洗帽 · 一楼",
+     "Washing (washed caps only) · ground floor"
+    ],
+    "d": [
+     "Chỉ mã mũ wash mới đi khâu này. Tầng 1, khoảng 8 máy (3 lớn, 5 nhỏ), kỹ thuật phụ trách.",
+     "只有水洗帽要洗。一楼，大概8台机器（3大5小），技术部负责。",
+     "Only washed-cap styles come here. Ground floor, about 8 machines (3 large, 5 small), run by engineering."
+    ],
+    "chk": [
+     [
+      "Cách kiểm sau giặt: chưa học.",
+      "水洗后怎么检查还没学。",
+      "Post-wash checks: not learned yet.",
+      "Shuǐ xǐ hòu zěn me jiǎn chá hái méi xué."
+     ]
+    ],
+    "hud": [
+     [
+      "Máy",
+      "机器",
+      "Machines",
+      "3 lớn · 5 nhỏ"
+     ]
+    ],
+    "w": [
+     "水洗帽"
+    ],
+    "lab": "",
+    "q": [
+     "Giặt cả cây vải hay giặt mảnh cắt? Công thức ai quyết?",
+     "是整卷布洗还是裁片洗？配方谁定？",
+     "Shì zhěng juǎn bù xǐ hái shì cái piàn xǐ? Pèi fāng shuí dìng?"
+    ],
+    "note": "",
+    "tpy": "Shuǐ xǐ mào · yī lóu",
+    "dpy": "Zhǐ yǒu shuǐ xǐ mào yào xǐ. Yī lóu, dà gài 8 tái jī qì (3 dà 5 xiǎo), jì shù bù fù zé."
+   },
+   {
+    "id": "lothoang",
+    "sid": "may",
+    "fx": "eyelet",
+    "dur": 9,
+    "t": [
+     "Thêu lỗ thoáng (công đoạn 8)",
+     "绣洞",
+     "Embroidered eyelets (op 8)"
+    ],
+    "d": [
+     "Lên tầng 2. Thêu lỗ thoáng làm ở chuyền may: 1.700 vòng/phút, vải mỏng 1.200 và lót giấy; làm trước khi may 2 kim.",
+     "上二楼。绣洞在车缝线上做：转速1700，薄料1200，要垫纸；在双针之前做。",
+     "Up to the second floor. Eyelets are stitched on the sewing line: 1,700 rpm, 1,200 for thin fabric with paper backing, before twin-needle work."
+    ],
+    "chk": [
+     [
+      "Đối chiếu tốc độ máy với thẻ SOP dán trên máy.",
+      "核对机器速度跟SOP卡上写的是否一样。",
+      "Compare machine speed with the SOP card on the machine.",
+      "Hé duì jī qì sù dù gēn SOP kǎ shàng xiě de shì fǒu yí yàng."
+     ]
+    ],
+    "hud": [
+     [
+      "Tốc độ",
+      "转速",
+      "Speed",
+      "1.700 vòng/phút"
+     ],
+     [
+      "Vải mỏng",
+      "薄料",
+      "Thin fabric",
+      "1.200 + lót giấy"
+     ],
+     [
+      "Lỗ",
+      "绣洞",
+      "Eyelets",
+      "@n / 6 (VD 1381645)"
+     ]
+    ],
+    "w": [
+     "绣洞",
+     "薄料",
+     "绣洞位置",
+     "绣洞间距"
+    ],
+    "lab": "spi",
+    "q": null,
+    "note": "",
+    "tpy": "Xiù dòng",
+    "dpy": "Shàng èr lóu. Xiù dòng zài chē féng xiàn shàng zuò: zhuàn sù 1700, báo liào 1200, yào diàn zhǐ; zài shuāng zhēn zhī qián zuò."
+   },
+   {
+    "id": "rap",
+    "sid": "may",
+    "fx": "join",
+    "dur": 9,
+    "t": [
+     "Ráp thân trước (前合片, công đoạn 9)",
+     "前合片",
+     "Joining the front panels (op 9)"
+    ],
+    "d": [
+     "Ráp hai mảnh trước: đường may chừa 6 mm, 12 mũi/inch, lại mũi 10 mm. Thẻ tiếng Việt ghi 11 mũi.",
+     "前合片：缝份6毫米，每英寸12针（越南文的卡写11针），回针10毫米。",
+     "Front panels joined: 6 mm seam allowance, 12 SPI, 10 mm backtack. The Vietnamese card says 11 SPI."
+    ],
+    "chk": [
+     [
+      "Đối chiếu thẻ SOP với số trên máy (mũi/inch, đường may chừa).",
+      "核对每台机器的SOP卡和机器上的数据（针距、缝份）。",
+      "Compare the SOP card with the machine (SPI, seam allowance).",
+      "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù (zhēn jù, féng fèn)."
+     ]
+    ],
+    "hud": [
+     [
+      "Đường may chừa",
+      "缝份",
+      "Seam allowance",
+      "6 mm"
+     ],
+     [
+      "Mũi/inch",
+      "针距",
+      "SPI",
+      "12 (thẻ Việt: 11)"
+     ],
+     [
+      "Lại mũi",
+      "回针",
+      "Backtack",
+      "10 mm"
+     ]
+    ],
+    "w": [
+     "前合片",
+     "合片",
+     "缝份",
+     "针距",
+     "回针"
+    ],
+    "lab": "spi",
+    "q": [
+     "Ráp thân trước 12 hay 11 mũi/inch? Bản nào đúng?",
+     "前合片每英寸12针还是11针？哪个对？",
+     "Qián hé piàn měi yīng cùn 12 zhēn hái shì 11 zhēn? Nǎ ge duì?"
+    ],
+    "note": "",
+    "tpy": "Qián hé piàn",
+    "dpy": "Qián hé piàn: féng fèn 6 háo mǐ, měi yīng cùn 12 zhēn (yuè nán wén de kǎ xiě 11 zhēn), huí zhēn 10 háo mǐ."
+   },
+   {
+    "id": "than",
+    "sid": "may",
+    "fx": "body",
+    "dur": 9,
+    "t": [
+     "Ráp đủ 6 mảnh: may 2 kim, vắt sổ, viền",
+     "合片、帽双、拷克、包边",
+     "All six panels: twin-needle, overlock, binding"
+    ],
+    "d": [
+     "Công đoạn 10–13: may 2 kim thân sau 10 mũi (viền 20 mm gấp 6 mm); vắt sổ 8 mũi; may 2 kim đè đường ráp 10 mũi, rẽ 5:5; viền 9 mũi.",
+     "第10到13道：后双每英寸10针（包边条20毫米折6毫米）；拷克8针；帽双10针，缝份分开5:5；包边9针。",
+     "Ops 10–13: back twin-needle 10 SPI (20 mm tape folded 6 mm); overlock 8 SPI; twin-needle over seams 10 SPI, split 5:5; binding 9 SPI."
+    ],
+    "chk": [
+     [
+      "Vắt sổ: chỉ thừa 3 mm (mũ giặt 15 mm).",
+      "拷克：线头留3毫米，水洗帽留15毫米。",
+      "Overlock thread tail 3 mm (15 mm for washed caps).",
+      "Kǎo kè: xiàn tóu liú 3 háo mǐ, shuǐ xǐ mào liú 15 háo mǐ."
+     ],
+     [
+      "Dải viền không có mối nối.",
+      "包边条不能有接头。",
+      "Binding tape has no joints.",
+      "Bāo biān tiáo bù néng yǒu jiē tóu."
+     ],
+     [
+      "Lỗi hay gặp: nhảy mũi, nổi chỉ, may nhăn, đường 2 kim to nhỏ.",
+      "常见不良：跳针、浮线、车缝起皱、双针大小边。",
+      "Common: skipped stitches, floating thread, puckering, uneven twin-needle.",
+      "Cháng jiàn bù liáng: tiào zhēn, fú xiàn, chē féng qǐ zhòu, shuāng zhēn dà xiǎo biān."
+     ]
+    ],
+    "hud": [
+     [
+      "May 2 kim đè",
+      "帽双",
+      "Twin-needle",
+      "10 mũi/inch"
+     ],
+     [
+      "Vắt sổ",
+      "拷克",
+      "Overlock",
+      "8 mũi/inch"
+     ],
+     [
+      "Viền",
+      "包边",
+      "Binding",
+      "9 mũi/inch"
+     ],
+     [
+      "Mảnh đã ráp",
+      "合片",
+      "Panels joined",
+      "@n / 6"
+     ]
+    ],
+    "w": [
+     "帽双",
+     "后双",
+     "拷克",
+     "包边",
+     "压条",
+     "跳针",
+     "浮线",
+     "车缝起皱",
+     "双针大小边"
+    ],
+    "lab": "spi",
+    "q": [
+     "Vắt sổ: chỉ thừa tối đa 3 mm hay 5 mm?",
+     "拷克：线头最多留3毫米还是5毫米？",
+     "Kǎo kè: xiàn tóu zuì duō liú 3 háo mǐ hái shì 5 háo mǐ?"
+    ],
+    "note": "",
+    "tpy": "Hé piàn, mào shuāng, kǎo kè, bāo biān",
+    "dpy": "Dì 10 dào 13 dào: hòu shuāng měi yīng cùn 10 zhēn (bāo biān tiáo 20 háo mǐ zhé 6 háo mǐ); kǎo kè 8 zhēn; mào shuāng 10 zhēn, féng fèn fēn kāi 5:5; bāo biān 9 zhēn."
+   },
+   {
+    "id": "vanh",
+    "sid": "may",
+    "fx": "visor",
+    "dur": 9,
+    "t": [
+     "Lưỡi trai: bọc, xén, diễu",
+     "束眉、修眉、绕线",
+     "Visor: cover, trim, stitch"
+    ],
+    "d": [
+     "Bọc vành 7 mũi/inch, không may lên tấm lưỡi; xén vành (UA chừa 5–7 mm); diễu vành 10 mũi/inch, từ 4 đường dùng máy tự động.",
+     "束眉：每英寸7针，不能车到眉板上。修眉：UA留5到7毫米。绕线：每英寸10针，4条以上用自动机。",
+     "Visor cover 7 SPI, never through the board; trim (UA leaves 5–7 mm); visor stitching 10 SPI, 4+ rows on the automatic machine."
+    ],
+    "chk": [
+     [
+      "Chỉ vành đều, không đứt, không nối chỉ; hai góc vành cân nhau.",
+      "绕线均匀，没有断线、接线；左右眉角对称。",
+      "Even visor rows, no breaks or joins; both corners symmetric.",
+      "Rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn."
+     ]
+    ],
+    "hud": [
+     [
+      "Bọc vành",
+      "束眉",
+      "Cover",
+      "7 mũi/inch"
+     ],
+     [
+      "Xén vành (UA)",
+      "修眉",
+      "Trim (UA)",
+      "5–7 mm"
+     ],
+     [
+      "Diễu vành",
+      "绕线",
+      "Visor rows",
+      "@n đường · 10 mũi/inch"
+     ]
+    ],
+    "w": [
+     "束眉",
+     "修眉",
+     "绕线",
+     "眉板",
+     "帽檐",
+     "断线",
+     "接线",
+     "左右眉角不对称"
+    ],
+    "lab": "spi",
+    "q": null,
+    "note": "",
+    "tpy": "Shù méi, xiū méi, rào xiàn",
+    "dpy": "Shù méi: měi yīng cùn 7 zhēn, bù néng chē dào méi bǎn shàng. Xiū méi: UA liú 5 dào 7 háo mǐ. Rào xiàn: měi yīng cùn 10 zhēn, 4 tiáo yǐ shàng yòng zì dòng jī."
+   },
+   {
+    "id": "mohoi",
+    "sid": "may",
+    "fx": "sweat",
+    "dur": 9,
+    "t": [
+     "Dây size, nhãn, đai mồ hôi và tra lưỡi · công đoạn then chốt",
+     "尺寸带、商标、汗带、帽眉（关键工序）",
+     "Size tape, label, sweatband, visor attach (key operation)"
+    ],
+    "d": [
+     "Dây size, nhãn cách mép dưới 4 mm, 6 mũi/inch. May đai mồ hôi và tra lưỡi: 9 mũi/inch, UA và TNF 10 mũi.",
+     "尺寸带、商标离下边4毫米，每英寸6针。汗带、帽眉这一道是关键工序，每英寸9针，UA、TNF是10针。",
+     "Size tape and label 4 mm from the bottom edge, 6 SPI. Sweatband and visor attach: 9 SPI, 10 for UA and TNF."
+    ],
+    "chk": [
+     [
+      "Công đoạn quan trọng: tuần tra 2 lần/ngày, AQL 1.5.",
+      "关键工序每天巡检2次，AQL 1.5。",
+      "Key operation: patrol twice a day, AQL 1.5.",
+      "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5."
+     ],
+     [
+      "Đai mồ hôi không được lộ ra ngoài.",
+      "不能汗带外露。",
+      "The sweatband must not show outside.",
+      "Bù néng hàn dài wài lù."
+     ]
+    ],
+    "hud": [
+     [
+      "Mũi/inch (UA)",
+      "针距",
+      "SPI (UA)",
+      "10"
+     ],
+     [
+      "Tuần tra",
+      "巡检",
+      "Patrol",
+      "@p / 2 lần hôm nay"
+     ]
+    ],
+    "w": [
+     "尺寸带",
+     "商标",
+     "汗带",
+     "帽眉",
+     "关键工序",
+     "巡检",
+     "汗带外露"
+    ],
+    "lab": "spi",
+    "q": null,
+    "note": "",
+    "tpy": "Chǐ cùn dài, shāng biāo, hàn dài, mào méi (guān jiàn gōng xù)",
+    "dpy": "Chǐ cùn dài, shāng biāo lí xià biān 4 háo mǐ, měi yīng cùn 6 zhēn. Hàn dài, mào méi zhè yí dào shì guān jiàn gōng xù, měi yīng cùn 9 zhēn, UA, TNF shì 10 zhēn."
+   },
+   {
+    "id": "khoa",
+    "sid": "may",
+    "fx": "strap",
+    "dur": 9,
+    "t": [
+     "Khóa sau, dây quai (máy lập trình)",
+     "后扣、调节带（电脑车）",
+     "Back strap and buckle (programmed machine)"
+    ],
+    "d": [
+     "Dây vào 15 mm, 8 mũi/inch. May thử bằng băng phế trước khi may hàng thật.",
+     "调节带车进去15毫米，每英寸8针。先用废带试车，再车大货。",
+     "Strap set in 15 mm, 8 SPI. Test on scrap tape before bulk."
+    ],
+    "chk": [
+     [
+      "Khóa không lỏng, đúng loại, không cạnh sắc, không gỉ.",
+      "扣具不松、不用错，没有锋利的边，不生锈。",
+      "Buckle firm, right type, no sharp edges or rust.",
+      "Kòu jù bù sōng, bú yòng cuò, méi yǒu fēng lì de biān, bù shēng xiù."
+     ]
+    ],
+    "hud": [
+     [
+      "Dây vào",
+      "车进",
+      "Strap set-in",
+      "15 mm"
+     ],
+     [
+      "Mũi/inch",
+      "针距",
+      "SPI",
+      "8"
+     ],
+     [
+      "Thử",
+      "试车",
+      "Trial",
+      "@trial"
+     ]
+    ],
+    "w": [
+     "电脑车",
+     "后扣",
+     "调节带",
+     "扣具"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Hòu kòu, tiáo jié dài (diàn nǎo chē)",
+    "dpy": "Tiáo jié dài chē jìn qù 15 háo mǐ, měi yīng cùn 8 zhēn. Xiān yòng fèi dài shì chē, zài chē dà huò."
+   },
+   {
+    "id": "nut",
+    "sid": "may",
+    "fx": "button",
+    "dur": 9,
+    "t": [
+     "Đóng nút đỉnh, cắt chỉ",
+     "打顶扣、修线",
+     "Top button and thread trimming"
+    ],
+    "d": [
+     "Đóng nút đỉnh áp suất 6–9. Cắt chỉ trong trước, ngoài sau; gốc lưỡi phải sạch.",
+     "打顶扣：压力6到9。修线：先里面后外面，帽檐根部要干净。",
+     "Top button at pressure 6–9. Trim threads inside first, then outside; the visor root must be clean."
+    ],
+    "chk": [
+     [
+      "Nút không lỏng, không lệch; các đường ráp gặp nhau ở một điểm trên đỉnh.",
+      "顶扣不松、不偏；合片线在顶上交在一个点。",
+      "Button firm and centred; seams meet at one point on top.",
+      "Dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn."
+     ]
+    ],
+    "hud": [
+     [
+      "Áp suất",
+      "压力",
+      "Pressure",
+      "6–9"
+     ],
+     [
+      "Cắt chỉ",
+      "修线",
+      "Trimming",
+      "@trim"
+     ]
+    ],
+    "w": [
+     "打顶扣",
+     "顶扣",
+     "修线",
+     "线头"
+    ],
+    "lab": "",
+    "q": [
+     "Áp suất 6–9 khi đóng nút là đơn vị gì? Kiểm nút lỏng bằng cách nào?",
+     "打顶扣压力6到9是什么单位？顶扣松不松怎么查？",
+     "Dǎ dǐng kòu yā lì 6 dào 9 shì shén me dān wèi? Dǐng kòu sōng bu sōng zěn me chá?"
+    ],
+    "note": "",
+    "tpy": "Dǎ dǐng kòu, xiū xiàn",
+    "dpy": "Dǎ dǐng kòu: yā lì 6 dào 9. Xiū xiàn: xiān lǐ miàn hòu wài miàn, mào yán gēn bù yào gān jìng."
+   },
+   {
+    "id": "chiecdau",
+    "sid": "may",
+    "fx": "firstpiece",
+    "dur": 9,
+    "t": [
+     "UA: kiểm chiếc đầu và tuần tra trên chuyền",
+     "首件检验、巡检（UA）",
+     "UA: first-piece check and line patrol"
+    ],
+    "d": [
+     "Kiểm chiếc đầu mỗi chuyền mỗi ca và khi đổi màu, đổi mã; CFA, tổ trưởng, QC manager cùng ký; sai thì dừng chuyền. Tuần tra ít nhất 2 chiếc/chuyền, 2 lần/ngày.",
+     "首件检验：每条线每个班、换颜色或换款的时候做，CFA、组长、QC主管一起签字，不对就停线。巡检：每条线至少2顶，每天2次。",
+     "First piece every line every shift and at colour or style change; CFA, line leader and QC manager sign; wrong means stop the line. Patrol at least 2 caps per line twice a day."
+    ],
+    "chk": [
+     [
+      "Tuần tra có lỗi thì làm CAP.",
+      "巡检有问题做CAP。",
+      "Patrol findings need a CAP.",
+      "Xún jiǎn yǒu wèn tí zuò CAP."
+     ]
+    ],
+    "hud": [
+     [
+      "Ký",
+      "签字",
+      "Signed",
+      "@sign"
+     ],
+     [
+      "Tuần tra",
+      "巡检",
+      "Patrol",
+      "≥ 2 chiếc · 2 lần/ngày"
+     ]
+    ],
+    "w": [
+     "首件检验",
+     "巡检",
+     "中查",
+     "在制品检验"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Shǒu jiàn jiǎn yàn, xún jiǎn (UA)",
+    "dpy": "Shǒu jiàn jiǎn yàn: měi tiáo xiàn měi gè bān, huàn yán sè huò huàn kuǎn de shí hòu zuò, CFA, zǔ zhǎng, QC zhǔ guǎn yì qǐ qiān zì, bú duì jiù tíng xiàn. Xún jiǎn: měi tiáo xiàn zhì shǎo 2 dǐng, měi tiān 2 cì."
+   },
+   {
+    "id": "uon",
+    "sid": "dinhform",
+    "fx": "curve",
+    "dur": 9,
+    "t": [
+     "Ép cong vành (TYL-1908-R)",
+     "弯眉整烫",
+     "Curving the visor (TYL-1908-R)"
+    ],
+    "d": [
+     "Máy 3 vùng nhiệt, kiểm máy đầu ca. Hôm 14/10 thấy cài 120 °C mà máy hiện 107,9 °C.",
+     "弯眉整烫机TYL-1908-R，三个温区，开班前要点检。10月14日看到设定120度，机器显示107.9度。",
+     "Three heat zones, checked at shift start. On 14/10 the set point was 120 °C but the display read 107.9 °C."
+    ],
+    "chk": [
+     [
+      "So nhiệt cài với nhiệt máy hiện.",
+      "核对设定温度和实际温度。",
+      "Compare set and displayed temperature.",
+      "Hé duì shè dìng wēn dù hé shí jì wēn dù."
+     ],
+     [
+      "Đo độ cong lưỡi (AA227): gập phần sau, đặt mũ lên bàn, đo từ mặt bàn tới mép dưới lưỡi ở điểm cao nhất.",
+      "量帽檐弯度（AA227）：把后面折起来，帽子放在桌上，从桌面量到帽檐下边最高的地方。",
+      "Visor curve (AA227): fold the back, set the cap on the table, measure from the table to the visor edge at its highest point.",
+      "Liáng mào yán wān dù (AA227): bǎ hòu miàn zhé qǐ lái, mào zi fàng zài zhuō shàng, cóng zhuō miàn liáng dào mào yán xià biān zuì gāo de dì fang."
+     ]
+    ],
+    "hud": [
+     [
+      "Nhiệt cài",
+      "设定温度",
+      "Set",
+      "120 °C"
+     ],
+     [
+      "Máy hiện",
+      "显示",
+      "Display",
+      "@t"
+     ],
+     [
+      "Lệch",
+      "差",
+      "Gap",
+      "@gap"
+     ]
+    ],
+    "w": [
+     "弯眉整烫",
+     "帽檐弯度"
+    ],
+    "lab": "temp",
+    "q": [
+     "Lệch bao nhiêu thì dừng máy? Bao lâu kiểm nhiệt một lần?",
+     "差多少要停机？多久查一次温度？",
+     "Chà duō shao yào tíng jī? Duō jiǔ chá yí cì wēn dù?"
+    ],
+    "note": "",
+    "tpy": "Wān méi zhěng tàng",
+    "dpy": "Wān méi zhěng tàng jī TYL-1908-R, sān gè wēn qū, kāi bān qián yào diǎn jiǎn. 10 yuè 14 rì kàn dào shè dìng 120 dù, jī qì xiǎn shì 107.9 dù."
+   },
+   {
+    "id": "form",
+    "sid": "dinhform",
+    "fx": "steam",
+    "dur": 9,
+    "t": [
+     "Ủi hơi định form trên đầu mẫu",
+     "头模蒸汽定型",
+     "Steam shaping on the head form"
+    ],
+    "d": [
+     "Ép vành cotton 165–180 °C trong 6 giây; ủi 90–130 °C. Ủi định hình mảnh trước là công đoạn 1808 trên thẻ.",
+     "棉布帽檐165到180度、6秒，熨烫90到130度。前整烫是卡上的1808工序。",
+     "Cotton visor press 165–180 °C for 6 s; steam 90–130 °C. Front pressing is operation 1808 on the card."
+    ],
+    "chk": [
+     [
+      "Thẻ định form ghi 165–180 °C nhưng máy cài 110–135 °C: chỗ lệch đã thấy.",
+      "定型卡写165到180度，机器设110到135度，这是已经发现的不一致。",
+      "The card says 165–180 °C but the machine is set to 110–135 °C: a recorded mismatch.",
+      "Dìng xíng kǎ xiě 165 dào 180 dù, jī qì shè 110 dào 135 dù, zhè shì yǐ jīng fā xiàn de bù yí zhì."
+     ],
+     [
+      "Mũ không đẹp form là lỗi (帽型不佳).",
+      "帽型不好是不良（帽型不佳）。",
+      "Poor cap shape is a defect.",
+      "Mào xíng bù hǎo shì bù liáng (mào xíng bù jiā)."
+     ]
+    ],
+    "hud": [
+     [
+      "Ép vành cotton",
+      "棉布帽檐",
+      "Cotton visor",
+      "165–180 °C · 6 s"
+     ],
+     [
+      "Ủi hơi",
+      "熨烫",
+      "Steam",
+      "90–130 °C"
+     ],
+     [
+      "Máy cài (14/10)",
+      "机器设定",
+      "Machine set (14/10)",
+      "110–135 °C"
+     ],
+     [
+      "Đếm giây",
+      "秒",
+      "Seconds",
+      "@s"
+     ]
+    ],
+    "w": [
+     "头模",
+     "前整烫",
+     "帽型不佳"
+    ],
+    "lab": "temp",
+    "q": null,
+    "note": "",
+    "tpy": "Tóu mó zhēng qì dìng xíng",
+    "dpy": "Mián bù mào yán 165 dào 180 dù, 6 miǎo, yùn tàng 90 dào 130 dù. Qián zhěng tàng shì kǎ shàng de 1808 gōng xù."
+   },
+   {
+    "id": "qc8",
+    "sid": "qc",
+    "fx": "qc8",
+    "dur": 12,
+    "t": [
+     "QC cuối chuyền 100%: 8 bước",
+     "尾查：检查8个步骤",
+     "End-of-line QC 100%: 8 steps"
+    ],
+    "d": [
+     "Mỗi chuyền 2 người của 品保部 kiểm 100% thành phẩm sau định form, theo 8 bước.",
+     "定型以后，每条线品保部2个人100%检查成品，按8个步骤。",
+     "After shaping, two 品保部 inspectors per line check 100% of caps in 8 steps."
+    ],
+    "chk": [
+     [
+      "Quét iPad → kiểm sau định form → ngoài từ đỉnh → lưỡi và chỉ vành → bên trong, cắt chỉ tại bàn → dây về 9.5 rồi đo → đối chiếu iPad → kiểm form.",
+      "iPad扫码 → 定型后检查 → 按六片帽检验顺序从顶上开始查外面 → 查帽檐和绕线 → 查里面，线头在桌上剪 → 后面调到9.5再量帽围 → 核对iPad上的信息 → 看帽型。",
+      "Scan iPad → check after shaping → outside from the top → visor and rows → inside, trim at the bench → strap to 9.5 and measure → match iPad → check shape.",
+      "iPad sǎo mǎ → dìng xíng hòu jiǎn chá → àn liù piàn mào jiǎn yàn shùn xù cóng dǐng shàng kāi shǐ chá wài miàn → chá mào yán hé rào xiàn → chá lǐ miàn, xiàn tóu zài zhuō shàng jiǎn → hòu miàn tiáo dào 9.5 zài liáng mào wéi → hé duì iPad shàng de xìn xī → kàn mào xíng."
+     ]
+    ],
+    "hud": [
+     [
+      "Bước",
+      "步骤",
+      "Step",
+      "@s / 8"
+     ],
+     [
+      "Đang làm",
+      "现在",
+      "Now",
+      "@name"
+     ]
+    ],
+    "w": [
+     "尾查",
+     "线尾检验",
+     "六片帽检验顺序",
+     "品保部",
+     "帽围",
+     "线头"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Wěi chá: jiǎn chá 8 gè bù zhòu",
+    "dpy": "Dìng xíng yǐ hòu, měi tiáo xiàn pǐn bǎo bù 2 gè rén 100% jiǎn chá chéng pǐn, àn 8 gè bù zhòu."
+   },
+   {
+    "id": "qc15",
+    "sid": "qc",
+    "fx": "qc15",
+    "dur": 24,
+    "t": [
+     "15 điểm kiểm theo thứ tự mũ 6 mảnh",
+     "六片帽检验顺序：15个点",
+     "15 checkpoints in 6-panel order"
+    ],
+    "d": [
+     "Lần lượt 15 điểm trong và ngoài: lật mũ lên để xem đai mồ hôi, tem, bên trong.",
+     "里外15个点一个一个查：把帽子翻过来看汗带、商标和帽身里面。",
+     "Fifteen points inside and out, in order; the cap is turned over for the sweatband, label and inside."
+    ],
+    "chk": [
+     [
+      "Mảnh trước: logo lệch, thêu nhăn hoặc xù, in mờ.",
+      "前片：logo偏位、绣花起皱、绣花起毛、印花模糊。",
+      "Front: logo offset, puckered or fuzzy embroidery, blurred print.",
+      "Qián piàn: logo piān wèi, xiù huā qǐ zhòu, xiù huā qǐ máo, yìn huā mó hu."
+     ],
+     [
+      "Mảnh giữa: 2 kim to nhỏ, nhảy mũi, nổi chỉ; hai bên cao bằng nhau.",
+      "中片：双针大小边、跳针、浮线；左右高度要一样。",
+      "Middle panels: uneven twin-needle, skips, floating thread; both sides equal height.",
+      "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; zuǒ yòu gāo dù yào yí yàng."
+     ],
+     [
+      "Đai mồ hôi: không lộ ra ngoài; đường may không lệch, không đứt.",
+      "汗带：不能汗带外露；车线不偏、不断线。",
+      "Sweatband: never showing outside; stitching straight and unbroken.",
+      "Hàn dài: bù néng hàn dài wài lù; chē xiàn bù piān, bú duàn xiàn."
+     ]
+    ],
+    "hud": [
+     [
+      "Điểm",
+      "检查点",
+      "Point",
+      "@p / 15"
+     ],
+     [
+      "Đang xem",
+      "现在",
+      "Now",
+      "@name"
+     ],
+     [
+      "Tìm lỗi",
+      "找什么",
+      "Look for",
+      "@find"
+     ]
+    ],
+    "w": [
+     "六片帽检验顺序",
+     "尺寸",
+     "眉面",
+     "前片",
+     "右中片",
+     "后片",
+     "后喇叭",
+     "左中片",
+     "顶扣",
+     "汗带",
+     "商标",
+     "扣具",
+     "眉里"
+    ],
+    "lab": "p15",
+    "q": null,
+    "note": "",
+    "tpy": "Liù piàn mào jiǎn yàn shùn xù: 15 gè diǎn",
+    "dpy": "Lǐ wài 15 gè diǎn yí gè yí gè chá: bǎ mào zi fān guò lái kàn hàn dài, shāng biāo hé mào shēn lǐ miàn."
+   },
+   {
+    "id": "do",
+    "sid": "qc",
+    "fx": "measure",
+    "dur": 9,
+    "t": [
+     "Chỉnh dây về 9.5 rồi đo vòng đầu",
+     "后面调到9.5再量帽围",
+     "Strap to 9.5, then measure the head size"
+    ],
+    "d": [
+     "Đo viền trong (vòng đầu) trước rồi viền ngoài. Mũ một size đo đủ mọi điểm trên 1 chiếc, các chiếc khác đo điểm quan trọng.",
+     "先量里面一圈（帽围），再量外面。一个尺码的帽子，一顶量全部的点，其他的量重要的点。",
+     "Measure the inner edge (head size) first, then the outer. One-size caps: all points on one cap, key points on the rest."
+    ],
+    "chk": [
+     [
+      "Dung sai mũ UA: vòng đầu ±0,5 cm, độ sâu ±0,3 cm, cao lưỡi ±0,5 cm.",
+      "UA帽子：帽围±0.5厘米，深度±0.3厘米，帽檐高±0.5厘米。",
+      "UA cap tolerance: head size ±0.5 cm, depth ±0.3 cm, visor height ±0.5 cm.",
+      "UA mào zi: mào wéi ± 0.5 lí mǐ, shēn dù ± 0.3 lí mǐ, mào yán gāo ± 0.5 lí mǐ."
+     ],
+     [
+      "Lệch quá ±1/4 inch thì đo tiếp.",
+      "差超过±1/4英寸，要继续量。",
+      "Beyond ±1/4 inch, measure more caps.",
+      "Chà chāo guò ± 1/4 yīng cùn, yào jì xù liáng."
+     ]
+    ],
+    "hud": [
+     [
+      "Dây sau",
+      "调节带",
+      "Back strap",
+      "9.5"
+     ],
+     [
+      "Chuẩn (VD)",
+      "标准（例）",
+      "Spec (example)",
+      "57,0 cm"
+     ],
+     [
+      "Đo được",
+      "量到",
+      "Measured",
+      "@hc"
+     ],
+     [
+      "Kết quả",
+      "结果",
+      "Result",
+      "@res"
+     ]
+    ],
+    "w": [
+     "帽围",
+     "调节带",
+     "尺寸",
+     "前高",
+     "侧高",
+     "后高"
+    ],
+    "lab": "tol",
+    "q": [
+     "Mức 9.5 khi chỉnh dây sau ứng với thông số nào?",
+     "后面调到9.5是对应哪个尺寸？",
+     "Hòu miàn tiáo dào 9.5 shì duì yìng nǎ ge chǐ cùn?"
+    ],
+    "note": "",
+    "tpy": "Hòu miàn tiáo dào 9.5 zài liáng mào wéi",
+    "dpy": "Xiān liáng lǐ miàn yì quān (mào wéi), zài liáng wài miàn. Yí gè chǐ mǎ de mào zi, yì dǐng liáng quán bù de diǎn, qí tā de liáng zhòng yào de diǎn."
+   },
+   {
+    "id": "loi",
+    "sid": "qc",
+    "fx": "rework",
+    "dur": 9,
+    "t": [
+     "Có lỗi: sửa (返工) hay làm lại (重做)",
+     "返工还是重做",
+     "Defect found: rework or remake"
+    ],
+    "d": [
+     "Lỗi nhẹ và vừa: báo tổ trưởng rồi trả sản xuất sửa. Lỗi nặng (ảnh hưởng kết cấu, màu, chất lượng): làm lại.",
+     "轻微缺陷告诉组长，退回生产返工；严重缺陷影响结构、颜色、质量的，要重做。",
+     "Minor and medium defects: tell the line leader and return for rework. Major (structure, colour, quality): remake."
+    ],
+    "chk": [
+     [
+      "Đếm lỗi khác đếm chiếc lỗi: 1 chiếc đứt chỉ, chỉ thừa, bẩn = 3 lỗi, 1 chiếc lỗi.",
+      "数缺陷跟数不良品不一样：一顶有断线、线头、脏污，是3个缺陷、1顶不良。",
+      "Counting defects ≠ counting defective caps: one cap with a break, loose thread and soiling = 3 defects, 1 defective.",
+      "Shǔ quē xiàn gēn shǔ bù liáng pǐn bù yí yàng: yì dǐng yǒu duàn xiàn, xiàn tóu, zāng wū, shì 3 gè quē xiàn, 1 dǐng bù liáng."
+     ]
+    ],
+    "hud": [
+     [
+      "VD lỗi",
+      "例",
+      "Example",
+      "@ex"
+     ],
+     [
+      "Xử lý",
+      "处理",
+      "Action",
+      "@act"
+     ]
+    ],
+    "w": [
+     "返工",
+     "重做",
+     "轻微缺陷",
+     "严重缺陷"
+    ],
+    "lab": "p15",
+    "q": null,
+    "note": "",
+    "tpy": "Fǎn gōng hái shì chóng zuò",
+    "dpy": "Qīng wēi quē xiàn gào sù zǔ zhǎng, tuì huí shēng chǎn fǎn gōng; yán zhòng quē xiàn yǐng xiǎng jié gòu, yán sè, zhì liàng de, yào chóng zuò."
+   },
+   {
+    "id": "donggoi",
+    "sid": "xuat",
+    "fx": "pack",
+    "dur": 9,
+    "t": [
+     "Đóng gói và đo độ ẩm",
+     "包装、测含水率",
+     "Packing and moisture check"
+    ],
+    "d": [
+     "Bấm thẻ treo, vào túi, đóng thùng; đo độ ẩm (UA, máy LANDTEK DM200T): cotton 5 %, polyester 4 %, nylon 4 %, wool 8 %, vải pha tính theo tỷ lệ.",
+     "打吊牌、入袋、装箱；测含水率（UA，LANDTEK DM200T）：棉5%、涤纶4%、尼龙4%、羊毛8%，混纺按比例算。",
+     "Hang tag, bag, carton; moisture (UA, LANDTEK DM200T): cotton 5%, polyester 4%, nylon 4%, wool 8%, blends by proportion."
+    ],
+    "chk": [
+     [
+      "Mã, màu, size, UPC trên tem thùng, túi và thẻ treo phải khớp; xuất xứ trên thùng khớp nhãn giặt; số trên thùng khớp số đếm.",
+      "外箱标签、袋子、吊牌上的款号、颜色、尺码、UPC要一致；外箱上的产地跟洗水唛一致；外箱数量跟实际数量一致。",
+      "Style, colour, size and UPC match on carton label, bag and tag; origin matches the care label; carton count matches.",
+      "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì; wài xiāng shàng de chǎn dì gēn xǐ shuǐ mài yí zhì; wài xiāng shù liàng gēn shí jì shù liàng yí zhì."
+     ],
+     [
+      "Số Kit trên PO quyết định bộ nhãn.",
+      "PO上的Kit号决定用哪一套标签。",
+      "The Kit number on the PO decides the label set.",
+      "PO shàng de Kit hào jué dìng yòng nǎ yí tào biāo qiān."
+     ]
+    ],
+    "hud": [
+     [
+      "Vải (VD 1381645)",
+      "面布",
+      "Fabric (e.g. 1381645)",
+      "65% polyester · 35% cotton"
+     ],
+     [
+      "Giới hạn",
+      "标准",
+      "Limit",
+      "4 × 0,65 + 5 × 0,35 = 4,35 %"
+     ],
+     [
+      "Đo",
+      "测",
+      "Reading",
+      "@m"
+     ],
+     [
+      "Kết quả",
+      "结果",
+      "Result",
+      "@res"
+     ]
+    ],
+    "w": [
+     "包装",
+     "吊牌",
+     "含水率",
+     "水分测定仪",
+     "外箱标签",
+     "洗水唛",
+     "箱唛"
+    ],
+    "lab": "moist",
+    "q": null,
+    "note": "",
+    "tpy": "Bāo zhuāng, cè hán shuǐ lǜ",
+    "dpy": "Dǎ diào pái, rù dài, zhuāng xiāng; cè hán shuǐ lǜ (UA, LANDTEK DM200T): mián 5%, dí lún 4%, ní lóng 4%, yáng máo 8%, hùn fǎng àn bǐ lì suàn."
+   },
+   {
+    "id": "aql",
+    "sid": "xuat",
+    "fx": "aql",
+    "dur": 13,
+    "t": [
+     "QA lấy mẫu AQL 1.5 trước khi dán thùng",
+     "封箱前QA按AQL 1.5抽检",
+     "QA AQL 1.5 sampling before sealing"
+    ],
+    "d": [
+     "Đóng thùng xong, trước khi dán băng keo, QA lấy mẫu. UA: AQL 1.5 mức I. VD PO 05024 (2–3/11): 805 chiếc, 19 thùng → mẫu 32 chiếc ở 11 thùng.",
+     "装箱以后、封箱以前，QA按AQL 1.5抽检。UA是I级。例如PO 05024（11月2到3日）：805顶、19箱，在11箱里抽32顶。",
+     "After packing and before taping, QA samples. UA: AQL 1.5 level I. E.g. PO 05024 (2–3/11): 805 caps, 19 cartons → 32 caps from 11 cartons."
+    ],
+    "chk": [
+     [
+      "UA mức I: 501–1.200 chiếc lấy 32, đạt khi ≤ 1 lỗi, trượt khi ≥ 2.",
+      "UA I级：501到1200顶抽32顶，1个以内允收，2个拒收。",
+      "UA level I: 501–1,200 pcs → 32 samples, accept ≤ 1, reject ≥ 2.",
+      "UA I jí: 501 dào 1200 dǐng chōu 32 dǐng, 1 gè yǐ nèi yǔn shōu, 2 gè jù shōu."
+     ],
+     [
+      "PO dưới 281 chiếc không được có lỗi nào.",
+      "PO少于281顶，一个缺陷都不能有。",
+      "POs under 281 pcs allow zero defects.",
+      "PO shǎo yú 281 dǐng, yí gè quē xiàn dōu bù néng yǒu."
+     ],
+     [
+      "Mức II (VD trong phòng): lô 3.000 lấy 125 chiếc, AQL 1.5 tối đa 5 lỗi.",
+      "II级：3000顶抽125顶，AQL 1.5最多5个缺陷。",
+      "Level II example: 3,000 → 125 samples, AQL 1.5 max 5.",
+      "II jí: 3000 dǐng chōu 125 dǐng, AQL 1.5 zuì duō 5 gè quē xiàn."
+     ]
+    ],
+    "hud": [
+     [
+      "Mẫu",
+      "抽样",
+      "Sampled",
+      "@n / 32"
+     ],
+     [
+      "Thùng đã mở",
+      "开箱",
+      "Cartons opened",
+      "@c / 11"
+     ],
+     [
+      "Lỗi",
+      "缺陷",
+      "Defects",
+      "@d"
+     ],
+     [
+      "Đạt ≤ · trượt ≥",
+      "允收 · 拒收",
+      "Accept · reject",
+      "1 · 2"
+     ],
+     [
+      "Kết quả",
+      "结果",
+      "Result",
+      "@res"
+     ]
+    ],
+    "w": [
+     "抽样",
+     "允收",
+     "拒收",
+     "大货",
+     "尾箱"
+    ],
+    "lab": "aql",
+    "q": null,
+    "note": "Số lỗi là giả lập.",
+    "tpy": "Fēng xiāng qián QA àn AQL 1.5 chōu jiǎn",
+    "dpy": "Zhuāng xiāng yǐ hòu, fēng xiāng yǐ qián, QA àn AQL 1.5 chōu jiǎn. UA shì I jí. Lì rú PO 05024 (11 yuè 2 dào 3 rì): 805 dǐng, 19 xiāng, zài 11 xiāng lǐ chōu 32 dǐng."
+   },
+   {
+    "id": "doKim",
+    "sid": "xuat",
+    "fx": "needle",
+    "dur": 9,
+    "t": [
+     "Dò kim",
+     "验针",
+     "Needle detection"
+    ],
+    "d": [
+     "4 chuyền dò kim. Mã cần dò kim: dò xong QA kiểm lần cuối rồi mới dán thùng. Kim gãy là lỗi nghiêm trọng nhất.",
+     "有4条验针线。要验针的款，验完针QA最后再查一次才封箱。断针是最严重的问题。",
+     "Four needle-detection lines. For styles that need it, QA does a last check after detection before sealing. A broken needle is the most serious defect."
+    ],
+    "chk": [
+     [
+      "Mẫu PPS của VF cả bao bì cũng phải qua dò kim.",
+      "VF：产前样连包装也要验针。",
+      "VF: PPS samples go through detection with packaging.",
+      "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn."
+     ]
+    ],
+    "hud": [
+     [
+      "Chuyền",
+      "验针线",
+      "Lines",
+      "4"
+     ],
+     [
+      "Thùng",
+      "箱",
+      "Carton",
+      "@st"
+     ]
+    ],
+    "w": [
+     "验针",
+     "针",
+     "包装"
+    ],
+    "lab": "",
+    "q": [
+     "Máy dò kim phân biệt nút đỉnh kim loại với kim gãy thế nào? Mã nào được miễn dò kim?",
+     "验针机怎么分开金属顶扣和断掉的针？哪些款可以不验针？",
+     "Yàn zhēn jī zěn me fēn kāi jīn shǔ dǐng kòu hé duàn diào de zhēn? Nǎ xiē kuǎn kě yǐ bú yàn zhēn?"
+    ],
+    "note": "",
+    "tpy": "Yàn zhēn",
+    "dpy": "Yǒu 4 tiáo yàn zhēn xiàn. Yào yàn zhēn de kuǎn, yàn wán zhēn QA zuì hòu zài chá yí cì cái fēng xiāng. Duàn zhēn shì zuì yán zhòng de wèn tí."
+   },
+   {
+    "id": "cfa",
+    "sid": "xuat",
+    "fx": "cfa",
+    "dur": 9,
+    "t": [
+     "CFA của khách kiểm cuối trên Pivot88",
+     "客户CFA在Pivot88上终检",
+     "Customer CFA final inspection on Pivot88"
+    ],
+    "d": [
+     "UA: PO xong từ 80 %, đã đóng gói, dán tem thùng, có packing list mới được kiểm cuối. AQL 1.5 mức I; trượt thì kiểm 100 % PO rồi kiểm lại.",
+     "UA：PO完成80%以上、已经包装、贴好箱唛、有装箱单，才可以做终检；在Pivot88上按AQL 1.5 I级；不合格就整张PO 100%检查，再重验。",
+     "UA: PO at least 80% done, packed, carton-labelled, with a packing list. AQL 1.5 level I; on failure, 100% of the PO then re-inspect."
+    ],
+    "chk": [
+     [
+      "Pivot88: Header → Photos → Defects #1 (đóng gói, nhãn) → Defects #2 → Conclusion.",
+      "Pivot88：Header → Photos → Defects #1（包装、标签）→ Defects #2 → Conclusion。",
+      "Pivot88: Header → Photos → Defects #1 (packing, labels) → Defects #2 → Conclusion.",
+      "Pivot88: Header → Photos → Defects #1 (bāo zhuāng, biāo qiān) → Defects #2 → Conclusion."
+     ],
+     [
+      "Kiểm sớm hơn 7 ngày trước ngày xuất thì đo lại độ ẩm 20 % số thùng.",
+      "比出货日早7天以上检完的，要再测20%箱子的含水率。",
+      "Inspected more than 7 days before shipping: re-check moisture on 20% of cartons.",
+      "Bǐ chū huò rì zǎo 7 tiān yǐ shàng jiǎn wán de, yào zài cè 20% xiāng zi de hán shuǐ lǜ."
+     ]
+    ],
+    "hud": [
+     [
+      "PO xong",
+      "PO完成",
+      "PO done",
+      "@pct"
+     ],
+     [
+      "Tab",
+      "Pivot88",
+      "Tab",
+      "@tab"
+     ],
+     [
+      "Kết quả",
+      "结果",
+      "Result",
+      "@res"
+     ]
+    ],
+    "w": [
+     "最终检验",
+     "终检",
+     "装箱单",
+     "箱唛",
+     "重验",
+     "认证"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Kè hù CFA zài Pivot88 shàng zhōng jiǎn",
+    "dpy": "UA: PO wán chéng 80% yǐ shàng, yǐ jīng bāo zhuāng, tiē hǎo xiāng mài, yǒu zhuāng xiāng dān, cái kě yǐ zuò zhōng jiǎn; zài Pivot88 shàng àn AQL 1.5 I jí; bù hé gé jiù zhěng zhāng PO 100% jiǎn chá, zài chóng yàn."
+   },
+   {
+    "id": "xuat",
+    "sid": "xuat",
+    "fx": "ship",
+    "dur": 8,
+    "t": [
+     "Xuất hàng",
+     "出货",
+     "Shipping"
+    ],
+    "d": [
+     "Đạt kiểm cuối thì xuất. Xuất mà không có kiểm cuối trên Pivot88 thì UA được đòi tiền hàng và cước.",
+     "终检合格才出货。没有在Pivot88上做终检就出货，UA可以要求赔货款和运费。",
+     "Ship after passing final inspection. Shipping without a Pivot88 final lets UA claim goods value and freight."
+    ],
+    "chk": [
+     [
+      "Kế hoạch kiểm gửi khách; ngày kiểm phải sớm hơn ngày xuất.",
+      "验货计划要发给客户；验货日期要比出货日早。",
+      "The inspection plan goes to the customer; inspection must come before shipping.",
+      "Yàn huò jì huà yào fā gěi kè hù; yàn huò rì qī yào bǐ chū huò rì zǎo."
+     ]
+    ],
+    "hud": [
+     [
+      "Trạng thái",
+      "状态",
+      "Status",
+      "@st"
+     ]
+    ],
+    "w": [
+     "出货",
+     "验货计划",
+     "大货"
+    ],
+    "lab": "",
+    "q": null,
+    "note": "",
+    "tpy": "Chū huò",
+    "dpy": "Zhōng jiǎn hé gé cái chū huò. Méi yǒu zài Pivot88 shàng zuò zhōng jiǎn jiù chū huò, UA kě yǐ yāo qiú péi huò kuǎn hé yùn fèi."
+   }
+  ],
+  "points": [
+   {
+    "zh": "尺寸",
+    "py": "Chǐ cùn",
+    "vn": "Kích thước",
+    "en": "Size",
+    "fvn": "Sai size, vượt dung sai, tem size không khớp.",
+    "fzh": "尺码不对、超出允许范围、尺码标不符。",
+    "fen": "Wrong size, out of tolerance, size label mismatch."
+   },
+   {
+    "zh": "眉面",
+    "py": "Méi miàn",
+    "vn": "Vành mũ (mặt trên)",
+    "en": "Visor top",
+    "fvn": "Lưỡi cong không đều, hai góc lệch, diễu không đều, bẩn, bóng vải do ủi.",
+    "fzh": "帽檐弯度不匀、左右眉角不对称、绕线不匀、脏、烫亮。",
+    "fen": "Uneven curve, corners off, uneven rows, soiling, iron shine."
+   },
+   {
+    "zh": "前片",
+    "py": "Qián piàn",
+    "vn": "Miếng trước",
+    "en": "Front panel",
+    "fvn": "Logo lệch, thêu nhăn hoặc xù, in mờ, tràn keo, mảnh trước sập.",
+    "fzh": "logo偏位、绣花起皱、绣花起毛、印花模糊、前片塌。",
+    "fen": "Logo offset, puckered or fuzzy embroidery, blurred print, collapsed front."
+   },
+   {
+    "zh": "右中片",
+    "py": "Yòu zhōng piàn",
+    "vn": "Miếng giữa phải",
+    "en": "Right middle panel",
+    "fvn": "2 kim to nhỏ, nhảy mũi, nổi chỉ, lỗ thoáng lệch, khác màu.",
+    "fzh": "双针大小边、跳针、浮线、绣洞偏、色差。",
+    "fen": "Uneven twin-needle, skips, floating thread, eyelet off, shade."
+   },
+   {
+    "zh": "后片",
+    "py": "Hòu piàn",
+    "vn": "Miếng sau",
+    "en": "Back panel",
+    "fvn": "Như điểm 4, thêm: mảnh sau phồng, không tròn.",
+    "fzh": "跟第4点一样，还有后片鼓、不圆。",
+    "fen": "As point 4, plus bulging or out-of-round back."
+   },
+   {
+    "zh": "后喇叭",
+    "py": "Hòu lǎ ba",
+    "vn": "Gáy mũ",
+    "en": "Back arch",
+    "fvn": "Vòng khoét lệch, dây viền bung, nhăn, hở.",
+    "fzh": "后喇叭偏、包边开、起皱、开口。",
+    "fen": "Arch off-centre, binding open, puckered, gaping."
+   },
+   {
+    "zh": "左中片",
+    "py": "Zuǒ zhōng piàn",
+    "vn": "Miếng giữa trái",
+    "en": "Left middle panel",
+    "fvn": "Như điểm 4; so hai bên cao bằng nhau.",
+    "fzh": "跟第4点一样；左右高度要一样。",
+    "fen": "As point 4; both sides the same height."
+   },
+   {
+    "zh": "顶扣",
+    "py": "Dǐng kòu",
+    "vn": "Đỉnh mũ (nút)",
+    "en": "Top button",
+    "fvn": "Nút lỏng, lệch, rơi; các đường ráp không gặp ở một điểm.",
+    "fzh": "顶扣松、偏、掉；合片线顶上不交在一个点。",
+    "fen": "Loose, off-centre or missing; seams not meeting at one point."
+   },
+   {
+    "zh": "外汗带",
+    "py": "Wài hàn dài",
+    "vn": "Đai mồ hôi bên ngoài",
+    "en": "Sweatband, outside",
+    "fvn": "Đai mồ hôi lộ ra ngoài; mép mũ kênh lên.",
+    "fzh": "汗带外露；帽口翘起来。",
+    "fen": "Sweatband showing; edge lifting."
+   },
+   {
+    "zh": "拉汗带",
+    "py": "Lā hàn dài",
+    "vn": "Kéo đai mồ hôi",
+    "en": "Sweatband, pulled",
+    "fvn": "Đường may đai lệch, đứt; đai nhăn; đầu đai gấp sai.",
+    "fzh": "汗带车线偏、断线；汗带起皱；接头折错。",
+    "fen": "Crooked or broken stitching, puckers, wrong end fold."
+   },
+   {
+    "zh": "翻汗带",
+    "py": "Fān hàn dài",
+    "vn": "Lật đai mồ hôi",
+    "en": "Sweatband, turned",
+    "fvn": "Đường may dây size, chỉ thừa bên trong.",
+    "fzh": "尺寸带车线、里面线头。",
+    "fen": "Size-tape stitching, inside thread ends."
+   },
+   {
+    "zh": "商标",
+    "py": "Shāng biāo",
+    "vn": "Tem",
+    "en": "Label",
+    "fvn": "Thiếu, sai, ngược, may lệch.",
+    "fzh": "商标漏、错、反、车偏。",
+    "fen": "Missing, wrong, upside down, sewn crooked."
+   },
+   {
+    "zh": "帽身里",
+    "py": "Mào shēn lǐ",
+    "vn": "Bên trong thân",
+    "en": "Inside the crown",
+    "fvn": "Dây viền bung, vắt sổ hở, đầu chỉ, bẩn, dị vật, kim gãy.",
+    "fzh": "压条开、拷克开、线头、脏、异物、断针。",
+    "fen": "Tape open, overlock open, threads, soiling, foreign matter, broken needle."
+   },
+   {
+    "zh": "扣具",
+    "py": "Kòu jù",
+    "vn": "Khóa",
+    "en": "Buckle",
+    "fvn": "Lỏng, sai loại, cạnh sắc, gỉ, dây may lệch.",
+    "fzh": "扣具松、用错、边锋利、生锈、调节带车偏。",
+    "fen": "Loose, wrong type, sharp, rusty, strap crooked."
+   },
+   {
+    "zh": "眉里",
+    "py": "Méi lǐ",
+    "vn": "Mặt dưới vành",
+    "en": "Under visor",
+    "fvn": "Sai màu, bẩn, diễu không đều.",
+    "fzh": "眉里颜色不对、脏、绕线不匀。",
+    "fen": "Wrong colour, soiling, uneven rows."
+   }
+  ],
+  "ops": [
+   {
+    "no": 9,
+    "vn": "Ráp thân trước",
+    "zh": "前合片",
+    "py": "Qián hé piàn",
+    "spi": 12,
+    "note": "Đường may chừa 6 mm; lại mũi 10 mm. Thẻ tiếng Việt ghi 11 mũi: còn phải hỏi bản nào đúng."
+   },
+   {
+    "no": 10,
+    "vn": "May 2 kim thân sau, viền khoét sau",
+    "zh": "后双",
+    "py": "Hòu shuāng",
+    "spi": 10,
+    "note": "Dây viền 20 mm gấp 6 mm."
+   },
+   {
+    "no": 11,
+    "vn": "Vắt sổ",
+    "zh": "拷克",
+    "py": "Kǎo kè",
+    "spi": 8,
+    "note": "Chỉ thừa 3 mm, mũ giặt 15 mm."
+   },
+   {
+    "no": 12,
+    "vn": "May 2 kim đè đường ráp",
+    "zh": "帽双",
+    "py": "Mào shuāng",
+    "spi": 10,
+    "note": "Rẽ đường ráp 5:5."
+   },
+   {
+    "no": 13,
+    "vn": "Viền",
+    "zh": "包边",
+    "py": "Bāo biān",
+    "spi": 9,
+    "note": "Dải viền không có mối nối."
+   },
+   {
+    "no": 14,
+    "vn": "Bọc lưỡi trai",
+    "zh": "束眉",
+    "py": "Shù méi",
+    "spi": 7,
+    "note": "Không may lên tấm lưỡi."
+   },
+   {
+    "no": 16,
+    "vn": "Diễu lưỡi trai",
+    "zh": "绕线",
+    "py": "Rào xiàn",
+    "spi": 10,
+    "note": "Từ 4 đường dùng máy tự động."
+   },
+   {
+    "no": 17,
+    "vn": "Dây size, nhãn",
+    "zh": "尺寸带",
+    "py": "Chǐ cùn dài",
+    "spi": 6,
+    "note": "Cách mép dưới 4 mm."
+   },
+   {
+    "no": 18,
+    "vn": "Đai mồ hôi, tra lưỡi (then chốt) · khách thường",
+    "zh": "汗带",
+    "py": "Hàn dài",
+    "spi": 9,
+    "note": "Tuần tra 2 lần/ngày, AQL 1.5."
+   },
+   {
+    "no": 18,
+    "vn": "Đai mồ hôi, tra lưỡi (then chốt) · UA, TNF, adidas, Reebok, Amer",
+    "zh": "汗带",
+    "py": "Hàn dài",
+    "spi": 10,
+    "note": "Tuần tra 2 lần/ngày, AQL 1.5."
+   },
+   {
+    "no": 19,
+    "vn": "Khóa sau, dây quai",
+    "zh": "电脑车",
+    "py": "Diàn nǎo chē",
+    "spi": 8,
+    "note": "Dây vào 15 mm; may thử bằng băng phế trước."
+   }
+  ],
+  "aql": [
+   [
+    2,
+    15,
+    2,
+    0,
+    1
+   ],
+   [
+    16,
+    25,
+    3,
+    0,
+    1
+   ],
+   [
+    26,
+    90,
+    5,
+    0,
+    1
+   ],
+   [
+    91,
+    150,
+    8,
+    0,
+    1
+   ],
+   [
+    151,
+    280,
+    13,
+    0,
+    1
+   ],
+   [
+    281,
+    500,
+    20,
+    1,
+    2
+   ],
+   [
+    501,
+    1200,
+    32,
+    1,
+    2
+   ],
+   [
+    1201,
+    3200,
+    50,
+    2,
+    3
+   ],
+   [
+    3201,
+    10000,
+    80,
+    3,
+    4
+   ],
+   [
+    10001,
+    35000,
+    125,
+    5,
+    6
+   ],
+   [
+    35001,
+    1000000000,
+    200,
+    7,
+    8
+   ]
+  ],
+  "lab": {
+   "title": [
+    "Phòng kiểm nghiệm ảo",
+    "虚拟检验室",
+    "Virtual inspection lab",
+    "Xū nǐ jiǎn yàn shì"
+   ],
+   "intro": [
+    "Tự nhập số để thử các cách kiểm thật của xưởng. Chuẩn lấy từ W2, báo cáo kho, SOP; chỗ chưa có trong tài liệu ghi “còn phải hỏi”.",
+    "自己输入数字，试一试厂里真正的检验方法。标准来自W2、仓库报告和作业标准；资料里没有的写“还要问”。",
+    "Enter numbers to try the factory's real checks. Standards come from W2, the warehouse report and SOPs; gaps are marked “still to ask”.",
+    "Zì jǐ shū rù shù zì, shì yí shì chǎng lǐ zhēn zhèng de jiǎn yàn fāng fǎ. Biāo zhǔn lái zì W2, cāng kù bào gào hé zuò yè biāo zhǔn; zī liào lǐ méi yǒu de xiě “hái yào wèn”."
+   ],
+   "four": [
+    "Kiểm vải 4 điểm",
+    "四分制验布",
+    "4-point fabric inspection",
+    "Sì fēn zhì yàn bù"
+   ],
+   "aql": [
+    "AQL 1.5 mức I (CFA UA)",
+    "AQL 1.5 I级（UA的CFA）",
+    "AQL 1.5 level I (UA CFA)",
+    "AQL 1.5 I jí (UA de CFA)"
+   ],
+   "moist": [
+    "Độ ẩm theo thành phần vải",
+    "按成分算含水率",
+    "Moisture limit by fibre content",
+    "Àn chéng fèn suàn hán shuǐ lǜ"
+   ],
+   "tol": [
+    "Dung sai đo mũ UA",
+    "UA帽子尺寸允许范围",
+    "UA cap measurement tolerance",
+    "UA mào zi chǐ cùn yǔn xǔ fàn wéi"
+   ],
+   "die": [
+    "Dao chặt lệch",
+    "刀模偏差",
+    "Die offset",
+    "Dāo mó piān chā"
+   ],
+   "logo": [
+    "Logo lệch (VF)",
+    "Logo偏位（VF）",
+    "Logo offset (VF)",
+    "Logo piān wèi (VF)"
+   ],
+   "spi": [
+    "Mũi/inch so với thẻ SOP",
+    "针距跟SOP卡对照",
+    "Stitches per inch vs SOP card",
+    "Zhēn jù gēn SOP kǎ duì zhào"
+   ],
+   "bundle": [
+    "Tính bó 144 bộ",
+    "裁片捆绑计算",
+    "144-set bundle calculator",
+    "Cái piàn kǔn bǎng jì suàn"
+   ],
+   "temp": [
+    "Nhiệt cài so với nhiệt máy",
+    "设定温度和实际温度",
+    "Set vs actual temperature",
+    "Shè dìng wēn dù hé shí jì wēn dù"
+   ],
+   "p15": [
+    "Phiếu 15 điểm QC",
+    "15个检查点",
+    "15-point QC sheet",
+    "15 gè jiǎn chá diǎn"
+   ],
+   "yards": [
+    "Số yard",
+    "码数",
+    "Yards",
+    "Mǎ shù"
+   ],
+   "width": [
+    "Khổ (inch)",
+    "幅宽（英寸）",
+    "Width (in)",
+    "Fú kuān (yīng cùn)"
+   ],
+   "deflen": [
+    "Chiều dài lỗi (inch)",
+    "瑕疵长度（英寸）",
+    "Defect length (in)",
+    "Xiá cī cháng dù (yīng cùn)"
+   ],
+   "addDef": [
+    "Thêm lỗi",
+    "加瑕疵",
+    "Add defect",
+    "Jiā xiá cī"
+   ],
+   "total": [
+    "Tổng điểm",
+    "总扣分",
+    "Total points",
+    "Zǒng kòu fēn"
+   ],
+   "per100": [
+    "Điểm/100 yd²",
+    "每百平方码分数",
+    "Points per 100 yd²",
+    "Měi bǎi píng fāng mǎ fēn shù"
+   ],
+   "grade": [
+    "Cấp",
+    "分级",
+    "Grade",
+    "Fēn jí"
+   ],
+   "over62": [
+    "Trên 62 điểm: xử lý đặc biệt hay trả hàng? Còn phải hỏi.",
+    "超过62分：走特采还是退货？还要问。",
+    "Over 62: concession or return? Still to ask.",
+    "Chāo guò 62 fēn: zǒu tè cǎi hái shì tuì huò? Hái yào wèn."
+   ],
+   "lot": [
+    "Số chiếc PO",
+    "PO数量",
+    "PO quantity",
+    "PO shù liàng"
+   ],
+   "found": [
+    "Số lỗi tìm thấy",
+    "发现的缺陷",
+    "Defects found",
+    "Fā xiàn de quē xiàn"
+   ],
+   "sample": [
+    "Lấy mẫu",
+    "抽样",
+    "Sample size",
+    "Chōu yàng"
+   ],
+   "accept": [
+    "Đạt khi ≤",
+    "允收",
+    "Accept ≤",
+    "Yǔn shōu"
+   ],
+   "reject": [
+    "Trượt khi ≥",
+    "拒收",
+    "Reject ≥",
+    "Jù shōu"
+   ],
+   "pass": [
+    "Đạt",
+    "合格",
+    "Pass",
+    "Hé gé"
+   ],
+   "fail": [
+    "Trượt",
+    "不合格",
+    "Fail",
+    "Bù hé gé"
+   ],
+   "aqlFail": [
+    "Trượt: kiểm 100 % PO rồi kiểm lại.",
+    "不合格：整张PO 100%检查，再重验。",
+    "Fail: 100% of the PO, then re-inspect.",
+    "Bù hé gé: zhěng zhāng PO 100% jiǎn chá, zài chóng yàn."
+   ],
+   "aqlNote": [
+    "Đếm lỗi, không đếm chiếc: 1 thùng 24 chiếc sai size = 24 lỗi.",
+    "数缺陷，不是数不良品：一箱24顶尺码错，是24个缺陷。",
+    "Count defects, not caps: a carton of 24 wrong-size caps = 24 defects.",
+    "Shǔ quē xiàn, bú shì shǔ bù liáng pǐn: yì xiāng 24 dǐng chǐ mǎ cuò, shì 24 gè quē xiàn."
+   ],
+   "aql2": [
+    "Mức II (VD trong phòng): 3.000 chiếc lấy 125; AQL 2.5 tối đa 7, AQL 1.5 tối đa 5, AQL 4.0 tối đa 10.",
+    "II级：3000顶抽125顶；AQL 2.5最多7个，AQL 1.5最多5个，AQL 4.0最多10个。",
+    "Level II example: 3,000 → 125; AQL 2.5 max 7, 1.5 max 5, 4.0 max 10.",
+    "II jí: 3000 dǐng chōu 125 dǐng; AQL 2.5 zuì duō 7 gè, AQL 1.5 zuì duō 5 gè, AQL 4.0 zuì duō 10 gè."
+   ],
+   "cotton": [
+    "Cotton %",
+    "棉 %",
+    "Cotton %",
+    "Mián%"
+   ],
+   "poly": [
+    "Polyester %",
+    "涤纶 %",
+    "Polyester %",
+    "Dí lún%"
+   ],
+   "nylon": [
+    "Nylon %",
+    "尼龙 %",
+    "Nylon %",
+    "Ní lóng%"
+   ],
+   "wool": [
+    "Wool %",
+    "羊毛 %",
+    "Wool %",
+    "Yáng máo%"
+   ],
+   "limit": [
+    "Giới hạn",
+    "标准",
+    "Limit",
+    "Biāo zhǔn"
+   ],
+   "reading": [
+    "Máy đo được (%)",
+    "测到的含水率（%）",
+    "Meter reading (%)",
+    "Cè dào de hán shuǐ lǜ (%)"
+   ],
+   "sum100": [
+    "Tổng thành phần phải bằng 100 %.",
+    "成分加起来要100%。",
+    "Fibre content must total 100%.",
+    "Chéng fèn jiā qǐ lái yào 100%."
+   ],
+   "moistRule": [
+    "Lỗi độ ẩm mà lần kiểm vẫn đạt: làm lại thùng đó; trượt: làm lại cả PO. Kiểm sớm hơn 7 ngày trước xuất: đo lại 20 % số thùng.",
+    "有含水率问题但验货合格：重做那一箱；不合格：整张PO重做。比出货日早7天以上检完：再测20%的箱子。",
+    "Moisture issue but inspection passes: redo that carton; fails: redo the PO. More than 7 days before shipping: re-check 20% of cartons.",
+    "Yǒu hán shuǐ lǜ wèn tí dàn yàn huò hé gé: chóng zuò nà yì xiāng; bù hé gé: zhěng zhāng PO chóng zuò. Bǐ chū huò rì zǎo 7 tiān yǐ shàng jiǎn wán: zài cè 20% de xiāng zi."
+   ],
+   "point": [
+    "Điểm đo",
+    "测量点",
+    "Measurement point",
+    "Cè liáng diǎn"
+   ],
+   "spec": [
+    "Thông số chuẩn (cm)",
+    "标准尺寸（厘米）",
+    "Spec (cm)",
+    "Biāo zhǔn chǐ cùn (lí mǐ)"
+   ],
+   "meas": [
+    "Đo được (cm)",
+    "量到（厘米）",
+    "Measured (cm)",
+    "Liáng dào (lí mǐ)"
+   ],
+   "within": [
+    "Trong dung sai",
+    "在允许范围内",
+    "Within tolerance",
+    "Zài yǔn xǔ fàn wéi nèi"
+   ],
+   "outside": [
+    "Ngoài dung sai: đo thêm chiếc khác",
+    "超出范围：多量几顶",
+    "Out of tolerance: measure more caps",
+    "Chāo chū fàn wéi: duō liáng jǐ dǐng"
+   ],
+   "dieMm": [
+    "Lệch so với rập (mm)",
+    "跟纸样差（毫米）",
+    "Off the pattern (mm)",
+    "Gēn zhǐ yàng chà (háo mǐ)"
+   ],
+   "dieFix": [
+    "Từ 2 mm trở lên: sửa dao.",
+    "2毫米以上：修刀模。",
+    "2 mm or more: repair the die.",
+    "2 háo mǐ yǐ shàng: xiū dāo mó."
+   ],
+   "dieOk": [
+    "Dưới 2 mm: dùng tiếp, kiểm lại sau 2 giờ.",
+    "2毫米以内：继续用，两小时后再查。",
+    "Under 2 mm: keep using, re-check in 2 hours.",
+    "2 háo mǐ yǐ nèi: jì xù yòng, liǎng xiǎo shí hòu zài chá."
+   ],
+   "lastCheck": [
+    "Lần kiểm dao gần nhất",
+    "上次查刀模",
+    "Last die check",
+    "Shàng cì chá dāo mó"
+   ],
+   "nextCheck": [
+    "Lần kiểm tiếp theo",
+    "下次查刀模",
+    "Next die check",
+    "Xià cì chá dāo mó"
+   ],
+   "logoMm": [
+    "Logo lệch (mm)",
+    "Logo偏（毫米）",
+    "Logo offset (mm)",
+    "Logo piān (háo mǐ)"
+   ],
+   "major": [
+    "Lỗi nặng",
+    "严重缺陷",
+    "Major",
+    "Yán zhòng quē xiàn"
+   ],
+   "minor": [
+    "Lỗi nhẹ",
+    "轻微缺陷",
+    "Minor",
+    "Qīng wēi quē xiàn"
+   ],
+   "op": [
+    "Công đoạn",
+    "工序",
+    "Operation",
+    "Gōng xù"
+   ],
+   "counted": [
+    "Đếm được trong 1 inch",
+    "一英寸数到几针",
+    "Counted in 1 inch",
+    "Yì yīng cùn shǔ dào jǐ zhēn"
+   ],
+   "match": [
+    "Khớp thẻ SOP",
+    "跟SOP卡一样",
+    "Matches the SOP card",
+    "Gēn SOP kǎ yí yàng"
+   ],
+   "nomatch": [
+    "Lệch với thẻ: ghi lại, báo lên (như 3 chỗ lệch thấy 13–14/10).",
+    "跟卡不一样：记下来，报上去（像10月13到14日发现的3处）。",
+    "Mismatch: record and report it (like the 3 found on 13–14/10).",
+    "Gēn kǎ bù yí yàng: jì xià lái, bào shàng qù (xiàng 10 yuè 13 dào 14 rì fā xiàn de 3 chù)."
+   ],
+   "perPly": [
+    "Số bộ mỗi lớp",
+    "每层套数",
+    "Sets per ply",
+    "Měi céng tào shù"
+   ],
+   "plies": [
+    "Số lớp",
+    "层数",
+    "Plies",
+    "Céng shù"
+   ],
+   "adj": [
+    "Thêm (+) / bớt (−)",
+    "加减",
+    "Add (+) / remove (−)",
+    "Jiā jiǎn"
+   ],
+   "bundles": [
+    "Bó đủ 144",
+    "144套的包",
+    "Full 144 bundles",
+    "144 tào de bāo"
+   ],
+   "remain": [
+    "Bó lẻ (尾数包)",
+    "尾数包",
+    "Odd bundle",
+    "Wěi shù bāo"
+   ],
+   "remainNote": [
+    "Bó lẻ dán tem: đơn, lần cắt, màu, số lượng.",
+    "尾数包贴标签，写订单、裁次、颜色、数量。",
+    "Label the odd bundle: order, cut number, colour, quantity.",
+    "Wěi shù bāo tiē biāo qiān, xiě dìng dān, cái cì, yán sè, shù liàng."
+   ],
+   "setT": [
+    "Nhiệt cài (°C)",
+    "设定温度（度）",
+    "Set (°C)",
+    "Shè dìng wēn dù (dù)"
+   ],
+   "actT": [
+    "Máy hiện (°C)",
+    "实际温度（度）",
+    "Display (°C)",
+    "Shí jì wēn dù (dù)"
+   ],
+   "gap": [
+    "Lệch",
+    "差",
+    "Gap",
+    "Chà"
+   ],
+   "tempQ": [
+    "Lệch bao nhiêu thì dừng máy: còn phải hỏi. Hôm 14/10: cài 120, hiện 107,9.",
+    "差多少要停机，还要问。10月14日：设定120度，显示107.9度。",
+    "When to stop the machine: still to ask. On 14/10: set 120, display 107.9.",
+    "Chà duō shao yào tíng jī, hái yào wèn. 10 yuè 14 rì: shè dìng 120 dù, xiǎn shì 107.9 dù."
+   ],
+   "ok": [
+    "Đạt",
+    "合格",
+    "OK",
+    "Hé gé"
+   ],
+   "p15res0": [
+    "Không có lỗi: chiếc này đạt.",
+    "没有缺陷：这顶合格。",
+    "No defects: this cap passes.",
+    "Méi yǒu quē xiàn: zhè dǐng hé gé."
+   ],
+   "p15res1": [
+    "Có lỗi nhẹ, vừa: báo tổ trưởng, trả sản xuất sửa (返工).",
+    "有轻微缺陷：告诉组长，退回生产返工。",
+    "Minor/medium: tell the line leader, return for rework.",
+    "Yǒu qīng wēi quē xiàn: gào sù zǔ zhǎng, tuì huí shēng chǎn fǎn gōng."
+   ],
+   "p15res2": [
+    "Có lỗi nặng (kết cấu, màu, chất lượng): làm lại (重做).",
+    "有严重缺陷（结构、颜色、质量）：重做。",
+    "Major (structure, colour, quality): remake.",
+    "Yǒu yán zhòng quē xiàn (jié gòu, yán sè, zhì liàng): chóng zuò."
+   ],
+   "example": [
+    "Ví dụ",
+    "例子",
+    "Example",
+    "Lì zi"
+   ],
+   "reset": [
+    "Làm lại",
+    "重来",
+    "Reset",
+    "Chóng lái"
+   ],
+   "toSim": [
+    "Xem trong mô phỏng",
+    "在模拟里看",
+    "See it in the simulation",
+    "Zài mó nǐ lǐ kàn"
+   ]
+  }
+ }
 }

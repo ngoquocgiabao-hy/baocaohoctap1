@@ -3,7 +3,7 @@
 | File | Nội dung |
 |---|---|
 | `ban-do-chat-luong-noi-bo.html` | Báo cáo ngày đầu ở phòng Chất lượng: hành trình chiếc mũ, hành trình mẫu, các mô hình kiểm hàng |
-| `weili-hoc-tap.html` | Học quy trình và từ xưởng: **xưởng 3D mô phỏng** (bấm khâu nào ra chi tiết Việt / 中文 pinyin / English, cận cảnh có tên từng máy, tham quan có lời giới thiệu, mũ 6 mảnh 3D, hướng dẫn nhà máy), sơ đồ 11 khâu từ mẫu đến xuất hàng, 267 từ (Việt, 中文, pinyin, cách kiểm tra, ảnh cần chụp, câu cần hỏi), từ vựng, thẻ học lặp lại ngắt quãng, trắc nghiệm, cách học |
+| `weili-hoc-tap.html` | Học quy trình và từ xưởng: **xưởng 3D mô phỏng** (bấm khâu nào ra chi tiết Việt / 中文 pinyin / English, cận cảnh có tên từng máy, tham quan có lời giới thiệu, mũ 6 mảnh 3D, hướng dẫn nhà máy), **mô phỏng sản xuất 35 bước** (máy chạy, người đứng máy, mũ ráp dần, bảng số đo chạy: 4 điểm, AQL, 15 điểm QC, độ ẩm…), **phòng kiểm nghiệm ảo** (10 công cụ tính), sơ đồ 11 khâu từ mẫu đến xuất hàng, 267 từ (Việt, 中文, pinyin, cách kiểm tra, ảnh cần chụp, câu cần hỏi), từ vựng, thẻ học lặp lại ngắt quãng, trắc nghiệm, cách học |
 | `data/weili-data.json` | Toàn bộ dữ liệu của trang trên, dùng lại cho game nhà máy |
 | `img/` | Ảnh thực tế cho từng bước (tạo khi có ảnh đầu tiên) |
 | `tools/` | Mã dựng lại trang và file dữ liệu |
@@ -14,7 +14,7 @@
 
 Mở file trực tiếp bằng trình duyệt thì tiến độ chỉ lưu trên trình duyệt đó (đổi máy thì vào **Thẻ học → Sao lưu tiến độ** để chép mã sang). Mở trong khung xem trước của ứng dụng thì không lưu được; nút trạng thái ở đầu trang báo rõ: “☁ Đã lưu”, “Lưu trên máy này” hoặc “⚠ Không lưu”.
 
-Các tab: **Xưởng 3D** (cần mạng để tải three.js r128 từ cdnjs/jsdelivr; bố trí theo thứ tự quy trình, chưa phải mặt bằng thật) · **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin; **Sổ ghi nhớ từ** chia Chưa học / Đang học / Đã học / Đã thuộc, có lọc “Mới thêm”, chép sổ từ để gửi trợ lý AI) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cần hỏi** (gom mọi câu hỏi và ảnh cần chụp, đánh dấu đã hỏi, chép câu trả lời) · **Cách học**.
+Các tab: **Xưởng 3D** (cần mạng để tải three.js r128 từ cdnjs/jsdelivr; bố trí theo thứ tự quy trình, chưa phải mặt bằng thật; nút **🏭 Mô phỏng sản xuất** chạy 35 bước từ họp PPM đến xuất hàng, có ⏮ ◀ ⏯ ▶, tốc độ ½× 1× 2×, đọc 中文; dưới xưởng là **Phòng kiểm nghiệm ảo**: kiểm vải 4 điểm, AQL 1.5 mức I của UA, độ ẩm theo thành phần vải, dung sai đo UA, phiếu 15 điểm, mũi/inch so thẻ SOP, bó 144, dao chặt, logo lệch VF, nhiệt cài/nhiệt máy) · **Sơ đồ** (bật/tắt Pinyin, Tiếng Việt, 中文) · **Từ vựng** (lọc theo khâu, loại từ, từ hay nhầm) · **Thẻ học** (đọc, nghe, nói; mặt trước chỉ có chữ Hán, lật mới thấy pinyin; **Sổ ghi nhớ từ** chia Chưa học / Đang học / Đã học / Đã thuộc, có lọc “Mới thêm”, chép sổ từ để gửi trợ lý AI) · **Trắc nghiệm** (từ sai tự vào thẻ học) · **Cần hỏi** (gom mọi câu hỏi và ảnh cần chụp, đánh dấu đã hỏi, chép câu trả lời) · **Cách học**.
 
 Mỗi bước trong sơ đồ có hai ô:
 
@@ -50,6 +50,16 @@ cats[]    8 loại từ: id, vn, zh
 wrong[]   từ đã dùng sai → đúng: bad, good, py, vn, src
 pending[] từ chờ xác nhận: term, vn, note
 qa[]      ba câu hỏi ở xưởng cắt (拉布, 贴合, 顶扣)
+sim       mô phỏng sản xuất
+          beats[]  id, sid (khâu), fx (hoạt cảnh 3D), dur (giây)
+                   t / d   tên, làm gì: [Việt, 中文, English]; tpy / dpy pinyin
+                   chk[]   kiểm gì: [Việt, 中文, English, pinyin]
+                   hud[]   số trên màn hình: [Việt, 中文, English, giá trị]; "@khóa" = số chạy do hoạt cảnh tính
+                   w[] từ liên quan · lab công cụ liên quan · q câu còn phải hỏi [Việt, 中文, pinyin] · note
+          points[] 15 điểm QC: zh, py, vn, en, fvn / fzh / fen (tìm lỗi gì)
+          ops[]    thẻ SOP may: no, vn, zh, py, spi (mũi/inch), note
+          aql[]    bảng AQL 1.5 mức I của CFA UA: [từ, đến, mẫu, đạt ≤, trượt ≥]
+          lab{}    chữ của phòng kiểm nghiệm ảo: khóa → [Việt, 中文, English, pinyin]
 ```
 
 ## Dựng lại
@@ -59,10 +69,10 @@ pip install pypinyin
 python3 tools/build_all.py      # ghi ra weili-hoc-tap.html và data/weili-data.json
 ```
 
-Sửa từ trong `tools/data_terms.py` (thuật ngữ), `tools/data.py` (quy trình, cách kiểm tra), `tools/overlay.py` (khâu 0 Mẫu & PPM, kiểm vải 4 điểm và xếp cấp A/B/C, ảnh cần chụp, câu cần hỏi; chạy sau data.py), `tools/vocab_more.py` (111 từ bổ sung 03/11 từ W6, W2, báo cáo kho; mỗi dòng ghi khâu, bước, loại từ, câu ví dụ), `tools/vocab_extra.py` (loại từ, từ sai → đúng, từ chờ xác nhận), `tools/review_0411.py` (soát lại 04/11 với Drive: chỗ hai nguồn lệch nhau ghi cả hai và thêm câu hỏi), `tools/en.py` (tiếng Anh cho khâu, bước, cách kiểm, 267 từ), `tools/guide.py` (hướng dẫn nhà máy); giao diện trong `tools/template_all.html`, xưởng 3D trong `tools/world3d.js` và `tools/world3d.css`; mô hình mũ 6 mảnh là `tools/cap_6manh.html` (nhúng vào trang).
+Sửa từ trong `tools/data_terms.py` (thuật ngữ), `tools/data.py` (quy trình, cách kiểm tra), `tools/overlay.py` (khâu 0 Mẫu & PPM, kiểm vải 4 điểm và xếp cấp A/B/C, ảnh cần chụp, câu cần hỏi; chạy sau data.py), `tools/vocab_more.py` (111 từ bổ sung 03/11 từ W6, W2, báo cáo kho; mỗi dòng ghi khâu, bước, loại từ, câu ví dụ), `tools/vocab_extra.py` (loại từ, từ sai → đúng, từ chờ xác nhận), `tools/review_0411.py` (soát lại 04/11 với Drive: chỗ hai nguồn lệch nhau ghi cả hai và thêm câu hỏi), `tools/en.py` (tiếng Anh cho khâu, bước, cách kiểm, 267 từ), `tools/guide.py` (hướng dẫn nhà máy); `tools/sim.py` (kịch bản mô phỏng 35 bước, 15 điểm QC, thẻ SOP, bảng AQL, chữ phòng kiểm nghiệm ảo); giao diện trong `tools/template_all.html`, xưởng 3D trong `tools/world3d.js` và `tools/world3d.css`, hoạt cảnh sản xuất trong `tools/world3d_sim.js`, phòng kiểm nghiệm ảo trong `tools/lab.js`; mô hình mũ 6 mảnh là `tools/cap_6manh.html` (nhúng vào trang).
 
 Ảnh SOP của xưởng là tài liệu mật nên không đưa vào repo này.
 
 ## Kiểm vải theo thang 4 điểm (四分制)
 
-Mỗi lỗi trừ điểm theo chiều dài: đến 3 inch trừ 1, 3–6 inch trừ 2, 6–9 inch trừ 3, trên 9 inch hoặc lỗ thủng trừ 4; một yard tối đa 4 điểm. Điểm trên 100 yd² = tổng điểm × 3600 ÷ (số yard kiểm × khổ vải inch). Cấp A ≤ 29, B ≤ 47, C ≤ 62 (ngưỡng theo bảng thuật ngữ W6; hỏi tổ kiểm nghiệm xem khách nào dùng ngưỡng khác).
+Mỗi lỗi trừ điểm theo chiều dài: đến 3 inch trừ 1, 3–6 inch trừ 2, 6–9 inch trừ 3, trên 9 inch trừ 4. Lỗ thủng tính mấy điểm, một yard có tối đa 4 điểm không: còn phải hỏi ở xưởng. Điểm trên 100 yd² = tổng điểm × 3600 ÷ (số yard kiểm × khổ vải inch). Cấp A ≤ 29, B ≤ 47, C ≤ 62 (ngưỡng theo bảng thuật ngữ W6; hỏi tổ kiểm nghiệm xem khách nào dùng ngưỡng khác).

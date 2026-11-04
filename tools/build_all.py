@@ -142,13 +142,35 @@ def guide_html():
     return "".join(out)
 GUIDE_HTML = guide_html()
 
+# ---------- mô phỏng sản xuất + phòng kiểm nghiệm ảo ----------
+import sim as SIMD
+beats = []
+for b in SIMD.BEATS:
+    x = json.loads(json.dumps(b))
+    x["tpy"] = to_py(b["t"][1]); x["dpy"] = to_py(b["d"][1])
+    x["chk"] = [c + [to_py(c[1])] for c in b["chk"]]
+    if b["q"]: x["q"] = b["q"] + [to_py(b["q"][1])]
+    miss = [w for w in b["w"] if w not in TI]
+    if miss: print("  mô phỏng: bỏ từ chưa có trong bảng:", b["id"], miss)
+    x["w"] = [w for w in b["w"] if w in TI]
+    assert b["sid"] in {s["id"] for s in stages}, b["id"]
+    assert not b["lab"] or b["lab"] in SIMD.LAB, b["id"]
+    beats.append(x)
+DATA["sim"] = {
+    "beats": beats,
+    "points": [{"zh": z, "py": to_py(z), "vn": v, "en": e, "fvn": fv, "fzh": fz, "fen": fe} for z, v, e, fv, fz, fe in SIMD.POINTS15],
+    "ops": [{"no": n, "vn": v, "zh": z, "py": to_py(z), "spi": spi, "note": note} for n, v, z, spi, note in SIMD.OPS],
+    "aql": [list(r) for r in SIMD.AQL_UA_I],
+    "lab": {k: [v[0], v[1], v[2], to_py(v[1])] for k, v in SIMD.LAB.items()},
+}
+
 safe = lambda o: json.dumps(o, ensure_ascii=False).replace("</", "<\\/")
 CAP = open(os.path.join(HERE, "cap_6manh.html"), encoding="utf-8").read()
 TEMPLATE = open(os.path.join(HERE, "template_all.html"), encoding="utf-8").read()
 html = (TEMPLATE.replace("__WORLDCSS__", open(os.path.join(HERE, "world3d.css"), encoding="utf-8").read())
-        .replace("__WORLDJS__", open(os.path.join(HERE, "world3d.js"), encoding="utf-8").read())
+        .replace("__WORLDJS__", "\n".join(open(os.path.join(HERE, f), encoding="utf-8").read() for f in ("world3d_sim.js", "world3d.js", "lab.js")))
         .replace("__GUIDE__", GUIDE_HTML).replace("__SVG__", SVG)
-        .replace("__CAPHTML__", safe(CAP)).replace("__DATA__", safe(DATA)).replace("__N__", str(len(terms))))
+        .replace("__CAPHTML__", safe(CAP)).replace("__DATA__", safe(DATA)).replace("__N__", str(len(terms))).replace("__NSIM__", str(len(beats))))
 
 import os
 os.makedirs(os.path.join(OUT_DIR, "data"), exist_ok=True)

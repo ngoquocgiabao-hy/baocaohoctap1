@@ -252,7 +252,8 @@ __WORLDCSS__
 <section class="view" id="v-xuong">
   <div class="w3wide">
     <div class="w3bar" role="toolbar" aria-label="Xưởng 3D">
-      <button class="ib pri" id="w3tour">▶ Tham quan</button>
+      <button class="ib pri" id="w3sim" aria-pressed="false">🏭 Mô phỏng sản xuất</button>
+      <button class="ib" id="w3tour">▶ Tham quan</button>
       <button class="ib" id="w3near" aria-pressed="false">🔍 Cận cảnh</button>
       <button class="ib" id="w3over">⤢ Toàn cảnh</button>
       <span class="sp"></span>
@@ -261,11 +262,14 @@ __WORLDCSS__
       <button class="tg" data-t="zh" aria-pressed="true">中文</button>
       <button class="tg" data-t="en" aria-pressed="true">English</button>
     </div>
-    <div id="w3view"><canvas id="w3canvas" aria-label="Mô phỏng 3D xưởng Weili"></canvas><div id="w3hs"></div><div id="w3msg" hidden></div><div id="w3peek" hidden></div></div>
+    <div id="w3view"><canvas id="w3canvas" aria-label="Mô phỏng 3D xưởng Weili"></canvas><div id="w3hs"></div><div id="w3msg" hidden></div><div id="w3hud" hidden aria-live="off"></div><div id="w3peek" hidden></div></div>
+    <div id="w3simp" class="w3simp" hidden></div>
     <div class="w3chips" id="w3chips"></div>
   </div>
-  <p class="hint">Mô phỏng xếp các khâu theo thứ tự đường đi của chiếc mũ, chưa phải mặt bằng thật (đã biết: giặt ở tầng 1, may ở tầng 2). Đường vàng là dòng chảy: cây vải → bó mảnh cắt → chiếc mũ. Bảng ảnh ở góc mỗi khâu hiện ảnh thực tế bạn thêm.</p>
+  <p class="hint">Bấm <b>🏭 Mô phỏng sản xuất</b> để xem chiếc mũ đi qua __NSIM__ bước, từ họp PPM đến xuất hàng: máy chạy, mũ ráp dần từng bộ phận, mỗi bước ghi làm gì và kiểm gì (Việt, 中文, English), bảng số đo chạy ở góc trên. Số nào là ví dụ hay giả lập thì ghi rõ trên màn hình. Mô phỏng xếp các khâu theo thứ tự đường đi của chiếc mũ, chưa phải mặt bằng thật (đã biết: giặt ở tầng 1, may ở tầng 2). Bảng ảnh ở góc mỗi khâu hiện ảnh thực tế bạn thêm.</p>
   <div id="w3info"></div>
+  <h2>🧪 Phòng kiểm nghiệm ảo · 虚拟检验室 · <span class="ent">Virtual inspection lab</span></h2>
+  <div id="labBox" class="lab"></div>
   <h2>Hướng dẫn nhà máy · 工厂指南 · <span class="ent">Factory guide</span></h2>
   <div class="guide">__GUIDE__</div>
 </section>
