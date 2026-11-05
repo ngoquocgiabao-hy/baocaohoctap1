@@ -64,7 +64,7 @@ load_phrases_dict({k: [[s] for s in v.split()] for k, v in FIX.items() if len(v.
 EXTRA = {"难调": "nán tiáo", "电子": "diàn zǐ", "量帽檐": "liáng mào yán", "一楼": "yī lóu", "第一": "dì yī",
          "贴得": "tiē de", "牢不牢": "láo bu láo", "在不在": "zài bu zài", "转速": "zhuàn sù", "量幅宽": "liáng fú kuān", "量长宽高": "liáng cháng kuān gāo",
          "色差级数": "sè chā jí shù", "中风险": "zhōng fēng xiǎn", "有色差": "yǒu sè chā", "看色差": "kàn sè chā", "外传": "wài chuán", "露线": "lòu xiàn",
-         "重来": "chóng lái", "先量": "xiān liáng", "再量": "zài liáng", "的量": "de liáng", "多量": "duō liáng", "继续量": "jì xù liáng", "顶量": "dǐng liáng", "切条": "qiē tiáo", "切成": "qiē chéng", "切大": "qiē dà", "切多": "qiē duō", "开切": "kāi qiē", "冲床": "chōng chuáng", "松松地": "sōng sōng de", "禁止切": "jìn zhǐ qiē",
+         "重来": "chóng lái", "先量": "xiān liáng", "再量": "zài liáng", "的量": "de liáng", "多量": "duō liáng", "继续量": "jì xù liáng", "顶量": "dǐng liáng", "切条": "qiē tiáo", "切成": "qiē chéng", "切大": "qiē dà", "切多": "qiē duō", "开切": "kāi qiē", "冲床": "chōng chuáng", "松松地": "sōng sōng de", "禁止切": "jìn zhǐ qiē", "照片": "zhào piàn", "缝份": "fèng fèn", "差的": "chà de",
          "数缺陷": "shǔ quē xiàn", "数不良品": "shǔ bù liáng pǐn", "是数": "shì shǔ", "数到": "shǔ dào", "缺陷": "quē xiàn"}
 load_phrases_dict({k: [[x] for x in v.split()] for k, v in EXTRA.items()})
 PUNCT = {"，": ", ", "。": ". ", "；": "; ", "：": ": ", "、": ", ", "（": " (", "）": ") ", "“": " “", "”": "” ",
