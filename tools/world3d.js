@@ -80,7 +80,7 @@ const W3 = (() => {
     // ---- các khâu ----
     const stations = {}, pick = [], hsAll = {};
     // các bộ phận máy chạy được (mô phỏng sản xuất dùng)
-    const AN = {needles: [], emb: [], drums: [], heat: [], plies: [], formCaps: [], qcMinis: [], mayMinis: [], truck: [], det: [], marks: [], press: null, hpress: null, btn: null, fabTex: null};
+    const AN = {needles: [], emb: [], drums: [], heat: [], plies: [], formCaps: [], qcMinis: [], mayMinis: [], truck: [], det: [], marks: [], rivet: [], press: null, hpress: null, btn: null, fabTex: null, relaxTex: null, spreader: null, lgantry: null, lhead: null, lhead2: null};
     const mov = (m) => ({m, x0: m.position.x, y0: m.position.y, z0: m.position.z});
     function hs(sid, zh, x, y, z, label){ (hsAll[sid] = hsAll[sid] || []).push({zh, p: new THREE.Vector3(x, y, z), label}); }
     const mini = (g, hex, x, y, z, s) => { s = s || 1; const q = new THREE.Group(); q.position.set(x, y, z); g.add(q); add(q, new THREE.SphereGeometry(0.42 * s, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), hex, 0, 0, 0); const brim = add(q, new THREE.CylinderGeometry(0.36 * s, 0.36 * s, 0.05 * s, 14, 1, false, -Math.PI / 2, Math.PI), hex, 0, 0.02, 0.3 * s); brim.scale.set(1, 1, 1.1); add(q, new THREE.SphereGeometry(0.06 * s, 8, 6), '#222', 0, 0.42 * s, 0); return q; };
@@ -123,7 +123,22 @@ const W3 = (() => {
         bx(g, 3.0, 1.1, 1.0, '#3d5a80', 0.4, 0, 1.6); roll(g, 0.25, 1.1, '#e0fbfc', -1.3, 0.9, 1.6, Math.PI / 2); roll(g, 0.25, 1.1, '#264653', 2.1, 0.9, 1.6, Math.PI / 2);
         // bó mảnh cắt
         [[3.3, 0.4], [3.9, 0.4], [3.3, 1.1], [3.9, 1.1]].forEach(([x, z]) => { bx(g, 0.5, 0.35, 0.5, '#2a9d8f', x, 0, z + 1.0); bx(g, 0.52, 0.04, 0.12, '#f1faee', x, 0.2, z + 1.0); }); bx(g, 0.5, 0.6, 0.5, '#6d6875', 4.6, 0, -0.6); cy(g, 0.12, 0.25, '#e9c46a', 4.6, 0.6, -0.6, 10);
-        hs('cat', '拉布', -0.6, 1.5, -2.4); hs('cat', '牛皮纸', -3.6, 1.0, -1.7); hs('cat', '刀模', -3.6, 1.3, 1.3); hs('cat', '直线贴合机', 0.4, 1.4, 1.6); hs('cat', '裁片', 3.3, 0.7, 1.4); hs('cat', '绑片', 3.9, 0.7, 2.1); hs('cat', '待装片区', 3.6, 1.2, 1.8); hs('cat', '顶扣包布', 4.6, 1.1, -0.6); },
+        hs('cat', '拉布', -0.6, 1.5, -2.4); hs('cat', '牛皮纸', -3.6, 1.0, -1.7); hs('cat', '刀模', -3.6, 1.3, 1.3); hs('cat', '直线贴合机', 0.4, 1.4, 1.6); hs('cat', '裁片', 3.3, 0.7, 1.4); hs('cat', '绑片', 3.9, 0.7, 2.1); hs('cat', '待装片区', 3.6, 1.2, 1.8); hs('cat', '顶扣包布', 4.6, 1.1, -0.6);
+        // 05/11 (báo cáo xưởng cắt): máy xả vải, máy trải tự động Sertol, kệ dao, xẻ viền, laser, dập khuy
+        bx(g, 0.9, 0.45, 1.8, '#6c757d', 5.0, 0, -3.0); [-3.85, -2.15].forEach(z => bx(g, 0.1, 1.6, 0.1, '#6c757d', 5.0, 0.45, z));
+        roll(g, 0.3, 1.5, '#264653', 5.0, 1.85, -3.0, Math.PI / 2); roll(g, 0.4, 1.5, '#2a9d8f', 5.0, 0.95, -3.0, Math.PI / 2);
+        { const rt = weaveTex(); rt.repeat.set(1, 2); const sh = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 0.75), new THREE.MeshLambertMaterial({map: rt, side: THREE.DoubleSide})); sh.position.set(5.32, 1.42, -3.0); sh.rotation.y = Math.PI / 2; g.add(sh); AN.relaxTex = rt; }
+        { const sp = new THREE.Group(); sp.position.set(-0.6, 0, -2.4); g.add(sp); bx(sp, 0.5, 0.45, 1.95, '#f08c00', 0, 1.4, 0); [-0.98, 0.98].forEach(z => bx(sp, 0.12, 1.4, 0.12, '#f08c00', 0, 0, z)); roll(sp, 0.2, 1.6, '#264653', 0, 1.62, 0, Math.PI / 2); AN.spreader = sp; }
+        [0.15, 0.85, 1.55, 2.25].forEach(y => bx(g, 0.7, 0.05, 2.8, '#868e96', -5.35, y, -2.4)); [-3.75, -1.05].forEach(z => [-5.65, -5.05].forEach(x => bx(g, 0.06, 2.3, 0.06, '#495057', x, 0, z)));
+        for(let r = 0; r < 3; r++) for(let i = 0; i < 7; i++) bx(g, 0.5, 0.42, 0.04, '#ced4da', -5.35, 0.2 + r * 0.7, -3.55 + i * 0.38);
+        signBoard(g, [{t: '刀模架 M13 · M14', f: '700 60px sans-serif'}, {t: 'Kệ dao chặt · Die rack', f: '500 34px sans-serif', c: '#555'}], -5.35, 2.95, -2.4, 1.6, 0.55, Math.PI / 2);
+        bx(g, 1.5, 0.85, 0.8, '#5c7cfa', -1.4, 0, 3.95); roll(g, 0.25, 1.2, '#264653', -1.4, 1.1, 3.95); for(let i = 0; i < 4; i++) bx(g, 0.07, 0.02, 0.55, '#264653', -1.85 + i * 0.3, 0.85, 4.55);
+        bx(g, 2.2, 0.85, 1.1, '#e9ecef', 2.4, 0, 3.95); bx(g, 2.0, 0.03, 0.95, '#343a40', 2.4, 0.85, 3.95); bx(g, 2.2, 0.55, 0.06, '#adb5bd', 2.4, 0.85, 3.42); bx(g, 0.32, 0.22, 0.05, '#212529', 3.3, 1.0, 4.52);
+        AN.lgantry = mov(bx(g, 0.12, 0.1, 1.0, '#adb5bd', 2.4, 1.05, 3.95)); AN.lhead = mov(bx(g, 0.14, 0.2, 0.14, '#e03131', 2.4, 0.98, 3.95));
+        bx(g, 0.9, 0.9, 0.8, '#343a40', 5.0, 0, 2.9); bx(g, 0.8, 0.04, 0.7, '#495057', 5.0, 0.9, 2.9); bx(g, 0.06, 0.8, 0.06, '#212529', 5.0, 0.9, 3.25); bx(g, 0.95, 0.28, 0.45, '#212529', 5.0, 1.6, 2.95); bx(g, 0.5, 0.04, 0.05, '#f8f9fa', 5.0, 1.78, 2.72); AN.lhead2 = mov(bx(g, 0.1, 0.12, 0.1, '#e03131', 5.0, 0.98, 2.9));
+        for(let i = 0; i < 3; i++){ const x = -5.1 + i * 0.85, z = 3.95; bx(g, 0.6, 0.85, 0.6, '#495057', x, 0, z); bx(g, 0.12, 0.8, 0.12, '#343a40', x, 0.85, z - 0.2); AN.rivet.push(mov(bx(g, 0.22, 0.18, 0.28, '#adb5bd', x, 1.38, z))); cy(g, 0.18, 0.14, '#ced4da', x, 1.65, z - 0.2, 12); }
+        hs('cat', '松布', 5.0, 2.3, -3.0, 'Máy xả vải'); hs('cat', '自动拉布', 2.6, 2.0, -2.4, 'Máy trải vải tự động Sertol'); hs('cat', '刀模', -5.35, 2.5, -1.4, 'Kệ dao chặt M13, M14…');
+        hs('cat', '切条', -1.4, 1.5, 3.95); hs('cat', '镭射切割', 2.4, 1.4, 3.95, 'Máy laser bàn lớn (màn hình Ogbos)'); hs('cat', '打标机', 5.0, 2.2, 2.9, 'Máy khắc CKLASER 超级打标机 2.0'); hs('cat', '打扣', -4.25, 1.95, 3.95, 'Dãy máy dập khuy tự động'); },
       theu(g){ bx(g, 6.4, 1.0, 1.4, '#e5e5e5', 0, 0, -1.8); bx(g, 6.4, 0.4, 0.6, '#4a7c59', 0, 1.6, -2.2); for(let i = 0; i < 6; i++){ const x = -2.6 + i * 1.04; AN.emb.push(mov(bx(g, 0.5, 0.8, 0.5, '#f0f0f0', x, 1.0, -1.7))); for(let k = 0; k < 4; k++) cy(g, 0.07, 0.25, ['#e63946', '#1d3557', '#f4a261', '#2a9d8f'][k], x - 0.2 + k * 0.13, 2.0, -2.25, 8); bx(g, 0.7, 0.02, 0.5, '#264653', x, 1.0, -1.25); }
         sewMachine(g, -2, 1.8); bx(g, 0.5, 0.5, 0.05, '#f1faee', 2.0, 1.4, 1.2); mini(g, '#264653', 2.0, 0.98, 1.8);
         hs('theu', '绣花', -0.5, 2.6, -1.8); hs('theu', '前片', -1.5, 1.2, -1.2); hs('theu', '绣洞', -2, 1.8, 1.8); hs('theu', '首件检验', 2.0, 1.9, 1.3); },
@@ -331,7 +346,7 @@ const W3 = (() => {
     const sp = $c('w3stop'); if(sp) sp.onclick = stopTour;
   }
   function stepHtml(s, x, si){
-    return `<div class="w3step"><div class="st">${/^[①-⑩]/.test(x.t) ? '' : `<span class="no">${si + 1}</span>`}<div><b class="vnt">${esc(x.t)}</b> <span class="zht"><span lang="zh">${esc(x.tz)}</span> <span class="py">${esc(x.tpy)}</span></span> <i class="ent">· ${esc(x.ten)}</i></div></div>
+    return `<div class="w3step"><div class="st">${/^[①-⑳]/.test(x.t) ? '' : `<span class="no">${si + 1}</span>`}<div><b class="vnt">${esc(x.t)}</b>${x.new ? ' <span class="newb">Mới</span>' : ''} <span class="zht"><span lang="zh">${esc(x.tz)}</span> <span class="py">${esc(x.tpy)}</span></span> <i class="ent">· ${esc(x.ten)}</i></div></div>
       <div class="vnt">${esc(x.d)}</div>${x.dz ? `<div class="zht"><div lang="zh">${esc(x.dz)}</div><div class="p">${esc(x.dpy)}</div></div>` : ''}<div class="ent">${esc(x.den)}</div>
       ${x.chk.length ? `<div class="chk"><b>Cách kiểm tra · 怎么检查 · <span class="ent">How to check</span></b><ol>${x.chk.map(c => `<li><div class="vnt">${esc(c[0])}</div><div class="zht"><div lang="zh">${esc(c[1])}</div><div class="p">${esc(c[2])}</div></div><div class="ent">${esc(c[3])}</div></li>`).join('')}</ol></div>` : ''}
       ${x.w.length ? `<div class="chips">${x.w.filter(w => TI[w]).map(w => chip(w, true)).join('')}</div>` : ''}

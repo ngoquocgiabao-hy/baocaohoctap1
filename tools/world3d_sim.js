@@ -188,18 +188,19 @@ function W3SIM(K){
   const STEAM = new Array(26).fill(0).map(() => { const m = new THREE.Mesh(new THREE.SphereGeometry(0.07, 8, 6), new THREE.MeshBasicMaterial({color: 0xffffff, transparent: true, opacity: 0.5, depthWrite: false})); root.add(m); m.visible = false; m.userData = {a: Math.random() * PI * 2, t: Math.random()}; return m; });
   const MINIS = new Array(32).fill(0).map(() => { const g = mini(root, '#1d3557', 0, 0, 0, 0.5); g.visible = false; return g; });
   const STRIP = (() => { const g = new THREE.Group(); bx(g, 0.9, 0.012, 0.12, '#495057', 0, 0, 0); const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints([V(-0.4, 0.016, 0), V(0.4, 0.016, 0)]), new THREE.LineDashedMaterial({color: 0xffffff, dashSize: 0.03, gapSize: 0.02})); l.computeLineDistances(); g.add(l); root.add(g); g.visible = false; return g; })();
+  const BEAM = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.1, 6), new THREE.MeshBasicMaterial({color: 0xff3b3b})); root.add(BEAM); BEAM.visible = false;
   const S1 = dyn(512, 256, 1.7, 0.85), S2 = dyn(512, 256, 1.7, 0.85), PAD = dyn(560, 380, 1.55, 1.05);
 
   // ---------- trạng thái ----------
   const all = [CAP.h, CAP2.h, PIECES.g, FRONT.g, ROLL, ROLL2, PLY, BUN.g, BIN, TRIMS.g, TRUCK, BOX.g, STRIP, ...SW, ...SHEETS, ...STEAM, ...MINIS, S1.s, S2.s, PAD.s];
   let fx = null, beat = null, L = {}, follow = null;
   const place = (o, sid, x, y, z) => { o.position.copy(WP(sid, x, y, z)); o.visible = true; };
-  const ov = {press: false, hpress: false, btn: false, drum: 1, fab: 1, heat: 0, plies: true, formCap: true, qcMini: true, mayMini: true, truckDx: 0, conv: true};
+  const ov = {press: false, hpress: false, btn: false, drum: 1, fab: 1, heat: 0, plies: true, formCap: true, qcMini: true, mayMini: true, truckDx: 0, conv: true, laser: false};
   function reset(){
     all.forEach(o => { o.visible = false; });
     [CAP, CAP2].forEach(c => { c.h.rotation.set(0, 0, 0); c.h.scale.setScalar(1); c.tilt.rotation.set(0, 0, 0); c.cap.g.rotation.set(0, 0, 0); c.cap.set({}); });
     TRUCK.rotation.set(0, 0, 0); ROLL.rotation.set(0, 0, 0); ROLL2.rotation.set(0, 0, 0); [S1, S2, PAD].forEach(d => d.size(1, 1)); BOX.lid.forEach(p => p.rotation.z = 0); PIECES.g.scale.setScalar(1); FRONT.g.scale.setScalar(1);
-    Object.assign(ov, {press: false, hpress: false, btn: false, drum: 1, fab: 1, heat: 0, plies: true, formCap: true, qcMini: true, mayMini: true, truckDx: 0, conv: true});
+    Object.assign(ov, {press: false, hpress: false, btn: false, drum: 1, fab: 1, heat: 0, plies: true, formCap: true, qcMini: true, mayMini: true, truckDx: 0, conv: true, laser: false}); BEAM.visible = false;
     follow = null; L = {};
   }
   const live = (k, v) => { L[k] = v; };
@@ -209,6 +210,8 @@ function W3SIM(K){
   const QCAZ = [30, 12, 0, -90, 180, 180, 90, 20, 25, 25, 40, 20, 180, 200, 10], QCFLIP = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1];
   const STEP8 = [tri('Quét mã iPad', 'iPad扫码', 'Scan on iPad'), tri('Kiểm sau định form', '定型后检查', 'Check after shaping'), tri('Ngoài, từ đỉnh xuống', '从顶上查外面', 'Outside from the top'), tri('Lưỡi và chỉ vành', '查帽檐和绕线', 'Visor and rows'),
     tri('Bên trong, cắt chỉ tại bàn', '查里面，线头在桌上剪', 'Inside, trim at the bench'), tri('Dây về 9.5, đo vòng đầu', '调到9.5量帽围', 'Strap to 9.5, measure'), tri('Đối chiếu iPad', '核对iPad上的信息', 'Match the iPad'), tri('Kiểm form', '看帽型', 'Check the shape')];
+  const LSOP = [tri('Chuyển file sang định dạng máy', '文件转成机器格式', 'Convert the file'), tri('Lưu vào USB', '存到U盘', 'Save to USB'), tri('Cắm vào máy DS4', '插到DS4', 'Plug into the DS4'), tri('Cài công suất, kích thước', '设功率、尺寸', 'Set power and size'),
+    tri('Trải vật liệu lên lưới tổ ong', '材料铺在蜂窝网上', 'Lay material on the honeycomb bed'), tri('Đạp bàn đạp cắt', '踩脚踏开切', 'Press the foot pedal'), tri('Thu thành phẩm, bỏ ba-via', '收成品，去毛边', 'Collect pieces, remove burrs')];
   const TABS = ['Header', 'Photos', 'Defects #1', 'Defects #2', 'Conclusion'];
   const SPIN = 0.25; // góc camera mặc định khi xem mũ
 
@@ -282,6 +285,15 @@ function W3SIM(K){
       enter(){ place(BUN.g, 'cat', 2.4, 0, 2.9); place(BIN, 'cat', 1.3, 0, 3.1); },
       run(k){ const n = Math.round(144 * ease(seg(k, 0, 0.8))); live('n', n); BUN.s.scale.y = 0.05 + 0.5 * n / 144; BUN.s.position.y = BUN.s.scale.y / 2; BUN.b.visible = n === 144; BUN.b.position.y = BUN.s.scale.y * 0.5;
         place(S1.s, 'cat', 2.4, 1.3 + BUN.s.scale.y, 2.9); S1.draw(n < 144 ? [F(`绑片 ${n} / 144`, 46, '#1f2328', 800), F('不良裁片 → 不良箱', 32, '#c92a2a')] : [F('144套 ✓ A卡', 46, '#2b8a3e', 800), F('工号写在工序栏', 32, '#444')]); }},
+    aux: {sid: 'cat', at: [2.4, 1.0, 3.95], cam: [5.2, 0.3, 0.78],
+      enter(){ ov.laser = true; PIECES.show({visor: 0, btn: 0}); PIECES.g.scale.setScalar(0.42); place(PIECES.g, 'cat', 2.3, 0.875, 3.98); },
+      run(k){ const a = seg(k, 0.05, 0.62), row = Math.floor(a * 6), u = (a * 6) % 1, x = 1.75 + 1.3 * (row % 2 ? 1 - u : u), z = 3.65 + row * 0.12;
+        if(k < 0.65){ AN.lgantry.m.position.x = x; AN.lhead.m.position.x = x; AN.lhead.m.position.z = z; BEAM.visible = a > 0 && a < 1 && Math.sin(k * 400) > -0.3; BEAM.position.copy(WP('cat', x, 0.93, z)); }
+        else BEAM.visible = false;
+        PIECES.show({visor: 0, btn: 0, eyelets: Math.min(6, Math.floor(a * 6.99))});
+        const st = Math.min(6, Math.floor(k / 0.65 * 7)); live('m', 'Ogbos · CKLASER'); live('s', k < 0.65 ? `${st + 1} / 7` : '7 / 7');
+        live('name', k < 0.65 ? LSOP[st] : tri('Đóng khuy: không lỏng, không móp, không rớt', '打扣：不松、不变形、不掉扣', 'Button setting: firm, undented, present'));
+        place(S1.s, 'cat', 2.4, 2.4, 3.6); S1.draw(k < 0.65 ? [F('镭射切割 · 透气孔', 42, '#1f2328', 800), F('护目镜 · 蒸馏水 · 不切金属', 32, '#c92a2a')] : [F('打扣 · 切条', 46, '#1f2328', 800), F('不松、不变形、不掉扣', 34, '#444')]); }},
     embroider: {sid: 'theu', at: [0.55, 1.1, -1.2], cam: [3.4, 0.2, 0.95],
       enter(){ place(FRONT.g, 'theu', 0.52, 1.035, -0.98); FRONT.g.scale.setScalar(1.2); },
       run(k){ const a = seg(k, 0.1, 0.85); FRONT.logo(a); live('pct', Math.round(a * 100) + ' %'); AN.emb[3].m.position.x = AN.emb[3].x0 + 0.12 * Math.sin(k * 140); AN.emb[3].m.position.z = AN.emb[3].z0 + 0.05 * Math.cos(k * 170);
@@ -405,6 +417,11 @@ function W3SIM(K){
     AN.heat.forEach((m, i) => { m.material.emissiveIntensity = 0.25 + (ov.heat ? 0.45 + 0.2 * Math.sin(now * 0.008 + i) : 0.08 * Math.sin(now * 0.002 + i)); });
     AN.plies.forEach(m => m.visible = ov.plies); AN.formCaps.forEach((g, i) => g.visible = ov.formCap || i !== 1); AN.qcMinis.forEach(g => g.visible = ov.qcMini); AN.mayMinis.forEach(g => g.visible = ov.mayMini);
     AN.truck.forEach(o => { o.m.position.x = o.x0 + ov.truckDx; o.m.visible = ov.truckDx < 24; });
+    if(AN.spreader){ AN.spreader.visible = ov.plies; AN.spreader.position.x = -0.6 + 3.2 * Math.sin(now * 0.00035); }
+    if(AN.relaxTex) AN.relaxTex.offset.y += dt * 0.12;
+    if(!ov.laser && AN.lhead){ const t = now * 0.0006, gx = 2.4 + 0.85 * Math.sin(t * 1.3); AN.lgantry.m.position.x = gx; AN.lhead.m.position.x = gx; AN.lhead.m.position.z = 3.95 + 0.38 * Math.sin(t * 3.1); }
+    if(AN.lhead2){ AN.lhead2.m.position.x = 5.0 + 0.3 * Math.sin(now * 0.002); AN.lhead2.m.position.z = 2.9 + 0.25 * Math.cos(now * 0.0027); }
+    AN.rivet.forEach((r, i) => { r.m.position.y = r.y0 - 0.12 * Math.pow(Math.max(0, Math.sin(now * 0.006 + i * 2)), 6); });
     convBoxes.forEach((b, i) => { b.m.visible = ov.conv || i !== 1; b.t = (b.t + dt * 0.12) % 1; b.m.position.x = -0.3 + 3.0 * b.t; const inside = b.m.position.x > 0.75 && b.m.position.x < 1.65; if(ov.conv || i !== 1) AN.det[i].material.emissive.setHex(inside ? 0x1c7ed6 : 0x000000); });
   }
 

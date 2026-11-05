@@ -1,10 +1,10 @@
 {
  "meta": {
   "title": "Weili · Học quy trình và từ xưởng",
-  "updated": "2026-11-03",
-  "added": "2026-11-03",
-  "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, W7 (quy định từ ngữ)",
-  "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. pics: ảnh đặt ở img/<id khâu>-<số bước>-<số ảnh>.jpg. qs: [Việt, 中文, pinyin]."
+  "updated": "2026-11-05",
+  "added": "2026-11-05",
+  "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, báo cáo xưởng cắt 05/11, W7 (quy định từ ngữ)",
+  "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. key: mã cố định của bước (không có thì là số thứ tự); pics: ảnh đặt ở img/<id khâu>-<mã bước>-<số ảnh>.jpg; câu hỏi có mã <id khâu>-<mã bước>-q<số>. qs: [Việt, 中文, pinyin]."
  },
  "stages": [
   {
@@ -727,55 +727,72 @@
    "short": "Cắt",
    "color": "#c27a12",
    "qb": true,
-   "what": "Cây vải → dán lót → kéo lớp → chặt → chọn, buộc 144 bộ/bó → sang thêu, in, may.",
-   "whatz": "布卷 → 贴合 → 拉布 → 刀模裁剪 → 挑片、绑片，每包144套 → 送绣花、印花、车缝。",
+   "what": "Cây vải → xả (vải co giãn) → phiếu sơ đồ, phiếu lưu ý gia công → dán lót → kéo lớp → chặt → gia công phụ trợ tùy mã (xẻ viền, laser, đóng khuy) → chọn, buộc 144 bộ/bó → sang thêu, in, may.",
+   "whatz": "布卷 → 松布（弹性布）→ 编排辅助单据、加工提示单 → 贴合 → 拉布 → 刀模裁剪 → 看款加工（切条、镭射、打扣）→ 挑片、绑片，每包144套 → 送绣花、印花、车缝。",
    "who": "Tổ trưởng xưởng cắt; QC của 品保部 kiểm thêm",
    "whoz": "裁剪组长；品保部QC",
    "steps": [
     {
      "t": "① Nhận cây, đọc tem",
      "tz": "看布卷标签",
-     "d": "Tem trắng có QR: mã vật tư (chữ cái cuối là màu: B đen, W trắng, E xám, R đỏ…), cấp chênh lệch màu, số lô nhuộm, cấp điểm trừ, người kiểm.",
-     "dz": "布卷标签是白色的，有二维码，写着品号、品名、色差级数、缸号、扣点等级、检验员。品号最后一个字母是颜色：B黑、W白、E灰、R红。",
+     "d": "Tem trắng có QR: mã vật tư (chữ cái cuối là màu: B đen, W trắng, E xám, R đỏ…), cấp chênh lệch màu, số lô nhuộm, cấp điểm trừ, người kiểm. Báo cáo 05/11: ở xưởng cắt, vải xếp trên kệ, có nhãn phân loại (VD 46X28/黑); kho phát xuống theo phiếu lĩnh liệu. Trước khi lên máy, đối chiếu mã hàng, màu, số lượng trên tem đầu cây để không lệch ánh màu.",
+     "dz": "布卷标签是白色的，有二维码，写着品号、品名、色差级数、缸号、扣点等级、检验员。品号最后一个字母是颜色：B黑、W白、E灰、R红。11月5日报告：裁剪的布放在货架上，贴分类标签（例如46X28/黑）；仓库按领料单发料。上机前对照布头标签上的款号、颜色、数量，避免色差。",
      "chk": [
       [
        "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào.",
        "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
        "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
        "Read the tag for traceability: which roll, dye lot, shade grade and order."
+      ],
+      [
+       "Trước khi lên máy: mã hàng, màu, số lượng trên tem đầu cây khớp phiếu lĩnh liệu.",
+       "上机前：布头标签上的款号、颜色、数量跟领料单一样。",
+       "Shàng jī qián: bù tóu biāo qiān shàng de kuǎn hào, yán sè, shù liàng gēn lǐng liào dān yí yàng.",
+       "Before loading: style, colour and quantity on the roll-end tag match the requisition."
       ]
      ],
      "w": [
       "品号",
       "色差级数",
       "缸号",
-      "扣点等级"
+      "扣点等级",
+      "领料单"
      ],
      "pics": [
-      "Tem trắng cây vải (che số hợp đồng nếu cần)"
+      "Tem trắng cây vải (che số hợp đồng nếu cần)",
+      "Vải trên kệ chờ cắt, nhãn kệ 46X28/黑, 46X28/白",
+      "Kệ vải chờ cắt nhìn từ lối đi"
      ],
      "qs": [
       [
        "Bảng chữ cái màu của mã vật tư có bảng in sẵn không?",
        "品号最后一个字母代表颜色，有没有对照表？",
        "Pǐn hào zuì hòu yí gè zì mǔ dài biǎo yán sè, yǒu méi yǒu duì zhào biǎo?"
+      ],
+      [
+       "Báo cáo 05/11 ghi khâu này là “车缝厂收料”; ở xưởng cắt gọi thế nào? Nhãn “46X28/黑” nghĩa là gì?",
+       "11月5日的报告把这一步写成“车缝厂收料”，裁剪这边怎么叫？标签上的“46X28/黑”是什么意思？",
+       "11 yuè 5 rì de bào gào bǎ zhè yí bù xiě chéng “chē féng chǎng shōu liào”, cái jiǎn zhè biān zěn me jiào? Biāo qiān shàng de “46X28/hēi” shì shén me yì si?"
       ]
      ],
+     "key": 1,
      "tpy": "Kàn bù juǎn biāo qiān",
-     "dpy": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán. Pǐn hào zuì hòu yí gè zì mǔ shì yán sè: B hēi, W bái, E huī, R hóng.",
+     "dpy": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán. Pǐn hào zuì hòu yí gè zì mǔ shì yán sè: B hēi, W bái, E huī, R hóng. 11 yuè 5 rì bào gào: cái jiǎn de bù fàng zài huò jià shàng, tiē fēn lèi biāo qiān (lì rú 46X28/hēi); cāng kù àn lǐng liào dān fā liào. Shàng jī qián duì zhào bù tóu biāo qiān shàng de kuǎn hào, yán sè, shù liàng, bì miǎn sè chā.",
      "ten": "① Receive the roll, read the tag",
-     "den": "White tag with QR: material code (last letter is colour: B black, W white, E grey, R red…), shade grade, dye lot, point grade, inspector."
+     "den": "White tag with QR: material code (last letter is colour: B black, W white, E grey, R red…), shade grade, dye lot, point grade, inspector. 05/11 report: in the cutting room, rolls sit on racks with category labels (e.g. 46X28/黑); the warehouse issues them by requisition. Before loading, check style, colour and quantity on the roll-end tag to avoid shade mix-ups."
     },
     {
      "t": "② Xả vải",
      "tz": "松布",
-     "d": "Chỉ làm với vải co giãn: để vải co trước, mảnh cắt không co lại sau.",
-     "dz": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。",
+     "d": "Chỉ làm với vải co giãn: để vải co trước, mảnh cắt không co lại sau. Báo cáo 05/11: cây vải nạp vào máy xả, kéo ra rồi cuộn lại lỏng hơn để nhả hết lực căng. Vải không co giãn đi thẳng sang bàn trải, cắt.",
+     "dz": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。11月5日报告：布卷放进松布机，拉开再松松地卷回去，释放卷布张力。没有弹性的布直接送去拉布、裁剪。",
      "w": [
       "松布"
      ],
      "pics": [
-      "Khu xả vải, cây vải đang xả"
+      "Máy xả vải đang chạy, cận cảnh",
+      "Khu máy xả vải toàn cảnh",
+      "Khu xả vải nhìn từ lối đi"
      ],
      "qs": [
       [
@@ -789,18 +806,88 @@
        "Nǎ xiē bù yào sōng bù, nǎ xiē bú yòng?"
       ]
      ],
+     "key": 2,
+     "chk": [
+      [
+       "Vải co giãn phải qua máy xả trước khi trải, cắt.",
+       "弹性布要先过松布机，再拉布、裁剪。",
+       "Tán xìng bù yào xiān guò sōng bù jī, zài lā bù, cái jiǎn.",
+       "Stretch fabric goes through the relaxing machine before spreading and cutting."
+      ]
+     ],
      "tpy": "Sōng bù",
-     "dpy": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
-     "chk": [],
+     "dpy": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō. 11 yuè 5 rì bào gào: bù juǎn fàng jìn sōng bù jī, lā kāi zài sōng sōng de juǎn huí qù, shì fàng juǎn bù zhāng lì. Méi yǒu tán xìng de bù zhí jiē sòng qù lā bù, cái jiǎn.",
      "ten": "② Fabric relaxing",
-     "den": "Only for stretch fabric: let it shrink first so cut pieces don't shrink later."
+     "den": "Only for stretch fabric: let it shrink first so cut pieces don't shrink later. 05/11 report: the roll is fed into the relaxing machine, unrolled and rewound loosely to release the tension. Non-stretch fabric goes straight to spreading and cutting."
     },
     {
-     "t": "③ Dán lót keo — sếp nói “hé tiē”",
+     "key": "p",
+     "t": "③ Phiếu sơ đồ, phiếu lưu ý gia công",
+     "tz": "加工提示单、编排辅助单据",
+     "d": "Công nhân và QC nhận từ phòng kỹ thuật: phiếu phụ trợ sơ đồ cắt (编排辅助单据: mã PO, chất liệu, số yard, số lớp, kích thước dao, cách kéo vải, VD kéo hai mặt; người trải vải, cắt, QC đều ký) và phiếu lưu ý gia công (ảnh 05/11 ghi “加工提示单”, in chữ phồn thể 加工提示單; VD 左右中片加工提示单 của khách UNDER ARMOUR: đường kính lỗ cắt 切割孔径 0,12 cm; khoảng cách lỗ trên mảnh 1,6 cm và 4,9 cm, trong ngoặc là vị trí trên thành phẩm 成品定位 1,0 cm và 4,0 cm; góc phải ghi cách làm 镭射切割). Phát vật tư theo bảng tổng chi tiết phát liệu, đối chiếu số lot.",
+     "dz": "工人和QC从技术部拿到编排辅助单据（PO、材料、码数、层数、刀模尺寸、拉布方式，例如双面拉布；拉布、裁剪、QC都要签字）和加工提示单（单上印繁体“加工提示單”；例如UNDER ARMOUR的左右中片加工提示单：切割孔径0.12厘米；裁片上孔的位置1.6厘米、4.9厘米，括号里是成品定位1.0厘米、4.0厘米；右上角写镭射切割）。发料按明细表发，核对批号。",
+     "chk": [
+      [
+       "Đọc phiếu trước khi trải: số lớp, chiều dài, loại dao; phiếu lưu ý gia công: đường kính lỗ, vị trí trên thành phẩm.",
+       "拉布前看单：层数、长度、刀模；加工提示单：切割孔径、成品定位。",
+       "Lā bù qián kàn dān: céng shù, cháng dù, dāo mó; jiā gōng tí shì dān: qiē gē kǒng jìng, chéng pǐn dìng wèi.",
+       "Read the sheets before spreading: plies, length, die; hint sheet: hole diameter, finished position."
+      ],
+      [
+       "Trải vải, cắt, QC đều ghi nhận và ký trên phiếu.",
+       "拉布、裁剪、QC都要在单上记录、签字。",
+       "Lā bù, cái jiǎn, QC dōu yào zài dān shàng jì lù, qiān zì.",
+       "Spreading, cutting and QC all record and sign the sheet."
+      ],
+      [
+       "Đo vị trí lỗ trên mảnh theo số ngoài ngoặc (VD 1,6 cm, 4,9 cm); số trong ngoặc là vị trí trên thành phẩm.",
+       "量裁片上孔的位置看括号外的数（例如1.6厘米、4.9厘米）；括号里是成品定位。",
+       "Liàng cái piàn shàng kǒng de wèi zhì kàn kuò hào wài de shù (lì rú 1.6 lí mǐ, 4.9 lí mǐ); kuò hào lǐ shì chéng pǐn dìng wèi.",
+       "Measure hole positions on the piece by the number outside the brackets (e.g. 1.6, 4.9 cm); the bracketed one is the finished position."
+      ]
+     ],
+     "w": [
+      "编排辅助单据",
+      "加工提示单",
+      "切割孔径",
+      "成品定位",
+      "双面拉布",
+      "领料单"
+     ],
+     "pics": [
+      "Phiếu phụ trợ sơ đồ cắt (编排辅助单据)",
+      "Phiếu lưu ý gia công 加工提示单 (mảnh giữa hai bên, UA)",
+      "Bảng tổng chi tiết phát liệu"
+     ],
+     "qs": [
+      [
+       "Phiếu phụ trợ sơ đồ cắt (编排辅助单据) có phải là biểu M-10-44-A-3 không?",
+       "编排辅助单据是不是M-10-44-A-3那张表？",
+       "Biān pái fǔ zhù dān jù shì bu shì M-10-44-A-3 nà zhāng biǎo?"
+      ],
+      [
+       "“Bảng tổng chi tiết phát liệu” in tên tiếng Trung là gì?",
+       "裁剪发料用的那张总表，上面印的中文名字是什么？",
+       "Cái jiǎn fā liào yòng de nà zhāng zǒng biǎo, shàng miàn yìn de zhōng wén míng zì shì shén me?"
+      ],
+      [
+       "Phiếu ghi lỗ cách mép 1,6 cm (thành phẩm 1,0 cm): phần chênh 0,6 cm là đường may hay phần bị che? Ai kiểm vị trí này?",
+       "单上写1.6厘米（成品定位1.0厘米），差的0.6厘米是缝份还是被盖住的部分？这个位置谁来查？",
+       "Dān shàng xiě 1.6 lí mǐ (chéng pǐn dìng wèi 1.0 lí mǐ), chà de 0.6 lí mǐ shì féng fèn hái shì bèi gài zhù de bù fèn? Zhè ge wèi zhì shuí lái chá?"
+      ]
+     ],
+     "new": "2026-11-05",
+     "tpy": "Jiā gōng tí shì dān, biān pái fǔ zhù dān jù",
+     "dpy": "Gōng rén hé QC cóng jì shù bù ná dào biān pái fǔ zhù dān jù (PO, cái liào, mǎ shù, céng shù, dāo mó chǐ cùn, lā bù fāng shì, lì rú shuāng miàn lā bù; lā bù, cái jiǎn, QC dōu yào qiān zì) hé jiā gōng tí shì dān (dān shàng yìn fán tǐ “jiā gōng tí shì dān”; lì rú UNDER ARMOUR de zuǒ yòu zhōng piàn jiā gōng tí shì dān: qiē gē kǒng jìng 0.12 lí mǐ; cái piàn shàng kǒng de wèi zhì 1.6 lí mǐ, 4.9 lí mǐ, kuò hào lǐ shì chéng pǐn dìng wèi 1.0 lí mǐ, 4.0 lí mǐ; yòu shàng jiǎo xiě léi shè qiē gē). Fā liào àn míng xì biǎo fā, hé duì pī hào.",
+     "ten": "③ Cutting sheets and processing hint sheets",
+     "den": "Workers and QC receive from engineering the marker support sheet (编排辅助单据: PO, material, yards, plies, die size, spreading method such as face-to-face; spreading, cutting and QC all sign) and the processing hint sheet (printed in traditional characters 加工提示單; e.g. a UNDER ARMOUR middle-panel sheet: cut-hole diameter 0.12 cm; hole positions on the piece 1.6 cm and 4.9 cm, with finished positions 1.0 cm and 4.0 cm in brackets; marked 镭射切割). Materials are issued by the issue summary list, checking lot numbers."
+    },
+    {
+     "t": "④ Dán lót keo — sếp nói “hé tiē”",
      "tz": "贴合",
      "hot": true,
-     "d": "Trước khi chặt, dán vải chính với lót có keo trên máy dán (SOP M-10-71). Trên thẻ quy trình, mảnh trước ghi (貼) là đã qua bước này. Mã gia công dạng TG0M01-150.",
-     "dz": "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。卡上前片写“贴”，就是已经贴合。贴合代码像TG0M01-150。",
+     "d": "Trước khi chặt, dán vải chính với lót có keo trên máy dán (SOP M-10-71). Trên thẻ quy trình, mảnh trước ghi (貼) là đã qua bước này. Mã gia công dạng TG0M01-150. Báo cáo 05/11: máy ép nhiệt băng chuyền liên tục SHANGKE SK-1600NL ép mếch cứng (buckram) hoặc mút (foam) vào mặt trái để mũ giữ form phẳng, không rộp bóng. Báo cáo ghi ép “vào mặt trái bán thành phẩm”, còn SOP M-10-71 ghi dán trước khi chặt: còn phải hỏi.",
+     "dz": "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。卡上前片写“贴”，就是已经贴合。贴合代码像TG0M01-150。11月5日报告：用SHANGKE SK-1600NL连续式压烫机，把牛筋衬或海绵压在布的反面，让帽子平整、不起泡。报告写的是压在半成品反面，作业标准M-10-71写的是裁剪前贴合，还要问。",
      "chk": [
       [
        "Cài nhiệt độ và áp suất theo yêu cầu (80–180 °C); đạt nhiệt mới cho vải vào máy.",
@@ -839,12 +926,15 @@
       "贴合辅助单据",
       "渗胶",
       "打卷",
-      "贴衬"
+      "贴衬",
+      "贴合收发单"
      ],
      "pics": [
       "Máy dán đường thẳng",
       "Phiếu phụ trợ dán trên cuộn đã dán",
-      "Biểu ghi nhiệt độ và lực kéo"
+      "Biểu ghi nhiệt độ và lực kéo",
+      "Máy ép mếch băng chuyền SK-1600NL",
+      "Phiếu giao nhận dán (贴合收发单)"
      ],
      "qs": [
       [
@@ -866,25 +956,37 @@
        "Nhiệt khi dán thấp hơn mức cài 5–6 °C: lệch bao nhiêu thì phải chỉnh?",
        "贴合中实际温度比设定低5到6度，差多少要调整？",
        "Tiē hé zhōng shí jì wēn dù bǐ shè dìng dī 5 dào 6 dù, chà duō shao yào tiáo zhěng?"
+      ],
+      [
+       "Ép mếch, mút làm trước khi chặt (SOP M-10-71) hay ép lên mảnh đã cắt (báo cáo 05/11), hay tùy loại? Máy SK-1600NL có phải là máy dán thẳng không?",
+       "牛筋衬、海绵是裁剪前贴合（M-10-71），还是裁好以后再压（11月5日报告），还是看材料？SK-1600NL是不是直线贴合机？",
+       "Niú jīn chèn, hǎi mián shì cái jiǎn qián tiē hé (M-10-71), hái shì cái hǎo yǐ hòu zài yā (11 yuè 5 rì bào gào), hái shì kàn cái liào? SK-1600NL shì bu shì zhí xiàn tiē hé jī?"
       ]
      ],
+     "key": 3,
      "tpy": "Tiē hé",
-     "dpy": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71). Kǎ shàng qián piàn xiě “tiē”, jiù shì yǐ jīng tiē hé. Tiē hé dài mǎ xiàng TG0M01-150.",
-     "ten": "③ Fusing (boss says “hé tiē”)",
-     "den": "Before cutting, the shell fabric is fused to adhesive interlining on the fusing machine (SOP M-10-71). On the process card, a front panel marked (貼) has passed this step. Process codes look like TG0M01-150."
+     "dpy": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71). Kǎ shàng qián piàn xiě “tiē”, jiù shì yǐ jīng tiē hé. Tiē hé dài mǎ xiàng TG0M01-150. 11 yuè 5 rì bào gào: yòng SHANGKE SK-1600NL lián xù shì yā tàng jī, bǎ niú jīn chèn huò hǎi mián yā zài bù de fǎn miàn, ràng mào zi píng zhěng, bù qǐ pào. Bào gào xiě de shì yā zài bàn chéng pǐn fǎn miàn, zuò yè biāo zhǔn M-10-71 xiě de shì cái jiǎn qián tiē hé, hái yào wèn.",
+     "ten": "④ Fusing (boss says “hé tiē”)",
+     "den": "Before cutting, the shell fabric is fused to adhesive interlining on the fusing machine (SOP M-10-71). On the process card, a front panel marked (貼) has passed this step. Process codes look like TG0M01-150. 05/11 report: a SHANGKE SK-1600NL continuous fusing press bonds buckram or foam to the back so the cap stays flat without bubbles. The report says it is pressed onto semi-finished pieces, while SOP M-10-71 says fusing comes before cutting: still to ask."
     },
     {
-     "t": "④ Kéo vải — sếp nói “la bù”",
+     "t": "⑤ Kéo vải — sếp nói “la bù”",
      "tz": "拉布",
      "hot": true,
-     "d": "Kéo cây vải dọc bàn, xếp chồng nhiều lớp theo phiếu sơ đồ cắt (biểu M-10-44-A-3), VD kéo hai mặt 18 lớp. Vải khác cấp màu không kéo chung một chồng.",
-     "dz": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。不同色差级数的布不混在一起拉。",
+     "d": "Kéo cây vải dọc bàn, xếp chồng nhiều lớp theo phiếu sơ đồ cắt (biểu M-10-44-A-3), VD kéo hai mặt 18 lớp. Vải khác cấp màu không kéo chung một chồng. Báo cáo 05/11: vải thường kéo bằng máy trải vải tự động (Sertol); mút, mếch khó trải thì công nhân trải tay, chặn mép bằng tạ sắt cho khỏi xô lệch. Kéo đúng chiều dài sơ đồ, không kéo căng quá làm biến dạng mảnh.",
+     "dz": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。不同色差级数的布不混在一起拉。11月5日报告：一般的布用自动拉布机（Sertol）拉；海绵、衬这些不好拉的，工人手工拉，用铁块压住布边，不让它跑位。按排版的长度拉，不能拉太紧，不然裁片会变形。",
      "chk": [
       [
        "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”.",
        "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
        "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
        "The pre-printed sheet has checks: aligned edges, stretch, lay height, cutting direction; plus a box for anti-mould."
+      ],
+      [
+       "Mép từng lớp thẳng, chặn bằng tạ; không kéo căng quá.",
+       "每层布边对齐，用铁块压住；不能拉太紧。",
+       "Měi céng bù biān duì qí, yòng tiě kuài yā zhù; bù néng lā tài jǐn.",
+       "Every ply edge aligned and weighted; never over-tensioned."
       ]
      ],
      "w": [
@@ -892,11 +994,17 @@
       "双面拉布",
       "排版",
       "裁次",
-      "防霉"
+      "防霉",
+      "自动拉布",
+      "手工拉布"
      ],
      "pics": [
       "Bàn kéo vải: số lớp, mép vải",
-      "Phiếu sơ đồ cắt M-10-44-A-3"
+      "Phiếu sơ đồ cắt M-10-44-A-3",
+      "Máy trải vải tự động Sertol",
+      "Trải tay mút, mếch trắng, chặn tạ sắt",
+      "Máy Sertol cận cảnh: màn hình, cây vải",
+      "Trải tay: tạ sắt chặn mép, phiếu trên bàn"
      ],
      "qs": [
       [
@@ -910,16 +1018,17 @@
        "Měi zhǒng bù zuì duō lā jǐ céng?"
       ]
      ],
+     "key": 4,
      "tpy": "Lā bù",
-     "dpy": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng. Bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā.",
-     "ten": "④ Spreading (boss says “la bù”)",
-     "den": "Spread the fabric along the table in many plies following the marker sheet (form M-10-44-A-3), e.g. 18 plies face-to-face. Different shade grades are never spread in the same lay."
+     "dpy": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng. Bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā. 11 yuè 5 rì bào gào: yì bān de bù yòng zì dòng lā bù jī (Sertol) lā; hǎi mián, chèn zhè xiē bù hǎo lā de, gōng rén shǒu gōng lā, yòng tiě kuài yā zhù bù biān, bú ràng tā pǎo wèi. Àn pái bǎn de cháng dù lā, bù néng lā tài jǐn, bù rán cái piàn huì biàn xíng.",
+     "ten": "⑤ Spreading (boss says “la bù”)",
+     "den": "Spread the fabric along the table in many plies following the marker sheet (form M-10-44-A-3), e.g. 18 plies face-to-face. Different shade grades are never spread in the same lay. 05/11 report: ordinary fabric is spread by the automatic spreader (Sertol); foam and interlining are spread by hand with iron weights on the edges. Spread to the marker length without over-tensioning, or pieces deform."
     },
     {
-     "t": "⑤ Chặt",
+     "t": "⑥ Chặt",
      "tz": "刀模裁剪",
-     "d": "Máy chặt (VD Chenfeng số 28) ép dao chặt xuống cả chồng vải, lót giấy nâu bên dưới. Một bộ dao gồm 6 mảnh thân, mặt trên và mặt dưới lưỡi trai, vải bọc nút đỉnh.",
-     "dz": "用28号机把刀模压下去，一次裁一整叠布，下面垫牛皮纸。一套刀模有六片帽身、眉面、眉里、顶扣包布。",
+     "d": "Máy chặt (VD Chenfeng số 28) ép dao chặt xuống cả chồng vải, lót giấy nâu bên dưới. Một bộ dao gồm 6 mảnh thân, mặt trên và mặt dưới lưỡi trai, vải bọc nút đỉnh. Báo cáo 05/11: dao chặt cất trên kệ chia ô có mã (M13, M14…), mỗi mã hàng, mỗi chi tiết một bộ dao riêng; giữ cho lưỡi không mẻ. Máy dập thủy lực Chenfeng; dập xong gỡ mảnh khỏi phần vải thừa, đếm, bó (VD 144 chiếc/bó) kèm thẻ có QR.",
+     "dz": "用28号机把刀模压下去，一次裁一整叠布，下面垫牛皮纸。一套刀模有六片帽身、眉面、眉里、顶扣包布。11月5日报告：刀模放在分格的刀模架上，有编号（M13、M14……），每个款、每个部位都有专用的刀模，要保护刀口不崩。用Chenfeng液压冲床；冲好以后把裁片从余料里拿出来，点数，绑包（例如每包144片），挂有二维码的卡。",
      "chk": [
       [
        "Dao chặt lệch so với rập từ 2 mm trở lên thì phải sửa.",
@@ -948,11 +1057,15 @@
       "后片",
       "眉面",
       "眉里",
-      "顶扣包布"
+      "顶扣包布",
+      "冲床"
      ],
      "pics": [
       "Bộ dao chặt của một mã (tem mã, size)",
-      "Máy chặt và giấy nâu lót"
+      "Máy chặt và giấy nâu lót",
+      "Tủ ô đựng dao chặt có mã ô (M2, M7, M13, M14…)",
+      "Máy chặt dập thủy lực, phiếu đặt trên bàn",
+      "Tủ ô đựng dao chặt (tiếp)"
      ],
      "qs": [
       [
@@ -966,17 +1079,163 @@
        "Cái de shí hòu bù xià miàn diàn niú pí zhǐ shì zuò shén me yòng de?"
       ]
      ],
+     "key": 5,
      "tpy": "Dāo mó cái jiǎn",
-     "dpy": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ. Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù.",
-     "ten": "⑤ Die cutting",
-     "den": "The clicker press (e.g. Chenfeng no. 28) presses the cutting die through the whole lay over kraft paper. One die set: 6 crown panels, visor top and under, top-button cover."
+     "dpy": "Yòng 28 hào jī bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ. Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ, dǐng kòu bāo bù. 11 yuè 5 rì bào gào: dāo mó fàng zài fēn gé de dāo mó jià shàng, yǒu biān hào (M13, M14……), měi gè kuǎn, měi gè bù wèi dōu yǒu zhuān yòng de dāo mó, yào bǎo hù dāo kǒu bù bēng. Yòng Chenfeng yè yā chōng chuáng; chōng hǎo yǐ hòu bǎ cái piàn cóng yú liào lǐ ná chū lái, diǎn shù, bǎng bāo (lì rú měi bāo 144 piàn), guà yǒu èr wéi mǎ de kǎ.",
+     "ten": "⑥ Die cutting",
+     "den": "The clicker press (e.g. Chenfeng no. 28) presses the cutting die through the whole lay over kraft paper. One die set: 6 crown panels, visor top and under, top-button cover. 05/11 report: dies are stored on numbered rack bays (M13, M14…), one die per style and part; keep the edges from chipping. Chenfeng hydraulic press; after cutting, pieces are freed from the waste, counted and bundled (e.g. 144 per bundle) with a QR card."
     },
     {
-     "t": "⑥ Máy làm nút đỉnh",
+     "key": "xv",
+     "t": "⑦ Xẻ dải viền",
+     "tz": "切条",
+     "d": "Báo cáo 05/11: máy xẻ chia cuộn vải lớn thành các dải băng viền theo khổ chuẩn.",
+     "dz": "11月5日报告：把大卷布切成一条一条标准宽度的包边条。",
+     "chk": [
+      [
+       "Dải viền dùng ở công đoạn viền không được có mối nối (W2, công đoạn 13).",
+       "包边条不能有接头（W2，第13道工序）。",
+       "Bāo biān tiáo bù néng yǒu jiē tóu (W2, dì 13 dào gōng xù).",
+       "Binding tape used at op 13 must have no joints (W2)."
+      ]
+     ],
+     "w": [
+      "切条"
+     ],
+     "pics": [
+      "Máy xẻ dải viền"
+     ],
+     "qs": [
+      [
+       "Dải viền xẻ khổ bao nhiêu mm? Ai kiểm khổ dải?",
+       "包边条切多宽？谁检查宽度？",
+       "Bāo biān tiáo qiē duō kuān? Shuí jiǎn chá kuān dù?"
+      ]
+     ],
+     "new": "2026-11-05",
+     "tpy": "Qiē tiáo",
+     "dpy": "11 yuè 5 rì bào gào: bǎ dà juǎn bù qiē chéng yì tiáo yì tiáo biāo zhǔn kuān dù de bāo biān tiáo.",
+     "ten": "⑦ Cutting binding strips",
+     "den": "05/11 report: large rolls are slit into standard-width binding strips."
+    },
+    {
+     "key": "ls",
+     "t": "⑧ Cắt, khắc laser",
+     "tz": "镭射切割",
+     "d": "Ảnh 05/11: máy khắc CKLASER 创可激光 (超级打标机 2.0, CK-super 250) và máy laser bàn lớn có màn hình Ogbos; đục lỗ thoáng, cắt họa tiết (mã UA, AGRON). SOP M-10-76 “镭射加工作业标准” (xưởng cắt, phát hành 12/12/2024): xử lý 加工提示单 bằng phần mềm thành file định vị (PLT, BMP, JPG). Có mã phải in kỹ thuật số trước rồi mới khắc laser. SOP 7 bước: chuyển dữ liệu sang định dạng máy → lưu USB → cắm vào máy DS4 → cài thông số (công suất, kích thước) → trải vật liệu lên lưới tổ ong → đạp bàn đạp cắt → thu thành phẩm, bỏ ba-via.",
+     "dz": "照片：创可激光CKLASER超级打标机2.0（CK-super 250），还有带Ogbos屏幕的大台面镭射机；打透气孔、切花样（UA、AGRON的款）。作业标准M-10-76《镭射加工作业标准》（裁剪，2024年12月12日发行）：用软件把加工提示单处理成定位文件（PLT、BMP、JPG）。有的款要先数码印花，再镭射。作业标准7步：把文件转成机器格式 → 存到U盘 → 插到DS4 → 设参数（功率、尺寸）→ 把材料铺在蜂窝网上 → 踩脚踏开切 → 收成品，去毛边。",
+     "chk": [
+      [
+       "Cấm cắt kim loại; không dùng USB ngoài (tránh virus).",
+       "禁止切金属；不能用外面的U盘（防病毒）。",
+       "Jìn zhǐ qiē jīn shǔ; bù néng yòng wài miàn de U pán (fáng bìng dú).",
+       "No metal; no outside USB sticks (virus risk)."
+      ],
+      [
+       "Bắt buộc đeo kính bảo hộ; nước làm mát phải là nước cất.",
+       "一定要戴护目镜；冷却水要用蒸馏水。",
+       "Yí dìng yào dài hù mù jìng; lěng què shuǐ yào yòng zhēng liú shuǐ.",
+       "Safety glasses required; cooling water must be distilled."
+      ],
+      [
+       "Vệ sinh thấu kính, bộ lọc bụi hằng ngày; tra dầu chống gỉ rãnh trượt hằng tuần.",
+       "每天清洁镜片和除尘过滤器；每周给滑轨上防锈油。",
+       "Měi tiān qīng jié jìng piàn hé chú chén guò lǜ qì; měi zhōu gěi huá guǐ shàng fáng xiù yóu.",
+       "Clean the lens and dust filter daily; oil the rails weekly."
+      ],
+      [
+       "Đường kính lỗ theo 加工提示单 (VD UA 0,12 cm).",
+       "孔的大小按加工提示单上的切割孔径（例如UA 0.12厘米）。",
+       "Kǒng de dà xiǎo àn jiā gōng tí shì dān shàng de qiē gē kǒng jìng (lì rú UA 0.12 lí mǐ).",
+       "Hole size per the hint sheet (e.g. UA 0.12 cm)."
+      ]
+     ],
+     "w": [
+      "镭射切割",
+      "打标机",
+      "加工提示单",
+      "切割孔径"
+     ],
+     "pics": [
+      "Máy laser bàn lớn, màn hình Ogbos",
+      "Máy khắc CKLASER 创可激光 超级打标机 2.0",
+      "Máy gia công có ống hút, máy làm lạnh nước bên trái (chưa rõ tên)",
+      "Phiếu 加工提示单 mảnh sau hai bên",
+      "Phiếu 加工提示单 (tiếp)",
+      "Phiếu 加工提示单 (tiếp)",
+      "Phiếu 加工提示单 (tiếp)",
+      "Phiếu 加工提示单 (tiếp)",
+      "SOP laser M-10-76 trang 1",
+      "SOP laser M-10-76 trang 2"
+     ],
+     "qs": [
+      [
+       "Ai kiểm mảnh sau laser: tổ laser hay QC? Kiểm lỗ bằng cách nào?",
+       "镭射后的裁片谁检查？镭射组还是QC？孔怎么查？",
+       "Léi shè hòu de cái piàn shuí jiǎn chá? Léi shè zǔ hái shì QC? Kǒng zěn me chá?"
+      ],
+      [
+       "Máy nào cắt mảng rộng, máy nào làm chi tiết: CKLASER hay máy bàn lớn (màn hình Ogbos)?",
+       "哪台切大面积，哪台做细节？创可激光还是带Ogbos屏幕的大台面机？",
+       "Nǎ tái qiē dà miàn jī, nǎ tái zuò xì jié? Chuàng kě jī guāng hái shì dài Ogbos píng mù de dà tái miàn jī?"
+      ],
+      [
+       "Máy ở ảnh 9489 (có ống hút, máy làm lạnh bên trái) là máy gì, làm công đoạn nào?",
+       "照片9489那台（有吸风管，左边有冷水机）是什么机器？做哪道工序？",
+       "Zhào piān 9489 nà tái (yǒu xī fēng guǎn, zuǒ biān yǒu lěng shuǐ jī) shì shén me jī qì? Zuò nǎ dào gōng xù?"
+      ]
+     ],
+     "new": "2026-11-05",
+     "tpy": "Léi shè qiē gē",
+     "dpy": "Zhào piān: chuàng kě jī guāng CKLASER chāo jí dǎ biāo jī 2.0 (CK-super 250), hái yǒu dài Ogbos píng mù de dà tái miàn léi shè jī; dǎ tòu qì kǒng, qiē huā yàng (UA, AGRON de kuǎn). Zuò yè biāo zhǔn M-10-76《 léi shè jiā gōng zuò yè biāo zhǔn 》 (cái jiǎn, 2024 nián 12 yuè 12 rì fā xíng): yòng ruǎn jiàn bǎ jiā gōng tí shì dān chǔ lǐ chéng dìng wèi wén jiàn (PLT, BMP, JPG). Yǒu de kuǎn yào xiān shù mǎ yìn huā, zài léi shè. Zuò yè biāo zhǔn 7 bù: bǎ wén jiàn zhuǎn chéng jī qì gé shì → cún dào U pán → chā dào DS4 → shè cān shù (gōng lǜ, chǐ cùn) → bǎ cái liào pù zài fēng wō wǎng shàng → cǎi jiǎo tà kāi qiē → shōu chéng pǐn, qù máo biān.",
+     "ten": "⑧ Laser cutting and engraving",
+     "den": "Photos 05/11: a CKLASER marking laser (超级打标机 2.0, CK-super 250) and a large-bed laser with an Ogbos screen punch vent holes and cut patterns (UA, AGRON styles). SOP M-10-76 “镭射加工作业标准” (cutting room, issued 12/12/2024): the hint sheet is turned into a positioning file (PLT, BMP, JPG). Some styles are digitally printed first, then lasered. 7-step SOP: convert the file → save to USB → plug into the DS4 → set power and size → lay material on the honeycomb bed → press the foot pedal → collect pieces and remove burrs."
+    },
+    {
+     "key": "dk",
+     "t": "⑨ Đóng khuy, nút kim loại",
+     "tz": "打扣",
+     "d": "Dãy máy dập tự động tốc độ cao tự cấp phôi khuy, nút, mắt cáo và dập lên vị trí định sẵn trên vải. Phụ kiện lấy từ kho riêng. Ảnh 05/11 (9494): máy có 2 phễu rung cấp phôi kim loại, màn hình cảm ứng; trên bàn có nút tròn màu đen đã làm xong.",
+     "dz": "一排高速自动打扣机自动送扣，把金属扣、鸡眼打在布上定好的位置。扣子从专门的仓库领。照片（9494）：机器有两个振动盘送金属件，有触摸屏；桌上有做好的黑色圆扣。",
+     "chk": [
+      [
+       "Dập xong kiểm: không lỏng, không móp méo, không rớt nút.",
+       "打好以后查：不松、不变形、不掉扣。",
+       "Dǎ hǎo yǐ hòu chá: bù sōng, bú biàn xíng, bú diào kòu.",
+       "After setting: not loose, not dented, not missing."
+      ]
+     ],
+     "w": [
+      "打扣"
+     ],
+     "pics": [
+      "Máy dập tự động: phễu rung cấp phôi kim loại, nút đen làm xong",
+      "Dãy máy dập khuy và lối đi"
+     ],
+     "qs": [
+      [
+       "Máy ở ảnh 9494 làm ra nút tròn đen: đây là máy đóng khuy (打扣) hay máy bọc nút đỉnh (bước ⑩)? Xưởng may cũng có “打顶扣”: hai khâu khác nhau thế nào?",
+       "照片9494这台机器做出黑色的圆扣：这是打扣机，还是第⑩步包顶扣的机器？车缝也有打顶扣，两个有什么不一样？",
+       "Zhào piān 9494 zhè tái jī qì zuò chū hēi sè de yuán kòu: zhè shì dǎ kòu jī, hái shì dì ⑩ bù bāo dǐng kòu de jī qì? Chē féng yě yǒu dǎ dǐng kòu, liǎng gè yǒu shén me bù yí yàng?"
+      ],
+      [
+       "Lực bám tiêu chuẩn của khuy là bao nhiêu, kiểm bằng gì?",
+       "扣的拉力标准是多少？用什么测？",
+       "Kòu de lā lì biāo zhǔn shì duō shao? Yòng shén me cè?"
+      ]
+     ],
+     "new": "2026-11-05",
+     "tpy": "Dǎ kòu",
+     "dpy": "Yì pái gāo sù zì dòng dǎ kòu jī zì dòng sòng kòu, bǎ jīn shǔ kòu, jī yǎn dǎ zài bù shàng dìng hǎo de wèi zhì. Kòu zi cóng zhuān mén de cāng kù lǐng. Zhào piān (9494): jī qì yǒu liǎng gè zhèn dòng pán sòng jīn shǔ jiàn, yǒu chù mō píng; zhuō shàng yǒu zuò hǎo de hēi sè yuán kòu.",
+     "ten": "⑨ Setting metal buttons and eyelets",
+     "den": "A row of high-speed automatic setters feeds buttons, studs and eyelets and sets them at marked positions. Fittings come from a separate store. Photo 9494: two vibratory bowls feed metal parts, a touch screen, finished round black buttons on the table."
+    },
+    {
+     "t": "⑩ Máy làm nút đỉnh",
      "tz": "顶扣",
      "hot": true,
-     "d": "Xưởng cắt cắt mảnh vải bọc nút đỉnh bằng bộ dao riêng. Máy bạn thấy nhiều khả năng bọc mảnh này lên nút để nút cùng màu mũ; nút sang xưởng may ở công đoạn đóng nút đỉnh. Mũ dùng nút kim loại (VD UA 1381645) thì không bọc. Tên máy: chưa biết.",
-     "dz": "裁剪用专门的刀模裁顶扣包布。这台机器可能是把包布包在顶扣上，让顶扣跟帽子同色（待确认）。顶扣再送到车缝打顶扣。金属顶扣不用包布。",
+     "d": "Xưởng cắt cắt mảnh vải bọc nút đỉnh bằng bộ dao riêng. Máy bạn thấy nhiều khả năng bọc mảnh này lên nút để nút cùng màu mũ; nút sang xưởng may ở công đoạn đóng nút đỉnh. Mũ dùng nút kim loại (VD UA 1381645) thì không bọc. Tên máy: chưa biết. Báo cáo 05/11 có ghi dãy máy dập 打扣 ở xưởng cắt (bước ⑨); ảnh 9494 ở bước ⑨ có nút tròn đen làm xong trên bàn máy. Máy ở bước này có phải là máy đó không: hỏi lại.",
+     "dz": "裁剪用专门的刀模裁顶扣包布。这台机器可能是把包布包在顶扣上，让顶扣跟帽子同色（待确认）。顶扣再送到车缝打顶扣。金属顶扣不用包布。11月5日报告写裁剪有一排打扣机（第⑨步）；第⑨步的照片9494桌上有做好的黑色圆扣。这台是不是同一种机器，要再问。",
      "w": [
       "顶扣包布",
       "顶扣",
@@ -993,14 +1252,15 @@
        "Zhè tái jīqì jiào shénme? Shì bāo dǐngkòu de ma?"
       ]
      ],
+     "key": 6,
      "tpy": "Dǐng kòu",
-     "dpy": "Cái jiǎn yòng zhuān mén de dāo mó cái dǐng kòu bāo bù. Zhè tái jī qì kě néng shì bǎ bāo bù bāo zài dǐng kòu shàng, ràng dǐng kòu gēn mào zi tóng sè (dài què rèn). Dǐng kòu zài sòng dào chē féng dǎ dǐng kòu. Jīn shǔ dǐng kòu bú yòng bāo bù.",
+     "dpy": "Cái jiǎn yòng zhuān mén de dāo mó cái dǐng kòu bāo bù. Zhè tái jī qì kě néng shì bǎ bāo bù bāo zài dǐng kòu shàng, ràng dǐng kòu gēn mào zi tóng sè (dài què rèn). Dǐng kòu zài sòng dào chē féng dǎ dǐng kòu. Jīn shǔ dǐng kòu bú yòng bāo bù. 11 yuè 5 rì bào gào xiě cái jiǎn yǒu yì pái dǎ kòu jī (dì ⑨ bù); dì ⑨ bù de zhào piān 9494 zhuō shàng yǒu zuò hǎo de hēi sè yuán kòu. Zhè tái shì bu shì tóng yì zhǒng jī qì, yào zài wèn.",
      "chk": [],
-     "ten": "⑥ Top-button machine",
-     "den": "The cutting room cuts the button cover pieces with a separate die. The machine you saw most likely covers buttons with this fabric so they match the cap; buttons go to sewing for button setting. Caps with metal buttons (e.g. UA 1381645) are not covered. Machine name: unknown."
+     "ten": "⑩ Top-button machine",
+     "den": "The cutting room cuts the button cover pieces with a separate die. The machine you saw most likely covers buttons with this fabric so they match the cap; buttons go to sewing for button setting. Caps with metal buttons (e.g. UA 1381645) are not covered. Machine name: unknown. The 05/11 report lists a row of 打扣 setting machines in cutting (step ⑨); photo 9494 there shows finished round black buttons. Whether this is the same machine: ask again."
     },
     {
-     "t": "⑦ Mã lỗi mảnh cắt",
+     "t": "⑪ Mã lỗi mảnh cắt",
      "tz": "裁剪不良代号",
      "d": "1041 vải lỗi · 1042 mảnh bẩn · 1043 mối nối, chỗ nối cây · 1044 thiếu do cắt so màu, thủng · 1140 cắt không đạt · 1141 dán không đạt.",
      "dz": "1041布质不良 · 1042裁剪脏污 · 1043布料接头/接匹 · 1044对色缺口/破洞 · 1140裁剪不良 · 1141贴合不良。",
@@ -1031,16 +1291,17 @@
        "Bù liáng cái piàn zěn me bǔ? Bǔ cái hái shì cóng nǎ lǐ ná?"
       ]
      ],
+     "key": 7,
      "tpy": "Cái jiǎn bù liáng dài hào",
      "dpy": "1041 bù zhì bù liáng · 1042 cái jiǎn zāng wū · 1043 bù liào jiē tóu/jiē pǐ · 1044 duì sè quē kǒu/pò dòng · 1140 cái jiǎn bù liáng · 1141 tiē hé bù liáng.",
-     "ten": "⑦ Cut-piece defect codes",
+     "ten": "⑪ Cut-piece defect codes",
      "den": "1041 fabric defect · 1042 soiled piece · 1043 joint/roll splice · 1044 short from shade cutting, hole · 1140 cutting defect · 1141 fusing defect."
     },
     {
-     "t": "⑧ Chọn và buộc mảnh",
+     "t": "⑫ Chọn và buộc mảnh",
      "tz": "挑片、绑片",
-     "d": "SOP M-10-72: kiểm từng mảnh, loại mảnh lỗi; buộc đủ 144 bộ/bó (đủ cho 144 chiếc mũ) theo bảng tính; xếp ở khu chờ giao rồi sang thêu, in, may.",
-     "dz": "作业标准M-10-72：逐片检查，挑出不良；按裁片捆绑计算表绑够144套，够做144顶帽子；放待装片区，再送绣花、印花、车缝。",
+     "d": "SOP M-10-72: kiểm từng mảnh, loại mảnh lỗi; buộc đủ 144 bộ/bó (đủ cho 144 chiếc mũ) theo bảng tính; xếp ở khu chờ giao rồi sang thêu, in, may. Báo cáo 05/11: mỗi bó kèm thẻ có mã QR ghi số đơn, size, màu, số lượng, tổ, lần cắt.",
+     "dz": "作业标准M-10-72：逐片检查，挑出不良；按裁片捆绑计算表绑够144套，够做144顶帽子；放待装片区，再送绣花、印花、车缝。11月5日报告：每包挂一张有二维码的卡，写订单号、尺码、颜色、数量、组别、裁次。",
      "chk": [
       [
        "Buộc đúng số, không thừa không thiếu: số bộ/lớp × số lớp ± thêm bớt = 144.",
@@ -1072,7 +1333,9 @@
      "pics": [
       "Bảng tính bó 144",
       "Thẻ quy trình A trên một bó",
-      "Khu chờ giao mảnh"
+      "Khu chờ giao mảnh",
+      "Đếm, buộc mảnh: máy tính, dây buộc, phiếu có QR",
+      "Toàn cảnh khu bàn xưởng cắt"
      ],
      "qs": [
       [
@@ -1091,13 +1354,14 @@
        "Kǎ shàng de xiǎo piào shì yòng lái jì jiàn de ma?"
       ]
      ],
+     "key": 8,
      "tpy": "Tiāo piàn, bǎng piàn",
-     "dpy": "Zuò yè biāo zhǔn M-10-72: zhú piàn jiǎn chá, tiāo chū bù liáng; àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi; fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng.",
-     "ten": "⑧ Sorting and bundling",
-     "den": "SOP M-10-72: check every piece, remove defects; bundle exactly 144 sets (enough for 144 caps) using the calculation table; stage them in the waiting area for embroidery, printing, sewing."
+     "dpy": "Zuò yè biāo zhǔn M-10-72: zhú piàn jiǎn chá, tiāo chū bù liáng; àn cái piàn kǔn bǎng jì suàn biǎo bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi; fàng dài zhuāng piàn qū, zài sòng xiù huā, yìn huā, chē féng. 11 yuè 5 rì bào gào: měi bāo guà yì zhāng yǒu èr wéi mǎ de kǎ, xiě dìng dān hào, chǐ mǎ, yán sè, shù liàng, zǔ bié, cái cì.",
+     "ten": "⑫ Sorting and bundling",
+     "den": "SOP M-10-72: check every piece, remove defects; bundle exactly 144 sets (enough for 144 caps) using the calculation table; stage them in the waiting area for embroidery, printing, sewing. 05/11 report: each bundle carries a QR card with order number, size, colour, quantity, team and cut number."
     },
     {
-     "t": "⑨ 品保部 kiểm ở xưởng cắt",
+     "t": "⑬ 品保部 kiểm ở xưởng cắt",
      "tz": "品保部在裁剪的检查",
      "d": "Phòng mình kiểm ở xưởng cắt: dấu QC trên phiếu sơ đồ cắt, kiểm dao, kiểm mảnh. Tỷ lệ lấy mẫu và biểu ghi chưa hỏi được.",
      "dz": "品保部在裁剪查：单上的QC章、刀模、裁片。抽多少、记在哪张表上，还要问。",
@@ -1112,18 +1376,19 @@
        "Wǒmen pǐnbǎo bù zài cáijiǎn chōu duōshao? Jìlù zài nǎ zhāng biǎo shang?"
       ]
      ],
+     "key": 9,
      "tpy": "Pǐn bǎo bù zài cái jiǎn de jiǎn chá",
      "dpy": "Pǐn bǎo bù zài cái jiǎn chá: dān shàng de QC zhāng, dāo mó, cái piàn. Chōu duō shao, jì zài nǎ zhāng biǎo shàng, hái yào wèn.",
      "chk": [],
-     "ten": "⑨ 品保部 checks in the cutting room",
+     "ten": "⑬ 品保部 checks in the cutting room",
      "den": "Our department checks in the cutting room: QC stamp on the marker sheet, die checks, piece checks. Sampling rate and record form: still to ask."
     }
    ],
    "py": "cáijiǎn",
-   "whatpy": "Bù juǎn → tiē hé → lā bù → dāo mó cái jiǎn → tiāo piàn, bǎng piàn, měi bāo 144 tào → sòng xiù huā, yìn huā, chē féng.",
+   "whatpy": "Bù juǎn → sōng bù (tán xìng bù) → biān pái fǔ zhù dān jù, jiā gōng tí shì dān → tiē hé → lā bù → dāo mó cái jiǎn → kàn kuǎn jiā gōng (qiē tiáo, léi shè, dǎ kòu) → tiāo piàn, bǎng piàn, měi bāo 144 tào → sòng xiù huā, yìn huā, chē féng.",
    "whopy": "Cái jiǎn zǔ zhǎng; pǐn bǎo bù QC",
    "en": "Cutting room",
-   "whaten": "Roll → fusing → spreading → die cutting → sorting and bundling 144 sets per bundle → to embroidery, printing, sewing.",
+   "whaten": "Roll → relaxing (stretch fabric) → marker and hint sheets → fusing → spreading → die cutting → extra processing by style (binding strips, laser, button setting) → sorting and bundling 144 sets → to embroidery, printing, sewing.",
    "whoen": "Cutting supervisor; 品保部 (QA dept) QC checks in addition"
   },
   {
@@ -2892,7 +3157,11 @@
    "st": "kho",
    "cat": "congdoan",
    "hot": false,
-   "ex": null,
+   "ex": {
+    "zh": "仓库按领料单发料。",
+    "py": "Cāng kù àn lǐng liào dān fā liào.",
+    "vn": ""
+   },
    "add": "",
    "en": "material issue"
   },
@@ -3775,6 +4044,96 @@
    "en": "fabric relaxing"
   },
   {
+   "zh": "编排辅助单据",
+   "py": "biānpái fǔzhù dānjù",
+   "vn": "phiếu phụ trợ sơ đồ cắt (PO, chất liệu, yard, số lớp, dao, cách kéo vải)",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "工人和QC从技术部拿到编排辅助单据（PO、材料、码数、层数、刀模尺寸、拉布方式，例如双面拉布；",
+    "py": "Gōng rén hé QC cóng jì shù bù ná dào biān pái fǔ zhù dān jù (PO, cái liào, mǎ shù, céng shù, dāo mó chǐ cùn, lā bù fāng shì, lì rú shuāng miàn lā bù;",
+    "vn": ""
+   },
+   "add": "2026-11-05",
+   "en": "marker support sheet"
+  },
+  {
+   "zh": "加工提示单",
+   "py": "jiāgōng tíshì dān",
+   "vn": "phiếu lưu ý gia công",
+   "note": "",
+   "src": "Bảng thuật ngữ W6",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "拉布前看单：层数、长度、刀模；加工提示单：切割孔径、成品定位。",
+    "py": "Lā bù qián kàn dān: céng shù, cháng dù, dāo mó; jiā gōng tí shì dān: qiē gē kǒng jìng, chéng pǐn dìng wèi.",
+    "vn": "Đọc phiếu trước khi trải: số lớp, chiều dài, loại dao; phiếu lưu ý gia công: đường kính lỗ, vị trí trên thành phẩm."
+   },
+   "add": "2026-11-03",
+   "en": "process note sheet"
+  },
+  {
+   "zh": "切割孔径",
+   "py": "qiēgē kǒngjìng",
+   "vn": "đường kính lỗ cắt (VD 0,12 cm)",
+   "note": "Thấy in trên phiếu hoặc máy trong ảnh xưởng cắt 05/11.",
+   "src": "Ảnh xưởng cắt 05/11 (Drive, 32 ảnh)",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "拉布前看单：层数、长度、刀模；加工提示单：切割孔径、成品定位。",
+    "py": "Lā bù qián kàn dān: céng shù, cháng dù, dāo mó; jiā gōng tí shì dān: qiē gē kǒng jìng, chéng pǐn dìng wèi.",
+    "vn": "Đọc phiếu trước khi trải: số lớp, chiều dài, loại dao; phiếu lưu ý gia công: đường kính lỗ, vị trí trên thành phẩm."
+   },
+   "add": "2026-11-05",
+   "en": "cut-hole diameter"
+  },
+  {
+   "zh": "成品定位",
+   "py": "chéngpǐn dìngwèi",
+   "vn": "vị trí trên thành phẩm (số trong ngoặc trên phiếu lưu ý gia công)",
+   "note": "Thấy in trên phiếu hoặc máy trong ảnh xưởng cắt 05/11.",
+   "src": "Ảnh xưởng cắt 05/11 (Drive, 32 ảnh)",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "拉布前看单：层数、长度、刀模；加工提示单：切割孔径、成品定位。",
+    "py": "Lā bù qián kàn dān: céng shù, cháng dù, dāo mó; jiā gōng tí shì dān: qiē gē kǒng jìng, chéng pǐn dìng wèi.",
+    "vn": "Đọc phiếu trước khi trải: số lớp, chiều dài, loại dao; phiếu lưu ý gia công: đường kính lỗ, vị trí trên thành phẩm."
+   },
+   "add": "2026-11-05",
+   "en": "finished position"
+  },
+  {
+   "zh": "双面拉布",
+   "py": "shuāngmiàn lābù",
+   "vn": "kéo vải hai mặt",
+   "note": "VD vải mắt chim UA: kéo hai mặt, 18 lớp.",
+   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。",
+    "py": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng.",
+    "vn": ""
+   },
+   "add": "",
+   "en": "face-to-face spreading"
+  },
+  {
    "zh": "贴合",
    "py": "tiēhé",
    "vn": "dán vải chính với lót có keo",
@@ -3963,6 +4322,20 @@
    "en": "fused interlining"
   },
   {
+   "zh": "贴合收发单",
+   "py": "tiēhé shōufā dān",
+   "vn": "phiếu giao nhận hàng dán",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": null,
+   "add": "2026-11-05",
+   "en": "fusing issue-and-receipt slip"
+  },
+  {
    "zh": "拉布",
    "py": "lābù",
    "vn": "kéo vải (xếp vải thành nhiều lớp trên bàn cắt)",
@@ -3981,24 +4354,6 @@
    "en": "spreading"
   },
   {
-   "zh": "双面拉布",
-   "py": "shuāngmiàn lābù",
-   "vn": "kéo vải hai mặt",
-   "note": "VD vải mắt chim UA: kéo hai mặt, 18 lớp.",
-   "src": "Biểu mẫu / SOP / biển xưởng cắt (ảnh 02/11)",
-   "ok": true,
-   "st": "cat",
-   "cat": "congdoan",
-   "hot": false,
-   "ex": {
-    "zh": "按M-10-44-A-3表把布一层一层拉好，例如双面拉布18层。",
-    "py": "Àn M-10-44-A-3 biǎo bǎ bù yì céng yì céng lā hǎo, lì rú shuāng miàn lā bù 18 céng.",
-    "vn": ""
-   },
-   "add": "",
-   "en": "face-to-face spreading"
-  },
-  {
    "zh": "排版",
    "py": "páibǎn",
    "vn": "xếp sơ đồ cắt",
@@ -4008,7 +4363,11 @@
    "st": "cat",
    "cat": "congdoan",
    "hot": false,
-   "ex": null,
+   "ex": {
+    "zh": "按排版的长度拉，不能拉太紧，不然裁片会变形。",
+    "py": "Àn pái bǎn de cháng dù lā, bù néng lā tài jǐn, bù rán cái piàn huì biàn xíng.",
+    "vn": ""
+   },
    "add": "",
    "en": "marker making"
   },
@@ -4047,6 +4406,38 @@
    },
    "add": "",
    "en": "anti-mould"
+  },
+  {
+   "zh": "自动拉布",
+   "py": "zìdòng lābù",
+   "vn": "kéo vải bằng máy trải tự động (VD Sertol)",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "11月5日报告：一般的布用自动拉布机（Sertol）拉；",
+    "py": "11 yuè 5 rì bào gào: yì bān de bù yòng zì dòng lā bù jī (Sertol) lā;",
+    "vn": ""
+   },
+   "add": "2026-11-05",
+   "en": "automatic spreading"
+  },
+  {
+   "zh": "手工拉布",
+   "py": "shǒugōng lābù",
+   "vn": "kéo vải tay (mút, mếch khó trải)",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null,
+   "add": "2026-11-05",
+   "en": "hand spreading"
   },
   {
    "zh": "刀模",
@@ -4169,6 +4560,92 @@
    },
    "add": "",
    "en": "button cover fabric"
+  },
+  {
+   "zh": "冲床",
+   "py": "chōngchuáng",
+   "vn": "máy dập (máy chặt thủy lực)",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "用Chenfeng液压冲床；",
+    "py": "Yòng Chenfeng yè yā chōng chuáng;",
+    "vn": ""
+   },
+   "add": "2026-11-05",
+   "en": "clicking press"
+  },
+  {
+   "zh": "切条",
+   "py": "qiētiáo",
+   "vn": "xẻ dải (cắt cuộn vải thành dải băng viền)",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null,
+   "add": "2026-11-05",
+   "en": "strip cutting"
+  },
+  {
+   "zh": "镭射切割",
+   "py": "léishè qiēgē",
+   "vn": "cắt, khắc laser (ghi trên phiếu lưu ý gia công)",
+   "note": "Thấy in trên phiếu hoặc máy trong ảnh xưởng cắt 05/11.",
+   "src": "Ảnh xưởng cắt 05/11 (Drive, 32 ảnh)",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "右上角写镭射切割）。",
+    "py": "Yòu shàng jiǎo xiě léi shè qiē gē).",
+    "vn": ""
+   },
+   "add": "2026-11-05",
+   "en": "laser cutting"
+  },
+  {
+   "zh": "打标机",
+   "py": "dǎbiāo jī",
+   "vn": "máy khắc laser (VD CKLASER 超级打标机 2.0)",
+   "note": "Thấy in trên phiếu hoặc máy trong ảnh xưởng cắt 05/11.",
+   "src": "Ảnh xưởng cắt 05/11 (Drive, 32 ảnh)",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "照片：创可激光CKLASER超级打标机2.0（CK-super 250），还有带Ogbos屏幕的大台面镭射机；",
+    "py": "Zhào piān: chuàng kě jī guāng CKLASER chāo jí dǎ biāo jī 2.0 (CK-super 250), hái yǒu dài Ogbos píng mù de dà tái miàn léi shè jī;",
+    "vn": ""
+   },
+   "add": "2026-11-05",
+   "en": "laser marking machine"
+  },
+  {
+   "zh": "打扣",
+   "py": "dǎkòu",
+   "vn": "đóng khuy, nút, mắt cáo bằng máy dập (khác 打顶扣 ở xưởng may)",
+   "note": "Từ trong báo cáo 05/11; đối chiếu với biển, biểu mẫu ở xưởng trước khi dùng gửi sếp.",
+   "src": "Báo cáo xưởng cắt 05/11 (Bảo)",
+   "ok": false,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "一排高速自动打扣机自动送扣，把金属扣、鸡眼打在布上定好的位置。",
+    "py": "Yì pái gāo sù zì dòng dǎ kòu jī zì dòng sòng kòu, bǎ jīn shǔ kòu, jī yǎn dǎ zài bù shàng dìng hǎo de wèi zhì.",
+    "vn": ""
+   },
+   "add": "2026-11-05",
+   "en": "button / eyelet setting"
   },
   {
    "zh": "顶扣",
@@ -4780,7 +5257,11 @@
    "st": "may",
    "cat": "congdoan",
    "hot": false,
-   "ex": null,
+   "ex": {
+    "zh": "包边条不能有接头（W2，第13道工序）。",
+    "py": "Bāo biān tiáo bù néng yǒu jiē tóu (W2, dì 13 dào gōng xù).",
+    "vn": "Dải viền dùng ở công đoạn viền không được có mối nối (W2, công đoạn 13)."
+   },
    "add": "",
    "en": "binding"
   },
@@ -4887,20 +5368,6 @@
    "ex": null,
    "add": "2026-11-03",
    "en": "work instruction"
-  },
-  {
-   "zh": "加工提示单",
-   "py": "jiāgōng tíshì dān",
-   "vn": "phiếu lưu ý gia công",
-   "note": "",
-   "src": "Bảng thuật ngữ W6",
-   "ok": true,
-   "st": "may",
-   "cat": "giayto",
-   "hot": false,
-   "ex": null,
-   "add": "2026-11-03",
-   "en": "process note sheet"
   },
   {
    "zh": "帽身",
@@ -7502,6 +7969,12 @@
       "表上的检查项：布边对齐、松紧、层高、裁剪方向，有没有防霉。",
       "Printed checks: edges aligned, tension, lay height, cutting direction, anti-mould.",
       "Biǎo shàng de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng, yǒu méi yǒu fáng méi."
+     ],
+     [
+      "Báo cáo 05/11: vải thường kéo bằng máy trải tự động (Sertol); mút, mếch trải tay, chặn mép bằng tạ sắt.",
+      "11月5日报告：一般的布用自动拉布机（Sertol）；海绵、衬手工拉，用铁块压住布边。",
+      "05/11 report: ordinary fabric on the Sertol spreader; foam and interlining by hand with iron weights.",
+      "11 yuè 5 rì bào gào: yì bān de bù yòng zì dòng lā bù jī (Sertol); hǎi mián, chèn shǒu gōng lā, yòng tiě kuài yā zhù bù biān."
      ]
     ],
     "hud": [
@@ -7558,6 +8031,12 @@
       "每两小时查一次刀模，要有记录。",
       "Check dies every 2 hours and log it.",
       "Měi liǎng xiǎo shí chá yí cì dāo mó, yào yǒu jì lù."
+     ],
+     [
+      "Dao cất trên kệ có mã (M13, M14…), mỗi mã hàng, mỗi chi tiết một bộ; giữ lưỡi không mẻ (báo cáo 05/11).",
+      "刀模放在有编号的刀模架上（M13、M14……），每个款、每个部位一套，刀口不能崩（11月5日报告）。",
+      "Dies sit on numbered racks (M13, M14…), one per style and part; keep edges unchipped (05/11 report).",
+      "Dāo mó fàng zài yǒu biān hào de dāo mó jià shàng (M13, M14……), měi gè kuǎn, měi gè bù wèi yí tào, dāo kǒu bù néng bēng (11 yuè 5 rì bào gào)."
      ],
      [
       "Lấy mảnh lớp trên, giữa, dưới để kiểm; người kiểm dao và tổ trưởng ký, QC đóng dấu.",
@@ -7665,6 +8144,85 @@
     "note": "",
     "tpy": "Tiāo piàn, bǎng piàn, měi bāo 144 tào",
     "dpy": "Zhú piàn jiǎn chá, tiāo chū bù liáng (zuò yè biāo zhǔn M-10-72); bǎng gòu 144 tào, gòu zuò 144 dǐng mào zi. Měi bāo gēn yì zhāng A kǎ."
+   },
+   {
+    "id": "phutro",
+    "sid": "cat",
+    "fx": "aux",
+    "dur": 13,
+    "t": [
+     "Gia công phụ trợ tùy mã: xẻ viền, laser, đóng khuy",
+     "看款加工：切条、镭射、打扣",
+     "Extra processing by style: strips, laser, button setting"
+    ],
+    "d": [
+     "Báo cáo 05/11: máy xẻ chia cuộn vải thành dải băng viền; máy laser bàn lớn (màn hình Ogbos) và máy khắc CKLASER (打标机) đục lỗ thoáng, cắt họa tiết (mã UA, AGRON), có mã in kỹ thuật số trước rồi mới laser; dãy máy dập tự động đóng khuy, nút, mắt cáo.",
+     "11月5日报告：把大卷布切成包边条；用大台面镭射机（Ogbos屏幕）和创可激光打标机打透气孔、切花样（UA、AGRON的款），有的款先数码印花再镭射；一排自动打扣机把金属扣、鸡眼打在布上。",
+     "05/11 report: rolls are slit into binding strips; a large-bed laser (Ogbos screen) and a CKLASER marking laser punch vent holes and cut patterns (UA, AGRON), some after digital printing; a row of automatic setters fixes buttons and eyelets."
+    ],
+    "chk": [
+     [
+      "Laser: đeo kính bảo hộ, nước làm mát là nước cất, không cắt kim loại, không dùng USB ngoài.",
+      "镭射：戴护目镜，冷却水用蒸馏水，不切金属，不用外面的U盘。",
+      "Laser: safety glasses, distilled cooling water, no metal, no outside USB.",
+      "Léi shè: dài hù mù jìng, lěng què shuǐ yòng zhēng liú shuǐ, bú qiè jīn shǔ, bú yòng wài miàn de U pán."
+     ],
+     [
+      "Lỗ thoáng theo phiếu lưu ý gia công 加工提示单: đường kính (VD UA 0,12 cm), vị trí trên mảnh.",
+      "透气孔按加工提示单：切割孔径（例如UA 0.12厘米）、裁片上的位置。",
+      "Vent holes per the hint sheet: diameter (e.g. UA 0.12 cm) and position on the piece.",
+      "Tòu qì kǒng àn jiā gōng tí shì dān: qiē gē kǒng jìng (lì rú UA 0.12 lí mǐ), cái piàn shàng de wèi zhì."
+     ],
+     [
+      "Đóng khuy xong: không lỏng, không móp méo, không rớt nút.",
+      "打扣以后：不松、不变形、不掉扣。",
+      "After setting: not loose, not dented, not missing.",
+      "Dǎ kòu yǐ hòu: bù sōng, bú biàn xíng, bú diào kòu."
+     ]
+    ],
+    "hud": [
+     [
+      "Máy",
+      "机器",
+      "Machine",
+      "@m"
+     ],
+     [
+      "SOP laser",
+      "作业标准",
+      "Laser SOP",
+      "@s"
+     ],
+     [
+      "Đang làm",
+      "现在",
+      "Now",
+      "@name"
+     ],
+     [
+      "Nước làm mát",
+      "冷却水",
+      "Cooling water",
+      "nước cất · 蒸馏水"
+     ]
+    ],
+    "w": [
+     "切条",
+     "镭射切割",
+     "打标机",
+     "打扣",
+     "加工提示单",
+     "切割孔径"
+    ],
+    "lab": "",
+    "q": [
+     "Ai kiểm mảnh sau laser: tổ laser hay QC? Kiểm lỗ bằng cách nào?",
+     "镭射后的裁片谁检查？镭射组还是QC？孔怎么查？",
+     "Léi shè hòu de cái piàn shuí jiǎn chá? Léi shè zǔ hái shì QC? Kǒng zěn me chá?"
+    ],
+    "note": "Báo cáo 05/11 ghi các việc này là gia công phụ trợ tùy mã; làm trước hay sau khi buộc bó 144 chưa rõ.",
+    "tpy": "Kàn kuǎn jiā gōng: qiē tiáo, léi shè, dǎ kòu",
+    "dpy": "11 yuè 5 rì bào gào: bǎ dà juǎn bù qiē chéng bāo biān tiáo; yòng dà tái miàn léi shè jī (Ogbos píng mù) hé chuàng kě jī guāng dǎ biāo jī dǎ tòu qì kǒng, qiē huā yàng (UA, AGRON de kuǎn), yǒu de kuǎn xiān shù mǎ yìn huā zài léi shè; yì pái zì dòng dǎ kòu jī bǎ jīn shǔ kòu, jī yǎn dǎ zài bù shàng."
    },
    {
     "id": "theu",

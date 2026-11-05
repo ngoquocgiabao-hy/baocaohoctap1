@@ -10,6 +10,8 @@ import overlay  # bổ sung 03/11: khâu mẫu, kiểm vải đầy đủ, ảnh
 import vocab_more  # bổ sung 03/11 chiều: từ quy trình và chất lượng
 from vocab_more import EX, ADDED, ADDED_ON
 import review_0411  # soát lại 04/11 với Drive
+import cut_0511  # xưởng cắt theo báo cáo 05/11
+from cut_0511 import ADDED_0511, NEW_CHK
 from en import STAGE_EN, TERM_EN
 from vocab_extra import CATS, CAT, WRONG, HOT, PENDING
 from pyhelper import to_py
@@ -41,16 +43,20 @@ for s in STAGES:
     stages.append(st)
 
 # ---------- từ vựng ----------
-def find_example(w, stage_id):
+def find_example(w, stage_id, old_only=False):
+    # old_only: chỉ tìm trong nội dung có trước 05/11, để câu ví dụ cũ của từ không bị thay
     order = sorted(stages, key=lambda s: 0 if s["id"] == stage_id else 1)
     for s in order:
         for x in s["steps"]:
+            if old_only and x.get("new"): continue
             for c in x["chk"]:
+                if old_only and c[1] in NEW_CHK: continue
                 if w in c[1] and c[1].count("·") < 3:
                     return {"zh": c[1], "py": c[2], "vn": c[0]}
     for s in order:
         for x in s["steps"]:
-            for sent in re.split(r"(?<=[。；])", x.get("dz", "")):
+            if old_only and x.get("new"): continue
+            for sent in re.split(r"(?<=[。；])", x.get("dz0", x.get("dz", "")) if old_only else x.get("dz", "")):
                 if w in sent and len(sent) > len(w) + 3 and sent.count("·") < 3:
                     sent = sent.strip()
                     return {"zh": sent, "py": to_py(sent), "vn": ""}
@@ -65,15 +71,18 @@ for s in stages:
             py, vn, src, ok, note = T[w]
             terms.append({"zh": w, "py": py, "vn": vn, "note": note, "src": SRC[src], "ok": ok,
                           "st": s["id"], "cat": CAT.get(w, "congdoan"), "hot": w in HOT,
-                          "ex": ({"zh": EX[w][0], "py": to_py(EX[w][0]), "vn": EX[w][1]} if w in EX else find_example(w, s["id"])),
-                          "add": ADDED_ON if w in ADDED else "", "en": TERM_EN[w]})
+                          "ex": ({"zh": EX[w][0], "py": to_py(EX[w][0]), "vn": EX[w][1]} if w in EX else (find_example(w, s["id"], True) or find_example(w, s["id"]))),
+                          "add": "2026-11-05" if w in ADDED_0511 else (ADDED_ON if w in ADDED else ""), "en": TERM_EN[w]})
+for st_ in stages:
+    for x in st_["steps"]:
+        x.pop("dz0", None)
 missing_cat = [t["zh"] for t in terms if t["zh"] not in CAT]
 assert not missing_cat, missing_cat
 
 DATA = {
-    "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-03", "added": ADDED_ON,
-             "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, W7 (quy định từ ngữ)",
-             "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. pics: ảnh đặt ở img/<id khâu>-<số bước>-<số ảnh>.jpg. qs: [Việt, 中文, pinyin]."},
+    "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-05", "added": "2026-11-05",
+             "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, báo cáo xưởng cắt 05/11, W7 (quy định từ ngữ)",
+             "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. key: mã cố định của bước (không có thì là số thứ tự); pics: ảnh đặt ở img/<id khâu>-<mã bước>-<số ảnh>.jpg; câu hỏi có mã <id khâu>-<mã bước>-q<số>. qs: [Việt, 中文, pinyin]."},
     "stages": stages,
     "terms": terms,
     "cats": [{"id": c, "vn": v, "zh": z} for c, v, z in CATS],
