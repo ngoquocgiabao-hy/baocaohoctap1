@@ -360,8 +360,9 @@ const W3 = (() => {
       <div class="card"><div class="lbl">Làm gì · 做什么 · <span class="ent">What happens</span></div><div class="vnt">${esc(s.what)}</div><div class="zht"><div lang="zh">${esc(s.whatz)}</div><div class="p">${esc(s.whatpy)}</div></div><div class="ent">${esc(s.whaten)}</div>
       <div class="lbl" style="margin-top:8px">Ai kiểm · 谁检查 · <span class="ent">Who checks</span></div><div class="vnt">${esc(s.who)}</div><div class="zht"><div lang="zh">${esc(s.whoz)}</div><div class="p">${esc(s.whopy)}</div></div><div class="ent">${esc(s.whoen)}</div>
       ${['may', 'dinhform', 'qc'].includes(s.id) ? '<button class="ib pri" data-w3cap="1" style="margin-top:10px">Mở mũ 6 mảnh 3D · 六片帽 · 6-panel cap</button>' : ''}</div>
+      ${clzBox(s.id, 'card')}
       ${s.steps.map((x, si) => stepHtml(s, x, si)).join('')}`;
-    loadLocalPicsIn(el);
+    loadLocalPicsIn(el); clzMount(el);
   }
   function go(d){ const i = ORDER.indexOf(cur), n = ORDER[(i + d + ORDER.length) % ORDER.length]; select(n); if(tour){ tour.i = ORDER.indexOf(n); schedule(); } }
 

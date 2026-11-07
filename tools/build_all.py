@@ -12,6 +12,8 @@ from vocab_more import EX, ADDED, ADDED_ON
 import review_0411  # soát lại 04/11 với Drive
 import cut_0511  # xưởng cắt theo báo cáo 05/11
 from cut_0511 import ADDED_0511, NEW_CHK
+import kho_0711  # kho, kiểm vải theo 14 ảnh kho 07/11
+from kho_0711 import ADDED_0711
 from en import STAGE_EN, TERM_EN
 from vocab_extra import CATS, CAT, WRONG, HOT, PENDING
 from pyhelper import to_py
@@ -72,7 +74,7 @@ for s in stages:
             terms.append({"zh": w, "py": py, "vn": vn, "note": note, "src": SRC[src], "ok": ok,
                           "st": s["id"], "cat": CAT.get(w, "congdoan"), "hot": w in HOT,
                           "ex": ({"zh": EX[w][0], "py": to_py(EX[w][0]), "vn": EX[w][1]} if w in EX else (find_example(w, s["id"], True) or find_example(w, s["id"]))),
-                          "add": "2026-11-05" if w in ADDED_0511 else (ADDED_ON if w in ADDED else ""), "en": TERM_EN[w]})
+                          "add": "2026-11-07" if w in ADDED_0711 else "2026-11-05" if w in ADDED_0511 else (ADDED_ON if w in ADDED else ""), "en": TERM_EN[w]})
 for st_ in stages:
     for x in st_["steps"]:
         x.pop("dz0", None)
@@ -80,8 +82,8 @@ missing_cat = [t["zh"] for t in terms if t["zh"] not in CAT]
 assert not missing_cat, missing_cat
 
 DATA = {
-    "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-05", "added": "2026-11-05",
-             "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, báo cáo xưởng cắt 05/11, W7 (quy định từ ngữ)",
+    "meta": {"title": "Weili · Học quy trình và từ xưởng", "updated": "2026-11-07", "added": "2026-11-07",
+             "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, báo cáo xưởng cắt 05/11, ảnh xưởng cắt 05/11, ảnh kho 07/11, W7 (quy định từ ngữ)",
              "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. key: mã cố định của bước (không có thì là số thứ tự); pics: ảnh đặt ở img/<id khâu>-<mã bước>-<số ảnh>.jpg; câu hỏi có mã <id khâu>-<mã bước>-q<số>. qs: [Việt, 中文, pinyin]."},
     "stages": stages,
     "terms": terms,
@@ -172,6 +174,28 @@ DATA["sim"] = {
     "aql": [list(r) for r in SIMD.AQL_UA_I],
     "lab": {k: [v[0], v[1], v[2], to_py(v[1])] for k, v in SIMD.LAB.items()},
 }
+
+# ---------- bài điền từ (选词填空) ----------
+import cloze as CLZ
+DATA["cloze"] = {}
+for sid, items in CLZ.CLOZE.items():
+    assert sid in {s["id"] for s in stages}, sid
+    out = []
+    for i, (z, v) in enumerate(items):
+        a = re.findall(r"\[\[(.+?)\]\]", z)
+        assert a and len(a) == len(set(a)), z
+        for w in a:
+            assert w in TI and TI[w]["ok"], ("điền từ: từ chưa đối chiếu", w)
+        out.append({"id": f"{sid}-c{i+1}", "z": z, "py": to_py(z.replace("[[", "").replace("]]", "")), "vn": v})
+    DATA["cloze"][sid] = out
+
+import review_0711
+DATA["review"] = review_0711.REVIEW
+# pinyin cho chữ Hán nằm trong câu tiếng Việt (rà soát, ô ảnh) mà không phải từ trong bảng
+_txt = [x for r in review_0711.REVIEW["stages"].values() for k in ("ok", "ask", "pics") for x in r[k]] + [review_0711.REVIEW["others"]]
+_txt += [c for s_ in stages for x in s_["steps"] for c in x["pics"]]
+_runs = sorted({m for t in _txt for m in re.findall(r"[\u3400-\u9fff]+", t)} - set(TI))
+DATA["pymap"] = {m: (lambda p_: p_[:1].lower() + p_[1:])(to_py(m)) for m in _runs}
 
 import tham_0511
 tham_0511.apply(DATA)

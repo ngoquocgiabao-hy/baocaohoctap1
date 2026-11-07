@@ -1,9 +1,9 @@
 {
  "meta": {
   "title": "Weili · Học quy trình và từ xưởng",
-  "updated": "2026-11-05",
-  "added": "2026-11-05",
-  "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, báo cáo xưởng cắt 05/11, W7 (quy định từ ngữ)",
+  "updated": "2026-11-07",
+  "added": "2026-11-07",
+  "sources": "W6 (121 từ), W2, báo cáo kho 31/10, biểu mẫu/SOP xưởng cắt 02/11, thẻ quy trình A, báo cáo xưởng cắt 05/11, ảnh xưởng cắt 05/11, ảnh kho 07/11, W7 (quy định từ ngữ)",
   "note": "ok=false: từ chưa đối chiếu, không dùng khi viết gửi sếp. key: mã cố định của bước (không có thì là số thứ tự); pics: ảnh đặt ở img/<id khâu>-<mã bước>-<số ảnh>.jpg; câu hỏi có mã <id khâu>-<mã bước>-q<số>. qs: [Việt, 中文, pinyin]."
  },
  "stages": [
@@ -166,18 +166,25 @@
     {
      "t": "Nhận hàng",
      "tz": "收料、点收",
-     "d": "Tổ tư vấn kiểm đếm, in bảng kê, trừ sổ trên hệ thống; tổ chính liệu nhận vào kho.",
-     "dz": "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。",
+     "d": "Tổ tư vấn kiểm đếm, in bảng kê, trừ sổ trên hệ thống; tổ chính liệu nhận vào kho. Lưu đồ quản lý kho trên tường (ảnh 07/11): 合约与明细 (mã hợp đồng, danh sách hàng) → 计划储位 (vị trí kế hoạch) → hàng đến, 咨询组 kiểm nhận trên hệ thống, in 点收明细表 → 进料检验 (kiểm nghiệm hàng đến) → đạt thì 收料入库; không đạt thì 验收反应单 → 特采 → không được thì 退货. Lưu đồ ghi tiếng Việt: 咨询组 là “tổ thông tin”, 主料组 là “tổ chủ liệu”.",
+     "dz": "咨询组负责点收、打印点收明细和系统减账，主料组负责收料入库。墙上的仓库管理部工作流程图（11月7日照片）：合约与明细 → 计划储位 → 到料后咨询组点收，出点收明细表 → 进料检验 → 合格就收料入库；不合格开验收反应单 → 特采 → 不能特采就退货。",
      "w": [
       "收料",
       "点收",
       "咨询组",
       "检验组",
       "主料组",
-      "点收明细"
+      "点收明细",
+      "点收明细表",
+      "物管订单分配表",
+      "计划储位",
+      "进料检验"
      ],
      "pics": [
-      "Hai lưu đồ trên tường kho (quản lý kho, tổ kiểm nghiệm)"
+      "Hai lưu đồ trên tường kho (quản lý kho, tổ kiểm nghiệm)",
+      "Lưu đồ quản lý kho (仓库管理部工作流程图), cận cảnh",
+      "Lưu đồ tổ kiểm nghiệm (检验组工作流程图), cận cảnh",
+      "Vải về xếp trên pallet ở lối đi trong kho"
      ],
      "qs": [
       [
@@ -189,6 +196,16 @@
        "Kiểm xong trong 7 ngày là cho vải, cho phụ liệu hay cả hai?",
        "7天内检验完，是指面料、辅料，还是两个都是？",
        "7 tiān nèi jiǎn yàn wán, shì zhǐ miàn liào, fǔ liào, hái shì liǎng gè dōu shì?"
+      ],
+      [
+       "Lưu đồ ghi bước đầu “合约与明细” và “计划储位”: ai làm, làm trước khi hàng về phải không?",
+       "流程图第一步“合约与明细”和“计划储位”是谁做的？是货到之前就做吗？",
+       "Liú chéng tú dì yī bù “hé yuē yǔ míng xì” hé “jì huà chǔ wèi” shì shuí zuò de? Shì huò dào zhī qián jiù zuò ma?"
+      ],
+      [
+       "Vải xếp trên pallet ở lối đi (ảnh 07/11) là hàng chờ kiểm hay đã kiểm, chờ lên kệ? Nhìn tem nào để biết?",
+       "通道上托盘里的布是待检的，还是检好了等上架的？看哪个标签知道？",
+       "Tōng dào shàng tuō pán lǐ de bù shì dài jiǎn de, hái shì jiǎn hǎo le děng shàng jià de? Kàn nǎ ge biāo qiān zhī dào?"
       ]
      ],
      "chk": [
@@ -197,18 +214,24 @@
        "7天内检验完：11月3日的报告写的是面料，W2写的是辅料，还要再确认。",
        "7 tiān nèi jiǎn yàn wán: 11 yuè 3 rì de bào gào xiě de shì miàn liào, W2 xiě de shì fǔ liào, hái yào zài què rèn.",
        "Inspection deadline of 7 days: the 3 Nov report gives it for fabric (physical and visual checks), W2 gives it for trims. To be confirmed."
+      ],
+      [
+       "Hàng đến: tổ thông tin có 点收明细表 (biểu kiểm nhận) và 物管订单分配表 (biểu phân bổ đơn) rồi mới giao tổ kiểm nghiệm.",
+       "物料入厂：咨询组出点收明细表和物管订单分配表，再交检验组。",
+       "Wù liào rù chǎng: zī xún zǔ chū diǎn shōu míng xì biǎo hé wù guǎn dìng dān fēn pèi biǎo, zài jiāo jiǎn yàn zǔ.",
+       "On arrival the information team issues the check-in list and the order allocation sheet, then hands over to the inspection team."
       ]
      ],
      "tpy": "Shōu liào, diǎn shōu",
-     "dpy": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù.",
+     "dpy": "Zī xún zǔ fù zé diǎn shōu, dǎ yìn diǎn shōu míng xì hé xì tǒng jiǎn zhàng, zhǔ liào zǔ fù zé shōu liào rù kù. Qiáng shàng de cāng kù guǎn lǐ bù gōng zuò liú chéng tú (11 yuè 7 rì zhào piàn): hé yuē yǔ míng xì → jì huà chǔ wèi → dào liào hòu zī xún zǔ diǎn shōu, chū diǎn shōu míng xì biǎo → jìn liào jiǎn yàn → hé gé jiù shōu liào rù kù; bù hé gé kāi yàn shōu fǎn yìng dān → tè cǎi → bù néng tè cǎi jiù tuì huò.",
      "ten": "Receiving",
-     "den": "The counting team counts, prints the receiving list and deducts the system record; the main-material team puts goods into stock."
+     "den": "The counting team counts, prints the receiving list and deducts the system record; the main-material team puts goods into stock. Warehouse wall chart (photo 07/11): contract and item list → planned location → on arrival the information team checks goods in on the system and prints the check-in list → incoming inspection → pass: receive into stock; fail: acceptance reaction form → special acceptance → otherwise return. The chart's Vietnamese calls 咨询组 “information team” and 主料组 “main-material team”."
     },
     {
      "t": "Kiểm tính chất vải",
      "tz": "物性检验",
-     "d": "Cắt một mẫu ở đầu, giữa, cuối cây gửi phòng kiểm nghiệm: test ma sát khô/ướt, bền màu khi giặt, màu, cảm giác tay, độ dày, rồi ra báo cáo.",
-     "dz": "布头、布中、布尾各剪一块送检验室，测干湿摩擦、水洗牢度、颜色、手感、厚度，出品质检测报告。",
+     "d": "Cắt một mẫu ở đầu, giữa, cuối cây gửi phòng kiểm nghiệm: test ma sát khô/ướt, bền màu khi giặt, màu, cảm giác tay, độ dày, rồi ra báo cáo. Lưu đồ tổ kiểm nghiệm ghi các mục gửi phòng kiểm nghiệm: 干湿摩擦 (ma sát khô, ướt), 水洗牢度 (bền màu khi giặt), 颜色核对 (so màu), kiểm cảm giác tay, kiểm độ dày, kiểm liên quan → 品质检测报告.",
+     "dz": "布头、布中、布尾各剪一块送检验室，测干湿摩擦、水洗牢度、颜色、手感、厚度，出品质检测报告。检验组流程图写：剪布块送实验室检测，测干湿摩擦、水洗牢度、颜色核对、手感、厚度和相关检验，出品质检测报告。",
      "chk": [
       [
        "Xem màu cả cây có đều không, có nằm trong tiêu chuẩn chấp nhận không.",
@@ -223,7 +246,10 @@
       "布头",
       "布中",
       "布尾",
-      "品质检测报告"
+      "品质检测报告",
+      "干湿摩擦",
+      "水洗牢度",
+      "颜色核对"
      ],
      "pics": [
       "Ba mẫu vải cắt ở đầu, giữa, cuối cây"
@@ -233,19 +259,24 @@
        "Mỗi lô vải gửi phòng kiểm nghiệm mấy mẫu? Chờ kết quả bao lâu?",
        "每批布送检验室几块？结果要等多久？",
        "Měi pī bù sòng jiǎn yàn shì jǐ kuài? Jié guǒ yào děng duō jiǔ?"
+      ],
+      [
+       "“相关检验” (kiểm liên quan) trên lưu đồ gồm những test nào?",
+       "流程图上的“相关检验”包括哪些测试？",
+       "Liú chéng tú shàng de “xiāng guān jiǎn yàn” bāo kuò nǎ xiē cè shì?"
       ]
      ],
      "tpy": "Wù xìng jiǎn yàn",
-     "dpy": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào.",
+     "dpy": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào. Jiǎn yàn zǔ liú chéng tú xiě: jiǎn bù kuài sòng shí yàn shì jiǎn cè, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè hé duì, shǒu gǎn, hòu dù hé xiāng guān jiǎn yàn, chū pǐn zhì jiǎn cè bào gào.",
      "ten": "Fabric physical testing",
-     "den": "Cut one swatch from the head, middle and tail of the roll and send it to the lab: dry/wet rubbing, wash fastness, colour, hand feel, thickness; the lab issues a report."
+     "den": "Cut one swatch from the head, middle and tail of the roll and send it to the lab: dry/wet rubbing, wash fastness, colour, hand feel, thickness; the lab issues a report. The inspection-team chart lists dry and wet rubbing, wash fastness, colour check, hand feel, thickness and related tests → quality test report."
     },
     {
      "t": "Kiểm ngoại quan trên máy kiểm vải",
      "tz": "外观检验、验布机",
      "hot": true,
-     "d": "Cho cây vải chạy qua máy kiểm vải (có hộp đèn, bộ đếm yard, cân). Người kiểm đếm yard, đo khổ, xem chênh lệch màu và lỗi vải, chấm điểm từng lỗi theo thang 4 điểm, cộng lại, quy về 100 yd² rồi xếp cấp A, B hoặc C. Kết quả ghi vào biểu kiểm vải và lên tem cây vải.",
-     "dz": "布卷放到验布机上过一遍（有灯箱、码数计数器、电子秤）。检验员查码数、量幅宽、看色差和瑕疵，每个瑕疵按四分制扣分，加起来换算成每百平方码的分数，再分A、B、C级。结果填在验布检查表上，也写在布卷标签上。",
+     "d": "Cho cây vải chạy qua máy kiểm vải (có hộp đèn, bộ đếm yard, cân). Người kiểm đếm yard, đo khổ, xem chênh lệch màu và lỗi vải, chấm điểm từng lỗi theo thang 4 điểm, cộng lại, quy về 100 yd² rồi xếp cấp A, B hoặc C. Kết quả ghi vào biểu kiểm vải và lên tem cây vải. Lưu đồ ghi 4 mục trên máy kiểm vải: 码数 (số yard), 幅宽 (khổ), 色差 (chênh lệch màu), 瑕疵 (lỗi) → 验布检查表.",
+     "dz": "布卷放到验布机上过一遍（有灯箱、码数计数器、电子秤）。检验员查码数、量幅宽、看色差和瑕疵，每个瑕疵按四分制扣分，加起来换算成每百平方码的分数，再分A、B、C级。结果填在验布检查表上，也写在布卷标签上。流程图上验布机检验有四项：码数、幅宽、色差、瑕疵，填验布检查表。",
      "chk": [
       [
        "Chấm điểm theo chiều dài lỗi: đến 3 inch trừ 1; 3–6 inch trừ 2; 6–9 inch trừ 3; trên 9 inch trừ 4.",
@@ -308,15 +339,15 @@
       ]
      ],
      "tpy": "Wài guān jiǎn yàn, yàn bù jī",
-     "dpy": "Bù juǎn fàng dào yàn bù jī shàng guò yí biàn (yǒu dēng xiāng, mǎ shù jì shù qì, diàn zǐ chèng). Jiǎn yàn yuán chá mǎ shù, liáng fú kuān, kàn sè chā hé xiá cī, měi gè xiá cī àn sì fēn zhì kòu fēn, jiā qǐ lái huàn suàn chéng měi bǎi píng fāng mǎ de fēn shù, zài fēn A, B, C jí. Jié guǒ tián zài yàn bù jiǎn chá biǎo shàng, yě xiě zài bù juǎn biāo qiān shàng.",
+     "dpy": "Bù juǎn fàng dào yàn bù jī shàng guò yí biàn (yǒu dēng xiāng, mǎ shù jì shù qì, diàn zǐ chèng). Jiǎn yàn yuán chá mǎ shù, liáng fú kuān, kàn sè chā hé xiá cī, měi gè xiá cī àn sì fēn zhì kòu fēn, jiā qǐ lái huàn suàn chéng měi bǎi píng fāng mǎ de fēn shù, zài fēn A, B, C jí. Jié guǒ tián zài yàn bù jiǎn chá biǎo shàng, yě xiě zài bù juǎn biāo qiān shàng. Liú chéng tú shàng yàn bù jī jiǎn yàn yǒu sì xiàng: mǎ shù, fú kuān, sè chā, xiá cī, tián yàn bù jiǎn chá biǎo.",
      "ten": "Visual inspection on the fabric inspection machine",
-     "den": "The roll runs through the inspection machine (light box, yard counter, scale). The inspector counts yards, measures width, checks shading and defects, scores each defect on the 4-point system, totals, converts to points per 100 yd² and grades A, B or C. Results go on the inspection sheet and the roll tag."
+     "den": "The roll runs through the inspection machine (light box, yard counter, scale). The inspector counts yards, measures width, checks shading and defects, scores each defect on the 4-point system, totals, converts to points per 100 yd² and grades A, B or C. Results go on the inspection sheet and the roll tag. The chart lists four checks on the inspection machine: yardage, width, shade difference, defects → inspection sheet."
     },
     {
      "t": "Kiểm phụ liệu",
      "tz": "辅料检验",
-     "d": "Phụ liệu kiểm AQL 1.5, xong trong 7 ngày: kiểm đếm, xem ngoại quan, đo dài rộng cao, đối chiếu mẫu chuẩn và đơn trên hệ thống.",
-     "dz": "辅料按AQL 1.5检验，7天内完成：点收、看外观、量长宽高，对照标准样和系统订单。",
+     "d": "Phụ liệu kiểm AQL 1.5, xong trong 7 ngày: kiểm đếm, xem ngoại quan, đo dài rộng cao, đối chiếu mẫu chuẩn và đơn trên hệ thống. Ảnh 07/11: nhân viên đối chiếu tờ nhãn mã vạch (size SM, L/XL) với đơn trên máy tính và mẫu chuẩn 标准样.",
+     "dz": "辅料按AQL 1.5检验，7天内完成：点收、看外观、量长宽高，对照标准样和系统订单。照片：同事对着电脑上的订单和标准样，核对条码标签的尺码。",
      "chk": [
       [
        "Nhãn: kiểm size, mã vạch, số lượng so với mẫu chuẩn và đơn.",
@@ -340,18 +371,23 @@
        "Phụ liệu AQL 1.5 lấy mẫu theo bảng nào? Mẫu chuẩn để ở đâu?",
        "辅料AQL 1.5按哪张表抽样？标准样放在哪里？",
        "Fǔ liào AQL 1.5 àn nǎ zhāng biǎo chōu yàng? Biāo zhǔn yàng fàng zài nǎ lǐ?"
+      ],
+      [
+       "Nhãn mã vạch kiểm hết hay lấy mẫu theo AQL? Sai size hoặc mã vạch thì xử lý thế nào?",
+       "条码标签是全检还是按AQL抽检？尺码或条码不对怎么处理？",
+       "Tiáo mǎ biāo qiān shì quán jiǎn hái shì àn AQL chōu jiǎn? Chǐ mǎ huò tiáo mǎ bú duì zěn me chǔ lǐ?"
       ]
      ],
      "tpy": "Fǔ liào jiǎn yàn",
-     "dpy": "Fǔ liào àn AQL 1.5 jiǎn yàn, 7 tiān nèi wán chéng: diǎn shōu, kàn wài guān, liáng cháng kuān gāo, duì zhào biāo zhǔn yàng hé xì tǒng dìng dān.",
+     "dpy": "Fǔ liào àn AQL 1.5 jiǎn yàn, 7 tiān nèi wán chéng: diǎn shōu, kàn wài guān, liáng cháng kuān gāo, duì zhào biāo zhǔn yàng hé xì tǒng dìng dān. Zhào piàn: tóng shì duì zhe diàn nǎo shàng de dìng dān hé biāo zhǔn yàng, hé duì tiáo mǎ biāo qiān de chǐ mǎ.",
      "ten": "Trims inspection",
-     "den": "Trims are inspected to AQL 1.5 within 7 days: count, visual check, measure length/width/height, compare with the standard sample and the order in the system."
+     "den": "Trims are inspected to AQL 1.5 within 7 days: count, visual check, measure length/width/height, compare with the standard sample and the order in the system. Photo 07/11: a colleague checks a sheet of barcode labels (sizes SM, L/XL) against the order on screen and the standard sample."
     },
     {
      "t": "Đạt hay không",
      "tz": "合格与不合格",
-     "d": "Đạt: nhập ERP, in bảng nghiệm thu, nhập kho. Không đạt: lập phiếu phản hồi nghiệm thu, xét xử lý đặc biệt; không được thì trả hàng. Phải xử lý trong 6 tháng.",
-     "dz": "合格的录入ERP，出验收明细表，收料入库。不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。",
+     "d": "Đạt: nhập ERP, in bảng nghiệm thu, nhập kho. Không đạt: lập phiếu phản hồi nghiệm thu, xét xử lý đặc biệt; không được thì trả hàng. Phải xử lý trong 6 tháng. Lưu đồ tổ kiểm nghiệm: đạt hay không đạt đều nhập ERP; 特采 được thì quay về 验收明细表 rồi tổ chủ liệu nhập kho.",
+     "dz": "合格的录入ERP，出验收明细表，收料入库。不合格的开验收反应单，走特采评估，不能特采的就退货，6个月内要处理完。检验组流程图：合格、不合格都进ERP；特采通过就回到验收明细表，主料组收料入库。",
      "chk": [
       [
        "Kho chấm điểm nhà cung cấp hằng tháng.",
@@ -394,18 +430,23 @@
        "Kho chấm điểm nhà cung cấp hằng tháng dựa trên những mục nào?",
        "仓库每个月给供应商评分，看哪些项目？",
        "Cāng kù měi gè yuè gěi gōng yìng shāng píng fēn, kàn nǎ xiē xiàng mù?"
+      ],
+      [
+       "特采 xong cây vải dán tem gì (tem vàng 特采标签?) và để ở kệ nào?",
+       "特采以后布卷贴什么标签？放在哪个货架？",
+       "Tè cǎi yǐ hòu bù juǎn tiē shén me biāo qiān? Fàng zài nǎ ge huò jià?"
       ]
      ],
      "tpy": "Hé gé yǔ bù hé gé",
-     "dpy": "Hé gé de lù rù ERP, chū yàn shōu míng xì biǎo, shōu liào rù kù. Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán.",
+     "dpy": "Hé gé de lù rù ERP, chū yàn shōu míng xì biǎo, shōu liào rù kù. Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi píng gū, bù néng tè cǎi de jiù tuì huò, 6 gè yuè nèi yào chǔ lǐ wán. Jiǎn yàn zǔ liú chéng tú: hé gé, bù hé gé dōu jìn ERP; tè cǎi tōng guò jiù huí dào yàn shōu míng xì biǎo, zhǔ liào zǔ shōu liào rù kù.",
      "ten": "Pass or fail",
-     "den": "Pass: enter in ERP, print the acceptance list, put into stock. Fail: raise a receiving feedback form and review for concession; if not possible, return to supplier. Must be resolved within 6 months."
+     "den": "Pass: enter in ERP, print the acceptance list, put into stock. Fail: raise a receiving feedback form and review for concession; if not possible, return to supplier. Must be resolved within 6 months. Inspection-team chart: pass or fail, results go into ERP; once specially accepted, goods return to the acceptance list and the main-material team stocks them."
     },
     {
      "t": "Phát cho xưởng cắt",
      "tz": "发料",
-     "d": "Xưởng cắt mang phiếu lĩnh liệu đến; phiếu ghi bao nhiêu phát bấy nhiêu (tồn 1.000 yard, phiếu ghi 100 thì phát 100, còn 900). Thiếu thì làm phiếu bổ sung; kiểm kê lệch thì xin điều chỉnh.",
-     "dz": "裁剪拿领料单来领料，单上写多少就发多少：库存1000码，单上100码就发100码，剩900码。要补料走补料单，盘点有差异走盘调申请。",
+     "d": "Xưởng cắt mang phiếu lĩnh liệu đến; phiếu ghi bao nhiêu phát bấy nhiêu (tồn 1.000 yard, phiếu ghi 100 thì phát 100, còn 900). Thiếu thì làm phiếu bổ sung; kiểm kê lệch thì xin điều chỉnh. Lưu đồ quản lý kho: xưởng lên phiếu lĩnh liệu → kho chia hàng theo từng xưởng (将物料分厂别放) → xưởng lĩnh hàng → phiếu nộp tổ thông tin trừ sổ. Bù liệu: xưởng lên 补料单 → kho phát bù → nộp phiếu trừ sổ. Kiểm kho 盘点: lệch thì 盘调申请 → 盘调; khớp thì 日常料账维护 (duy trì số liệu hằng ngày).",
+     "dz": "裁剪拿领料单来领料，单上写多少就发多少：库存1000码，单上100码就发100码，剩900码。要补料走补料单，盘点有差异走盘调申请。仓库管理部流程图：工厂提出领料单 → 将物料分厂别放 → 工厂领料 → 领料单交咨询组减账。补料：工厂提出补料单 → 将货物交工厂补料 → 交咨询组减账。盘点：有差异就盘调申请、盘调；没有差异就日常料账维护。",
      "chk": [
       [
        "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ.",
@@ -421,7 +462,9 @@
       "减账",
       "物管",
       "盘点",
-      "盘调申请"
+      "盘调申请",
+      "盘调",
+      "日常料账维护"
      ],
      "pics": [
       "Phiếu lĩnh liệu"
@@ -431,34 +474,66 @@
        "Phiếu lĩnh liệu có ghi cấp chênh lệch màu không?",
        "领料单上有没有写色差级数？",
        "Lǐng liào dān shàng yǒu méi yǒu xiě sè chā jí shù?"
+      ],
+      [
+       "“将物料分厂别放” là chia theo những xưởng nào? Phụ liệu phát thẳng cho chuyền may hay qua xưởng cắt?",
+       "“将物料分厂别放”是按哪些厂分？辅料是直接发给车缝，还是经过裁剪？",
+       "“jiāng wù liào fēn chǎng bié fàng” shì àn nǎ xiē chǎng fēn? Fǔ liào shì zhí jiē fā gěi chē féng, hái shì jīng guò cái jiǎn?"
       ]
      ],
      "tpy": "Fā liào",
-     "dpy": "Cái jiǎn ná lǐng liào dān lái lǐng liào, dān shàng xiě duō shao jiù fā duō shao: kù cún 1000 mǎ, dān shàng 100 mǎ jiù fā 100 mǎ, shèng 900 mǎ. Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
+     "dpy": "Cái jiǎn ná lǐng liào dān lái lǐng liào, dān shàng xiě duō shao jiù fā duō shao: kù cún 1000 mǎ, dān shàng 100 mǎ jiù fā 100 mǎ, shèng 900 mǎ. Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng. Cāng kù guǎn lǐ bù liú chéng tú: gōng chǎng tí chū lǐng liào dān → jiāng wù liào fēn chǎng bié fàng → gōng chǎng lǐng liào → lǐng liào dān jiāo zī xún zǔ jiǎn zhàng. Bǔ liào: gōng chǎng tí chū bǔ liào dān → jiāng huò wù jiāo gōng chǎng bǔ liào → jiāo zī xún zǔ jiǎn zhàng. Pán diǎn: yǒu chā yì jiù pán tiáo shēn qǐng, pán tiáo; méi yǒu chā yì jiù rì cháng liào zhàng wéi hù.",
      "ten": "Issue to the cutting room",
-     "den": "The cutting room brings a material requisition; the warehouse issues exactly what is written (1,000 yd in stock, 100 yd requested → issue 100, 900 left). Shortages need a supplementary requisition; stock-take differences need an adjustment request."
+     "den": "The cutting room brings a material requisition; the warehouse issues exactly what is written (1,000 yd in stock, 100 yd requested → issue 100, 900 left). Shortages need a supplementary requisition; stock-take differences need an adjustment request. Warehouse chart: the workshop raises a requisition → goods are split by workshop → the workshop collects → the slip goes to the information team to deduct stock. Top-up: top-up slip → issue → deduct. Stock count: differences go to an adjustment request and adjustment; otherwise daily stock records are maintained."
     },
     {
      "t": "Tem và vị trí",
      "tz": "标识和储位",
-     "d": "Tem trạng thái: chính liệu đạt, phụ liệu đạt, chờ kiểm, xử lý đặc biệt, không đạt. Tem cây vải ghi cấp chênh lệch màu A–D. Vị trí kệ dạng C24-3-2 (kệ – tầng – ô).",
-     "dz": "物料状态标识有主料合格、辅料合格、待检、特采、不合格。布卷标签上有色差级数A–D。储位编号像C24-3-2：货架号-层-位置。",
+     "d": "Tem trạng thái: chính liệu đạt, phụ liệu đạt, chờ kiểm, xử lý đặc biệt, không đạt. Tem cây vải ghi cấp chênh lệch màu A–D. Vị trí kệ dạng C24-3-2 (kệ – tầng – ô). Bảng 原物料状态标识 cạnh máy kiểm vải (ảnh 07/11): 主料合格标签 và 辅料合格标签 là tem trắng, 不合格标签 tem đỏ, 特采标签 tem vàng (ghi “kết quả đánh giá sau kiểm nghiệm”), tem mũi tên đỏ “đợi xử lý”, 色差标签 A, B, C, D. Biển kệ: 衬布货架 (kệ vải lót cứng), 进口货架 (hàng nhập khẩu), SP线货架 (kệ chỉ SP), 国内物料 (vật liệu trong nước); mã kệ C23, C24, D07, D08, F09, F10; ô kệ dạng C24-3-2.",
+     "dz": "物料状态标识有主料合格、辅料合格、待检、特采、不合格。布卷标签上有色差级数A–D。储位编号像C24-3-2：货架号-层-位置。验布机旁边的原物料状态标识：主料合格标签、辅料合格标签是白色的，不合格标签是红色的，特采标签是黄色的，还有红箭头的标签和色差标签A、B、C、D。货架上有牌子：衬布货架、进口货架、SP线货架、国内物料；货架编号像C23、C24、D08，储位像C24-3-2。",
      "w": [
       "物料状态标识",
       "储位",
       "主料",
-      "色差标签"
+      "色差标签",
+      "主料合格标签",
+      "辅料合格标签",
+      "不合格标签",
+      "特采标签",
+      "货架",
+      "衬布货架",
+      "进口货架",
+      "国内物料"
      ],
      "pics": [
       "Các loại tem trạng thái",
-      "Kệ có mã vị trí C24-3-2"
+      "Kệ có mã vị trí C24-3-2",
+      "Kệ C23, C24: biển 衬布货架 (kệ vải lót cứng), 进口货架 (hàng nhập khẩu)",
+      "Biển kệ D08: SP线货架 (kệ chỉ SP), WT进口货架 (hàng nhập khẩu WT)",
+      "Dãy kệ phụ liệu D07, D08, F09, F10 (国内物料, SP, WT)"
      ],
-     "qs": [],
+     "qs": [
+      [
+       "Nhiều cây vải trên kệ dán tem vàng (ảnh kệ C24): đó là tem 特采 hay tem của nhà cung cấp?",
+       "很多布卷上贴着黄色的标签，是特采标签还是供应商的标签？",
+       "Hěn duō bù juǎn shàng tiē zhe huáng sè de biāo qiān, shì tè cǎi biāo qiān hái shì gōng yìng shāng de biāo qiān?"
+      ],
+      [
+       "Tem mũi tên đỏ trên bảng trạng thái tiếng Trung gọi là gì, dán khi nào?",
+       "状态标识上红箭头的标签中文叫什么？什么时候贴？",
+       "Zhuàng tài biāo shí shàng hóng jiàn tóu de biāo qiān zhōng wén jiào shén me? Shén me shí hòu tiē?"
+      ],
+      [
+       "Kệ “SP线货架” để gì: chỉ may hiệu SP? “WT进口” là hàng của bên nào?",
+       "SP线货架放的是什么？WT进口是哪家的货？",
+       "SP xiàn huò jià fàng de shì shén me? WT jìn kǒu shì nǎ jiā de huò?"
+      ]
+     ],
      "tpy": "Biāo shí hé chǔ wèi",
-     "dpy": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé. Bù juǎn biāo qiān shàng yǒu sè chā jí shù A–D. Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì.",
+     "dpy": "Wù liào zhuàng tài biāo shí yǒu zhǔ liào hé gé, fǔ liào hé gé, dài jiǎn, tè cǎi, bù hé gé. Bù juǎn biāo qiān shàng yǒu sè chā jí shù A–D. Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì. Yàn bù jī páng biān de yuán wù liào zhuàng tài biāo shí: zhǔ liào hé gé biāo qiān, fǔ liào hé gé biāo qiān shì bái sè de, bù hé gé biāo qiān shì hóng sè de, tè cǎi biāo qiān shì huáng sè de, hái yǒu hóng jiàn tóu de biāo qiān hé sè chā biāo qiān A, B, C, D. Huò jià shàng yǒu pái zi: chèn bù huò jià, jìn kǒu huò jià, SP xiàn huò jià, guó nèi wù liào; huò jià biān hào xiàng C23, C24, D08, chǔ wèi xiàng C24-3-2.",
      "chk": [],
      "ten": "Tags and locations",
-     "den": "Status tags: main material OK, trims OK, awaiting inspection, concession, rejected. The roll tag shows the shade grade A–D. Rack locations look like C24-3-2 (rack – level – slot)."
+     "den": "Status tags: main material OK, trims OK, awaiting inspection, concession, rejected. The roll tag shows the shade grade A–D. Rack locations look like C24-3-2 (rack – level – slot). The status-label board by the inspection machine (photo 07/11): white labels for passed main materials and trims, red for failed, yellow for special acceptance, a red-arrow label for “waiting”, shade labels A–D. Rack signs: interlining racks, imported goods, SP thread racks, domestic materials; rack codes C23, C24, D07, D08, F09, F10; positions like C24-3-2."
     }
    ],
    "py": "cāngkù",
@@ -516,8 +591,9 @@
       "主料检验标准"
      ],
      "pics": [
-      "Máy kiểm vải đang chạy, hộp đèn",
-      "Bộ đếm yard và cân"
+      "Máy kiểm vải: hộp đèn, trục cuộn, bộ đếm yard",
+      "Bộ đếm yard và cân",
+      "Tiêu chuẩn thao tác kiểm vải 验布作业标准 dán cạnh máy"
      ],
      "qs": [
       [
@@ -529,6 +605,11 @@
        "Đánh dấu lỗi trên vải bằng gì?",
        "布上的瑕疵用什么做记号？",
        "Bù shàng de xiá cī yòng shén me zuò jì hào?"
+      ],
+      [
+       "Cân điện tử cạnh máy kiểm vải dùng để cân gì (cân cả cây, hay mẫu để tính định lượng)?",
+       "验布机旁边的电子秤是用来称什么的？称整卷还是称布块算克重？",
+       "Yàn bù jī páng biān de diàn zǐ chèng shì yòng lái chēng shén me de? Chēng zhěng juǎn hái shì chēng bù kuài suàn kè zhòng?"
       ]
      ],
      "tpy": "Shàng yàn bù jī",
@@ -547,7 +628,9 @@
       "扣分参考样"
      ],
      "pics": [
-      "Mẫu trừ điểm dán cạnh máy"
+      "Mẫu trừ điểm dán cạnh máy",
+      "Bảng mẫu lỗi mặt vải (lỗ thủng, vết nước, chấm đen…) dưới lưu đồ kho",
+      "Chụp gần từng tấm mẫu lỗi để đọc tên lỗi tiếng Trung"
      ],
      "qs": [
       [
@@ -625,34 +708,41 @@
     {
      "t": "④ Xếp cấp chênh lệch màu A–D",
      "tz": "色差级数",
-     "d": "Kho chia cây vải theo cấp chênh lệch màu A–D, ghi trên tem cây vải. Người xem màu phải qua test FM100 trước.",
-     "dz": "仓库把布卷按色差分A到D级，写在布卷标签上。看色的检验员要先做辨色测试（X-Rite FM 100）。",
+     "d": "Kho chia cây vải theo cấp chênh lệch màu A–D, ghi trên tem cây vải. Người xem màu phải qua test FM100 trước. Ảnh 07/11: trên kệ có cây vải dán tem chữ D; bảng trạng thái cạnh máy có tem 色差 A, B, C, D; cạnh máy dán kết quả test phân biệt màu FM100 của người kiểm.",
+     "dz": "仓库把布卷按色差分A到D级，写在布卷标签上。看色的检验员要先做辨色测试（X-Rite FM 100）。照片：货架上有的布卷贴着D的色差标签；验布机旁边有色差标签A、B、C、D，还贴着检验员的FM100辨色测试结果。",
      "w": [
       "色差级数",
       "辨色测试",
       "检验员"
      ],
      "pics": [
-      "Tem cây vải có ô cấp chênh lệch màu"
+      "Tem cây vải có ô cấp chênh lệch màu",
+      "Cây vải trên kệ dán tem cấp màu (chữ D)",
+      "Kết quả test phân biệt màu FM100 dán cạnh máy (đã che tên)"
      ],
      "qs": [
       [
        "Cấp A–D chia theo cách nào: so với mẫu chuẩn nào, dưới đèn gì?",
        "色差级数A到D是怎么分的？跟哪个标准样比？用什么灯？",
        "Sè chā jí shù A dào D shì zěn me fēn de? Gēn nǎ ge biāo zhǔn yàng bǐ? Yòng shén me dēng?"
+      ],
+      [
+       "Cây vải tem D (ảnh kệ C24) vẫn phát cho xưởng cắt được không, hay phải qua 特采?",
+       "贴D色差标签的布卷还能发给裁剪吗？还是要走特采？",
+       "Tiē D sè chā biāo qiān de bù juǎn hái néng fā gěi cái jiǎn ma? Hái shì yào zǒu tè cǎi?"
       ]
      ],
      "tpy": "Sè chā jí shù",
-     "dpy": "Cāng kù bǎ bù juǎn àn sè chā fēn A dào D jí, xiě zài bù juǎn biāo qiān shàng. Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100).",
+     "dpy": "Cāng kù bǎ bù juǎn àn sè chā fēn A dào D jí, xiě zài bù juǎn biāo qiān shàng. Kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì (X-Rite FM 100). Zhào piàn: huò jià shàng yǒu de bù juǎn tiē zhe D de sè chā biāo qiān; yàn bù jī páng biān yǒu sè chā biāo qiān A, B, C, D, hái tiē zhe jiǎn yàn yuán de FM100 biàn sè cè shì jié guǒ.",
      "chk": [],
      "ten": "④ Shade grading A–D",
-     "den": "The warehouse sorts rolls by shade grade A–D and writes it on the roll tag. Colour inspectors must pass the FM100 colour test first."
+     "den": "The warehouse sorts rolls by shade grade A–D and writes it on the roll tag. Colour inspectors must pass the FM100 colour test first. Photo 07/11: some rolls on the racks carry a D shade label; the board by the machine shows shade labels A–D and the inspectors' FM100 colour-vision results."
     },
     {
      "t": "⑤ Phòng kiểm nghiệm",
      "tz": "检验室",
-     "d": "4 nhóm test: tính chất vật lý, độ bền màu, giặt thành phẩm, formaldehyde. Phòng có chứng nhận phòng thí nghiệm của Under Armour.",
-     "dz": "检验室的测试分四类：物性、色牢度、成品洗、甲醛。墙上挂着Under Armour的实验室认可证书。",
+     "d": "4 nhóm test: tính chất vật lý, độ bền màu, giặt thành phẩm, formaldehyde. Phòng có chứng nhận phòng thí nghiệm của Under Armour. Biển cửa ghi 质量检验室 (Phòng kiểm nghiệm chất lượng). Nhãn máy: 黄化测试仪 (test ố vàng); tủ sấy dán nhãn 汗渍牢度 (bền màu mồ hôi). Bảng 测试项目 chia 4 nhóm: tính chất vật lý, độ bền màu, giặt thành phẩm, formaldehyde.",
+     "dz": "检验室的测试分四类：物性、色牢度、成品洗、甲醛。墙上挂着Under Armour的实验室认可证书。门牌写着质量检验室。机器上的标签：黄化测试仪；烘箱上贴着汗渍牢度。测试项目分四类：物性、色牢度、成品洗、甲醛。",
      "chk": [
       [
        "Tính chất vật lý: co rút khi giặt, định lượng, chống thấm, lão hóa, hút ẩm, khổ, pH, khô nhanh, mật độ, bền thăng hoa.",
@@ -688,11 +778,18 @@
       "机洗",
       "手洗",
       "黄变测试仪",
-      "烘箱"
+      "烘箱",
+      "质量检验室",
+      "测试项目",
+      "汗渍牢度",
+      "黄化测试仪"
      ],
      "pics": [
-      "Máy test ố vàng, tủ sấy test mồ hôi",
-      "Chứng nhận phòng thí nghiệm UA treo tường"
+      "Máy test ố vàng (nhãn máy: 黄化测试仪, Phenolic Yellowing Testing)",
+      "Bảng mục kiểm nghiệm 测试项目; khung góc phải là chứng nhận phòng thí nghiệm UA",
+      "Tủ sấy dùng test bền màu mồ hôi (nhãn 汗渍牢度)",
+      "Cửa phòng kiểm nghiệm chất lượng 质量检验室",
+      "Bên trong phòng kiểm nghiệm: bàn test, giá mũ mẫu"
      ],
      "qs": [
       [
@@ -704,12 +801,17 @@
        "Yêu cầu test mũ của VF (AATCC 8, 15, 16.3, 107, pH) xưởng làm được những cái nào?",
        "VF帽子要做的测试（AATCC 8、15、16.3、107、pH），厂内能做哪几个？",
        "VF mào zi yào zuò de cè shì (AATCC 8, 15, 16.3, 107, pH), chǎng nèi néng zuò nǎ jǐ gè?"
+      ],
+      [
+       "Máy test ố vàng: nhãn ghi 黄化测试仪, báo cáo cũ ghi 黄变测试仪; bảng ghi 抗黄化. Trong phòng gọi thế nào?",
+       "测黄变的机器，标签写黄化测试仪，以前的报告写黄变测试仪，大家平时叫哪个？",
+       "Cè huáng biàn de jī qì, biāo qiān xiě huáng huà cè shì yí, yǐ qián de bào gào xiě huáng biàn cè shì yí, dà jiā píng shí jiào nǎ ge?"
       ]
      ],
      "tpy": "Jiǎn yàn shì",
-     "dpy": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán. Qiáng shàng guà zhe Under Armour de shí yàn shì rèn kě zhèng shū.",
+     "dpy": "Jiǎn yàn shì de cè shì fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán. Qiáng shàng guà zhe Under Armour de shí yàn shì rèn kě zhèng shū. Mén pái xiě zhe zhì liàng jiǎn yàn shì. Jī qì shàng de biāo qiān: huáng huà cè shì yí; hōng xiāng shàng tiē zhe hàn zì láo dù. Cè shì xiàng mù fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán.",
      "ten": "⑤ Factory lab",
-     "den": "Four test groups: physical properties, colour fastness, finished-product wash, formaldehyde. The lab holds an Under Armour lab approval certificate."
+     "den": "Four test groups: physical properties, colour fastness, finished-product wash, formaldehyde. The lab holds an Under Armour lab approval certificate. The door sign reads 质量检验室 (quality lab). Machine labels: 黄化测试仪 (yellowing tester); an oven labelled 汗渍牢度 (perspiration fastness). The testing-scope board has four groups: physical, colour fastness, product laundering, formaldehyde."
     }
    ],
    "py": "yànbù",
@@ -756,7 +858,10 @@
       "色差级数",
       "缸号",
       "扣点等级",
-      "领料单"
+      "领料单",
+      "领料",
+      "二维码",
+      "追溯"
      ],
      "pics": [
       "Tem trắng cây vải (che số hợp đồng nếu cần)",
@@ -787,7 +892,9 @@
      "d": "Chỉ làm với vải co giãn: để vải co trước, mảnh cắt không co lại sau. Báo cáo 05/11: cây vải nạp vào máy xả, kéo ra rồi cuộn lại lỏng hơn để nhả hết lực căng. Vải không co giãn đi thẳng sang bàn trải, cắt.",
      "dz": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。11月5日报告：布卷放进松布机，拉开再松松地卷回去，释放卷布张力。没有弹性的布直接送去拉布、裁剪。",
      "w": [
-      "松布"
+      "松布",
+      "弹性布",
+      "回缩"
      ],
      "pics": [
       "Máy xả vải đang chạy, cận cảnh",
@@ -927,7 +1034,9 @@
       "渗胶",
       "打卷",
       "贴衬",
-      "贴合收发单"
+      "贴合收发单",
+      "贴合机",
+      "起皱"
      ],
      "pics": [
       "Máy dán đường thẳng",
@@ -996,7 +1105,10 @@
       "裁次",
       "防霉",
       "自动拉布",
-      "手工拉布"
+      "手工拉布",
+      "布边对齐",
+      "松紧",
+      "层高"
      ],
      "pics": [
       "Bàn kéo vải: số lớp, mép vải",
@@ -1058,7 +1170,8 @@
       "眉面",
       "眉里",
       "顶扣包布",
-      "冲床"
+      "冲床",
+      "刀模裁剪"
      ],
      "pics": [
       "Bộ dao chặt của một mã (tem mã, size)",
@@ -2692,7 +2805,7 @@
   {
    "zh": "咨询组",
    "py": "zīxúnzǔ",
-   "vn": "tổ tư vấn của kho",
+   "vn": "tổ thông tin của kho (tên tiếng Việt trên lưu đồ; dịch sát chữ là tổ tư vấn)",
    "note": "Kiểm đếm, in bảng kê, trừ sổ trên hệ thống.",
    "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
    "ok": true,
@@ -2728,7 +2841,7 @@
   {
    "zh": "主料组",
    "py": "zhǔliàozǔ",
-   "vn": "tổ chính liệu",
+   "vn": "tổ chủ liệu (tên trên lưu đồ; tổ giữ vải chính)",
    "note": "",
    "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
    "ok": true,
@@ -2760,6 +2873,78 @@
    },
    "add": "2026-11-03",
    "en": "receiving count list"
+  },
+  {
+   "zh": "点收明细表",
+   "py": "diǎnshōu míngxìbiǎo",
+   "vn": "biểu kiểm nhận hàng hóa (tổ thông tin in khi hàng đến)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "物料入厂：咨询组出点收明细表和物管订单分配表，再交检验组。",
+    "py": "Wù liào rù chǎng: zī xún zǔ chū diǎn shōu míng xì biǎo hé wù guǎn dìng dān fēn pèi biǎo, zài jiāo jiǎn yàn zǔ.",
+    "vn": "Hàng đến: tổ thông tin có 点收明细表 (biểu kiểm nhận) và 物管订单分配表 (biểu phân bổ đơn) rồi mới giao tổ kiểm nghiệm."
+   },
+   "add": "2026-11-07",
+   "en": "check-in list"
+  },
+  {
+   "zh": "物管订单分配表",
+   "py": "wùguǎn dìngdān fēnpèibiǎo",
+   "vn": "biểu phân bổ đơn đặt hàng",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "物料入厂：咨询组出点收明细表和物管订单分配表，再交检验组。",
+    "py": "Wù liào rù chǎng: zī xún zǔ chū diǎn shōu míng xì biǎo hé wù guǎn dìng dān fēn pèi biǎo, zài jiāo jiǎn yàn zǔ.",
+    "vn": "Hàng đến: tổ thông tin có 点收明细表 (biểu kiểm nhận) và 物管订单分配表 (biểu phân bổ đơn) rồi mới giao tổ kiểm nghiệm."
+   },
+   "add": "2026-11-07",
+   "en": "order allocation sheet"
+  },
+  {
+   "zh": "计划储位",
+   "py": "jìhuà chǔwèi",
+   "vn": "vị trí kế hoạch (định sẵn chỗ để hàng)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "墙上的仓库管理部工作流程图（11月7日照片）：合约与明细 → 计划储位 → 到料后咨询组点收，出点收明细表 → 进料检验 → 合格就收料入库；",
+    "py": "Qiáng shàng de cāng kù guǎn lǐ bù gōng zuò liú chéng tú (11 yuè 7 rì zhào piàn): hé yuē yǔ míng xì → jì huà chǔ wèi → dào liào hòu zī xún zǔ diǎn shōu, chū diǎn shōu míng xì biǎo → jìn liào jiǎn yàn → hé gé jiù shōu liào rù kù;",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "planned storage location"
+  },
+  {
+   "zh": "进料检验",
+   "py": "jìnliào jiǎnyàn",
+   "vn": "kiểm nghiệm hàng đến",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "墙上的仓库管理部工作流程图（11月7日照片）：合约与明细 → 计划储位 → 到料后咨询组点收，出点收明细表 → 进料检验 → 合格就收料入库；",
+    "py": "Qiáng shàng de cāng kù guǎn lǐ bù gōng zuò liú chéng tú (11 yuè 7 rì zhào piàn): hé yuē yǔ míng xì → jì huà chǔ wèi → dào liào hòu zī xún zǔ diǎn shōu, chū diǎn shōu míng xì biǎo → jìn liào jiǎn yàn → hé gé jiù shōu liào rù kù;",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "incoming inspection"
   },
   {
    "zh": "物性检验",
@@ -2864,6 +3049,60 @@
    },
    "add": "2026-11-03",
    "en": "quality test report"
+  },
+  {
+   "zh": "干湿摩擦",
+   "py": "gānshī mócā",
+   "vn": "ma sát khô và ướt (test bền màu)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "布头、布中、布尾各剪一块送检验室，测干湿摩擦、水洗牢度、颜色、手感、厚度，出品质检测报告。",
+    "py": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "dry and wet rubbing"
+  },
+  {
+   "zh": "水洗牢度",
+   "py": "shuǐxǐ láodù",
+   "vn": "độ bền màu khi giặt",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "布头、布中、布尾各剪一块送检验室，测干湿摩擦、水洗牢度、颜色、手感、厚度，出品质检测报告。",
+    "py": "Bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài sòng jiǎn yàn shì, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, shǒu gǎn, hòu dù, chū pǐn zhì jiǎn cè bào gào.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "wash fastness"
+  },
+  {
+   "zh": "颜色核对",
+   "py": "yánsè héduì",
+   "vn": "so màu",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "检验组流程图写：剪布块送实验室检测，测干湿摩擦、水洗牢度、颜色核对、手感、厚度和相关检验，出品质检测报告。",
+    "py": "Jiǎn yàn zǔ liú chéng tú xiě: jiǎn bù kuài sòng shí yàn shì jiǎn cè, cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè hé duì, shǒu gǎn, hòu dù hé xiāng guān jiǎn yàn, chū pǐn zhì jiǎn cè bào gào.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "colour check"
   },
   {
    "zh": "外观检验",
@@ -3294,6 +3533,42 @@
    "en": "stock adjustment request"
   },
   {
+   "zh": "盘调",
+   "py": "pántiáo",
+   "vn": "điều chỉnh số liệu sau kiểm kê",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "要补料走补料单，盘点有差异走盘调申请。",
+    "py": "Yào bǔ liào zǒu bǔ liào dān, pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "stock adjustment"
+  },
+  {
+   "zh": "日常料账维护",
+   "py": "rìcháng liàozhàng wéihù",
+   "vn": "duy trì số liệu hằng ngày",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "没有差异就日常料账维护。",
+    "py": "Méi yǒu chā yì jiù rì cháng liào zhàng wéi hù.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "daily stock-record upkeep"
+  },
+  {
    "zh": "物料状态标识",
    "py": "wùliào zhuàngtài biāoshí",
    "vn": "tem trạng thái vật liệu",
@@ -3364,6 +3639,150 @@
    },
    "add": "2026-11-03",
    "en": "shade grade tag"
+  },
+  {
+   "zh": "主料合格标签",
+   "py": "zhǔliào hégé biāoqiān",
+   "vn": "tem chủ liệu đạt (tem trắng)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "验布机旁边的原物料状态标识：主料合格标签、辅料合格标签是白色的，不合格标签是红色的，特采标签是黄色的，还有红箭头的标签和色差标签A、B、C、D。",
+    "py": "Yàn bù jī páng biān de yuán wù liào zhuàng tài biāo shí: zhǔ liào hé gé biāo qiān, fǔ liào hé gé biāo qiān shì bái sè de, bù hé gé biāo qiān shì hóng sè de, tè cǎi biāo qiān shì huáng sè de, hái yǒu hóng jiàn tóu de biāo qiān hé sè chā biāo qiān A, B, C, D.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "main-material pass label"
+  },
+  {
+   "zh": "辅料合格标签",
+   "py": "fǔliào hégé biāoqiān",
+   "vn": "tem phụ liệu đạt (tem trắng)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "验布机旁边的原物料状态标识：主料合格标签、辅料合格标签是白色的，不合格标签是红色的，特采标签是黄色的，还有红箭头的标签和色差标签A、B、C、D。",
+    "py": "Yàn bù jī páng biān de yuán wù liào zhuàng tài biāo shí: zhǔ liào hé gé biāo qiān, fǔ liào hé gé biāo qiān shì bái sè de, bù hé gé biāo qiān shì hóng sè de, tè cǎi biāo qiān shì huáng sè de, hái yǒu hóng jiàn tóu de biāo qiān hé sè chā biāo qiān A, B, C, D.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "trim pass label"
+  },
+  {
+   "zh": "不合格标签",
+   "py": "bù hégé biāoqiān",
+   "vn": "tem không đạt (tem đỏ)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "验布机旁边的原物料状态标识：主料合格标签、辅料合格标签是白色的，不合格标签是红色的，特采标签是黄色的，还有红箭头的标签和色差标签A、B、C、D。",
+    "py": "Yàn bù jī páng biān de yuán wù liào zhuàng tài biāo shí: zhǔ liào hé gé biāo qiān, fǔ liào hé gé biāo qiān shì bái sè de, bù hé gé biāo qiān shì hóng sè de, tè cǎi biāo qiān shì huáng sè de, hái yǒu hóng jiàn tóu de biāo qiān hé sè chā biāo qiān A, B, C, D.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "fail label"
+  },
+  {
+   "zh": "特采标签",
+   "py": "tècǎi biāoqiān",
+   "vn": "tem xử lý đặc biệt (tem vàng, “kết quả đánh giá sau kiểm nghiệm”)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "验布机旁边的原物料状态标识：主料合格标签、辅料合格标签是白色的，不合格标签是红色的，特采标签是黄色的，还有红箭头的标签和色差标签A、B、C、D。",
+    "py": "Yàn bù jī páng biān de yuán wù liào zhuàng tài biāo shí: zhǔ liào hé gé biāo qiān, fǔ liào hé gé biāo qiān shì bái sè de, bù hé gé biāo qiān shì hóng sè de, tè cǎi biāo qiān shì huáng sè de, hái yǒu hóng jiàn tóu de biāo qiān hé sè chā biāo qiān A, B, C, D.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "special-acceptance label"
+  },
+  {
+   "zh": "货架",
+   "py": "huòjià",
+   "vn": "kệ hàng",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "储位编号像C24-3-2：货架号-层-位置。",
+    "py": "Chǔ wèi biān hào xiàng C24-3-2: huò jià hào-céng-wèi zhì.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "rack"
+  },
+  {
+   "zh": "衬布货架",
+   "py": "chènbù huòjià",
+   "vn": "kệ vải lót cứng (biển ghi “Kệ hàng vải cứng”)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "货架上有牌子：衬布货架、进口货架、SP线货架、国内物料；",
+    "py": "Huò jià shàng yǒu pái zi: chèn bù huò jià, jìn kǒu huò jià, SP xiàn huò jià, guó nèi wù liào;",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "interlining rack"
+  },
+  {
+   "zh": "进口货架",
+   "py": "jìnkǒu huòjià",
+   "vn": "kệ hàng nhập khẩu",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "货架上有牌子：衬布货架、进口货架、SP线货架、国内物料；",
+    "py": "Huò jià shàng yǒu pái zi: chèn bù huò jià, jìn kǒu huò jià, SP xiàn huò jià, guó nèi wù liào;",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "imported-goods rack"
+  },
+  {
+   "zh": "国内物料",
+   "py": "guónèi wùliào",
+   "vn": "vật liệu trong nước",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kho",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": {
+    "zh": "货架上有牌子：衬布货架、进口货架、SP线货架、国内物料；",
+    "py": "Huò jià shàng yǒu pái zi: chèn bù huò jià, jìn kǒu huò jià, SP xiàn huò jià, guó nèi wù liào;",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "domestic materials"
   },
   {
    "zh": "验布",
@@ -3959,7 +4378,7 @@
    "zh": "黄变测试仪",
    "py": "huángbiàn cèshìyí",
    "vn": "máy test ố vàng",
-   "note": "",
+   "note": "Nhãn trên máy (ảnh 07/11) ghi 黄化测试仪.",
    "src": "Báo cáo kho 31/10 (biển, lưu đồ ở kho)",
    "ok": true,
    "st": "kiemvai",
@@ -3990,6 +4409,78 @@
    },
    "add": "2026-11-03",
    "en": "oven"
+  },
+  {
+   "zh": "质量检验室",
+   "py": "zhìliàng jiǎnyànshì",
+   "vn": "phòng kiểm nghiệm chất lượng (biển cửa)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "noi",
+   "hot": false,
+   "ex": {
+    "zh": "门牌写着质量检验室。",
+    "py": "Mén pái xiě zhe zhì liàng jiǎn yàn shì.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "quality lab"
+  },
+  {
+   "zh": "测试项目",
+   "py": "cèshì xiàngmù",
+   "vn": "mục kiểm nghiệm (bảng trong phòng)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "测试项目分四类：物性、色牢度、成品洗、甲醛。",
+    "py": "Cè shì xiàng mù fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "testing scope"
+  },
+  {
+   "zh": "汗渍牢度",
+   "py": "hànzì láodù",
+   "vn": "độ bền màu với mồ hôi",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "烘箱上贴着汗渍牢度。",
+    "py": "Hōng xiāng shàng tiē zhe hàn zì láo dù.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "perspiration fastness"
+  },
+  {
+   "zh": "黄化测试仪",
+   "py": "huánghuà cèshìyí",
+   "vn": "máy test ố vàng (tên trên nhãn máy)",
+   "note": "Đọc được trên lưu đồ, biển hoặc nhãn máy trong ảnh kho 07/11.",
+   "src": "Ảnh kho 07/11 (lưu đồ, biển kệ, nhãn máy)",
+   "ok": true,
+   "st": "kiemvai",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "机器上的标签：黄化测试仪；",
+    "py": "Jī qì shàng de biāo qiān: huáng huà cè shì yí;",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "phenolic yellowing tester"
   },
   {
    "zh": "裁剪",
@@ -4046,6 +4537,60 @@
    "en": "dye lot"
   },
   {
+   "zh": "领料",
+   "py": "lǐngliào",
+   "vn": "lĩnh liệu (xưởng lĩnh vải từ kho)",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": {
+    "zh": "领料单交咨询组减账。",
+    "py": "Lǐng liào dān jiāo zī xún zǔ jiǎn zhàng.",
+    "vn": "Phiếu lĩnh liệu nộp lại tổ tư vấn để trừ sổ."
+   },
+   "add": "2026-11-07",
+   "en": "collect materials by requisition"
+  },
+  {
+   "zh": "二维码",
+   "py": "èrwéimǎ",
+   "vn": "mã QR",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "giayto",
+   "hot": false,
+   "ex": {
+    "zh": "布卷标签是白色的，有二维码，写着品号、品名、色差级数、缸号、扣点等级、检验员。",
+    "py": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, pǐn míng, sè chā jí shù, gāng hào, kòu diǎn děng jí, jiǎn yàn yuán.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "QR code"
+  },
+  {
+   "zh": "追溯",
+   "py": "zhuīsù",
+   "vn": "truy vết",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "看标签可以追溯：哪一卷、哪个缸号、哪个色差级数、用在哪张订单。",
+    "py": "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, nǎ ge sè chā jí shù, yòng zài nǎ zhāng dìng dān.",
+    "vn": "Đọc tem để truy vết: cây nào, lô nhuộm nào, cấp màu nào, dùng cho đơn nào."
+   },
+   "add": "2026-11-07",
+   "en": "traceability"
+  },
+  {
    "zh": "松布",
    "py": "sōngbù",
    "vn": "xả vải",
@@ -4062,6 +4607,42 @@
    },
    "add": "",
    "en": "fabric relaxing"
+  },
+  {
+   "zh": "弹性布",
+   "py": "tánxìngbù",
+   "vn": "vải co giãn",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "vatlieu",
+   "hot": false,
+   "ex": {
+    "zh": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。",
+    "py": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "stretch fabric"
+  },
+  {
+   "zh": "回缩",
+   "py": "huísuō",
+   "vn": "co lại (cho vải co trước khi cắt)",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "只有弹性布才要松布，让布先回缩，裁片以后不再缩。",
+    "py": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu bú zài suō.",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "shrink back"
   },
   {
    "zh": "编排辅助单据",
@@ -4356,6 +4937,42 @@
    "en": "fusing issue-and-receipt slip"
   },
   {
+   "zh": "贴合机",
+   "py": "tiēhéjī",
+   "vn": "máy dán",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "may",
+   "hot": false,
+   "ex": {
+    "zh": "裁剪前，用贴合机把面布和有胶的衬布贴在一起（作业标准M-10-71）。",
+    "py": "Cái jiǎn qián, yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ (zuò yè biāo zhǔn M-10-71).",
+    "vn": ""
+   },
+   "add": "2026-11-07",
+   "en": "fusing machine"
+  },
+  {
+   "zh": "起皱",
+   "py": "qǐzhòu",
+   "vn": "nhăn",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "loi",
+   "hot": false,
+   "ex": {
+    "zh": "贴好的布要牢，不起皱、不打卷、不渗胶。",
+    "py": "Tiē hǎo de bù yào láo, bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
+    "vn": "Vải dán xong phải chắc, không nhăn, không quăn mép, không thấm keo."
+   },
+   "add": "2026-11-07",
+   "en": "wrinkling"
+  },
+  {
    "zh": "拉布",
    "py": "lābù",
    "vn": "kéo vải (xếp vải thành nhiều lớp trên bàn cắt)",
@@ -4458,6 +5075,60 @@
    "ex": null,
    "add": "2026-11-05",
    "en": "hand spreading"
+  },
+  {
+   "zh": "布边对齐",
+   "py": "bùbiān duìqí",
+   "vn": "mép vải bằng nhau",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
+    "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
+    "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
+   },
+   "add": "2026-11-07",
+   "en": "aligned edges"
+  },
+  {
+   "zh": "松紧",
+   "py": "sōngjǐn",
+   "vn": "độ căng, chùng khi kéo vải",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "kiemtra",
+   "hot": false,
+   "ex": {
+    "zh": "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
+    "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
+    "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
+   },
+   "add": "2026-11-07",
+   "en": "tension"
+  },
+  {
+   "zh": "层高",
+   "py": "cénggāo",
+   "vn": "độ cao chồng lớp vải",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "bophan",
+   "hot": false,
+   "ex": {
+    "zh": "表上印好的检查项：布边对齐、松紧、层高、裁剪方向；还有“有没有防霉”一栏。",
+    "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng; hái yǒu “yǒu méi yǒu fáng méi” yì lán.",
+    "vn": "Phiếu in sẵn mục kiểm: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt; có ô “có chống mốc không”."
+   },
+   "add": "2026-11-07",
+   "en": "ply height"
   },
   {
    "zh": "刀模",
@@ -4598,6 +5269,20 @@
    },
    "add": "2026-11-05",
    "en": "clicking press"
+  },
+  {
+   "zh": "刀模裁剪",
+   "py": "dāomó cáijiǎn",
+   "vn": "chặt bằng dao chặt",
+   "note": "Bảo ghi tại xưởng cắt 05/11 (từ nghe ở xưởng hoặc in trên biểu mẫu).",
+   "src": "Ghi chép tay của Bảo ở xưởng cắt 05/11",
+   "ok": true,
+   "st": "cat",
+   "cat": "congdoan",
+   "hot": false,
+   "ex": null,
+   "add": "2026-11-07",
+   "en": "die cutting"
   },
   {
    "zh": "切条",
@@ -10365,5 +11050,515 @@
     "Zài mó nǐ lǐ kàn"
    ]
   }
+ },
+ "cloze": {
+  "kho": [
+   {
+    "id": "kho-c1",
+    "z": "面辅料到料以后，[[咨询组]]先[[点收]]，[[检验组]]检验，主料组收料入库。",
+    "py": "Miàn fǔ liào dào liào yǐ hòu, zī xún zǔ xiān diǎn shōu, jiǎn yàn zǔ jiǎn yàn, zhǔ liào zǔ shōu liào rù kù.",
+    "vn": "Nguyên phụ liệu về: tổ thông tin kiểm nhận trước, tổ kiểm nghiệm kiểm, tổ chủ liệu nhận vào kho."
+   },
+   {
+    "id": "kho-c2",
+    "z": "仓库管理部的流程：合约与明细 → [[计划储位]] → 到料点收 → [[进料检验]] → 收料入库。",
+    "py": "Cāng kù guǎn lǐ bù de liú chéng: hé yuē yǔ míng xì → jì huà chǔ wèi → dào liào diǎn shōu → jìn liào jiǎn yàn → shōu liào rù kù.",
+    "vn": "Lưu đồ quản lý kho: hợp đồng và danh sách hàng → vị trí kế hoạch → hàng về kiểm nhận → kiểm nghiệm hàng đến → nhập kho."
+   },
+   {
+    "id": "kho-c3",
+    "z": "到料以后，咨询组在系统里点收，打印[[点收明细表]]。",
+    "py": "Dào liào yǐ hòu, zī xún zǔ zài xì tǒng lǐ diǎn shōu, dǎ yìn diǎn shōu míng xì biǎo.",
+    "vn": "Hàng về, tổ thông tin kiểm nhận trên hệ thống, in biểu kiểm nhận."
+   },
+   {
+    "id": "kho-c4",
+    "z": "检验分两种：[[物性检验]]和[[外观检验]]。",
+    "py": "Jiǎn yàn fēn liǎng zhǒng: wù xìng jiǎn yàn hé wài guān jiǎn yàn.",
+    "vn": "Kiểm có hai loại: kiểm tính chất vật lý và kiểm ngoại quan."
+   },
+   {
+    "id": "kho-c5",
+    "z": "在[[布头]]、[[布中]]、[[布尾]]各剪一块，看整卷颜色一不一样。",
+    "py": "Zài bù tóu, bù zhōng, bù wěi gè jiǎn yí kuài, kàn zhěng juǎn yán sè yí bu yí yàng.",
+    "vn": "Cắt một mẫu ở đầu, giữa, cuối cây để xem màu cả cây có đều không."
+   },
+   {
+    "id": "kho-c6",
+    "z": "布块送[[检验室]]测干湿摩擦、水洗牢度、颜色，出[[品质检测报告]]。",
+    "py": "Bù kuài sòng jiǎn yàn shì cè gàn shī mó cā, shuǐ xǐ láo dù, yán sè, chū pǐn zhì jiǎn cè bào gào.",
+    "vn": "Mẫu vải gửi phòng kiểm nghiệm test ma sát khô ướt, bền màu khi giặt, màu, rồi ra báo cáo kiểm nghiệm chất lượng."
+   },
+   {
+    "id": "kho-c7",
+    "z": "外观检验上[[验布机]]，查码数、[[幅宽]]、色差和[[瑕疵]]。",
+    "py": "Wài guān jiǎn yàn shàng yàn bù jī, chá mǎ shù, fú kuān, sè chā hé xiá cī.",
+    "vn": "Kiểm ngoại quan trên máy kiểm vải: số yard, khổ, chênh lệch màu và lỗi vải."
+   },
+   {
+    "id": "kho-c8",
+    "z": "[[合格]]的进ERP，咨询组出[[验收明细表]]，再[[入库]]。",
+    "py": "Hé gé de jìn ERP, zī xún zǔ chū yàn shōu míng xì biǎo, zài rù kù.",
+    "vn": "Đạt thì nhập ERP, tổ thông tin in bảng nghiệm thu rồi nhập kho."
+   },
+   {
+    "id": "kho-c9",
+    "z": "不合格的开[[验收反应单]]，走[[特采]]；不能特采就[[退货]]。",
+    "py": "Bù hé gé de kāi yàn shōu fǎn yìng dān, zǒu tè cǎi; bù néng tè cǎi jiù tuì huò.",
+    "vn": "Không đạt thì lập phiếu phản hồi nghiệm thu, xét xử lý đặc biệt; không được thì trả hàng."
+   },
+   {
+    "id": "kho-c10",
+    "z": "[[辅料]]按AQL 1.5抽检，对着[[标准样]]核对尺码、[[条码]]和数量。",
+    "py": "Fǔ liào àn AQL 1.5 chōu jiǎn, duì zhe biāo zhǔn yàng hé duì chǐ mǎ, tiáo mǎ hé shù liàng.",
+    "vn": "Phụ liệu kiểm AQL 1.5, đối chiếu mẫu chuẩn về size, mã vạch, số lượng."
+   },
+   {
+    "id": "kho-c11",
+    "z": "裁剪拿[[领料单]]来领料，单上写多少就[[发料]]多少。",
+    "py": "Cái jiǎn ná lǐng liào dān lái lǐng liào, dān shàng xiě duō shao jiù fā liào duō shao.",
+    "vn": "Xưởng cắt mang phiếu lĩnh liệu đến; phiếu ghi bao nhiêu thì phát bấy nhiêu."
+   },
+   {
+    "id": "kho-c12",
+    "z": "要补料走[[补料单]]，单子交咨询组[[减账]]；[[盘点]]有差异走盘调申请。",
+    "py": "Yào bǔ liào zǒu bǔ liào dān, dān zi jiāo zī xún zǔ jiǎn zhàng; pán diǎn yǒu chā yì zǒu pán tiáo shēn qǐng.",
+    "vn": "Thiếu thì làm phiếu bổ sung liệu, phiếu nộp tổ thông tin trừ sổ; kiểm kê lệch thì xin điều chỉnh."
+   },
+   {
+    "id": "kho-c13",
+    "z": "白色的是[[主料合格标签]]，红色的是[[不合格标签]]，黄色的是[[特采标签]]。",
+    "py": "Bái sè de shì zhǔ liào hé gé biāo qiān, hóng sè de shì bù hé gé biāo qiān, huáng sè de shì tè cǎi biāo qiān.",
+    "vn": "Tem trắng: chủ liệu đạt; tem đỏ: không đạt; tem vàng: xử lý đặc biệt."
+   },
+   {
+    "id": "kho-c14",
+    "z": "布卷上贴[[色差标签]]A、B、C、D；[[储位]]编号像C24-3-2，是货架号-层-位置。",
+    "py": "Bù juǎn shàng tiē sè chā biāo qiān A, B, C, D; chǔ wèi biān hào xiàng C24-3-2, shì huò jià hào-céng-wèi zhì.",
+    "vn": "Cây vải dán tem cấp màu A–D; vị trí kệ dạng C24-3-2 là kệ – tầng – ô."
+   },
+   {
+    "id": "kho-c15",
+    "z": "货架分开放：[[衬布货架]]、[[进口货架]]、[[国内物料]]。",
+    "py": "Huò jià fēn kāi fàng: chèn bù huò jià, jìn kǒu huò jià, guó nèi wù liào.",
+    "vn": "Kệ chia riêng: kệ vải lót cứng, kệ hàng nhập khẩu, vật liệu trong nước."
+   }
+  ],
+  "kiemvai": [
+   {
+    "id": "kiemvai-c1",
+    "z": "布卷过[[验布机]]，验布机有[[灯箱]]、[[码数计数器]]和[[电子秤]]。",
+    "py": "Bù juǎn guò yàn bù jī, yàn bù jī yǒu dēng xiāng, mǎ shù jì shù qì hé diàn zǐ chèng.",
+    "vn": "Cây vải chạy qua máy kiểm vải; máy có hộp đèn, bộ đếm yard và cân điện tử."
+   },
+   {
+    "id": "kiemvai-c2",
+    "z": "验布机旁边贴着[[验布作业标准]]、[[主料检验标准]]和[[扣分参考样]]。",
+    "py": "Yàn bù jī páng biān tiē zhe yàn bù zuò yè biāo zhǔn, zhǔ liào jiǎn yàn biāo zhǔn hé kòu fēn cān kǎo yàng.",
+    "vn": "Cạnh máy dán tiêu chuẩn thao tác kiểm vải, tiêu chuẩn kiểm chính liệu và mẫu trừ điểm."
+   },
+   {
+    "id": "kiemvai-c3",
+    "z": "按[[四分制]]给每个[[瑕疵]]扣分，瑕疵越长扣得越多，最多扣4分。",
+    "py": "Àn sì fēn zhì gěi měi gè xiá cī kòu fēn, xiá cī yuè cháng kòu de yuè duō, zuì duō kòu 4 fēn.",
+    "vn": "Chấm điểm từng lỗi theo thang 4 điểm: lỗi càng dài trừ càng nhiều, tối đa 4 điểm."
+   },
+   {
+    "id": "kiemvai-c4",
+    "z": "扣分换算以后分A、B、C级，填[[验布检查表]]，把[[扣点等级]]写在布卷标签上。",
+    "py": "Kòu fēn huàn suàn yǐ hòu fēn A, B, C jí, tián yàn bù jiǎn chá biǎo, bǎ kòu diǎn děng jí xiě zài bù juǎn biāo qiān shàng.",
+    "vn": "Quy đổi điểm rồi xếp cấp A, B, C; ghi biểu kiểm vải và ghi cấp điểm trừ lên tem cây vải."
+   },
+   {
+    "id": "kiemvai-c5",
+    "z": "布卷按[[色差级数]]分A、B、C、D；看色的[[检验员]]要先做[[辨色测试]]。",
+    "py": "Bù juǎn àn sè chā jí shù fēn A, B, C, D; kàn sè de jiǎn yàn yuán yào xiān zuò biàn sè cè shì.",
+    "vn": "Cây vải chia cấp chênh lệch màu A–D; người xem màu phải qua test phân biệt màu trước."
+   },
+   {
+    "id": "kiemvai-c6",
+    "z": "看不见的问题，像[[色牢度]]、缩率、pH、[[甲醛]]，送[[检验室]]测。",
+    "py": "Kàn bú jiàn de wèn tí, xiàng sè láo dù, suō lǜ, pH, jiǎ quán, sòng jiǎn yàn shì cè.",
+    "vn": "Lỗi không nhìn thấy (bền màu, co rút, pH, formaldehyde) gửi phòng kiểm nghiệm."
+   },
+   {
+    "id": "kiemvai-c7",
+    "z": "门牌写着[[质量检验室]]；墙上的[[测试项目]]分四类：物性、色牢度、成品洗、甲醛。",
+    "py": "Mén pái xiě zhe zhì liàng jiǎn yàn shì; qiáng shàng de cè shì xiàng mù fēn sì lèi: wù xìng, sè láo dù, chéng pǐn xǐ, jiǎ quán.",
+    "vn": "Biển cửa ghi phòng kiểm nghiệm chất lượng; bảng mục kiểm nghiệm chia 4 nhóm: vật lý, bền màu, giặt thành phẩm, formaldehyde."
+   },
+   {
+    "id": "kiemvai-c8",
+    "z": "测黄变用[[黄化测试仪]]；测汗渍用[[烘箱]]，标签写[[汗渍牢度]]。",
+    "py": "Cè huáng biàn yòng huáng huà cè shì yí; cè hàn zì yòng hōng xiāng, biāo qiān xiě hàn zì láo dù.",
+    "vn": "Test ố vàng dùng máy test ố vàng; test mồ hôi dùng tủ sấy, nhãn ghi độ bền màu mồ hôi."
+   }
+  ],
+  "cat": [
+   {
+    "id": "cat-c1",
+    "z": "裁剪流程：布卷 → [[松布]] → [[贴合]] → [[拉布]] → [[刀模裁剪]] → [[挑片]] → [[绑片]]。",
+    "py": "Cái jiǎn liú chéng: bù juǎn → sōng bù → tiē hé → lā bù → dāo mó cái jiǎn → tiāo piàn → bǎng piàn.",
+    "vn": "Quy trình xưởng cắt: cây vải → xả vải → dán → kéo vải → chặt dao → chọn mảnh → buộc mảnh."
+   },
+   {
+    "id": "cat-c2",
+    "z": "挑片、绑片以后，每包144套，送[[绣花]]、[[印花]]、[[车缝]]。",
+    "py": "Tiāo piàn, bǎng piàn yǐ hòu, měi bāo 144 tào, sòng xiù huā, yìn huā, chē féng.",
+    "vn": "Chọn, buộc mảnh xong, mỗi bó 144 bộ, chuyển sang thêu, in, may."
+   },
+   {
+    "id": "cat-c3",
+    "z": "裁剪凭[[领料单]]去仓库[[领料]]，不说收料。",
+    "py": "Cái jiǎn píng lǐng liào dān qù cāng kù lǐng liào, bù shuō shōu liào.",
+    "vn": "Xưởng cắt cầm phiếu lĩnh liệu lên kho lĩnh vải (không nói 收料, đó là từ của kho)."
+   },
+   {
+    "id": "cat-c4",
+    "z": "布卷标签是白色的，有[[二维码]]，写着[[品号]]、[[缸号]]、色差级数。",
+    "py": "Bù juǎn biāo qiān shì bái sè de, yǒu èr wéi mǎ, xiě zhe pǐn hào, gāng hào, sè chā jí shù.",
+    "vn": "Tem cây vải màu trắng, có mã QR, ghi mã vật tư, số lô nhuộm, cấp chênh lệch màu."
+   },
+   {
+    "id": "cat-c5",
+    "z": "[[品号]]最后一个字母是颜色，比如B是黑色，W是白色。",
+    "py": "Pǐn hào zuì hòu yí gè zì mǔ shì yán sè, bǐ rú B shì hēi sè, W shì bái sè.",
+    "vn": "Chữ cái cuối của mã vật tư là màu, VD B là đen, W là trắng."
+   },
+   {
+    "id": "cat-c6",
+    "z": "看标签可以[[追溯]]：哪一卷、哪个[[缸号]]、用在哪张订单。",
+    "py": "Kàn biāo qiān kě yǐ zhuī sù: nǎ yì juǎn, nǎ ge gāng hào, yòng zài nǎ zhāng dìng dān.",
+    "vn": "Đọc tem để truy vết: cây nào, lô nhuộm nào, dùng cho đơn nào."
+   },
+   {
+    "id": "cat-c7",
+    "z": "只有[[弹性布]]才要[[松布]]，让布先[[回缩]]，裁片以后就不会再缩。",
+    "py": "Zhǐ yǒu tán xìng bù cái yào sōng bù, ràng bù xiān huí suō, cái piàn yǐ hòu jiù bú huì zài suō.",
+    "vn": "Chỉ vải co giãn mới phải xả: cho vải co trước, sau khi cắt mảnh không co nữa."
+   },
+   {
+    "id": "cat-c8",
+    "z": "裁剪前用[[贴合机]]把[[面布]]和有胶的[[衬布]]贴在一起。",
+    "py": "Cái jiǎn qián yòng tiē hé jī bǎ miàn bù hé yǒu jiāo de chèn bù tiē zài yì qǐ.",
+    "vn": "Trước khi cắt, dùng máy dán ép vải chính với lót có keo."
+   },
+   {
+    "id": "cat-c9",
+    "z": "第一片要检查贴得牢不牢；贴好的布不[[起皱]]、不[[打卷]]、不[[渗胶]]。",
+    "py": "Dì yī piàn yào jiǎn chá tiē de láo bu láo; tiē hǎo de bù bù qǐ zhòu, bù dǎ juǎn, bú shèn jiāo.",
+    "vn": "Tấm đầu tiên kiểm độ dính; vải dán xong không nhăn, không quăn mép, không thấm keo."
+   },
+   {
+    "id": "cat-c10",
+    "z": "按表把布一层一层拉好，不同[[色差级数]]的布不混在一起[[拉布]]。",
+    "py": "Àn biǎo bǎ bù yì céng yì céng lā hǎo, bù tóng sè chā jí shù de bù bú hùn zài yì qǐ lā bù.",
+    "vn": "Kéo vải từng lớp theo phiếu; vải khác cấp màu không kéo chung."
+   },
+   {
+    "id": "cat-c11",
+    "z": "表上印好的检查项：[[布边对齐]]、[[松紧]]、[[层高]]、裁剪方向，还有防霉。",
+    "py": "Biǎo shàng yìn hǎo de jiǎn chá xiàng: bù biān duì qí, sōng jǐn, céng gāo, cái jiǎn fāng xiàng, hái yǒu fáng méi.",
+    "vn": "Mục kiểm in sẵn trên phiếu: mép vải bằng, độ co giãn, độ cao lớp, hướng cắt, chống mốc."
+   },
+   {
+    "id": "cat-c12",
+    "z": "机器把[[刀模]]压下去，一次裁一整叠布，下面垫[[牛皮纸]]。",
+    "py": "Jī qì bǎ dāo mó yā xià qù, yí cì cái yì zhěng dié bù, xià miàn diàn niú pí zhǐ.",
+    "vn": "Máy ép dao chặt xuống, cắt cả chồng vải một lần, bên dưới lót giấy nâu."
+   },
+   {
+    "id": "cat-c13",
+    "z": "一套刀模有六片[[帽身]]、[[眉面]]、[[眉里]]和顶扣包布。",
+    "py": "Yí tào dāo mó yǒu liù piàn mào shēn, méi miàn, méi lǐ hé dǐng kòu bāo bù.",
+    "vn": "Một bộ dao gồm 6 mảnh thân, mặt trên và mặt dưới lưỡi trai, vải bọc nút đỉnh."
+   },
+   {
+    "id": "cat-c14",
+    "z": "[[刀模]]跟[[纸样]]比，差2毫米以上就要修；每两小时查一次，要有记录。",
+    "py": "Dāo mó gēn zhǐ yàng bǐ, chà 2 háo mǐ yǐ shàng jiù yào xiū; měi liǎng xiǎo shí chá yí cì, yào yǒu jì lù.",
+    "vn": "So dao với rập, lệch từ 2 mm trở lên phải sửa; 2 giờ kiểm dao một lần, có ghi sổ."
+   },
+   {
+    "id": "cat-c15",
+    "z": "抽上、中、下三层的[[裁片]]检查。",
+    "py": "Chōu shàng, zhōng, xià sān céng de cái piàn jiǎn chá.",
+    "vn": "Lấy mảnh ở lớp trên, giữa, dưới để kiểm."
+   },
+   {
+    "id": "cat-c16",
+    "z": "有的款要[[镭射切割]]，孔的大小看[[加工提示单]]上的[[切割孔径]]。",
+    "py": "Yǒu de kuǎn yào léi shè qiē gē, kǒng de dà xiǎo kàn jiā gōng tí shì dān shàng de qiē gē kǒng jìng.",
+    "vn": "Có mã phải cắt laser; kích thước lỗ xem đường kính lỗ cắt trên phiếu lưu ý gia công."
+   },
+   {
+    "id": "cat-c17",
+    "z": "[[挑片]]是一片一片检查，把不良的挑出来；[[绑片]]每包144套。",
+    "py": "Tiāo piàn shì yí piàn yí piàn jiǎn chá, bǎ bù liáng de tiāo chū lái; bǎng piàn měi bāo 144 tào.",
+    "vn": "Chọn mảnh là kiểm từng mảnh, loại mảnh lỗi; buộc mảnh mỗi bó 144 bộ."
+   }
+  ],
+  "mau": [
+   {
+    "id": "mau-c1",
+    "z": "大货之前：[[开发样]] → [[销售样]] → [[产前样]] → [[产前会议]]。",
+    "py": "Dà huò zhī qián: kāi fā yàng → xiāo shòu yàng → chǎn qián yàng → chǎn qián huì yì.",
+    "vn": "Trước hàng loạt: mẫu phát triển → mẫu chào hàng → mẫu trước sản xuất → họp trước sản xuất."
+   },
+   {
+    "id": "mau-c2",
+    "z": "[[确认样]]的章盖在前片上，跨两片。",
+    "py": "Què rèn yàng de zhāng gài zài qián piàn shàng, kuà liǎng piàn.",
+    "vn": "Dấu mẫu duyệt đóng ở mảnh trước, đè qua hai mảnh."
+   },
+   {
+    "id": "mau-c3",
+    "z": "VF：产前样连包装也要[[验针]]。",
+    "py": "VF: chǎn qián yàng lián bāo zhuāng yě yào yàn zhēn.",
+    "vn": "VF: mẫu trước sản xuất cả bao bì cũng phải dò kim."
+   }
+  ],
+  "theu": [
+   {
+    "id": "theu-c1",
+    "z": "有的款先在[[裁片]]上[[绣花]]再车缝，有的款车好帽子再绣。",
+    "py": "Yǒu de kuǎn xiān zài cái piàn shàng xiù huā zài chē féng, yǒu de kuǎn chē hǎo mào zi zài xiù.",
+    "vn": "Có mã thêu trên mảnh cắt rồi mới may, có mã may xong mũ mới thêu."
+   },
+   {
+    "id": "theu-c2",
+    "z": "[[首件检验]]：首件跟[[确认样]]对比位置、尺寸、密度、线的颜色。",
+    "py": "Shǒu jiàn jiǎn yàn: shǒu jiàn gēn què rèn yàng duì bǐ wèi zhì, chǐ cùn, mì dù, xiàn de yán sè.",
+    "vn": "Kiểm chiếc đầu: so với mẫu duyệt về vị trí, kích thước, mật độ, màu chỉ."
+   },
+   {
+    "id": "theu-c3",
+    "z": "常见不良：[[绣花起皱]]、[[绣花起毛]]。",
+    "py": "Cháng jiàn bù liáng: xiù huā qǐ zhòu, xiù huā qǐ máo.",
+    "vn": "Lỗi hay gặp: thêu bị nhăn, thêu bị xù lông."
+   }
+  ],
+  "in": [
+   {
+    "id": "in-c1",
+    "z": "[[印花]]有手工印和机器印，还有[[转印]]。",
+    "py": "Yìn huā yǒu shǒu gōng yìn hé jī qì yìn, hái yǒu zhuǎn yìn.",
+    "vn": "In có in tay, in máy, và in chuyển nhiệt."
+   },
+   {
+    "id": "in-c2",
+    "z": "Logo偏位：VF规定超过3毫米是[[严重缺陷]]，3毫米以内是[[轻微缺陷]]。",
+    "py": "Logo piān wèi: VF guī dìng chāo guò 3 háo mǐ shì yán zhòng quē xiàn, 3 háo mǐ yǐ nèi shì qīng wēi quē xiàn.",
+    "vn": "Logo lệch: VF quy định quá 3 mm là lỗi nặng, trong 3 mm là lỗi nhẹ."
+   },
+   {
+    "id": "in-c3",
+    "z": "常见不良：[[印花模糊]]、[[转印变形]]。",
+    "py": "Cháng jiàn bù liáng: yìn huā mó hu, zhuǎn yìn biàn xíng.",
+    "vn": "Lỗi hay gặp: in mờ, in chuyển nhiệt bị biến dạng."
+   }
+  ],
+  "giat": [
+   {
+    "id": "giat-c1",
+    "z": "只有[[水洗帽]]要洗，技术部负责。",
+    "py": "Zhǐ yǒu shuǐ xǐ mào yào xǐ, jì shù bù fù zé.",
+    "vn": "Chỉ mũ giặt mới phải giặt, phòng kỹ thuật phụ trách."
+   }
+  ],
+  "may": [
+   {
+    "id": "may-c1",
+    "z": "[[车缝]]在二楼，30道工序，分三大段：[[合片]]、[[帽檐]]、里面和后面。",
+    "py": "Chē féng zài èr lóu, 30 dào gōng xù, fēn sān dà duàn: hé piàn, mào yán, lǐ miàn hé hòu miàn.",
+    "vn": "May ở tầng 2, 30 công đoạn, chia 3 phần: ráp thân, lưỡi trai, bên trong và phía sau."
+   },
+   {
+    "id": "may-c2",
+    "z": "核对每台机器的SOP卡和机器上的数据：[[针距]]、[[缝份]]。",
+    "py": "Hé duì měi tái jī qì de SOP kǎ hé jī qì shàng de shù jù: zhēn jù, fèng fèn.",
+    "vn": "Đối chiếu thẻ SOP của từng máy với số trên máy: mũi chỉ, đường may chừa."
+   },
+   {
+    "id": "may-c3",
+    "z": "帽檐绕线均匀，没有[[断线]]、[[接线]]；左右眉角对称。",
+    "py": "Mào yán rào xiàn jūn yún, méi yǒu duàn xiàn, jiē xiàn; zuǒ yòu méi jiǎo duì chèn.",
+    "vn": "Lưỡi trai cuốn chỉ đều, không đứt chỉ, không nối chỉ; hai góc lưỡi trai đối xứng."
+   },
+   {
+    "id": "may-c4",
+    "z": "[[关键工序]]每天[[巡检]]2次，AQL 1.5。",
+    "py": "Guān jiàn gōng xù měi tiān xún jiǎn 2 cì, AQL 1.5.",
+    "vn": "Công đoạn quan trọng kiểm tuần tra 2 lần/ngày, AQL 1.5."
+   },
+   {
+    "id": "may-c5",
+    "z": "[[打顶扣]]：顶扣不松、不偏；合片线在顶上交在一个点。",
+    "py": "Dǎ dǐng kòu: dǐng kòu bù sōng, bù piān; hé piàn xiàn zài dǐng shàng jiāo zài yí gè diǎn.",
+    "vn": "Đóng nút đỉnh: nút không lỏng, không lệch; các đường ráp gặp nhau tại một điểm trên đỉnh."
+   },
+   {
+    "id": "may-c6",
+    "z": "常见车缝不良：[[跳针]]、[[浮线]]、[[车缝起皱]]、[[露线]]。",
+    "py": "Cháng jiàn chē féng bù liáng: tiào zhēn, fú xiàn, chē féng qǐ zhòu, lòu xiàn.",
+    "vn": "Lỗi may hay gặp: bỏ mũi, chỉ nổi, may nhăn, lộ chỉ."
+   }
+  ],
+  "dinhform": [
+   {
+    "id": "dinhform-c1",
+    "z": "先[[弯眉整烫]]，再在[[头模]]上用蒸汽定型。",
+    "py": "Xiān wān méi zhěng tàng, zài zài tóu mó shàng yòng zhēng qì dìng xíng.",
+    "vn": "Ép cong vành trước, rồi định form trên đầu khuôn bằng hơi nước."
+   },
+   {
+    "id": "dinhform-c2",
+    "z": "定型没做好，帽子就[[帽型不佳]]。",
+    "py": "Dìng xíng méi zuò hǎo, mào zi jiù mào xíng bù jiā.",
+    "vn": "Định form không tốt thì dáng mũ không đẹp."
+   }
+  ],
+  "qc": [
+   {
+    "id": "qc-c1",
+    "z": "定型以后，品保部2个人100%[[尾查]]成品，里外15个点。",
+    "py": "Dìng xíng yǐ hòu, pǐn bǎo bù 2 gè rén 100% wěi chá chéng pǐn, lǐ wài 15 gè diǎn.",
+    "vn": "Sau định form, 2 người của 品保部 kiểm 100% thành phẩm, 15 điểm trong ngoài."
+   },
+   {
+    "id": "qc-c2",
+    "z": "按[[六片帽检验顺序]]检查，量[[帽围]]、前高、侧高。",
+    "py": "Àn liù piàn mào jiǎn yàn shùn xù jiǎn chá, liáng mào wéi, qián gāo, cè gāo.",
+    "vn": "Kiểm theo thứ tự kiểm mũ 6 mảnh, đo vòng đầu, chiều cao trước, chiều cao hông."
+   },
+   {
+    "id": "qc-c3",
+    "z": "中片：[[双针大小边]]、[[跳针]]、[[浮线]]；汗带不能[[汗带外露]]。",
+    "py": "Zhōng piàn: shuāng zhēn dà xiǎo biān, tiào zhēn, fú xiàn; hàn dài bù néng hàn dài wài lù.",
+    "vn": "Mảnh giữa: hai đường kim lệch, bỏ mũi, chỉ nổi; dây mồ hôi không được lộ ra."
+   },
+   {
+    "id": "qc-c4",
+    "z": "不良分[[轻微缺陷]]和[[严重缺陷]]，要[[返工]]或者[[重做]]。",
+    "py": "Bù liáng fēn qīng wēi quē xiàn hé yán zhòng quē xiàn, yào fǎn gōng huò zhě chóng zuò.",
+    "vn": "Lỗi chia nhẹ và nặng; phải sửa lại hoặc làm lại."
+   }
+  ],
+  "xuat": [
+   {
+    "id": "xuat-c1",
+    "z": "[[包装]] → QA按AQL 1.5[[抽样]] → [[验针]] → 客户CFA → [[出货]]。",
+    "py": "Bāo zhuāng → QA àn AQL 1.5 chōu yàng → yàn zhēn → kè hù CFA → chū huò.",
+    "vn": "Đóng gói → QA lấy mẫu AQL 1.5 → dò kim → khách CFA → xuất hàng."
+   },
+   {
+    "id": "xuat-c2",
+    "z": "外箱标签、袋子、[[吊牌]]上的款号、颜色、尺码、UPC要一致。",
+    "py": "Wài xiāng biāo qiān, dài zi, diào pái shàng de kuǎn hào, yán sè, chǐ mǎ, UPC yào yí zhì.",
+    "vn": "Mã, màu, size, UPC trên tem thùng, túi, thẻ treo phải khớp nhau."
+   },
+   {
+    "id": "xuat-c3",
+    "z": "UA要测[[含水率]]，用[[水分测定仪]]。",
+    "py": "UA yào cè hán shuǐ lǜ, yòng shuǐ fèn cè dìng yí.",
+    "vn": "UA yêu cầu đo độ ẩm, dùng máy đo độ ẩm."
+   },
+   {
+    "id": "xuat-c4",
+    "z": "3000顶抽125顶，AQL 1.5最多5个缺陷，超过就[[拒收]]。",
+    "py": "3000 dǐng chōu 125 dǐng, AQL 1.5 zuì duō 5 gè quē xiàn, chāo guò jiù jù shōu.",
+    "vn": "3000 chiếc lấy 125 chiếc, AQL 1.5 tối đa 5 lỗi, quá thì loại lô."
+   },
+   {
+    "id": "xuat-c5",
+    "z": "客户验货看[[箱唛]]、[[装箱单]]、[[尾箱]]。",
+    "py": "Kè hù yàn huò kàn xiāng mài, zhuāng xiāng dān, wěi xiāng.",
+    "vn": "Khách kiểm hàng xem mark thùng, phiếu đóng gói, thùng lẻ cuối."
+   }
+  ]
+ },
+ "review": {
+  "date": "07/11",
+  "focus": [
+   "kho",
+   "kiemvai",
+   "cat"
+  ],
+  "stages": {
+   "kho": {
+    "ok": [
+     "Hai lưu đồ trên tường (ảnh 07/11): quy trình quản lý kho 仓库管理部 và tổ kiểm nghiệm 检验组.",
+     "Ba tổ: tổ thông tin 咨询组 (kiểm nhận 点收, in 点收明细表, trừ sổ 减账), tổ kiểm nghiệm 检验组, tổ chủ liệu 主料组 (nhập kho 入库).",
+     "Đạt 合格 → nhập ERP → 验收明细表 → nhập kho. Không đạt 不合格 → 验收反应单 → 特采 → không được thì 退货.",
+     "Phát liệu theo 领料单; thiếu thì 补料单; kiểm kê 盘点 lệch thì 盘调申请 → 盘调.",
+     "Tem trạng thái: 主料合格标签, 辅料合格标签 (trắng), 不合格标签 (đỏ), 特采标签 (vàng), tem đợi xử lý (mũi tên đỏ), 色差标签 A–D. Kệ: 衬布货架, 进口货架, 国内物料; ô kệ dạng C24-3-2."
+    ],
+    "ask": [
+     "Thời hạn kiểm 7 ngày áp cho vải hay phụ liệu (báo cáo 03/11 và W2 ghi khác nhau).",
+     "Tem vàng trên nhiều cây vải ở kệ: là 特采标签 hay tem nhà cung cấp?",
+     "特采: ai ký, “xử lý trong 6 tháng” nghĩa là gì; VF, UA có cần khách đồng ý bằng văn bản không.",
+     "领料单 có ghi cấp màu 色差级数 không; phụ liệu phát thẳng cho chuyền may hay qua xưởng cắt."
+    ],
+    "pics": [
+     "Biểu kiểm vải 验布检查表 đã điền (che số đơn).",
+     "Phiếu 验收反应单 và khu để hàng không đạt.",
+     "Tem cây vải chụp gần: đọc được 品号, 缸号, cấp màu, cấp điểm trừ.",
+     "Phiếu lĩnh liệu 领料单; tem thùng phụ liệu.",
+     "Ba mẫu vải cắt ở đầu, giữa, cuối cây gửi phòng kiểm nghiệm."
+    ]
+   },
+   "kiemvai": {
+    "ok": [
+     "Máy kiểm vải 验布机: hộp đèn, bộ đếm yard, cân; cạnh máy dán 验布作业标准, 主料检验标准, mẫu trừ điểm (ảnh 07/11).",
+     "Chấm lỗi theo 四分制, quy đổi rồi xếp A, B, C; cấp điểm trừ ghi lên tem cây vải.",
+     "Người xem màu qua test FM100 (辨色测试); cây vải chia cấp màu A–D.",
+     "Phòng kiểm nghiệm 质量检验室: 4 nhóm test (vật lý, bền màu, giặt thành phẩm, formaldehyde); máy test ố vàng; tủ sấy test mồ hôi; chứng nhận phòng thí nghiệm UA."
+    ],
+    "ask": [
+     "Mỗi lô kiểm bao nhiêu phần trăm số cây; trên 62 điểm thì 特采 hay trả hàng.",
+     "Vải cấp B, C (điểm trừ) và cấp màu D có được phát cho xưởng cắt không, ai quyết.",
+     "Test nào xưởng tự làm, test nào gửi ngoài; yêu cầu test của VF làm được những cái nào.",
+     "Máy test ố vàng: nhãn ghi 黄化测试仪, báo cáo cũ ghi 黄变测试仪; trong phòng gọi thế nào."
+    ],
+    "pics": [
+     "Tem cây vải có ô cấp điểm trừ và cấp màu (chụp gần).",
+     "Chụp gần từng tấm mẫu lỗi mặt vải để đọc tên lỗi.",
+     "Biển tên, nhãn của từng máy test trong phòng kiểm nghiệm."
+    ]
+   },
+   "cat": {
+    "ok": [
+     "13 bước theo báo cáo, ảnh 05/11 và lời chị Thắm: lĩnh vải 领料 → xả 松布 → phiếu → dán 贴合 → kéo 拉布 → chặt 刀模裁剪 → laser, máy dập nút (tùy mã) → nút đỉnh → mã lỗi → chọn, buộc 挑片、绑片 144 bộ/bó → 品保部 kiểm.",
+     "Điểm kiểm đã ghi tay: dán cài 80–180 °C, tấm đầu xé không ra mới chạy tiếp, ghi nhiệt 3 điểm hằng ngày; mục kiểm in sẵn trên phiếu kéo vải; dao lệch từ 2 mm phải sửa, 2 giờ kiểm dao một lần; lấy mảnh 3 lớp trên, giữa, dưới.",
+     "Đã bỏ vì sai: “xẻ viền” 切条, “ba-via”, “144 chiếc”, “dập”, “ép keo”."
+    ],
+    "ask": [
+     "Tên máy: ảnh 9471, máy dập nút ảnh 9494, máy làm nút đỉnh; máy laser nào cắt mảng rộng, máy nào làm chi tiết.",
+     "Chặt xong, bước lấy mảnh ra khỏi vải thừa xưởng gọi là gì.",
+     "“150” trong mã TG0M01-150 là gì; vải co giãn xả bao lâu, ai xác nhận cắt được.",
+     "品保部 kiểm gì ở xưởng cắt, lấy mẫu bao nhiêu, ghi vào biểu nào."
+    ],
+    "pics": [
+     "Tem trắng đầu cây chụp gần; biểu ghi nhiệt 3 điểm; thẻ có chữ “贴” (mã TG0M01-150).",
+     "Phiếu M-10-44-A-3 cận cảnh (mục kiểm in sẵn, chữ ký); giấy nâu lót khi chặt; sổ kiểm dao.",
+     "Một bộ mảnh cắt bày đủ: 6 mảnh thân, 眉面, 眉里, vải bọc nút đỉnh.",
+     "Biển tên máy ảnh 9471 và máy dập nút; biểu QC của 品保部; dấu QC trên phiếu."
+    ]
+   }
+  },
+  "others": "Các khâu còn lại (mẫu, thêu, in, giặt, may, ép vành, QC cuối, xuất hàng) chưa có ảnh thực tế; nội dung theo W2, SOP và báo cáo cũ. Khi xuống khâu nào: mở Sơ đồ khâu đó, chụp theo các ô ảnh, hỏi các câu bên dưới, làm bài điền từ của khâu."
+ },
+ "pymap": {
+  "仓库管理部": "cāng kù guǎn lǐ bù",
+  "仓库管理部工作流程图": "cāng kù guǎn lǐ bù gōng zuò liú chéng tú",
+  "创可激光": "chuàng kě jī guāng",
+  "帽零件": "mào líng jiàn",
+  "检验组工作流程图": "jiǎn yàn zǔ gōng zuò liú chéng tú",
+  "白": "bái",
+  "线货架": "xiàn huò jià",
+  "调整带": "tiáo zhěng dài",
+  "贴": "tiē",
+  "超级打标机": "chāo jí dǎ biāo jī",
+  "黑": "hēi"
  }
 }

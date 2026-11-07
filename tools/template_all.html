@@ -44,6 +44,30 @@ body.no-vn .vnt{display:none}
 body.no-zh .zht{display:none}
 /* sơ đồ */
 .catlog p{margin:8px 0;font-size:14px}.catlog .cl-bars{display:grid;grid-template-columns:1fr 1fr;gap:12px}.catlog .cl-bars>div{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px}.catlog .cl-bars .hint{grid-column:1/-1}.catlog .prog{height:8px;background:#eee9df;border-radius:99px;overflow:hidden}.catlog .prog i{display:block;height:100%;background:var(--due)}
+.clz{margin:10px 0}.clz .nw{white-space:nowrap}
+.clz-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.clz-h b{flex:1 1 auto;font-size:15px}
+.clz-vn{font-size:14px;color:var(--ink2);margin:6px 0 2px}
+.clz-s{font-size:20px;line-height:2.15;margin:4px 0}
+.clz-b{font:inherit;font-size:19px;min-width:3em;padding:0 8px;margin:0 3px;border:0;border-bottom:2px solid #b08a4a;background:#fff4dc;border-radius:7px 7px 0 0;color:var(--ink);cursor:pointer;line-height:1.5}
+.clz-b.sel{outline:2px solid #8a5a00;outline-offset:1px}.clz-b .ph{color:#b08a4a;font-size:13px}
+.clz-b.ok{background:#e3f3e8;border-color:var(--due)}.clz-b.bad{background:#fbe5e3;border-color:var(--q)}
+.clz-bank{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+.clz-w{font-size:17px;padding:6px 11px;border:1px solid #d9cbb0;border-radius:9px;background:var(--card);cursor:pointer}
+.clz-w:disabled{opacity:.35;cursor:default}
+.clz-a{display:flex;gap:6px;justify-content:space-between;margin-top:6px}.clz-a .ib:disabled{opacity:.45}
+.clz-r{border-top:1px dashed var(--line);margin-top:8px;padding-top:6px}.clz-r .z{font-size:17px}.clz-r .p{color:#8a5a00;font-style:italic;font-size:14px}
+.clz-msg{font-weight:600}.clz-msg.ok{color:var(--due)}.clz-msg.bad{color:var(--q)}
+.ib.sm{padding:4px 9px;font-size:13px}
+#clzPick button small{opacity:.7;margin-left:4px}
+.rv summary{cursor:pointer;list-style:none}.rv summary::-webkit-details-marker{display:none}
+.rv-sum{font-size:14px;margin:8px 0}.rv-tw{overflow-x:auto}
+.rv-t{border-collapse:collapse;width:100%;font-size:13px}.rv-t th,.rv-t td{padding:5px 4px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}.rv-t td:first-child,.rv-t th:first-child{text-align:left}
+.rv-t .dot{display:inline-block;width:18px;height:18px;border-radius:50%;color:#fff;font-size:11px;line-height:18px;text-align:center}
+.rv-t tr.rv-f td{background:#fffaf0}.rv-t td.rv-0{color:var(--ink2)}.rv-tag{font-size:11px;background:#e3f3e8;color:var(--due);border-radius:6px;padding:1px 5px}
+.rv-st{border-left:4px solid var(--c);padding:2px 0 2px 10px;margin:14px 0}.rv-st h3{font-size:16px;margin:0 0 6px}.rv-st h3 .dot{display:inline-block;width:22px;height:22px;border-radius:50%;color:#fff;font-size:12px;line-height:22px;text-align:center}
+.rv-g{margin:6px 0}.rv-g>b{font-size:13.5px}.rv-g ul{margin:2px 0 0;padding-left:18px;font-size:14px}.rv-g li{margin:2px 0}
+.rv-g.ok>b{color:var(--due)}.rv-g.ask>b{color:var(--q)}.rv-g.pic>b{color:#8a5a00}
+.ip{font-size:.9em;color:#8a5a00}.rv-n{font-size:13.5px;margin-top:6px}
 .radial{display:block;width:100%;max-width:420px;margin:8px auto 0}
 .radial .c1{fill:#fff;font:700 14px var(--font)} .radial .c2{fill:#fff;font:600 13px var(--font);opacity:.85}
 .radial .n1{fill:#fff;font:700 11.5px var(--font)} .radial .n2{fill:#fff;font:500 11px var(--font);opacity:.9}
@@ -341,7 +365,11 @@ __WORLDCSS__
 <section class="view" id="v-hoc-the">
   <div id="fHome">
     <div class="savenote" id="saveNote" hidden></div>
-    <h2 style="margin-top:12px">Sổ ghi nhớ từ</h2>
+    <h2 style="margin-top:12px">Điền từ theo quy trình · 选词填空</h2>
+    <p class="hint" style="margin-top:0">Câu tiếng Trung về quy trình từng khâu, để trống từ trọng tâm. Bấm ô trống rồi chọn từ bên dưới, xong bấm <b>Kiểm tra</b>. Kho, kiểm vải và xưởng cắt có nhiều câu nhất (đã có ảnh); các khâu khác theo quy trình tổng. Mỗi khâu trong Xưởng 3D và Sơ đồ cũng có ô này.</p>
+    <div class="seg" id="clzPick"></div>
+    <div id="clzHere"></div>
+    <h2>Sổ ghi nhớ từ</h2>
     <div class="mem" id="memTabs">
       <button data-m="new"><b id="mNew">0</b><span>Chưa học</span></button>
       <button data-m="learn"><b id="mLearn" class="cl">0</b><span>Đang học</span></button>
@@ -419,8 +447,9 @@ __WORLDCSS__
     <button class="tg" data-t="py" aria-pressed="true">Pinyin</button>
     <button class="tg" data-t="vn" aria-pressed="true">Tiếng Việt</button>
   </div>
-  <div class="qsum"><div><b id="qsTotal">0</b><span class="hint">câu cần hỏi</span></div><div><b id="qsDone" style="color:var(--due)">0</b><span class="hint">đã hỏi</span></div><div><b id="qsPics">0</b><span class="hint">ảnh cần chụp</span></div></div>
-  <div class="seg" id="qsFilter"><button data-f="todo" class="on">Chưa hỏi</button><button data-f="done">Đã hỏi</button><button data-f="all">Tất cả</button><button data-f="pics">Ảnh cần chụp</button></div>
+  <details class="card rv" id="rvBox" open><summary><b>Rà soát toàn bộ quy trình · <span id="rvDate"></span></b> <span class="hint">bấm để thu gọn</span></summary><div id="rvBody"></div></details>
+  <div class="qsum"><div><b id="qsTotal">0</b><span class="hint">câu cần hỏi</span></div><div><b id="qsDone" style="color:var(--due)">0</b><span class="hint">đã hỏi</span></div><div><b id="qsPics">0</b><span class="hint">ảnh còn thiếu</span></div></div>
+  <div class="seg" id="qsFilter"><button data-f="todo" class="on">Chưa hỏi</button><button data-f="done">Đã hỏi</button><button data-f="all">Tất cả</button><button data-f="pics">Ảnh còn thiếu</button></div>
   <div id="qsList"></div>
   <h2>Gửi câu trả lời để cập nhật file</h2>
   <div class="card">
@@ -505,14 +534,14 @@ const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.ra
 // Khi mở trên Claude (artifact), tiến độ lưu ở data/users/<id>/srs — cùng chỗ với bản "Thẻ từ xưởng" cũ, nên từ đã học trước vẫn còn.
 const LS = 'weili_hoc_v2', LS_OLD = 'weili_flash_v1';
 const APP_URL = 'https://claude.ai/artifact/2GAWz8bbKBbSm7Nzmw78kE';
-function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true, en:true}, daily:{d:'', n:0, extra:0}, quiz:[], answers:{}}; }
+function blank(){ return {v:2, updated:0, cards:{}, marks:{}, settings:{newPerDay:20, listen:true, speak:true, tts:true, frontPy:false, py:true, vn:true, zh:true, en:true}, daily:{d:'', n:0, extra:0}, quiz:[], answers:{}, clz:{}}; }
 function normalize(o){
   const b = blank(); if(!o || typeof o !== 'object') return b;
   if(o.v === 1){ const st = o.settings || {};   // bản "Thẻ từ xưởng" cũ
     return Object.assign(b, {updated:o.updated||0, cards:o.cards||{}, marks:o.marks||{}, daily:Object.assign(b.daily, o.daily||{}),
       settings:Object.assign(b.settings, {newPerDay:st.newPerDay||20, tts:st.tts!==false})}); }
   if(o.v !== 2) return b;
-  return {v:2, updated:o.updated||0, cards:o.cards||{}, marks:o.marks||{}, settings:Object.assign(b.settings,o.settings||{}), daily:Object.assign(b.daily,o.daily||{}), quiz:o.quiz||[], answers:o.answers||{}};
+  return {v:2, updated:o.updated||0, cards:o.cards||{}, marks:o.marks||{}, settings:Object.assign(b.settings,o.settings||{}), daily:Object.assign(b.daily,o.daily||{}), quiz:o.quiz||[], answers:o.answers||{}, clz:o.clz||{}};
 }
 const isEmpty = o => !o.updated && !Object.keys(o.cards).length && !Object.keys(o.answers).length;
 function mergeState(a, b){
@@ -525,6 +554,8 @@ function mergeState(a, b){
   for(const k in nw.cards){ const x = m.cards[k], y = nw.cards[k]; if(!x || (y.last||0) >= (x.last||0)) m.cards[k] = y; }
   m.answers = Object.assign({}, od.answers);
   for(const k in nw.answers){ const x = m.answers[k], y = nw.answers[k]; if(!x || (y.t||0) >= (x.t||0)) m.answers[k] = y; }
+  m.clz = Object.assign({}, od.clz);
+  for(const k in (nw.clz||{})){ const x = m.clz[k], y = nw.clz[k]; if(!x || (y.t||0) >= (x.t||0)) m.clz[k] = y; }
   m.daily = a.daily.d === b.daily.d ? {d:a.daily.d, n:Math.max(a.daily.n||0, b.daily.n||0), extra:Math.max(a.daily.extra||0, b.daily.extra||0)} : Object.assign({}, nw.daily);
   const seen = new Set(); m.quiz = od.quiz.concat(nw.quiz).filter(q => { const k = JSON.stringify(q); if(seen.has(k)) return false; seen.add(k); return true; }).slice(-50);
   return m;
@@ -712,7 +743,7 @@ let PHDB = null, ASSETS = null;
     const [db, assets] = await Promise.all([window.claude.use('db'), window.claude.use('assets')]);
     ASSETS = assets || null; if(!db) return;
     PHDB = db.collection('photos');
-    PHDB.onSnapshot(snap => { const m = {}; snap.docs.forEach(d => { const v = d.data(); if(v && v.url) m[d.id] = v; }); PH.acct = m; loadLocalPicsIn(document); refreshBoards(); }, () => {});
+    PHDB.onSnapshot(snap => { const m = {}; snap.docs.forEach(d => { const v = d.data(); if(v && v.url) m[d.id] = v; }); PH.acct = m; loadLocalPicsIn(document); refreshBoards(); if($('v-can-hoi').classList.contains('on')) renderQs(); }, () => {});
   } catch(e) {}
 })();
 function dataUrlToBlob(u){ const [h, b] = u.split(','), mime = (h.match(/data:([^;]+)/) || [])[1] || 'image/jpeg', bin = atob(b), a = new Uint8Array(bin.length); for(let i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return new Blob([a], {type: mime}); }
@@ -783,18 +814,52 @@ function updCatProg(){
     set('clQBar', 'clQ', qd, qs.length); set('clPBar', 'clP', pd, ps.length);
   } catch(e) {}
 }
-function updQsum(){ updCatProg();  $('qsTotal').textContent = ALLQ.length; $('qsDone').textContent = ALLQ.filter(o => ans(o.id).done).length; $('qsPics').textContent = ST.reduce((n, s) => n + s.steps.reduce((m, x) => m + (x.pics||[]).length, 0), 0); }
+function updQsum(){ updCatProg();  $('qsTotal').textContent = ALLQ.length; $('qsDone').textContent = ALLQ.filter(o => ans(o.id).done).length; $('qsPics').textContent = ALLSLOTS.filter(o => !photoOf(o.id)).length; }
+// ---------- rà soát toàn bộ quy trình (tab Cần hỏi) ----------
+const RV = DATA.review || {stages:{}, focus:[]};
+function annoZh(t){   // chữ Hán trong câu tiếng Việt: kèm pinyin nếu là từ trong bảng
+  const PYM = DATA.pymap || {};
+  return esc(t).replace(/[㐀-鿿]+/g, m => { const py = TI[m] ? TI[m].py : PYM[m]; return py ? `<span lang="zh">${m}</span><span class="py ip"> (${esc(py)})</span>` : `<span lang="zh">${m}</span>`; });
+}
+function rvStats(sid){
+  const qs = ALLQ.filter(o => o.s.id === sid), ps = ALLSLOTS.filter(o => o.sid === sid);
+  return {steps: STI[sid].steps.length, q: qs.length, qd: qs.filter(o => ans(o.id).done).length, p: ps.length, pd: ps.filter(o => photoOf(o.id)).length,
+    w: TERMS.filter(t => t.st === sid && !t.ok), c: (CLZ[sid] || []).length, cd: clzDone(sid)};
+}
+function renderReview(){
+  const body = $('rvBody'); if(!body) return;
+  $('rvDate').textContent = RV.date || '';
+  const rows = ST.map(s => { const k = rvStats(s.id), f = RV.focus.includes(s.id);
+    return `<tr class="${f ? 'rv-f' : ''}"><td><span class="dot" style="background:${s.color}">${s.n}</span> ${esc(s.short || s.vn)}${f ? ' <span class="rv-tag">có ảnh</span>' : ''}</td><td>${k.steps}</td><td>${k.qd}/${k.q}</td><td class="${k.pd ? '' : 'rv-0'}">${k.pd}/${k.p}</td><td>${k.w.length || '–'}</td><td>${k.cd}/${k.c}</td></tr>`; }).join('');
+  const tot = ST.reduce((a, s) => { const k = rvStats(s.id); a.q += k.q; a.qd += k.qd; a.p += k.p; a.pd += k.pd; a.w += k.w.length; return a; }, {q:0, qd:0, p:0, pd:0, w:0});
+  const li = a => `<ul>${a.map(x => `<li>${annoZh(x)}</li>`).join('')}</ul>`;
+  const focus = RV.focus.map(id => { const s = STI[id], r = RV.stages[id] || {}, k = rvStats(id);
+    return `<div class="rv-st" style="--c:${s.color}"><h3><span class="dot" style="background:${s.color}">${s.n}</span> ${esc(s.vn)} <span lang="zh">${esc(s.zh)}</span> <span class="py">${esc(s.py)}</span></h3>
+      <div class="rv-g ok"><b>Đã chắc</b>${li(r.ok || [])}</div>
+      <div class="rv-g ask"><b>Cần làm rõ trước</b>${li(r.ask || [])}</div>
+      <div class="rv-g pic"><b>Ảnh cần chụp trước</b>${li(r.pics || [])}</div>
+      ${k.w.length ? `<div class="rv-g"><b>Từ chưa xác nhận (chưa dùng khi viết gửi sếp)</b><div class="chips">${k.w.map(t => chip(t.zh)).join('')}</div></div>` : ''}
+      <div class="rv-n">Còn <b>${k.q - k.qd}</b> câu chưa hỏi, thiếu <b>${k.p - k.pd}</b> ảnh. <button class="ib sm" data-rvgo="${id}" data-f="todo">Xem câu hỏi</button> <button class="ib sm" data-rvgo="${id}" data-f="pics">Xem ảnh thiếu</button></div></div>`; }).join('');
+  body.innerHTML = `<div class="rv-sum">Toàn bộ: <b>${ST.length}</b> khâu, <b>${ST.reduce((n, s) => n + s.steps.length, 0)}</b> bước · đã hỏi <b>${tot.qd}/${tot.q}</b> câu · có <b>${tot.pd}/${tot.p}</b> ảnh · <b>${tot.w}</b> từ chưa xác nhận</div>
+    <div class="rv-tw"><table class="rv-t"><thead><tr><th>Khâu</th><th>Bước</th><th>Hỏi</th><th>Ảnh</th><th>Từ ?</th><th>Điền</th></tr></thead><tbody>${rows}</tbody></table></div>
+    ${focus}<p class="hint" style="margin-bottom:0">${esc(RV.others || '')}</p>`;
+}
+let rvSid = null;
+document.addEventListener('click', e => { const b = e.target.closest('[data-rvgo]'); if(!b) return;
+  rvSid = b.dataset.rvgo; qsF = b.dataset.f; document.querySelectorAll('#qsFilter button').forEach(x => x.classList.toggle('on', x.dataset.f === qsF)); renderQs();
+  const h = document.querySelector(`#qsList [data-qst="${rvSid}"]`); if(h) h.scrollIntoView({behavior:'smooth', block:'start'}); });
+
 function renderQs(){
-  updQsum();
+  updQsum(); renderReview();
   let html = '';
   for(const s of ST){
     let inner = '';
     s.steps.forEach((x, si) => {
-      if(qsF === 'pics'){ if((x.pics||[]).length) inner += `<div class="qstep">${esc(x.t)}</div><ul style="margin:0 0 4px;padding-left:20px">${x.pics.map((c, k) => `<li style="font-size:14px">${photoOf(slotId(s, si, k)) ? '✅ ' : ''}${esc(c)} <span class="pfile" style="padding:0">img/${slotId(s, si, k)}.jpg</span></li>`).join('')}</ul>`; return; }
+      if(qsF === 'pics'){ const miss = (x.pics||[]).map((c, k) => ({c, id: slotId(s, si, k)})).filter(o => !photoOf(o.id)); if(miss.length) inner += `<div class="qstep">${esc(x.t)}</div><ul style="margin:0 0 4px;padding-left:20px">${miss.map(o => `<li style="font-size:14px">${annoZh(o.c)} <span class="pfile" style="padding:0">${o.id}</span></li>`).join('')}</ul>`; return; }
       const items = (x.qs||[]).map((q, k) => ({id:qId(s, si, k), q})).filter(o => qsF === 'all' || (qsF === 'done') === !!ans(o.id).done);
       if(items.length) inner += `<div class="qstep">${esc(x.t)}</div><div class="qs" style="margin-top:2px"><ol>${items.map(o => qItem(o.id, o.q)).join('')}</ol></div>`;
     });
-    if(inner) html += `<div class="qstage"><span class="dot" style="background:${s.color}">${s.n}</span>${esc(s.vn)} <span class="hint" lang="zh">${esc(s.zh)}</span></div>${inner}`;
+    if(inner) html += `<div class="qstage" data-qst="${s.id}"><span class="dot" style="background:${s.color}">${s.n}</span>${esc(s.vn)} <span class="hint" lang="zh">${esc(s.zh)}</span></div>${inner}`;
   }
   $('qsList').innerHTML = html || '<p class="hint">Không có mục nào.</p>';
 }
@@ -808,6 +873,72 @@ function exportAnswers(){
 $('qsCopy').onclick = async () => { const t = exportAnswers(); $('qsOut').value = t || ''; if(!t){ $('qsMsg').textContent = 'Chưa có câu nào đã hỏi hoặc có câu trả lời.'; return; }
   try { await navigator.clipboard.writeText(t); $('qsMsg').textContent = 'Đã chép. Dán vào chat để cập nhật file.'; } catch(e){ $('qsOut').select(); $('qsMsg').textContent = 'Không chép tự động được: chọn chữ trong ô rồi chép.'; } };
 
+// ---------- điền từ (选词填空) ----------
+const CLZ = DATA.cloze || {};
+const clzParts = z => z.split(/\[\[(.+?)\]\]/);            // phần lẻ là chỗ trống
+const clzAns = it => clzParts(it.z).filter((_, k) => k % 2);
+const clzPlain = it => it.z.replace(/\[\[|\]\]/g, '');
+const clzRec = id => (S.clz || {})[id] || null;
+function clzRnd(str){ let h = 2166136261; for(const ch of str){ h ^= ch.codePointAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return (h >>> 0) / 4294967296; }; }
+function clzBank(sid, it){
+  const ans = clzAns(it), r = clzRnd(it.id);
+  const pool = [...new Set((CLZ[sid] || []).flatMap(clzAns))].filter(w => !ans.includes(w)), dis = [];
+  while(pool.length && dis.length < 2) dis.push(pool.splice(Math.floor(r() * pool.length), 1)[0]);
+  const b = ans.concat(dis); for(let i = b.length - 1; i > 0; i--){ const j = Math.floor(r() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b;
+}
+const clzBox = (sid, cls) => (CLZ[sid] && CLZ[sid].length) ? `<div class="clz ${cls || ''}" data-clz="${sid}"></div>` : '';
+const clzDone = sid => (CLZ[sid] || []).filter(x => (clzRec(x.id) || {}).last === 1).length;
+function clzStart(sid){ const i = (CLZ[sid] || []).findIndex(x => (clzRec(x.id) || {}).last !== 1); return i < 0 ? 0 : i; }
+function clzMount(root){ (root || document).querySelectorAll('[data-clz]').forEach(el => { if(el._c && el._c.sid === el.dataset.clz) return; el._c = {sid: el.dataset.clz, i: clzStart(el.dataset.clz), fill: [], sel: 0, res: null, shown: false, order: null}; clzDraw(el); }); }
+function clzCur(c){ const L = CLZ[c.sid], ord = c.order || L.map((_, k) => k); return L[ord[c.i]]; }
+function clzDraw(el){
+  const c = el._c, L = CLZ[c.sid] || []; if(!L.length) return;
+  const it = clzCur(c), parts = clzParts(it.z), ans = clzAns(it), bank = clzBank(c.sid, it), used = c.fill.filter(Boolean);
+  let b = -1;
+  const sent = parts.map((p, k) => { if(k % 2 === 0) return esc(p); b++; const f = c.fill[b];
+    const st = c.res ? (c.res[b] ? ' ok' : ' bad') : (b === c.sel ? ' sel' : '');
+    let tail = ''; if(k + 1 < parts.length && /^[，。；：、）)！？]/.test(parts[k + 1])){ tail = parts[k + 1][0]; parts[k + 1] = parts[k + 1].slice(1); }   // dấu câu không tách khỏi ô trống
+    return `<span class="nw"><button class="clz-b${st}" data-clzb="${b}" lang="zh" aria-label="Ô trống ${b + 1}">${f ? esc(f) : `<span class="ph">${b + 1}</span>`}</button>${esc(tail)}</span>`; }).join('');
+  const full = ans.every((_, k) => c.fill[k]), right = c.res && c.res.every(Boolean);
+  el.innerHTML = `<div class="clz-h"><b>Điền từ · 选词填空</b><span class="hint">Câu ${c.i + 1}/${L.length} · đã đúng ${clzDone(c.sid)}</span><button class="ib sm" data-clzmix>${c.order ? 'Theo thứ tự' : 'Trộn câu'}</button></div>
+    <div class="clz-vn vnt">${esc(it.vn)}</div>
+    <div class="clz-s" lang="zh">${sent}</div>
+    <div class="clz-bank">${bank.map(w => `<button class="clz-w" data-clzw="${esc(w)}" lang="zh"${used.includes(w) || c.res ? ' disabled' : ''}>${esc(w)}</button>`).join('')}</div>
+    ${c.res ? `<div class="clz-r"><div class="clz-msg ${right && !c.shown ? 'ok' : 'bad'}">${c.shown ? 'Đáp án:' : right ? 'Đúng hết.' : 'Chưa đúng. Câu đúng:'}</div>
+      <div class="z" lang="zh">${esc(clzPlain(it))} <button class="say" data-say="${esc(clzPlain(it))}" aria-label="Nghe">🔊</button></div><div class="p">${esc(it.py)}</div>
+      <div class="chips">${ans.map(w => chip(w)).join('')}</div></div>` : ''}
+    <div class="clz-a"><button class="ib" data-clznav="-1" aria-label="Câu trước">◀</button>
+      ${c.res ? '<button class="ib" data-clzagain>Làm lại</button>' : `<button class="ib" data-clzshow>Xem đáp án</button><button class="ib pri" data-clzchk${full ? '' : ' disabled'}>Kiểm tra</button>`}
+      <button class="ib" data-clznav="1" aria-label="Câu sau">▶</button></div>`;
+}
+function clzRecord(it, ok){ S.clz = S.clz || {}; const o = S.clz[it.id] || {n: 0, ok: 0}; S.clz[it.id] = {n: o.n + 1, ok: o.ok + (ok ? 1 : 0), last: ok ? 1 : 0, t: Date.now()}; save(); }
+function clzReset(c){ c.fill = []; c.res = null; c.shown = false; c.sel = 0; }
+document.addEventListener('click', e => {
+  const t = e.target.closest('button'); if(!t) return;
+  const el = t.closest('[data-clz]'); if(!el || !el._c) return;
+  const c = el._c, L = CLZ[c.sid], it = clzCur(c), ans = clzAns(it);
+  if(t.hasAttribute('data-clzb')){ if(c.res) return; const k = +t.dataset.clzb; if(c.fill[k]) c.fill[k] = null; c.sel = k; }
+  else if(t.hasAttribute('data-clzw')){ if(c.res) return; let k = c.fill[c.sel] ? ans.findIndex((_, j) => !c.fill[j]) : c.sel; if(k < 0) return;
+    c.fill[k] = t.dataset.clzw; const nx = ans.findIndex((_, j) => !c.fill[j]); c.sel = nx < 0 ? k : nx; }
+  else if(t.hasAttribute('data-clzchk')){ c.res = ans.map((a, k) => c.fill[k] === a); clzRecord(it, c.res.every(Boolean)); }
+  else if(t.hasAttribute('data-clzshow')){ c.fill = ans.slice(); c.res = ans.map(() => true); c.shown = true; clzRecord(it, false); }
+  else if(t.hasAttribute('data-clzagain')) clzReset(c);
+  else if(t.hasAttribute('data-clznav')){ c.i = (c.i + (+t.dataset.clznav) + L.length) % L.length; clzReset(c); }
+  else if(t.hasAttribute('data-clzmix')){ c.order = c.order ? null : shuffle(L.map((_, k) => k)); c.i = 0; clzReset(c); }
+  else return;
+  clzDraw(el);
+  if(t.hasAttribute('data-clzchk') || t.hasAttribute('data-clzshow')) renderClzPick();
+});
+const CLZ_ORDER = ['kho', 'kiemvai', 'cat'].concat(ST.map(s => s.id).filter(id => !['kho', 'kiemvai', 'cat'].includes(id))).filter(id => CLZ[id] && CLZ[id].length);
+let clzSid = null;
+function renderClzPick(){
+  const pk = $('clzPick'); if(!pk) return;
+  if(!clzSid) clzSid = CLZ_ORDER.find(id => clzDone(id) < CLZ[id].length) || CLZ_ORDER[0];
+  pk.innerHTML = CLZ_ORDER.map(id => `<button data-clzpick="${id}" class="${id === clzSid ? 'on' : ''}">${esc(STI[id].short || STI[id].vn)}<small>${clzDone(id)}/${CLZ[id].length}</small></button>`).join('');
+  const h = $('clzHere'); if(h && (!h.firstElementChild || h.firstElementChild.dataset.clz !== clzSid)){ h.innerHTML = clzBox(clzSid, 'card'); clzMount(h); }
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-clzpick]'); if(!b) return; clzSid = b.dataset.clzpick; renderClzPick(); });
+
 const askBox = a => `<div class="ask"><b>Câu hỏi mẫu</b><div class="zh" lang="zh">${esc(a[0])}</div><div class="py">${esc(a[1])}</div><div class="vnt">${esc(a[2])}</div></div>`;
 const zhb = (z, p) => z ? `<div class="zhb zht"><div class="z" lang="zh">${esc(z)}</div>${p?`<div class="p">${esc(p)}</div>`:''}</div>` : '';
 $('qa').innerHTML = DATA.qa.map(x => `<div class="c"><p class="q">${esc(x.q)}</p><div><span class="big" lang="zh">${esc(x.zh)}</span><span class="py">${esc(x.py)}</span></div><p class="a">${esc(x.a)}</p><a href="#so-do" data-open="${x.go}">Xem trong sơ đồ →</a></div>`).join('');
@@ -820,7 +951,7 @@ $('stages').innerHTML = ST.map(s => `
         <div class="st-whatz zht"><span lang="zh">${esc(s.whatz)}</span><div class="p">${esc(s.whatpy)}</div></div>
         <div class="who"><b>Ai kiểm · 谁检查:</b> <span class="vnt">${esc(s.who)} · </span><span class="zht" lang="zh">${esc(s.whoz)}</span> <span class="p">${esc(s.whopy)}</span></div></span>
       <span class="chev" aria-hidden="true">▶</span></summary>
-    <div class="tree">${s.steps.map((x, si) => `
+    <div class="tree">${clzBox(s.id, 'card')}${s.steps.map((x, si) => `
       <div class="step${x.hot?' hot':''}">
         <div class="step-t"><span class="vnt">${esc(x.t)}</span>${x.new ? `<span class="newb">Mới ${ddmm(x.new + 'T12:00:00')}</span>` : ''}<span class="step-tz zht"><span lang="zh">${esc(x.tz)}</span><span class="p">${esc(x.tpy)}</span></span></div>
         ${x.d?`<div class="step-d vnt">${esc(x.d)}</div>`:''}
@@ -835,6 +966,7 @@ function openStage(id){ const el = $('st-'+id); if(!el) return; el.open = true; 
 document.querySelectorAll('.radial .node').forEach(g => { g.addEventListener('click', () => openStage(g.dataset.go)); g.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openStage(g.dataset.go); } }); });
 document.querySelectorAll('[data-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openStage(a.dataset.open); }));
 $('tAll').onclick = () => { const b = $('tAll'), on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); b.textContent = on ? 'Thu gọn' : 'Mở hết'; document.querySelectorAll('.stage').forEach(d => d.open = on); };
+clzMount($('stages'));
 $('st-cat').open = true; $('st-kiemvai').open = true; updCatProg();
 
 // ========== TỪ VỰNG ==========
@@ -1081,7 +1213,7 @@ function showView(v){
   document.querySelectorAll('.view').forEach(x => x.classList.toggle('on', x.id==='v-'+v));
   document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.dataset.v===v));
   if(v==='tu-vung') renderVocab();
-  if(v==='hoc-the'){ $('fStudy').hidden = true; $('fHome').hidden = false; renderSet(); renderDecks(); }
+  if(v==='hoc-the'){ $('fStudy').hidden = true; $('fHome').hidden = false; renderSet(); renderDecks(); renderClzPick(); }
   if(v==='trac-nghiem'){ $('qRun').hidden = true; $('qSetup').hidden = false; renderHist(); }
   if(v==='can-hoi') renderQs();
   closeSheet();
