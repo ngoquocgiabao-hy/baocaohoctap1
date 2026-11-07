@@ -173,6 +173,9 @@ DATA["sim"] = {
     "lab": {k: [v[0], v[1], v[2], to_py(v[1])] for k, v in SIMD.LAB.items()},
 }
 
+import tham_0511
+tham_0511.apply(DATA)
+
 safe = lambda o: json.dumps(o, ensure_ascii=False).replace("</", "<\\/")
 CAP = open(os.path.join(HERE, "cap_6manh.html"), encoding="utf-8").read()
 TEMPLATE = open(os.path.join(HERE, "template_all.html"), encoding="utf-8").read()

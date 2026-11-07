@@ -43,6 +43,7 @@ body.no-py .p:not(.keep), body.no-py .py:not(.keep){display:none}
 body.no-vn .vnt{display:none}
 body.no-zh .zht{display:none}
 /* sơ đồ */
+.catlog p{margin:8px 0;font-size:14px}.catlog .cl-bars{display:grid;grid-template-columns:1fr 1fr;gap:12px}.catlog .cl-bars>div{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px}.catlog .cl-bars .hint{grid-column:1/-1}.catlog .prog{height:8px;background:#eee9df;border-radius:99px;overflow:hidden}.catlog .prog i{display:block;height:100%;background:var(--due)}
 .radial{display:block;width:100%;max-width:420px;margin:8px auto 0}
 .radial .c1{fill:#fff;font:700 14px var(--font)} .radial .c2{fill:#fff;font:600 13px var(--font);opacity:.85}
 .radial .n1{fill:#fff;font:700 11.5px var(--font)} .radial .n2{fill:#fff;font:500 11px var(--font);opacity:.9}
@@ -291,6 +292,19 @@ __WORLDCSS__
     <p>Gọi là <b>品保部</b>, không gọi 品质部. Khâu có dấu <b style="color:var(--q)">保</b> là chỗ phòng mình có việc: <b>0 Mẫu, họp PPM</b> (CFT duyệt mẫu), <b>3 Xưởng cắt</b>, <b>5 In</b> (kiểm thêm), <b>9 QC cuối chuyền</b>, <b>10 QA, dò kim</b>. Phòng còn làm CFA và tiếp khách đến kiểm.</p>
   </div>
   <p class="hint">Thuật ngữ lấy từ bảng W6, biểu mẫu xưởng và báo cáo đã nộp (quy định W7). Câu tiếng Trung nối thuật ngữ là bản dịch để tự học; câu nào gửi sếp thì đọc lại trước. Từ viền đứt có dấu <b style="color:var(--q)">?</b> là từ chưa đối chiếu.</p>
+  <h2>Xưởng cắt · tiến độ 05/11</h2>
+  <div class="card catlog">
+    <div class="cl-bars">
+      <div><span class="hint">Câu đã hỏi</span><div class="prog"><i id="clQBar" style="width:0"></i></div><b id="clQ">0/0</b></div>
+      <div><span class="hint">Ảnh đã có</span><div class="prog"><i id="clPBar" style="width:0"></i></div><b id="clP">0/0</b></div>
+    </div>
+    <p><b>Đã nắm (theo SOP, biểu mẫu):</b> lĩnh vải theo phiếu lĩnh liệu 领料 → xả vải 松布 (vải co giãn) → dán 贴合 → kéo vải 拉布 → chặt 刀模 → chọn, buộc mảnh 挑片、绑片, 144 bộ/bó, thẻ quy trình A đi theo bó.</p>
+    <p><b>Đã sửa sau khi chị Thắm hỏi (05/11):</b> bỏ “xẻ viền” (xưởng cắt không có công đoạn này); “bỏ ba-via” → chọn mảnh 挑片; “144 chiếc” → 144 bộ; “trải vải” → kéo vải; “dập” → chặt; “ép keo” → dán. Bài học: chỉ ghi từ nghe ở xưởng hoặc in trên biểu mẫu.</p>
+    <p><b>Còn phải hỏi tên:</b> máy ở ảnh 9471 (bước ⑦), máy nào làm gì ở khu laser (⑧), máy dập nút ảnh 9494 (⑨), máy làm nút đỉnh (⑩), bước lấy mảnh ra khỏi vải thừa (⑥).</p>
+    <p><b>Hỏi ai:</b> xưởng trưởng <span lang="zh">林玉平</span> (Lín Yùpíng) hoặc anh Quang Anh. Chị Thắm dặn giới thiệu là người mới ở bộ phận chất lượng xuống học.</p>
+    <div class="ask"><b>Câu mở đầu</b><div class="zh" lang="zh">您好，我是品保部新来的Bảo。阿深姐让我来跟您学习裁剪的流程，有几个地方不太懂，想请教您一下。</div><div class="py">Nín hǎo, wǒ shì pǐnbǎo bù xīn lái de Bảo. Ā Shēn jiě ràng wǒ lái gēn nín xuéxí cáijiǎn de liúchéng, yǒu jǐ gè dìfang bú tài dǒng, xiǎng qǐngjiào nín yíxià.</div><div class="vnt">Chào anh, em là Bảo mới vào 品保部. Chị Thắm cho em xuống học quy trình xưởng cắt, có vài chỗ em chưa hiểu, muốn hỏi anh.</div></div>
+    <p class="hint" style="margin-bottom:0">Câu hỏi và ảnh cần chụp của từng bước nằm trong khâu 3 bên dưới; xem gom lại ở tab <a href="#can-hoi" data-view="can-hoi">Cần hỏi</a>. Hỏi xong bấm “Chép tất cả câu trả lời” rồi gửi trợ lý để cập nhật.</p>
+  </div>
   <h2>Ba câu hỏi ở xưởng cắt</h2>
   <div class="qa" id="qa"></div>
   <h2>Các khâu chi tiết</h2>
@@ -688,7 +702,7 @@ function showLocal(slot){
     if(acct){ const c = document.createElement('span'); c.className = 'cloud'; c.textContent = '☁'; c.title = 'Đã lưu vào tài khoản'; el.appendChild(c); }
   });
 }
-function loadLocalPicsIn(root){ (root || document).querySelectorAll('.pslot').forEach(el => showLocal(el.dataset.slot)); }
+function loadLocalPicsIn(root){ (root || document).querySelectorAll('.pslot').forEach(el => showLocal(el.dataset.slot)); updCatProg(); }
 function refreshBoards(){ try { W3; } catch(e){ return; } ST.forEach(s => { const o = ALLSLOTS.find(o => o.sid === s.id && photoOf(o.id)); W3.setBoard(s.id, o ? photoOf(o.id) : null); }); }
 async function loadLocalPics(){ await idbReady; if(idb){ for(const o of ALLSLOTS){ const d = await idbGet(o.id); if(d) PH.local[o.id] = d; } } loadLocalPicsIn(document); refreshBoards(); }
 let PHDB = null, ASSETS = null;
@@ -761,7 +775,15 @@ document.addEventListener('click', e => {
   const sb = e.target.closest('[data-say]'); if(sb){ e.stopPropagation(); speak(sb.dataset.say); }
 });
 let qsF = 'todo';
-function updQsum(){ $('qsTotal').textContent = ALLQ.length; $('qsDone').textContent = ALLQ.filter(o => ans(o.id).done).length; $('qsPics').textContent = ST.reduce((n, s) => n + s.steps.reduce((m, x) => m + (x.pics||[]).length, 0), 0); }
+function updCatProg(){
+  try {
+    const qs = ALLQ.filter(o => o.s.id === 'cat'), qd = qs.filter(o => ans(o.id).done).length;
+    const ps = ALLSLOTS.filter(o => o.sid === 'cat'), pd = ps.filter(o => photoOf(o.id)).length;
+    const set = (b, t, n, d) => { const e = $(b), f = $(t); if(e) e.style.width = (d ? Math.round(n / d * 100) : 0) + '%'; if(f) f.textContent = n + '/' + d; };
+    set('clQBar', 'clQ', qd, qs.length); set('clPBar', 'clP', pd, ps.length);
+  } catch(e) {}
+}
+function updQsum(){ updCatProg();  $('qsTotal').textContent = ALLQ.length; $('qsDone').textContent = ALLQ.filter(o => ans(o.id).done).length; $('qsPics').textContent = ST.reduce((n, s) => n + s.steps.reduce((m, x) => m + (x.pics||[]).length, 0), 0); }
 function renderQs(){
   updQsum();
   let html = '';
@@ -813,7 +835,7 @@ function openStage(id){ const el = $('st-'+id); if(!el) return; el.open = true; 
 document.querySelectorAll('.radial .node').forEach(g => { g.addEventListener('click', () => openStage(g.dataset.go)); g.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openStage(g.dataset.go); } }); });
 document.querySelectorAll('[data-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openStage(a.dataset.open); }));
 $('tAll').onclick = () => { const b = $('tAll'), on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); b.textContent = on ? 'Thu gọn' : 'Mở hết'; document.querySelectorAll('.stage').forEach(d => d.open = on); };
-$('st-cat').open = true; $('st-kiemvai').open = true;
+$('st-cat').open = true; $('st-kiemvai').open = true; updCatProg();
 
 // ========== TỪ VỰNG ==========
 const flags = new Set();

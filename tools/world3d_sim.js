@@ -211,7 +211,7 @@ function W3SIM(K){
   const STEP8 = [tri('Quét mã iPad', 'iPad扫码', 'Scan on iPad'), tri('Kiểm sau định form', '定型后检查', 'Check after shaping'), tri('Ngoài, từ đỉnh xuống', '从顶上查外面', 'Outside from the top'), tri('Lưỡi và chỉ vành', '查帽檐和绕线', 'Visor and rows'),
     tri('Bên trong, cắt chỉ tại bàn', '查里面，线头在桌上剪', 'Inside, trim at the bench'), tri('Dây về 9.5, đo vòng đầu', '调到9.5量帽围', 'Strap to 9.5, measure'), tri('Đối chiếu iPad', '核对iPad上的信息', 'Match the iPad'), tri('Kiểm form', '看帽型', 'Check the shape')];
   const LSOP = [tri('Chuyển file sang định dạng máy', '文件转成机器格式', 'Convert the file'), tri('Lưu vào USB', '存到U盘', 'Save to USB'), tri('Cắm vào máy DS4', '插到DS4', 'Plug into the DS4'), tri('Cài công suất, kích thước', '设功率、尺寸', 'Set power and size'),
-    tri('Trải vật liệu lên lưới tổ ong', '材料铺在蜂窝网上', 'Lay material on the honeycomb bed'), tri('Đạp bàn đạp cắt', '踩脚踏开切', 'Press the foot pedal'), tri('Thu thành phẩm, bỏ ba-via', '收成品，去毛边', 'Collect pieces, remove burrs')];
+    tri('Trải vật liệu lên lưới tổ ong', '材料铺在蜂窝网上', 'Lay material on the honeycomb bed'), tri('Đạp bàn đạp cắt', '踩脚踏开切', 'Press the foot pedal'), tri('Thu mảnh đã cắt (đọc lại ảnh SOP)', '收成品', 'Collect the pieces')];
   const TABS = ['Header', 'Photos', 'Defects #1', 'Defects #2', 'Conclusion'];
   const SPIN = 0.25; // góc camera mặc định khi xem mũ
 
@@ -293,7 +293,7 @@ function W3SIM(K){
         PIECES.show({visor: 0, btn: 0, eyelets: Math.min(6, Math.floor(a * 6.99))});
         const st = Math.min(6, Math.floor(k / 0.65 * 7)); live('m', 'Ogbos · CKLASER'); live('s', k < 0.65 ? `${st + 1} / 7` : '7 / 7');
         live('name', k < 0.65 ? LSOP[st] : tri('Đóng khuy: không lỏng, không móp, không rớt', '打扣：不松、不变形、不掉扣', 'Button setting: firm, undented, present'));
-        place(S1.s, 'cat', 2.4, 2.4, 3.6); S1.draw(k < 0.65 ? [F('镭射切割 · 透气孔', 42, '#1f2328', 800), F('护目镜 · 蒸馏水 · 不切金属', 32, '#c92a2a')] : [F('打扣 · 切条', 46, '#1f2328', 800), F('不松、不变形、不掉扣', 34, '#444')]); }},
+        place(S1.s, 'cat', 2.4, 2.4, 3.6); S1.draw(k < 0.65 ? [F('镭射切割 · 透气孔', 42, '#1f2328', 800), F('护目镜 · 蒸馏水 · 不切金属', 32, '#c92a2a')] : [F('打扣（待确认）', 46, '#1f2328', 800), F('不松、不变形、不掉扣', 34, '#444')]); }},
     embroider: {sid: 'theu', at: [0.55, 1.1, -1.2], cam: [3.4, 0.2, 0.95],
       enter(){ place(FRONT.g, 'theu', 0.52, 1.035, -0.98); FRONT.g.scale.setScalar(1.2); },
       run(k){ const a = seg(k, 0.1, 0.85); FRONT.logo(a); live('pct', Math.round(a * 100) + ' %'); AN.emb[3].m.position.x = AN.emb[3].x0 + 0.12 * Math.sin(k * 140); AN.emb[3].m.position.z = AN.emb[3].z0 + 0.05 * Math.cos(k * 170);
